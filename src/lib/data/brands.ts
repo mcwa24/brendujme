@@ -1,6 +1,7 @@
 import type { Brand } from "@/types";
+import { buildFashionAndFriendsDirectoryBrands } from "@/lib/data/ff-directory-brands";
 
-export const brands: Brand[] = [
+const coreBrands: Brand[] = [
   {
     slug: "scotch-and-soda",
     name: "Scotch & Soda",
@@ -502,6 +503,13 @@ export const brands: Brand[] = [
     shoppingCenterSlugs: ["zlatibor", "stadion"],
     relatedBrandSlugs: ["columbia", "timberland", "patagonia"],
   },
+];
+
+export const brands: Brand[] = [
+  ...coreBrands,
+  ...buildFashionAndFriendsDirectoryBrands(
+    new Set(coreBrands.map((b) => b.slug))
+  ),
 ];
 
 export function getBrandBySlug(slug: string): Brand | undefined {

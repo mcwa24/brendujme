@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { Building2, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
 import { PremiumCard } from "@/components/ui/premium-card";
-import { shoppingCenters } from "@/lib/data/shopping-centers";
+import { ShoppingCenterLogo } from "@/components/shopping-centers/shopping-center-logo";
+import { getAllShoppingCenters } from "@/lib/data/repository";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
@@ -13,7 +14,9 @@ export const metadata = createMetadata({
   path: "/shopping-centers",
 });
 
-export default function ShoppingCentersPage() {
+export default async function ShoppingCentersPage() {
+  const shoppingCenters = await getAllShoppingCenters();
+
   return (
     <Container narrow className="py-12 md:py-16">
       <FadeIn>
@@ -29,9 +32,13 @@ export default function ShoppingCentersPage() {
           <FadeIn key={center.slug} delay={i * 0.04}>
             <Link href={`/shopping-centers/${center.slug}`}>
               <PremiumCard className="overflow-hidden">
-                <div className="flex h-44 items-center justify-center bg-[#f0f0ed]">
-                  <Building2 className="h-14 w-14 text-muted/30" />
-                </div>
+                <ShoppingCenterLogo
+                  slug={center.slug}
+                  name={center.name}
+                  variant="banner"
+                  logoUrl={center.logoUrl}
+                  logoStoragePath={center.logoStoragePath}
+                />
                 <div className="p-6">
                   <h2 className="font-display text-xl font-semibold">{center.name}</h2>
                   <div className="mt-2 flex items-center gap-1.5 text-sm text-muted">

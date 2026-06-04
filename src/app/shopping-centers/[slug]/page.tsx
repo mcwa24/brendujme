@@ -1,13 +1,14 @@
 import { notFound } from "next/navigation";
-import { Building2, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
 import { BrandCard } from "@/components/brands/brand-card";
+import { ShoppingCenterLogo } from "@/components/shopping-centers/shopping-center-logo";
 import {
-  shoppingCenters,
+  getAllShoppingCenters,
+  getBrandBySlug,
   getShoppingCenterBySlug,
-} from "@/lib/data/shopping-centers";
-import { getBrandBySlug } from "@/lib/data/brands";
+} from "@/lib/data/repository";
 import { createMetadata } from "@/lib/seo";
 
 interface PageProps {
@@ -15,12 +16,13 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  return shoppingCenters.map((s) => ({ slug: s.slug }));
+  const centers = await getAllShoppingCenters();
+  return centers.map((s) => ({ slug: s.slug }));
 }
 
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
-  const center = getShoppingCenterBySlug(slug);
+  const center = await getShoppingCenterBySlug(slug);
   if (!center) return {};
   return createMetadata({
     title: center.name,
@@ -31,21 +33,26 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function ShoppingCenterPage({ params }: PageProps) {
   const { slug } = await params;
-  const center = getShoppingCenterBySlug(slug);
+  const center = await getShoppingCenterBySlug(slug);
   if (!center) notFound();
 
-  const centerBrands = center.brandSlugs
-    .map((s) => getBrandBySlug(s))
-    .filter(Boolean);
+  const centerBrands = (
+    await Promise.all(center.brandSlugs.map((s) => getBrandBySlug(s)))
+  ).filter(Boolean);
 
   return (
     <>
       <section className="border-b border-border bg-card">
         <Container narrow className="py-16">
           <FadeIn className="flex flex-col gap-6 md:flex-row md:items-center">
-            <div className="flex h-24 w-24 items-center justify-center rounded-[20px] bg-[#f0f0ed]">
-              <Building2 className="h-12 w-12 text-muted/40" />
-            </div>
+            <ShoppingCenterLogo
+              slug={center.slug}
+              name={center.name}
+              size="xl"
+              className="h-24 w-24 rounded-[20px] p-3"
+              logoUrl={center.logoUrl}
+              logoStoragePath={center.logoStoragePath}
+            />
             <div>
               <h1 className="font-display text-4xl font-semibold md:text-5xl">
                 {center.name}

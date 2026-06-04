@@ -7,10 +7,18 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "logos:cache": "tsx scripts/cache-brand-logos.ts"
+    "logos:cache": "tsx scripts/cache-brand-logos.ts",
+    "logos:remiks": "tsx scripts/cache-remiks-brand-logos.ts",
+    "centers:cache": "tsx scripts/cache-shopping-center-logos.ts",
+    "db:seed": "tsx --env-file=.env.local scripts/seed-supabase-v2.ts",
+    "db:seed:legacy": "tsx --env-file=.env.local scripts/seed-supabase.ts",
+    "assets:upload": "tsx --env-file=.env.local scripts/upload-photos-to-supabase.ts",
+    "assets:sync": "npm run logos:remiks && npm run assets:upload"
   },
   "dependencies": {
     "@base-ui/react": "^1.5.0",
+    "@supabase/ssr": "^0.10.3",
+    "@supabase/supabase-js": "^2.107.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",

@@ -5,9 +5,13 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
-import { categories } from "@/lib/data/categories";
+import type { Category } from "@/types";
 
-export function CategoriesSection() {
+interface CategoriesSectionProps {
+  categories: Category[];
+}
+
+export function CategoriesSection({ categories }: CategoriesSectionProps) {
   return (
     <section className="py-20">
       <Container narrow>

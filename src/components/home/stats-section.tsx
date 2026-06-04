@@ -1,14 +1,18 @@
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
 
-const stats = [
-  { value: "1,200+", label: "Brendova" },
-  { value: "350+", label: "Prodajnih lokacija" },
-  { value: "25+", label: "Gradova" },
-  { value: "50+", label: "Tržnih centara" },
-];
+interface StatsSectionProps {
+  brandCount: number;
+}
 
-export function StatsSection() {
+export function StatsSection({ brandCount }: StatsSectionProps) {
+  const stats = [
+    { value: `${brandCount}+`, label: "Brendova u direktorijumu" },
+    { value: "350+", label: "Prodajnih lokacija" },
+    { value: "25+", label: "Gradova" },
+    { value: "50+", label: "Tržnih centara" },
+  ];
+
   return (
     <section className="border-y border-border bg-card py-20">
       <Container narrow>

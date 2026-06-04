@@ -5,12 +5,15 @@ import { Search } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
 import { useSearch } from "@/components/search/search-provider";
-import { getPopularBrands } from "@/lib/data/brands";
 import { Badge } from "@/components/ui/badge";
+import type { Brand } from "@/types";
 
-export function HeroSection() {
+interface HeroSectionProps {
+  popularBrands: Brand[];
+}
+
+export function HeroSection({ popularBrands }: HeroSectionProps) {
   const { setOpen } = useSearch();
-  const popularBrands = getPopularBrands().slice(0, 6);
 
   return (
     <section className="pt-16 pb-20 md:pt-24 md:pb-28">

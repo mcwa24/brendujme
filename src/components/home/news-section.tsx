@@ -3,7 +3,7 @@ import { ArrowRight, Calendar } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
 import { PremiumCard } from "@/components/ui/premium-card";
-import { getFeaturedNews, getLatestNews } from "@/lib/data/news";
+import type { NewsArticle } from "@/types";
 
 function formatDate(date: string) {
   return new Date(date).toLocaleDateString("sr-Latn-RS", {
@@ -13,9 +13,13 @@ function formatDate(date: string) {
   });
 }
 
-export function NewsSection() {
-  const featured = getFeaturedNews();
-  const sideArticles = getLatestNews(4).filter((a) => a.slug !== featured?.slug);
+interface NewsSectionProps {
+  featured?: NewsArticle;
+  latest: NewsArticle[];
+}
+
+export function NewsSection({ featured, latest }: NewsSectionProps) {
+  const sideArticles = latest.filter((a) => a.slug !== featured?.slug);
 
   if (!featured) return null;
 

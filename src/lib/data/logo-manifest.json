@@ -14,5 +14,145 @@
   "rituals": {
     "path": "/logos/cache/rituals.png",
     "source": "discovered"
+  },
+  "camper": {
+    "path": "/logos/cache/camper.jpg",
+    "source": "url"
+  },
+  "desigual": {
+    "path": "/logos/cache/desigual.png",
+    "source": "url"
+  },
+  "diesel": {
+    "path": "/logos/cache/diesel.jpg",
+    "source": "url"
+  },
+  "inuikii": {
+    "path": "/logos/cache/inuikii.jpg",
+    "source": "url"
+  },
+  "patrizia-pepe": {
+    "path": "/logos/cache/patrizia-pepe.jpg",
+    "source": "url"
+  },
+  "lyle-scott": {
+    "path": "/logos/cache/lyle-scott.jpg",
+    "source": "url"
+  },
+  "kiko": {
+    "path": "/logos/cache/kiko.png",
+    "source": "discovered"
+  },
+  "liu-jo": {
+    "path": "/logos/cache/liu-jo.jpg",
+    "source": "url"
+  },
+  "cesare-paciotti": {
+    "path": "/logos/cache/cesare-paciotti.png",
+    "source": "discovered"
+  },
+  "premiata": {
+    "path": "/logos/cache/premiata.png",
+    "source": "discovered"
+  },
+  "replay": {
+    "path": "/logos/cache/replay.jpg",
+    "source": "url"
+  },
+  "wellensteyn": {
+    "path": "/logos/cache/wellensteyn.png",
+    "source": "discovered"
+  },
+  "steve-madden": {
+    "path": "/logos/cache/steve-madden.jpg",
+    "source": "url"
+  },
+  "armani-exchange": {
+    "path": "/logos/cache/armani-exchange.png",
+    "source": "url"
+  },
+  "dkny": {
+    "path": "/logos/cache/dkny.png",
+    "source": "discovered"
+  },
+  "dolce-vita": {
+    "path": "/logos/cache/dolce-vita.png",
+    "source": "discovered"
+  },
+  "karl-lagerfeld": {
+    "path": "/logos/cache/karl-lagerfeld.png",
+    "source": "discovered"
+  },
+  "miss-sixty": {
+    "path": "/logos/cache/miss-sixty.png",
+    "source": "discovered"
+  },
+  "moschino-jeans": {
+    "path": "/logos/cache/moschino-jeans.png",
+    "source": "discovered"
+  },
+  "saint-barth": {
+    "path": "/logos/cache/saint-barth.jpg",
+    "source": "url"
+  },
+  "superdry": {
+    "path": "/logos/cache/superdry.jpg",
+    "source": "url"
+  },
+  "ugg": {
+    "path": "/logos/cache/ugg.jpg",
+    "source": "url"
+  },
+  "nike": {
+    "path": "/logos/cache/nike.jpg",
+    "source": "url"
+  },
+  "adidas": {
+    "path": "/logos/cache/adidas.jpg",
+    "source": "url"
+  },
+  "tommy-hilfiger": {
+    "path": "/logos/cache/tommy-hilfiger.jpg",
+    "source": "url"
+  },
+  "calvin-klein": {
+    "path": "/logos/cache/calvin-klein.jpg",
+    "source": "url"
+  },
+  "lacoste": {
+    "path": "/logos/cache/lacoste.jpg",
+    "source": "url"
+  },
+  "timberland": {
+    "path": "/logos/cache/timberland.jpg",
+    "source": "url"
+  },
+  "bata": {
+    "path": "/logos/cache/bata.jpg",
+    "source": "url"
+  },
+  "guess": {
+    "path": "/logos/cache/guess.jpg",
+    "source": "url"
+  },
+  "levis": {
+    "path": "/logos/cache/levis.jpg",
+    "source": "url"
+  },
+  "hugo": {
+    "path": "/logos/cache/hugo.jpg",
+    "source": "url"
+  },
+  "boss": {
+    "path": "/logos/cache/boss.jpg",
+    "source": "url"
+  },
+  "love-moschino": {
+    "path": "/logos/cache/love-moschino.jpg",
+    "source": "url"
+  },
+  "new-balance": {
+    "path": "/logos/cache/new-balance.jpg",
+    "source": "url"
   }
 }

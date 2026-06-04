@@ -3,10 +3,13 @@ import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
 import { BrandCard } from "@/components/brands/brand-card";
-import { getFeaturedBrands } from "@/lib/data/brands";
+import type { Brand } from "@/types";
 
-export function FeaturedBrandsSection() {
-  const brands = getFeaturedBrands().slice(0, 8);
+interface FeaturedBrandsSectionProps {
+  brands: Brand[];
+}
+
+export function FeaturedBrandsSection({ brands }: FeaturedBrandsSectionProps) {
 
   return (
     <section className="py-20">

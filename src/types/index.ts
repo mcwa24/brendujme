@@ -42,6 +42,8 @@ export interface Brand {
   website: string;
   /** URL logoa iz baze (prioritet #2) */
   logoUrl?: string;
+  /** Putanja u Supabase Storage (bucket Photos) */
+  logoStoragePath?: string;
   /** Ručno uploadovan logo u public/logos/{slug}.png */
   hasCustomLogo?: boolean;
   description: string;
@@ -61,6 +63,7 @@ export interface Retailer {
   city: string;
   brandCount: number;
   brandSlugs: string[];
+  logoUrl?: string;
 }
 
 export interface ShoppingCenter {
@@ -70,6 +73,8 @@ export interface ShoppingCenter {
   brandCount: number;
   description: string;
   brandSlugs: string[];
+  logoUrl?: string;
+  logoStoragePath?: string;
 }
 
 export interface NewsArticle {
@@ -82,6 +87,7 @@ export interface NewsArticle {
   featured?: boolean;
   brandSlugs?: string[];
   imageLabel: string;
+  imageUrl?: string;
 }
 
 export type SearchResultType = "brand" | "retailer" | "shopping-center";
@@ -96,5 +102,11 @@ export interface SearchResult {
 
 export type BrandLogoInput = Pick<
   Brand,
-  "slug" | "name" | "category" | "website" | "logoUrl" | "hasCustomLogo"
+  | "slug"
+  | "name"
+  | "category"
+  | "website"
+  | "logoUrl"
+  | "logoStoragePath"
+  | "hasCustomLogo"
 >;

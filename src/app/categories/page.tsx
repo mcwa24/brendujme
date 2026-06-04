@@ -2,8 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
-import { categories } from "@/lib/data/categories";
-import { brands } from "@/lib/data/brands";
+import { getAllBrands, getAllCategories } from "@/lib/data/repository";
 import { createMetadata } from "@/lib/seo";
 import { PremiumCard } from "@/components/ui/premium-card";
 
@@ -13,7 +12,12 @@ export const metadata = createMetadata({
   path: "/categories",
 });
 
-export default function CategoriesPage() {
+export default async function CategoriesPage() {
+  const [categories, brands] = await Promise.all([
+    getAllCategories(),
+    getAllBrands(),
+  ]);
+
   return (
     <Container narrow className="py-12 md:py-16">
       <FadeIn>

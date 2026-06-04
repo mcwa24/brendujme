@@ -3,8 +3,11 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
-import { newsArticles, getNewsBySlug } from "@/lib/data/news";
-import { getBrandBySlug } from "@/lib/data/brands";
+import {
+  getAllNews,
+  getBrandBySlug,
+  getNewsBySlug,
+} from "@/lib/data/repository";
 import { createMetadata } from "@/lib/seo";
 
 interface PageProps {
@@ -12,12 +15,13 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  return newsArticles.map((a) => ({ slug: a.slug }));
+  const articles = await getAllNews();
+  return articles.map((a) => ({ slug: a.slug }));
 }
 
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
-  const article = getNewsBySlug(slug);
+  const article = await getNewsBySlug(slug);
   if (!article) return {};
   return createMetadata({
     title: article.title,
@@ -36,12 +40,12 @@ function formatDate(date: string) {
 
 export default async function NewsArticlePage({ params }: PageProps) {
   const { slug } = await params;
-  const article = getNewsBySlug(slug);
+  const article = await getNewsBySlug(slug);
   if (!article) notFound();
 
-  const relatedBrands = (article.brandSlugs ?? [])
-    .map((s) => getBrandBySlug(s))
-    .filter(Boolean);
+  const relatedBrands = (
+    await Promise.all((article.brandSlugs ?? []).map((s) => getBrandBySlug(s)))
+  ).filter(Boolean);
 
   return (
     <article>

@@ -7,10 +7,16 @@ import { RelatedBrandsCarousel } from "@/components/brands/related-brands-carous
 import { BrandHero } from "@/components/brands/brand-hero";
 import { hasBrandLogo } from "@/lib/brand-logo-resolve";
 import { PremiumCard } from "@/components/ui/premium-card";
-import { brands, getBrandBySlug, getRelatedBrands } from "@/lib/data/brands";
 import { getCategoryName } from "@/lib/data/categories";
-import { getShoppingCenterBySlug } from "@/lib/data/shopping-centers";
-import { getNewsByBrand } from "@/lib/data/news";
+import {
+  getAllBrands,
+  getBrandBySlug,
+  getNewsByBrand,
+  getRelatedBrands,
+  getShoppingCenterBySlug,
+} from "@/lib/data/repository";
+import { ShoppingCenterLogo } from "@/components/shopping-centers/shopping-center-logo";
+import { getFashionCompanyStoresByBrand } from "@/lib/data/fashion-company";
 import { createMetadata } from "@/lib/seo";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -20,12 +26,13 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
+  const brands = await getAllBrands();
   return brands.map((b) => ({ slug: b.slug }));
 }
 
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
-  const brand = getBrandBySlug(slug);
+  const brand = await getBrandBySlug(slug);
   if (!brand) return {};
   return createMetadata({
     title: brand.name,
@@ -44,15 +51,18 @@ function formatDate(date: string) {
 
 export default async function BrandDetailPage({ params }: PageProps) {
   const { slug } = await params;
-  const brand = getBrandBySlug(slug);
+  const brand = await getBrandBySlug(slug);
   if (!brand) notFound();
 
-  const related = getRelatedBrands(brand);
-  const news = getNewsByBrand(slug).slice(0, 3);
-  const centers = brand.shoppingCenterSlugs
-    .map((s) => getShoppingCenterBySlug(s))
-    .filter(Boolean);
+  const related = await getRelatedBrands(brand);
+  const news = (await getNewsByBrand(slug)).slice(0, 3);
+  const centers = (
+    await Promise.all(
+      brand.shoppingCenterSlugs.map((s) => getShoppingCenterBySlug(s))
+    )
+  ).filter(Boolean);
   const showLogoHero = hasBrandLogo(brand);
+  const fcStores = getFashionCompanyStoresByBrand(slug);
 
   return (
     <>
@@ -136,6 +146,41 @@ export default async function BrandDetailPage({ params }: PageProps) {
           </div>
         </section>
 
+        {fcStores.length > 0 && (
+          <section>
+            <FadeIn>
+              <h2 className="font-display text-3xl font-semibold md:text-4xl">
+                Fashion Company prodavnice
+              </h2>
+              <p className="mt-2 text-muted">
+                Lokacije prema{" "}
+                <Link href="/retailers/fashion-company" className="text-accent hover:underline">
+                  Fashion Company
+                </Link>{" "}
+                mreži ({fcStores.length}).
+              </p>
+            </FadeIn>
+            <div className="mt-10 grid gap-5 md:grid-cols-2">
+              {fcStores.map((store, i) => (
+                <FadeIn key={store.id} delay={i * 0.05}>
+                  <PremiumCard className="p-6">
+                    <h3 className="font-display text-lg font-semibold">
+                      {store.storeName}
+                    </h3>
+                    <div className="mt-3 space-y-1 text-sm text-muted">
+                      <p className="flex items-start gap-2">
+                        <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
+                        {store.address}
+                      </p>
+                      <p>{store.cityLabel}</p>
+                    </div>
+                  </PremiumCard>
+                </FadeIn>
+              ))}
+            </div>
+          </section>
+        )}
+
         {centers.length > 0 && (
           <section>
             <FadeIn>
@@ -149,6 +194,12 @@ export default async function BrandDetailPage({ params }: PageProps) {
                   <FadeIn key={center.slug} delay={i * 0.05}>
                     <Link href={`/shopping-centers/${center.slug}`}>
                       <PremiumCard className="p-6">
+                        <ShoppingCenterLogo
+                          slug={center.slug}
+                          name={center.name}
+                          size="lg"
+                          className="mb-4"
+                        />
                         <h3 className="font-display text-lg font-semibold">
                           {center.name}
                         </h3>

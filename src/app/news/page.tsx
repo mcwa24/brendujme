@@ -3,7 +3,7 @@ import { Calendar } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
 import { PremiumCard } from "@/components/ui/premium-card";
-import { getLatestNews } from "@/lib/data/news";
+import { getLatestNews } from "@/lib/data/repository";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
@@ -20,8 +20,8 @@ function formatDate(date: string) {
   });
 }
 
-export default function NewsPage() {
-  const articles = getLatestNews(20);
+export default async function NewsPage() {
+  const articles = await getLatestNews(20);
 
   return (
     <Container narrow className="py-12 md:py-16">

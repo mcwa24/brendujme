@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { SearchProvider } from "@/components/search/search-provider";
-import { createMetadata } from "@/lib/seo";
+import { baseMetadata } from "@/lib/seo";
 import "./globals.css";
 
 const inter = Inter({
@@ -16,7 +16,13 @@ const playfair = Playfair_Display({
   subsets: ["latin", "latin-ext"],
 });
 
-export const metadata: Metadata = createMetadata({});
+export const metadata: Metadata = baseMetadata;
+
+export const viewport: Viewport = {
+  themeColor: "#000000",
+  width: "device-width",
+  initialScale: 1,
+};
 
 export default function RootLayout({
   children,

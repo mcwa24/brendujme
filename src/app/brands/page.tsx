@@ -1,5 +1,5 @@
 import { BrandDirectory } from "@/components/brands/brand-directory";
-import { brands } from "@/lib/data/brands";
+import { getAllBrands } from "@/lib/data/repository";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
@@ -9,6 +9,7 @@ export const metadata = createMetadata({
   path: "/brands",
 });
 
-export default function BrandsPage() {
+export default async function BrandsPage() {
+  const brands = await getAllBrands();
   return <BrandDirectory brands={brands} />;
 }

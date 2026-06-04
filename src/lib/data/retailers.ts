@@ -5,10 +5,17 @@ export const retailers: Retailer[] = [
     slug: "fashion-company",
     name: "Fashion Company",
     description:
-      "Vodeći multi-brand retailer sa fokusom na premium i contemporary modu.",
+      "Najveći distributer modnih brendova u Jugoistočnoj Evropi — Diesel, Tommy Hilfiger, Scotch & Soda, Mango, Timberland i 30+ brendova u Srbiji.",
     city: "Beograd",
-    brandCount: 24,
-    brandSlugs: ["scotch-and-soda", "sandro", "maje", "cos", "arket"],
+    brandCount: 33,
+    brandSlugs: [
+      "scotch-and-soda",
+      "tommy-hilfiger",
+      "calvin-klein",
+      "guess",
+      "mango",
+      "timberland",
+    ],
   },
   {
     slug: "luxury-gallery",

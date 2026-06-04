@@ -34,7 +34,7 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b border-border/80 bg-background/90 backdrop-blur-md">
       <Container>
         <div className="flex h-16 items-center justify-between gap-4 md:h-20">
-          <BrandMark logoHeight={26} className="md:gap-3" />
+          <BrandMark className="md:gap-3.5" />
 
           <nav className="hidden items-center gap-8 lg:flex">
             {navItems.map((item) => (
@@ -87,7 +87,7 @@ export function Header() {
               <SheetContent side="right" className="w-full max-w-sm rounded-l-[20px]">
                 <SheetHeader>
                   <SheetTitle className="text-left font-normal">
-                    <BrandMark logoHeight={24} asLink={false} />
+                    <BrandMark logoHeight={32} asLink={false} />
                   </SheetTitle>
                 </SheetHeader>
                 <nav className="mt-8 flex flex-col gap-4">

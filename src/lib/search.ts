@@ -1,22 +1,39 @@
 import { brands } from "@/lib/data/brands";
 import { retailers } from "@/lib/data/retailers";
 import { shoppingCenters } from "@/lib/data/shopping-centers";
+import { fashionCompanyStores } from "@/lib/data/fashion-company";
+import { fashionAndFriendsMeta } from "@/lib/data/fashion-and-friends";
 import { getCategoryName } from "@/lib/data/categories";
 import type { SearchResult } from "@/types";
 
+function normalize(text: string): string {
+  return text
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+}
+
 export function searchAll(query: string): SearchResult[] {
-  const q = query.trim().toLowerCase();
+  const q = normalize(query.trim());
   if (!q) return [];
 
   const results: SearchResult[] = [];
+  const seen = new Set<string>();
+
+  const add = (result: SearchResult) => {
+    const key = `${result.type}-${result.slug}`;
+    if (seen.has(key)) return;
+    seen.add(key);
+    results.push(result);
+  };
 
   for (const brand of brands) {
     if (
-      brand.name.toLowerCase().includes(q) ||
+      normalize(brand.name).includes(q) ||
       brand.slug.includes(q) ||
-      getCategoryName(brand.category).toLowerCase().includes(q)
+      normalize(getCategoryName(brand.category)).includes(q)
     ) {
-      results.push({
+      add({
         type: "brand",
         slug: brand.slug,
         title: brand.name,
@@ -28,10 +45,11 @@ export function searchAll(query: string): SearchResult[] {
 
   for (const retailer of retailers) {
     if (
-      retailer.name.toLowerCase().includes(q) ||
-      retailer.city.toLowerCase().includes(q)
+      normalize(retailer.name).includes(q) ||
+      normalize(retailer.city).includes(q) ||
+      normalize(retailer.description).includes(q)
     ) {
-      results.push({
+      add({
         type: "retailer",
         slug: retailer.slug,
         title: retailer.name,
@@ -43,10 +61,11 @@ export function searchAll(query: string): SearchResult[] {
 
   for (const center of shoppingCenters) {
     if (
-      center.name.toLowerCase().includes(q) ||
-      center.city.toLowerCase().includes(q)
+      normalize(center.name).includes(q) ||
+      normalize(center.city).includes(q) ||
+      normalize(center.description).includes(q)
     ) {
-      results.push({
+      add({
         type: "shopping-center",
         slug: center.slug,
         title: center.name,
@@ -56,5 +75,39 @@ export function searchAll(query: string): SearchResult[] {
     }
   }
 
-  return results.slice(0, 12);
+  if (
+    (q.includes("fashion") && q.includes("friend")) ||
+    q.replace(/\s/g, "") === "fashionandfriends" ||
+    q === "ff"
+  ) {
+    add({
+      type: "retailer",
+      slug: "fashion-company",
+      title: "Fashion&Friends",
+      subtitle: `${fashionAndFriendsMeta.brandCount} brendova · Fashion Company`,
+      href: "/retailers/fashion-company",
+    });
+  }
+
+  for (const store of fashionCompanyStores) {
+    if (
+      normalize(store.brandName).includes(q) ||
+      normalize(store.storeName).includes(q) ||
+      normalize(store.address).includes(q) ||
+      normalize(store.cityLabel).includes(q) ||
+      (store.shoppingCenter && normalize(store.shoppingCenter).includes(q))
+    ) {
+      if (store.brandSlug) {
+        add({
+          type: "brand",
+          slug: store.brandSlug,
+          title: store.brandName,
+          subtitle: `Fashion Company · ${store.cityLabel}`,
+          href: `/brands/${store.brandSlug}`,
+        });
+      }
+    }
+  }
+
+  return results.slice(0, 16);
 }

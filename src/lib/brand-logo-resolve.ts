@@ -1,4 +1,5 @@
 import logoManifest from "@/lib/data/logo-manifest.json";
+import { getStoragePublicUrl, isSupabaseStorageUrl } from "@/lib/supabase/storage";
 import type { BrandLogoInput, LogoManifest } from "@/types";
 
 const manifest = logoManifest as LogoManifest;
@@ -15,26 +16,25 @@ export function getBrandDisplayTitle(name: string): string {
 }
 
 /**
- * Prioritet (samo lokalni/keširani putevi — bez mrežnih zahteva u runtime):
- * 1. Upload (hasCustomLogo + manifest ili standardna putanja)
- * 2. logoUrl iz podataka
- * 3. Keširano otkrivanje (logo-manifest)
+ * Prioritet: lokalni keš / manifest → logoUrl (ne-Storage) → Supabase Storage
  */
 export function resolveBrandLogoSrc(brand: BrandLogoInput): string | null {
   const entry = manifest[brand.slug];
 
   if (brand.hasCustomLogo) {
-    if (entry?.source === "upload") return entry.path;
+    if (entry?.path) return entry.path;
     return `/logos/${brand.slug}.png`;
   }
 
-  if (entry?.source === "upload") return entry.path;
+  if (entry?.path) return entry.path;
 
-  if (brand.logoUrl?.trim()) return brand.logoUrl.trim();
+  const logoUrl = brand.logoUrl?.trim();
+  if (logoUrl && !isSupabaseStorageUrl(logoUrl)) return logoUrl;
 
-  if (entry && (entry.source === "discovered" || entry.source === "url")) {
-    return entry.path;
-  }
+  const fromStorage = getStoragePublicUrl(brand.logoStoragePath);
+  if (fromStorage) return fromStorage;
+
+  if (logoUrl) return logoUrl;
 
   return null;
 }
