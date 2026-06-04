@@ -125,10 +125,18 @@ export function mapShoppingCenter(
       ? rawLogoUrl
       : getStoragePublicUrl(row.logo_storage_path) ?? undefined;
 
+  const latitude =
+    row.latitude != null ? Number(row.latitude) : undefined;
+  const longitude =
+    row.longitude != null ? Number(row.longitude) : undefined;
+
   return {
     slug: row.slug,
     name: row.name,
     city: row.city,
+    address: row.address?.trim() || "",
+    latitude,
+    longitude,
     brandCount: brandSlugs.length,
     description: row.description,
     brandSlugs,

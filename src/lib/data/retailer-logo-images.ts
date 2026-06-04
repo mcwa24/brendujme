@@ -18,7 +18,7 @@ export const retailerPageLogoImages: Record<string, RetailerLogoImage> = {
   },
 };
 
-/** Pun logo — naslovi sekcija na stranicama brendova */
+/** Pun logo — naslovi sekcija na stranicama brenda */
 export const retailerLogoImages: Record<string, RetailerLogoImage> = {
   "fashion-company": {
     src: "/logos/retailers/fashion-company-full.png",

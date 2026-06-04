@@ -1,4 +1,4 @@
-# Logoi brendova
+# Logoi brenda
 
 ## Prioritet (runtime — bez mrežnih zahteva)
 

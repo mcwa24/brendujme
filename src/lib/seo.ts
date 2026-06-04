@@ -7,7 +7,7 @@ export const defaultTitle =
   "Bilbord Brands — Otkrijte brendove dostupne u Srbiji";
 
 export const defaultDescription =
-  "Premium platforma za otkrivanje brendova u Srbiji. Pronađite modu, lepotu, sport, lifestyle i luksuzne brendove — saznajte gde se prodaju u tržnim centrima i kod zvaničnih distributera.";
+  "Premium platforma za otkrivanje brenda u Srbiji. Pronađite modu, lepotu, sport, lifestyle i luksuzne brendove — saznajte gde se prodaju u tržnim centrima i kod zvaničnih distributera.";
 
 export const siteKeywords = [
   "brendovi Srbija",
@@ -15,7 +15,7 @@ export const siteKeywords = [
   "tržni centri Beograd",
   "Fashion Company",
   "Fashion and Friends",
-  "direktorijum brendova",
+  "direktorijum brenda",
   "gde kupiti",
   "luksuzni brendovi",
   "obuća brendovi",

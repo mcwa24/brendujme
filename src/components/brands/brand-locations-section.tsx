@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { BrandLocationCard } from "@/components/brands/brand-location-card";
 import type { RetailLocation } from "@/types";
+import { formatLocationCount } from "@/lib/format/sr-plural";
 import { cn } from "@/lib/utils";
 
 interface CityOption {
@@ -95,9 +96,7 @@ export function BrandLocationsSection({
       ) : (
         <>
           <p className="mt-6 text-sm text-muted">
-            {filtered.length}{" "}
-            {filtered.length === 1 ? "lokacija" : "lokacija"} u gradu{" "}
-            {selectedCity}
+            {formatLocationCount(filtered.length)} u gradu {selectedCity}
           </p>
           <div className="mt-8 grid gap-5 md:grid-cols-2">
             {filtered.map((loc, i) => (

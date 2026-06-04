@@ -5,12 +5,13 @@ import { FadeIn } from "@/components/motion/fade-in";
 import { PremiumCard } from "@/components/ui/premium-card";
 import { ShoppingCenterLogo } from "@/components/shopping-centers/shopping-center-logo";
 import { getAllShoppingCenters } from "@/lib/data/repository";
+import { formatBrandCount } from "@/lib/format/sr-plural";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
   title: "Tržni centri",
   description:
-    "Pregled tržnih centara u Srbiji i brendova koji su u njima dostupni.",
+    "Pregled tržnih centara u Srbiji i brenda koji su u njima dostupni.",
   path: "/shopping-centers",
 });
 
@@ -24,7 +25,7 @@ export default async function ShoppingCentersPage() {
           Tržni centri
         </h1>
         <p className="mt-3 max-w-2xl text-muted">
-          Najveće retail destinacije u Srbiji sa kompletnom ponudom brendova.
+          Najveće retail destinacije u Srbiji sa kompletnom ponudom brenda.
         </p>
       </FadeIn>
       <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -46,7 +47,7 @@ export default async function ShoppingCentersPage() {
                     {center.city}
                   </div>
                   <p className="mt-3 text-sm text-success">
-                    {center.brandCount} brendova
+                    {formatBrandCount(center.brandCount)}
                   </p>
                 </div>
               </PremiumCard>

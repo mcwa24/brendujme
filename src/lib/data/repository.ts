@@ -3,6 +3,7 @@ import { brands as staticBrands, getBrandBySlug as getStaticBrandBySlug } from "
 import { categories as staticCategories } from "@/lib/data/categories";
 import { newsArticles as staticNews } from "@/lib/data/news";
 import { fashionCompanyRetailer } from "@/lib/data/fashion-company";
+import { getRetailerCatalogMeta } from "@/lib/data/retailer-catalog-meta";
 import { retailers as staticRetailers } from "@/lib/data/retailers";
 import {
   isImportedRetailerSlug,
@@ -106,8 +107,16 @@ export const getAllRetailers = cache(async (): Promise<Retailer[]> => {
     );
   }
   const withoutFashionCompany = list.filter((r) => r.slug !== "fashion-company");
-  return [fashionCompanyRetailer, ...withoutFashionCompany];
+  return applyCatalogCounts([fashionCompanyRetailer, ...withoutFashionCompany]);
 });
+
+function applyCatalogCounts(retailers: Retailer[]): Retailer[] {
+  return retailers.map((r) => {
+    const meta = getRetailerCatalogMeta(r.slug);
+    if (!meta) return r;
+    return { ...r, brandCount: meta.brandCount };
+  });
+}
 
 export async function getRetailerBySlug(slug: string): Promise<Retailer | undefined> {
   if (slug === "fashion-company") return fashionCompanyRetailer;
@@ -121,10 +130,28 @@ export const getRetailerStores = cache(
   }
 );
 
+function enrichShoppingCentersFromStatic(
+  centers: ShoppingCenter[]
+): ShoppingCenter[] {
+  const staticBySlug = new Map(
+    staticShoppingCenters.map((s) => [s.slug, s] as const)
+  );
+  return centers.map((center) => {
+    const fallback = staticBySlug.get(center.slug);
+    if (!fallback) return center;
+    return {
+      ...center,
+      address: center.address || fallback.address,
+      latitude: center.latitude ?? fallback.latitude,
+      longitude: center.longitude ?? fallback.longitude,
+    };
+  });
+}
+
 export const getAllShoppingCenters = cache(async (): Promise<ShoppingCenter[]> => {
   if (isSupabaseConfigured()) {
     const fromDb = await fetchShoppingCentersFromSupabase();
-    if (fromDb?.length) return fromDb;
+    if (fromDb?.length) return enrichShoppingCentersFromStatic(fromDb);
   }
   return staticShoppingCenters;
 });

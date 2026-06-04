@@ -32,7 +32,7 @@ export function Footer() {
           <div className="lg:col-span-2">
             <BrandMark logoHeight={40} brandsClassName="text-xl md:text-2xl" />
             <p className="mt-4 max-w-md text-muted">
-              Premium platforma za otkrivanje brendova dostupnih u Srbiji.
+              Premium platforma za otkrivanje brenda dostupnih u Srbiji.
               Retail inteligencija za modu, lepotu i lifestyle.
             </p>
           </div>

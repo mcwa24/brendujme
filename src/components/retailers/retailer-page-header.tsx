@@ -8,20 +8,20 @@ interface RetailerPageHeaderProps {
 
 export function RetailerPageHeader({ retailer, children }: RetailerPageHeaderProps) {
   return (
-    <div className="flex flex-col gap-6 md:flex-row md:items-start md:gap-8">
+    <div className="flex flex-col gap-8 md:flex-row md:items-start md:gap-12">
       <RetailerLogo
         slug={retailer.slug}
         name={retailer.name}
         logoUrl={retailer.logoUrl}
         size="hero"
         variant="page"
-        className="rounded-2xl p-1.5 shadow-sm"
+        className="rounded-2xl"
       />
       <div className="min-w-0 flex-1">
         <p className="text-sm font-medium uppercase tracking-wider text-muted">
           Prodavac
         </p>
-        <h1 className="font-display mt-2 text-4xl font-semibold md:text-5xl">
+        <h1 className="font-display mt-2 text-4xl font-semibold tracking-tight md:text-6xl">
           {retailer.name}
         </h1>
         {children}

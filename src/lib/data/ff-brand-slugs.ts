@@ -10,7 +10,7 @@ export function bilbordSlugFromFfSlug(ffSlug: string): string {
   return FF_SLUG_TO_BILBORD[ffSlug] ?? ffSlug;
 }
 
-/** Imena brendova (FC / F&F) → Bilbord slug */
+/** Imena brenda (FC / F&F) → Bilbord slug */
 export const BRAND_NAME_TO_SLUG: Record<string, string> = {
   diesel: "diesel",
   replay: "replay",

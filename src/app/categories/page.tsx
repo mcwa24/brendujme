@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
 import { getAllBrands, getAllCategories } from "@/lib/data/repository";
+import { formatBrandCount } from "@/lib/format/sr-plural";
 import { createMetadata } from "@/lib/seo";
 import { PremiumCard } from "@/components/ui/premium-card";
 
@@ -36,7 +37,7 @@ export default async function CategoriesPage() {
                   <ArrowUpRight className="ml-auto h-5 w-5 text-muted group-hover:text-accent" />
                   <h2 className="font-display text-2xl font-semibold">{category.name}</h2>
                   <p className="mt-2 text-muted">{category.description}</p>
-                  <p className="mt-4 text-sm text-success">{count} brendova</p>
+                  <p className="mt-4 text-sm text-success">{formatBrandCount(count)}</p>
                 </PremiumCard>
               </Link>
             </FadeIn>

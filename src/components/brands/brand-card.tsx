@@ -6,6 +6,7 @@ import { getCategoryName } from "@/lib/data/categories";
 import type { Brand } from "@/types";
 import { PremiumCard } from "@/components/ui/premium-card";
 import { buttonVariants } from "@/components/ui/button";
+import { formatLocationCount } from "@/lib/format/sr-plural";
 import { cn } from "@/lib/utils";
 
 interface BrandCardProps {
@@ -49,7 +50,7 @@ export function BrandCard({ brand, variant = "default" }: BrandCardProps) {
           )}
         >
           <MapPin className="h-4 w-4 shrink-0" />
-          <span>{brand.availabilityCount} lokacija</span>
+          <span>{formatLocationCount(brand.availabilityCount)}</span>
         </div>
         <div className="mt-auto pt-6">
           <Link

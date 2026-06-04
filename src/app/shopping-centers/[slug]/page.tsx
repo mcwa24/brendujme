@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
-import { MapPin } from "lucide-react";
+import { ExternalLink, MapPin } from "lucide-react";
+import { googleMapsUrl } from "@/lib/maps/google-maps-url";
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
 import { BrandCard } from "@/components/brands/brand-card";
@@ -9,6 +10,7 @@ import {
   getBrandBySlug,
   getShoppingCenterBySlug,
 } from "@/lib/data/repository";
+import { formatBrandCountPlus } from "@/lib/format/sr-plural";
 import { createMetadata } from "@/lib/seo";
 
 interface PageProps {
@@ -40,6 +42,15 @@ export default async function ShoppingCenterPage({ params }: PageProps) {
     await Promise.all(center.brandSlugs.map((s) => getBrandBySlug(s)))
   ).filter(Boolean);
 
+  const mapsHref = center.address
+    ? googleMapsUrl({
+        address: center.address,
+        city: center.city,
+        latitude: center.latitude,
+        longitude: center.longitude,
+      })
+    : null;
+
   return (
     <>
       <section className="border-b border-border bg-card">
@@ -57,13 +68,36 @@ export default async function ShoppingCenterPage({ params }: PageProps) {
               <h1 className="font-display text-4xl font-semibold md:text-5xl">
                 {center.name}
               </h1>
-              <div className="mt-3 flex items-center gap-2 text-muted">
-                <MapPin className="h-4 w-4" />
-                {center.city}
+              <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-muted">
+                {center.address ? (
+                  <span className="flex items-start gap-2">
+                    <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
+                    <span>
+                      {center.address}
+                      <span className="text-muted"> · {center.city}</span>
+                    </span>
+                  </span>
+                ) : (
+                  <span className="flex items-center gap-2">
+                    <MapPin className="h-4 w-4" />
+                    {center.city}
+                  </span>
+                )}
+                {mapsHref && (
+                  <a
+                    href={mapsHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-accent hover:underline"
+                  >
+                    Google Maps
+                    <ExternalLink className="h-3.5 w-3.5" />
+                  </a>
+                )}
               </div>
               <p className="mt-4 max-w-2xl text-muted">{center.description}</p>
               <p className="mt-4 font-medium text-success">
-                {center.brandCount}+ brendova
+                {formatBrandCountPlus(center.brandCount)}
               </p>
             </div>
           </FadeIn>

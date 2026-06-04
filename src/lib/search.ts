@@ -3,6 +3,8 @@ import { retailers } from "@/lib/data/retailers";
 import { shoppingCenters } from "@/lib/data/shopping-centers";
 import { fashionCompanyStores } from "@/lib/data/fashion-company";
 import { getCategoryName } from "@/lib/data/categories";
+import { getRetailerCatalogMeta } from "@/lib/data/retailer-catalog-meta";
+import { formatBrandCount, formatLocationCount } from "@/lib/format/sr-plural";
 import type { SearchResult } from "@/types";
 
 function normalize(text: string): string {
@@ -36,7 +38,7 @@ export function searchAll(query: string): SearchResult[] {
         type: "brand",
         slug: brand.slug,
         title: brand.name,
-        subtitle: `${getCategoryName(brand.category)} · ${brand.availabilityCount} lokacija`,
+        subtitle: `${getCategoryName(brand.category)} · ${formatLocationCount(brand.availabilityCount)}`,
         href: `/brands/${brand.slug}`,
       });
     }
@@ -48,11 +50,15 @@ export function searchAll(query: string): SearchResult[] {
       normalize(retailer.city).includes(q) ||
       normalize(retailer.description).includes(q)
     ) {
+      const meta = getRetailerCatalogMeta(retailer.slug);
+      const brandLine = meta
+        ? formatBrandCount(meta.brandCount)
+        : formatBrandCount(retailer.brandCount);
       add({
         type: "retailer",
         slug: retailer.slug,
         title: retailer.name,
-        subtitle: `${retailer.city} · ${retailer.brandCount} brendova`,
+        subtitle: `${retailer.city} · ${brandLine}`,
         href: `/retailers/${retailer.slug}`,
       });
     }
@@ -68,7 +74,7 @@ export function searchAll(query: string): SearchResult[] {
         type: "shopping-center",
         slug: center.slug,
         title: center.name,
-        subtitle: `${center.city} · ${center.brandCount} brendova`,
+        subtitle: `${center.city} · ${formatBrandCount(center.brandCount)}`,
         href: `/shopping-centers/${center.slug}`,
       });
     }

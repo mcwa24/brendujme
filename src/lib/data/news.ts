@@ -29,11 +29,11 @@ export const newsArticles: NewsArticle[] = [
   },
   {
     slug: "usce-nova-krila",
-    title: "Ušće Shopping Center najavljuje novo krilo sa luxury brendovima",
+    title: "Ušće Shopping Center najavljuje novo krilo sa luxury brendima",
     excerpt:
-      "Investicija od 15 miliona evra donosi 20 novih premium i luxury brendova.",
+      "Investicija od 15 miliona evra donosi 20 novih premium i luxury brenda.",
     content:
-      "Ušće nastavlja transformaciju u premium retail destinaciju. Novo krilo će domaćinovati brendovima poput Sandro, Maje i dodatnim beauty konceptima.",
+      "Ušće nastavlja transformaciju u premium retail destinaciju. Novo krilo će domaćinovati brendima poput Sandro, Maje i dodatnim beauty konceptima.",
     publishedAt: "2026-05-22",
     category: "Tržni centri",
     featured: false,
@@ -97,7 +97,7 @@ export const newsArticles: NewsArticle[] = [
     excerpt:
       "Tory Burch, Coach i Michael Kors u novom konceptu prodavnice.",
     content:
-      "Luxury Gallery renovira prostor u Rajicevoj sa fokusom na handbags i premium aksesoare vodećih svetskih brendova.",
+      "Luxury Gallery renovira prostor u Rajicevoj sa fokusom na handbags i premium aksesoare vodećih svetskih brenda.",
     publishedAt: "2026-05-10",
     category: "Retail",
     featured: false,
@@ -136,7 +136,7 @@ export const newsArticles: NewsArticle[] = [
     excerpt:
       "Modernizacija prostora privlači nove brendove i posetioce.",
     content:
-      "Promenada investira u komfor posetilaca i proširuje modnu ponudu sa novim international brendovima.",
+      "Promenada investira u komfor posetilaca i proširuje modnu ponudu sa novim international brendima.",
     publishedAt: "2026-05-03",
     category: "Tržni centri",
     featured: false,
@@ -183,7 +183,7 @@ export const newsArticles: NewsArticle[] = [
   },
   {
     slug: "outlet-park-sezonsko",
-    title: "Outlet Park najavljuje sezonsku rasprodaju premium brendova",
+    title: "Outlet Park najavljuje sezonsku rasprodaju premium brenda",
     excerpt:
       "Calvin Klein, Tommy Hilfiger i Guess sa popustima do 50%.",
     content:
@@ -248,7 +248,7 @@ export const newsArticles: NewsArticle[] = [
   },
   {
     slug: "retail-intelligence-2026",
-    title: "Retail Intelligence: Stanje premium brendova u Srbiji 2026",
+    title: "Retail Intelligence: Stanje premium brenda u Srbiji 2026",
     excerpt:
       "Godišnji izveštaj Bilbord Brands o rastu i trendovima na tržištu.",
     content:

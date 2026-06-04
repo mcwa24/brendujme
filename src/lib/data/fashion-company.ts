@@ -1,6 +1,6 @@
 /**
  * Podaci preuzeti sa https://www.fashioncompany.rs
- * - Portfolio brendova: /brands/
+ * - Portfolio brenda: /brands/
  * - Prodajna mesta: /loyalty-program/ (tabela prodavnica)
  * - Dopune iz vesti na sajtu (Galerija, Ušće, Maje, itd.)
  * Poslednja verifikacija: jun 2026
@@ -243,9 +243,9 @@ export const fashionCompanyRetailer: Retailer = {
   slug: "fashion-company",
   name: "Fashion Company",
   description:
-    "Najveći distributer međunarodnih modnih brendova u regionu — mono-brand prodavnice, Fashion&Friends i premium lokacije u Srbiji.",
+    "Najveći distributer međunarodnih modnih brenda u regionu — mono-brand prodavnice, Fashion&Friends i premium lokacije u Srbiji.",
   city: "Novi Beograd",
-  brandCount: fashionCompanyBrands.filter((b) => b.slug).length,
+  brandCount: fashionCompanyBrands.length,
   brandSlugs: fashionCompanyBrands
     .map((b) => b.slug)
     .filter((s): s is string => Boolean(s)),

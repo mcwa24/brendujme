@@ -1,5 +1,5 @@
 /**
- * Inkrementalni import Office Shoes brendova i prodavnica (bez brisanja ostalih podataka).
+ * Inkrementalni import Office Shoes brenda i prodavnica (bez brisanja ostalih podataka).
  * Zahteva: scrape:office → office-shoes-scraped.json + .env.local
  * npm run db:seed:office
  */
@@ -92,7 +92,7 @@ async function main() {
       slug: RETAILER_SLUG,
       name: "Office Shoes",
       description:
-        "Vodeća mreža prodavnica obuće u Srbiji — Timberland, Calvin Klein, New Balance, Dr. Martens, Skechers i 40+ brendova.",
+        "Vodeća mreža prodavnica obuće u Srbiji — Timberland, Calvin Klein, New Balance, Dr. Martens, Skechers i 40+ brenda.",
       headquarters_city: "Beograd",
       headquarters_city_id: cityIds.get("beograd") ?? null,
       website: "https://www.officeshoes.rs",
@@ -130,7 +130,7 @@ async function main() {
     else brandsCreated += 1;
   }
   brandIds = await loadIdMap(db, "brands");
-  console.log(`  novih brendova: ${brandsCreated}`);
+  console.log(`  novih brenda: ${brandsCreated}`);
 
   const { data: existingStores } = await db
     .from("store_locations")
@@ -225,7 +225,7 @@ async function main() {
   }
 
   console.log("\nGotovo.");
-  console.log(`  brendova u Office: ${scraped.brands.length}`);
+  console.log(`  brenda u Office: ${scraped.brands.length}`);
   console.log(`  prodavnica: ${storeIds.length}`);
 }
 

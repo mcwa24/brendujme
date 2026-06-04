@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { formatBrandCount } from "@/lib/format/sr-plural";
 import { ArrowUpRight, MapPin } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
@@ -29,7 +30,7 @@ export function ShoppingCentersSection({ centers }: ShoppingCentersSectionProps)
             Popularni tržni centri
           </h2>
           <p className="mt-3 max-w-xl text-muted">
-            Najveće retail destinacije sa najbogatijom ponudom brendova.
+            Najveće retail destinacije sa najbogatijom ponudom brenda.
           </p>
         </FadeIn>
 
@@ -103,7 +104,7 @@ export function ShoppingCentersSection({ centers }: ShoppingCentersSectionProps)
                   {active.description}
                 </p>
                 <p className="mt-4 text-sm font-medium text-success">
-                  {active.brandCount} brendova u ponudi
+                  {formatBrandCount(active.brandCount)} u ponudi
                 </p>
               </div>
             </PremiumCard>

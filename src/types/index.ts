@@ -82,6 +82,9 @@ export interface ShoppingCenter {
   slug: string;
   name: string;
   city: string;
+  address: string;
+  latitude?: number | null;
+  longitude?: number | null;
   brandCount: number;
   description: string;
   brandSlugs: string[];

@@ -20,6 +20,7 @@ import {
 } from "@/lib/data/repository";
 import { ShoppingCenterLogo } from "@/components/shopping-centers/shopping-center-logo";
 import { getFashionCompanyStoresByBrand } from "@/lib/data/fashion-company";
+import { formatBrandCount, formatLocationCount } from "@/lib/format/sr-plural";
 import { createMetadata } from "@/lib/seo";
 
 interface PageProps {
@@ -129,7 +130,7 @@ export default async function BrandDetailPage({ params }: PageProps) {
             <FadeIn>
               <RetailerSectionTitle retailerSlug="fashion-company" />
               <p className="mt-2 text-muted">
-                {fcStores.length} lokacija u mreži u Srbiji.
+                {formatLocationCount(fcStores.length)} u mreži u Srbiji.
               </p>
             </FadeIn>
             <div className="mt-10 grid gap-5 md:grid-cols-2">
@@ -171,7 +172,7 @@ export default async function BrandDetailPage({ params }: PageProps) {
                         </h3>
                         <p className="mt-2 text-sm text-muted">{center.city}</p>
                         <p className="mt-3 text-sm text-success">
-                          {center.brandCount} brendova u centru
+                          {formatBrandCount(center.brandCount)} u centru
                         </p>
                       </PremiumCard>
                     </Link>

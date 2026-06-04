@@ -5,7 +5,7 @@ import { createMetadata } from "@/lib/seo";
 export const metadata = createMetadata({
   title: "O nama",
   description:
-    "Bilbord Brands je premium platforma za retail inteligenciju i otkrivanje brendova u Srbiji.",
+    "Bilbord Brands je premium platforma za retail inteligenciju i otkrivanje brenda u Srbiji.",
   path: "/about",
 });
 
@@ -16,11 +16,11 @@ export default function AboutPage() {
         <h1 className="font-display text-4xl font-semibold md:text-5xl">O nama</h1>
         <div className="mt-8 max-w-3xl space-y-6 text-muted">
           <p className="text-lg text-foreground">
-            Bilbord Brands je premium platforma za otkrivanje brendova dostupnih u
+            Bilbord Brands je premium platforma za otkrivanje brenda dostupnih u
             Srbiji.
           </p>
           <p>
-            Pomažemo kupcima, retail profesionalcima i brendovima da pronađu tačne
+            Pomažemo kupcima, retail profesionalcima i brendima da pronađu tačne
             informacije o dostupnosti — gde se prodaje, u kojim tržnim centrima i kod
             kojih partnera.
           </p>

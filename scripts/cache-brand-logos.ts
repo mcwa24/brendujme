@@ -172,7 +172,7 @@ async function main() {
   }
 
   fs.writeFileSync(MANIFEST_PATH, `${JSON.stringify(manifest, null, 2)}\n`);
-  console.log(`\nManifest: ${Object.keys(manifest).length} brendova sa logom`);
+  console.log(`\nManifest: ${Object.keys(manifest).length} brenda sa logom`);
 }
 
 main();

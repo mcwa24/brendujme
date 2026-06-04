@@ -25,6 +25,12 @@ import {
   bilbordSlugFromFfSlug,
 } from "@/lib/data/ff-brand-slugs";
 import { Badge } from "@/components/ui/badge";
+import {
+  formatBrandCount,
+  formatBrandCountPlus,
+  formatLocationCount,
+  formatStoreCount,
+} from "@/lib/format/sr-plural";
 
 export function FashionCompanyDetail() {
   const [query, setQuery] = useState("");
@@ -80,7 +86,7 @@ export function FashionCompanyDetail() {
     <div className="space-y-16">
       <section>
         <h2 className="font-display text-2xl font-semibold md:text-3xl">
-          Portfolio brendova
+          Portfolio brenda
         </h2>
         <p className="mt-2 max-w-2xl text-muted">
           Brendovi koje Fashion Company zastupa u Srbiji — prema zvaničnom sajtu.
@@ -122,9 +128,9 @@ export function FashionCompanyDetail() {
         <p className="mt-2 max-w-2xl text-muted">
           Multibrand koncept Fashion Company —{" "}
           <strong className="text-foreground">
-            {fashionAndFriendsMeta.brandCount} brendova
+            {formatBrandCount(fashionAndFriendsMeta.brandCount)}
           </strong>{" "}
-          preuzeto sa zvanične F&amp;F stranice brendova. U radnjama Fashion&amp;Friends
+          preuzeto sa zvanične F&amp;F stranice brenda. U radnjama Fashion&amp;Friends
           dostupna je većina ovog portfolija (pored mono-brand prodavnica u istim centrima).
         </p>
         <div className="mt-4 flex flex-wrap gap-3 text-sm text-muted">
@@ -179,7 +185,8 @@ export function FashionCompanyDetail() {
           Fashion&amp;Friends prodavnice
         </h3>
         <p className="mt-2 text-sm text-muted">
-          {fashionAndFriendsStores.length} dokumentovanih multibrand lokacija u Srbiji.
+          {formatLocationCount(fashionAndFriendsStores.length)} dokumentovanih
+          multibrand lokacija u Srbiji.
         </p>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           {fashionAndFriendsStores.map((store) => (
@@ -203,7 +210,8 @@ export function FashionCompanyDetail() {
                 )}
               </div>
               <p className="mt-4 text-xs text-muted">
-                +{fashionAndFriendsMeta.brandCount} brendova u ponudi (online katalog)
+                {formatBrandCountPlus(fashionAndFriendsMeta.brandCount)} u ponudi
+                (online katalog)
               </p>
             </PremiumCard>
           ))}
@@ -262,9 +270,9 @@ export function FashionCompanyDetail() {
         </div>
 
         <p className="mt-4 text-sm text-muted">
-          {filteredStores.length} prodajnih mesta
+          {formatStoreCount(filteredStores.length)}
           {filteredStores.length !== fashionCompanyStores.length &&
-            ` (od ${fashionCompanyStores.length})`}
+            ` (od ${formatStoreCount(fashionCompanyStores.length)})`}
         </p>
 
         <div className="mt-8 space-y-10">
@@ -344,7 +352,8 @@ function StoreCard({ store }: { store: FashionCompanyStore }) {
       </p>
       {isFfMultibrand && (
         <p className="mt-2 text-xs text-muted">
-          Ponuda: {fashionAndFriendsMeta.brandCount}+ brendova (Replay, Diesel, BOSS,
+          Ponuda: {formatBrandCountPlus(fashionAndFriendsMeta.brandCount)} (Replay,
+          Diesel, BOSS,
           Liu Jo, KIKO, UGG…).{" "}
           <a
             href={fashionAndFriendsMeta.brandsUrl}

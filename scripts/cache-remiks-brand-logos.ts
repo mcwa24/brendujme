@@ -1,5 +1,5 @@
 /**
- * Preuzima zvanične logoe brendova sa Remiks stranica (/brendovi/{slug}/).
+ * Preuzima zvanične logoe brenda sa Remiks stranica (/brendovi/{slug}/).
  * Izvor: media/amasty/shopby/option_images/*.jpg
  *
  * npm run logos:remiks
@@ -168,7 +168,7 @@ async function main() {
   let skip = 0;
   let fail = 0;
 
-  console.log(`Remiks logoi — ${brands.length} brendova…\n`);
+  console.log(`Remiks logoi — ${brands.length} brenda…\n`);
 
   for (const brand of brands) {
     const existing = manifest[brand.slug];

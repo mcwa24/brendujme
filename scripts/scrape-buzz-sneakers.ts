@@ -201,7 +201,7 @@ async function main() {
   if (!brandsHtml) throw new Error("Ne mogu učitati /brendovi");
 
   const brands = parseBrands(brandsHtml);
-  console.log(`  ${brands.length} brendova`);
+  console.log(`  ${brands.length} brenda`);
 
   console.log("Učitavam /radnje…");
   const storesHtml = await fetchHtml("radnje");

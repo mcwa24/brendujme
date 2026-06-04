@@ -57,6 +57,9 @@ export interface DbShoppingCenter {
   slug: string;
   name: string;
   city: string;
+  address: string;
+  latitude: number | null;
+  longitude: number | null;
   description: string;
   logo_url: string | null;
   logo_storage_path: string | null;

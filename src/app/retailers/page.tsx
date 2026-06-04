@@ -4,12 +4,14 @@ import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
 import { RetailerLogo } from "@/components/retailers/retailer-logo";
 import { PremiumCard } from "@/components/ui/premium-card";
+import { getRetailerCatalogMeta } from "@/lib/data/retailer-catalog-meta";
 import { getAllRetailers } from "@/lib/data/repository";
+import { formatBrandCount, formatStoreCount } from "@/lib/format/sr-plural";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
   title: "Prodavci",
-  description: "Retail partneri i distributeri premium brendova u Srbiji.",
+  description: "Retail partneri i distributeri premium brenda u Srbiji.",
   path: "/retailers",
 });
 
@@ -25,7 +27,9 @@ export default async function RetailersPage() {
         </p>
       </FadeIn>
       <div className="mt-12 grid gap-6 sm:grid-cols-2">
-        {retailers.map((retailer, i) => (
+        {retailers.map((retailer, i) => {
+          const catalogMeta = getRetailerCatalogMeta(retailer.slug);
+          return (
           <FadeIn key={retailer.slug} delay={i * 0.04}>
             <Link href={`/retailers/${retailer.slug}`}>
               <PremiumCard className="p-8">
@@ -46,13 +50,21 @@ export default async function RetailersPage() {
                   {retailer.city}
                 </div>
                 <p className="mt-3 line-clamp-2 text-muted">{retailer.description}</p>
-                <p className="mt-4 text-sm text-success">
-                  {retailer.brandCount} brendova
-                </p>
+                {catalogMeta ? (
+                  <p className="mt-4 text-sm text-success">
+                    {formatBrandCount(catalogMeta.brandCount)} u portfoliju ·{" "}
+                    {formatStoreCount(catalogMeta.storeCount)} u Srbiji
+                  </p>
+                ) : (
+                  <p className="mt-4 text-sm text-success">
+                    {formatBrandCount(retailer.brandCount)}
+                  </p>
+                )}
               </PremiumCard>
             </Link>
           </FadeIn>
-        ))}
+          );
+        })}
       </div>
     </Container>
   );

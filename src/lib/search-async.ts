@@ -2,6 +2,8 @@ import { getAllBrands, getAllRetailers, getAllShoppingCenters } from "@/lib/data
 import { fashionCompanyStores } from "@/lib/data/fashion-company";
 import { fashionAndFriendsMeta } from "@/lib/data/fashion-and-friends";
 import { getCategoryName } from "@/lib/data/categories";
+import { getRetailerCatalogMeta } from "@/lib/data/retailer-catalog-meta";
+import { formatBrandCount, formatLocationCount } from "@/lib/format/sr-plural";
 import type { SearchResult } from "@/types";
 
 function normalize(text: string): string {
@@ -41,7 +43,7 @@ export async function searchAllAsync(query: string): Promise<SearchResult[]> {
         type: "brand",
         slug: brand.slug,
         title: brand.name,
-        subtitle: `${getCategoryName(brand.category)} · ${brand.availabilityCount} lokacija`,
+        subtitle: `${getCategoryName(brand.category)} · ${formatLocationCount(brand.availabilityCount)}`,
         href: `/brands/${brand.slug}`,
       });
     }
@@ -57,7 +59,9 @@ export async function searchAllAsync(query: string): Promise<SearchResult[]> {
         type: "retailer",
         slug: retailer.slug,
         title: retailer.name,
-        subtitle: `${retailer.city} · ${retailer.brandCount} brendova`,
+        subtitle: `${retailer.city} · ${formatBrandCount(
+          getRetailerCatalogMeta(retailer.slug)?.brandCount ?? retailer.brandCount
+        )}`,
         href: `/retailers/${retailer.slug}`,
       });
     }
@@ -73,7 +77,7 @@ export async function searchAllAsync(query: string): Promise<SearchResult[]> {
         type: "shopping-center",
         slug: center.slug,
         title: center.name,
-        subtitle: `${center.city} · ${center.brandCount} brendova`,
+        subtitle: `${center.city} · ${formatBrandCount(center.brandCount)}`,
         href: `/shopping-centers/${center.slug}`,
       });
     }
@@ -88,7 +92,7 @@ export async function searchAllAsync(query: string): Promise<SearchResult[]> {
       type: "retailer",
       slug: "fashion-company",
       title: "Fashion&Friends",
-      subtitle: `${fashionAndFriendsMeta.brandCount} brendova · Fashion Company`,
+      subtitle: `${formatBrandCount(fashionAndFriendsMeta.brandCount)} · Fashion Company`,
       href: "/retailers/fashion-company",
     });
   }

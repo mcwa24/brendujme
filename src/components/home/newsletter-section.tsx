@@ -14,10 +14,10 @@ export function NewsletterSection() {
           <PremiumCard className="px-8 py-12 md:px-16 md:py-16">
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="font-display text-3xl font-semibold tracking-tight md:text-4xl">
-                Budite u toku sa novim brendovima u Srbiji
+                Budite u toku sa novim brendima u Srbiji
               </h2>
               <p className="mt-4 text-muted">
-                Mesečni pregled novih otvaranja, retail vesti i premium brendova
+                Mesečni pregled novih otvaranja, retail vesti i premium brenda
                 na vašem emailu.
               </p>
               <form

@@ -1,6 +1,6 @@
 # Bilbord Brands
 
-Premium platforma za otkrivanje brendova dostupnih u Srbiji — retail inteligencija, ne e-commerce.
+Premium platforma za otkrivanje brenda dostupnih u Srbiji — retail inteligencija, ne e-commerce.
 
 ## Tech stack
 
@@ -23,7 +23,7 @@ Otvorite [http://localhost:3000](http://localhost:3000).
 ## Struktura
 
 - `/` — Početna (hero, brendovi, kategorije, TC, vesti, statistika, newsletter)
-- `/brands` — Direktorijum brendova sa filterima
+- `/brands` — Direktorijum brenda sa filterima
 - `/brands/[slug]` — Profil brenda
 - `/categories/[slug]` — Brendovi po kategoriji
 - `/retailers` — Prodavci
@@ -32,7 +32,7 @@ Otvorite [http://localhost:3000](http://localhost:3000).
 
 Globalna pretraga: `⌘K` / `Ctrl+K`
 
-## Logoi brendova
+## Logoi brenda
 
 Prioritet: upload → `logoUrl` → keš (`npm run logos:cache`) → typography placeholder.
 
@@ -40,7 +40,7 @@ Logoi se **ne učitavaju sa interneta pri svakom request-u** — samo iz `public
 
 ## Mock podaci
 
-- 20 brendova
+- 20 brenda
 - 10 tržnih centara
 - 15 prodavaca
 - 20 vesti

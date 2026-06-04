@@ -70,7 +70,7 @@ export function BrandDirectory({ brands }: BrandDirectoryProps) {
     <Container narrow className="py-12 md:py-16">
       <FadeIn>
         <h1 className="font-display text-4xl font-semibold tracking-tight md:text-5xl">
-          Direktorijum brendova
+          Direktorijum brenda
         </h1>
         <p className="mt-3 max-w-2xl text-muted">
           Pretražite i filtrirajte premium brendove dostupne u Srbiji.
@@ -183,7 +183,7 @@ export function BrandDirectory({ brands }: BrandDirectoryProps) {
 
           {filtered.length === 0 && (
             <p className="mt-16 text-center text-muted">
-              Nema brendova za izabrane filtere.
+              Nema brenda za izabrane filtere.
             </p>
           )}
         </div>

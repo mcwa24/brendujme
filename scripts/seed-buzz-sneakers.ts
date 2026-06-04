@@ -1,5 +1,5 @@
 /**
- * Inkrementalni import Buzz Sneakers brendova i radnji u Srbiji.
+ * Inkrementalni import Buzz Sneakers brenda i radnji u Srbiji.
  * npm run scrape:buzz && npm run db:seed:buzz
  */
 
@@ -88,7 +88,7 @@ async function main() {
       slug: RETAILER_SLUG,
       name: scraped.retailerName,
       description:
-        "Vodeća sneaker i lifestyle mreža u regionu — Nike, Adidas, New Balance, Puma, Converse i 35+ brendova u Srbiji.",
+        "Vodeća sneaker i lifestyle mreža u regionu — Nike, Adidas, New Balance, Puma, Converse i 35+ brenda u Srbiji.",
       headquarters_city: "Beograd",
       headquarters_city_id: cityIds.get("beograd") ?? null,
       website: "https://www.buzzsneakers.rs",
@@ -229,7 +229,7 @@ async function main() {
   }
 
   console.log("\nGotovo.");
-  console.log(`  brendova: ${uniqueBrandSlugs.length}`);
+  console.log(`  brenda: ${uniqueBrandSlugs.length}`);
   console.log(`  radnji: ${storeIds.length}`);
 }
 

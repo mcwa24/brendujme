@@ -8,7 +8,7 @@ import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
   title: "Vesti",
-  description: "Najnovije retail vesti, otvaranja brendova i trendovi na tržištu Srbije.",
+  description: "Najnovije retail vesti, otvaranja brenda i trendovi na tržištu Srbije.",
   path: "/news",
 });
 

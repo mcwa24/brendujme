@@ -14,7 +14,7 @@ export const categories: Category[] = [
   {
     slug: "sports",
     name: "Sport",
-    description: "Sportska odeća i oprema vrhunskih brendova",
+    description: "Sportska odeća i oprema vrhunskih brenda",
   },
   {
     slug: "luxury",

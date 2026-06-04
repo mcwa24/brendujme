@@ -1,5 +1,5 @@
 /**
- * Katalog brendova sa https://www.fashionandfriends.com/rs/brendovi/
+ * Katalog brenda sa https://www.fashionandfriends.com/rs/brendovi/
  * (redirect sa fashionandfriends.rs)
  * Poslednja verifikacija: jun 2026
  */

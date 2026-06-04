@@ -7,6 +7,7 @@ import { FadeIn } from "@/components/motion/fade-in";
 import { PremiumCard } from "@/components/ui/premium-card";
 import { buttonVariants } from "@/components/ui/button";
 import type { RetailerStore } from "@/types";
+import { formatRetailerStoreCount } from "@/lib/format/sr-plural";
 import { cn } from "@/lib/utils";
 
 interface CityOption {
@@ -95,9 +96,7 @@ export function RetailerStoresSection({
       ) : (
         <>
           <p className="mt-6 text-sm text-muted">
-            {filtered.length}{" "}
-            {filtered.length === 1 ? "prodavnica" : "prodavnica"} u gradu{" "}
-            {selectedCity}
+            {formatRetailerStoreCount(filtered.length)} u gradu {selectedCity}
           </p>
           <div className="mt-8 grid gap-5 md:grid-cols-2">
             {filtered.map((store, i) => (

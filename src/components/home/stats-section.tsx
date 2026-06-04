@@ -7,7 +7,7 @@ interface StatsSectionProps {
 
 export function StatsSection({ brandCount }: StatsSectionProps) {
   const stats = [
-    { value: `${brandCount}+`, label: "Brendova u direktorijumu" },
+    { value: `${brandCount}+`, label: "Brenda u direktorijumu" },
     { value: "350+", label: "Prodajnih lokacija" },
     { value: "25+", label: "Gradova" },
     { value: "50+", label: "Tržnih centara" },
