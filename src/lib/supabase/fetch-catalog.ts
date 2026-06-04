@@ -1,4 +1,8 @@
 import {
+  IMPORTED_RETAILER_SLUGS,
+  sortImportedRetailers,
+} from "@/lib/data/imported-retailers";
+import {
   mapCategory,
   mapNewsArticle,
   mapRetailer,
@@ -32,7 +36,11 @@ export async function fetchRetailersFromSupabase(): Promise<Retailer[] | null> {
   if (!supabase) return null;
 
   const [{ data: retailers, error }, { data: links }] = await Promise.all([
-    supabase.from("retailers").select("*").eq("status", "published").order("name"),
+    supabase
+      .from("retailers")
+      .select("*")
+      .eq("status", "published")
+      .in("slug", [...IMPORTED_RETAILER_SLUGS]),
     supabase.from("brand_retailers").select("brand_id, retailer_id"),
   ]);
 
@@ -56,12 +64,13 @@ export async function fetchRetailersFromSupabase(): Promise<Retailer[] | null> {
     retailers.map((r) => [r.slug as string, r.id as string])
   );
 
-  return (retailers as DbRetailer[]).map((row) =>
+  const mapped = (retailers as DbRetailer[]).map((row) =>
     mapRetailer(
       row,
       brandsByRetailerId.get(retailerIdBySlug.get(row.slug) ?? "") ?? []
     )
   );
+  return sortImportedRetailers(mapped);
 }
 
 export async function fetchShoppingCentersFromSupabase(): Promise<

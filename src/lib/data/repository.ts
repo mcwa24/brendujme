@@ -3,6 +3,10 @@ import { brands as staticBrands, getBrandBySlug as getStaticBrandBySlug } from "
 import { categories as staticCategories } from "@/lib/data/categories";
 import { newsArticles as staticNews } from "@/lib/data/news";
 import { retailers as staticRetailers } from "@/lib/data/retailers";
+import {
+  isImportedRetailerSlug,
+  sortImportedRetailers,
+} from "@/lib/data/imported-retailers";
 import { shoppingCenters as staticShoppingCenters } from "@/lib/data/shopping-centers";
 import {
   fetchAllBrandsFromSupabase,
@@ -83,7 +87,9 @@ export const getAllRetailers = cache(async (): Promise<Retailer[]> => {
     const fromDb = await fetchRetailersFromSupabase();
     if (fromDb?.length) return fromDb;
   }
-  return staticRetailers;
+  return sortImportedRetailers(
+    staticRetailers.filter((r) => isImportedRetailerSlug(r.slug))
+  );
 });
 
 export async function getRetailerBySlug(slug: string): Promise<Retailer | undefined> {

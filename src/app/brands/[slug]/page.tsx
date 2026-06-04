@@ -5,6 +5,7 @@ import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
 import { RelatedBrandsCarousel } from "@/components/brands/related-brands-carousel";
 import { BrandHero } from "@/components/brands/brand-hero";
+import { BrandLocationsSection } from "@/components/brands/brand-locations-section";
 import { hasBrandLogo } from "@/lib/brand-logo-resolve";
 import { PremiumCard } from "@/components/ui/premium-card";
 import { getCategoryName } from "@/lib/data/categories";
@@ -18,8 +19,6 @@ import {
 import { ShoppingCenterLogo } from "@/components/shopping-centers/shopping-center-logo";
 import { getFashionCompanyStoresByBrand } from "@/lib/data/fashion-company";
 import { createMetadata } from "@/lib/seo";
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -114,36 +113,13 @@ export default async function BrandDetailPage({ params }: PageProps) {
               Gde kupiti
             </h2>
             <p className="mt-2 text-muted">
-              Prodavnice i lokacije gde je {brand.name} dostupan u Srbiji.
+              Izaberite grad — prikazuju se samo prodavnice u tom gradu.
             </p>
           </FadeIn>
-          <div className="mt-10 grid gap-5 md:grid-cols-2">
-            {brand.locations.map((loc, i) => (
-              <FadeIn key={loc.id} delay={i * 0.05}>
-                <PremiumCard className="p-8">
-                  <h3 className="font-display text-xl font-semibold">
-                    {loc.storeName}
-                  </h3>
-                  <div className="mt-4 space-y-2 text-muted">
-                    <p className="flex items-start gap-2">
-                      <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
-                      {loc.address}
-                    </p>
-                    <p>{loc.city}</p>
-                  </div>
-                  <Link
-                    href={`/retailers/${loc.retailerSlug}`}
-                    className={cn(
-                      buttonVariants({ variant: "outline", size: "sm" }),
-                      "mt-6 rounded-full"
-                    )}
-                  >
-                    Pogledaj prodavca
-                  </Link>
-                </PremiumCard>
-              </FadeIn>
-            ))}
-          </div>
+          <BrandLocationsSection
+            brandName={brand.name}
+            locations={brand.locations}
+          />
         </section>
 
         {fcStores.length > 0 && (

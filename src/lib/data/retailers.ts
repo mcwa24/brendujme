@@ -1,135 +1,49 @@
 import type { Retailer } from "@/types";
+import { IMPORTED_RETAILER_SLUGS, sortImportedRetailers } from "@/lib/data/imported-retailers";
 
-export const retailers: Retailer[] = [
+/** Samo stvarno uvezeni retail partneri (fallback bez Supabase) */
+const importedRetailers: Retailer[] = [
   {
-    slug: "fashion-company",
-    name: "Fashion Company",
+    slug: "buzz-sneakers",
+    name: "Buzz Sneakers",
     description:
-      "Najveći distributer modnih brendova u Jugoistočnoj Evropi — Diesel, Tommy Hilfiger, Scotch & Soda, Mango, Timberland i 30+ brendova u Srbiji.",
+      "Sneaker i lifestyle mreža — Nike, Adidas, New Balance, Puma, Converse i 35+ brendova u radnjama širom Srbije.",
     city: "Beograd",
-    brandCount: 33,
+    brandCount: 38,
+    brandSlugs: ["nike", "adidas", "new-balance", "puma", "converse", "vans"],
+  },
+  {
+    slug: "office-shoes",
+    name: "Office Shoes",
+    description:
+      "Vodeća mreža prodavnica obuće u Srbiji — Timberland, Calvin Klein, New Balance, Dr. Martens, Skechers i 40+ brendova.",
+    city: "Beograd",
+    brandCount: 43,
     brandSlugs: [
-      "scotch-and-soda",
-      "tommy-hilfiger",
-      "calvin-klein",
-      "guess",
-      "mango",
       "timberland",
+      "calvin-klein",
+      "new-balance",
+      "converse",
+      "skechers",
+      "dr-martens",
+      "puma",
+      "vans",
     ],
   },
   {
-    slug: "luxury-gallery",
-    name: "Luxury Gallery",
-    description: "Ekskluzivna destinacija za luksuzne modne i lifestyle brendove.",
+    slug: "sport-time",
+    name: "Sport Time",
+    description:
+      "Ovlašćeni Nike partner u Srbiji — zvanične Nike prodavnice prema nike.com/retail/directory/serbia.",
     city: "Beograd",
-    brandCount: 18,
-    brandSlugs: ["tory-burch", "coach", "michael-kors", "kate-spade"],
-  },
-  {
-    slug: "sport-vision",
-    name: "Sport Vision",
-    description: "Najveća mreža sportskih brendova u regionu.",
-    city: "Beograd",
-    brandCount: 32,
-    brandSlugs: ["nike", "adidas", "puma", "under-armour", "new-balance"],
-  },
-  {
-    slug: "inmedio",
-    name: "Inmedio",
-    description: "Premium concept store za lifestyle i modne dodatke.",
-    city: "Novi Sad",
-    brandCount: 14,
-    brandSlugs: ["cos", "arket", "rituals"],
-  },
-  {
-    slug: "city-fashion",
-    name: "City Fashion",
-    description: "Savremena moda za urbanu publiku u više gradova.",
-    city: "Niš",
-    brandCount: 20,
-    brandSlugs: ["mango", "tommy-hilfiger", "calvin-klein", "guess"],
-  },
-  {
-    slug: "beauty-world",
-    name: "Beauty World",
-    description: "Specijalizovani retailer za kozmetiku i parfeme.",
-    city: "Beograd",
-    brandCount: 28,
-    brandSlugs: ["rituals", "mac", "clinique", "estee-lauder"],
-  },
-  {
-    slug: "department-store",
-    name: "Galerija Department Store",
-    description: "Department store format sa međunarodnim brendovima.",
-    city: "Beograd",
-    brandCount: 45,
-    brandSlugs: ["zara", "massimo-dutti", "bershka", "pull-and-bear"],
-  },
-  {
-    slug: "outlet-park",
-    name: "Outlet Park",
-    description: "Outlet destinacija sa sniženim cenama premium brendova.",
-    city: "Beograd",
-    brandCount: 36,
-    brandSlugs: ["calvin-klein", "tommy-hilfiger", "levis", "guess"],
-  },
-  {
-    slug: "kids-world",
-    name: "Kids World",
-    description: "Specijalizovana prodavnica za dečju modu.",
-    city: "Beograd",
-    brandCount: 12,
-    brandSlugs: ["zara-kids", "h-and-m-kids", "reserved-kids"],
-  },
-  {
-    slug: "tech-hub",
-    name: "Tech Hub",
-    description: "Premium tehnologija i lifestyle gadžeti.",
-    city: "Beograd",
-    brandCount: 8,
-    brandSlugs: ["apple-reseller", "samsung-premium", "bose"],
-  },
-  {
-    slug: "home-design",
-    name: "Home Design Studio",
-    description: "Dizajn nameštaja i premium home dekor.",
-    city: "Beograd",
-    brandCount: 15,
-    brandSlugs: ["west-elm", "pottery-barn", "crate-barrel"],
-  },
-  {
-    slug: "footwear-plus",
-    name: "Footwear Plus",
-    description: "Multi-brand obućarnica sa premium ponudom.",
-    city: "Novi Sad",
-    brandCount: 22,
-    brandSlugs: ["nike", "adidas", "new-balance", "timberland"],
-  },
-  {
-    slug: "urban-style",
-    name: "Urban Style",
-    description: "Streetwear i contemporary moda.",
-    city: "Kragujevac",
-    brandCount: 16,
-    brandSlugs: ["pull-and-bear", "bershka", "cropp", "house"],
-  },
-  {
-    slug: "premium-mall",
-    name: "Premium Mall Stores",
-    description: "Operateri premium prodavnica u tržnim centrima.",
-    city: "Beograd",
-    brandCount: 40,
-    brandSlugs: ["lacoste", "polo-ralph-lauren", "tommy-hilfiger"],
-  },
-  {
-    slug: "european-brands",
-    name: "European Brands",
-    description: "Distribucija evropskih modnih brendova na tržištu Srbije.",
-    city: "Beograd",
-    brandCount: 30,
-    brandSlugs: ["reserved", "sinsay", "mohito", "house"],
+    brandCount: 1,
+    brandSlugs: ["nike"],
   },
 ];
+
+export const retailers: Retailer[] = sortImportedRetailers(importedRetailers);
+
+export { IMPORTED_RETAILER_SLUGS };
 
 export function getRetailerBySlug(slug: string): Retailer | undefined {
   return retailers.find((r) => r.slug === slug);

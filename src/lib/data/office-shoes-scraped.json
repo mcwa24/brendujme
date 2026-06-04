@@ -1,0 +1,600 @@
+{
+  "scrapedAt": "2026-06-04T13:10:06.181Z",
+  "sourceUrl": "https://www.officeshoes.rs/brands",
+  "brands": [
+    {
+      "name": "Bama",
+      "slug": "bama",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/bama.jpg"
+    },
+    {
+      "name": "Birkenstock",
+      "slug": "birkenstock",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/birkenstock.jpg"
+    },
+    {
+      "name": "Blauer",
+      "slug": "blauer",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/blauer.jpg"
+    },
+    {
+      "name": "BOSS",
+      "slug": "boss",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/boss.jpg"
+    },
+    {
+      "name": "BOSS Orange",
+      "slug": "boss",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/boss orange.jpg"
+    },
+    {
+      "name": "Buffalo",
+      "slug": "buffalo",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/buffalo.jpg"
+    },
+    {
+      "name": "Calvin Klein",
+      "slug": "calvin-klein",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/calvin klein.jpg"
+    },
+    {
+      "name": "Calvin Klein Jeans",
+      "slug": "calvin-klein",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/calvin klein jeans.jpg"
+    },
+    {
+      "name": "Cartago",
+      "slug": "cartago",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/cartago.jpg"
+    },
+    {
+      "name": "Collonil",
+      "slug": "collonil",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/collonil.jpg"
+    },
+    {
+      "name": "Converse",
+      "slug": "converse",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/converse.jpg"
+    },
+    {
+      "name": "Crocs",
+      "slug": "crocs",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/crocs.jpg"
+    },
+    {
+      "name": "DFNS",
+      "slug": "dfns",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/dfns.jpg"
+    },
+    {
+      "name": "Dr Martens",
+      "slug": "dr-martens",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/dr martens.jpg"
+    },
+    {
+      "name": "G-Star Raw",
+      "slug": "g-star-raw",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/g-star raw.jpg"
+    },
+    {
+      "name": "Gant",
+      "slug": "gant",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/gant.jpg"
+    },
+    {
+      "name": "GAP",
+      "slug": "gap",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/gap.jpg"
+    },
+    {
+      "name": "Guess",
+      "slug": "guess",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/guess.jpg"
+    },
+    {
+      "name": "HUGO",
+      "slug": "hugo",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/hugo.jpg"
+    },
+    {
+      "name": "Ipanema",
+      "slug": "ipanema",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/ipanema.jpg"
+    },
+    {
+      "name": "Karl Lagerfeld",
+      "slug": "karl-lagerfeld",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/karl lagerfeld.jpg"
+    },
+    {
+      "name": "Kickers",
+      "slug": "kickers",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/kickers.jpg"
+    },
+    {
+      "name": "Lacoste",
+      "slug": "lacoste",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/lacoste.jpg"
+    },
+    {
+      "name": "Levis",
+      "slug": "levis",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/levis.jpg"
+    },
+    {
+      "name": "Lumberjack",
+      "slug": "lumberjack",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/lumberjack.jpg"
+    },
+    {
+      "name": "Moon Boot",
+      "slug": "moon-boot",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/moon boot.jpg"
+    },
+    {
+      "name": "Napapijri",
+      "slug": "napapijri",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/napapijri.jpg"
+    },
+    {
+      "name": "New Balance",
+      "slug": "new-balance",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/new balance.jpg"
+    },
+    {
+      "name": "Palladium",
+      "slug": "palladium",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/palladium.jpg"
+    },
+    {
+      "name": "Pepe Jeans",
+      "slug": "pepe-jeans",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/pepe jeans.jpg"
+    },
+    {
+      "name": "Polo Ralph Lauren",
+      "slug": "polo-ralph-lauren",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/polo ralph lauren.jpg"
+    },
+    {
+      "name": "Puma",
+      "slug": "puma",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/puma.jpg"
+    },
+    {
+      "name": "Replay",
+      "slug": "replay",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/replay.jpg"
+    },
+    {
+      "name": "Rider",
+      "slug": "rider",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/rider.jpg"
+    },
+    {
+      "name": "Skechers",
+      "slug": "skechers",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/skechers.jpg"
+    },
+    {
+      "name": "Steve Madden",
+      "slug": "steve-madden",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/steve madden.jpg"
+    },
+    {
+      "name": "Superdry",
+      "slug": "superdry",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/superdry.jpg"
+    },
+    {
+      "name": "Timberland",
+      "slug": "timberland",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/timberland.jpg"
+    },
+    {
+      "name": "Tommy Hilfiger",
+      "slug": "tommy-hilfiger",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/tommy hilfiger.jpg"
+    },
+    {
+      "name": "UGG",
+      "slug": "ugg",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/ugg.jpg"
+    },
+    {
+      "name": "Vagabond",
+      "slug": "vagabond",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/vagabond.jpg"
+    },
+    {
+      "name": "Vans",
+      "slug": "vans",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/vans.jpg"
+    },
+    {
+      "name": "Zaxy",
+      "slug": "zaxy",
+      "logoUrl": "https://cdn.officeshoes.ws/product_images/brandlogos/zaxy.jpg"
+    }
+  ],
+  "stores": [
+    {
+      "path": "prodavnica_obuce-office-shoes-ušće-shopping-center/5",
+      "name": "Office Shoes - Ušće Shopping Center",
+      "address": "Bulevar Mihajla Pupina br.4",
+      "postalCode": "11000",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381113148624",
+      "email": "off.usce@officeshoes.rs",
+      "shoppingCenterSlug": "usce",
+      "latitude": 44.82113586068229,
+      "longitude": 20.34786752932073
+    },
+    {
+      "path": "prodavnica_obuce-office-shoes-delta-city/33",
+      "name": "Office Shoes - Delta City",
+      "address": "Jurija Gagarina 16 (prizemlje)",
+      "postalCode": "11000",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381113129577",
+      "email": "off.delta@officeshoes.rs",
+      "shoppingCenterSlug": "delta-city",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "path": "prodavnica_obuce-office-shoes-mercator-centar/43",
+      "name": "Office Shoes - Mercator Centar",
+      "address": "Bulevar umetnosti 4",
+      "postalCode": "11000",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381113017230",
+      "email": "off.mercator@officeshoes.rs",
+      "shoppingCenterSlug": "mercator",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "path": "prodavnica_obuce-office-shoes-immo-outlet-centar/72",
+      "name": "Office Shoes - Immo Outlet Centar",
+      "address": "Gandijeva 21",
+      "postalCode": "11000",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381112282855",
+      "email": "off.diskont@officeshoes.rs",
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "path": "prodavnica_obuce-office-shoes-knez-mihailova/32920",
+      "name": "Office Shoes - Knez Mihailova",
+      "address": "Knez Mihailova 1-3.",
+      "postalCode": "11000",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381113034134",
+      "email": "off.knez@officeshoes.rs",
+      "shoppingCenterSlug": null,
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "path": "prodavnica_obuce-office-shoes-stadion-shopping-center/282",
+      "name": "Office Shoes - Stadion Shopping Center",
+      "address": "Zaplanjska br. 32.",
+      "postalCode": "11000",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381116305840",
+      "email": "off.vozdovac@officeshoes.rs",
+      "shoppingCenterSlug": "stadion",
+      "latitude": 44.774909979098844,
+      "longitude": 20.487919315534448
+    },
+    {
+      "path": "prodavnica_obuce-office-shoes-big-fashion/25904",
+      "name": "Office Shoes - BiG Fashion",
+      "address": "Višnjička 84.",
+      "postalCode": "11060",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381114052978",
+      "email": "off.bgbig@officeshoes.rs",
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": 44.79483697464366,
+      "longitude": 18.264700392229962
+    },
+    {
+      "path": "prodavnica_obuce-office-shoes-ada-mall/27808",
+      "name": "Office Shoes - Ada Mall",
+      "address": "Radnička br 9 - lokal br. 00-07",
+      "postalCode": "11000",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381117704961",
+      "email": "off.adamall@officeshoes.rs",
+      "shoppingCenterSlug": "galerija",
+      "latitude": 44.78704648865929,
+      "longitude": 20.418571351895523
+    },
+    {
+      "path": "prodavnica_obuce-office-shoes-beo-centar/29424",
+      "name": "Office Shoes - Beo Centar",
+      "address": "Vojislava Ilica br.141",
+      "postalCode": "11000",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381116900260",
+      "email": "off.beocentar@officeshoes.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 44.7856856,
+      "longitude": 20.5015266
+    },
+    {
+      "path": "prodavnica_obuce-office-shoes-galerija-belgrade/29920",
+      "name": "Office Shoes - Galerija Belgrade",
+      "address": "Bulevar Vudroa Vilsona 14",
+      "postalCode": "11000",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381116904179",
+      "email": "off.bw@officeshoes.rs",
+      "shoppingCenterSlug": "galerija",
+      "latitude": 44.8036997,
+      "longitude": 20.4413032
+    },
+    {
+      "path": "prodavnica_obuce-office-shoes-big-shopping-center/39",
+      "name": "Office Shoes - BiG Shopping Center",
+      "address": "Sentandrejski put 11.",
+      "postalCode": "21000",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "phone": "+381212716064",
+      "email": "off.nsbig@officeshoes.rs",
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "path": "prodavnica_obuce-office-shoes-trg-slobode/283",
+      "name": "Office Shoes - Trg slobode",
+      "address": "Trg slobode br.2.",
+      "postalCode": "21000",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "phone": "+381214722785",
+      "email": "off.nscentar@officeshoes.rs",
+      "shoppingCenterSlug": null,
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "path": "prodavnica_obuce-office-shoes-big-fashion/27020",
+      "name": "Office Shoes - BiG Fashion",
+      "address": "Bulevar Oslobođenja 119",
+      "postalCode": "21000",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "phone": "+381213822515",
+      "email": "off.nspromenada@officeshoes.rs",
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": 45.24547527909902,
+      "longitude": 19.8418521159552
+    },
+    {
+      "path": "prodavnica_obuce-office-shoes-korzo/71",
+      "name": "Office Shoes - Korzo",
+      "address": "Korzo 4.",
+      "postalCode": "24000",
+      "city": "Subotica",
+      "citySlug": "subotica",
+      "phone": "+38124558033",
+      "email": "off.subotica@officeshoes.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 46.10048679878181,
+      "longitude": 19.664953815242153
+    },
+    {
+      "path": "prodavnica_obuce-office-shoes-stop-shop/25141",
+      "name": "Office Shoes - Stop Shop",
+      "address": "Segedinski put 88.",
+      "postalCode": "24000",
+      "city": "Subotica",
+      "citySlug": "subotica",
+      "phone": "+381244101619",
+      "email": "off.sushoppi@officeshoes.rs",
+      "shoppingCenterSlug": "zlatibor",
+      "latitude": 46.10321244168476,
+      "longitude": 19.708272510653842
+    },
+    {
+      "path": "prodavnica_obuce-office-shoes-obrenovićeva/286",
+      "name": "Office Shoes - Obrenovićeva",
+      "address": "Obrenovićeva (Pobedina) 11",
+      "postalCode": "18000",
+      "city": "Niš",
+      "citySlug": "nis",
+      "phone": "+38118511560",
+      "email": "off.nis@officeshoes.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 43.31956537913411,
+      "longitude": 21.89287591553419
+    },
+    {
+      "path": "prodavnica_obuce-office-shoes-delta-planet/30576",
+      "name": "Office Shoes - Delta Planet",
+      "address": "Bulevar Nemanjića 11b",
+      "postalCode": "18000",
+      "city": "Niš",
+      "citySlug": "nis",
+      "phone": "+381184100265",
+      "email": "off.nisdelta@officeshoes.rs",
+      "shoppingCenterSlug": "delta-city",
+      "latitude": 43.32439797913379,
+      "longitude": 21.90916051548715
+    },
+    {
+      "path": "prodavnica_obuce-office-shoes-big-fashion/69",
+      "name": "Office Shoes - BiG Fashion",
+      "address": "Bulevar kraljice Marije 56",
+      "postalCode": "34000",
+      "city": "Kragujevac",
+      "citySlug": "kragujevac",
+      "phone": "+381346100361",
+      "email": "off.kragujevac@officeshoes.rs",
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": 44.00831126608851,
+      "longitude": 20.896439966851364
+    },
+    {
+      "path": "prodavnica_obuce-office-shoes-kragujevac/33408",
+      "name": "Office Shoes - Kragujevac",
+      "address": "Kralja Aleksandra l Karađorđevića 1",
+      "postalCode": "34000",
+      "city": "Kragujevac",
+      "citySlug": "kragujevac",
+      "phone": "+381346101295",
+      "email": "off.kragujevac3@officeshoes.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 44.01059619999999,
+      "longitude": 20.914937899999998
+    },
+    {
+      "path": "prodavnica_obuce-office-shoes-tc-big/68",
+      "name": "Office Shoes - TC BiG",
+      "address": "Nikole Tesle br. 9",
+      "postalCode": "32000",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381325381917",
+      "email": "off.cacak2@officeshoes.rs",
+      "shoppingCenterSlug": "promenada",
+      "latitude": 43.8895619,
+      "longitude": 20.370705299999997
+    },
+    {
+      "path": "prodavnica_obuce-office-shoes-laze-kostica/67",
+      "name": "Office Shoes - Laze Kostica",
+      "address": "Laze Kostića 1/a",
+      "postalCode": "25000",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+38125444292",
+      "email": "off.sombor@officeshoes.rs",
+      "shoppingCenterSlug": null,
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "path": "prodavnica_obuce-office-shoes-tc-big/66",
+      "name": "Office Shoes - TC BiG",
+      "address": "Krfska br.37, lokal br.5-prizemlje",
+      "postalCode": "37000",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381373108726",
+      "email": "off.krusevac@officeshoes.rs",
+      "shoppingCenterSlug": "promenada",
+      "latitude": 43.58065961375496,
+      "longitude": 21.328906650587587
+    },
+    {
+      "path": "prodavnica_obuce-office-shoes-tc-big/65",
+      "name": "Office Shoes - TC BiG",
+      "address": "Vojvode Janka Stojićevića 3",
+      "postalCode": "15000",
+      "city": "Šabac",
+      "citySlug": "sabac",
+      "phone": "+381157104334",
+      "email": "off.sabac@officeshoes.rs",
+      "shoppingCenterSlug": "promenada",
+      "latitude": 45.00044722983842,
+      "longitude": 19.41997905322954
+    },
+    {
+      "path": "prodavnica_obuce-office-shoes-trg-srpskih-ratnika/63",
+      "name": "Office Shoes - Trg srpskih ratnika",
+      "address": "Trg srpskih ratnika 1",
+      "postalCode": "36000",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+38136311375",
+      "email": "off.kraljevo@officeshoes.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 43.7242287,
+      "longitude": 20.6876696
+    },
+    {
+      "path": "prodavnica_obuce-office-shoes-tc-big/24719",
+      "name": "Office Shoes  - TC BiG",
+      "address": "Bagljas Zapad 5 (lokal 02-L03)",
+      "postalCode": "23000",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381233101212",
+      "email": "off.zrenjanin@officeshoes.rs",
+      "shoppingCenterSlug": "promenada",
+      "latitude": 45.378599799999996,
+      "longitude": 20.3534689
+    },
+    {
+      "path": "prodavnica_obuce-office-shoes-tc-big/24763",
+      "name": "Office Shoes - TC BiG",
+      "address": "Miloša Obrenovića 12; objekat 4 - lokal 3",
+      "postalCode": "26000",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381132100121",
+      "email": "off.pancevo@officeshoes.rs",
+      "shoppingCenterSlug": "promenada",
+      "latitude": 44.85906312306675,
+      "longitude": 20.649873287074655
+    },
+    {
+      "path": "prodavnica_obuce-office-shoes-tc-big/34208",
+      "name": "Office Shoes - TC BiG",
+      "address": "Kralja Aleksandra l 157",
+      "postalCode": "11500",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381116188788",
+      "email": "off.obrenovacbig@officeshoes.rs",
+      "shoppingCenterSlug": "promenada",
+      "latitude": 44.65826630000001,
+      "longitude": 20.213704399999997
+    },
+    {
+      "path": "prodavnica_obuce-office-shoes-usce-shopping-center/5",
+      "name": "Office Shoes - Ušće Shopping Center",
+      "address": "Bulevar Mihajla Pupina br.4",
+      "postalCode": "11000",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381113148624",
+      "email": "off.usce@officeshoes.rs",
+      "shoppingCenterSlug": "usce",
+      "latitude": 44.82113586068229,
+      "longitude": 20.34786752932073
+    },
+    {
+      "path": "prodavnica_obuce-office-shoes-obrenoviceva/286",
+      "name": "Office Shoes - Obrenovićeva",
+      "address": "Obrenovićeva (Pobedina) 11",
+      "postalCode": "18000",
+      "city": "Niš",
+      "citySlug": "nis",
+      "phone": "+38118511560",
+      "email": "off.nis@officeshoes.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 43.31956537913411,
+      "longitude": 21.89287591553419
+    }
+  ]
+}

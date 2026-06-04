@@ -1,0 +1,590 @@
+{
+  "scrapedAt": "2026-06-04T13:16:25.362Z",
+  "sourceUrl": "https://www.buzzsneakers.rs/brendovi",
+  "brandsUrl": "https://www.buzzsneakers.rs/brendovi",
+  "storesUrl": "https://www.buzzsneakers.rs/radnje",
+  "retailerSlug": "buzz-sneakers",
+  "retailerName": "Buzz Sneakers",
+  "brands": [
+    {
+      "buzzSlug": "adidas",
+      "name": "adidas",
+      "slug": "adidas",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/2024/5/28/Original_Adidas_logo.png",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/adidas"
+    },
+    {
+      "buzzSlug": "asics",
+      "name": "Asics",
+      "slug": "asics",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/2024/10/25/asics-logo.png",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/asics"
+    },
+    {
+      "buzzSlug": "birkenstock",
+      "name": "Birkenstock",
+      "slug": "birkenstock",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/2026/1/26/Birkenstock-logo.jpg",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/birkenstock"
+    },
+    {
+      "buzzSlug": "champion",
+      "name": "Champion",
+      "slug": "champion",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/brendovi/champion.png",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/champion"
+    },
+    {
+      "buzzSlug": "colmar",
+      "name": "Colmar",
+      "slug": "colmar",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/2022/9/5/colmar_logo.png",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/colmar"
+    },
+    {
+      "buzzSlug": "converse",
+      "name": "Converse",
+      "slug": "converse",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/2017/7/20/converse-novi-crni.png",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/converse"
+    },
+    {
+      "buzzSlug": "crep-protect",
+      "name": "Crep Protect",
+      "slug": "crep-protect",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/brendovi/crep.png",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/crep-protect"
+    },
+    {
+      "buzzSlug": "crocs",
+      "name": "Crocs",
+      "slug": "crocs",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/2023/6/28/Crocs-logo.png",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/crocs"
+    },
+    {
+      "buzzSlug": "dfns",
+      "name": "Dfns",
+      "slug": "dfns",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/2022/7/21/dfns.png",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/dfns"
+    },
+    {
+      "buzzSlug": "dirty-london",
+      "name": "Dirty London",
+      "slug": "dirty-london",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/2025/2/3/Original_Adidas_logo.png",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/dirty-london"
+    },
+    {
+      "buzzSlug": "dot",
+      "name": "Dot",
+      "slug": "dot",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/2023/2/28/Dot-logo.png",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/dot"
+    },
+    {
+      "buzzSlug": "ellesse",
+      "name": "Ellesse",
+      "slug": "ellesse",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/2024/3/13/ellesselogo.png",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/ellesse"
+    },
+    {
+      "buzzSlug": "gaston-luga",
+      "name": "Gaston Luga",
+      "slug": "gaston-luga",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/2026/3/19/Full-logo%401x.png",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/gaston-luga"
+    },
+    {
+      "buzzSlug": "goorin-bros",
+      "name": "Goorin Bros",
+      "slug": "goorin-bros",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/2021/5/31/goorin_bros_160x90.png",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/goorin-bros"
+    },
+    {
+      "buzzSlug": "havaianas",
+      "name": "Havaianas",
+      "slug": "havaianas",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/2018/7/2/havaianas-140x75px.png",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/havaianas"
+    },
+    {
+      "buzzSlug": "hoka",
+      "name": "Hoka",
+      "slug": "hoka",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/2024/3/18/LOGO%281%29.png",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/hoka"
+    },
+    {
+      "buzzSlug": "juicy-couture",
+      "name": "Juicy Couture",
+      "slug": "juicy-couture",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/2021/10/20/JuicyCoutureLogo.png",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/juicy-couture"
+    },
+    {
+      "buzzSlug": "labubu",
+      "name": "Labubu",
+      "slug": "labubu",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/2025/11/17/labubu-logo-png.png",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/labubu"
+    },
+    {
+      "buzzSlug": "lacoste",
+      "name": "Lacoste",
+      "slug": "lacoste",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/2025/2/7/lacosta-buzz-tike.png",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/lacoste"
+    },
+    {
+      "buzzSlug": "mont",
+      "name": "Mont",
+      "slug": "mont",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/2022/1/6/mont_logo%20%281%29.png",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/mont"
+    },
+    {
+      "buzzSlug": "moon-boot",
+      "name": "Moon Boot",
+      "slug": "moon-boot",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/2022/11/25/moonb.png",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/moon-boot"
+    },
+    {
+      "buzzSlug": "napapijri",
+      "name": "Napapijri",
+      "slug": "napapijri",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/2020/11/3/napapirji%20novo.png",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/napapijri"
+    },
+    {
+      "buzzSlug": "new-balance",
+      "name": "NEW Balance",
+      "slug": "new-balance",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/brendovi/nb.png",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/new-balance"
+    },
+    {
+      "buzzSlug": "new-era",
+      "name": "NEW ERA",
+      "slug": "new-era",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/brendovi/newera.png",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/new-era"
+    },
+    {
+      "buzzSlug": "nike",
+      "name": "Nike",
+      "slug": "nike",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/brendovi/nike(1).png",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/nike"
+    },
+    {
+      "buzzSlug": "on",
+      "name": "ON",
+      "slug": "on",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/2023/8/29/On-buzz.png",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/on"
+    },
+    {
+      "buzzSlug": "puma",
+      "name": "Puma",
+      "slug": "puma",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/2017/3/28/puma-logo-crni.png",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/puma"
+    },
+    {
+      "buzzSlug": "reebok",
+      "name": "Reebok",
+      "slug": "reebok",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/2021/5/27/reebok-new-logo.png",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/reebok"
+    },
+    {
+      "buzzSlug": "salomon",
+      "name": "Salomon",
+      "slug": "salomon",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/2026/2/13/salomon.png",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/salomon"
+    },
+    {
+      "buzzSlug": "skechers",
+      "name": "Skechers",
+      "slug": "skechers",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/2025/10/16/skeachersnewlogo_buzz.jpg",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/skechers"
+    },
+    {
+      "buzzSlug": "sprayground",
+      "name": "Sprayground",
+      "slug": "sprayground",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/2022/8/31/SPRAYGROUND-v2.png",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/sprayground"
+    },
+    {
+      "buzzSlug": "stance",
+      "name": "Stance",
+      "slug": "stance",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/2019/2/8/stan-crni.png",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/stance"
+    },
+    {
+      "buzzSlug": "stanley",
+      "name": "Stanley",
+      "slug": "stanley",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/2025/11/17/stanly-logo%281%29.png",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/stanley"
+    },
+    {
+      "buzzSlug": "the-north-face",
+      "name": "THE North Face",
+      "slug": "north-face",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/2022/10/7/The-North-Face-Logo-1966.jpg",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/the-north-face"
+    },
+    {
+      "buzzSlug": "timberland",
+      "name": "Timberland",
+      "slug": "timberland",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/brendovi/timberland.png",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/timberland"
+    },
+    {
+      "buzzSlug": "ugg",
+      "name": "Ugg",
+      "slug": "ugg",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/2024/9/24/UGG.png",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/ugg"
+    },
+    {
+      "buzzSlug": "under-armour",
+      "name": "Under Armour",
+      "slug": "under-armour",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/2021/12/10/1280px-Under_armour_logo.svg.png",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/under-armour"
+    },
+    {
+      "buzzSlug": "vans",
+      "name": "Vans",
+      "slug": "vans",
+      "logoUrl": "https://www.buzzsneakers.rs/files/images/2022/11/10/vans.png",
+      "productUrl": "https://www.buzzsneakers.rs/proizvodi/vans"
+    }
+  ],
+  "stores": [
+    {
+      "path": "698-buzz-ns-centar",
+      "name": "Buzz NS Centar",
+      "address": "Zmaj Jovina 20",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "phone": "0114221440",
+      "email": "ns.centar@buzzsneakers.rs",
+      "shoppingCenterSlug": "promenada",
+      "latitude": 45.2562143,
+      "longitude": 19.8457776,
+      "storeUrl": "https://www.buzzsneakers.rs/radnje/698-buzz-ns-centar"
+    },
+    {
+      "path": "1-buzz-usce",
+      "name": "Buzz Ušće",
+      "address": "Bulevar Mihajla Pupina 4",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "0114221440",
+      "email": "usce@buzzsneakers.rs",
+      "shoppingCenterSlug": "usce",
+      "latitude": 44.815671,
+      "longitude": 20.436222,
+      "storeUrl": "https://www.buzzsneakers.rs/radnje/1-buzz-usce"
+    },
+    {
+      "path": "457-buzz-beo",
+      "name": "Buzz BEO",
+      "address": "Vojislava Ilića 141",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "0114221440",
+      "email": "beo@buzzsneakers.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 44.7863561,
+      "longitude": 20.5005863,
+      "storeUrl": "https://www.buzzsneakers.rs/radnje/457-buzz-beo"
+    },
+    {
+      "path": "109-buzz-big",
+      "name": "Buzz Big BG",
+      "address": "Višnjička 84",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "0114221440",
+      "email": "bg.big@buzzsneakers.rs",
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": 44.8169451,
+      "longitude": 20.5073375,
+      "storeUrl": "https://www.buzzsneakers.rs/radnje/109-buzz-big"
+    },
+    {
+      "path": "491-buzz-bw",
+      "name": "Buzz BW",
+      "address": "Bulevar Vudroa Vilsona 12",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "0114221440",
+      "email": "bw@buzzsneakers.rs",
+      "shoppingCenterSlug": "galerija",
+      "latitude": 44.803096,
+      "longitude": 20.44635,
+      "storeUrl": "https://www.buzzsneakers.rs/radnje/491-buzz-bw"
+    },
+    {
+      "path": "2-buzz-delta-city",
+      "name": "Buzz Delta City",
+      "address": "Jurija Gagarina 16/133",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "0114221440",
+      "email": "delta.city@buzzsneakers.rs",
+      "shoppingCenterSlug": "delta-city",
+      "latitude": 44.804866,
+      "longitude": 20.404908,
+      "storeUrl": "https://www.buzzsneakers.rs/radnje/2-buzz-delta-city"
+    },
+    {
+      "path": "3-buzz-knez",
+      "name": "Buzz Knez",
+      "address": "Kneza Mihaila  21",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "0114221440",
+      "email": "knez@buzzsneakers.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 44.816503,
+      "longitude": 20.458297,
+      "storeUrl": "https://www.buzzsneakers.rs/radnje/3-buzz-knez"
+    },
+    {
+      "path": "388-ada-mall",
+      "name": "Buzz Ada Mall",
+      "address": "Radnička 9",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "0114221440",
+      "email": "ada@buzzsneakers.rs",
+      "shoppingCenterSlug": "galerija",
+      "latitude": 44.7876614,
+      "longitude": 20.416017,
+      "storeUrl": "https://www.buzzsneakers.rs/radnje/388-ada-mall"
+    },
+    {
+      "path": "559-buzz-outlet-banjica",
+      "name": "Buzz Outlet Banjica",
+      "address": "Crnotravska 4",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "0114221440",
+      "email": "outlet@buzzsneakers.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 44.7657933,
+      "longitude": 20.4678994,
+      "storeUrl": "https://www.buzzsneakers.rs/radnje/559-buzz-outlet-banjica"
+    },
+    {
+      "path": "5-buzz-kragujevac",
+      "name": "Buzz Kragujevac",
+      "address": "Bulevar kraljice Marije 56",
+      "city": "Kragujevac",
+      "citySlug": "kragujevac",
+      "phone": "0114221440",
+      "email": "kragujevac@buzzsneakers.rs",
+      "shoppingCenterSlug": "kragujevac-plaza",
+      "latitude": 44.00879,
+      "longitude": 20.896082,
+      "storeUrl": "https://www.buzzsneakers.rs/radnje/5-buzz-kragujevac"
+    },
+    {
+      "path": "208-buzz-kraljevo",
+      "name": "Buzz Kraljevo",
+      "address": "Miloša Velikog 7",
+      "city": "Kraljevo",
+      "citySlug": "kraljevo",
+      "phone": "0114221440",
+      "email": "kraljevo@buzzsneakers.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 43.7231499,
+      "longitude": 20.6865863,
+      "storeUrl": "https://www.buzzsneakers.rs/radnje/208-buzz-kraljevo"
+    },
+    {
+      "path": "641-buzz-krusevac",
+      "name": "Buzz Kruševac",
+      "address": "Vidovdanska 26",
+      "city": "Kruševac",
+      "citySlug": "krusevac",
+      "phone": "0114221440",
+      "email": "krusevac@buzzsneakers.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 43.5732904,
+      "longitude": 21.3334616,
+      "storeUrl": "https://www.buzzsneakers.rs/radnje/641-buzz-krusevac"
+    },
+    {
+      "path": "515-buzz-delta-nis",
+      "name": "Buzz Delta Niš",
+      "address": "Bulevar Nemanjića 11B",
+      "city": "Niš",
+      "citySlug": "nis",
+      "phone": "0114221440",
+      "email": "delta.nis@buzzsneakers.rs",
+      "shoppingCenterSlug": "delta-city",
+      "latitude": 43.3245835,
+      "longitude": 21.9099165,
+      "storeUrl": "https://www.buzzsneakers.rs/radnje/515-buzz-delta-nis"
+    },
+    {
+      "path": "7-buzz-nis",
+      "name": "Buzz Niš",
+      "address": "Obrenovićeva 42",
+      "city": "Niš",
+      "citySlug": "nis",
+      "phone": "0114221440",
+      "email": "nis@buzzsneakers.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 43.3188808,
+      "longitude": 21.8924843,
+      "storeUrl": "https://www.buzzsneakers.rs/radnje/7-buzz-nis"
+    },
+    {
+      "path": "132-buzz-novi-pazar",
+      "name": "Buzz Novi Pazar",
+      "address": "28. novembra bb",
+      "city": "Novi Pazar",
+      "citySlug": "novi-pazar",
+      "phone": "0114221440",
+      "email": "novi.pazar@buzzsneakers.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 43.143146,
+      "longitude": 20.515762,
+      "storeUrl": "https://www.buzzsneakers.rs/radnje/132-buzz-novi-pazar"
+    },
+    {
+      "path": "643-buzz-big-novi-sad",
+      "name": "Buzz BIG Novi Sad",
+      "address": "Sentandrejski put 11, lokal B18",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "phone": "0114221440",
+      "email": "ns.big@buzzsneakers.rs",
+      "shoppingCenterSlug": "promenada",
+      "latitude": 45.2756504,
+      "longitude": 19.82336,
+      "storeUrl": "https://www.buzzsneakers.rs/radnje/643-buzz-big-novi-sad"
+    },
+    {
+      "path": "212-buzz-novi-sad-big-fashion",
+      "name": "Buzz Novi Sad",
+      "address": "Bulevar oslobođenja 119",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "phone": "0114221440",
+      "email": "ns.bigfashion@buzzsneakers.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 45.2445524,
+      "longitude": 19.8393819,
+      "storeUrl": "https://www.buzzsneakers.rs/radnje/212-buzz-novi-sad-big-fashion"
+    },
+    {
+      "path": "182-buzz-subotica",
+      "name": "Buzz Subotica",
+      "address": "Rudić 1",
+      "city": "Subotica",
+      "citySlug": "subotica",
+      "phone": "0114221440",
+      "email": "subotica@buzzsneakers.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 46.101088,
+      "longitude": 19.661426,
+      "storeUrl": "https://www.buzzsneakers.rs/radnje/182-buzz-subotica"
+    },
+    {
+      "path": "98-buzz-zrenjanin",
+      "name": "Buzz Zrenjanin",
+      "address": "Bagljaš Zapad 5",
+      "city": "Zrenjanin",
+      "citySlug": "zrenjanin",
+      "phone": "0114221440",
+      "email": "zrenjanin@buzzsneakers.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 45.377512,
+      "longitude": 20.353763,
+      "storeUrl": "https://www.buzzsneakers.rs/radnje/98-buzz-zrenjanin"
+    },
+    {
+      "path": "568-buzz-leskovac",
+      "name": "Buzz Leskovac",
+      "address": "Bulevar Oslobođenja 32",
+      "city": "Leskovac",
+      "citySlug": "leskovac",
+      "phone": "0114221440",
+      "email": "leskovac@buzzsneakers.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 42.996251,
+      "longitude": 21.9463227,
+      "storeUrl": "https://www.buzzsneakers.rs/radnje/568-buzz-leskovac"
+    },
+    {
+      "path": "636-buzz-sabac",
+      "name": "Buzz Šabac",
+      "address": "Karađorđeva 41",
+      "city": "Šabac",
+      "citySlug": "sabac",
+      "phone": "0114221440",
+      "email": "sabac@buzzsneakers.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 44.7534381,
+      "longitude": 19.6973387,
+      "storeUrl": "https://www.buzzsneakers.rs/radnje/636-buzz-sabac"
+    },
+    {
+      "path": "693-buzz-uzice",
+      "name": "Buzz Užice",
+      "address": "Trg Partizana 1",
+      "city": "Užice",
+      "citySlug": "uzice",
+      "phone": "0114221440",
+      "email": "uzice@buzzsneakers.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 43.856295,
+      "longitude": 19.839643,
+      "storeUrl": "https://www.buzzsneakers.rs/radnje/693-buzz-uzice"
+    },
+    {
+      "path": "656-buzz-big-sabac",
+      "name": "Buzz Big Šabac",
+      "address": "Vojvode Janka Stojićevića 3-5",
+      "city": "Šabac",
+      "citySlug": "sabac",
+      "phone": "0114221440",
+      "email": "sabac.big@buzzsneakers.rs",
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": 44.748572,
+      "longitude": 19.7039363,
+      "storeUrl": "https://www.buzzsneakers.rs/radnje/656-buzz-big-sabac"
+    },
+    {
+      "path": "651-buzz-big-cacak",
+      "name": "Buzz Big Čačak",
+      "address": "Nikole Tesle 11",
+      "city": "Čačak",
+      "citySlug": "cacak",
+      "phone": "0114221440",
+      "email": "cacak.big@buzzsneakers.rs",
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": 43.8889543,
+      "longitude": 20.3691826,
+      "storeUrl": "https://www.buzzsneakers.rs/radnje/651-buzz-big-cacak"
+    }
+  ]
+}

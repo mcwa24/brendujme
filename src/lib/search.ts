@@ -2,7 +2,6 @@ import { brands } from "@/lib/data/brands";
 import { retailers } from "@/lib/data/retailers";
 import { shoppingCenters } from "@/lib/data/shopping-centers";
 import { fashionCompanyStores } from "@/lib/data/fashion-company";
-import { fashionAndFriendsMeta } from "@/lib/data/fashion-and-friends";
 import { getCategoryName } from "@/lib/data/categories";
 import type { SearchResult } from "@/types";
 
@@ -73,20 +72,6 @@ export function searchAll(query: string): SearchResult[] {
         href: `/shopping-centers/${center.slug}`,
       });
     }
-  }
-
-  if (
-    (q.includes("fashion") && q.includes("friend")) ||
-    q.replace(/\s/g, "") === "fashionandfriends" ||
-    q === "ff"
-  ) {
-    add({
-      type: "retailer",
-      slug: "fashion-company",
-      title: "Fashion&Friends",
-      subtitle: `${fashionAndFriendsMeta.brandCount} brendova · Fashion Company`,
-      href: "/retailers/fashion-company",
-    });
   }
 
   for (const store of fashionCompanyStores) {

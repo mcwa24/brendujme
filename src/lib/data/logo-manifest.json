@@ -80,8 +80,8 @@
     "source": "discovered"
   },
   "karl-lagerfeld": {
-    "path": "/logos/cache/karl-lagerfeld.png",
-    "source": "discovered"
+    "path": "/logos/cache/karl-lagerfeld.jpg",
+    "source": "url"
   },
   "miss-sixty": {
     "path": "/logos/cache/miss-sixty.png",
@@ -153,6 +153,114 @@
   },
   "new-balance": {
     "path": "/logos/cache/new-balance.jpg",
+    "source": "url"
+  },
+  "bama": {
+    "path": "/logos/cache/bama.jpg",
+    "source": "url"
+  },
+  "birkenstock": {
+    "path": "/logos/cache/birkenstock.jpg",
+    "source": "url"
+  },
+  "blauer": {
+    "path": "/logos/cache/blauer.jpg",
+    "source": "url"
+  },
+  "buffalo": {
+    "path": "/logos/cache/buffalo.jpg",
+    "source": "url"
+  },
+  "cartago": {
+    "path": "/logos/cache/cartago.jpg",
+    "source": "url"
+  },
+  "collonil": {
+    "path": "/logos/cache/collonil.jpg",
+    "source": "url"
+  },
+  "converse": {
+    "path": "/logos/cache/converse.jpg",
+    "source": "url"
+  },
+  "crocs": {
+    "path": "/logos/cache/crocs.jpg",
+    "source": "url"
+  },
+  "dfns": {
+    "path": "/logos/cache/dfns.jpg",
+    "source": "url"
+  },
+  "dr-martens": {
+    "path": "/logos/cache/dr-martens.jpg",
+    "source": "url"
+  },
+  "g-star-raw": {
+    "path": "/logos/cache/g-star-raw.jpg",
+    "source": "url"
+  },
+  "gant": {
+    "path": "/logos/cache/gant.jpg",
+    "source": "url"
+  },
+  "gap": {
+    "path": "/logos/cache/gap.jpg",
+    "source": "url"
+  },
+  "ipanema": {
+    "path": "/logos/cache/ipanema.jpg",
+    "source": "url"
+  },
+  "kickers": {
+    "path": "/logos/cache/kickers.jpg",
+    "source": "url"
+  },
+  "lumberjack": {
+    "path": "/logos/cache/lumberjack.jpg",
+    "source": "url"
+  },
+  "moon-boot": {
+    "path": "/logos/cache/moon-boot.jpg",
+    "source": "url"
+  },
+  "napapijri": {
+    "path": "/logos/cache/napapijri.jpg",
+    "source": "url"
+  },
+  "palladium": {
+    "path": "/logos/cache/palladium.jpg",
+    "source": "url"
+  },
+  "pepe-jeans": {
+    "path": "/logos/cache/pepe-jeans.jpg",
+    "source": "url"
+  },
+  "polo-ralph-lauren": {
+    "path": "/logos/cache/polo-ralph-lauren.jpg",
+    "source": "url"
+  },
+  "puma": {
+    "path": "/logos/cache/puma.jpg",
+    "source": "url"
+  },
+  "rider": {
+    "path": "/logos/cache/rider.jpg",
+    "source": "url"
+  },
+  "skechers": {
+    "path": "/logos/cache/skechers.jpg",
+    "source": "url"
+  },
+  "vagabond": {
+    "path": "/logos/cache/vagabond.jpg",
+    "source": "url"
+  },
+  "vans": {
+    "path": "/logos/cache/vans.jpg",
+    "source": "url"
+  },
+  "zaxy": {
+    "path": "/logos/cache/zaxy.jpg",
     "source": "url"
   }
 }

@@ -4,6 +4,13 @@ import type { BrandLogoInput, LogoManifest } from "@/types";
 
 const manifest = logoManifest as LogoManifest;
 
+function manifestPath(slug: string): string | undefined {
+  const entry = manifest[slug];
+  if (!entry) return undefined;
+  if (typeof entry === "string") return entry;
+  return entry.path;
+}
+
 /** Prvo slovo brenda za typography placeholder */
 export function getBrandLetter(name: string): string {
   const trimmed = name.trim();
@@ -19,14 +26,14 @@ export function getBrandDisplayTitle(name: string): string {
  * Prioritet: lokalni keš / manifest → logoUrl (ne-Storage) → Supabase Storage
  */
 export function resolveBrandLogoSrc(brand: BrandLogoInput): string | null {
-  const entry = manifest[brand.slug];
+  const cached = manifestPath(brand.slug);
 
   if (brand.hasCustomLogo) {
-    if (entry?.path) return entry.path;
+    if (cached) return cached;
     return `/logos/${brand.slug}.png`;
   }
 
-  if (entry?.path) return entry.path;
+  if (cached) return cached;
 
   const logoUrl = brand.logoUrl?.trim();
   if (logoUrl && !isSupabaseStorageUrl(logoUrl)) return logoUrl;
