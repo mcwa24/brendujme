@@ -10,6 +10,15 @@ export type CategorySlug =
 
 export type PriceSegment = "budget" | "mid" | "premium" | "luxury";
 
+export type LogoSource = "upload" | "url" | "discovered";
+
+export interface LogoManifestEntry {
+  path: string;
+  source: LogoSource;
+}
+
+export type LogoManifest = Record<string, LogoManifestEntry>;
+
 export interface Category {
   slug: CategorySlug;
   name: string;
@@ -29,7 +38,12 @@ export interface Brand {
   name: string;
   category: CategorySlug;
   country: string;
+  /** Zvanični sajt brenda — koristi se za offline otkrivanje logoa */
   website: string;
+  /** URL logoa iz baze (prioritet #2) */
+  logoUrl?: string;
+  /** Ručno uploadovan logo u public/logos/{slug}.png */
+  hasCustomLogo?: boolean;
   description: string;
   priceSegment: PriceSegment;
   availabilityCount: number;
@@ -79,3 +93,8 @@ export interface SearchResult {
   subtitle: string;
   href: string;
 }
+
+export type BrandLogoInput = Pick<
+  Brand,
+  "slug" | "name" | "category" | "website" | "logoUrl" | "hasCustomLogo"
+>;

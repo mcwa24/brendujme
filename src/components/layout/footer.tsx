@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandMark } from "@/components/layout/brand-mark";
 import { Container } from "@/components/layout/container";
 import { Separator } from "@/components/ui/separator";
 
@@ -29,12 +30,7 @@ export function Footer() {
       <Container className="py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">
-            <Link
-              href="/"
-              className="font-display text-2xl font-semibold text-accent"
-            >
-              Bilbord Brands
-            </Link>
+            <BrandMark logoHeight={32} brandsClassName="text-xl md:text-2xl" />
             <p className="mt-4 max-w-md text-muted">
               Premium platforma za otkrivanje brendova dostupnih u Srbiji.
               Retail inteligencija za modu, lepotu i lifestyle.

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, Plus, Search } from "lucide-react";
 import { useState } from "react";
+import { BrandMark } from "@/components/layout/brand-mark";
 import { Container } from "@/components/layout/container";
 import { Button, buttonVariants } from "@/components/ui/button";
 import {
@@ -33,12 +34,7 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b border-border/80 bg-background/90 backdrop-blur-md">
       <Container>
         <div className="flex h-16 items-center justify-between gap-4 md:h-20">
-          <Link
-            href="/"
-            className="font-display text-xl font-semibold tracking-tight text-accent md:text-2xl"
-          >
-            Bilbord Brands
-          </Link>
+          <BrandMark logoHeight={26} className="md:gap-3" />
 
           <nav className="hidden items-center gap-8 lg:flex">
             {navItems.map((item) => (
@@ -90,8 +86,8 @@ export function Header() {
               </SheetTrigger>
               <SheetContent side="right" className="w-full max-w-sm rounded-l-[20px]">
                 <SheetHeader>
-                  <SheetTitle className="font-display text-left text-2xl">
-                    Bilbord Brands
+                  <SheetTitle className="text-left font-normal">
+                    <BrandMark logoHeight={24} asLink={false} />
                   </SheetTitle>
                 </SheetHeader>
                 <nav className="mt-8 flex flex-col gap-4">

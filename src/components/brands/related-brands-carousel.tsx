@@ -4,10 +4,9 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useRef } from "react";
-import { BrandLogo } from "@/components/ui/brand-logo";
-import { PremiumCard } from "@/components/ui/premium-card";
-import { getCategoryName } from "@/lib/data/categories";
+import { BrandIdentity } from "@/components/brands/brand-identity";
 import type { Brand } from "@/types";
+import { PremiumCard } from "@/components/ui/premium-card";
 import { Button } from "@/components/ui/button";
 
 interface RelatedBrandsCarouselProps {
@@ -58,17 +57,11 @@ export function RelatedBrandsCarousel({ brands }: RelatedBrandsCarouselProps) {
           <Link
             key={brand.slug}
             href={`/brands/${brand.slug}`}
-            className="w-[260px] shrink-0"
+            className="w-[280px] shrink-0"
           >
             <motion.div whileHover={{ scale: 1.02 }} transition={{ duration: 0.2 }}>
-              <PremiumCard className="p-6">
-                <BrandLogo name={brand.name} size="md" />
-                <h3 className="font-display mt-4 text-xl font-semibold">
-                  {brand.name}
-                </h3>
-                <p className="mt-1 text-sm text-muted">
-                  {getCategoryName(brand.category)}
-                </p>
+              <PremiumCard className="p-5">
+                <BrandIdentity brand={brand} variant="compact" />
               </PremiumCard>
             </motion.div>
           </Link>

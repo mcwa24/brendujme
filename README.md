@@ -32,6 +32,12 @@ Otvorite [http://localhost:3000](http://localhost:3000).
 
 Globalna pretraga: `⌘K` / `Ctrl+K`
 
+## Logoi brendova
+
+Prioritet: upload → `logoUrl` → keš (`npm run logos:cache`) → typography placeholder.
+
+Logoi se **ne učitavaju sa interneta pri svakom request-u** — samo iz `public/logos/` i `logo-manifest.json`.
+
 ## Mock podaci
 
 - 20 brendova

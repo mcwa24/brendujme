@@ -4,7 +4,8 @@ import { ExternalLink, Globe, MapPin } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
 import { RelatedBrandsCarousel } from "@/components/brands/related-brands-carousel";
-import { BrandLogo } from "@/components/ui/brand-logo";
+import { BrandHero } from "@/components/brands/brand-hero";
+import { hasBrandLogo } from "@/lib/brand-logo-resolve";
 import { PremiumCard } from "@/components/ui/premium-card";
 import { brands, getBrandBySlug, getRelatedBrands } from "@/lib/data/brands";
 import { getCategoryName } from "@/lib/data/categories";
@@ -51,20 +52,30 @@ export default async function BrandDetailPage({ params }: PageProps) {
   const centers = brand.shoppingCenterSlugs
     .map((s) => getShoppingCenterBySlug(s))
     .filter(Boolean);
+  const showLogoHero = hasBrandLogo(brand);
 
   return (
     <>
       <section className="border-b border-border bg-card">
         <Container narrow className="py-16 md:py-24">
           <FadeIn className="flex flex-col gap-8 md:flex-row md:items-start md:gap-12">
-            <BrandLogo name={brand.name} size="lg" />
+            <BrandHero brand={brand} />
             <div className="flex-1">
-              <p className="text-sm font-medium uppercase tracking-wider text-muted">
-                {getCategoryName(brand.category)}
-              </p>
-              <h1 className="font-display mt-2 text-4xl font-semibold tracking-tight md:text-6xl">
-                {brand.name}
-              </h1>
+              {showLogoHero && (
+                <>
+                  <p className="text-sm font-medium uppercase tracking-wider text-muted">
+                    {getCategoryName(brand.category)}
+                  </p>
+                  <h1 className="font-display mt-2 text-4xl font-semibold tracking-tight md:text-6xl">
+                    {brand.name}
+                  </h1>
+                </>
+              )}
+              {!showLogoHero && (
+                <p className="mt-4 text-sm font-medium uppercase tracking-wider text-muted">
+                  {getCategoryName(brand.category)}
+                </p>
+              )}
               <div className="mt-6 flex flex-wrap gap-6 text-muted">
                 <span>{brand.country}</span>
                 <a
