@@ -1,11 +1,17 @@
 import buzzScraped from "./buzz-sneakers-scraped.json";
+import djakScraped from "./djak-sport-scraped.json";
+import sportVisionScraped from "./sport-vision-scraped.json";
+import planetaScraped from "./planeta-sport-scraped.json";
+import fsScraped from "./fashion-sport-serbia-scraped.json";
+import fashionScraped from "./fast-fashion-serbia-scraped.json";
 import officeScraped from "./office-shoes-scraped.json";
 import nikeScraped from "./nike-serbia-scraped.json";
-import type { ImportedRetailerSlug } from "./imported-retailers";
+import tikeScraped from "./tike-scraped.json";
 import type { RetailerStore } from "@/types";
 
 interface ScrapedStore {
-  path: string;
+  path?: string;
+  slug?: string;
   name: string;
   address: string;
   city: string;
@@ -29,9 +35,10 @@ const MALL_NAMES: Record<string, string> = {
 };
 
 function mapStore(store: ScrapedStore, retailerSlug: string): RetailerStore {
+  const storeKey = store.path ?? store.slug ?? store.name;
   const mallSlug = store.shoppingCenterSlug ?? null;
   return {
-    id: `${retailerSlug}-${store.path}`,
+    id: `${retailerSlug}-${storeKey}`,
     name: store.name,
     address: store.address,
     city: store.city,
@@ -43,7 +50,7 @@ function mapStore(store: ScrapedStore, retailerSlug: string): RetailerStore {
   };
 }
 
-const STATIC_STORES: Partial<Record<ImportedRetailerSlug, RetailerStore[]>> = {
+const STATIC_STORES: Record<string, RetailerStore[]> = {
   "buzz-sneakers": buzzScraped.stores.map((s) =>
     mapStore(s as ScrapedStore, "buzz-sneakers")
   ),
@@ -53,8 +60,83 @@ const STATIC_STORES: Partial<Record<ImportedRetailerSlug, RetailerStore[]>> = {
   "sport-time": nikeScraped.stores.map((s) =>
     mapStore(s as ScrapedStore, "sport-time")
   ),
+  "djak-sport": djakScraped.stores.map((s) =>
+    mapStore(s as ScrapedStore, "djak-sport")
+  ),
+  "sport-vision": sportVisionScraped.stores.map((s) =>
+    mapStore(s as ScrapedStore, "sport-vision")
+  ),
+  "planeta-sport": planetaScraped.stores.map((s) =>
+    mapStore(s as ScrapedStore, "planeta-sport")
+  ),
+  inditex: fashionScraped.stores
+    .filter((s) => s.retailerSlug === "inditex")
+    .map((s, i) => ({
+      id: `inditex-${s.brandSlug}-${i}`,
+      name: s.name,
+      address: s.address,
+      city: s.city,
+      phone: null,
+      email: null,
+      shoppingCenterSlug: s.shoppingCenterSlug,
+      shoppingCenterName: s.shoppingCenterSlug
+        ? (MALL_NAMES[s.shoppingCenterSlug] ?? null)
+        : null,
+      storeUrl: s.storeUrl,
+    })),
+  lpp: fashionScraped.stores
+    .filter((s) => s.retailerSlug === "lpp")
+    .map((s, i) => ({
+      id: `lpp-${s.brandSlug}-${i}`,
+      name: s.name,
+      address: s.address,
+      city: s.city,
+      phone: null,
+      email: null,
+      shoppingCenterSlug: s.shoppingCenterSlug,
+      shoppingCenterName: s.shoppingCenterSlug
+        ? (MALL_NAMES[s.shoppingCenterSlug] ?? null)
+        : null,
+      storeUrl: s.storeUrl,
+    })),
+  "fashion-friends": mapFsStores("fashion-friends"),
+  "extra-sports": mapFsStores("extra-sports"),
+  tike: tikeScraped.stores.map((s) =>
+    mapStore(
+      {
+        slug: s.path,
+        name: s.name,
+        address: s.address,
+        city: s.city,
+        phone: s.phone,
+        email: s.email,
+        storeUrl: s.storeUrl,
+      },
+      "tike"
+    )
+  ),
+  "run-n-more": mapFsStores("run-n-more"),
+  "fashion-company": mapFsStores("fashion-company"),
 };
 
+function mapFsStores(retailerSlug: string): RetailerStore[] {
+  return fsScraped.stores
+    .filter((s) => s.retailerSlug === retailerSlug)
+    .map((s, i) => ({
+      id: `${retailerSlug}-${i}`,
+      name: s.name,
+      address: s.address,
+      city: s.city,
+      phone: null,
+      email: null,
+      shoppingCenterSlug: s.shoppingCenterSlug,
+      shoppingCenterName: s.shoppingCenterSlug
+        ? (MALL_NAMES[s.shoppingCenterSlug] ?? null)
+        : null,
+      storeUrl: s.storeUrl,
+    }));
+}
+
 export function getStaticRetailerStores(retailerSlug: string): RetailerStore[] {
-  return STATIC_STORES[retailerSlug as ImportedRetailerSlug] ?? [];
+  return STATIC_STORES[retailerSlug] ?? [];
 }

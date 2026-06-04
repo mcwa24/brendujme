@@ -1,0 +1,1120 @@
+{
+  "scrapedAt": "2026-06-04T14:24:19.646Z",
+  "sourceUrl": "https://www.sportvision.rs/brendovi",
+  "brandsUrl": "https://www.sportvision.rs/brendovi",
+  "storesUrl": "https://www.sportvision.rs/radnje",
+  "retailerSlug": "sport-vision",
+  "retailerName": "Sport Vision",
+  "brands": [
+    {
+      "svSlug": "action",
+      "name": "Action",
+      "slug": "action",
+      "logoUrl": "https://www.sportvision.rs/files/images/2019/6/24/action-140x75px.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/action"
+    },
+    {
+      "svSlug": "adidas",
+      "name": "adidas",
+      "slug": "adidas",
+      "logoUrl": "https://www.sportvision.rs/files/files/logo/Performance_Logo.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/adidas"
+    },
+    {
+      "svSlug": "americanino",
+      "name": "Americanino",
+      "slug": "americanino",
+      "logoUrl": "https://www.sportvision.rs/files/images/2025/4/4/nike.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/americanino"
+    },
+    {
+      "svSlug": "arena",
+      "name": "Arena",
+      "slug": "arena",
+      "logoUrl": "https://www.sportvision.rs/files/images/2026/1/9/arena_logo.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/arena"
+    },
+    {
+      "svSlug": "asics",
+      "name": "Asics",
+      "slug": "asics",
+      "logoUrl": "https://www.sportvision.rs/files/images/2024/7/5/asiscs-logo%282%29.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/asics"
+    },
+    {
+      "svSlug": "atlantis",
+      "name": "Atlantis",
+      "slug": "atlantis",
+      "logoUrl": "https://www.sportvision.rs/files/images/2020/1/8/atl.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/atlantis"
+    },
+    {
+      "svSlug": "bhpc",
+      "name": "Bhpc",
+      "slug": "bhpc",
+      "logoUrl": "https://www.sportvision.rs/files/images/2026/3/24/BHPC.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/bhpc"
+    },
+    {
+      "svSlug": "buff",
+      "name": "Buff",
+      "slug": "buff",
+      "logoUrl": "https://www.sportvision.rs/files/images/2023/1/27/Buff-logo.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/buff"
+    },
+    {
+      "svSlug": "butterfly",
+      "name": "Butterfly",
+      "slug": "butterfly",
+      "logoUrl": "https://www.sportvision.rs/files/images/2019/6/24/butterfly-140x75px.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/butterfly"
+    },
+    {
+      "svSlug": "capelli-sport",
+      "name": "Capelli sport",
+      "slug": "capelli-sport",
+      "logoUrl": "https://www.sportvision.rs/files/files/info/capelii_logo.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/capelli-sport"
+    },
+    {
+      "svSlug": "cartago",
+      "name": "Cartago",
+      "slug": "cartago",
+      "logoUrl": "https://www.sportvision.rs/files/images/2020/7/7/cartago_logo.jpg.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/cartago"
+    },
+    {
+      "svSlug": "champion",
+      "name": "Champion",
+      "slug": "champion",
+      "logoUrl": "https://www.sportvision.rs/files/images/2019/6/24/champion-140x75.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/champion"
+    },
+    {
+      "svSlug": "colmar",
+      "name": "Colmar",
+      "slug": "colmar",
+      "logoUrl": "https://www.sportvision.rs/files/images/2019/6/24/colmar-140x75px.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/colmar"
+    },
+    {
+      "svSlug": "columbia",
+      "name": "Columbia",
+      "slug": "columbia",
+      "logoUrl": "https://www.sportvision.rs/files/images/2022/5/30/columbia.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/columbia"
+    },
+    {
+      "svSlug": "converse",
+      "name": "Converse",
+      "slug": "converse",
+      "logoUrl": "https://www.sportvision.rs/files/images/2020/11/23/2.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/converse"
+    },
+    {
+      "svSlug": "crocs",
+      "name": "Crocs",
+      "slug": "crocs",
+      "logoUrl": "https://www.sportvision.rs/files/images/2023/6/28/Crocs-logo.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/crocs"
+    },
+    {
+      "svSlug": "ellesse",
+      "name": "Ellesse",
+      "slug": "ellesse",
+      "logoUrl": "https://www.sportvision.rs/files/images/2019/12/12/novi-ell.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/ellesse"
+    },
+    {
+      "svSlug": "havaianas",
+      "name": "Havaianas",
+      "slug": "havaianas",
+      "logoUrl": "https://www.sportvision.rs/files/images/brendovi/havaianas.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/havaianas"
+    },
+    {
+      "svSlug": "helly-hansen",
+      "name": "Helly Hansen",
+      "slug": "helly-hansen",
+      "logoUrl": "https://www.sportvision.rs/files/files/sv_redizajn/brendovi/hellyhansen.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/helly-hansen"
+    },
+    {
+      "svSlug": "hoka",
+      "name": "Hoka",
+      "slug": "hoka",
+      "logoUrl": "https://www.sportvision.rs/files/images/2022/6/8/LOGO%281%29.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/hoka"
+    },
+    {
+      "svSlug": "icepeak",
+      "name": "Icepeak",
+      "slug": "icepeak",
+      "logoUrl": "https://www.sportvision.rs/files/images/2019/6/24/icepeak.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/icepeak"
+    },
+    {
+      "svSlug": "ipanema",
+      "name": "Ipanema",
+      "slug": "ipanema",
+      "logoUrl": "https://www.sportvision.rs/files/images/brendovi/ipanema.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/ipanema"
+    },
+    {
+      "svSlug": "j2c",
+      "name": "J2C",
+      "slug": "j2c",
+      "logoUrl": "https://www.sportvision.rs/files/images/2019/6/24/j2c-140x75px.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/j2c"
+    },
+    {
+      "svSlug": "jack-wolfskin",
+      "name": "Jack Wolfskin",
+      "slug": "jack-wolfskin",
+      "logoUrl": "https://www.sportvision.rs/files/images/2022/11/16/JackWolfskin-Sv.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/jack-wolfskin"
+    },
+    {
+      "svSlug": "kander",
+      "name": "Kander",
+      "slug": "kander",
+      "logoUrl": "https://www.sportvision.rs/files/images/2022/9/7/kander-logo.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/kander"
+    },
+    {
+      "svSlug": "kronos",
+      "name": "Kronos",
+      "slug": "kronos",
+      "logoUrl": "https://www.sportvision.rs/files/images/2025/9/24/kronos_logo.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/kronos"
+    },
+    {
+      "svSlug": "lonsdale",
+      "name": "Lonsdale",
+      "slug": "lonsdale",
+      "logoUrl": "https://www.sportvision.rs/files/files/sv_redizajn/brendovi/lonsdale.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/lonsdale"
+    },
+    {
+      "svSlug": "luhta",
+      "name": "Luhta",
+      "slug": "luhta",
+      "logoUrl": "https://www.sportvision.rs/files/images/2021/9/29/Luhta140x87.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/luhta"
+    },
+    {
+      "svSlug": "lussari",
+      "name": "Lussari",
+      "slug": "lussari",
+      "logoUrl": "https://www.sportvision.rs/files/images/2020/1/15/lu.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/lussari"
+    },
+    {
+      "svSlug": "mammut",
+      "name": "Mammut",
+      "slug": "mammut",
+      "logoUrl": "https://www.sportvision.rs/files/images/2024/4/1/Mammut-sv.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/mammut"
+    },
+    {
+      "svSlug": "mcdavid",
+      "name": "Mcdavid",
+      "slug": "mcdavid",
+      "logoUrl": "https://www.sportvision.rs/files/images/brendovi/mcdavid.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/mcdavid"
+    },
+    {
+      "svSlug": "merrell",
+      "name": "Merrell",
+      "slug": "merrell",
+      "logoUrl": "https://www.sportvision.rs/files/images/2019/6/24/merre1.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/merrell"
+    },
+    {
+      "svSlug": "mizuno",
+      "name": "Mizuno",
+      "slug": "mizuno",
+      "logoUrl": "https://www.sportvision.rs/files/images/2019/6/24/mizuno-140x75px.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/mizuno"
+    },
+    {
+      "svSlug": "molten",
+      "name": "Molten",
+      "slug": "molten",
+      "logoUrl": "https://www.sportvision.rs/files/images/2019/6/24/molten-140x75px.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/molten"
+    },
+    {
+      "svSlug": "mont",
+      "name": "Mont",
+      "slug": "mont",
+      "logoUrl": "https://www.sportvision.rs/files/images/2021/10/4/mont_logo.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/mont"
+    },
+    {
+      "svSlug": "moon-boot",
+      "name": "Moon Boot",
+      "slug": "moon-boot",
+      "logoUrl": "https://www.sportvision.rs/files/images/2020/1/8/moonb.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/moon-boot"
+    },
+    {
+      "svSlug": "new-balance",
+      "name": "NEW Balance",
+      "slug": "new-balance",
+      "logoUrl": "https://www.sportvision.rs/files/files/sv_redizajn/brendovi/newbalance.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/new-balance"
+    },
+    {
+      "svSlug": "new-era",
+      "name": "NEW ERA",
+      "slug": "new-era",
+      "logoUrl": "https://www.sportvision.rs/files/images/2022/11/17/newera.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/new-era"
+    },
+    {
+      "svSlug": "nike",
+      "name": "Nike",
+      "slug": "nike",
+      "logoUrl": "https://www.sportvision.rs/files/files/sv_redizajn/brendovi/nike.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/nike"
+    },
+    {
+      "svSlug": "on",
+      "name": "ON",
+      "slug": "on",
+      "logoUrl": "https://www.sportvision.rs/files/images/2026/1/9/oncloud.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/on"
+    },
+    {
+      "svSlug": "puma",
+      "name": "Puma",
+      "slug": "puma",
+      "logoUrl": "https://www.sportvision.rs/files/images/2019/6/24/puma-140x75px.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/puma"
+    },
+    {
+      "svSlug": "reebok",
+      "name": "Reebok",
+      "slug": "reebok",
+      "logoUrl": "https://www.sportvision.rs/files/images/2021/5/27/reebok-new-logo.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/reebok"
+    },
+    {
+      "svSlug": "reusch",
+      "name": "Reusch",
+      "slug": "reusch",
+      "logoUrl": "https://www.sportvision.rs/files/images/brendovi/reuch.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/reusch"
+    },
+    {
+      "svSlug": "rider",
+      "name": "Rider",
+      "slug": "rider",
+      "logoUrl": "https://www.sportvision.rs/files/images/2021/5/31/rid.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/rider"
+    },
+    {
+      "svSlug": "ring-sport",
+      "name": "Ring Sport",
+      "slug": "ring-sport",
+      "logoUrl": "https://www.sportvision.rs/files/images/2019/6/24/ring-140x75px.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/ring-sport"
+    },
+    {
+      "svSlug": "salomon",
+      "name": "Salomon",
+      "slug": "salomon",
+      "logoUrl": "https://www.sportvision.rs/files/images/2024/10/23/salomon.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/salomon"
+    },
+    {
+      "svSlug": "sergio-tacchini",
+      "name": "Sergio Tacchini",
+      "slug": "sergio-tacchini",
+      "logoUrl": "https://www.sportvision.rs/files/images/2021/12/1/sergio.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/sergio-tacchini"
+    },
+    {
+      "svSlug": "shoe-care",
+      "name": "Shoe Care",
+      "slug": "shoe-care",
+      "logoUrl": "https://www.sportvision.rs/files/images/2022/1/5/shoecare.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/shoe-care"
+    },
+    {
+      "svSlug": "skechers",
+      "name": "Skechers",
+      "slug": "skechers",
+      "logoUrl": "https://www.sportvision.rs/files/images/2025/5/16/skeachersnewlogo.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/skechers"
+    },
+    {
+      "svSlug": "soul-studio",
+      "name": "Soul Studio",
+      "slug": "soul-studio",
+      "logoUrl": "https://www.sportvision.rs/files/images/2025/4/17/soul-studio.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/soul-studio"
+    },
+    {
+      "svSlug": "spalding",
+      "name": "Spalding",
+      "slug": "spalding",
+      "logoUrl": "https://www.sportvision.rs/files/images/2022/5/12/spalding.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/spalding"
+    },
+    {
+      "svSlug": "speedo",
+      "name": "Speedo",
+      "slug": "speedo",
+      "logoUrl": "https://www.sportvision.rs/files/files/sv_redizajn/brendovi/speedo.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/speedo"
+    },
+    {
+      "svSlug": "the-north-face",
+      "name": "THE North Face",
+      "slug": "north-face",
+      "logoUrl": "https://www.sportvision.rs/files/images/2020/9/29/the_north_face_logo_100x65.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/the-north-face"
+    },
+    {
+      "svSlug": "timberland",
+      "name": "Timberland",
+      "slug": "timberland",
+      "logoUrl": "https://www.sportvision.rs/files/files/sv_redizajn/brendovi/timberland.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/timberland"
+    },
+    {
+      "svSlug": "umbro",
+      "name": "Umbro",
+      "slug": "umbro",
+      "logoUrl": "https://www.sportvision.rs/files/files/sv_redizajn/brendovi/umbro.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/umbro"
+    },
+    {
+      "svSlug": "under-armour",
+      "name": "Under Armour",
+      "slug": "under-armour",
+      "logoUrl": "https://www.sportvision.rs/files/images/2019/6/24/ua-140x75.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/under-armour"
+    },
+    {
+      "svSlug": "vans",
+      "name": "Vans",
+      "slug": "vans",
+      "logoUrl": "https://www.sportvision.rs/files/images/2022/7/12/Sv-Vans.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/vans"
+    },
+    {
+      "svSlug": "zaxy",
+      "name": "Zaxy",
+      "slug": "zaxy",
+      "logoUrl": "https://www.sportvision.rs/files/images/2023/5/24/Zaxy.png.webp",
+      "productUrl": "https://www.sportvision.rs/proizvodi/zaxy"
+    }
+  ],
+  "stores": [
+    {
+      "path": "310-arandjelovac-rp",
+      "name": "Aranđelovac RP",
+      "address": "Zanatlijska 112",
+      "city": "Aranđelovac",
+      "citySlug": "aran-elovac",
+      "phone": null,
+      "email": "arandjelovac.rp@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 44.302331,
+      "longitude": 20.5845137,
+      "storeUrl": "https://www.sportvision.rs/radnje/310-arandjelovac-rp"
+    },
+    {
+      "path": "3-sport-vision-arena",
+      "name": "Arena",
+      "address": "Bulevar Arsenija Carnojevica 97a",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "0698872914",
+      "email": "arena@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 44.818376,
+      "longitude": 20.40761,
+      "storeUrl": "https://www.sportvision.rs/radnje/3-sport-vision-arena"
+    },
+    {
+      "path": "10-sport-vision-kids-delta-city-multibrend",
+      "name": "Kids Delta City",
+      "address": "Jurija Gagarina 16/254a",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "0698872919",
+      "email": "kids.dc@sportvision.rs",
+      "shoppingCenterSlug": "delta-city",
+      "latitude": 44.805339,
+      "longitude": 20.408387,
+      "storeUrl": "https://www.sportvision.rs/radnje/10-sport-vision-kids-delta-city-multibrend"
+    },
+    {
+      "path": "166-sport-vision-megastore-ada",
+      "name": "Megastore Ada",
+      "address": "Radnička 9",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "0698877609",
+      "email": "megastore.ada@sportvision.rs",
+      "shoppingCenterSlug": "galerija",
+      "latitude": 44.7842351,
+      "longitude": 20.41422,
+      "storeUrl": "https://www.sportvision.rs/radnje/166-sport-vision-megastore-ada"
+    },
+    {
+      "path": "200-sport-vision-megastore-beo",
+      "name": "Megastore BEO",
+      "address": "Vojislava Ilića 141",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "069 887 3072",
+      "email": "megastore.beo@sportvision.rs",
+      "shoppingCenterSlug": "galerija",
+      "latitude": 44.7863561,
+      "longitude": 20.5005863,
+      "storeUrl": "https://www.sportvision.rs/radnje/200-sport-vision-megastore-beo"
+    },
+    {
+      "path": "102-sport-vision-megastore-big-bg",
+      "name": "Megastore Big BG",
+      "address": "Višnjička 84",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "381698872699",
+      "email": "megastore.big.bg@sportvision.rs",
+      "shoppingCenterSlug": "galerija",
+      "latitude": 44.8169451,
+      "longitude": 20.5073375,
+      "storeUrl": "https://www.sportvision.rs/radnje/102-sport-vision-megastore-big-bg"
+    },
+    {
+      "path": "195-sport-vision-megastore-bw",
+      "name": "Megastore BW",
+      "address": "Bulevar Vudroa Vilsona 12",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "0698872060",
+      "email": "megastore.bw@sportvision.rs",
+      "shoppingCenterSlug": "galerija",
+      "latitude": 44.8025433,
+      "longitude": 20.4447322,
+      "storeUrl": "https://www.sportvision.rs/radnje/195-sport-vision-megastore-bw"
+    },
+    {
+      "path": "11-sport-vision-megastore-delta-city",
+      "name": "Megastore Delta City",
+      "address": "Jurija Gagarina 16/254",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "0698873030",
+      "email": "megastore@sportvision.rs",
+      "shoppingCenterSlug": "delta-city",
+      "latitude": 44.8053848,
+      "longitude": 20.4052433,
+      "storeUrl": "https://www.sportvision.rs/radnje/11-sport-vision-megastore-delta-city"
+    },
+    {
+      "path": "4-sport-vision-usce-multibrend",
+      "name": "Megastore Ušće",
+      "address": "Bulevar Mihajla Pupina 4/1.68",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "0698872942",
+      "email": "megastore.usce@sportvision.rs",
+      "shoppingCenterSlug": "usce",
+      "latitude": 44.8154255,
+      "longitude": 20.4346382,
+      "storeUrl": "https://www.sportvision.rs/radnje/4-sport-vision-usce-multibrend"
+    },
+    {
+      "path": "219-sport-vision-ikea-outlet",
+      "name": "Outlet AVA RP",
+      "address": "Astrid Lindgren 23",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "069/887 3019",
+      "email": "outlet.ikea@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 44.7103358,
+      "longitude": 20.5609913,
+      "storeUrl": "https://www.sportvision.rs/radnje/219-sport-vision-ikea-outlet"
+    },
+    {
+      "path": "75-sport-vision-banjica-outlet",
+      "name": "Outlet Banjica",
+      "address": "Crnotravska 4",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "0698873217",
+      "email": "outlet.banjica@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 44.7657933,
+      "longitude": 20.4678994,
+      "storeUrl": "https://www.sportvision.rs/radnje/75-sport-vision-banjica-outlet"
+    },
+    {
+      "path": "55-sport-vision-bulevar-outlet",
+      "name": "Outlet Bulevar",
+      "address": "Bulevar kralja Aleksandra 391",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "0698872968",
+      "email": "outlet.bulevar@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 44.7894811,
+      "longitude": 20.5135002,
+      "storeUrl": "https://www.sportvision.rs/radnje/55-sport-vision-bulevar-outlet"
+    },
+    {
+      "path": "27-sport-vision-galenika-outlet",
+      "name": "Outlet Galenika",
+      "address": "Batajnicki drum 1/1",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "0698872948",
+      "email": "outlet.galenika@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 44.8653155,
+      "longitude": 20.3609578,
+      "storeUrl": "https://www.sportvision.rs/radnje/27-sport-vision-galenika-outlet"
+    },
+    {
+      "path": "191-sport-vision-rakovica-outlet",
+      "name": "Outlet Rakovica",
+      "address": "Patrijarha Dimitrija 12",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "0698878078",
+      "email": "outlet.rakovica@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 44.7420899,
+      "longitude": 20.4381078,
+      "storeUrl": "https://www.sportvision.rs/radnje/191-sport-vision-rakovica-outlet"
+    },
+    {
+      "path": "82-runnmore",
+      "name": "Runnmore",
+      "address": "Uzun Mirkova 10",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "0698873120",
+      "email": "run@runnmore.com",
+      "shoppingCenterSlug": null,
+      "latitude": 44.821198,
+      "longitude": 20.454574,
+      "storeUrl": "https://www.sportvision.rs/radnje/82-runnmore"
+    },
+    {
+      "path": "56-sport-vision-zlatibor",
+      "name": "Zlatibor",
+      "address": "Miladina Pećinara 145, TC Zlatibor",
+      "city": "Bor",
+      "citySlug": "bor",
+      "phone": "0698873093",
+      "email": "zlatibor@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 43.72526,
+      "longitude": 19.698789,
+      "storeUrl": "https://www.sportvision.rs/radnje/56-sport-vision-zlatibor"
+    },
+    {
+      "path": "284-sport-vision-cacak-big",
+      "name": "Čačak BIG",
+      "address": "Nikole Tesle 11",
+      "city": "Čačak",
+      "citySlug": "cacak",
+      "phone": "069 887 8387",
+      "email": "cacak.big@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 43.8889543,
+      "longitude": 20.3691826,
+      "storeUrl": "https://www.sportvision.rs/radnje/284-sport-vision-cacak-big"
+    },
+    {
+      "path": "74-sport-vision-indjija-outlet",
+      "name": "Outlet Inđija",
+      "address": "Vojvode Putnika bb",
+      "city": "Inđija",
+      "citySlug": "in-ija",
+      "phone": "0698873168",
+      "email": "outlet.indjija@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 45.070201,
+      "longitude": 20.1341656,
+      "storeUrl": "https://www.sportvision.rs/radnje/74-sport-vision-indjija-outlet"
+    },
+    {
+      "path": "67-sport-vision-jagodina-vivo-multibrend",
+      "name": "Jagodina Vivo",
+      "address": "Vuka Bojovića bb",
+      "city": "Jagodina",
+      "citySlug": "jagodina",
+      "phone": "0698872681",
+      "email": "jagodina.vivo@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 43.9659149,
+      "longitude": 21.265226,
+      "storeUrl": "https://www.sportvision.rs/radnje/67-sport-vision-jagodina-vivo-multibrend"
+    },
+    {
+      "path": "265-sport-vision-kikinda-rp",
+      "name": "Kikinda RP",
+      "address": "Mihajla Pupina 26",
+      "city": "Kikinda",
+      "citySlug": "kikinda",
+      "phone": null,
+      "email": "kikinda.rp@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 45.8213109,
+      "longitude": 20.4510892,
+      "storeUrl": "https://www.sportvision.rs/radnje/265-sport-vision-kikinda-rp"
+    },
+    {
+      "path": "21-sport-vision-kragujevac-plaza",
+      "name": "Kragujevac BIG FASHION",
+      "address": "Bulevar Kraljice Marije 56/231",
+      "city": "Kragujevac",
+      "citySlug": "kragujevac",
+      "phone": "0698873025",
+      "email": "megastore.kragujevac@sportvision.rs",
+      "shoppingCenterSlug": "kragujevac-plaza",
+      "latitude": 44.0094249,
+      "longitude": 20.8952658,
+      "storeUrl": "https://www.sportvision.rs/radnje/21-sport-vision-kragujevac-plaza"
+    },
+    {
+      "path": "22-sport-visiom-kraljevo-multibrend",
+      "name": "Kraljevo",
+      "address": "Trg srpskih ratnika 5",
+      "city": "Kraljevo",
+      "citySlug": "kraljevo",
+      "phone": "0698873034",
+      "email": "kraljevo@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 43.7234113,
+      "longitude": 20.688028,
+      "storeUrl": "https://www.sportvision.rs/radnje/22-sport-visiom-kraljevo-multibrend"
+    },
+    {
+      "path": "274-sport-vision-outlet-kraljevo",
+      "name": "Outlet Kraljevo",
+      "address": "Adranska br.111",
+      "city": "Kraljevo",
+      "citySlug": "kraljevo",
+      "phone": null,
+      "email": "outlet.kraljevo@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 43.7350628,
+      "longitude": 20.6698244,
+      "storeUrl": "https://www.sportvision.rs/radnje/274-sport-vision-outlet-kraljevo"
+    },
+    {
+      "path": "24-sport-vision-krusevac-3-multibrend",
+      "name": "Kruševac",
+      "address": "Vidovdanska 18",
+      "city": "Kruševac",
+      "citySlug": "krusevac",
+      "phone": "0698873031",
+      "email": "krusevac@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 43.581211,
+      "longitude": 21.328572,
+      "storeUrl": "https://www.sportvision.rs/radnje/24-sport-vision-krusevac-3-multibrend"
+    },
+    {
+      "path": "176-sport-vision-krusevac-megastore-multibrend",
+      "name": "Megastore Kruševac",
+      "address": "Krfska 33",
+      "city": "Kruševac",
+      "citySlug": "krusevac",
+      "phone": "0698873427",
+      "email": "megastore.krusevac@sportvision.rs",
+      "shoppingCenterSlug": "galerija",
+      "latitude": 43.5701562,
+      "longitude": 21.3399945,
+      "storeUrl": "https://www.sportvision.rs/radnje/176-sport-vision-krusevac-megastore-multibrend"
+    },
+    {
+      "path": "204-sport-vision-leskovac",
+      "name": "Leskovac",
+      "address": "Bulevar Oslobodjenja BB",
+      "city": "Leskovac",
+      "citySlug": "leskovac",
+      "phone": "069 887 3016",
+      "email": "leskovacmb@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 42.9962542,
+      "longitude": 21.9448415,
+      "storeUrl": "https://www.sportvision.rs/radnje/204-sport-vision-leskovac"
+    },
+    {
+      "path": "214-sport-vision-leskovac-rp",
+      "name": "Leskovac RP",
+      "address": "28 Marta bb",
+      "city": "Leskovac",
+      "citySlug": "leskovac",
+      "phone": "069/887-8085",
+      "email": "leskovacrp@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 43.0002034,
+      "longitude": 21.9519814,
+      "storeUrl": "https://www.sportvision.rs/radnje/214-sport-vision-leskovac-rp"
+    },
+    {
+      "path": "303-sport-vision-loznica-rp-",
+      "name": "Loznica RP",
+      "address": "Filipa Kljajića 3g",
+      "city": "Loznica",
+      "citySlug": "loznica",
+      "phone": null,
+      "email": "loznica.rp@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 44.5406238,
+      "longitude": 19.2255292,
+      "storeUrl": "https://www.sportvision.rs/radnje/303-sport-vision-loznica-rp-"
+    },
+    {
+      "path": "210-sport-vision-nis-delta-megastore-multibrend",
+      "name": "Megastore Delta Niš",
+      "address": "Bulevar Nemanjića 11B",
+      "city": "Niš",
+      "citySlug": "nis",
+      "phone": "069 887 2950",
+      "email": "megastore.delta.nis@sportvision.rs",
+      "shoppingCenterSlug": "delta-city",
+      "latitude": 43.3244068,
+      "longitude": 21.9115195,
+      "storeUrl": "https://www.sportvision.rs/radnje/210-sport-vision-nis-delta-megastore-multibrend"
+    },
+    {
+      "path": "76-sport-vision-medijana-nis-megastore-multibrend",
+      "name": "Megastore Medijana Niš",
+      "address": "Bulevar Medijana 21",
+      "city": "Niš",
+      "citySlug": "nis",
+      "phone": "0698873231",
+      "email": "medijana.nis@sportvision.rs",
+      "shoppingCenterSlug": "galerija",
+      "latitude": 43.3107876,
+      "longitude": 21.9350312,
+      "storeUrl": "https://www.sportvision.rs/radnje/76-sport-vision-medijana-nis-megastore-multibrend"
+    },
+    {
+      "path": "29-sport-vision-nis-megastore-multibrend",
+      "name": "Megastore Niš",
+      "address": "Obrenoviceva 42/1.01",
+      "city": "Niš",
+      "citySlug": "nis",
+      "phone": "0698872967",
+      "email": "megastore.nis@sportvision.rs",
+      "shoppingCenterSlug": "galerija",
+      "latitude": 43.3189706,
+      "longitude": 21.8920799,
+      "storeUrl": "https://www.sportvision.rs/radnje/29-sport-vision-nis-megastore-multibrend"
+    },
+    {
+      "path": "292-outlet-nis",
+      "name": "Outlet Niš",
+      "address": "12. Februar 80",
+      "city": "Niš",
+      "citySlug": "nis",
+      "phone": null,
+      "email": "outlet.nis@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 43.3373511,
+      "longitude": 21.879147,
+      "storeUrl": "https://www.sportvision.rs/radnje/292-outlet-nis"
+    },
+    {
+      "path": "256-sport-vision-pazova-rp",
+      "name": "Pazova RP",
+      "address": "Vojački put 1a",
+      "city": "Nova Pazova",
+      "citySlug": "nova-pazova",
+      "phone": null,
+      "email": "pazova.rp@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 44.9554917,
+      "longitude": 20.1962391,
+      "storeUrl": "https://www.sportvision.rs/radnje/256-sport-vision-pazova-rp"
+    },
+    {
+      "path": "112-sport-vision-novi-pazar",
+      "name": "Novi Pazar",
+      "address": "Čerkez Mahala 2",
+      "city": "Novi Pazar",
+      "citySlug": "novi-pazar",
+      "phone": "0698873018",
+      "email": "novi.pazar@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 43.1413953,
+      "longitude": 20.5206166,
+      "storeUrl": "https://www.sportvision.rs/radnje/112-sport-vision-novi-pazar"
+    },
+    {
+      "path": "189-sport-vision-kids-novi-sad-big-fashion",
+      "name": "Kids Novi Sad",
+      "address": "Bulevar Oslobođenja 119",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "phone": "0698873417",
+      "email": "kids.ns.bigfashion@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 45.2446159,
+      "longitude": 19.8419347,
+      "storeUrl": "https://www.sportvision.rs/radnje/189-sport-vision-kids-novi-sad-big-fashion"
+    },
+    {
+      "path": "38-sport-vision-megastore-novi-sad-multibrend",
+      "name": "Megastore Novi Sad",
+      "address": "Sentandrejski put 11",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "phone": "0698873047",
+      "email": "megastore.novisad@sportvision.rs",
+      "shoppingCenterSlug": "galerija",
+      "latitude": 45.27575617267648,
+      "longitude": 19.82587052698685,
+      "storeUrl": "https://www.sportvision.rs/radnje/38-sport-vision-megastore-novi-sad-multibrend"
+    },
+    {
+      "path": "171-sport-vision-novi-sad-big-fashion",
+      "name": "Novi Sad",
+      "address": "Bulevar Oslobodjenja 119",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "phone": "0698873251",
+      "email": "ns.bigfashion@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 45.2448197,
+      "longitude": 19.8422389,
+      "storeUrl": "https://www.sportvision.rs/radnje/171-sport-vision-novi-sad-big-fashion"
+    },
+    {
+      "path": "261-sport-vision-obrenovac-rp",
+      "name": "Obrenovac RP",
+      "address": "Kralja Aleksandra I 159G",
+      "city": "Obrenovac",
+      "citySlug": "obrenovac",
+      "phone": "069/8870131",
+      "email": "obrenovac.rp@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 44.6575722,
+      "longitude": 20.2119782,
+      "storeUrl": "https://www.sportvision.rs/radnje/261-sport-vision-obrenovac-rp"
+    },
+    {
+      "path": "46-sport-vision-pancevo-multibrend",
+      "name": "Pančevo",
+      "address": "Miloša Obrenovića 12/5",
+      "city": "Pančevo",
+      "citySlug": "pancevo",
+      "phone": "0698873029",
+      "email": "pancevo@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 44.8666801,
+      "longitude": 20.6583076,
+      "storeUrl": "https://www.sportvision.rs/radnje/46-sport-vision-pancevo-multibrend"
+    },
+    {
+      "path": "220-pirot",
+      "name": "Pirot",
+      "address": "Vojvode Mišića bb",
+      "city": "Pirot",
+      "citySlug": "pirot",
+      "phone": "069/887-8113",
+      "email": "pirot@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 43.162134,
+      "longitude": 22.5824779,
+      "storeUrl": "https://www.sportvision.rs/radnje/220-pirot"
+    },
+    {
+      "path": "73-sport-vision-pozarevac-multibrend",
+      "name": "Požarevac",
+      "address": "Trg Oslobođenja 1",
+      "city": "Požarevac",
+      "citySlug": "pozarevac",
+      "phone": "0698872688",
+      "email": "pozarevac@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 44.6211106,
+      "longitude": 21.1839132,
+      "storeUrl": "https://www.sportvision.rs/radnje/73-sport-vision-pozarevac-multibrend"
+    },
+    {
+      "path": "272-sport-vision-ruma-rp",
+      "name": "Ruma RP",
+      "address": "Trg Oslobođenja 12n",
+      "city": "Ruma",
+      "citySlug": "ruma",
+      "phone": null,
+      "email": "ruma.rp@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 45.005939,
+      "longitude": 19.8302095,
+      "storeUrl": "https://www.sportvision.rs/radnje/272-sport-vision-ruma-rp"
+    },
+    {
+      "path": "289-sabac-big",
+      "name": "Šabac BIG",
+      "address": "Vojvode Janka Stojićevića 3-5",
+      "city": "Šabac",
+      "citySlug": "sabac",
+      "phone": null,
+      "email": "sabac.big@sportvision.rs",
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": 44.748572,
+      "longitude": 19.7039363,
+      "storeUrl": "https://www.sportvision.rs/radnje/289-sabac-big"
+    },
+    {
+      "path": "115-sport-vision-smederevo",
+      "name": "Smederevo",
+      "address": "Šalinačka 58, lok. 9, TC Stop Shop",
+      "city": "Smederevo",
+      "citySlug": "smederevo",
+      "phone": "0698872926",
+      "email": "smederevo@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 44.6674095,
+      "longitude": 20.9352537,
+      "storeUrl": "https://www.sportvision.rs/radnje/115-sport-vision-smederevo"
+    },
+    {
+      "path": "306-sport-vision-smederevo-rp",
+      "name": "Smederevo RP",
+      "address": "Crvene armije bb",
+      "city": "Smederevo",
+      "citySlug": "smederevo",
+      "phone": null,
+      "email": "smederevo.rp@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 44.646581,
+      "longitude": 20.9486318,
+      "storeUrl": "https://www.sportvision.rs/radnje/306-sport-vision-smederevo-rp"
+    },
+    {
+      "path": "110-sport-vision-sombor",
+      "name": "Sombor",
+      "address": "Kralja Petra I 12",
+      "city": "Sombor",
+      "citySlug": "sombor",
+      "phone": "0698872937",
+      "email": "sombor@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 45.7730773,
+      "longitude": 19.114602,
+      "storeUrl": "https://www.sportvision.rs/radnje/110-sport-vision-sombor"
+    },
+    {
+      "path": "1-sport-vision-subotica-megastore-multibrend",
+      "name": "Megastore Subotica",
+      "address": "Segedinski Put 88",
+      "city": "Subotica",
+      "citySlug": "subotica",
+      "phone": "0698873228",
+      "email": "megastore.subotica@sportvision.rs",
+      "shoppingCenterSlug": "galerija",
+      "latitude": 46.1017451,
+      "longitude": 19.6972477,
+      "storeUrl": "https://www.sportvision.rs/radnje/1-sport-vision-subotica-megastore-multibrend"
+    },
+    {
+      "path": "33-sport-vision-uzice-multibrend",
+      "name": "Užice",
+      "address": "Trg partizana 1",
+      "city": "Užice",
+      "citySlug": "uzice",
+      "phone": "0698872921",
+      "email": "uzice@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 43.855902,
+      "longitude": 19.8393644,
+      "storeUrl": "https://www.sportvision.rs/radnje/33-sport-vision-uzice-multibrend"
+    },
+    {
+      "path": "81-sport-vision-valjevo",
+      "name": "Valjevo",
+      "address": "Uzun Mirkova 2b",
+      "city": "Valjevo",
+      "citySlug": "valjevo",
+      "phone": "0698873163",
+      "email": "valjevo@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 44.2692773,
+      "longitude": 19.8960876,
+      "storeUrl": "https://www.sportvision.rs/radnje/81-sport-vision-valjevo"
+    },
+    {
+      "path": "212-sport-vision-vranje",
+      "name": "Vranje",
+      "address": "Pariske komune 20, lokal 11",
+      "city": "Vranje",
+      "citySlug": "vranje",
+      "phone": "069 887 2065",
+      "email": "vranje@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 42.5514531,
+      "longitude": 21.9056322,
+      "storeUrl": "https://www.sportvision.rs/radnje/212-sport-vision-vranje"
+    },
+    {
+      "path": "269-sport-vision-vrbas-rp",
+      "name": "Vrbas RP",
+      "address": "Njegoševa 2a",
+      "city": "Vrbas",
+      "citySlug": "vrbas",
+      "phone": null,
+      "email": "vrbas.rp@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 45.5636921,
+      "longitude": 19.6474734,
+      "storeUrl": "https://www.sportvision.rs/radnje/269-sport-vision-vrbas-rp"
+    },
+    {
+      "path": "162-sport-vision-vrsac",
+      "name": "Vršac",
+      "address": "Vojvode Stepe Stepanovica bb",
+      "city": "Vršac",
+      "citySlug": "vrsac",
+      "phone": "0698871778",
+      "email": "vrsac@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 45.1312873,
+      "longitude": 21.2858112,
+      "storeUrl": "https://www.sportvision.rs/radnje/162-sport-vision-vrsac"
+    },
+    {
+      "path": "279-sport-vision-zajecar-rp",
+      "name": "Zaječar RP",
+      "address": "Čupićeva 2",
+      "city": "Zaječar",
+      "citySlug": "zajecar",
+      "phone": null,
+      "email": "zajecar.rp@sportvision.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 43.9033982,
+      "longitude": 22.2667851,
+      "storeUrl": "https://www.sportvision.rs/radnje/279-sport-vision-zajecar-rp"
+    },
+    {
+      "path": "72-sport-vision-zrenjanin",
+      "name": "Zrenjanin",
+      "address": "Bagljas Zapad  5",
+      "city": "Zrenjanin",
+      "citySlug": "zrenjanin",
+      "phone": "0698873213",
+      "email": "zrenjanin@sportvision.rs",
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": 45.3774324,
+      "longitude": 20.3405657,
+      "storeUrl": "https://www.sportvision.rs/radnje/72-sport-vision-zrenjanin"
+    }
+  ]
+}

@@ -1,0 +1,682 @@
+{
+  "scrapedAt": "2026-06-04T15:26:34.527Z",
+  "sourceNote": "Kurirano: JYSK jysk.rs (50 prodavnica, uzorak); IKEA ikea.com/rs; Emmezeta emmezeta.rs/lokacije-centara; Forma Ideale API (44 salona)",
+  "brands": [
+    "jysk",
+    "ikea",
+    "forma-ideale",
+    "emmezeta"
+  ],
+  "stores": [
+    {
+      "brandSlug": "jysk",
+      "name": "JYSK Ušće",
+      "address": "Bulevar Mihajla Pupina 4, TC Ušće",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "usce",
+      "retailerSlug": "jysk",
+      "storeUrl": "https://jysk.rs/pronadi-prodavnicu"
+    },
+    {
+      "brandSlug": "jysk",
+      "name": "JYSK BIG Fashion Karaburma",
+      "address": "Višnjička 84, BIG Fashion Park",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "big-fashion",
+      "retailerSlug": "jysk",
+      "storeUrl": "https://jysk.rs/pronadi-prodavnicu"
+    },
+    {
+      "brandSlug": "jysk",
+      "name": "JYSK Vračar",
+      "address": "Južni bulevar 95",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "jysk",
+      "storeUrl": "https://jysk.rs/pronadi-prodavnicu"
+    },
+    {
+      "brandSlug": "jysk",
+      "name": "JYSK Novi Beograd",
+      "address": "Bulevar umetnosti 4",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "jysk",
+      "storeUrl": "https://jysk.rs/pronadi-prodavnicu"
+    },
+    {
+      "brandSlug": "jysk",
+      "name": "JYSK Rakovica",
+      "address": "Patrijarha Dimitrija 14",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "jysk",
+      "storeUrl": "https://jysk.rs/pronadi-prodavnicu"
+    },
+    {
+      "brandSlug": "jysk",
+      "name": "JYSK Stadion",
+      "address": "Zaplanjska 32, TC Stadion",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "stadion",
+      "retailerSlug": "jysk",
+      "storeUrl": "https://jysk.rs/pronadi-prodavnicu"
+    },
+    {
+      "brandSlug": "jysk",
+      "name": "JYSK IKEA zona",
+      "address": "Astrid Lindgren 13-27, Žuče",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "jysk",
+      "storeUrl": "https://jysk.rs/pronadi-prodavnicu"
+    },
+    {
+      "brandSlug": "jysk",
+      "name": "JYSK Novi Sad",
+      "address": "Sentandrejski put 11, BIG Novi Sad",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "shoppingCenterSlug": "promenada",
+      "retailerSlug": "jysk",
+      "storeUrl": "https://jysk.rs/pronadi-prodavnicu"
+    },
+    {
+      "brandSlug": "jysk",
+      "name": "JYSK Niš",
+      "address": "Bulevar Nemanjića 11b, Delta City",
+      "city": "Niš",
+      "citySlug": "nis",
+      "shoppingCenterSlug": "delta-city",
+      "retailerSlug": "jysk",
+      "storeUrl": "https://jysk.rs/pronadi-prodavnicu"
+    },
+    {
+      "brandSlug": "jysk",
+      "name": "JYSK Kragujevac",
+      "address": "Bulevar Kraljice Marije 56, Plaza",
+      "city": "Kragujevac",
+      "citySlug": "kragujevac",
+      "shoppingCenterSlug": "kragujevac-plaza",
+      "retailerSlug": "jysk",
+      "storeUrl": "https://jysk.rs/pronadi-prodavnicu"
+    },
+    {
+      "brandSlug": "jysk",
+      "name": "JYSK Subotica",
+      "address": "Segedinski put 88",
+      "city": "Subotica",
+      "citySlug": "subotica",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "jysk",
+      "storeUrl": "https://jysk.rs/pronadi-prodavnicu"
+    },
+    {
+      "brandSlug": "jysk",
+      "name": "JYSK Zrenjanin",
+      "address": "Bagljaš zapad 5, BIG Fashion",
+      "city": "Zrenjanin",
+      "citySlug": "zrenjanin",
+      "shoppingCenterSlug": "big-fashion",
+      "retailerSlug": "jysk",
+      "storeUrl": "https://jysk.rs/pronadi-prodavnicu"
+    },
+    {
+      "brandSlug": "ikea",
+      "name": "IKEA Beograd (robna kuća)",
+      "address": "Astrid Lindgren 11, auto-put Beograd-Niš (petlja Tranšped)",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "ikea",
+      "storeUrl": "https://www.ikea.com/rs/sr/stores/beograd/"
+    },
+    {
+      "brandSlug": "ikea",
+      "name": "IKEA Studio planiranje Novi Beograd",
+      "address": "Novi Beograd",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "delta-city",
+      "retailerSlug": "ikea",
+      "storeUrl": "https://www.ikea.com/rs/sr/stores/"
+    },
+    {
+      "brandSlug": "ikea",
+      "name": "IKEA Studio planiranje Novi Sad",
+      "address": "Novi Sad",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "ikea",
+      "storeUrl": "https://www.ikea.com/rs/sr/stores/"
+    },
+    {
+      "brandSlug": "ikea",
+      "name": "Centar za isporuku Novi Beograd",
+      "address": "Novi Beograd",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "ikea",
+      "storeUrl": "https://www.ikea.com/rs/sr/stores/"
+    },
+    {
+      "brandSlug": "ikea",
+      "name": "Centar za isporuku Novi Sad",
+      "address": "Novi Sad",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "ikea",
+      "storeUrl": "https://www.ikea.com/rs/sr/stores/"
+    },
+    {
+      "brandSlug": "ikea",
+      "name": "Uslužni centar isporuke Niš",
+      "address": "Niš",
+      "city": "Niš",
+      "citySlug": "nis",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "ikea",
+      "storeUrl": "https://www.ikea.com/rs/sr/stores/"
+    },
+    {
+      "brandSlug": "emmezeta",
+      "name": "Emmezeta Bežanijska kosa",
+      "address": "Partizanske avijacije 2a",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "emmezeta",
+      "storeUrl": "https://www.emmezeta.rs/lokacije-centara"
+    },
+    {
+      "brandSlug": "emmezeta",
+      "name": "Emmezeta BIG Fashion Karaburma",
+      "address": "Višnjička 84, BIG Fashion Park",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "big-fashion",
+      "retailerSlug": "emmezeta",
+      "storeUrl": "https://www.emmezeta.rs/lokacije-centara"
+    },
+    {
+      "brandSlug": "emmezeta",
+      "name": "Emmezeta Novi Sad Salajka",
+      "address": "Temerinska 95",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "emmezeta",
+      "storeUrl": "https://www.emmezeta.rs/lokacije-centara"
+    },
+    {
+      "brandSlug": "emmezeta",
+      "name": "Merkury by Emmezeta",
+      "address": "Tekelijina bb",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "emmezeta",
+      "storeUrl": "https://www.emmezeta.rs/lokacije-centara"
+    },
+    {
+      "brandSlug": "emmezeta",
+      "name": "Emmezeta Niš",
+      "address": "Ulica Majakovskog bb, Medijana",
+      "city": "Niš",
+      "citySlug": "nis",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "emmezeta",
+      "storeUrl": "https://www.emmezeta.rs/lokacije-centara"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Aleksinac",
+      "address": "Žitkovački put bb",
+      "city": "Aleksinac",
+      "citySlug": "aleksinac",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#aleksinac"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Aranđelovac",
+      "address": "Kralja Petra I bb",
+      "city": "Aranđelovac",
+      "citySlug": "aran-elovac",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#arandelovac"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Bačka Palanka",
+      "address": "Novosadski put 7a",
+      "city": "Bačka Palanka",
+      "citySlug": "backa-palanka",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#backa-palanka"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Beograd - Dušanovac",
+      "address": "Auto put Beograd - Niš (ispred pijace na Dušanovcu), Krivolačka 6-7",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#beograd-dusanovac"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Beograd - Rakovica",
+      "address": "Patrijarha Dimitrija 12d",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#beograd-rakovica"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Beograd - Zemun",
+      "address": "Batajnički drum 1 (TC BN BOS)",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#beograd-zemun"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Beograd - Krnjača",
+      "address": "Zrenjaninski put 26d",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#beograd-krnjaca"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Beograd - Sava Centar",
+      "address": "Milentija Popovića 9",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#beograd-sava-centar"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Čačak",
+      "address": "Braće Spasić bb (Roda centar)",
+      "city": "Čačak",
+      "citySlug": "cacak",
+      "shoppingCenterSlug": "stadion",
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#cacak"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Jagodina",
+      "address": "Ribarski put bb",
+      "city": "Jagodina",
+      "citySlug": "jagodina",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#jagodina"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Kikinda",
+      "address": "Miloša Velikog 54",
+      "city": "Kikinda",
+      "citySlug": "kikinda",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#kikinda"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Kragujevac",
+      "address": "Delta park, Save Kovačevića 27",
+      "city": "Kragujevac",
+      "citySlug": "kragujevac",
+      "shoppingCenterSlug": "delta-city",
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#kragujevac"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Kraljevo",
+      "address": "Ulica Jovana Deroka 6",
+      "city": "Kraljevo",
+      "citySlug": "kraljevo",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#kraljevo"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Kruševac",
+      "address": "Kralja Milutina 26B, naselje „Ujedinjene nacije“",
+      "city": "Kruševac",
+      "citySlug": "krusevac",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#krusevac"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Lazarevac",
+      "address": "Janka Stajčića 54",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#lazarevac"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Leskovac",
+      "address": "Vilema Pušmana 1",
+      "city": "Leskovac",
+      "citySlug": "leskovac",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#leskovac"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Loznica",
+      "address": "Kneza Miloša 13",
+      "city": "Loznica",
+      "citySlug": "loznica",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#loznica"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Mladenovac",
+      "address": "Kralja Petra I 1a",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#mladenovac"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Niš 3",
+      "address": "Novoprojektovana bb (kod Aerodroma)",
+      "city": "Niš",
+      "citySlug": "nis",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#nis-3"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale NIŠ - RODA CENTAR",
+      "address": "Vizantijski bulevar 1",
+      "city": "Niš",
+      "citySlug": "nis",
+      "shoppingCenterSlug": "stadion",
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#nis-roda-centar"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale NIŠ 5",
+      "address": "Novoprojektovana bb (kod Aerodroma)",
+      "city": "Niš",
+      "citySlug": "nis",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#nis-5"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Novi Pazar",
+      "address": "Dimitrija Tucovića bb",
+      "city": "Novi Pazar",
+      "citySlug": "novi-pazar",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#novi-pazar"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Novi Sad",
+      "address": "Rumenačka 150 (TC Merkur)",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "shoppingCenterSlug": "mercator",
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#novi-sad"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Obrenovac",
+      "address": "Kralja Aleksandra Prvog 157 (RC NEST)",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#obrenovac"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Pančevo",
+      "address": "Svetog Save 8a (Objekat MAXI)",
+      "city": "Pančevo",
+      "citySlug": "pancevo",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#pancevo"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Paraćin",
+      "address": "Tome Živanovića 44 (kod gradskog stadiona)",
+      "city": "Paraćin",
+      "citySlug": "paracin",
+      "shoppingCenterSlug": "stadion",
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#paracin"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Pirot",
+      "address": "Stevana Sremca bb",
+      "city": "Pirot",
+      "citySlug": "pirot",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#pirot"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Požarevac",
+      "address": "Đure Đakovića bb, preko puta OMV-a",
+      "city": "Požarevac",
+      "citySlug": "pozarevac",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#pozarevac"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Prijepolje",
+      "address": "Izeta Čavića 12",
+      "city": "Prijepolje",
+      "citySlug": "prijepolje",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#prijepolje"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Šabac",
+      "address": "Janka Veselinovića 1",
+      "city": "Šabac",
+      "citySlug": "sabac",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#sabac"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Smederevo",
+      "address": "Šalinačka bb",
+      "city": "Smederevo",
+      "citySlug": "smederevo",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#smederevo"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Sombor",
+      "address": "Kljajićevački put bb",
+      "city": "Sombor",
+      "citySlug": "sombor",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#sombor"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Sremska Mitrovica",
+      "address": "Marka Aurelija bb",
+      "city": "Sremska Mitrovica",
+      "citySlug": "sremska-mitrovica",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#sremska-mitrovica"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Stara Pazova",
+      "address": "Karađorđeva 150",
+      "city": "Stara Pazova",
+      "citySlug": "stara-pazova",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#stara-pazova"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Subotica",
+      "address": "Segedinski put 96",
+      "city": "Subotica",
+      "citySlug": "subotica",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#subotica"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Užice",
+      "address": "Banjička 3",
+      "city": "Užice",
+      "citySlug": "uzice",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#uzice"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Valjevo",
+      "address": "Vladike Nikolaja 65b",
+      "city": "Valjevo",
+      "citySlug": "valjevo",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#valjevo"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Velika Plana",
+      "address": "Nikole Pašića 11",
+      "city": "Velika Plana",
+      "citySlug": "velika-plana",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#velika-plana"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Vranje",
+      "address": "Radnička 20",
+      "city": "Vranje",
+      "citySlug": "vranje",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#vranje"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Vrbas",
+      "address": "Narodnog fronta 51 (Idea)",
+      "city": "Vrbas",
+      "citySlug": "vrbas",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#vrbas"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Vršac",
+      "address": "Beogradski put bb",
+      "city": "Vršac",
+      "citySlug": "vrsac",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#vrsac"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Zaječar",
+      "address": "Generala Gambete 44",
+      "city": "Zaječar",
+      "citySlug": "zajecar",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#zajecar"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Zrenjanin",
+      "address": "Bagljaš-Zapad 5",
+      "city": "Zrenjanin",
+      "citySlug": "zrenjanin",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#zrenjanin"
+    },
+    {
+      "brandSlug": "forma-ideale",
+      "name": "Forma Ideale Forma Ideale - Kragujevac",
+      "address": "Skladišni centar 13",
+      "city": "Kragujevac",
+      "citySlug": "kragujevac",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "forma-ideale",
+      "storeUrl": "https://formaideale.rs/servis-za-kupce/prodajna-mreza#forma-ideale-kragujevac"
+    }
+  ]
+}

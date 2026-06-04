@@ -1,5 +1,17 @@
 import type { Brand } from "@/types";
+import {
+  FASHION_SPORT_BRAND_SLUGS,
+  buildFashionSportBrands,
+} from "@/lib/data/fashion-sport-brands";
+import {
+  buildFastFashionBrands,
+  FAST_FASHION_BRAND_SLUGS,
+} from "@/lib/data/fast-fashion-brands";
 import { buildFashionAndFriendsDirectoryBrands } from "@/lib/data/ff-directory-brands";
+
+const FAST_FASHION_SLUGS = new Set<string>(FAST_FASHION_BRAND_SLUGS);
+const FASHION_SPORT_SLUGS = new Set<string>(FASHION_SPORT_BRAND_SLUGS);
+const CURATED_SLUGS = new Set([...FAST_FASHION_SLUGS, ...FASHION_SPORT_SLUGS]);
 
 const coreBrands: Brand[] = [
   {
@@ -32,61 +44,6 @@ const coreBrands: Brand[] = [
     ],
     shoppingCenterSlugs: ["rajiceva", "usce"],
     relatedBrandSlugs: ["sandro", "maje", "cos"],
-  },
-  {
-    slug: "zara",
-    name: "Zara",
-    category: "fashion",
-    country: "Španija",
-    website: "https://www.zara.com",
-    description:
-      "Globalni lider u fast fashion premium segmentu sa konstantno osveženom kolekcijom i snažnim prisustvom u svim većim gradovima Srbije.",
-    priceSegment: "mid",
-    availabilityCount: 28,
-    featured: true,
-    popular: true,
-    locations: [
-      {
-        id: "3",
-        storeName: "Zara Ušće",
-        retailerSlug: "department-store",
-        address: "Bulevar Mihajla Pupina 4",
-        city: "Beograd",
-      },
-      {
-        id: "4",
-        storeName: "Zara Promenada",
-        retailerSlug: "department-store",
-        address: "Sentandrejski put 11",
-        city: "Novi Sad",
-      },
-    ],
-    shoppingCenterSlugs: ["usce", "promenada", "delta-city"],
-    relatedBrandSlugs: ["massimo-dutti", "bershka", "pull-and-bear"],
-  },
-  {
-    slug: "massimo-dutti",
-    name: "Massimo Dutti",
-    category: "fashion",
-    country: "Španija",
-    website: "https://www.massimodutti.com",
-    description:
-      "Premium linija Inditex grupe fokusirana na elegantnu, sofisticiranu modu za poslovni i casual segment.",
-    priceSegment: "premium",
-    availabilityCount: 14,
-    featured: true,
-    popular: true,
-    locations: [
-      {
-        id: "5",
-        storeName: "Massimo Dutti Ušće",
-        retailerSlug: "department-store",
-        address: "Bulevar Mihajla Pupina 4",
-        city: "Beograd",
-      },
-    ],
-    shoppingCenterSlugs: ["usce", "galerija"],
-    relatedBrandSlugs: ["zara", "cos", "sandro"],
   },
   {
     slug: "cos",
@@ -312,30 +269,6 @@ const coreBrands: Brand[] = [
     relatedBrandSlugs: ["polo-ralph-lauren", "tommy-hilfiger"],
   },
   {
-    slug: "mango",
-    name: "Mango",
-    category: "fashion",
-    country: "Španija",
-    website: "https://www.mango.com",
-    description:
-      "Španski brend sa mediteranskim estetikom i pristupačnom premium modom za široku publiku.",
-    priceSegment: "mid",
-    availabilityCount: 20,
-    featured: false,
-    popular: true,
-    locations: [
-      {
-        id: "16",
-        storeName: "Mango Galerija",
-        retailerSlug: "city-fashion",
-        address: "Galerija Beograd",
-        city: "Beograd",
-      },
-    ],
-    shoppingCenterSlugs: ["galerija", "promenada"],
-    relatedBrandSlugs: ["zara", "massimo-dutti", "bershka"],
-  },
-  {
     slug: "tory-burch",
     name: "Tory Burch",
     category: "luxury",
@@ -382,54 +315,6 @@ const coreBrands: Brand[] = [
     ],
     shoppingCenterSlugs: ["big-fashion", "zlatibor"],
     relatedBrandSlugs: ["north-face", "columbia", "levis"],
-  },
-  {
-    slug: "h-and-m",
-    name: "H&M",
-    category: "fashion",
-    country: "Švedska",
-    website: "https://www.hm.com",
-    description:
-      "Globalni fashion retailer sa pristupačnim cenama i širokom prisutnošću u svim većim gradovima.",
-    priceSegment: "budget",
-    availabilityCount: 26,
-    featured: false,
-    popular: true,
-    locations: [
-      {
-        id: "19",
-        storeName: "H&M Delta City",
-        retailerSlug: "department-store",
-        address: "Jurija Gagarina 16",
-        city: "Beograd",
-      },
-    ],
-    shoppingCenterSlugs: ["delta-city", "mercator"],
-    relatedBrandSlugs: ["zara", "reserved", "mango"],
-  },
-  {
-    slug: "reserved",
-    name: "Reserved",
-    category: "fashion",
-    country: "Poljska",
-    website: "https://www.reserved.com",
-    description:
-      "LPP grupa brend sa trend-driven modom i jakim prisustvom u regionu Balkana.",
-    priceSegment: "budget",
-    availabilityCount: 24,
-    featured: false,
-    popular: false,
-    locations: [
-      {
-        id: "20",
-        storeName: "European Brands",
-        retailerSlug: "european-brands",
-        address: "Delta City",
-        city: "Beograd",
-      },
-    ],
-    shoppingCenterSlugs: ["delta-city", "kragujevac-plaza"],
-    relatedBrandSlugs: ["house", "mohito", "sinsay"],
   },
   {
     slug: "arket",
@@ -505,10 +390,17 @@ const coreBrands: Brand[] = [
   },
 ];
 
+const coreWithoutCurated = coreBrands.filter((b) => !CURATED_SLUGS.has(b.slug));
+
 export const brands: Brand[] = [
-  ...coreBrands,
+  ...coreWithoutCurated,
+  ...buildFastFashionBrands(),
+  ...buildFashionSportBrands(),
   ...buildFashionAndFriendsDirectoryBrands(
-    new Set(coreBrands.map((b) => b.slug))
+    new Set([
+      ...coreWithoutCurated.map((b) => b.slug),
+      ...CURATED_SLUGS,
+    ])
   ),
 ];
 

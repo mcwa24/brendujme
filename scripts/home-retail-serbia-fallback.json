@@ -1,0 +1,237 @@
+{
+  "scrapedAt": "2026-06-04T18:00:00.000Z",
+  "sourceNote": "Kurirano: JYSK jysk.rs (50 prodavnica, uzorak); IKEA ikea.com/rs; Emmezeta emmezeta.rs/lokacije-centara",
+  "brands": ["jysk", "ikea", "forma-ideale", "emmezeta"],
+  "stores": [
+    {
+      "brandSlug": "jysk",
+      "name": "JYSK Ušće",
+      "address": "Bulevar Mihajla Pupina 4, TC Ušće",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "usce",
+      "retailerSlug": "jysk",
+      "storeUrl": "https://jysk.rs/pronadi-prodavnicu"
+    },
+    {
+      "brandSlug": "jysk",
+      "name": "JYSK BIG Fashion Karaburma",
+      "address": "Višnjička 84, BIG Fashion Park",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "big-fashion",
+      "retailerSlug": "jysk",
+      "storeUrl": "https://jysk.rs/pronadi-prodavnicu"
+    },
+    {
+      "brandSlug": "jysk",
+      "name": "JYSK Vračar",
+      "address": "Južni bulevar 95",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "jysk",
+      "storeUrl": "https://jysk.rs/pronadi-prodavnicu"
+    },
+    {
+      "brandSlug": "jysk",
+      "name": "JYSK Novi Beograd",
+      "address": "Bulevar umetnosti 4",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "jysk",
+      "storeUrl": "https://jysk.rs/pronadi-prodavnicu"
+    },
+    {
+      "brandSlug": "jysk",
+      "name": "JYSK Rakovica",
+      "address": "Patrijarha Dimitrija 14",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "jysk",
+      "storeUrl": "https://jysk.rs/pronadi-prodavnicu"
+    },
+    {
+      "brandSlug": "jysk",
+      "name": "JYSK Stadion",
+      "address": "Zaplanjska 32, TC Stadion",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "stadion",
+      "retailerSlug": "jysk",
+      "storeUrl": "https://jysk.rs/pronadi-prodavnicu"
+    },
+    {
+      "brandSlug": "jysk",
+      "name": "JYSK IKEA zona",
+      "address": "Astrid Lindgren 13-27, Žuče",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "jysk",
+      "storeUrl": "https://jysk.rs/pronadi-prodavnicu"
+    },
+    {
+      "brandSlug": "jysk",
+      "name": "JYSK Novi Sad",
+      "address": "Sentandrejski put 11, BIG Novi Sad",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "shoppingCenterSlug": "promenada",
+      "retailerSlug": "jysk",
+      "storeUrl": "https://jysk.rs/pronadi-prodavnicu"
+    },
+    {
+      "brandSlug": "jysk",
+      "name": "JYSK Niš",
+      "address": "Bulevar Nemanjića 11b, Delta City",
+      "city": "Niš",
+      "citySlug": "nis",
+      "shoppingCenterSlug": "delta-city",
+      "retailerSlug": "jysk",
+      "storeUrl": "https://jysk.rs/pronadi-prodavnicu"
+    },
+    {
+      "brandSlug": "jysk",
+      "name": "JYSK Kragujevac",
+      "address": "Bulevar Kraljice Marije 56, Plaza",
+      "city": "Kragujevac",
+      "citySlug": "kragujevac",
+      "shoppingCenterSlug": "kragujevac-plaza",
+      "retailerSlug": "jysk",
+      "storeUrl": "https://jysk.rs/pronadi-prodavnicu"
+    },
+    {
+      "brandSlug": "jysk",
+      "name": "JYSK Subotica",
+      "address": "Segedinski put 88",
+      "city": "Subotica",
+      "citySlug": "subotica",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "jysk",
+      "storeUrl": "https://jysk.rs/pronadi-prodavnicu"
+    },
+    {
+      "brandSlug": "jysk",
+      "name": "JYSK Zrenjanin",
+      "address": "Bagljaš zapad 5, BIG Fashion",
+      "city": "Zrenjanin",
+      "citySlug": "zrenjanin",
+      "shoppingCenterSlug": "big-fashion",
+      "retailerSlug": "jysk",
+      "storeUrl": "https://jysk.rs/pronadi-prodavnicu"
+    },
+    {
+      "brandSlug": "ikea",
+      "name": "IKEA Beograd (robna kuća)",
+      "address": "Astrid Lindgren 11, auto-put Beograd-Niš (petlja Tranšped)",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "ikea",
+      "storeUrl": "https://www.ikea.com/rs/sr/stores/beograd/"
+    },
+    {
+      "brandSlug": "ikea",
+      "name": "IKEA Studio planiranje Novi Beograd",
+      "address": "Novi Beograd",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "delta-city",
+      "retailerSlug": "ikea",
+      "storeUrl": "https://www.ikea.com/rs/sr/stores/"
+    },
+    {
+      "brandSlug": "ikea",
+      "name": "IKEA Studio planiranje Novi Sad",
+      "address": "Novi Sad",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "ikea",
+      "storeUrl": "https://www.ikea.com/rs/sr/stores/"
+    },
+    {
+      "brandSlug": "ikea",
+      "name": "Centar za isporuku Novi Beograd",
+      "address": "Novi Beograd",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "ikea",
+      "storeUrl": "https://www.ikea.com/rs/sr/stores/"
+    },
+    {
+      "brandSlug": "ikea",
+      "name": "Centar za isporuku Novi Sad",
+      "address": "Novi Sad",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "ikea",
+      "storeUrl": "https://www.ikea.com/rs/sr/stores/"
+    },
+    {
+      "brandSlug": "ikea",
+      "name": "Uslužni centar isporuke Niš",
+      "address": "Niš",
+      "city": "Niš",
+      "citySlug": "nis",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "ikea",
+      "storeUrl": "https://www.ikea.com/rs/sr/stores/"
+    },
+    {
+      "brandSlug": "emmezeta",
+      "name": "Emmezeta Bežanijska kosa",
+      "address": "Partizanske avijacije 2a",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "emmezeta",
+      "storeUrl": "https://www.emmezeta.rs/lokacije-centara"
+    },
+    {
+      "brandSlug": "emmezeta",
+      "name": "Emmezeta BIG Fashion Karaburma",
+      "address": "Višnjička 84, BIG Fashion Park",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "big-fashion",
+      "retailerSlug": "emmezeta",
+      "storeUrl": "https://www.emmezeta.rs/lokacije-centara"
+    },
+    {
+      "brandSlug": "emmezeta",
+      "name": "Emmezeta Novi Sad Salajka",
+      "address": "Temerinska 95",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "emmezeta",
+      "storeUrl": "https://www.emmezeta.rs/lokacije-centara"
+    },
+    {
+      "brandSlug": "emmezeta",
+      "name": "Merkury by Emmezeta",
+      "address": "Tekelijina bb",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "emmezeta",
+      "storeUrl": "https://www.emmezeta.rs/lokacije-centara"
+    },
+    {
+      "brandSlug": "emmezeta",
+      "name": "Emmezeta Niš",
+      "address": "Ulica Majakovskog bb, Medijana",
+      "city": "Niš",
+      "citySlug": "nis",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "emmezeta",
+      "storeUrl": "https://www.emmezeta.rs/lokacije-centara"
+    }
+  ]
+}

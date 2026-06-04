@@ -25,12 +25,20 @@ export interface Category {
   description: string;
 }
 
+export type BrandOfferingSlug =
+  | "footwear"
+  | "apparel"
+  | "sportswear"
+  | "accessories";
+
 export interface RetailLocation {
   id: string;
   storeName: string;
   retailerSlug: string;
   address: string;
   city: string;
+  /** Šta se ovde konkretno kupuje od brenda (patike vs odeća) */
+  offerings?: BrandOfferingSlug[];
 }
 
 export interface Brand {

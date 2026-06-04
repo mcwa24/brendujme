@@ -1,0 +1,186 @@
+{
+  "scrapedAt": "2026-06-04T15:42:05.360Z",
+  "sourceUrl": "https://www.tike.rs/brendovi",
+  "brandsUrl": "https://www.tike.rs/brendovi",
+  "storesUrl": "https://www.tike.rs/radnje/1-tike",
+  "retailerSlug": "tike",
+  "retailerName": "Tike",
+  "brands": [
+    {
+      "tikeSlug": "adidas",
+      "name": "Adidas",
+      "slug": "adidas",
+      "logoUrl": "https://www.tike.rs/files/images/2024/5/28/Original_Adidas_logo.png.webp",
+      "productUrl": "https://www.tike.rs/proizvodi/adidas"
+    },
+    {
+      "tikeSlug": "asics",
+      "name": "Asics",
+      "slug": "asics",
+      "logoUrl": "https://www.tike.rs/files/images/2025/3/28/asics-logo.png.webp",
+      "productUrl": "https://www.tike.rs/proizvodi/asics"
+    },
+    {
+      "tikeSlug": "birkenstock",
+      "name": "Birkenstock",
+      "slug": "birkenstock",
+      "logoUrl": "https://www.tike.rs/files/images/2026/1/26/Birkenstock-logo.jpg.webp",
+      "productUrl": "https://www.tike.rs/proizvodi/birkenstock"
+    },
+    {
+      "tikeSlug": "bratot-apparel",
+      "name": "Bratot Appaarel",
+      "slug": "bratot-appaarel",
+      "logoUrl": "https://www.tike.rs/files/images/2025/2/10/brlogo-tike.png.webp",
+      "productUrl": "https://www.tike.rs/proizvodi/bratot-apparel"
+    },
+    {
+      "tikeSlug": "converse-brend",
+      "name": "Converse",
+      "slug": "converse",
+      "logoUrl": "https://www.tike.rs/files/images/2020/7/2/converse.png.webp",
+      "productUrl": "https://www.tike.rs/proizvodi/converse-brend"
+    },
+    {
+      "tikeSlug": "crep-protect",
+      "name": "Crep Protect",
+      "slug": "crep-protect",
+      "logoUrl": "https://www.tike.rs/files/images/brendovi/crep.png.webp",
+      "productUrl": "https://www.tike.rs/proizvodi/crep-protect"
+    },
+    {
+      "tikeSlug": "crocs-brend",
+      "name": "Crocs",
+      "slug": "crocs",
+      "logoUrl": "https://www.tike.rs/files/images/2023/11/23/Crocs-logo.png.webp",
+      "productUrl": "https://www.tike.rs/proizvodi/crocs-brend"
+    },
+    {
+      "tikeSlug": "desingerica",
+      "name": "Desingerica",
+      "slug": "desingerica",
+      "logoUrl": "https://www.tike.rs/files/images/2025/12/23/De%281%29.png.webp",
+      "productUrl": "https://www.tike.rs/proizvodi/desingerica"
+    },
+    {
+      "tikeSlug": "goorin-bros",
+      "name": "Goorin Bros",
+      "slug": "goorin-bros",
+      "logoUrl": "https://www.tike.rs/files/images/2022/11/16/goorin_bros_160x90.png.webp",
+      "productUrl": "https://www.tike.rs/proizvodi/goorin-bros"
+    },
+    {
+      "tikeSlug": "havaianas",
+      "name": "Havaianas",
+      "slug": "havaianas",
+      "logoUrl": "https://www.tike.rs/files/images/2026/6/1/havaianas-140x75px.png.webp",
+      "productUrl": "https://www.tike.rs/proizvodi/havaianas"
+    },
+    {
+      "tikeSlug": "hoka",
+      "name": "Hoka",
+      "slug": "hoka",
+      "logoUrl": "https://www.tike.rs/files/images/2024/9/13/Hoka.png.webp",
+      "productUrl": "https://www.tike.rs/proizvodi/hoka"
+    },
+    {
+      "tikeSlug": "labubu",
+      "name": "Labubu",
+      "slug": "labubu",
+      "logoUrl": "https://www.tike.rs/files/images/2025/11/19/labubu.png.webp",
+      "productUrl": "https://www.tike.rs/proizvodi/labubu"
+    },
+    {
+      "tikeSlug": "new-balance-brend",
+      "name": "NEW Balance",
+      "slug": "new-balance",
+      "logoUrl": "https://www.tike.rs/files/images/brendovi/newbalance.png.webp",
+      "productUrl": "https://www.tike.rs/proizvodi/new-balance-brend"
+    },
+    {
+      "tikeSlug": "new-era",
+      "name": "NEW ERA",
+      "slug": "new-era",
+      "logoUrl": "https://www.tike.rs/files/images/2022/6/15/newera.png.webp",
+      "productUrl": "https://www.tike.rs/proizvodi/new-era"
+    },
+    {
+      "tikeSlug": "nike",
+      "name": "Nike",
+      "slug": "nike",
+      "logoUrl": "https://www.tike.rs/files/images/brendovi/nike.png.webp",
+      "productUrl": "https://www.tike.rs/proizvodi/nike"
+    },
+    {
+      "tikeSlug": "reebok",
+      "name": "Reebok",
+      "slug": "reebok",
+      "logoUrl": "https://www.tike.rs/files/images/2019/11/14/reebok-novi-logo.png.webp",
+      "productUrl": "https://www.tike.rs/proizvodi/reebok"
+    },
+    {
+      "tikeSlug": "salomon-brend",
+      "name": "Salomon",
+      "slug": "salomon",
+      "logoUrl": "https://www.tike.rs/files/images/2025/3/28/salomon.png.webp",
+      "productUrl": "https://www.tike.rs/proizvodi/salomon-brend"
+    },
+    {
+      "tikeSlug": "saucony",
+      "name": "Saucony",
+      "slug": "saucony",
+      "logoUrl": "https://www.tike.rs/files/images/brendovi/saucony.png.webp",
+      "productUrl": "https://www.tike.rs/proizvodi/saucony"
+    },
+    {
+      "tikeSlug": "sprayground",
+      "name": "Sprayground",
+      "slug": "sprayground",
+      "logoUrl": "https://www.tike.rs/files/images/2023/10/19/SPRAYGROUND-v2.png.webp",
+      "productUrl": "https://www.tike.rs/proizvodi/sprayground"
+    },
+    {
+      "tikeSlug": "stance",
+      "name": "Stance",
+      "slug": "stance",
+      "logoUrl": "https://www.tike.rs/files/images/brendovi/stan-crni.png.webp",
+      "productUrl": "https://www.tike.rs/proizvodi/stance"
+    },
+    {
+      "tikeSlug": "stanley",
+      "name": "Stanley",
+      "slug": "stanley",
+      "logoUrl": "https://www.tike.rs/files/images/2025/11/19/stanly.png.webp",
+      "productUrl": "https://www.tike.rs/proizvodi/stanley"
+    },
+    {
+      "tikeSlug": "thcf",
+      "name": "Thcf",
+      "slug": "thcf",
+      "logoUrl": "https://www.tike.rs/files/images/2025/5/6/tike-brend-thcf.png.webp",
+      "productUrl": "https://www.tike.rs/proizvodi/thcf"
+    },
+    {
+      "tikeSlug": "the-north-face",
+      "name": "THE North Face",
+      "slug": "north-face",
+      "logoUrl": "https://www.tike.rs/files/images/2025/2/12/Tnf.png.webp",
+      "productUrl": "https://www.tike.rs/proizvodi/the-north-face"
+    }
+  ],
+  "stores": [
+    {
+      "path": "1-tike",
+      "name": "Tike Shop",
+      "address": "Kralja Petra 24",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "011 422 1420",
+      "email": "tikestore@tike.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 44.8196888,
+      "longitude": 20.4550185,
+      "storeUrl": "https://www.tike.rs/radnje/1-tike"
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 import { cache } from "react";
 import { brands as staticBrands, getBrandBySlug as getStaticBrandBySlug } from "@/lib/data/brands";
+import { enrichBrand } from "@/lib/data/enrich-brand";
 import { categories as staticCategories } from "@/lib/data/categories";
 import { newsArticles as staticNews } from "@/lib/data/news";
 import { fashionCompanyRetailer } from "@/lib/data/fashion-company";
@@ -35,20 +36,32 @@ export const getDataSource = cache(() =>
   isSupabaseConfigured() ? "supabase" as const : "static" as const
 );
 
+/** Uvezeni brendovi/retaileri iz JSON-a — dopunjuju Supabase dok seed ne uhvati sve slugove */
+function mergeBySlug<T extends { slug: string }>(fromDb: T[], fromStatic: T[]): T[] {
+  const seen = new Set(fromDb.map((item) => item.slug));
+  const missing = fromStatic.filter((item) => !seen.has(item.slug));
+  return missing.length ? [...fromDb, ...missing] : fromDb;
+}
+
 export const getAllBrands = cache(async (): Promise<Brand[]> => {
   if (isSupabaseConfigured()) {
     const fromDb = await fetchAllBrandsFromSupabase();
-    if (fromDb?.length) return fromDb;
+    if (fromDb?.length) {
+      return mergeBySlug(fromDb, staticBrands)
+        .map(enrichBrand)
+        .sort((a, b) => a.name.localeCompare(b.name, "sr"));
+    }
   }
-  return staticBrands;
+  return staticBrands.map(enrichBrand);
 });
 
 export const getBrandBySlug = cache(async (slug: string): Promise<Brand | undefined> => {
   if (isSupabaseConfigured()) {
     const fromDb = await fetchBrandBySlugFromSupabase(slug);
-    if (fromDb) return fromDb;
+    if (fromDb) return enrichBrand(fromDb);
   }
-  return getStaticBrandBySlug(slug);
+  const staticBrand = getStaticBrandBySlug(slug);
+  return staticBrand ? enrichBrand(staticBrand) : undefined;
 });
 
 export const getFeaturedBrands = cache(async () => {
@@ -92,19 +105,19 @@ export async function getCategoryName(slug: string): Promise<string> {
   return cat?.name ?? slug;
 }
 
+const staticImportedRetailers = sortImportedRetailers(
+  staticRetailers.filter((r) => isImportedRetailerSlug(r.slug))
+);
+
 export const getAllRetailers = cache(async (): Promise<Retailer[]> => {
   let list: Retailer[];
   if (isSupabaseConfigured()) {
     const fromDb = await fetchRetailersFromSupabase();
     list = fromDb?.length
-      ? fromDb
-      : sortImportedRetailers(
-          staticRetailers.filter((r) => isImportedRetailerSlug(r.slug))
-        );
+      ? sortImportedRetailers(mergeBySlug(fromDb, staticImportedRetailers))
+      : staticImportedRetailers;
   } else {
-    list = sortImportedRetailers(
-      staticRetailers.filter((r) => isImportedRetailerSlug(r.slug))
-    );
+    list = staticImportedRetailers;
   }
   const withoutFashionCompany = list.filter((r) => r.slug !== "fashion-company");
   return applyCatalogCounts([fashionCompanyRetailer, ...withoutFashionCompany]);

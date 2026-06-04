@@ -4,7 +4,9 @@ import { FadeIn } from "@/components/motion/fade-in";
 import { RetailerLink } from "@/components/retailers/retailer-link";
 import { PremiumCard } from "@/components/ui/premium-card";
 import { buttonVariants } from "@/components/ui/button";
+import { formatOfferingsLabel } from "@/lib/data/brand-offerings";
 import { retailerHasPage, retailerPageHref } from "@/lib/data/retailer-names";
+import type { BrandOfferingSlug } from "@/types";
 import { cn } from "@/lib/utils";
 
 interface BrandLocationCardProps {
@@ -12,6 +14,7 @@ interface BrandLocationCardProps {
   retailerSlug: string;
   address: string;
   city: string;
+  offerings?: BrandOfferingSlug[];
   delay?: number;
 }
 
@@ -20,6 +23,7 @@ export function BrandLocationCard({
   retailerSlug,
   address,
   city,
+  offerings,
   delay = 0,
 }: BrandLocationCardProps) {
   return (
@@ -28,6 +32,11 @@ export function BrandLocationCard({
         <h3 className="font-display text-lg font-semibold md:text-xl">
           {storeName}
         </h3>
+        {offerings && offerings.length > 0 && (
+          <p className="mt-2 text-xs font-medium uppercase tracking-wide text-success">
+            {formatOfferingsLabel(offerings)}
+          </p>
+        )}
         <p className="mt-2 text-sm font-medium">
           <RetailerLink slug={retailerSlug} />
         </p>

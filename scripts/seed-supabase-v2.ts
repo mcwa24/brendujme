@@ -1,13 +1,21 @@
 /**
  * Pun seed mock podataka u produkcijsku šemu (UUID).
  * Zahteva: migracija 001_production_schema.sql + .env.local (SERVICE_ROLE)
- * npm run db:seed
+ * npm run db:seed  (automatski pokreće data:prepare pre seed-a)
  */
 
+import fs from "fs";
+import path from "path";
+import type { TikeScraped } from "./scrape-tike";
 import { brands } from "../src/lib/data/brands";
 import { categories } from "../src/lib/data/categories";
 import { fashionCompanyStores } from "../src/lib/data/fashion-company";
 import { bilbordSlugFromBrandName } from "../src/lib/data/ff-brand-slugs";
+import {
+  DEPRECATED_BRAND_SLUGS,
+  DEPRECATED_RETAILER_SLUGS,
+  isImportedRetailerSlug,
+} from "../src/lib/data/imported-retailers";
 import { newsArticles } from "../src/lib/data/news";
 import { retailers } from "../src/lib/data/retailers";
 import { shoppingCenters } from "../src/lib/data/shopping-centers";
@@ -15,6 +23,9 @@ import { shoppingCenterImages } from "../src/lib/data/shopping-center-images";
 import { createSupabaseAdminClient } from "../src/lib/supabase/server";
 import { storagePaths } from "../src/lib/supabase/storage";
 import { isSupabaseSeedConfigured } from "../src/lib/supabase/env";
+import { loadScrapedBundles } from "./lib/seed-scraped-stores";
+
+const retailersToSeed = retailers.filter((r) => isImportedRetailerSlug(r.slug));
 const CITY_SLUG: Record<string, string> = {
   Beograd: "beograd",
   "Novi Beograd": "novi-beograd",
@@ -82,6 +93,26 @@ async function deleteAll(
   if (error) console.warn(`  clear ${table}:`, error.message);
 }
 
+async function unpublishDeprecated(
+  db: NonNullable<ReturnType<typeof createSupabaseAdminClient>>
+) {
+  console.log("Arhiviranje uklonjenih partnera (home / tech / beauty)…");
+  for (const slug of DEPRECATED_RETAILER_SLUGS) {
+    const { error } = await db
+      .from("retailers")
+      .update({ status: "archived" })
+      .eq("slug", slug);
+    if (error) console.warn(`  retailer ${slug}:`, error.message);
+  }
+  for (const slug of DEPRECATED_BRAND_SLUGS) {
+    const { error } = await db
+      .from("brands")
+      .update({ status: "archived" })
+      .eq("slug", slug);
+    if (error) console.warn(`  brand ${slug}:`, error.message);
+  }
+}
+
 async function clearRelations(
   supabase: NonNullable<ReturnType<typeof createSupabaseAdminClient>>
 ) {
@@ -111,6 +142,8 @@ async function main() {
 
   const brandSlugs = new Set(brands.map((b) => b.slug));
 
+  await unpublishDeprecated(db);
+
   console.log("Čišćenje relacija…");
   await clearRelations(db);
 
@@ -127,12 +160,17 @@ async function main() {
   );
   if (catErr) throw new Error(catErr.message);
 
+  const scrapedBundles = loadScrapedBundles(
+    path.join(process.cwd(), "src/lib/data")
+  );
+
   const extraCities = [
     ...new Set([
-      ...retailers.map((r) => r.city),
+      ...retailersToSeed.map((r) => r.city),
       ...shoppingCenters.map((s) => s.city),
       ...brands.flatMap((b) => b.locations.map((l) => l.city)),
       ...fashionCompanyStores.map((s) => s.cityLabel.split("(")[0].trim()),
+      ...scrapedBundles.flatMap((b) => b.stores.map((s) => s.city)),
     ]),
   ];
   for (const name of extraCities) {
@@ -148,9 +186,9 @@ async function main() {
   const categoryIds = await loadIdMap(db, "categories");
   const cityIds = await loadIdMap(db, "cities");
 
-  console.log("Retaileri…");
+  console.log(`Retaileri (${retailersToSeed.length})…`);
   const { error: retErr } = await db.from("retailers").upsert(
-    retailers.map((r) => ({
+    retailersToSeed.map((r) => ({
       slug: r.slug,
       name: r.name,
       description: r.description,
@@ -214,6 +252,39 @@ async function main() {
       { onConflict: "slug" }
     );
     if (error) console.error(`  brand ${brand.slug}:`, error.message);
+  }
+
+  const tikeScrapedPath = path.join(process.cwd(), "src/lib/data/tike-scraped.json");
+  if (fs.existsSync(tikeScrapedPath)) {
+    const tikeData = JSON.parse(
+      fs.readFileSync(tikeScrapedPath, "utf8")
+    ) as TikeScraped;
+    const sportsCat =
+      categoryIds.get("sports") ??
+      categoryIds.get("footwear") ??
+      [...categoryIds.values()][0];
+    console.log(`Tike brendovi iz scrape (${tikeData.brands.length})…`);
+    let tikeNew = 0;
+    for (const b of tikeData.brands) {
+      if (!sportsCat) break;
+      const { error } = await db.from("brands").upsert(
+        {
+          slug: b.slug,
+          name: b.name,
+          category_id: sportsCat,
+          description: `${b.name} u ponudi Tike prodavnice (tike.rs).`,
+          short_description: `${b.name} · Tike`,
+          price_segment: "mid",
+          status: "published",
+          logo_url: b.logoUrl,
+          logo_storage_path: storagePaths.brandLogo(b.slug),
+          website: b.productUrl,
+        },
+        { onConflict: "slug", ignoreDuplicates: false }
+      );
+      if (!error) tikeNew += 1;
+    }
+    console.log(`  upsert Tike katalog: ${tikeNew} redova`);
   }
 
   const retailerIds = await loadIdMap(db, "retailers");
@@ -323,6 +394,24 @@ async function main() {
     );
   }
 
+  console.log("Prodajna mesta iz scraped JSON…");
+  let scrapedStoreCount = 0;
+  for (const bundle of scrapedBundles) {
+    for (const store of bundle.stores) {
+      if (!isImportedRetailerSlug(store.retailerSlug)) continue;
+      const id = await ensureStore(
+        store.retailerSlug,
+        store.name,
+        store.city,
+        store.address,
+        store.shoppingCenterSlug ?? null
+      );
+      if (id) scrapedStoreCount += 1;
+    }
+    console.log(`  ${bundle.file}: ${bundle.stores.length} redova`);
+  }
+  console.log(`  upsert-ovano scraped lokacija: ${scrapedStoreCount}`);
+
   console.log("brand_retailers…");
   const brandRetailerPairs = new Set<string>();
   const addBrandRetailer = (brandSlug: string, retailerSlug: string) => {
@@ -330,8 +419,15 @@ async function main() {
     brandRetailerPairs.add(`${brandSlug}:${retailerSlug}`);
   };
 
-  for (const r of retailers) {
+  for (const r of retailersToSeed) {
     for (const brandSlug of r.brandSlugs) addBrandRetailer(brandSlug, r.slug);
+  }
+  for (const bundle of scrapedBundles) {
+    for (const store of bundle.stores) {
+      if (store.brandSlug === store.retailerSlug) {
+        addBrandRetailer(store.brandSlug, store.retailerSlug);
+      }
+    }
   }
   for (const brand of brands) {
     for (const loc of brand.locations) {
@@ -374,6 +470,23 @@ async function main() {
           loc.address,
           null
         ));
+      if (storeId) {
+        brandLocationRows.push({
+          brand_id: brandId,
+          store_location_id: storeId,
+          verified: true,
+        });
+      }
+    }
+  }
+
+  for (const bundle of scrapedBundles) {
+    for (const store of bundle.stores) {
+      const brandId = brandIds.get(store.brandSlug);
+      if (!brandId) continue;
+      const storeId = storeIdByKey.get(
+        storeKey(store.retailerSlug, store.name, store.city, store.address)
+      );
       if (storeId) {
         brandLocationRows.push({
           brand_id: brandId,

@@ -40,6 +40,38 @@ export const retailerLogoImages: Record<string, RetailerLogoImage> = {
     sourceUrl: "https://static.nike.com/a/images/f_auto,cs_srgb/h_80,w_80/9a524f39-69e3-4dac-b229-8cacca2408f6/image.png",
     alt: "Sport Time",
   },
+  "djak-sport": {
+    src: "/logos/retailers/djak-sport.png",
+    sourceUrl:
+      "https://www.djaksport.com/static/version1780489353/frontend/Djak/default/sr_Latn_RS/images/logosmall.png",
+    alt: "Đak Sport",
+  },
+  "sport-vision": {
+    src: "/logos/retailers/sport-vision.png",
+    sourceUrl: "https://www.sportvision.rs/files/files/sv_redizajn/rnm-lllogo.png",
+    alt: "Sport Vision",
+  },
+  "planeta-sport": {
+    src: "/logos/retailers/planeta-sport.svg",
+    sourceUrl:
+      "https://planetasport.rs/static/version1779922508/frontend/PlanetasportV2/default/sr_Latn_RS/images/logo.svg",
+    alt: "Planeta Sport",
+  },
+  "extra-sports": {
+    src: "/logos/retailers/extra-sports.png",
+    sourceUrl: "https://www.extrasports.com/SRB_rs/skin/frontend/extrasports/default/images/logo.png",
+    alt: "Extra Sports",
+  },
+  tike: {
+    src: "/logos/retailers/tike.png",
+    sourceUrl: "https://www.tike.rs/files/images/tike.rs-redizajn/tike-logo.png",
+    alt: "Tike",
+  },
+  "run-n-more": {
+    src: "/logos/retailers/run-n-more.png",
+    sourceUrl: "https://www.runnmore.com/media/logo/stores/1/logo.png",
+    alt: "Run'n More",
+  },
 };
 
 export function getRetailerLogoImage(slug: string): RetailerLogoImage | undefined {

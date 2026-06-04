@@ -2,7 +2,11 @@
 
 import { useMemo, useState } from "react";
 import { BrandLocationCard } from "@/components/brands/brand-location-card";
-import type { RetailLocation } from "@/types";
+import { OFFERING_LABELS } from "@/lib/data/brand-offerings";
+import {
+  filterLocationsByOfferings,
+} from "@/lib/data/enrich-brand";
+import type { BrandOfferingSlug, RetailLocation } from "@/types";
 import { formatLocationCount } from "@/lib/format/sr-plural";
 import { cn } from "@/lib/utils";
 
@@ -10,6 +14,8 @@ interface CityOption {
   city: string;
   count: number;
 }
+
+type OfferingFilter = "all" | BrandOfferingSlug;
 
 function buildCityOptions(locations: RetailLocation[]): CityOption[] {
   const counts = new Map<string, number>();
@@ -29,6 +35,31 @@ function buildCityOptions(locations: RetailLocation[]): CityOption[] {
     });
 }
 
+function offeringFiltersInLocations(
+  locations: RetailLocation[]
+): OfferingFilter[] {
+  const filters: OfferingFilter[] = ["all"];
+  const seen = new Set<BrandOfferingSlug>();
+  for (const loc of locations) {
+    for (const o of loc.offerings ?? []) {
+      if (!seen.has(o)) {
+        seen.add(o);
+        filters.push(o);
+      }
+    }
+  }
+  const order: BrandOfferingSlug[] = [
+    "footwear",
+    "apparel",
+    "sportswear",
+    "accessories",
+  ];
+  return [
+    "all",
+    ...order.filter((o) => seen.has(o)),
+  ];
+}
+
 interface BrandLocationsSectionProps {
   brandName: string;
   locations: RetailLocation[];
@@ -38,13 +69,25 @@ export function BrandLocationsSection({
   brandName,
   locations,
 }: BrandLocationsSectionProps) {
-  const cities = useMemo(() => buildCityOptions(locations), [locations]);
+  const [offeringFilter, setOfferingFilter] = useState<OfferingFilter>("all");
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
+
+  const byOffering = useMemo(
+    () => filterLocationsByOfferings(locations, offeringFilter),
+    [locations, offeringFilter]
+  );
+
+  const offeringChips = useMemo(
+    () => offeringFiltersInLocations(locations),
+    [locations]
+  );
+
+  const cities = useMemo(() => buildCityOptions(byOffering), [byOffering]);
 
   const filtered = useMemo(() => {
     if (!selectedCity) return [];
-    return locations.filter((loc) => loc.city.trim() === selectedCity);
-  }, [locations, selectedCity]);
+    return byOffering.filter((loc) => loc.city.trim() === selectedCity);
+  }, [byOffering, selectedCity]);
 
   if (locations.length === 0) {
     return (
@@ -56,7 +99,33 @@ export function BrandLocationsSection({
 
   return (
     <>
-      <div className="mt-8">
+      {offeringChips.length > 2 && (
+        <div className="mt-8">
+          <p className="text-sm font-medium text-muted">Šta tražite</p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {offeringChips.map((chip) => (
+              <button
+                key={chip}
+                type="button"
+                onClick={() => {
+                  setOfferingFilter(chip);
+                  setSelectedCity(null);
+                }}
+                className={cn(
+                  "rounded-full border px-4 py-2 text-sm transition-colors",
+                  offeringFilter === chip
+                    ? "border-accent bg-accent font-medium text-white"
+                    : "border-border bg-card text-muted hover:border-accent/40 hover:text-foreground"
+                )}
+              >
+                {chip === "all" ? "Sve" : OFFERING_LABELS[chip]}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <div className={cn("mt-8", offeringChips.length <= 2 && "mt-8")}>
         <p className="text-sm font-medium text-muted">Grad</p>
         <div className="mt-3 flex flex-wrap gap-2">
           {cities.map(({ city, count }) => (
@@ -88,10 +157,16 @@ export function BrandLocationsSection({
       {!selectedCity ? (
         <p className="mt-10 rounded-[20px] border border-dashed border-border bg-card/50 px-6 py-10 text-center text-muted">
           Izaberite grad da vidite prodavnice i adrese.
+          {offeringFilter !== "all" && (
+            <>
+              {" "}
+              Prikaz: {OFFERING_LABELS[offeringFilter].toLowerCase()}.
+            </>
+          )}
         </p>
       ) : filtered.length === 0 ? (
         <p className="mt-10 text-center text-muted">
-          Nema lokacija u gradu {selectedCity}.
+          Nema lokacija u gradu {selectedCity} za izabrani tip ponude.
         </p>
       ) : (
         <>
@@ -106,6 +181,7 @@ export function BrandLocationsSection({
                 retailerSlug={loc.retailerSlug}
                 address={loc.address}
                 city={loc.city}
+                offerings={loc.offerings}
                 delay={i * 0.05}
               />
             ))}

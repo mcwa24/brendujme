@@ -1,0 +1,2014 @@
+{
+  "scrapedAt": "2026-06-04T14:21:35.076Z",
+  "sourceUrl": "https://www.djaksport.com/brands",
+  "brandsUrl": "https://www.djaksport.com/brands",
+  "storesUrl": "https://www.djaksport.com/lokacije",
+  "retailerSlug": "djak-sport",
+  "retailerName": "Đak Sport",
+  "brands": [
+    {
+      "djakSlug": "361_degrees",
+      "name": "361 Degrees",
+      "slug": "361-degrees",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/361_degrees"
+    },
+    {
+      "djakSlug": "4f",
+      "name": "4f",
+      "slug": "4f",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/4f"
+    },
+    {
+      "djakSlug": "adidas",
+      "name": "Adidas",
+      "slug": "adidas",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/adidas"
+    },
+    {
+      "djakSlug": "aeronautica_militare",
+      "name": "Aeronautica Militare",
+      "slug": "aeronautica-militare",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/aeronautica_militare"
+    },
+    {
+      "djakSlug": "alpen_plus",
+      "name": "Alpen Plus",
+      "slug": "alpen-plus",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/alpen_plus"
+    },
+    {
+      "djakSlug": "alpha",
+      "name": "Alpha",
+      "slug": "alpha",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/alpha"
+    },
+    {
+      "djakSlug": "anta",
+      "name": "Anta",
+      "slug": "anta",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/anta"
+    },
+    {
+      "djakSlug": "arena",
+      "name": "Arena",
+      "slug": "arena",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/arena"
+    },
+    {
+      "djakSlug": "armata_di_mare",
+      "name": "Armata DI Mare",
+      "slug": "armata-di-mare",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/armata_di_mare"
+    },
+    {
+      "djakSlug": "atempo",
+      "name": "Atempo",
+      "slug": "atempo",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/atempo"
+    },
+    {
+      "djakSlug": "atlantis",
+      "name": "Atlantis",
+      "slug": "atlantis",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/atlantis"
+    },
+    {
+      "djakSlug": "babolat",
+      "name": "Babolat",
+      "slug": "babolat",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/babolat"
+    },
+    {
+      "djakSlug": "bama",
+      "name": "Bama",
+      "slug": "bama",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/bama"
+    },
+    {
+      "djakSlug": "bikkembergs",
+      "name": "Bikkembergs",
+      "slug": "bikkembergs",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/bikkembergs"
+    },
+    {
+      "djakSlug": "boatilus",
+      "name": "Boatilus",
+      "slug": "boatilus",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/boatilus"
+    },
+    {
+      "djakSlug": "body_sculpture",
+      "name": "Body Sculpture",
+      "slug": "body-sculpture",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/body_sculpture"
+    },
+    {
+      "djakSlug": "boss",
+      "name": "Boss",
+      "slug": "boss",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/boss"
+    },
+    {
+      "djakSlug": "briko",
+      "name": "Briko",
+      "slug": "briko",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/briko"
+    },
+    {
+      "djakSlug": "brooks",
+      "name": "Brooks patike",
+      "slug": "brooks",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/brooks"
+    },
+    {
+      "djakSlug": "brugi",
+      "name": "Brugi",
+      "slug": "brugi",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/brugi"
+    },
+    {
+      "djakSlug": "calvin_klein",
+      "name": "Calvin Klein",
+      "slug": "calvin-klein",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/calvin_klein"
+    },
+    {
+      "djakSlug": "capelli",
+      "name": "Capelli",
+      "slug": "capelli",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/capelli"
+    },
+    {
+      "djakSlug": "capriolo",
+      "name": "Capriolo",
+      "slug": "capriolo",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/capriolo"
+    },
+    {
+      "djakSlug": "carrera",
+      "name": "Carrera",
+      "slug": "carrera",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/carrera"
+    },
+    {
+      "djakSlug": "cartago",
+      "name": "Cartago",
+      "slug": "cartago",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/cartago"
+    },
+    {
+      "djakSlug": "casablanca",
+      "name": "Casablanca",
+      "slug": "casablanca",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/casablanca"
+    },
+    {
+      "djakSlug": "castore",
+      "name": "Castore",
+      "slug": "castore",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/castore"
+    },
+    {
+      "djakSlug": "cavalli_class",
+      "name": "Cavalli Class",
+      "slug": "cavalli-class",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/cavalli_class"
+    },
+    {
+      "djakSlug": "chiara_ferragni",
+      "name": "Chiara Ferragni",
+      "slug": "chiara-ferragni",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/chiara_ferragni"
+    },
+    {
+      "djakSlug": "cmp",
+      "name": "Cmp",
+      "slug": "cmp",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/cmp"
+    },
+    {
+      "djakSlug": "colmar",
+      "name": "Colmar",
+      "slug": "colmar",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/colmar"
+    },
+    {
+      "djakSlug": "columbia",
+      "name": "Columbia",
+      "slug": "columbia",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/columbia"
+    },
+    {
+      "djakSlug": "converse",
+      "name": "Converse",
+      "slug": "converse",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/converse"
+    },
+    {
+      "djakSlug": "copacabana",
+      "name": "Copacabana",
+      "slug": "copacabana",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/copacabana"
+    },
+    {
+      "djakSlug": "copperminer",
+      "name": "Copperminer",
+      "slug": "copperminer",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/copperminer"
+    },
+    {
+      "djakSlug": "cristiano_ronaldo_7",
+      "name": "Cristiano Ronaldo 7",
+      "slug": "cristiano-ronaldo-7",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/cristiano_ronaldo_7"
+    },
+    {
+      "djakSlug": "crocs",
+      "name": "Crocs",
+      "slug": "crocs",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/crocs"
+    },
+    {
+      "djakSlug": "cruyff",
+      "name": "Cruyff",
+      "slug": "cruyff",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/cruyff"
+    },
+    {
+      "djakSlug": "",
+      "name": "Đak Sport",
+      "slug": "ak-sport",
+      "logoUrl": "https://www.djaksport.com/static/version1780489353/frontend/Djak/default/sr_Latn_RS/images/logosmall.png",
+      "productUrl": "https://www.djaksport.com/"
+    },
+    {
+      "djakSlug": "davideli",
+      "name": "Davideli",
+      "slug": "davideli",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/davideli"
+    },
+    {
+      "djakSlug": "dekker",
+      "name": "Dekker",
+      "slug": "dekker",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/dekker"
+    },
+    {
+      "djakSlug": "denis",
+      "name": "Denis",
+      "slug": "denis",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/denis"
+    },
+    {
+      "djakSlug": "diesel",
+      "name": "Diesel",
+      "slug": "diesel",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/diesel"
+    },
+    {
+      "djakSlug": "disney",
+      "name": "Disney",
+      "slug": "disney",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/disney"
+    },
+    {
+      "djakSlug": "djak",
+      "name": "Djak",
+      "slug": "djak",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/djak"
+    },
+    {
+      "djakSlug": "dsquared2",
+      "name": "Dsquared2",
+      "slug": "dsquared2",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/dsquared2"
+    },
+    {
+      "djakSlug": "ducati",
+      "name": "Ducati",
+      "slug": "ducati",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/ducati"
+    },
+    {
+      "djakSlug": "dudino",
+      "name": "Dudino",
+      "slug": "dudino",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/dudino"
+    },
+    {
+      "djakSlug": "ea7_emporio_armani",
+      "name": "EA7 Emporio Armani",
+      "slug": "ea7-emporio-armani",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/ea7_emporio_armani"
+    },
+    {
+      "djakSlug": "eastbound",
+      "name": "Eastbound",
+      "slug": "eastbound",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/eastbound"
+    },
+    {
+      "djakSlug": "eko_step",
+      "name": "EKO Step",
+      "slug": "eko-step",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/eko_step"
+    },
+    {
+      "djakSlug": "emu",
+      "name": "Emu",
+      "slug": "emu",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/emu"
+    },
+    {
+      "djakSlug": "enova",
+      "name": "Enova",
+      "slug": "enova",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/enova"
+    },
+    {
+      "djakSlug": "ermanno_firenze",
+      "name": "Ermanno Firenze",
+      "slug": "ermanno-firenze",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/ermanno_firenze"
+    },
+    {
+      "djakSlug": "esensa",
+      "name": "Esensa",
+      "slug": "esensa",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/esensa"
+    },
+    {
+      "djakSlug": "esercito_1659",
+      "name": "Esercito 1659",
+      "slug": "esercito-1659",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/esercito_1659"
+    },
+    {
+      "djakSlug": "fila",
+      "name": "Fila",
+      "slug": "fila",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/fila"
+    },
+    {
+      "djakSlug": "fk_radnicki_nis",
+      "name": "FK Radnicki NIS",
+      "slug": "fk-radnicki-nis",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/fk_radnicki_nis"
+    },
+    {
+      "djakSlug": "frame",
+      "name": "Frame",
+      "slug": "frame",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/frame"
+    },
+    {
+      "djakSlug": "ganni",
+      "name": "Ganni",
+      "slug": "ganni",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/ganni"
+    },
+    {
+      "djakSlug": "garcia",
+      "name": "Garcia",
+      "slug": "garcia",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/garcia"
+    },
+    {
+      "djakSlug": "gaudi",
+      "name": "Gaudi",
+      "slug": "gaudi",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/gaudi"
+    },
+    {
+      "djakSlug": "gri_sport",
+      "name": "GRI Sport",
+      "slug": "gri-sport",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/gri_sport"
+    },
+    {
+      "djakSlug": "gsa",
+      "name": "Gsa",
+      "slug": "gsa",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/gsa"
+    },
+    {
+      "djakSlug": "guess",
+      "name": "Guess",
+      "slug": "guess",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/guess"
+    },
+    {
+      "djakSlug": "happy_socks",
+      "name": "Happy Socks",
+      "slug": "happy-socks",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/happy_socks"
+    },
+    {
+      "djakSlug": "harmont_blaine",
+      "name": "Harmont Blaine",
+      "slug": "harmont-blaine",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/harmont_blaine"
+    },
+    {
+      "djakSlug": "helly_hansen",
+      "name": "Helly Hansen",
+      "slug": "helly-hansen",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/helly_hansen"
+    },
+    {
+      "djakSlug": "hugo",
+      "name": "Hugo",
+      "slug": "hugo",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/hugo"
+    },
+    {
+      "djakSlug": "hummel",
+      "name": "Hummel",
+      "slug": "hummel",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/hummel"
+    },
+    {
+      "djakSlug": "hydrapak",
+      "name": "Hydrapak",
+      "slug": "hydrapak",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/hydrapak"
+    },
+    {
+      "djakSlug": "ice_peak",
+      "name": "ICE Peak",
+      "slug": "ice-peak",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/ice_peak"
+    },
+    {
+      "djakSlug": "ilirija",
+      "name": "Ilirija",
+      "slug": "ilirija",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/ilirija"
+    },
+    {
+      "djakSlug": "invento",
+      "name": "Invento",
+      "slug": "invento",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/invento"
+    },
+    {
+      "djakSlug": "ipanema",
+      "name": "Ipanema",
+      "slug": "ipanema",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/ipanema"
+    },
+    {
+      "djakSlug": "isostar",
+      "name": "Isostar",
+      "slug": "isostar",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/isostar"
+    },
+    {
+      "djakSlug": "jack_jones",
+      "name": "Jack&jones",
+      "slug": "jack-jones",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/jack_jones"
+    },
+    {
+      "djakSlug": "john_frank",
+      "name": "John Frank",
+      "slug": "john-frank",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/john_frank"
+    },
+    {
+      "djakSlug": "joma",
+      "name": "Joma",
+      "slug": "joma",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/joma"
+    },
+    {
+      "djakSlug": "joola",
+      "name": "Joola",
+      "slug": "joola",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/joola"
+    },
+    {
+      "djakSlug": "kappa",
+      "name": "Kappa",
+      "slug": "kappa",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/kappa"
+    },
+    {
+      "djakSlug": "karl_lagerfeld",
+      "name": "Karl Lagerfeld",
+      "slug": "karl-lagerfeld",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/karl_lagerfeld"
+    },
+    {
+      "djakSlug": "kenzo",
+      "name": "Kenzo",
+      "slug": "kenzo",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/kenzo"
+    },
+    {
+      "djakSlug": "la_martina",
+      "name": "LA Martina",
+      "slug": "la-martina",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/la_martina"
+    },
+    {
+      "djakSlug": "lacoste",
+      "name": "Lacoste",
+      "slug": "lacoste",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/lacoste"
+    },
+    {
+      "djakSlug": "lamborghini",
+      "name": "Lamborghini",
+      "slug": "lamborghini",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/lamborghini"
+    },
+    {
+      "djakSlug": "looper",
+      "name": "Looper",
+      "slug": "looper",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/looper"
+    },
+    {
+      "djakSlug": "love_moschino",
+      "name": "Love Moschino",
+      "slug": "love-moschino",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/love_moschino"
+    },
+    {
+      "djakSlug": "luhta",
+      "name": "Luhta",
+      "slug": "luhta",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/luhta"
+    },
+    {
+      "djakSlug": "lumberjack",
+      "name": "Lumberjack",
+      "slug": "lumberjack",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/lumberjack"
+    },
+    {
+      "djakSlug": "lyle_and_scott",
+      "name": "Lyle AND Scott",
+      "slug": "lyle-and-scott",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/lyle_and_scott"
+    },
+    {
+      "djakSlug": "markoni",
+      "name": "Markoni",
+      "slug": "markoni",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/markoni"
+    },
+    {
+      "djakSlug": "maska",
+      "name": "Maska",
+      "slug": "maska",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/maska"
+    },
+    {
+      "djakSlug": "maupiti",
+      "name": "Maupiti",
+      "slug": "maupiti",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/maupiti"
+    },
+    {
+      "djakSlug": "merrell",
+      "name": "Merrell",
+      "slug": "merrell",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/merrell"
+    },
+    {
+      "djakSlug": "michael_kors",
+      "name": "Michael Kors",
+      "slug": "michael-kors",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/michael_kors"
+    },
+    {
+      "djakSlug": "mikasa",
+      "name": "Mikasa",
+      "slug": "mikasa",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/mikasa"
+    },
+    {
+      "djakSlug": "milami",
+      "name": "Milami",
+      "slug": "milami",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/milami"
+    },
+    {
+      "djakSlug": "missoni",
+      "name": "Missoni",
+      "slug": "missoni",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/missoni"
+    },
+    {
+      "djakSlug": "mizuno",
+      "name": "Mizuno patike",
+      "slug": "mizuno",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/mizuno"
+    },
+    {
+      "djakSlug": "mr_lacy",
+      "name": "Mr.lacy",
+      "slug": "mr-lacy",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/mr_lacy"
+    },
+    {
+      "djakSlug": "msgm",
+      "name": "Msgm",
+      "slug": "msgm",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/msgm"
+    },
+    {
+      "djakSlug": "mykro",
+      "name": "Mykro",
+      "slug": "mykro",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/mykro"
+    },
+    {
+      "djakSlug": "napapijri",
+      "name": "Napapijri",
+      "slug": "napapijri",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/napapijri"
+    },
+    {
+      "djakSlug": "neil_barret",
+      "name": "Neil Barret",
+      "slug": "neil-barret",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/neil_barret"
+    },
+    {
+      "djakSlug": "new_balance",
+      "name": "NEW Balance",
+      "slug": "new-balance",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/new_balance"
+    },
+    {
+      "djakSlug": "new_era",
+      "name": "NEW ERA",
+      "slug": "new-era",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/new_era"
+    },
+    {
+      "djakSlug": "nike",
+      "name": "Nike",
+      "slug": "nike",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/nike"
+    },
+    {
+      "djakSlug": "nike_hadad",
+      "name": "Nike Hadad",
+      "slug": "nike-hadad",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/nike_hadad"
+    },
+    {
+      "djakSlug": "nnormal",
+      "name": "Nnormal",
+      "slug": "nnormal",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/nnormal"
+    },
+    {
+      "djakSlug": "norma_kamali",
+      "name": "Norma Kamali",
+      "slug": "norma-kamali",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/norma_kamali"
+    },
+    {
+      "djakSlug": "north_sails",
+      "name": "North Sails",
+      "slug": "north-sails",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/north_sails"
+    },
+    {
+      "djakSlug": "norway_1963",
+      "name": "Norway 1963",
+      "slug": "norway-1963",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/norway_1963"
+    },
+    {
+      "djakSlug": "only",
+      "name": "Only",
+      "slug": "only",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/only"
+    },
+    {
+      "djakSlug": "peak",
+      "name": "Peak",
+      "slug": "peak",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/peak"
+    },
+    {
+      "djakSlug": "pepe_jeans",
+      "name": "Pepe Jeans",
+      "slug": "pepe-jeans",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/pepe_jeans"
+    },
+    {
+      "djakSlug": "petite_jolie",
+      "name": "Petite Jolie",
+      "slug": "petite-jolie",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/petite_jolie"
+    },
+    {
+      "djakSlug": "philipp_plein",
+      "name": "Philipp Plein",
+      "slug": "philipp-plein",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/philipp_plein"
+    },
+    {
+      "djakSlug": "pinki",
+      "name": "Pinki",
+      "slug": "pinki",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/pinki"
+    },
+    {
+      "djakSlug": "plein_sport",
+      "name": "Plein Sport",
+      "slug": "plein-sport",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/plein_sport"
+    },
+    {
+      "djakSlug": "pollino",
+      "name": "Pollino",
+      "slug": "pollino",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/pollino"
+    },
+    {
+      "djakSlug": "pomirishi",
+      "name": "Pomirishi",
+      "slug": "pomirishi",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/pomirishi"
+    },
+    {
+      "djakSlug": "precision",
+      "name": "Precision",
+      "slug": "precision",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/precision"
+    },
+    {
+      "djakSlug": "pulse",
+      "name": "Pulse",
+      "slug": "pulse",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/pulse"
+    },
+    {
+      "djakSlug": "puma",
+      "name": "Puma",
+      "slug": "puma",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/puma"
+    },
+    {
+      "djakSlug": "red_valentino",
+      "name": "RED Valentino",
+      "slug": "red-valentino",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/red_valentino"
+    },
+    {
+      "djakSlug": "reebok",
+      "name": "Reebok",
+      "slug": "reebok",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/reebok"
+    },
+    {
+      "djakSlug": "replay",
+      "name": "Replay",
+      "slug": "replay",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/replay"
+    },
+    {
+      "djakSlug": "rider",
+      "name": "Rider",
+      "slug": "rider",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/rider"
+    },
+    {
+      "djakSlug": "ring",
+      "name": "Ring",
+      "slug": "ring",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/ring"
+    },
+    {
+      "djakSlug": "robe_di_kappa",
+      "name": "Robe DI Kappa",
+      "slug": "robe-di-kappa",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/robe_di_kappa"
+    },
+    {
+      "djakSlug": "rockfam",
+      "name": "Rockfam",
+      "slug": "rockfam",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/rockfam"
+    },
+    {
+      "djakSlug": "rockland",
+      "name": "Rockland",
+      "slug": "rockland",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/rockland"
+    },
+    {
+      "djakSlug": "rollerblade",
+      "name": "Rollerblade",
+      "slug": "rollerblade",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/rollerblade"
+    },
+    {
+      "djakSlug": "roxy",
+      "name": "Roxy",
+      "slug": "roxy",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/roxy"
+    },
+    {
+      "djakSlug": "rucanor",
+      "name": "Rucanor",
+      "slug": "rucanor",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/rucanor"
+    },
+    {
+      "djakSlug": "salomon",
+      "name": "Salomon",
+      "slug": "salomon",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/salomon"
+    },
+    {
+      "djakSlug": "secutex",
+      "name": "Secutex",
+      "slug": "secutex",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/secutex"
+    },
+    {
+      "djakSlug": "select",
+      "name": "Select",
+      "slug": "select",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/select"
+    },
+    {
+      "djakSlug": "self_portrait",
+      "name": "Self Portrait",
+      "slug": "self-portrait",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/self_portrait"
+    },
+    {
+      "djakSlug": "shooter",
+      "name": "Shooter",
+      "slug": "shooter",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/shooter"
+    },
+    {
+      "djakSlug": "skandia",
+      "name": "Skandia",
+      "slug": "skandia",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/skandia"
+    },
+    {
+      "djakSlug": "skechers",
+      "name": "Skechers",
+      "slug": "skechers",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/skechers"
+    },
+    {
+      "djakSlug": "sneaky",
+      "name": "Sneaky",
+      "slug": "sneaky",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/sneaky"
+    },
+    {
+      "djakSlug": "spalding",
+      "name": "Spalding",
+      "slug": "spalding",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/spalding"
+    },
+    {
+      "djakSlug": "speedo",
+      "name": "Speedo",
+      "slug": "speedo",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/speedo"
+    },
+    {
+      "djakSlug": "spokey",
+      "name": "Spokey",
+      "slug": "spokey",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/spokey"
+    },
+    {
+      "djakSlug": "sportalm",
+      "name": "Sportalm",
+      "slug": "sportalm",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/sportalm"
+    },
+    {
+      "djakSlug": "spot",
+      "name": "Spot",
+      "slug": "spot",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/spot"
+    },
+    {
+      "djakSlug": "stanley",
+      "name": "Stanley",
+      "slug": "stanley",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/stanley"
+    },
+    {
+      "djakSlug": "stedman",
+      "name": "Stedman",
+      "slug": "stedman",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/stedman"
+    },
+    {
+      "djakSlug": "superdry",
+      "name": "Superdry",
+      "slug": "superdry",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/superdry"
+    },
+    {
+      "djakSlug": "teva",
+      "name": "Teva",
+      "slug": "teva",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/teva"
+    },
+    {
+      "djakSlug": "the_north_face",
+      "name": "THE North Face",
+      "slug": "north-face",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/the_north_face"
+    },
+    {
+      "djakSlug": "tigil",
+      "name": "Tigil",
+      "slug": "tigil",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/tigil"
+    },
+    {
+      "djakSlug": "timberland",
+      "name": "Timberland",
+      "slug": "timberland",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/timberland"
+    },
+    {
+      "djakSlug": "timmy",
+      "name": "Timmy",
+      "slug": "timmy",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/timmy"
+    },
+    {
+      "djakSlug": "tory_burch",
+      "name": "Tory Burch",
+      "slug": "tory-burch",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/tory_burch"
+    },
+    {
+      "djakSlug": "trussardi",
+      "name": "Trussardi",
+      "slug": "trussardi",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/trussardi"
+    },
+    {
+      "djakSlug": "ty",
+      "name": "Ty",
+      "slug": "ty",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/ty"
+    },
+    {
+      "djakSlug": "u_s_grand_polo",
+      "name": "U.s. Grand Polo",
+      "slug": "u-s-grand-polo",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/u_s_grand_polo"
+    },
+    {
+      "djakSlug": "uhl",
+      "name": "Uhl",
+      "slug": "uhl",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/uhl"
+    },
+    {
+      "djakSlug": "under_armour",
+      "name": "Under Armour",
+      "slug": "under-armour",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/under_armour"
+    },
+    {
+      "djakSlug": "unice",
+      "name": "Unice",
+      "slug": "unice",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/unice"
+    },
+    {
+      "djakSlug": "wilson",
+      "name": "Wilson",
+      "slug": "wilson",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/wilson"
+    },
+    {
+      "djakSlug": "xox",
+      "name": "Xox",
+      "slug": "xox",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/xox"
+    },
+    {
+      "djakSlug": "yvolution",
+      "name": "Yvolution",
+      "slug": "yvolution",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/yvolution"
+    },
+    {
+      "djakSlug": "zaxy",
+      "name": "Zaxy",
+      "slug": "zaxy",
+      "logoUrl": null,
+      "productUrl": "https://www.djaksport.com/zaxy"
+    }
+  ],
+  "stores": [
+    {
+      "path": "Knjaza-Miloša",
+      "name": "Aleksinac - Knjaza Miloša",
+      "address": "Knjaza Miloša 66",
+      "postalCode": "18200",
+      "city": "Aleksinac",
+      "citySlug": "aleksinac",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": null,
+      "latitude": 43.5387597,
+      "longitude": 21.7098033,
+      "storeUrl": "https://www.djaksport.com/lokacije/Knjaza-Miloša/"
+    },
+    {
+      "path": "Zanatlijska-Aranđelovac",
+      "name": "Aranđelovac - TC Ara Plaza",
+      "address": "Zanatlijska 112",
+      "postalCode": "34300",
+      "city": "Aranđelovac",
+      "citySlug": "aran-elovac",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": "kragujevac-plaza",
+      "latitude": 44.30239864,
+      "longitude": 20.58771542,
+      "storeUrl": "https://www.djaksport.com/lokacije/Zanatlijska-Aranđelovac/"
+    },
+    {
+      "path": "Kralja-Petra-Prvog-Bačka-Palanka",
+      "name": "Bačka Palanka - Kralja Petra Prvog",
+      "address": "Kralja Petra I 9",
+      "postalCode": "21400",
+      "city": "Bačka Palanka",
+      "citySlug": "backa-palanka",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": null,
+      "latitude": 45.249805,
+      "longitude": 19.3834438,
+      "storeUrl": "https://www.djaksport.com/lokacije/Kralja-Petra-Prvog-Bačka-Palanka/"
+    },
+    {
+      "path": "djak-arena-beograd",
+      "name": "Beograd - Arena",
+      "address": "Bulevar Arsenija Čarnojevića 69",
+      "postalCode": "11070",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": null,
+      "latitude": 44.8115427,
+      "longitude": 20.4208267,
+      "storeUrl": "https://www.djaksport.com/lokacije/djak-arena-beograd/"
+    },
+    {
+      "path": "TC-Zmaj",
+      "name": "Beograd - Auto put TC Zmaj",
+      "address": "Tržni Centar Zmaj",
+      "postalCode": "11000",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": null,
+      "latitude": 44.8345754,
+      "longitude": 20.3667305,
+      "storeUrl": "https://www.djaksport.com/lokacije/TC-Zmaj/"
+    },
+    {
+      "path": "Banovo-Brdo",
+      "name": "Beograd - Banovo Brdo",
+      "address": "Požeška 108",
+      "postalCode": "11000",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": null,
+      "latitude": 44.7771462,
+      "longitude": 20.4138734,
+      "storeUrl": "https://www.djaksport.com/lokacije/Banovo-Brdo/"
+    },
+    {
+      "path": "Bulevar-Kralja-Aleksandra",
+      "name": "Beograd - Bulevar Kralja Aleksandra",
+      "address": "Bulevar Kralja Aleksandra 391",
+      "postalCode": "11000",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": null,
+      "latitude": 44.789455,
+      "longitude": 20.515635,
+      "storeUrl": "https://www.djaksport.com/lokacije/Bulevar-Kralja-Aleksandra/"
+    },
+    {
+      "path": "Crnotravska",
+      "name": "Beograd - Crnotravska",
+      "address": "Crnotravska 7-9",
+      "postalCode": "11000",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": null,
+      "latitude": 44.7609931,
+      "longitude": 20.4757812,
+      "storeUrl": "https://www.djaksport.com/lokacije/Crnotravska/"
+    },
+    {
+      "path": "Zemun-park",
+      "name": "Beograd - Forum park",
+      "address": "Autoput za Novi Sad 124-126",
+      "postalCode": "11080",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": "mercator",
+      "latitude": 44.8676986,
+      "longitude": 20.3459495,
+      "storeUrl": "https://www.djaksport.com/lokacije/Zemun-park/"
+    },
+    {
+      "path": "Leštane-Smederevski-put",
+      "name": "Beograd - Leštane",
+      "address": "Smederevski put 5b",
+      "postalCode": "11300",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": null,
+      "latitude": 44.7498105,
+      "longitude": 20.5859455,
+      "storeUrl": "https://www.djaksport.com/lokacije/Leštane-Smederevski-put/"
+    },
+    {
+      "path": "TC-Big",
+      "name": "Beograd - TC Big Fashion - Karaburma",
+      "address": "Uralska 3",
+      "postalCode": "11000",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": 44.8171358,
+      "longitude": 20.5078076,
+      "storeUrl": "https://www.djaksport.com/lokacije/TC-Big/"
+    },
+    {
+      "path": "TC-Big-Rakovica",
+      "name": "Beograd - TC Big Rakovica",
+      "address": "Patrijarha Dimitrija 14",
+      "postalCode": "11000",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": 44.7394603,
+      "longitude": 20.4381664,
+      "storeUrl": "https://www.djaksport.com/lokacije/TC-Big-Rakovica/"
+    },
+    {
+      "path": "zemun-bn-boss",
+      "name": "Beograd - TC BN Boss",
+      "address": "Nova Galenika, TC BN Bos, Batajnički drum 1",
+      "postalCode": "11000",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": null,
+      "latitude": 44.8618033,
+      "longitude": 20.3672289,
+      "storeUrl": "https://www.djaksport.com/lokacije/zemun-bn-boss/"
+    },
+    {
+      "path": "TC-Rajićeva",
+      "name": "Beograd - TC Rajićeva",
+      "address": "Rajićeva, Kneza Mihaila 54",
+      "postalCode": "11000",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": "rajiceva",
+      "latitude": 44.8201295,
+      "longitude": 20.4542996,
+      "storeUrl": "https://www.djaksport.com/lokacije/TC-Rajićeva/"
+    },
+    {
+      "path": "TC-Stadion",
+      "name": "Beograd - TC Stadion Voždovac",
+      "address": "Zaplanjska 32",
+      "postalCode": "11000",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": "stadion",
+      "latitude": 44.775008,
+      "longitude": 20.4901606,
+      "storeUrl": "https://www.djaksport.com/lokacije/TC-Stadion/"
+    },
+    {
+      "path": "TC-Stari-Merkator",
+      "name": "Beograd - TC Stari Merkator",
+      "address": "Palmira Toljatija 7",
+      "postalCode": "11070",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": "mercator",
+      "latitude": 44.8275512,
+      "longitude": 20.413347,
+      "storeUrl": "https://www.djaksport.com/lokacije/TC-Stari-Merkator/"
+    },
+    {
+      "path": "Borča-TC-Stop-Shop",
+      "name": "Beograd - TC Stop Shop Borča",
+      "address": "Bratstva i jedinstva 2g",
+      "postalCode": "11211",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": "zlatibor",
+      "latitude": 44.8883699,
+      "longitude": 20.45876,
+      "storeUrl": "https://www.djaksport.com/lokacije/Borča-TC-Stop-Shop/"
+    },
+    {
+      "path": "Vojvođanska-Surčin",
+      "name": "Beograd - Vojvođanska Surčin",
+      "address": "Vojvođanska 386d",
+      "postalCode": "11271",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": null,
+      "latitude": 44.7976364,
+      "longitude": 20.3123005,
+      "storeUrl": "https://www.djaksport.com/lokacije/Vojvođanska-Surčin/"
+    },
+    {
+      "path": "Premium-Beo-shopping-centar",
+      "name": "Beograd - Premium-Beo shopping centar",
+      "address": "Vojislava Ilića 141",
+      "postalCode": "11050",
+      "city": "Beograd (Zvezdara)",
+      "citySlug": "beograd-zvezdara",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": null,
+      "latitude": 44.7867466,
+      "longitude": 20.5014624,
+      "storeUrl": "https://www.djaksport.com/lokacije/Premium-Beo-shopping-centar/"
+    },
+    {
+      "path": "Big-fashion-Bor",
+      "name": "Bor - BIG Fashion",
+      "address": "Alberta Ajnštajna 4a",
+      "postalCode": "19200",
+      "city": "Bor",
+      "citySlug": "bor",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": 44.0587062,
+      "longitude": 22.1056925,
+      "storeUrl": "https://www.djaksport.com/lokacije/Big-fashion-Bor/"
+    },
+    {
+      "path": "RK-Partizanka-Čačak",
+      "name": "Čačak - RK Partizanka",
+      "address": "Kosovski venac 2",
+      "postalCode": "32100",
+      "city": "Čačak",
+      "citySlug": "cacak",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": null,
+      "latitude": 43.8899748,
+      "longitude": 20.3494463,
+      "storeUrl": "https://www.djaksport.com/lokacije/RK-Partizanka-Čačak/"
+    },
+    {
+      "path": "STOP-SHOP-Čačak",
+      "name": "Čačak - STOP SHOP",
+      "address": "Bulevar Vuka Karadžića 82",
+      "postalCode": "32100",
+      "city": "Čačak",
+      "citySlug": "cacak",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": "zlatibor",
+      "latitude": 43.8840468,
+      "longitude": 20.3305429,
+      "storeUrl": "https://www.djaksport.com/lokacije/STOP-SHOP-Čačak/"
+    },
+    {
+      "path": "TC-Biser-Jagodina",
+      "name": "Jagodina - TC Biser",
+      "address": "Stevana Ivanovića bb",
+      "postalCode": "35000",
+      "city": "Jagodina",
+      "citySlug": "jagodina",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": null,
+      "latitude": 43.9670964,
+      "longitude": 21.2655089,
+      "storeUrl": "https://www.djaksport.com/lokacije/TC-Biser-Jagodina/"
+    },
+    {
+      "path": "Kikinda-Mihajla Pupina 24",
+      "name": "Kikinda - Mihajla Pupina",
+      "address": "Mihajla Pupina 24",
+      "postalCode": "23300",
+      "city": "Kikinda",
+      "citySlug": "kikinda",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": null,
+      "latitude": 45.82182699,
+      "longitude": 20.45614001,
+      "storeUrl": "https://www.djaksport.com/lokacije/Kikinda-Mihajla Pupina 24/"
+    },
+    {
+      "path": "Dimitrija-Tucovića-Kragujevac",
+      "name": "Kragujevac - BIG",
+      "address": "Dimitrija Tucovića 23",
+      "postalCode": "34000",
+      "city": "Kragujevac",
+      "citySlug": "kragujevac",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": "kragujevac-plaza",
+      "latitude": 44.0102314,
+      "longitude": 20.8938371,
+      "storeUrl": "https://www.djaksport.com/lokacije/Dimitrija-Tucovića-Kragujevac/"
+    },
+    {
+      "path": "TC-Nest-Kraljevo",
+      "name": "Kraljevo - TC Nest",
+      "address": "Dušana Popovića 41b",
+      "postalCode": "36100",
+      "city": "Kraljevo",
+      "citySlug": "kraljevo",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": null,
+      "latitude": 43.7151276,
+      "longitude": 20.693616,
+      "storeUrl": "https://www.djaksport.com/lokacije/TC-Nest-Kraljevo/"
+    },
+    {
+      "path": "big-krusevac",
+      "name": "Kruševac - BIG",
+      "address": "Krfska 37",
+      "postalCode": "37000",
+      "city": "Kruševac",
+      "citySlug": "krusevac",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": "kragujevac-plaza",
+      "latitude": 43.5786526,
+      "longitude": 21.3356957,
+      "storeUrl": "https://www.djaksport.com/lokacije/big-krusevac/"
+    },
+    {
+      "path": "Lomina-Kruševac",
+      "name": "Kruševac - Lomina",
+      "address": "Lomina 1",
+      "postalCode": "37000",
+      "city": "Kruševac",
+      "citySlug": "krusevac",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": null,
+      "latitude": 43.5806792,
+      "longitude": 21.3375228,
+      "storeUrl": "https://www.djaksport.com/lokacije/Lomina-Kruševac/"
+    },
+    {
+      "path": "TC-Stop-Shop-Lazarevac",
+      "name": "Lazarevac - TC Stop Shop",
+      "address": "Železnička stop shop",
+      "postalCode": "11550",
+      "city": "Lazarevac",
+      "citySlug": "lazarevac",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": "zlatibor",
+      "latitude": 44.3869645,
+      "longitude": 20.2514779,
+      "storeUrl": "https://www.djaksport.com/lokacije/TC-Stop-Shop-Lazarevac/"
+    },
+    {
+      "path": "TPC Leskopark -Leskovac",
+      "name": "Leskovac - TPC Leskopark",
+      "address": "Industrijska 9",
+      "postalCode": "16000",
+      "city": "Leskovac",
+      "citySlug": "leskovac",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": null,
+      "latitude": 43.00022229,
+      "longitude": 21.95898092,
+      "storeUrl": "https://www.djaksport.com/lokacije/TPC Leskopark -Leskovac/"
+    },
+    {
+      "path": "Trg-Vuka-Karadzića-Loznica",
+      "name": "Loznica - Trg Vuka Karadzića",
+      "address": "Trg Vuka Karadžića",
+      "postalCode": "15300",
+      "city": "Loznica",
+      "citySlug": "loznica",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": null,
+      "latitude": 44.533654,
+      "longitude": 19.22394,
+      "storeUrl": "https://www.djaksport.com/lokacije/Trg-Vuka-Karadzića-Loznica/"
+    },
+    {
+      "path": "TC-Mladenovac",
+      "name": "Mladenovac - TC Mladenovac",
+      "address": "Braće Badžak 2",
+      "postalCode": "11400",
+      "city": "Mladenovac",
+      "citySlug": "mladenovac",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": null,
+      "latitude": 44.4346175,
+      "longitude": 20.6941963,
+      "storeUrl": "https://www.djaksport.com/lokacije/TC-Mladenovac/"
+    },
+    {
+      "path": "DIS-market-Niš",
+      "name": "Niš - DIS market",
+      "address": "Bulevar Medijana 15",
+      "postalCode": "18100",
+      "city": "Niš",
+      "citySlug": "nis",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": null,
+      "latitude": 43.3254825,
+      "longitude": 21.9376427,
+      "storeUrl": "https://www.djaksport.com/lokacije/DIS-market-Niš/"
+    },
+    {
+      "path": "TC-Stop-Shop",
+      "name": "Niš - TC Stop Shop",
+      "address": "Bulevar Medijana 21",
+      "postalCode": "18100",
+      "city": "Niš",
+      "citySlug": "nis",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": "zlatibor",
+      "latitude": 43.31081262,
+      "longitude": 21.93619684,
+      "storeUrl": "https://www.djaksport.com/lokacije/TC-Stop-Shop/"
+    },
+    {
+      "path": "TPC-Srbija",
+      "name": "Niš - TPC Srbija",
+      "address": "Obrenovićeva bb",
+      "postalCode": "18100",
+      "city": "Niš",
+      "citySlug": "nis",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": "mercator",
+      "latitude": 43.3180855,
+      "longitude": 21.8947072,
+      "storeUrl": "https://www.djaksport.com/lokacije/TPC-Srbija/"
+    },
+    {
+      "path": "BIG-Nova-Pazova",
+      "name": "Nova Pazova - BIG",
+      "address": "Nova Pazova, Vojački put 1a",
+      "postalCode": "22330",
+      "city": "Nova Pazova",
+      "citySlug": "nova-pazova",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": null,
+      "latitude": 44.954299,
+      "longitude": 20.1999292,
+      "storeUrl": "https://www.djaksport.com/lokacije/BIG-Nova-Pazova/"
+    },
+    {
+      "path": "BIG-CEE-ĐAK-Novi-Sad",
+      "name": "Novi Sad - BIG CEE",
+      "address": "TC Big, Sentandrejski put 11l",
+      "postalCode": "21000",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": 45.2756467,
+      "longitude": 19.8259349,
+      "storeUrl": "https://www.djaksport.com/lokacije/BIG-CEE-ĐAK-Novi-Sad/"
+    },
+    {
+      "path": "Futoški-put-DIS",
+      "name": "Novi Sad - Futoški put DIS",
+      "address": "Futoški put 10",
+      "postalCode": "21000",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": null,
+      "latitude": 45.2484175,
+      "longitude": 19.8092989,
+      "storeUrl": "https://www.djaksport.com/lokacije/Futoški-put-DIS/"
+    },
+    {
+      "path": "Miloša-Obrenovića-Obrenovac",
+      "name": "Obrenovac - Miloša Obrenovića",
+      "address": "Miloša Obrenovića 99",
+      "postalCode": "11500",
+      "city": "Obrenovac",
+      "citySlug": "obrenovac",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": "mercator",
+      "latitude": 44.6529898,
+      "longitude": 20.2004825,
+      "storeUrl": "https://www.djaksport.com/lokacije/Miloša-Obrenovića-Obrenovac/"
+    },
+    {
+      "path": "RC-Nest-Obrenovac",
+      "name": "Obrenovac - TC Big",
+      "address": "Kralja Aleksandra I 157",
+      "postalCode": "11500",
+      "city": "Obrenovac",
+      "citySlug": "obrenovac",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": 44.6582618,
+      "longitude": 20.2148649,
+      "storeUrl": "https://www.djaksport.com/lokacije/RC-Nest-Obrenovac/"
+    },
+    {
+      "path": "Big-Pančevo-DIS",
+      "name": "Pančevo - Big Pančevo",
+      "address": "Miloša Obrenovića 12",
+      "postalCode": "26100",
+      "city": "Pančevo",
+      "citySlug": "pancevo",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": "mercator",
+      "latitude": 44.8682877,
+      "longitude": 20.6609879,
+      "storeUrl": "https://www.djaksport.com/lokacije/Big-Pančevo-DIS/"
+    },
+    {
+      "path": "Đure-Đakovića-DIS-Požarevac",
+      "name": "Požarevac - Đure Đakovića bb DIS",
+      "address": "Đure Đakovića bb",
+      "postalCode": "12000",
+      "city": "Požarevac",
+      "citySlug": "pozarevac",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": null,
+      "latitude": 44.6109275,
+      "longitude": 21.1765595,
+      "storeUrl": "https://www.djaksport.com/lokacije/Đure-Đakovića-DIS-Požarevac/"
+    },
+    {
+      "path": "Vojvode-Mišiča-Požega",
+      "name": "Požega - Vojvode Mišiča",
+      "address": "Vojvode Mišica 41",
+      "postalCode": "31200",
+      "city": "Požega",
+      "citySlug": "pozega",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": null,
+      "latitude": 43.8443571,
+      "longitude": 20.0348263,
+      "storeUrl": "https://www.djaksport.com/lokacije/Vojvode-Mišiča-Požega/"
+    },
+    {
+      "path": "Vuka Stefanovicića Karadžića-Prokuplje",
+      "name": "Prokuplje - Vuka Stefanovicića Karadžića",
+      "address": "Vuka Stefanovicića Karadžića 3v",
+      "postalCode": "18400",
+      "city": "Prokuplje",
+      "citySlug": "prokuplje",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": null,
+      "latitude": 43.2415181,
+      "longitude": 21.60692305,
+      "storeUrl": "https://www.djaksport.com/lokacije/Vuka Stefanovicića Karadžića-Prokuplje/"
+    },
+    {
+      "path": "Dušanova-Raška",
+      "name": "Raška - Dušanova",
+      "address": "Dušanova 7",
+      "postalCode": "36350",
+      "city": "Raška",
+      "citySlug": "raska",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": null,
+      "latitude": 43.2878142,
+      "longitude": 20.6143119,
+      "storeUrl": "https://www.djaksport.com/lokacije/Dušanova-Raška/"
+    },
+    {
+      "path": "Glavna-Ruma",
+      "name": "Ruma - Glavna",
+      "address": "Glavna 161/1/1",
+      "postalCode": "22400",
+      "city": "Ruma",
+      "citySlug": "ruma",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": null,
+      "latitude": 45.0077487,
+      "longitude": 19.8221543,
+      "storeUrl": "https://www.djaksport.com/lokacije/Glavna-Ruma/"
+    },
+    {
+      "path": "TC-Capitol-park-Šabac",
+      "name": "Šabac - TC Capitol park",
+      "address": "Tržni centar Capitol park",
+      "postalCode": "15000",
+      "city": "Šabac",
+      "citySlug": "sabac",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": "promenada",
+      "latitude": 44.754616,
+      "longitude": 19.6618124,
+      "storeUrl": "https://www.djaksport.com/lokacije/TC-Capitol-park-Šabac/"
+    },
+    {
+      "path": "Vojvode Janka Stojicevica - Šabac",
+      "name": "Šabac - Vojvode Janka Stojičevića",
+      "address": "Vojvode Janka Stojičevića 5",
+      "postalCode": "15000",
+      "city": "Šabac",
+      "citySlug": "sabac",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": null,
+      "latitude": 44.7473767,
+      "longitude": 19.70571459,
+      "storeUrl": "https://www.djaksport.com/lokacije/Vojvode Janka Stojicevica - Šabac/"
+    },
+    {
+      "path": "STOP-SHOP-Smederevo",
+      "name": "Smederevo - STOP SHOP",
+      "address": "Stop Shop, Šalinačka 58",
+      "postalCode": "11300",
+      "city": "Smederevo",
+      "citySlug": "smederevo",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": "zlatibor",
+      "latitude": 44.6756136,
+      "longitude": 20.9457481,
+      "storeUrl": "https://www.djaksport.com/lokacije/STOP-SHOP-Smederevo/"
+    },
+    {
+      "path": "DIS-Smederevska-Palanka",
+      "name": "Smederevska Palanka - DIS",
+      "address": "Dis, Nova bb",
+      "postalCode": "11420",
+      "city": "Smederevska Palanka",
+      "citySlug": "smederevska-palanka",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": null,
+      "latitude": 44.3696645,
+      "longitude": 20.9619891,
+      "storeUrl": "https://www.djaksport.com/lokacije/DIS-Smederevska-Palanka/"
+    },
+    {
+      "path": "TC-Stop-Shop-Subotica",
+      "name": "Subotica - Stop Shop",
+      "address": "Segedinski put 88",
+      "postalCode": "24000",
+      "city": "Subotica",
+      "citySlug": "subotica",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": "zlatibor",
+      "latitude": 46.1003032,
+      "longitude": 19.6985232,
+      "storeUrl": "https://www.djaksport.com/lokacije/TC-Stop-Shop-Subotica/"
+    },
+    {
+      "path": "Kralja-Petra-Ub",
+      "name": "Ub - Kralja Petra",
+      "address": "Kralja Petra 30",
+      "postalCode": "14210",
+      "city": "Ub",
+      "citySlug": "ub",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": null,
+      "latitude": 44.4561721,
+      "longitude": 20.0749944,
+      "storeUrl": "https://www.djaksport.com/lokacije/Kralja-Petra-Ub/"
+    },
+    {
+      "path": "RP-Nest-Užice",
+      "name": "Užice - RP Nest",
+      "address": "RP Nest, Miloša Obrenovića bb",
+      "postalCode": "31100",
+      "city": "Užice",
+      "citySlug": "uzice",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": "mercator",
+      "latitude": 43.8514594,
+      "longitude": 19.8558938,
+      "storeUrl": "https://www.djaksport.com/lokacije/RP-Nest-Užice/"
+    },
+    {
+      "path": "Karađorđeva 107-Valjevo",
+      "name": "Valjevo - Karađorđeva",
+      "address": "Karađorđeva 107",
+      "postalCode": "14000",
+      "city": "Valjevo",
+      "citySlug": "valjevo",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": null,
+      "latitude": 44.2712399,
+      "longitude": 19.8875646,
+      "storeUrl": "https://www.djaksport.com/lokacije/Karađorđeva 107-Valjevo/"
+    },
+    {
+      "path": "DIS-market-Velika-Plana",
+      "name": "Velika Plana - DIS market",
+      "address": "Kralja Petra Prvog 44",
+      "postalCode": "11300",
+      "city": "Velika Plana",
+      "citySlug": "velika-plana",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": null,
+      "latitude": 44.3279651,
+      "longitude": 21.0705923,
+      "storeUrl": "https://www.djaksport.com/lokacije/DIS-market-Velika-Plana/"
+    },
+    {
+      "path": "Bulevar-Nikole-Tesle-Vranje",
+      "name": "Vranje - Bulevar Nikole Tesle",
+      "address": "Bulevar Nikole Tesle 20",
+      "postalCode": "17500",
+      "city": "Vranje",
+      "citySlug": "vranje",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": null,
+      "latitude": 42.5520905,
+      "longitude": 21.8988536,
+      "storeUrl": "https://www.djaksport.com/lokacije/Bulevar-Nikole-Tesle-Vranje/"
+    },
+    {
+      "path": "TC-Capitol-park-Zaječar",
+      "name": "Zaječar - TC Capitol park",
+      "address": "Tržni centar Capitol park, Čupićeva bb",
+      "postalCode": "19000",
+      "city": "Zaječar",
+      "citySlug": "zajecar",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": "promenada",
+      "latitude": 43.9030397,
+      "longitude": 22.2699064,
+      "storeUrl": "https://www.djaksport.com/lokacije/TC-Capitol-park-Zaječar/"
+    },
+    {
+      "path": "Đak-Zlatibor",
+      "name": "Zlatibor - Đak",
+      "address": "Rujanska 2",
+      "postalCode": "31315",
+      "city": "Zlatibor",
+      "citySlug": "zlatibor",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": "zlatibor",
+      "latitude": 43.72531378,
+      "longitude": 19.69313146,
+      "storeUrl": "https://www.djaksport.com/lokacije/Đak-Zlatibor/"
+    },
+    {
+      "path": "TC-Big-Zrenjanin",
+      "name": "Zrenjanin - TC Big",
+      "address": "Bagljaš zapad 5",
+      "postalCode": "23100",
+      "city": "Zrenjanin",
+      "citySlug": "zrenjanin",
+      "phone": null,
+      "email": null,
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": 45.3782535,
+      "longitude": 20.3541431,
+      "storeUrl": "https://www.djaksport.com/lokacije/TC-Big-Zrenjanin/"
+    }
+  ]
+}

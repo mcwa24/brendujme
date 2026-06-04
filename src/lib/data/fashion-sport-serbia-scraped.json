@@ -1,0 +1,807 @@
+{
+  "scrapedAt": "2026-06-04T15:35:53.655Z",
+  "sourceNote": "FC fashioncompany.rs; F&F; Extra Sports extrasports.com; Tike; Runnmore; Burberry Terazije 28; adidas Originals trendmaker/adidasoriginals.rs",
+  "brands": [
+    "fashion-company",
+    "fashion-friends",
+    "diesel",
+    "levis",
+    "burberry",
+    "adidas-originals",
+    "extra-sports",
+    "tike",
+    "run-n-more"
+  ],
+  "stores": [
+    {
+      "brandSlug": "fashion-company",
+      "name": "Replay Store",
+      "address": "Knez Mihailova 33",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Cesare Paciotti",
+      "address": "Knez Mihailova 30",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "SUPERDRY",
+      "address": "Knez Mihailova 33",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Camper Store",
+      "address": "Terazije 31",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "FASHION&FRIENDS, Rajićeva SC",
+      "address": "Knez Mihailova 54",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "rajiceva",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Scotch&Soda, Rajićeva SC",
+      "address": "Knez Mihailova 54",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "rajiceva",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Levi's, Rajićeva SC",
+      "address": "Knez Mihailova 54",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "rajiceva",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Timberland, Rajićeva SC",
+      "address": "Knez Mihailova 54",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "rajiceva",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Calvin Klein jeans, Rajićeva SC",
+      "address": "Knez Mihailova 54",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "rajiceva",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Tommy Hilfiger, Rajićeva SC",
+      "address": "Knez Mihailova 54",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "rajiceva",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Bata City Store, TC Ušće",
+      "address": "Bulevar Mihajla Pupina 4",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "usce",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Diesel, TC Ušće",
+      "address": "Bulevar Mihajla Pupina 4",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "usce",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Fashion&Friends, TC Ušće",
+      "address": "Bulevar Mihajla Pupina 4",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "usce",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Guess, TC Ušće",
+      "address": "Bulevar Mihajla Pupina 4",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "usce",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Timberland, TC Ušće",
+      "address": "Bulevar Mihajla Pupina 4",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "usce",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Tommy Hilfiger, TC Ušće",
+      "address": "Bulevar Mihajla Pupina 4",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "usce",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Levis, TC Ušće",
+      "address": "Bulevar Mihajla Pupina 4",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "usce",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Calvin Klein Underwear Ušće",
+      "address": "Bulevar Mihajla Pupina 4",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "usce",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Bata City Store, TC Delta City",
+      "address": "Jurija Gagarina 16",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "delta-city",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Fashion&Friends, TC Delta City",
+      "address": "Jurija Gagarina 16",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "delta-city",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Timberland, TC Delta City",
+      "address": "Jurija Gagarina 16",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "delta-city",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Guess Jeans, TC Delta City",
+      "address": "Jurija Gagarina 16",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "delta-city",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Calvin Klein Underwear Delta city",
+      "address": "Jurija Gagarina 16",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "delta-city",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "DENIM LAB, Delta city",
+      "address": "Jurija Gagarina 16",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "delta-city",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Bata City Store, Merkator",
+      "address": "Bulevar Umetnosti 4",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "mercator",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Fashion&Friends BIG FASHION",
+      "address": "Višnjička 84",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "big-fashion",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Bata BIG FASHION",
+      "address": "Višnjička 84",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "big-fashion",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Fashion&Friends, TC Plaza",
+      "address": "Dimitrija Tucovića bb",
+      "city": "Kragujevac",
+      "citySlug": "kragujevac",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Tommy Hilfiger",
+      "address": "Zmaj Jovina 19",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Timberland",
+      "address": "Zmaj Jovina 5",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Levi's",
+      "address": "Zmaj Jovina 8",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Replay",
+      "address": "Zmaj Jovina 10",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Bata City Store, Merkator",
+      "address": "Bulevar Oslobođenja 102",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "shoppingCenterSlug": "mercator",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Bata City Store, TC BIG",
+      "address": "Sentandrejski put 11",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "shoppingCenterSlug": "promenada",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Fashion&Friends, TC BIG",
+      "address": "Sentandrejski put 11",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "shoppingCenterSlug": "promenada",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Guess",
+      "address": "Pozorišni trg 7",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Fashion&Friends, TC Forum",
+      "address": "Obrenovićeva 42",
+      "city": "Niš",
+      "citySlug": "nis",
+      "shoppingCenterSlug": "mercator",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Bata City Store, TC Forum",
+      "address": "Obrenovićeva 42",
+      "city": "Niš",
+      "citySlug": "nis",
+      "shoppingCenterSlug": "mercator",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Levis, TC Forum",
+      "address": "Obrenovićeva 42",
+      "city": "Niš",
+      "citySlug": "nis",
+      "shoppingCenterSlug": "mercator",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Tommy Hilfiger, TC Forum",
+      "address": "Obrenovićeva 42",
+      "city": "Niš",
+      "citySlug": "nis",
+      "shoppingCenterSlug": "mercator",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Mango, Ušće Shopping Center",
+      "address": "Bulevar Mihajla Pupina 4",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "usce",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Scotch & Soda, Galerija Beograd",
+      "address": "Galerija Beograd, 1. sprat",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "galerija",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Superdry, Galerija Beograd",
+      "address": "Galerija Beograd",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "galerija",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Timberland, Galerija Beograd",
+      "address": "Galerija Beograd, 1. sprat",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "galerija",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-company",
+      "name": "Maje (prva radnja u regionu)",
+      "address": "Beograd — lokacija na sajtu Fashion Company",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "levis",
+      "name": "Levi's, Rajićeva SC",
+      "address": "Knez Mihailova 54",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "rajiceva",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "diesel",
+      "name": "Diesel, TC Ušće",
+      "address": "Bulevar Mihajla Pupina 4",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "usce",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "levis",
+      "name": "Levis, TC Ušće",
+      "address": "Bulevar Mihajla Pupina 4",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "usce",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "levis",
+      "name": "Levi's",
+      "address": "Zmaj Jovina 8",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "levis",
+      "name": "Levis, TC Forum",
+      "address": "Obrenovićeva 42",
+      "city": "Niš",
+      "citySlug": "nis",
+      "shoppingCenterSlug": "mercator",
+      "retailerSlug": "fashion-company",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "brandSlug": "fashion-friends",
+      "name": "Fashion&Friends Rajićeva",
+      "address": "Knez Mihailova 54",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "rajiceva",
+      "retailerSlug": "fashion-friends",
+      "storeUrl": "https://www.fashionandfriends.com/rs/"
+    },
+    {
+      "brandSlug": "fashion-friends",
+      "name": "Fashion&Friends Ušće",
+      "address": "Bulevar Mihajla Pupina 4",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "usce",
+      "retailerSlug": "fashion-friends",
+      "storeUrl": "https://www.fashionandfriends.com/rs/"
+    },
+    {
+      "brandSlug": "fashion-friends",
+      "name": "Fashion&Friends Delta City",
+      "address": "Jurija Gagarina 16",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "delta-city",
+      "retailerSlug": "fashion-friends",
+      "storeUrl": "https://www.fashionandfriends.com/rs/"
+    },
+    {
+      "brandSlug": "fashion-friends",
+      "name": "Fashion&Friends Big Fashion",
+      "address": "Višnjička 84",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "big-fashion",
+      "retailerSlug": "fashion-friends",
+      "storeUrl": "https://www.fashionandfriends.com/rs/"
+    },
+    {
+      "brandSlug": "fashion-friends",
+      "name": "Fashion&Friends Galerija",
+      "address": "Galerija Beograd",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "galerija",
+      "retailerSlug": "fashion-friends",
+      "storeUrl": "https://www.fashionandfriends.com/rs/"
+    },
+    {
+      "brandSlug": "fashion-friends",
+      "name": "Fashion&Friends Capitol Park",
+      "address": "Patrijarha Dimitrija 14",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "fashion-friends",
+      "storeUrl": "https://www.fashionandfriends.com/rs/"
+    },
+    {
+      "brandSlug": "fashion-friends",
+      "name": "Fashion&Friends Plaza",
+      "address": "Dimitrija Tucovića bb",
+      "city": "Kragujevac",
+      "citySlug": "kragujevac",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "fashion-friends",
+      "storeUrl": "https://www.fashionandfriends.com/rs/"
+    },
+    {
+      "brandSlug": "fashion-friends",
+      "name": "Fashion&Friends BIG Novi Sad",
+      "address": "Sentandrejski put 11",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "shoppingCenterSlug": "promenada",
+      "retailerSlug": "fashion-friends",
+      "storeUrl": "https://www.fashionandfriends.com/rs/"
+    },
+    {
+      "brandSlug": "fashion-friends",
+      "name": "Fashion&Friends Forum",
+      "address": "Obrenovićeva 42",
+      "city": "Niš",
+      "citySlug": "nis",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "fashion-friends",
+      "storeUrl": "https://www.fashionandfriends.com/rs/"
+    },
+    {
+      "name": "Extra Sports Roda",
+      "address": "Đorđa Stanojevića 35",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": null,
+      "storeUrl": "https://www.extrasports.com/SRB_rs/prodavnice",
+      "brandSlug": "extra-sports",
+      "retailerSlug": "extra-sports"
+    },
+    {
+      "name": "Extra Sports Stadion",
+      "address": "Zaplanjska 32, TC Stadion",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "stadion",
+      "storeUrl": "https://www.extrasports.com/SRB_rs/prodavnice",
+      "brandSlug": "extra-sports",
+      "retailerSlug": "extra-sports"
+    },
+    {
+      "name": "Extra Sports Borča",
+      "address": "Bratstva i jedinstva 2g",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": null,
+      "storeUrl": "https://www.extrasports.com/SRB_rs/prodavnice",
+      "brandSlug": "extra-sports",
+      "retailerSlug": "extra-sports"
+    },
+    {
+      "name": "Extra Sports BIG Novi Sad",
+      "address": "Sentandrejski put 11",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "shoppingCenterSlug": "promenada",
+      "storeUrl": "https://www.extrasports.com/SRB_rs/prodavnice",
+      "brandSlug": "extra-sports",
+      "retailerSlug": "extra-sports"
+    },
+    {
+      "name": "Extra Sports Delta Niš",
+      "address": "Bulevar Nemanjića 11b",
+      "city": "Niš",
+      "citySlug": "nis",
+      "shoppingCenterSlug": "delta-city",
+      "storeUrl": "https://www.extrasports.com/SRB_rs/prodavnice",
+      "brandSlug": "extra-sports",
+      "retailerSlug": "extra-sports"
+    },
+    {
+      "name": "Extra Sports Kragujevac",
+      "address": "Bulevar Kraljice Marije 56",
+      "city": "Kragujevac",
+      "citySlug": "kragujevac",
+      "shoppingCenterSlug": "kragujevac-plaza",
+      "storeUrl": "https://www.extrasports.com/SRB_rs/prodavnice",
+      "brandSlug": "extra-sports",
+      "retailerSlug": "extra-sports"
+    },
+    {
+      "name": "Extra Sports Šabac",
+      "address": "Cara Dušana 1",
+      "city": "Šabac",
+      "citySlug": "sabac",
+      "shoppingCenterSlug": null,
+      "storeUrl": "https://www.extrasports.com/SRB_rs/prodavnice",
+      "brandSlug": "extra-sports",
+      "retailerSlug": "extra-sports"
+    },
+    {
+      "name": "Extra Sports Čačak",
+      "address": "Braće Spasića bb",
+      "city": "Čačak",
+      "citySlug": "cacak",
+      "shoppingCenterSlug": null,
+      "storeUrl": "https://www.extrasports.com/SRB_rs/prodavnice",
+      "brandSlug": "extra-sports",
+      "retailerSlug": "extra-sports"
+    },
+    {
+      "name": "Extra Sports Subotica",
+      "address": "Segedinski put 88",
+      "city": "Subotica",
+      "citySlug": "subotica",
+      "shoppingCenterSlug": null,
+      "storeUrl": "https://www.extrasports.com/SRB_rs/prodavnice",
+      "brandSlug": "extra-sports",
+      "retailerSlug": "extra-sports"
+    },
+    {
+      "name": "Extra Sports Zrenjanin",
+      "address": "Bagljaš zapad 5",
+      "city": "Zrenjanin",
+      "citySlug": "zrenjanin",
+      "shoppingCenterSlug": "big-fashion",
+      "storeUrl": "https://www.extrasports.com/SRB_rs/prodavnice",
+      "brandSlug": "extra-sports",
+      "retailerSlug": "extra-sports"
+    },
+    {
+      "brandSlug": "tike",
+      "name": "Tike Shop",
+      "address": "Kralja Petra 24",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "tike",
+      "storeUrl": "https://www.tike.rs/"
+    },
+    {
+      "brandSlug": "run-n-more",
+      "name": "Runnmore",
+      "address": "Uzun Mirkova 10",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "run-n-more",
+      "storeUrl": "https://www.runnmore.com/"
+    },
+    {
+      "brandSlug": "burberry",
+      "name": "Burberry",
+      "address": "Terazije 28",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": null,
+      "retailerSlug": "burberry",
+      "storeUrl": "https://www.fashioncompany.rs/"
+    },
+    {
+      "name": "adidas Originals Knez",
+      "address": "Knez Mihailova 33",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "rajiceva",
+      "storeUrl": "https://adidasoriginals.rs/",
+      "brandSlug": "adidas-originals",
+      "retailerSlug": "adidas-originals"
+    },
+    {
+      "name": "adidas Store Ušće",
+      "address": "Bulevar Mihajla Pupina 6",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "usce",
+      "storeUrl": "https://adidasoriginals.rs/",
+      "brandSlug": "adidas-originals",
+      "retailerSlug": "adidas-originals"
+    },
+    {
+      "name": "adidas Store Delta City",
+      "address": "Jurija Gagarina 16",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "delta-city",
+      "storeUrl": "https://adidasoriginals.rs/",
+      "brandSlug": "adidas-originals",
+      "retailerSlug": "adidas-originals"
+    },
+    {
+      "name": "adidas Store Galerija",
+      "address": "Bulevar Vudroa Vilsona 12",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "shoppingCenterSlug": "galerija",
+      "storeUrl": "https://adidasoriginals.rs/",
+      "brandSlug": "adidas-originals",
+      "retailerSlug": "adidas-originals"
+    },
+    {
+      "name": "adidas Store Promenada",
+      "address": "Bulevar Oslobođenja 119",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "shoppingCenterSlug": "promenada",
+      "storeUrl": "https://adidasoriginals.rs/",
+      "brandSlug": "adidas-originals",
+      "retailerSlug": "adidas-originals"
+    },
+    {
+      "name": "adidas Store Delta Niš",
+      "address": "Bulevar Nemanjića 11b",
+      "city": "Niš",
+      "citySlug": "nis",
+      "shoppingCenterSlug": "delta-city",
+      "storeUrl": "https://adidasoriginals.rs/",
+      "brandSlug": "adidas-originals",
+      "retailerSlug": "adidas-originals"
+    },
+    {
+      "name": "adidas Store Novi Pazar",
+      "address": "Avnoja bb",
+      "city": "Novi Pazar",
+      "citySlug": "novi-pazar",
+      "shoppingCenterSlug": null,
+      "storeUrl": "https://adidasoriginals.rs/",
+      "brandSlug": "adidas-originals",
+      "retailerSlug": "adidas-originals"
+    }
+  ]
+}

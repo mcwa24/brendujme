@@ -1,0 +1,592 @@
+[
+  {
+    "id": 13,
+    "name": "Beograd - TC Rajićeva",
+    "lat": "44.82012950",
+    "lng": "20.45429960",
+    "storeUrl": "https://www.djaksport.com/lokacije/TC-Rajićeva/",
+    "city": "Beograd",
+    "zip": "11000",
+    "address": "Rajićeva, Kneza Mihaila 54"
+  },
+  {
+    "id": 1,
+    "name": "Beograd - Arena",
+    "lat": "44.81154270",
+    "lng": "20.42082670",
+    "storeUrl": "https://www.djaksport.com/lokacije/djak-arena-beograd/",
+    "city": "Beograd",
+    "zip": "11070",
+    "address": "Bulevar Arsenija Čarnojevića 69"
+  },
+  {
+    "id": 15,
+    "name": "Beograd - TC Stari Merkator",
+    "lat": "44.82755120",
+    "lng": "20.41334700",
+    "storeUrl": "https://www.djaksport.com/lokacije/TC-Stari-Merkator/",
+    "city": "Beograd",
+    "zip": "11070",
+    "address": "Palmira Toljatija 7"
+  },
+  {
+    "id": 11,
+    "name": "Beograd - TC Big Fashion - Karaburma",
+    "lat": "44.81713580",
+    "lng": "20.50780760",
+    "storeUrl": "https://www.djaksport.com/lokacije/TC-Big/",
+    "city": "Beograd",
+    "zip": "11000",
+    "address": "Uralska 3"
+  },
+  {
+    "id": 40,
+    "name": "Beograd - Premium-Beo shopping centar",
+    "lat": "44.78674660",
+    "lng": "20.50146240",
+    "storeUrl": "https://www.djaksport.com/lokacije/Premium-Beo-shopping-centar/",
+    "city": "Beograd (Zvezdara)",
+    "zip": "11050",
+    "address": "Vojislava Ilića 141"
+  },
+  {
+    "id": 14,
+    "name": "Beograd - TC Stadion Voždovac",
+    "lat": "44.77500800",
+    "lng": "20.49016060",
+    "storeUrl": "https://www.djaksport.com/lokacije/TC-Stadion/",
+    "city": "Beograd",
+    "zip": "11000",
+    "address": "Zaplanjska 32"
+  },
+  {
+    "id": 9,
+    "name": "Beograd - Bulevar Kralja Aleksandra",
+    "lat": "44.78945500",
+    "lng": "20.51563500",
+    "storeUrl": "https://www.djaksport.com/lokacije/Bulevar-Kralja-Aleksandra/",
+    "city": "Beograd",
+    "zip": "11000",
+    "address": "Bulevar Kralja Aleksandra 391"
+  },
+  {
+    "id": 8,
+    "name": "Beograd - Banovo Brdo",
+    "lat": "44.77714620",
+    "lng": "20.41387340",
+    "storeUrl": "https://www.djaksport.com/lokacije/Banovo-Brdo/",
+    "city": "Beograd",
+    "zip": "11000",
+    "address": "Požeška 108"
+  },
+  {
+    "id": 10,
+    "name": "Beograd - Crnotravska",
+    "lat": "44.76099310",
+    "lng": "20.47578120",
+    "storeUrl": "https://www.djaksport.com/lokacije/Crnotravska/",
+    "city": "Beograd",
+    "zip": "11000",
+    "address": "Crnotravska 7-9"
+  },
+  {
+    "id": 16,
+    "name": "Beograd - Auto put TC Zmaj",
+    "lat": "44.83457540",
+    "lng": "20.36673050",
+    "storeUrl": "https://www.djaksport.com/lokacije/TC-Zmaj/",
+    "city": "Beograd",
+    "zip": "11000",
+    "address": "Tržni Centar Zmaj"
+  },
+  {
+    "id": 20,
+    "name": "Novi Sad - Futoški put DIS",
+    "lat": "45.24841750",
+    "lng": "19.80929890",
+    "storeUrl": "https://www.djaksport.com/lokacije/Futoški-put-DIS/",
+    "city": "Novi Sad",
+    "zip": "21000",
+    "address": "Futoški put 10"
+  },
+  {
+    "id": 67,
+    "name": "Novi Sad - BIG CEE",
+    "lat": "45.27564670",
+    "lng": "19.82593490",
+    "storeUrl": "https://www.djaksport.com/lokacije/BIG-CEE-ĐAK-Novi-Sad/",
+    "city": "Novi Sad",
+    "zip": "21000",
+    "address": "TC Big, Sentandrejski put 11l"
+  },
+  {
+    "id": 49,
+    "name": "Ruma - Glavna",
+    "lat": "45.00774870",
+    "lng": "19.82215430",
+    "storeUrl": "https://www.djaksport.com/lokacije/Glavna-Ruma/",
+    "city": "Ruma",
+    "zip": "22400",
+    "address": "Glavna 161/1/1"
+  },
+  {
+    "id": 25,
+    "name": "Bačka Palanka - Kralja Petra Prvog",
+    "lat": "45.24980500",
+    "lng": "19.38344380",
+    "storeUrl": "https://www.djaksport.com/lokacije/Kralja-Petra-Prvog-Bačka-Palanka/",
+    "city": "Bačka Palanka",
+    "zip": "21400",
+    "address": "Kralja Petra I 9"
+  },
+  {
+    "id": 62,
+    "name": "Zrenjanin - TC Big",
+    "lat": "45.37825350",
+    "lng": "20.35414310",
+    "storeUrl": "https://www.djaksport.com/lokacije/TC-Big-Zrenjanin/",
+    "city": "Zrenjanin",
+    "zip": "23100",
+    "address": "Bagljaš zapad 5"
+  },
+  {
+    "id": 39,
+    "name": "Nova Pazova - BIG",
+    "lat": "44.95429900",
+    "lng": "20.19992920",
+    "storeUrl": "https://www.djaksport.com/lokacije/BIG-Nova-Pazova/",
+    "city": "Nova Pazova",
+    "zip": "22330",
+    "address": "Nova Pazova, Vojački put 1a"
+  },
+  {
+    "id": 50,
+    "name": "Šabac - TC Capitol park",
+    "lat": "44.75461600",
+    "lng": "19.66181240",
+    "storeUrl": "https://www.djaksport.com/lokacije/TC-Capitol-park-Šabac/",
+    "city": "Šabac",
+    "zip": "15000",
+    "address": "Tržni centar Capitol park"
+  },
+  {
+    "id": 47,
+    "name": "Šabac - Vojvode Janka Stojičevića",
+    "lat": "44.74737670",
+    "lng": "19.70571459",
+    "storeUrl": "https://www.djaksport.com/lokacije/Vojvode Janka Stojicevica - Šabac/",
+    "city": "Šabac",
+    "zip": "15000",
+    "address": "Vojvode Janka Stojičevića 5"
+  },
+  {
+    "id": 18,
+    "name": "Beograd - Forum park",
+    "lat": "44.86769860",
+    "lng": "20.34594950",
+    "storeUrl": "https://www.djaksport.com/lokacije/Zemun-park/",
+    "city": "Beograd",
+    "zip": "11080",
+    "address": "Autoput za Novi Sad 124-126"
+  },
+  {
+    "id": 5,
+    "name": "Beograd - TC BN Boss",
+    "lat": "44.86180330",
+    "lng": "20.36722890",
+    "storeUrl": "https://www.djaksport.com/lokacije/zemun-bn-boss/",
+    "city": "Beograd",
+    "zip": "11000",
+    "address": "Nova Galenika, TC BN Bos, Batajnički drum 1"
+  },
+  {
+    "id": 22,
+    "name": "Niš - TPC Srbija",
+    "lat": "43.31808550",
+    "lng": "21.89470720",
+    "storeUrl": "https://www.djaksport.com/lokacije/TPC-Srbija/",
+    "city": "Niš",
+    "zip": "18100",
+    "address": "Obrenovićeva bb"
+  },
+  {
+    "id": 75,
+    "name": "Niš - TC Stop Shop",
+    "lat": "43.31081262",
+    "lng": "21.93619684",
+    "storeUrl": "https://www.djaksport.com/lokacije/TC-Stop-Shop/",
+    "city": "Niš",
+    "zip": "18100",
+    "address": "Bulevar Medijana 21"
+  },
+  {
+    "id": 21,
+    "name": "Niš - DIS market",
+    "lat": "43.32548250",
+    "lng": "21.93764270",
+    "storeUrl": "https://www.djaksport.com/lokacije/DIS-market-Niš/",
+    "city": "Niš",
+    "zip": "18100",
+    "address": "Bulevar Medijana 15"
+  },
+  {
+    "id": 74,
+    "name": "Prokuplje - Vuka Stefanovicića Karadžića",
+    "lat": "43.24151810",
+    "lng": "21.60692305",
+    "storeUrl": "https://www.djaksport.com/lokacije/Vuka Stefanovicića Karadžića-Prokuplje/",
+    "city": "Prokuplje",
+    "zip": "18400",
+    "address": "Vuka Stefanovicića Karadžića 3v"
+  },
+  {
+    "id": 23,
+    "name": "Aleksinac - Knjaza Miloša",
+    "lat": "43.53875970",
+    "lng": "21.70980330",
+    "storeUrl": "https://www.djaksport.com/lokacije/Knjaza-Miloša/",
+    "city": "Aleksinac",
+    "zip": "18200",
+    "address": "Knjaza Miloša 66"
+  },
+  {
+    "id": 35,
+    "name": "Leskovac - TPC Leskopark",
+    "lat": "43.00022229",
+    "lng": "21.95898092",
+    "storeUrl": "https://www.djaksport.com/lokacije/TPC Leskopark -Leskovac/",
+    "city": "Leskovac",
+    "zip": "16000",
+    "address": "Industrijska 9"
+  },
+  {
+    "id": 33,
+    "name": "Kruševac - Lomina",
+    "lat": "43.58067920",
+    "lng": "21.33752280",
+    "storeUrl": "https://www.djaksport.com/lokacije/Lomina-Kruševac/",
+    "city": "Kruševac",
+    "zip": "37000",
+    "address": "Lomina 1"
+  },
+  {
+    "id": 68,
+    "name": "Kruševac - BIG",
+    "lat": "43.57865260",
+    "lng": "21.33569570",
+    "storeUrl": "https://www.djaksport.com/lokacije/big-krusevac/",
+    "city": "Kruševac",
+    "zip": "37000",
+    "address": "Krfska 37"
+  },
+  {
+    "id": 61,
+    "name": "Zaječar - TC Capitol park",
+    "lat": "43.90303970",
+    "lng": "22.26990640",
+    "storeUrl": "https://www.djaksport.com/lokacije/TC-Capitol-park-Zaječar/",
+    "city": "Zaječar",
+    "zip": "19000",
+    "address": "Tržni centar Capitol park, Čupićeva bb"
+  },
+  {
+    "id": 26,
+    "name": "Bor - BIG Fashion",
+    "lat": "44.05870620",
+    "lng": "22.10569250",
+    "storeUrl": "https://www.djaksport.com/lokacije/Big-fashion-Bor/",
+    "city": "Bor",
+    "zip": "19200",
+    "address": "Alberta Ajnštajna 4a"
+  },
+  {
+    "id": 31,
+    "name": "Kragujevac - BIG",
+    "lat": "44.01023140",
+    "lng": "20.89383710",
+    "storeUrl": "https://www.djaksport.com/lokacije/Dimitrija-Tucovića-Kragujevac/",
+    "city": "Kragujevac",
+    "zip": "34000",
+    "address": "Dimitrija Tucovića 23"
+  },
+  {
+    "id": 30,
+    "name": "Jagodina - TC Biser",
+    "lat": "43.96709640",
+    "lng": "21.26550890",
+    "storeUrl": "https://www.djaksport.com/lokacije/TC-Biser-Jagodina/",
+    "city": "Jagodina",
+    "zip": "35000",
+    "address": "Stevana Ivanovića bb"
+  },
+  {
+    "id": 32,
+    "name": "Kraljevo - TC Nest",
+    "lat": "43.71512760",
+    "lng": "20.69361600",
+    "storeUrl": "https://www.djaksport.com/lokacije/TC-Nest-Kraljevo/",
+    "city": "Kraljevo",
+    "zip": "36100",
+    "address": "Dušana Popovića 41b"
+  },
+  {
+    "id": 58,
+    "name": "Velika Plana - DIS market",
+    "lat": "44.32796510",
+    "lng": "21.07059230",
+    "storeUrl": "https://www.djaksport.com/lokacije/DIS-market-Velika-Plana/",
+    "city": "Velika Plana",
+    "zip": "11300",
+    "address": "Kralja Petra Prvog 44"
+  },
+  {
+    "id": 52,
+    "name": "Smederevska Palanka - DIS",
+    "lat": "44.36966450",
+    "lng": "20.96198910",
+    "storeUrl": "https://www.djaksport.com/lokacije/DIS-Smederevska-Palanka/",
+    "city": "Smederevska Palanka",
+    "zip": "11420",
+    "address": "Dis, Nova bb"
+  },
+  {
+    "id": 24,
+    "name": "Aranđelovac - TC Ara Plaza",
+    "lat": "44.30239864",
+    "lng": "20.58771542",
+    "storeUrl": "https://www.djaksport.com/lokacije/Zanatlijska-Aranđelovac/",
+    "city": "Aranđelovac",
+    "zip": "34300",
+    "address": "Zanatlijska 112"
+  },
+  {
+    "id": 27,
+    "name": "Čačak - RK Partizanka",
+    "lat": "43.88997480",
+    "lng": "20.34944630",
+    "storeUrl": "https://www.djaksport.com/lokacije/RK-Partizanka-Čačak/",
+    "city": "Čačak",
+    "zip": "32100",
+    "address": "Kosovski venac 2"
+  },
+  {
+    "id": 28,
+    "name": "Čačak - STOP SHOP",
+    "lat": "43.88404680",
+    "lng": "20.33054290",
+    "storeUrl": "https://www.djaksport.com/lokacije/STOP-SHOP-Čačak/",
+    "city": "Čačak",
+    "zip": "32100",
+    "address": "Bulevar Vuka Karadžića 82"
+  },
+  {
+    "id": 38,
+    "name": "Mladenovac - TC Mladenovac",
+    "lat": "44.43461750",
+    "lng": "20.69419630",
+    "storeUrl": "https://www.djaksport.com/lokacije/TC-Mladenovac/",
+    "city": "Mladenovac",
+    "zip": "11400",
+    "address": "Braće Badžak 2"
+  },
+  {
+    "id": 54,
+    "name": "Subotica - Stop Shop",
+    "lat": "46.10030320",
+    "lng": "19.69852320",
+    "storeUrl": "https://www.djaksport.com/lokacije/TC-Stop-Shop-Subotica/",
+    "city": "Subotica",
+    "zip": "24000",
+    "address": "Segedinski put 88"
+  },
+  {
+    "id": 72,
+    "name": "Kikinda - Mihajla Pupina",
+    "lat": "45.82182699",
+    "lng": "20.45614001",
+    "storeUrl": "https://www.djaksport.com/lokacije/Kikinda-Mihajla Pupina 24/",
+    "city": "Kikinda",
+    "zip": "23300",
+    "address": "Mihajla Pupina 24"
+  },
+  {
+    "id": 45,
+    "name": "Požega - Vojvode Mišiča",
+    "lat": "43.84435710",
+    "lng": "20.03482630",
+    "storeUrl": "https://www.djaksport.com/lokacije/Vojvode-Mišiča-Požega/",
+    "city": "Požega",
+    "zip": "31200",
+    "address": "Vojvode Mišica 41"
+  },
+  {
+    "id": 57,
+    "name": "Užice - RP Nest",
+    "lat": "43.85145940",
+    "lng": "19.85589380",
+    "storeUrl": "https://www.djaksport.com/lokacije/RP-Nest-Užice/",
+    "city": "Užice",
+    "zip": "31100",
+    "address": "RP Nest, Miloša Obrenovića bb"
+  },
+  {
+    "id": 34,
+    "name": "Lazarevac - TC Stop Shop",
+    "lat": "44.38696450",
+    "lng": "20.25147790",
+    "storeUrl": "https://www.djaksport.com/lokacije/TC-Stop-Shop-Lazarevac/",
+    "city": "Lazarevac",
+    "zip": "11550",
+    "address": "Železnička stop shop"
+  },
+  {
+    "id": 73,
+    "name": "Zlatibor - Đak",
+    "lat": "43.72531378",
+    "lng": "19.69313146",
+    "storeUrl": "https://www.djaksport.com/lokacije/Đak-Zlatibor/",
+    "city": "Zlatibor",
+    "zip": "31315",
+    "address": "Rujanska 2"
+  },
+  {
+    "id": 17,
+    "name": "Valjevo - Karađorđeva",
+    "lat": "44.27123990",
+    "lng": "19.88756460",
+    "storeUrl": "https://www.djaksport.com/lokacije/Karađorđeva 107-Valjevo/",
+    "city": "Valjevo",
+    "zip": "14000",
+    "address": "Karađorđeva 107"
+  },
+  {
+    "id": 37,
+    "name": "Loznica - Trg Vuka Karadzića",
+    "lat": "44.53365400",
+    "lng": "19.22394000",
+    "storeUrl": "https://www.djaksport.com/lokacije/Trg-Vuka-Karadzića-Loznica/",
+    "city": "Loznica",
+    "zip": "15300",
+    "address": "Trg Vuka Karadžića"
+  },
+  {
+    "id": 56,
+    "name": "Ub - Kralja Petra",
+    "lat": "44.45617210",
+    "lng": "20.07499440",
+    "storeUrl": "https://www.djaksport.com/lokacije/Kralja-Petra-Ub/",
+    "city": "Ub",
+    "zip": "14210",
+    "address": "Kralja Petra 30"
+  },
+  {
+    "id": 41,
+    "name": "Obrenovac - Miloša Obrenovića",
+    "lat": "44.65298980",
+    "lng": "20.20048250",
+    "storeUrl": "https://www.djaksport.com/lokacije/Miloša-Obrenovića-Obrenovac/",
+    "city": "Obrenovac",
+    "zip": "11500",
+    "address": "Miloša Obrenovića 99"
+  },
+  {
+    "id": 59,
+    "name": "Vranje - Bulevar Nikole Tesle",
+    "lat": "42.55209050",
+    "lng": "21.89885360",
+    "storeUrl": "https://www.djaksport.com/lokacije/Bulevar-Nikole-Tesle-Vranje/",
+    "city": "Vranje",
+    "zip": "17500",
+    "address": "Bulevar Nikole Tesle 20"
+  },
+  {
+    "id": 48,
+    "name": "Raška - Dušanova",
+    "lat": "43.28781420",
+    "lng": "20.61431190",
+    "storeUrl": "https://www.djaksport.com/lokacije/Dušanova-Raška/",
+    "city": "Raška",
+    "zip": "36350",
+    "address": "Dušanova 7"
+  },
+  {
+    "id": 55,
+    "name": "Beograd - Vojvođanska Surčin",
+    "lat": "44.79763640",
+    "lng": "20.31230050",
+    "storeUrl": "https://www.djaksport.com/lokacije/Vojvođanska-Surčin/",
+    "city": "Beograd",
+    "zip": "11271",
+    "address": "Vojvođanska 386d"
+  },
+  {
+    "id": 6,
+    "name": "Beograd - TC Stop Shop Borča",
+    "lat": "44.88836990",
+    "lng": "20.45876000",
+    "storeUrl": "https://www.djaksport.com/lokacije/Borča-TC-Stop-Shop/",
+    "city": "Beograd",
+    "zip": "11211",
+    "address": "Bratstva i jedinstva 2g"
+  },
+  {
+    "id": 51,
+    "name": "Smederevo - STOP SHOP",
+    "lat": "44.67561360",
+    "lng": "20.94574810",
+    "storeUrl": "https://www.djaksport.com/lokacije/STOP-SHOP-Smederevo/",
+    "city": "Smederevo",
+    "zip": "11300",
+    "address": "Stop Shop, Šalinačka 58"
+  },
+  {
+    "id": 44,
+    "name": "Požarevac - Đure Đakovića bb DIS",
+    "lat": "44.61092750",
+    "lng": "21.17655950",
+    "storeUrl": "https://www.djaksport.com/lokacije/Đure-Đakovića-DIS-Požarevac/",
+    "city": "Požarevac",
+    "zip": "12000",
+    "address": "Đure Đakovića bb"
+  },
+  {
+    "id": 36,
+    "name": "Beograd - Leštane",
+    "lat": "44.74981050",
+    "lng": "20.58594550",
+    "storeUrl": "https://www.djaksport.com/lokacije/Leštane-Smederevski-put/",
+    "city": "Beograd",
+    "zip": "11300",
+    "address": "Smederevski put 5b"
+  },
+  {
+    "id": 43,
+    "name": "Pančevo - Big Pančevo",
+    "lat": "44.86828770",
+    "lng": "20.66098790",
+    "storeUrl": "https://www.djaksport.com/lokacije/Big-Pančevo-DIS/",
+    "city": "Pančevo",
+    "zip": "26100",
+    "address": "Miloša Obrenovića 12"
+  },
+  {
+    "id": 42,
+    "name": "Obrenovac - TC Big",
+    "lat": "44.65826180",
+    "lng": "20.21486490",
+    "storeUrl": "https://www.djaksport.com/lokacije/RC-Nest-Obrenovac/",
+    "city": "Obrenovac",
+    "zip": "11500",
+    "address": "Kralja Aleksandra I 157"
+  },
+  {
+    "id": 12,
+    "name": "Beograd - TC Big Rakovica",
+    "lat": "44.73946030",
+    "lng": "20.43816640",
+    "storeUrl": "https://www.djaksport.com/lokacije/TC-Big-Rakovica/",
+    "city": "Beograd",
+    "zip": "11000",
+    "address": "Patrijarha Dimitrija 14"
+  }
+]
