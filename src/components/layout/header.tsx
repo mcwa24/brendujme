@@ -1,0 +1,148 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Menu, Plus, Search } from "lucide-react";
+import { useState } from "react";
+import { Container } from "@/components/layout/container";
+import { Button, buttonVariants } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { useSearch } from "@/components/search/search-provider";
+import { cn } from "@/lib/utils";
+
+const navItems = [
+  { href: "/brands", label: "Brendovi" },
+  { href: "/categories", label: "Kategorije" },
+  { href: "/retailers", label: "Prodavci" },
+  { href: "/shopping-centers", label: "Tržni centri" },
+  { href: "/news", label: "Vesti" },
+];
+
+export function Header() {
+  const pathname = usePathname();
+  const { setOpen } = useSearch();
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  return (
+    <header className="sticky top-0 z-40 border-b border-border/80 bg-background/90 backdrop-blur-md">
+      <Container>
+        <div className="flex h-16 items-center justify-between gap-4 md:h-20">
+          <Link
+            href="/"
+            className="font-display text-xl font-semibold tracking-tight text-accent md:text-2xl"
+          >
+            Bilbord Brands
+          </Link>
+
+          <nav className="hidden items-center gap-8 lg:flex">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={cn(
+                  "text-sm font-medium transition-colors hover:text-accent",
+                  pathname.startsWith(item.href)
+                    ? "text-accent"
+                    : "text-muted"
+                )}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="flex items-center gap-2">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="rounded-full"
+              onClick={() => setOpen(true)}
+              aria-label="Pretraga"
+            >
+              <Search className="h-5 w-5" />
+            </Button>
+            <Link
+              href="/submit-brand"
+              className={cn(
+                buttonVariants({ variant: "default", size: "sm" }),
+                "hidden rounded-full bg-accent px-4 hover:bg-accent-hover sm:inline-flex"
+              )}
+            >
+              <Plus className="mr-1.5 h-4 w-4" />
+              Prijavi brend
+            </Link>
+
+            <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
+              <SheetTrigger
+                className={cn(
+                  buttonVariants({ variant: "ghost", size: "icon" }),
+                  "rounded-full lg:hidden"
+                )}
+                aria-label="Meni"
+              >
+                <Menu className="h-5 w-5" />
+              </SheetTrigger>
+              <SheetContent side="right" className="w-full max-w-sm rounded-l-[20px]">
+                <SheetHeader>
+                  <SheetTitle className="font-display text-left text-2xl">
+                    Bilbord Brands
+                  </SheetTitle>
+                </SheetHeader>
+                <nav className="mt-8 flex flex-col gap-4">
+                  {navItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setMobileOpen(false)}
+                      className={cn(
+                        "text-lg font-medium",
+                        pathname.startsWith(item.href)
+                          ? "text-accent"
+                          : "text-muted"
+                      )}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </nav>
+                <div className="mt-8 flex flex-col gap-3">
+                  <Button
+                    variant="outline"
+                    className="h-12 rounded-full justify-start"
+                    onClick={() => {
+                      setMobileOpen(false);
+                      setOpen(true);
+                    }}
+                  >
+                    <Search className="mr-2 h-4 w-4" />
+                    Pretraga
+                    <kbd className="ml-auto rounded border border-border px-2 text-xs text-muted">
+                      ⌘K
+                    </kbd>
+                  </Button>
+                  <Link
+                    href="/submit-brand"
+                    onClick={() => setMobileOpen(false)}
+                    className={cn(
+                      buttonVariants({ size: "lg" }),
+                      "h-12 rounded-full bg-accent hover:bg-accent-hover"
+                    )}
+                  >
+                    <Plus className="mr-2 h-4 w-4" />
+                    Prijavi brend
+                  </Link>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
+        </div>
+      </Container>
+    </header>
+  );
+}
