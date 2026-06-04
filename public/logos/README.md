@@ -18,3 +18,11 @@ Skripta parsira sajt brenda (favicon, apple-touch-icon, OpenGraph, SVG), čuva l
 ## Ručna zamena
 
 Stavite PNG u `public/logos/zara.png`, zatim pokrenite `npm run logos:cache`.
+
+## Logoi prodavaca
+
+```bash
+npm run logos:retailers
+```
+
+Preuzima logotipe u `public/logos/retailers/` (Buzz, Office Shoes, Sport Time). Fashion Company koristi `assets/fashion-company/` (FCO ikona + pun logo), ne Kloe sa sajta.

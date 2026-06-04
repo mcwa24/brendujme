@@ -7,6 +7,7 @@
  */
 
 import { bilbordSlugFromBrandName } from "@/lib/data/ff-brand-slugs";
+import type { Retailer } from "@/types";
 
 export interface FashionCompanyBrand {
   name: string;
@@ -237,6 +238,18 @@ export const fashionCompanyStores: FashionCompanyStore[] = [
     source: "news",
   },
 ];
+
+export const fashionCompanyRetailer: Retailer = {
+  slug: "fashion-company",
+  name: "Fashion Company",
+  description:
+    "Najveći distributer međunarodnih modnih brendova u regionu — mono-brand prodavnice, Fashion&Friends i premium lokacije u Srbiji.",
+  city: "Novi Beograd",
+  brandCount: fashionCompanyBrands.filter((b) => b.slug).length,
+  brandSlugs: fashionCompanyBrands
+    .map((b) => b.slug)
+    .filter((s): s is string => Boolean(s)),
+};
 
 export const fashionCompanyMeta = {
   website: "https://www.fashioncompany.rs",

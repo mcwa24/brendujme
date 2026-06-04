@@ -78,29 +78,6 @@ export function FashionCompanyDetail() {
 
   return (
     <div className="space-y-16">
-      <div className="flex flex-wrap gap-4 text-sm text-muted">
-        <span>
-          <strong className="text-foreground">{fashionCompanyMeta.brandCount}</strong>{" "}
-          brendova u portfoliju
-        </span>
-        <span>
-          <strong className="text-foreground">{fashionCompanyMeta.storeCount}</strong>{" "}
-          prodajnih mesta u Srbiji
-        </span>
-        <span>
-          Ažurirano: {fashionCompanyMeta.lastSynced}
-        </span>
-        <a
-          href={fashionCompanyMeta.brandsUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 text-accent hover:underline"
-        >
-          Izvor: fashioncompany.rs
-          <ExternalLink className="h-3.5 w-3.5" />
-        </a>
-      </div>
-
       <section>
         <h2 className="font-display text-2xl font-semibold md:text-3xl">
           Portfolio brendova

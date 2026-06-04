@@ -66,6 +66,18 @@ export interface Retailer {
   logoUrl?: string;
 }
 
+export interface RetailerStore {
+  id: string;
+  name: string;
+  address: string;
+  city: string;
+  phone?: string | null;
+  email?: string | null;
+  shoppingCenterSlug?: string | null;
+  shoppingCenterName?: string | null;
+  storeUrl?: string | null;
+}
+
 export interface ShoppingCenter {
   slug: string;
   name: string;

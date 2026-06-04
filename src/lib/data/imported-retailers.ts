@@ -17,3 +17,21 @@ export function sortImportedRetailers<T extends { slug: string }>(items: T[]): T
     (a, b) => (order.get(a.slug as ImportedRetailerSlug) ?? 99) - (order.get(b.slug as ImportedRetailerSlug) ?? 99)
   );
 }
+
+export const IMPORTED_RETAILER_EXTERNAL: Record<
+  ImportedRetailerSlug,
+  { website: string; websiteLabel: string }
+> = {
+  "buzz-sneakers": {
+    website: "https://www.buzzsneakers.rs/",
+    websiteLabel: "buzzsneakers.rs",
+  },
+  "office-shoes": {
+    website: "https://www.officeshoes.rs/",
+    websiteLabel: "officeshoes.rs",
+  },
+  "sport-time": {
+    website: "https://www.nike.com/",
+    websiteLabel: "nike.com",
+  },
+};

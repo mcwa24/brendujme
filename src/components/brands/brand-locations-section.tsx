@@ -1,11 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Link from "next/link";
-import { MapPin } from "lucide-react";
-import { FadeIn } from "@/components/motion/fade-in";
-import { PremiumCard } from "@/components/ui/premium-card";
-import { buttonVariants } from "@/components/ui/button";
+import { BrandLocationCard } from "@/components/brands/brand-location-card";
 import type { RetailLocation } from "@/types";
 import { cn } from "@/lib/utils";
 
@@ -105,29 +101,14 @@ export function BrandLocationsSection({
           </p>
           <div className="mt-8 grid gap-5 md:grid-cols-2">
             {filtered.map((loc, i) => (
-              <FadeIn key={`${loc.id}-${loc.retailerSlug}-${loc.address}`} delay={i * 0.05}>
-                <PremiumCard className="p-8">
-                  <h3 className="font-display text-xl font-semibold">
-                    {loc.storeName}
-                  </h3>
-                  <div className="mt-4 space-y-2 text-muted">
-                    <p className="flex items-start gap-2">
-                      <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
-                      {loc.address}
-                    </p>
-                    <p>{loc.city}</p>
-                  </div>
-                  <Link
-                    href={`/retailers/${loc.retailerSlug}`}
-                    className={cn(
-                      buttonVariants({ variant: "outline", size: "sm" }),
-                      "mt-6 rounded-full"
-                    )}
-                  >
-                    Pogledaj prodavca
-                  </Link>
-                </PremiumCard>
-              </FadeIn>
+              <BrandLocationCard
+                key={`${loc.id}-${loc.retailerSlug}-${loc.address}`}
+                storeName={loc.storeName}
+                retailerSlug={loc.retailerSlug}
+                address={loc.address}
+                city={loc.city}
+                delay={i * 0.05}
+              />
             ))}
           </div>
         </>

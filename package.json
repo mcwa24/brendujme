@@ -17,6 +17,7 @@
     "scrape:buzz": "tsx scripts/scrape-buzz-sneakers.ts",
     "db:seed:buzz": "tsx --env-file=.env.local scripts/seed-buzz-sneakers.ts",
     "centers:cache": "tsx scripts/cache-shopping-center-logos.ts",
+    "logos:retailers": "tsx scripts/cache-retailer-logos.ts",
     "db:seed": "tsx --env-file=.env.local scripts/seed-supabase-v2.ts",
     "db:seed:legacy": "tsx --env-file=.env.local scripts/seed-supabase.ts",
     "assets:upload": "tsx --env-file=.env.local scripts/upload-photos-to-supabase.ts",

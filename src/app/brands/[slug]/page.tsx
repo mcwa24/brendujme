@@ -5,7 +5,9 @@ import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
 import { RelatedBrandsCarousel } from "@/components/brands/related-brands-carousel";
 import { BrandHero } from "@/components/brands/brand-hero";
+import { BrandLocationCard } from "@/components/brands/brand-location-card";
 import { BrandLocationsSection } from "@/components/brands/brand-locations-section";
+import { RetailerSectionTitle } from "@/components/retailers/retailer-section-title";
 import { hasBrandLogo } from "@/lib/brand-logo-resolve";
 import { PremiumCard } from "@/components/ui/premium-card";
 import { getCategoryName } from "@/lib/data/categories";
@@ -125,33 +127,21 @@ export default async function BrandDetailPage({ params }: PageProps) {
         {fcStores.length > 0 && (
           <section>
             <FadeIn>
-              <h2 className="font-display text-3xl font-semibold md:text-4xl">
-                Fashion Company prodavnice
-              </h2>
+              <RetailerSectionTitle retailerSlug="fashion-company" />
               <p className="mt-2 text-muted">
-                Lokacije prema{" "}
-                <Link href="/retailers/fashion-company" className="text-accent hover:underline">
-                  Fashion Company
-                </Link>{" "}
-                mreži ({fcStores.length}).
+                {fcStores.length} lokacija u mreži u Srbiji.
               </p>
             </FadeIn>
             <div className="mt-10 grid gap-5 md:grid-cols-2">
               {fcStores.map((store, i) => (
-                <FadeIn key={store.id} delay={i * 0.05}>
-                  <PremiumCard className="p-6">
-                    <h3 className="font-display text-lg font-semibold">
-                      {store.storeName}
-                    </h3>
-                    <div className="mt-3 space-y-1 text-sm text-muted">
-                      <p className="flex items-start gap-2">
-                        <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
-                        {store.address}
-                      </p>
-                      <p>{store.cityLabel}</p>
-                    </div>
-                  </PremiumCard>
-                </FadeIn>
+                <BrandLocationCard
+                  key={store.id}
+                  storeName={store.storeName}
+                  retailerSlug="fashion-company"
+                  address={store.address}
+                  city={store.cityLabel}
+                  delay={i * 0.05}
+                />
               ))}
             </div>
           </section>

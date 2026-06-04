@@ -2,6 +2,7 @@ import Link from "next/link";
 import { MapPin } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
+import { RetailerLogo } from "@/components/retailers/retailer-logo";
 import { PremiumCard } from "@/components/ui/premium-card";
 import { getAllRetailers } from "@/lib/data/repository";
 import { createMetadata } from "@/lib/seo";
@@ -28,7 +29,18 @@ export default async function RetailersPage() {
           <FadeIn key={retailer.slug} delay={i * 0.04}>
             <Link href={`/retailers/${retailer.slug}`}>
               <PremiumCard className="p-8">
-                <h2 className="font-display text-2xl font-semibold">{retailer.name}</h2>
+                <div className="flex items-center gap-4">
+                  <RetailerLogo
+                    slug={retailer.slug}
+                    name={retailer.name}
+                    size="lg"
+                    variant={
+                      retailer.slug === "fashion-company" ? "page" : "default"
+                    }
+                    className="rounded-xl"
+                  />
+                  <h2 className="font-display text-2xl font-semibold">{retailer.name}</h2>
+                </div>
                 <div className="mt-2 flex items-center gap-1.5 text-sm text-muted">
                   <MapPin className="h-4 w-4" />
                   {retailer.city}
