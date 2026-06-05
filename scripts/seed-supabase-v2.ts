@@ -528,6 +528,25 @@ async function main() {
     }
   }
 
+  console.log("brand_locations iz brand_retailers × prodavnice…");
+  const { data: allStores } = await db
+    .from("store_locations")
+    .select("id, retailer_id, retailers ( slug )");
+  for (const key of brandRetailerPairs) {
+    const [brandSlug, retailerSlug] = key.split(":");
+    const brandId = brandIds.get(brandSlug);
+    const retailerId = retailerIds.get(retailerSlug);
+    if (!brandId || !retailerId) continue;
+    for (const row of allStores ?? []) {
+      if (row.retailer_id !== retailerId) continue;
+      brandLocationRows.push({
+        brand_id: brandId,
+        store_location_id: row.id as string,
+        verified: true,
+      });
+    }
+  }
+
   const uniqueBrandLoc = new Map<string, (typeof brandLocationRows)[0]>();
   for (const row of brandLocationRows) {
     uniqueBrandLoc.set(`${row.brand_id}:${row.store_location_id}`, row);

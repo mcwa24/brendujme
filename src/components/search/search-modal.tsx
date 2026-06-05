@@ -17,8 +17,10 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { OFFERING_LABELS } from "@/lib/data/brand-offerings";
 import { searchAll } from "@/lib/search";
-import type { SearchResult, SearchResultType } from "@/types";
+import { parseSearchIntent } from "@/lib/search-intent";
+import type { BrandOfferingSlug, SearchResult, SearchResultType } from "@/types";
 
 interface SearchModalProps {
   open: boolean;
@@ -36,6 +38,13 @@ const typeIcons: Record<SearchResultType, LucideIcon> = {
   retailer: Store,
   "shopping-center": Building2,
 };
+
+const OFFERING_GROUP_ORDER: BrandOfferingSlug[] = [
+  "footwear",
+  "sportswear",
+  "apparel",
+  "accessories",
+];
 
 export function SearchModal({ open, onOpenChange }: SearchModalProps) {
   const router = useRouter();
@@ -70,17 +79,62 @@ export function SearchModal({ open, onOpenChange }: SearchModalProps) {
 
   const hasQuery = query.trim().length > 0;
 
-  const grouped = useMemo(() => {
-    const groups: Record<SearchResultType, typeof results> = {
-      brand: [],
-      retailer: [],
-      "shopping-center": [],
+  const brandRefinements = useMemo(() => {
+    const q = query.trim();
+    if (!q || parseSearchIntent(q, []).offerings?.length) return null;
+    const brandHit = results.find((r) => r.type === "brand");
+    if (!brandHit) return null;
+    const qn = q.toLowerCase();
+    const name = brandHit.title.toLowerCase();
+    const slugWords = brandHit.slug.replace(/-/g, " ");
+    if (!qn.includes(name) && !qn.includes(slugWords)) return null;
+    return {
+      brandLabel: brandHit.title,
+      patike: `${brandHit.title} patike`,
+      odeca: `${brandHit.title} majica`,
     };
-    for (const r of results) {
-      groups[r.type].push(r);
+  }, [query, results]);
+
+  const groupedRetailers = useMemo(() => {
+    const retailers = results.filter((r) => r.type === "retailer");
+    const hasOfferingGroups = retailers.some((r) => r.offeringGroup);
+    if (!hasOfferingGroups) {
+      return [{ heading: typeLabels.retailer, items: retailers }];
     }
-    return groups;
-  }, [results]);
+
+    const byOffering = new Map<BrandOfferingSlug | "other", SearchResult[]>();
+    for (const r of retailers) {
+      const key = r.offeringGroup ?? "other";
+      const list = byOffering.get(key) ?? [];
+      list.push(r);
+      byOffering.set(key, list);
+    }
+
+    const sections: { heading: string; items: SearchResult[] }[] = [];
+    for (const offering of OFFERING_GROUP_ORDER) {
+      const items = byOffering.get(offering);
+      if (!items?.length) continue;
+      const label = brandRefinements?.brandLabel ?? "Brend";
+      sections.push({
+        heading: `${label} — ${OFFERING_LABELS[offering].toLowerCase()}`,
+        items,
+      });
+    }
+    const other = byOffering.get("other");
+    if (other?.length) {
+      sections.push({ heading: typeLabels.retailer, items: other });
+    }
+    return sections;
+  }, [results, brandRefinements]);
+
+  const brandResults = useMemo(
+    () => results.filter((r) => r.type === "brand"),
+    [results]
+  );
+  const mallResults = useMemo(
+    () => results.filter((r) => r.type === "shopping-center"),
+    [results]
+  );
 
   const handleSelect = (href: string) => {
     onOpenChange(false);
@@ -102,16 +156,35 @@ export function SearchModal({ open, onOpenChange }: SearchModalProps) {
             <input
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Pretraži brendove, prodavce ili tržne centre..."
+              placeholder="npr. Nike patike, Nike majica, Buzz…"
               className="h-14 w-full bg-transparent text-base text-foreground outline-none placeholder:text-muted"
               autoFocus
               aria-label="Pretraga"
             />
           </div>
+          {brandRefinements && hasQuery && !loading && (
+            <div className="flex flex-wrap gap-2 border-b border-border px-4 py-3">
+              <span className="w-full text-xs text-muted">Sužite pretragu:</span>
+              <button
+                type="button"
+                onClick={() => setQuery(brandRefinements.patike)}
+                className="rounded-full border border-border bg-background px-3 py-1.5 text-sm hover:border-accent"
+              >
+                {brandRefinements.patike}
+              </button>
+              <button
+                type="button"
+                onClick={() => setQuery(brandRefinements.odeca)}
+                className="rounded-full border border-border bg-background px-3 py-1.5 text-sm hover:border-accent"
+              >
+                {brandRefinements.odeca}
+              </button>
+            </div>
+          )}
           <CommandList className="max-h-[360px]">
             {!hasQuery && (
               <p className="px-4 py-8 text-center text-sm text-muted">
-                Unesite naziv brenda, prodavca ili tržnog centra
+                Unesite brend i tip proizvoda (patike, majica…) ili naziv prodavca
               </p>
             )}
             {hasQuery && loading && (
@@ -121,44 +194,52 @@ export function SearchModal({ open, onOpenChange }: SearchModalProps) {
             )}
             {hasQuery && !loading && results.length === 0 && (
               <p className="px-4 py-10 text-center text-sm text-muted">
-                Nema rezultata. Pokušajte drugačiji upit.
+                Nema rezultata. Pokušajte „Nike patike“ ili „Nike majica“.
               </p>
             )}
-            {hasQuery &&
-              results.length > 0 &&
-              (["brand", "retailer", "shopping-center"] as const).map(
-                (type, idx) => {
-                  const items = grouped[type];
-                  if (items.length === 0) return null;
-                  const Icon = typeIcons[type];
-                  return (
-                    <div key={type}>
-                      {idx > 0 && <CommandSeparator />}
-                      <CommandGroup heading={typeLabels[type]}>
-                        {items.map((item) => (
-                          <CommandItem
-                            key={`${item.type}-${item.slug}`}
-                            value={`${item.title} ${item.subtitle}`}
-                            keywords={[item.title, item.subtitle, item.slug]}
-                            onSelect={() => handleSelect(item.href)}
-                            className="cursor-pointer gap-3 py-3"
-                          >
-                            <Icon className="h-4 w-4 text-muted" />
-                            <div>
-                              <p className="font-medium text-foreground">
-                                {item.title}
-                              </p>
-                              <p className="text-sm text-muted">
-                                {item.subtitle}
-                              </p>
-                            </div>
-                          </CommandItem>
-                        ))}
-                      </CommandGroup>
-                    </div>
-                  );
-                }
-              )}
+            {hasQuery && !loading && results.length > 0 && (
+              <>
+                {brandResults.length > 0 && (
+                  <CommandGroup heading={typeLabels.brand}>
+                    {brandResults.map((item) => (
+                      <SearchResultItem
+                        key={`${item.type}-${item.slug}`}
+                        item={item}
+                        onSelect={handleSelect}
+                      />
+                    ))}
+                  </CommandGroup>
+                )}
+                {groupedRetailers.map((section, idx) => (
+                  <div key={section.heading}>
+                    {(brandResults.length > 0 || idx > 0) && <CommandSeparator />}
+                    <CommandGroup heading={section.heading}>
+                      {section.items.map((item) => (
+                        <SearchResultItem
+                          key={`${item.type}-${item.slug}-${item.offeringGroup ?? ""}`}
+                          item={item}
+                          onSelect={handleSelect}
+                        />
+                      ))}
+                    </CommandGroup>
+                  </div>
+                ))}
+                {mallResults.length > 0 && (
+                  <>
+                    <CommandSeparator />
+                    <CommandGroup heading={typeLabels["shopping-center"]}>
+                      {mallResults.map((item) => (
+                        <SearchResultItem
+                          key={`${item.type}-${item.slug}`}
+                          item={item}
+                          onSelect={handleSelect}
+                        />
+                      ))}
+                    </CommandGroup>
+                  </>
+                )}
+              </>
+            )}
           </CommandList>
           <div className="border-t border-border px-4 py-3 text-xs text-muted">
             <span className="hidden sm:inline">
@@ -171,5 +252,29 @@ export function SearchModal({ open, onOpenChange }: SearchModalProps) {
         </Command>
       </DialogContent>
     </Dialog>
+  );
+}
+
+function SearchResultItem({
+  item,
+  onSelect,
+}: {
+  item: SearchResult;
+  onSelect: (href: string) => void;
+}) {
+  const Icon = typeIcons[item.type];
+  return (
+    <CommandItem
+      value={`${item.title} ${item.subtitle}`}
+      keywords={[item.title, item.subtitle, item.slug]}
+      onSelect={() => onSelect(item.href)}
+      className="cursor-pointer gap-3 py-3"
+    >
+      <Icon className="h-4 w-4 text-muted" />
+      <div>
+        <p className="font-medium text-foreground">{item.title}</p>
+        <p className="text-sm text-muted">{item.subtitle}</p>
+      </div>
+    </CommandItem>
   );
 }

@@ -4,6 +4,9 @@ import { getCategoryName } from "@/lib/data/categories";
 import {
   formatOfferingsLabel,
   getBrandRetailerOfferings,
+  matchOfferingsForIntent,
+  OFFERING_GROUP_ORDER,
+  OFFERING_LABELS,
   offeringsOverlap,
   retailerPrimaryCategory,
   retailerSellsBrandForOfferings,
@@ -11,13 +14,46 @@ import {
 import { parseSearchIntent } from "@/lib/search-intent";
 import { getRetailerCatalogMeta } from "@/lib/data/retailer-catalog-meta";
 import { formatBrandCount, formatLocationCount } from "@/lib/format/sr-plural";
-import type { Brand, Retailer, SearchResult, ShoppingCenter } from "@/types";
+import type { Brand, BrandOfferingSlug, Retailer, SearchResult, ShoppingCenter } from "@/types";
 
 function normalize(text: string): string {
   return text
     .toLowerCase()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "");
+}
+
+function collectBrandOfferingTypes(
+  brandSlug: string,
+  retailers: Retailer[]
+): BrandOfferingSlug[] {
+  const found = new Set<BrandOfferingSlug>();
+  for (const r of retailers) {
+    if (!r.brandSlugs.includes(brandSlug)) continue;
+    for (const o of getBrandRetailerOfferings(brandSlug, r.slug)) {
+      found.add(o);
+    }
+  }
+  return OFFERING_GROUP_ORDER.filter((o) => found.has(o));
+}
+
+function sortResults(results: SearchResult[]): SearchResult[] {
+  const typeOrder: Record<SearchResult["type"], number> = {
+    brand: 0,
+    retailer: 1,
+    "shopping-center": 2,
+  };
+  return [...results].sort((a, b) => {
+    const ta = typeOrder[a.type] - typeOrder[b.type];
+    if (ta !== 0) return ta;
+    if (a.offeringGroup && b.offeringGroup) {
+      const ga =
+        OFFERING_GROUP_ORDER.indexOf(a.offeringGroup) -
+        OFFERING_GROUP_ORDER.indexOf(b.offeringGroup);
+      if (ga !== 0) return ga;
+    }
+    return a.title.localeCompare(b.title, "sr");
+  });
 }
 
 export function buildSearchResults(
@@ -36,7 +72,9 @@ export function buildSearchResults(
   const seen = new Set<string>();
 
   const add = (result: SearchResult) => {
-    const key = `${result.type}-${result.slug}`;
+    const key = result.offeringGroup
+      ? `${result.type}-${result.slug}-${result.offeringGroup}`
+      : `${result.type}-${result.slug}`;
     if (seen.has(key)) return;
     seen.add(key);
     results.push(result);
@@ -65,16 +103,26 @@ export function buildSearchResults(
 
     if (brandIntentMatch || (nameMatch && !intent.brandSlug) || categoryMatch) {
       if (intent.offerings?.length) {
-        const hasRetailer = retailers.some((r) =>
-          r.brandSlugs.includes(brand.slug) &&
-          retailerSellsBrandForOfferings(brand.slug, r.slug, intent.offerings)
+        const hasRetailer = retailers.some(
+          (r) =>
+            r.brandSlugs.includes(brand.slug) &&
+            retailerSellsBrandForOfferings(brand.slug, r.slug, intent.offerings)
         );
         if (!hasRetailer && brand.locations.length === 0) continue;
       }
 
-      const hint = intent.offerings?.length
-        ? formatOfferingsLabel(intent.offerings)
-        : getCategoryName(brand.category);
+      let hint: string;
+      if (intent.offerings?.length) {
+        hint = formatOfferingsLabel(intent.offerings);
+      } else if (brandIntentMatch) {
+        const types = collectBrandOfferingTypes(brand.slug, retailers);
+        hint =
+          types.length > 0
+            ? `${types.map((t) => OFFERING_LABELS[t]).join(" · ")} — sužite: patike ili majica`
+            : getCategoryName(brand.category);
+      } else {
+        hint = getCategoryName(brand.category);
+      }
 
       add({
         type: "brand",
@@ -87,37 +135,52 @@ export function buildSearchResults(
   }
 
   for (const retailer of retailers) {
-    if (intent.categorySlug && retailerPrimaryCategory(retailer.slug) !== intent.categorySlug) {
-      if (!intent.brandSlug || !retailer.brandSlugs.includes(intent.brandSlug)) continue;
+    if (
+      intent.categorySlug &&
+      retailerPrimaryCategory(retailer.slug) !== intent.categorySlug
+    ) {
+      if (!intent.brandSlug || !retailer.brandSlugs.includes(intent.brandSlug)) {
+        continue;
+      }
+    }
+
+    if (intent.brandSlug && retailer.brandSlugs.includes(intent.brandSlug)) {
+      const brand = brands.find((b) => b.slug === intent.brandSlug);
+      const available = getBrandRetailerOfferings(intent.brandSlug, retailer.slug);
+
+      if (!retailerSellsBrandForOfferings(intent.brandSlug, retailer.slug, intent.offerings)) {
+        continue;
+      }
+
+      const matched = matchOfferingsForIntent(intent.offerings, available);
+      const groups =
+        intent.offerings?.length && matched.length
+          ? matched
+          : intent.offerings?.length
+            ? []
+            : available;
+
+      for (const offering of groups) {
+        add({
+          type: "retailer",
+          slug: retailer.slug,
+          title: retailer.name,
+          subtitle: [
+            brand?.name ?? intent.brandSlug,
+            OFFERING_LABELS[offering],
+            retailer.name,
+          ].join(" · "),
+          href: `/retailers/${retailer.slug}`,
+          offeringGroup: offering,
+        });
+      }
+      continue;
     }
 
     let matched = false;
     let subtitleParts: string[] = [retailer.city];
 
-    if (intent.brandSlug && retailer.brandSlugs.includes(intent.brandSlug)) {
-      if (
-        retailerSellsBrandForOfferings(
-          intent.brandSlug,
-          retailer.slug,
-          intent.offerings
-        )
-      ) {
-        matched = true;
-        const offerings = getBrandRetailerOfferings(intent.brandSlug, retailer.slug);
-        const brand = brands.find((b) => b.slug === intent.brandSlug);
-        subtitleParts = [
-          brand?.name ?? intent.brandSlug,
-          formatOfferingsLabel(
-            intent.offerings?.length
-              ? intent.offerings.filter((o) => offerings.includes(o))
-              : offerings
-          ),
-          retailer.name,
-        ];
-      }
-    }
-
-    if (!matched && !intent.brandSlug) {
+    if (!intent.brandSlug) {
       const direct =
         normalize(retailer.name).includes(coreQ) ||
         normalize(retailer.city).includes(coreQ) ||
@@ -144,13 +207,21 @@ export function buildSearchResults(
         if (!brand) continue;
         const bn = normalize(brand.name);
         if (!coreQ.includes(bn) && !bn.includes(coreQ)) continue;
-        if (!retailerSellsBrandForOfferings(brandSlug, retailer.slug, intent.offerings)) {
+        if (
+          !retailerSellsBrandForOfferings(brandSlug, retailer.slug, intent.offerings)
+        ) {
           continue;
         }
         matched = true;
+        const offerings = matchOfferingsForIntent(
+          intent.offerings,
+          getBrandRetailerOfferings(brandSlug, retailer.slug)
+        );
         subtitleParts = [
           brand.name,
-          formatOfferingsLabel(getBrandRetailerOfferings(brandSlug, retailer.slug)),
+          formatOfferingsLabel(
+            offerings.length ? offerings : getBrandRetailerOfferings(brandSlug, retailer.slug)
+          ),
           retailer.name,
         ];
         break;
@@ -213,7 +284,11 @@ export function buildSearchResults(
         if (
           intent.brandSlug &&
           store.brandSlug !== intent.brandSlug &&
-          !retailerSellsBrandForOfferings(store.brandSlug, "fashion-company", intent.offerings)
+          !retailerSellsBrandForOfferings(
+            store.brandSlug,
+            "fashion-company",
+            intent.offerings
+          )
         ) {
           continue;
         }
@@ -223,10 +298,11 @@ export function buildSearchResults(
           title: store.brandName,
           subtitle: `Odeća i moda · Fashion Company · ${store.cityLabel}`,
           href: `/brands/${store.brandSlug}`,
+          offeringGroup: "apparel",
         });
       }
     }
   }
 
-  return results.slice(0, 16);
+  return sortResults(results).slice(0, 20);
 }

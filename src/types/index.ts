@@ -121,6 +121,8 @@ export interface SearchResult {
   title: string;
   subtitle: string;
   href: string;
+  /** Grupa ponude (patike vs odeća) — za grupisanje u pretrazi */
+  offeringGroup?: BrandOfferingSlug;
 }
 
 export type BrandLogoInput = Pick<

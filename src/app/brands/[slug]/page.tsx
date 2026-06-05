@@ -18,9 +18,8 @@ import {
   getRelatedBrands,
   getShoppingCenterBySlug,
 } from "@/lib/data/repository";
-import { ShoppingCenterLogo } from "@/components/shopping-centers/shopping-center-logo";
 import { getFashionCompanyStoresByBrand } from "@/lib/data/fashion-company";
-import { formatBrandCount, formatLocationCount } from "@/lib/format/sr-plural";
+import { formatLocationCount } from "@/lib/format/sr-plural";
 import { createMetadata } from "@/lib/seo";
 
 interface PageProps {
@@ -62,9 +61,14 @@ export default async function BrandDetailPage({ params }: PageProps) {
     await Promise.all(
       brand.shoppingCenterSlugs.map((s) => getShoppingCenterBySlug(s))
     )
-  ).filter(Boolean);
+  ).filter((c): c is NonNullable<typeof c> => Boolean(c));
   const showLogoHero = hasBrandLogo(brand);
   const fcStores = getFashionCompanyStoresByBrand(slug);
+
+  const { expandBrandLocations } = await import(
+    "@/lib/data/expand-brand-locations"
+  );
+  const brandWithStores = await expandBrandLocations(brand);
 
   return (
     <>
@@ -121,7 +125,8 @@ export default async function BrandDetailPage({ params }: PageProps) {
           </FadeIn>
           <BrandLocationsSection
             brandName={brand.name}
-            locations={brand.locations}
+            locations={brandWithStores.locations}
+            shoppingCenters={centers}
           />
         </section>
 
@@ -144,41 +149,6 @@ export default async function BrandDetailPage({ params }: PageProps) {
                   delay={i * 0.05}
                 />
               ))}
-            </div>
-          </section>
-        )}
-
-        {centers.length > 0 && (
-          <section>
-            <FadeIn>
-              <h2 className="font-display text-3xl font-semibold md:text-4xl">
-                Dostupno u tržnim centrima
-              </h2>
-            </FadeIn>
-            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {centers.map((center, i) =>
-                center ? (
-                  <FadeIn key={center.slug} delay={i * 0.05}>
-                    <Link href={`/shopping-centers/${center.slug}`}>
-                      <PremiumCard className="p-6">
-                        <ShoppingCenterLogo
-                          slug={center.slug}
-                          name={center.name}
-                          size="lg"
-                          className="mb-4"
-                        />
-                        <h3 className="font-display text-lg font-semibold">
-                          {center.name}
-                        </h3>
-                        <p className="mt-2 text-sm text-muted">{center.city}</p>
-                        <p className="mt-3 text-sm text-success">
-                          {formatBrandCount(center.brandCount)} u centru
-                        </p>
-                      </PremiumCard>
-                    </Link>
-                  </FadeIn>
-                ) : null
-              )}
             </div>
           </section>
         )}

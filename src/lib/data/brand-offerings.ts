@@ -130,6 +130,23 @@ export function offeringsOverlap(
   return expanded.some((w) => available.includes(w));
 }
 
+export const OFFERING_GROUP_ORDER: OfferingSlug[] = [
+  "footwear",
+  "sportswear",
+  "apparel",
+  "accessories",
+];
+
+/** Koje ponude prodavca odgovaraju traženim rečima (npr. majica → i sportska odeća) */
+export function matchOfferingsForIntent(
+  wanted: OfferingSlug[] | undefined,
+  available: OfferingSlug[]
+): OfferingSlug[] {
+  if (!wanted?.length) return available;
+  const expanded = expandWantedOfferings(wanted);
+  return available.filter((o) => expanded.includes(o));
+}
+
 export function formatOfferingsLabel(offerings: OfferingSlug[]): string {
   if (!offerings.length) return "Opšta ponuda";
   return offerings.map((o) => OFFERING_LABELS[o]).join(" · ");

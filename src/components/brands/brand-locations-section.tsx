@@ -2,11 +2,10 @@
 
 import { useMemo, useState } from "react";
 import { BrandLocationCard } from "@/components/brands/brand-location-card";
+import { BrandMallCard } from "@/components/brands/brand-mall-card";
 import { OFFERING_LABELS } from "@/lib/data/brand-offerings";
-import {
-  filterLocationsByOfferings,
-} from "@/lib/data/enrich-brand";
-import type { BrandOfferingSlug, RetailLocation } from "@/types";
+import { filterLocationsByOfferings } from "@/lib/data/enrich-brand";
+import type { BrandOfferingSlug, RetailLocation, ShoppingCenter } from "@/types";
 import { formatLocationCount } from "@/lib/format/sr-plural";
 import { cn } from "@/lib/utils";
 
@@ -17,10 +16,24 @@ interface CityOption {
 
 type OfferingFilter = "all" | BrandOfferingSlug;
 
-function buildCityOptions(locations: RetailLocation[]): CityOption[] {
+function normalizeCity(city: string): string {
+  return city.trim();
+}
+
+function buildCityOptions(
+  locations: RetailLocation[],
+  malls: ShoppingCenter[]
+): CityOption[] {
   const counts = new Map<string, number>();
+
   for (const loc of locations) {
-    const city = loc.city.trim();
+    const city = normalizeCity(loc.city);
+    if (!city) continue;
+    counts.set(city, (counts.get(city) ?? 0) + 1);
+  }
+
+  for (const mall of malls) {
+    const city = normalizeCity(mall.city);
     if (!city) continue;
     counts.set(city, (counts.get(city) ?? 0) + 1);
   }
@@ -38,14 +51,10 @@ function buildCityOptions(locations: RetailLocation[]): CityOption[] {
 function offeringFiltersInLocations(
   locations: RetailLocation[]
 ): OfferingFilter[] {
-  const filters: OfferingFilter[] = ["all"];
   const seen = new Set<BrandOfferingSlug>();
   for (const loc of locations) {
     for (const o of loc.offerings ?? []) {
-      if (!seen.has(o)) {
-        seen.add(o);
-        filters.push(o);
-      }
+      seen.add(o);
     }
   }
   const order: BrandOfferingSlug[] = [
@@ -54,20 +63,19 @@ function offeringFiltersInLocations(
     "sportswear",
     "accessories",
   ];
-  return [
-    "all",
-    ...order.filter((o) => seen.has(o)),
-  ];
+  return ["all", ...order.filter((o) => seen.has(o))];
 }
 
 interface BrandLocationsSectionProps {
   brandName: string;
   locations: RetailLocation[];
+  shoppingCenters?: ShoppingCenter[];
 }
 
 export function BrandLocationsSection({
   brandName,
   locations,
+  shoppingCenters = [],
 }: BrandLocationsSectionProps) {
   const [offeringFilter, setOfferingFilter] = useState<OfferingFilter>("all");
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
@@ -82,20 +90,37 @@ export function BrandLocationsSection({
     [locations]
   );
 
-  const cities = useMemo(() => buildCityOptions(byOffering), [byOffering]);
+  const cities = useMemo(
+    () => buildCityOptions(byOffering, shoppingCenters),
+    [byOffering, shoppingCenters]
+  );
 
-  const filtered = useMemo(() => {
+  const filteredStores = useMemo(() => {
     if (!selectedCity) return [];
-    return byOffering.filter((loc) => loc.city.trim() === selectedCity);
+    return byOffering.filter(
+      (loc) => normalizeCity(loc.city) === selectedCity
+    );
   }, [byOffering, selectedCity]);
 
-  if (locations.length === 0) {
+  const filteredMalls = useMemo(() => {
+    if (!selectedCity) return [];
+    return shoppingCenters.filter(
+      (c) => normalizeCity(c.city) === selectedCity
+    );
+  }, [shoppingCenters, selectedCity]);
+
+  const totalPlaces =
+    locations.length + shoppingCenters.length;
+
+  if (totalPlaces === 0) {
     return (
       <p className="mt-10 text-muted">
         Trenutno nema evidentiranih prodavnica za {brandName} u Srbiji.
       </p>
     );
   }
+
+  const resultCount = filteredStores.length + filteredMalls.length;
 
   return (
     <>
@@ -125,7 +150,7 @@ export function BrandLocationsSection({
         </div>
       )}
 
-      <div className={cn("mt-8", offeringChips.length <= 2 && "mt-8")}>
+      <div className="mt-8">
         <p className="text-sm font-medium text-muted">Grad</p>
         <div className="mt-3 flex flex-wrap gap-2">
           {cities.map(({ city, count }) => (
@@ -156,7 +181,7 @@ export function BrandLocationsSection({
 
       {!selectedCity ? (
         <p className="mt-10 rounded-[20px] border border-dashed border-border bg-card/50 px-6 py-10 text-center text-muted">
-          Izaberite grad da vidite prodavnice i adrese.
+          Izaberite grad da vidite prodavnice, tržne centre i adrese.
           {offeringFilter !== "all" && (
             <>
               {" "}
@@ -164,25 +189,41 @@ export function BrandLocationsSection({
             </>
           )}
         </p>
-      ) : filtered.length === 0 ? (
+      ) : resultCount === 0 ? (
         <p className="mt-10 text-center text-muted">
           Nema lokacija u gradu {selectedCity} za izabrani tip ponude.
         </p>
       ) : (
         <>
           <p className="mt-6 text-sm text-muted">
-            {formatLocationCount(filtered.length)} u gradu {selectedCity}
+            {formatLocationCount(resultCount)} u gradu {selectedCity}
+            {filteredMalls.length > 0 && filteredStores.length > 0 && (
+              <>
+                {" "}
+                ({formatLocationCount(filteredStores.length)} prodavnica
+                {filteredMalls.length > 0 &&
+                  `, ${formatLocationCount(filteredMalls.length)} tržnih centara`}
+                )
+              </>
+            )}
           </p>
           <div className="mt-8 grid gap-5 md:grid-cols-2">
-            {filtered.map((loc, i) => (
+            {filteredStores.map((loc, i) => (
               <BrandLocationCard
-                key={`${loc.id}-${loc.retailerSlug}-${loc.address}`}
+                key={`store-${loc.id}-${loc.retailerSlug}-${loc.address}`}
                 storeName={loc.storeName}
                 retailerSlug={loc.retailerSlug}
                 address={loc.address}
                 city={loc.city}
                 offerings={loc.offerings}
                 delay={i * 0.05}
+              />
+            ))}
+            {filteredMalls.map((center, i) => (
+              <BrandMallCard
+                key={`mall-${center.slug}`}
+                center={center}
+                delay={(filteredStores.length + i) * 0.05}
               />
             ))}
           </div>
