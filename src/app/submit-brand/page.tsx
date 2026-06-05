@@ -22,12 +22,8 @@ export default function SubmitBrandPage() {
       <FadeIn delay={0.1} className="mt-12 max-w-2xl">
         <PremiumCard className="p-8 md:p-10">
           <form className="grid gap-5 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>
-            <div className="sm:col-span-1">
+            <div className="sm:col-span-2">
               <label className="text-sm font-medium">Naziv brenda</label>
-              <Input className="mt-2 h-12 rounded-xl" required />
-            </div>
-            <div className="sm:col-span-1">
-              <label className="text-sm font-medium">Kategorija</label>
               <Input className="mt-2 h-12 rounded-xl" required />
             </div>
             <div className="sm:col-span-1">

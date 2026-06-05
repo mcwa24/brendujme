@@ -9,9 +9,6 @@ import { BrandLocationsSection } from "@/components/brands/brand-locations-secti
 import { RetailerSectionTitle } from "@/components/retailers/retailer-section-title";
 import { BrandNewsList } from "@/components/news/brand-news-list";
 import { hasBrandLogo } from "@/lib/brand-logo-resolve";
-import { getFilterCategoryLabel } from "@/lib/brands/catalog-filters";
-import type { CategorySlug } from "@/types";
-import { cn } from "@/lib/utils";
 import {
   getAllBrands,
   getBrandBySlug,
@@ -71,19 +68,9 @@ export default async function BrandDetailPage({ params }: PageProps) {
             <BrandHero brand={brand} />
             <div className="flex-1">
               {showLogoHero && (
-                <>
-                  <p className="text-sm font-medium uppercase tracking-wider text-muted">
-                    {getFilterCategoryLabel(brand.category as CategorySlug)}
-                  </p>
-                  <h1 className="font-display mt-2 text-4xl font-semibold tracking-tight md:text-6xl">
-                    {brand.name}
-                  </h1>
-                </>
-              )}
-              {!showLogoHero && (
-                <p className="mt-4 text-sm font-medium uppercase tracking-wider text-muted">
-                  {getFilterCategoryLabel(brand.category as CategorySlug)}
-                </p>
+                <h1 className="font-display text-4xl font-semibold tracking-tight md:text-6xl">
+                  {brand.name}
+                </h1>
               )}
               <div className="mt-6 flex flex-wrap gap-6 text-muted">
                 <span>{brand.country}</span>

@@ -15,9 +15,17 @@ npm run logos:cache
 
 Skripta parsira sajt brenda (favicon, apple-touch-icon, OpenGraph, SVG), čuva lokalno i ažurira `src/lib/data/logo-manifest.json`.
 
-## Ručna zamena
+## Ručna zamena (preporučeno)
 
-Stavite PNG u `public/logos/zara.png`, zatim pokrenite `npm run logos:cache`.
+Chat često pokvari PNG (ceo fajl postane crn). **Nemoj slati logoe kroz chat** — kopiraj fajl direktno:
+
+```bash
+python3 scripts/install-brand-logo.py replay ~/Downloads/replay-logo.png
+```
+
+Skripta čuva transparentnost, uklanja belu/svetlo sivu pozadinu i ažurira manifest.
+
+Ili ručno: `public/logos/cache/{slug}.png` (binarni copy, bez konverzije).
 
 ## Logoi prodavaca
 

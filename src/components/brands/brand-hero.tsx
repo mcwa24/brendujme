@@ -27,10 +27,6 @@ export function BrandHero({ brand }: BrandHeroProps) {
   }
 
   return (
-    <BrandLogoPlaceholder
-      name={brand.name}
-      category={brand.category}
-      variant="hero"
-    />
+    <BrandLogoPlaceholder name={brand.name} variant="hero" />
   );
 }

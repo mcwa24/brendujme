@@ -1,11 +1,4 @@
-import { categories } from "@/lib/data/categories";
-import type { Brand, CategorySlug, PriceSegment } from "@/types";
-
-export interface CategoryFilterOption {
-  slug: CategorySlug;
-  name: string;
-  count: number;
-}
+import type { Brand, PriceSegment } from "@/types";
 
 export interface CountryFilterOption {
   value: string;
@@ -19,7 +12,6 @@ export interface PriceSegmentFilterOption {
   count: number;
 }
 
-const FASHION_FILTER_LABEL = "Ostali brendovi";
 const UNKNOWN_COUNTRY = "Drugo";
 
 const PRICE_SEGMENT_LABELS: Record<PriceSegment, string> = {
@@ -28,32 +20,6 @@ const PRICE_SEGMENT_LABELS: Record<PriceSegment, string> = {
   premium: "Premium",
   luxury: "Luksuz",
 };
-
-/** Kategorije iz stvarnog kataloga — ista logika kao na /categories. */
-export function getCategoryFilterOptions(brands: Brand[]): CategoryFilterOption[] {
-  const counts = new Map<CategorySlug, number>();
-  for (const brand of brands) {
-    counts.set(brand.category, (counts.get(brand.category) ?? 0) + 1);
-  }
-
-  const options: CategoryFilterOption[] = [];
-
-  for (const cat of categories) {
-    const count = counts.get(cat.slug);
-    if (count) options.push({ slug: cat.slug, name: cat.name, count });
-  }
-
-  const fashionCount = counts.get("fashion");
-  if (fashionCount) {
-    options.push({
-      slug: "fashion",
-      name: FASHION_FILTER_LABEL,
-      count: fashionCount,
-    });
-  }
-
-  return options;
-}
 
 export function getCountryFilterOptions(brands: Brand[]): CountryFilterOption[] {
   const counts = new Map<string, number>();
@@ -85,20 +51,6 @@ export function getPriceSegmentFilterOptions(
     }));
 }
 
-export function getFilterCategoryLabel(slug: CategorySlug): string {
-  if (slug === "fashion") return FASHION_FILTER_LABEL;
-  return categories.find((c) => c.slug === slug)?.name ?? slug;
-}
-
-export function parseCategoryFilterParam(
-  value: string | undefined,
-  brands: Brand[]
-): CategorySlug | "all" {
-  if (!value) return "all";
-  const valid = new Set(brands.map((b) => b.category));
-  return valid.has(value as CategorySlug) ? (value as CategorySlug) : "all";
-}
-
 export function brandMatchesCountry(brand: Brand, country: string): boolean {
   if (country === "Sve zemlje") return true;
   const brandCountry = brand.country?.trim() || UNKNOWN_COUNTRY;
@@ -108,10 +60,5 @@ export function brandMatchesCountry(brand: Brand, country: string): boolean {
 export function brandMatchesSearch(brand: Brand, query: string): boolean {
   const q = query.trim().toLowerCase();
   if (!q) return true;
-  const categoryLabel = getFilterCategoryLabel(brand.category).toLowerCase();
-  return (
-    brand.name.toLowerCase().includes(q) ||
-    categoryLabel.includes(q) ||
-    brand.category.toLowerCase().includes(q)
-  );
+  return brand.name.toLowerCase().includes(q);
 }

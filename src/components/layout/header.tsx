@@ -19,7 +19,6 @@ import { cn } from "@/lib/utils";
 
 const navItems = [
   { href: "/brands", label: "Brendovi" },
-  { href: "/categories", label: "Kategorije" },
   { href: "/retailers", label: "Prodavci" },
   { href: "/shopping-centers", label: "Tržni centri" },
   { href: "/news", label: "Vesti" },

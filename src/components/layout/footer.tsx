@@ -8,7 +8,6 @@ const footerColumns = [
     title: "Platforma",
     links: [
       { href: "/brands", label: "Brendovi" },
-      { href: "/categories", label: "Kategorije" },
       { href: "/retailers", label: "Prodavci" },
       { href: "/shopping-centers", label: "Tržni centri" },
     ],

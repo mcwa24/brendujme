@@ -1,19 +1,19 @@
 {
   "scotch-and-soda": {
     "path": "/logos/cache/scotch-and-soda.png",
-    "source": "discovered"
+    "source": "manual"
   },
   "sandro": {
     "path": "/logos/cache/sandro.png",
-    "source": "discovered"
+    "source": "manual"
   },
   "maje": {
     "path": "/logos/cache/maje.png",
-    "source": "discovered"
+    "source": "manual"
   },
   "rituals": {
     "path": "/logos/cache/rituals.png",
-    "source": "discovered"
+    "source": "manual"
   },
   "camper": {
     "path": "/logos/cache/camper.png",
@@ -25,7 +25,7 @@
   },
   "diesel": {
     "path": "/logos/cache/diesel.png",
-    "source": "discovered"
+    "source": "manual"
   },
   "inuikii": {
     "path": "/logos/cache/inuikii.png",
@@ -57,7 +57,7 @@
   },
   "replay": {
     "path": "/logos/cache/replay.png",
-    "source": "discovered"
+    "source": "manual"
   },
   "wellensteyn": {
     "path": "/logos/cache/wellensteyn.png",
@@ -104,8 +104,8 @@
     "source": "discovered"
   },
   "nike": {
-    "path": "/logos/cache/nike.jpg",
-    "source": "url"
+    "path": "/logos/cache/nike.png",
+    "source": "manual"
   },
   "adidas": {
     "path": "/logos/cache/adidas.jpg",
@@ -132,8 +132,8 @@
     "source": "url"
   },
   "guess": {
-    "path": "/logos/cache/guess.jpg",
-    "source": "url"
+    "path": "/logos/cache/guess.png",
+    "source": "manual"
   },
   "levis": {
     "path": "/logos/cache/levis.jpg",
@@ -284,7 +284,11 @@
     "source": "discovered"
   },
   "cos": {
-    "path": "/logos/cache/cos.jpg",
-    "source": "upload"
+    "path": "/logos/cache/cos.png",
+    "source": "manual"
+  },
+  "zara": {
+    "path": "/logos/cache/zara.png",
+    "source": "manual"
   }
 }

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -12,6 +11,8 @@ interface BrandLogoBoxProps {
   className?: string;
   size?: number;
   onFailed?: () => void;
+  /** Bez okvira i pozadine — za marquee / providne PNG logoe */
+  bare?: boolean;
 }
 
 export function BrandLogoBox({
@@ -20,28 +21,29 @@ export function BrandLogoBox({
   className,
   size = LOGO_SIZE,
   onFailed,
+  bare = false,
 }: BrandLogoBoxProps) {
   const [failed, setFailed] = useState(false);
 
   if (failed) return null;
 
-  const isRemote = src.startsWith("http");
-
   return (
     <div
       className={cn(
-        "flex shrink-0 items-center justify-center overflow-hidden rounded-[20px] border border-border bg-white",
+        "flex shrink-0 items-center justify-center overflow-hidden",
+        !bare && "rounded-[20px] border border-border bg-background",
         className
       )}
       style={{ width: size, height: size }}
     >
-      <Image
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
         src={src}
         alt={alt}
         width={size}
         height={size}
-        className="h-full w-full object-contain p-3"
-        unoptimized={isRemote || src.startsWith("/logos/")}
+        className="h-full w-full bg-transparent object-contain p-3"
+        decoding="async"
         onError={() => {
           setFailed(true);
           onFailed?.();

@@ -1,8 +1,6 @@
 import { resolveBrandLogoSrc } from "@/lib/brand-logo-resolve";
 import { fashionCompanyStores } from "@/lib/data/fashion-company";
 import { fashionAndFriendsMeta } from "@/lib/data/fashion-and-friends";
-import { getFilterCategoryLabel } from "@/lib/brands/catalog-filters";
-import type { CategorySlug } from "@/types";
 import { getShoppingCenterImage } from "@/lib/data/shopping-center-images";
 import { resolveRetailerLogoSrc } from "@/lib/retailer-logo-resolve";
 import { getStoragePublicUrl } from "@/lib/supabase/storage";
@@ -13,7 +11,6 @@ import {
   OFFERING_GROUP_ORDER,
   OFFERING_LABELS,
   offeringsOverlap,
-  retailerPrimaryCategory,
   retailerSellsBrandForOfferings,
 } from "@/lib/data/brand-offerings";
 import { parseSearchIntent } from "@/lib/search-intent";
@@ -112,14 +109,6 @@ export function buildSearchResults(
   };
 
   for (const brand of brands) {
-    if (
-      intent.categorySlug &&
-      !intent.brandSlug &&
-      brand.category !== intent.categorySlug
-    ) {
-      continue;
-    }
-
     const nameMatch =
       normalize(brand.name).includes(coreQ) ||
       coreQ.includes(normalize(brand.name)) ||
@@ -127,12 +116,7 @@ export function buildSearchResults(
 
     const brandIntentMatch = intent.brandSlug === brand.slug;
 
-    const categoryMatch =
-      !intent.brandSlug &&
-      intent.categorySlug &&
-      brand.category === intent.categorySlug;
-
-    if (brandIntentMatch || (nameMatch && !intent.brandSlug) || categoryMatch) {
+    if (brandIntentMatch || (nameMatch && !intent.brandSlug)) {
       if (intent.offerings?.length) {
         const hasRetailer = retailers.some(
           (r) =>
@@ -142,17 +126,14 @@ export function buildSearchResults(
         if (!hasRetailer && brand.locations.length === 0) continue;
       }
 
-      let hint: string;
+      let hint = "";
       if (intent.offerings?.length) {
         hint = formatOfferingsLabel(intent.offerings);
       } else if (brandIntentMatch) {
         const types = collectBrandOfferingTypes(brand.slug, retailers);
-        hint =
-          types.length > 0
-            ? `${types.map((t) => OFFERING_LABELS[t]).join(" · ")} — sužite: patike ili majica`
-            : getFilterCategoryLabel(brand.category as CategorySlug);
-      } else {
-        hint = getFilterCategoryLabel(brand.category as CategorySlug);
+        if (types.length > 0) {
+          hint = `${types.map((t) => OFFERING_LABELS[t]).join(" · ")} — sužite: patike ili majica`;
+        }
       }
 
       const subtitle = hint
@@ -171,15 +152,6 @@ export function buildSearchResults(
   }
 
   for (const retailer of retailers) {
-    if (
-      intent.categorySlug &&
-      retailerPrimaryCategory(retailer.slug) !== intent.categorySlug
-    ) {
-      if (!intent.brandSlug || !retailer.brandSlugs.includes(intent.brandSlug)) {
-        continue;
-      }
-    }
-
     if (intent.brandSlug && retailer.brandSlugs.includes(intent.brandSlug)) {
       const brand = brands.find((b) => b.slug === intent.brandSlug);
       const available = getBrandRetailerOfferings(intent.brandSlug, retailer.slug);

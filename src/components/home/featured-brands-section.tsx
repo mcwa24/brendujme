@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
-import { BrandCard } from "@/components/brands/brand-card";
+import { FeaturedBrandsMarquee } from "@/components/home/featured-brands-marquee";
 import { HOME_SECTION_PY } from "@/components/home/section-spacing";
 import type { Brand } from "@/types";
 
@@ -11,6 +11,7 @@ interface FeaturedBrandsSectionProps {
 }
 
 export function FeaturedBrandsSection({ brands }: FeaturedBrandsSectionProps) {
+  if (brands.length === 0) return null;
 
   return (
     <section className={HOME_SECTION_PY}>
@@ -32,13 +33,13 @@ export function FeaturedBrandsSection({ brands }: FeaturedBrandsSectionProps) {
             <ArrowRight className="h-4 w-4" />
           </Link>
         </FadeIn>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {brands.map((brand, i) => (
-            <FadeIn key={brand.slug} delay={i * 0.05}>
-              <BrandCard brand={brand} />
-            </FadeIn>
-          ))}
-        </div>
+      </Container>
+
+      <FadeIn delay={0.08} className="mt-10 w-full">
+        <FeaturedBrandsMarquee brands={brands} />
+      </FadeIn>
+
+      <Container narrow>
         <div className="mt-8 sm:hidden">
           <Link
             href="/brands"

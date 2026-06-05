@@ -1,24 +1,18 @@
 import { getBrandLetter } from "@/lib/brand-logo-resolve";
-import { getFilterCategoryLabel } from "@/lib/brands/catalog-filters";
-import type { CategorySlug } from "@/types";
 import { cn } from "@/lib/utils";
 
 interface BrandLogoPlaceholderProps {
   name: string;
-  category?: CategorySlug;
   variant?: "card" | "compact" | "hero";
   className?: string;
   showName?: boolean;
-  showCategory?: boolean;
 }
 
 export function BrandLogoPlaceholder({
   name,
-  category,
   variant = "card",
   className,
   showName = true,
-  showCategory = true,
 }: BrandLogoPlaceholderProps) {
   const letter = getBrandLetter(name);
 
@@ -66,11 +60,6 @@ export function BrandLogoPlaceholder({
           {name}
         </p>
       )}
-      {showCategory && category ? (
-        <p className="mt-2 text-sm text-muted">
-          {getFilterCategoryLabel(category as CategorySlug)}
-        </p>
-      ) : null}
     </div>
   );
 }

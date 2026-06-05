@@ -32,7 +32,27 @@
   scrollbar-width: none;
 }
 
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(calc(var(--marquee-width, 0px) * -1), 0, 0);
+  }
+}
+
+.marquee-infinite {
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+.marquee-infinite--ready {
+  animation: marquee var(--marquee-duration, 40s) linear infinite;
+  will-change: transform;
+}
+
 @theme inline {
+  --animate-marquee: marquee var(--marquee-duration, 40s) linear infinite;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);

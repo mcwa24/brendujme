@@ -3,7 +3,7 @@ import { brands as staticBrands, getBrandBySlug as getStaticBrandBySlug } from "
 import { enrichBrand } from "@/lib/data/enrich-brand";
 import {
   categories as staticCategories,
-  HIDDEN_CATEGORY_SLUGS,
+  FASHION_CATEGORY,
 } from "@/lib/data/categories";
 import { newsArticles as staticNews } from "@/lib/data/news";
 import { fashionCompanyRetailer } from "@/lib/data/fashion-company";
@@ -137,13 +137,13 @@ export const getAllCategories = cache(async (): Promise<Category[]> => {
   return staticCategories;
 });
 
-/** Samo kategorije koje imaju bar jedan brend u katalogu. */
+/** Sve kategorije koje imaju bar jedan brend (uključujući fashion → Ostali brendovi). */
 export const getPopulatedCategories = cache(async (): Promise<Category[]> => {
   const [categories, brands] = await Promise.all([getAllCategories(), getAllBrands()]);
   const slugsWithBrands = new Set(brands.map((b) => b.category));
-  return categories.filter(
-    (c) => slugsWithBrands.has(c.slug) && !HIDDEN_CATEGORY_SLUGS.has(c.slug)
-  );
+  const list = categories.filter((c) => slugsWithBrands.has(c.slug));
+  if (slugsWithBrands.has("fashion")) list.push(FASHION_CATEGORY);
+  return list;
 });
 
 export async function getCategoryBySlug(slug: string): Promise<Category | undefined> {

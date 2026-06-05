@@ -1,12 +1,11 @@
 import { HeroSection } from "@/components/home/hero-section";
 import { FeaturedBrandsSection } from "@/components/home/featured-brands-section";
-import { CategoriesSection } from "@/components/home/categories-section";
 import { ShoppingCentersSection } from "@/components/home/shopping-centers-section";
 import { NewsSection } from "@/components/home/news-section";
 import { StatsSection } from "@/components/home/stats-section";
 import { NewsletterSection } from "@/components/home/newsletter-section";
 import {
-  getPopulatedCategories,
+  getAllBrands,
   getAllShoppingCenters,
   getFeaturedBrands,
   getHomePromotions,
@@ -19,14 +18,14 @@ export default async function HomePage() {
   const [
     popularBrands,
     featuredBrands,
-    categories,
+    allBrands,
     shoppingCenters,
     latestNews,
     homePromotions,
   ] = await Promise.all([
     getPopularBrands(),
     getFeaturedBrands(),
-    getPopulatedCategories(),
+    getAllBrands(),
     getAllShoppingCenters(),
     getLatestNews(3),
     getHomePromotions(),
@@ -41,11 +40,10 @@ export default async function HomePage() {
         promotions={homePromotions}
         promotionBanners={promotionBanners}
       />
-      <FeaturedBrandsSection brands={featuredBrands.slice(0, 8)} />
+      <FeaturedBrandsSection brands={featuredBrands} />
       <NewsSection articles={latestNews} />
-      <CategoriesSection categories={categories} />
       <ShoppingCentersSection centers={shoppingCenters.slice(0, 6)} />
-      <StatsSection />
+      <StatsSection brandCount={allBrands.length} />
       <NewsletterSection />
     </>
   );

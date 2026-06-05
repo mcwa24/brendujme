@@ -1,7 +1,11 @@
 import type { Category, CategorySlug } from "@/types";
 
-/** Podrazumevana kategorija brenda — ne prikazuje se u navigaciji. */
-export const HIDDEN_CATEGORY_SLUGS = new Set<CategorySlug>(["fashion"]);
+/** Glavna modna kategorija u bazi — na sajtu: Ostali brendovi (ne „Moda“). */
+export const FASHION_CATEGORY: Category = {
+  slug: "fashion",
+  name: "Ostali brendovi",
+  description: "Modni brendovi bez posebnog segmenta — moda, fast fashion i slično",
+};
 
 export const categories: Category[] = [
   {
@@ -31,15 +35,20 @@ export const categories: Category[] = [
   },
 ];
 
-export function getCategoryBySlug(slug: string): Category | undefined {
+export function getCatalogCategoryBySlug(slug: string): Category | undefined {
+  if (slug === "fashion") return FASHION_CATEGORY;
   return categories.find((c) => c.slug === slug);
 }
 
+/** @deprecated Koristi getCatalogCategoryBySlug */
+export function getCategoryBySlug(slug: string): Category | undefined {
+  return getCatalogCategoryBySlug(slug);
+}
+
 export function getCategoryName(slug: string): string {
-  if (HIDDEN_CATEGORY_SLUGS.has(slug as CategorySlug)) return "";
-  return getCategoryBySlug(slug)?.name ?? slug;
+  return getCatalogCategoryBySlug(slug)?.name ?? slug;
 }
 
 export function isNavigableCategory(slug: string): boolean {
-  return !HIDDEN_CATEGORY_SLUGS.has(slug as CategorySlug);
+  return Boolean(getCatalogCategoryBySlug(slug));
 }

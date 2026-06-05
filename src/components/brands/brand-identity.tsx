@@ -4,8 +4,6 @@ import { useMemo, useState } from "react";
 import { BrandLogoBox, BRAND_LOGO_SIZE } from "@/components/brands/brand-logo-box";
 import { BrandLogoPlaceholder } from "@/components/brands/brand-logo-placeholder";
 import { resolveBrandLogoSrc } from "@/lib/brand-logo-resolve";
-import { getFilterCategoryLabel } from "@/lib/brands/catalog-filters";
-import type { CategorySlug } from "@/types";
 import type { BrandLogoInput } from "@/types";
 import { cn } from "@/lib/utils";
 
@@ -47,7 +45,6 @@ export function BrandIdentity({
     return (
       <BrandLogoPlaceholder
         name={brand.name}
-        category={brand.category}
         variant="hero"
         className={className}
       />
@@ -96,11 +93,6 @@ export function BrandIdentity({
           <p className="font-display text-lg font-semibold text-foreground">
             {brand.name}
           </p>
-          {brand.category ? (
-            <p className="text-sm text-muted">
-              {getFilterCategoryLabel(brand.category as CategorySlug)}
-            </p>
-          ) : null}
         </div>
       </div>
     );
@@ -116,11 +108,7 @@ export function BrandIdentity({
           onFailed={() => setImageFailed(true)}
         />
       ) : (
-        <BrandLogoPlaceholder
-          name={brand.name}
-          category={brand.category}
-          variant="card"
-        />
+        <BrandLogoPlaceholder name={brand.name} variant="card" />
       )}
     </div>
   );

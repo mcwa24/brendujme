@@ -1,8 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
-import Link from "next/link";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
 import { BrandCard } from "@/components/brands/brand-card";
 import { Container } from "@/components/layout/container";
@@ -11,13 +9,10 @@ import { Input } from "@/components/ui/input";
 import {
   brandMatchesCountry,
   brandMatchesSearch,
-  getCategoryFilterOptions,
   getCountryFilterOptions,
-  getFilterCategoryLabel,
   getPriceSegmentFilterOptions,
-  parseCategoryFilterParam,
 } from "@/lib/brands/catalog-filters";
-import type { Brand, CategorySlug, PriceSegment } from "@/types";
+import type { Brand, PriceSegment } from "@/types";
 import { cn } from "@/lib/utils";
 
 interface BrandDirectoryProps {
@@ -25,11 +20,6 @@ interface BrandDirectoryProps {
 }
 
 export function BrandDirectory({ brands }: BrandDirectoryProps) {
-  const router = useRouter();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-
-  const categoryOptions = useMemo(() => getCategoryFilterOptions(brands), [brands]);
   const countryOptions = useMemo(() => getCountryFilterOptions(brands), [brands]);
   const priceSegmentOptions = useMemo(
     () => getPriceSegmentFilterOptions(brands),
@@ -37,37 +27,16 @@ export function BrandDirectory({ brands }: BrandDirectoryProps) {
   );
 
   const [query, setQuery] = useState("");
-  const [category, setCategory] = useState<CategorySlug | "all">("all");
   const [country, setCountry] = useState("Sve zemlje");
   const [priceSegment, setPriceSegment] = useState<PriceSegment | "all">("all");
   const [minAvailability, setMinAvailability] = useState(0);
   const [sort, setSort] = useState<"name" | "availability">("name");
-
-  useEffect(() => {
-    const fromUrl = parseCategoryFilterParam(
-      searchParams.get("category") ?? undefined,
-      brands
-    );
-    setCategory(fromUrl);
-  }, [searchParams, brands]);
-
-  const setCategoryFilter = (next: CategorySlug | "all") => {
-    setCategory(next);
-    const params = new URLSearchParams(searchParams.toString());
-    if (next === "all") params.delete("category");
-    else params.set("category", next);
-    const qs = params.toString();
-    router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
-  };
 
   const filtered = useMemo(() => {
     let result = [...brands];
 
     if (query.trim()) {
       result = result.filter((b) => brandMatchesSearch(b, query));
-    }
-    if (category !== "all") {
-      result = result.filter((b) => b.category === category);
     }
     if (country !== "Sve zemlje") {
       result = result.filter((b) => brandMatchesCountry(b, country));
@@ -87,10 +56,7 @@ export function BrandDirectory({ brands }: BrandDirectoryProps) {
     });
 
     return result;
-  }, [brands, query, category, country, priceSegment, minAvailability, sort]);
-
-  const activeCategoryLabel =
-    category === "all" ? null : getFilterCategoryLabel(category);
+  }, [brands, query, country, priceSegment, minAvailability, sort]);
 
   return (
     <Container narrow className="py-12 md:py-16">
@@ -99,33 +65,14 @@ export function BrandDirectory({ brands }: BrandDirectoryProps) {
           Direktorijum brenda
         </h1>
         <p className="mt-3 max-w-2xl text-muted">
-          {brands.length} brenda u katalogu — filtrirajte po kategoriji, zemlji i segmentu.
+          {brands.length} brenda u katalogu — pretražite po nazivu, zemlji ili cenovnom
+          segmentu.
         </p>
       </FadeIn>
 
       <div className="mt-12 flex flex-col gap-10 lg:flex-row">
         <aside className="lg:w-64 lg:shrink-0">
           <div className="sticky top-28 space-y-8 rounded-[20px] border border-border bg-card p-6">
-            <FilterGroup title="Kategorija">
-              <FilterButton
-                active={category === "all"}
-                onClick={() => setCategoryFilter("all")}
-                count={brands.length}
-              >
-                Sve
-              </FilterButton>
-              {categoryOptions.map((c) => (
-                <FilterButton
-                  key={c.slug}
-                  active={category === c.slug}
-                  onClick={() => setCategoryFilter(c.slug)}
-                  count={c.count}
-                >
-                  {c.name}
-                </FilterButton>
-              ))}
-            </FilterGroup>
-
             <FilterGroup title="Zemlja">
               <FilterButton
                 active={country === "Sve zemlje"}
@@ -212,21 +159,6 @@ export function BrandDirectory({ brands }: BrandDirectoryProps) {
               <option value="availability">Najviše lokacija</option>
             </select>
           </div>
-
-          {activeCategoryLabel ? (
-            <p className="mt-4 text-sm text-muted">
-              Kategorija:{" "}
-              <span className="font-medium text-foreground">{activeCategoryLabel}</span>
-              {" · "}
-              <Link
-                href="/brands"
-                className="text-accent hover:underline"
-                onClick={() => setCategoryFilter("all")}
-              >
-                Prikaži sve
-              </Link>
-            </p>
-          ) : null}
 
           <p className="mt-6 text-sm text-muted">
             {filtered.length} brend{filtered.length === 1 ? "" : "ova"}

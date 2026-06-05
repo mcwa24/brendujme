@@ -1,4 +1,3 @@
-import type { CategorySlug } from "@/types";
 import type { Brand } from "@/types";
 import type { OfferingSlug } from "@/lib/data/brand-offerings";
 
@@ -8,7 +7,6 @@ export interface SearchIntent {
   brandSlug?: string;
   brandName?: string;
   offerings?: OfferingSlug[];
-  categorySlug?: CategorySlug;
 }
 
 const FOOTWEAR_TERMS = [
@@ -46,12 +44,6 @@ const APPAREL_TERMS = [
 
 const SPORTSWEAR_TERMS = ["sportska odec", "sportska odeć", "sportswear", "trenerka"];
 
-const CATEGORY_TERMS: { slug: CategorySlug; terms: string[] }[] = [
-  { slug: "fashion", terms: ["moda", "fashion", "garderoba", "odeca", "odeća"] },
-  { slug: "sports", terms: ["sportska", "sports"] },
-  { slug: "luxury", terms: ["luksuz", "luxury", "premium brend"] },
-];
-
 function normalize(text: string): string {
   return text
     .toLowerCase()
@@ -73,13 +65,6 @@ function detectOfferings(text: string): OfferingSlug[] {
   return [...found];
 }
 
-function detectCategory(text: string): CategorySlug | undefined {
-  for (const { slug, terms } of CATEGORY_TERMS) {
-    if (terms.some((t) => text.includes(t))) return slug;
-  }
-  return undefined;
-}
-
 function findBrandInQuery(text: string, brands: Brand[]): Brand | undefined {
   const sorted = [...brands].sort((a, b) => b.name.length - a.name.length);
   for (const brand of sorted) {
@@ -99,7 +84,6 @@ export function parseSearchIntent(query: string, brands: Brand[]): SearchIntent 
   }
 
   const offerings = detectOfferings(normalized);
-  const categorySlug = detectCategory(normalized);
   const brand = findBrandInQuery(normalized, brands);
 
   let coreText = normalized;
@@ -113,6 +97,5 @@ export function parseSearchIntent(query: string, brands: Brand[]): SearchIntent 
     brandSlug: brand?.slug,
     brandName: brand?.name,
     offerings: offerings.length ? offerings : undefined,
-    categorySlug,
   };
 }
