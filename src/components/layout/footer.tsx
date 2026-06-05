@@ -26,27 +26,27 @@ const footerColumns = [
 
 export function Footer() {
   return (
-    <footer className="mt-24 border-t border-border bg-card">
-      <Container narrow className="py-16">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+    <footer className="mt-24 bg-card">
+      <Container narrow className="py-14">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">
-            <BrandMark logoHeight={40} />
-            <p className="mt-4 max-w-md text-muted">
+            <BrandMark logoHeight={36} />
+            <p className="mt-3 max-w-md text-sm leading-relaxed text-muted">
               Premium platforma za otkrivanje brenda dostupnih u Srbiji.
               Retail inteligencija za modu, lepotu i lifestyle.
             </p>
           </div>
           {footerColumns.map((col) => (
             <div key={col.title}>
-              <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground">
+              <h4 className="text-xs font-semibold uppercase tracking-widest text-foreground/80">
                 {col.title}
               </h4>
-              <ul className="mt-4 space-y-3">
+              <ul className="mt-2.5 space-y-1">
                 {col.links.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-muted transition-colors hover:text-accent"
+                      className="text-sm text-muted transition-colors hover:text-accent"
                     >
                       {link.label}
                     </Link>
@@ -56,8 +56,8 @@ export function Footer() {
             </div>
           ))}
         </div>
-        <Separator className="my-10" />
-        <div className="flex flex-col gap-4 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
+        <Separator className="my-8" />
+        <div className="flex flex-col gap-3 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} Bilbord Brands. Sva prava zadržana.{" "}
             <Link href="/privacy" className="hover:text-accent">
