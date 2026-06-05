@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { ScrollToTop } from "@/components/layout/scroll-to-top";
 import { SearchProvider } from "@/components/search/search-provider";
 import { baseMetadata } from "@/lib/seo";
 import "./globals.css";
@@ -33,6 +34,7 @@ export default function RootLayout({
     <html lang="sr" className={`${inter.variable} ${playfair.variable}`}>
       <body className="min-h-screen antialiased">
         <SearchProvider>
+          <ScrollToTop />
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />

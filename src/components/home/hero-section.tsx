@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Search } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
+import { RecentSearchPills } from "@/components/search/recent-search-pills";
 import { useSearch } from "@/components/search/search-provider";
 import { Badge } from "@/components/ui/badge";
 import { HeroPromotions } from "@/components/home/hero-promotions";
@@ -52,6 +53,7 @@ export function HeroSection({
               ⌘K
             </kbd>
           </button>
+          <RecentSearchPills className="mt-3" />
         </FadeIn>
         <FadeIn delay={0.3} className="mt-8">
           <p className="mb-3 text-sm font-medium text-muted">Popularni brendovi</p>

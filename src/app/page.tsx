@@ -6,7 +6,7 @@ import { NewsSection } from "@/components/home/news-section";
 import { StatsSection } from "@/components/home/stats-section";
 import { NewsletterSection } from "@/components/home/newsletter-section";
 import {
-  getAllCategories,
+  getPopulatedCategories,
   getAllShoppingCenters,
   getFeaturedBrands,
   getHomePromotions,
@@ -26,7 +26,7 @@ export default async function HomePage() {
   ] = await Promise.all([
     getPopularBrands(),
     getFeaturedBrands(),
-    getAllCategories(),
+    getPopulatedCategories(),
     getAllShoppingCenters(),
     getLatestNews(3),
     getHomePromotions(),

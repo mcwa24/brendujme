@@ -1,11 +1,9 @@
-import type { Category } from "@/types";
+import type { Category, CategorySlug } from "@/types";
+
+/** Podrazumevana kategorija brenda — ne prikazuje se u navigaciji. */
+export const HIDDEN_CATEGORY_SLUGS = new Set<CategorySlug>(["fashion"]);
 
 export const categories: Category[] = [
-  {
-    slug: "fashion",
-    name: "Moda",
-    description: "Savremena i luksuzna moda dostupna u Srbiji",
-  },
   {
     slug: "beauty",
     name: "Lepota",
@@ -27,19 +25,9 @@ export const categories: Category[] = [
     description: "Životni stil, dodaci i premium iskustvo",
   },
   {
-    slug: "home",
-    name: "Dom",
-    description: "Nameštaj, dekor i dizajn enterijera",
-  },
-  {
-    slug: "technology",
-    name: "Tehnologija",
-    description: "Premium tehnologija i gadžeti",
-  },
-  {
-    slug: "kids",
-    name: "Deca",
-    description: "Moda i proizvodi za najmlađe",
+    slug: "footwear",
+    name: "Obuća",
+    description: "Patike, čizme, sandale i sneaker brendovi",
   },
 ];
 
@@ -48,5 +36,10 @@ export function getCategoryBySlug(slug: string): Category | undefined {
 }
 
 export function getCategoryName(slug: string): string {
+  if (HIDDEN_CATEGORY_SLUGS.has(slug as CategorySlug)) return "";
   return getCategoryBySlug(slug)?.name ?? slug;
+}
+
+export function isNavigableCategory(slug: string): boolean {
+  return !HIDDEN_CATEGORY_SLUGS.has(slug as CategorySlug);
 }

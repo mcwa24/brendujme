@@ -6,7 +6,6 @@ interface BrandMarkProps {
   /** Fiksna visina; ako nije setovano, koristi responsive klase */
   logoHeight?: number;
   logoClassName?: string;
-  brandsClassName?: string;
   asLink?: boolean;
 }
 
@@ -14,7 +13,6 @@ export function BrandMark({
   className,
   logoHeight,
   logoClassName,
-  brandsClassName,
   asLink = true,
 }: BrandMarkProps) {
   const img = (
@@ -33,17 +31,7 @@ export function BrandMark({
   );
 
   const content = (
-    <span className={cn("inline-flex items-center gap-3", className)}>
-      {img}
-      <span
-        className={cn(
-          "font-sans text-lg font-medium tracking-tight text-[#171717] md:text-xl",
-          brandsClassName
-        )}
-      >
-        Brands
-      </span>
-    </span>
+    <span className={cn("inline-flex items-center", className)}>{img}</span>
   );
 
   if (!asLink) return content;

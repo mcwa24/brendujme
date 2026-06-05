@@ -55,7 +55,11 @@ export default async function ShoppingCenterPage({ params }: PageProps) {
     <>
       <section className="border-b border-border bg-card">
         <Container narrow className="py-16">
-          <FadeIn className="flex flex-col gap-6 md:flex-row md:items-center">
+          <FadeIn
+            when="mount"
+            direction="none"
+            className="flex flex-col gap-6 md:flex-row md:items-center"
+          >
             <ShoppingCenterLogo
               slug={center.slug}
               name={center.name}

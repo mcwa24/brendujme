@@ -25,16 +25,28 @@ const navItems = [
   { href: "/news", label: "Vesti" },
 ];
 
+function isRetailerDetailPath(pathname: string): boolean {
+  return /^\/retailers\/[^/]+$/.test(pathname);
+}
+
 export function Header() {
   const pathname = usePathname();
   const { setOpen } = useSearch();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const retailerDetail = isRetailerDetailPath(pathname);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border/80 bg-background/90 backdrop-blur-md">
-      <Container>
+    <header
+      className={cn(
+        "sticky top-0 z-40",
+        retailerDetail
+          ? "bg-card"
+          : "border-b border-border/80 bg-background/90 backdrop-blur-md"
+      )}
+    >
+      <Container narrow>
         <div className="flex h-16 items-center justify-between gap-4 md:h-20">
-          <BrandMark className="md:gap-3.5" />
+          <BrandMark />
 
           <nav className="hidden items-center gap-8 lg:flex">
             {navItems.map((item) => (

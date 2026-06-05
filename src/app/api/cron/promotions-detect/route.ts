@@ -16,7 +16,7 @@ export async function POST(request: Request) {
     {
       ok: false,
       message:
-        "Detekcija se ne pokreće na Vercel-u. Koristi n8n Execute Command: npm run promotions:detect (brendujme repo, Playwright). Zatim POST /api/cron/seed-promotions.",
+        "Detekcija se ne pokreće na Vercel-u. Koristi POST /api/cron/scan-promotions na runneru, n8n, ili npm run promotions:detect pa seed-promotions.",
     },
     { status: 501 }
   );

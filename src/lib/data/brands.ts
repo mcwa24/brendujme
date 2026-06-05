@@ -392,7 +392,16 @@ const coreBrands: Brand[] = [
 
 const coreWithoutCurated = coreBrands.filter((b) => !CURATED_SLUGS.has(b.slug));
 
-export const brands: Brand[] = [
+function dedupeBrandsBySlug(list: Brand[]): Brand[] {
+  const seen = new Set<string>();
+  return list.filter((brand) => {
+    if (seen.has(brand.slug)) return false;
+    seen.add(brand.slug);
+    return true;
+  });
+}
+
+export const brands: Brand[] = dedupeBrandsBySlug([
   ...coreWithoutCurated,
   ...buildFastFashionBrands(),
   ...buildFashionSportBrands(),
@@ -402,7 +411,7 @@ export const brands: Brand[] = [
       ...CURATED_SLUGS,
     ])
   ),
-];
+]);
 
 export function getBrandBySlug(slug: string): Brand | undefined {
   return brands.find((b) => b.slug === slug);

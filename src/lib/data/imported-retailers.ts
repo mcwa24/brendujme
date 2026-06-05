@@ -108,3 +108,25 @@ export const IMPORTED_RETAILER_EXTERNAL: Record<
     websiteLabel: "runnmore.com",
   },
 };
+
+/** Zvanični home page prodavca — ne promo / shop podstranica. */
+export function getRetailerWebsiteUrl(
+  retailerSlug: string,
+  promoPageUrl?: string
+): string {
+  const external =
+    IMPORTED_RETAILER_EXTERNAL[
+      retailerSlug as keyof typeof IMPORTED_RETAILER_EXTERNAL
+    ];
+  if (external?.website) return external.website;
+
+  if (promoPageUrl?.startsWith("http")) {
+    try {
+      return `${new URL(promoPageUrl).origin}/`;
+    } catch {
+      /* ignore */
+    }
+  }
+
+  return `/retailers/${retailerSlug}`;
+}

@@ -28,10 +28,10 @@ const footerColumns = [
 export function Footer() {
   return (
     <footer className="mt-24 border-t border-border bg-card">
-      <Container className="py-16">
+      <Container narrow className="py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">
-            <BrandMark logoHeight={40} brandsClassName="text-xl md:text-2xl" />
+            <BrandMark logoHeight={40} />
             <p className="mt-4 max-w-md text-muted">
               Premium platforma za otkrivanje brenda dostupnih u Srbiji.
               Retail inteligencija za modu, lepotu i lifestyle.

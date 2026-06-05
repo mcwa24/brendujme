@@ -71,11 +71,11 @@ export function HeroPromotions({
               className="group relative flex min-h-[280px] flex-col justify-end overflow-hidden rounded-2xl shadow-[0_1px_2px_rgb(0_0_0/0.08),0_4px_16px_rgb(0_0_0/0.1)] transition-shadow duration-200 hover:shadow-[0_2px_6px_rgb(0_0_0/0.1),0_8px_24px_rgb(0_0_0/0.14)]"
             >
               <a
-                href={promo.sourceUrl}
+                href={promo.retailerWebsiteUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="absolute inset-0 z-[1] cursor-pointer rounded-2xl"
-                aria-label={`${promo.title} — ${promo.retailerName}, otvori akciju`}
+                aria-label={`${promo.title} — ${promo.retailerName}, otvori sajt prodavca`}
               />
 
               {banner ? (

@@ -1,30 +1,41 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Search } from "lucide-react";
 import { BrandCard } from "@/components/brands/brand-card";
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
 import { Input } from "@/components/ui/input";
-import { categories, getCategoryName } from "@/lib/data/categories";
+import {
+  brandMatchesCountry,
+  brandMatchesSearch,
+  getCategoryFilterOptions,
+  getCountryFilterOptions,
+  getFilterCategoryLabel,
+  getPriceSegmentFilterOptions,
+  parseCategoryFilterParam,
+} from "@/lib/brands/catalog-filters";
 import type { Brand, CategorySlug, PriceSegment } from "@/types";
 import { cn } from "@/lib/utils";
-
-const priceSegments: { value: PriceSegment | "all"; label: string }[] = [
-  { value: "all", label: "Svi segmenti" },
-  { value: "budget", label: "Pristupačno" },
-  { value: "mid", label: "Srednji" },
-  { value: "premium", label: "Premium" },
-  { value: "luxury", label: "Luksuz" },
-];
-
-const countries = ["Sve zemlje", "Holandija", "Španija", "Francuska", "SAD", "Švedska", "Nemačka"];
 
 interface BrandDirectoryProps {
   brands: Brand[];
 }
 
 export function BrandDirectory({ brands }: BrandDirectoryProps) {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  const categoryOptions = useMemo(() => getCategoryFilterOptions(brands), [brands]);
+  const countryOptions = useMemo(() => getCountryFilterOptions(brands), [brands]);
+  const priceSegmentOptions = useMemo(
+    () => getPriceSegmentFilterOptions(brands),
+    [brands]
+  );
+
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState<CategorySlug | "all">("all");
   const [country, setCountry] = useState("Sve zemlje");
@@ -32,22 +43,34 @@ export function BrandDirectory({ brands }: BrandDirectoryProps) {
   const [minAvailability, setMinAvailability] = useState(0);
   const [sort, setSort] = useState<"name" | "availability">("name");
 
+  useEffect(() => {
+    const fromUrl = parseCategoryFilterParam(
+      searchParams.get("category") ?? undefined,
+      brands
+    );
+    setCategory(fromUrl);
+  }, [searchParams, brands]);
+
+  const setCategoryFilter = (next: CategorySlug | "all") => {
+    setCategory(next);
+    const params = new URLSearchParams(searchParams.toString());
+    if (next === "all") params.delete("category");
+    else params.set("category", next);
+    const qs = params.toString();
+    router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
+  };
+
   const filtered = useMemo(() => {
     let result = [...brands];
 
     if (query.trim()) {
-      const q = query.toLowerCase();
-      result = result.filter(
-        (b) =>
-          b.name.toLowerCase().includes(q) ||
-          getCategoryName(b.category).toLowerCase().includes(q)
-      );
+      result = result.filter((b) => brandMatchesSearch(b, query));
     }
     if (category !== "all") {
       result = result.filter((b) => b.category === category);
     }
     if (country !== "Sve zemlje") {
-      result = result.filter((b) => b.country === country);
+      result = result.filter((b) => brandMatchesCountry(b, country));
     }
     if (priceSegment !== "all") {
       result = result.filter((b) => b.priceSegment === priceSegment);
@@ -66,6 +89,9 @@ export function BrandDirectory({ brands }: BrandDirectoryProps) {
     return result;
   }, [brands, query, category, country, priceSegment, minAvailability, sort]);
 
+  const activeCategoryLabel =
+    category === "all" ? null : getFilterCategoryLabel(category);
+
   return (
     <Container narrow className="py-12 md:py-16">
       <FadeIn>
@@ -73,7 +99,7 @@ export function BrandDirectory({ brands }: BrandDirectoryProps) {
           Direktorijum brenda
         </h1>
         <p className="mt-3 max-w-2xl text-muted">
-          Pretražite i filtrirajte premium brendove dostupne u Srbiji.
+          {brands.length} brenda u katalogu — filtrirajte po kategoriji, zemlji i segmentu.
         </p>
       </FadeIn>
 
@@ -83,15 +109,17 @@ export function BrandDirectory({ brands }: BrandDirectoryProps) {
             <FilterGroup title="Kategorija">
               <FilterButton
                 active={category === "all"}
-                onClick={() => setCategory("all")}
+                onClick={() => setCategoryFilter("all")}
+                count={brands.length}
               >
                 Sve
               </FilterButton>
-              {categories.map((c) => (
+              {categoryOptions.map((c) => (
                 <FilterButton
                   key={c.slug}
                   active={category === c.slug}
-                  onClick={() => setCategory(c.slug)}
+                  onClick={() => setCategoryFilter(c.slug)}
+                  count={c.count}
                 >
                   {c.name}
                 </FilterButton>
@@ -99,23 +127,39 @@ export function BrandDirectory({ brands }: BrandDirectoryProps) {
             </FilterGroup>
 
             <FilterGroup title="Zemlja">
-              {countries.map((c) => (
+              <FilterButton
+                active={country === "Sve zemlje"}
+                onClick={() => setCountry("Sve zemlje")}
+                count={brands.length}
+              >
+                Sve zemlje
+              </FilterButton>
+              {countryOptions.map((c) => (
                 <FilterButton
-                  key={c}
-                  active={country === c}
-                  onClick={() => setCountry(c)}
+                  key={c.value}
+                  active={country === c.value}
+                  onClick={() => setCountry(c.value)}
+                  count={c.count}
                 >
-                  {c}
+                  {c.label}
                 </FilterButton>
               ))}
             </FilterGroup>
 
             <FilterGroup title="Cenovni segment">
-              {priceSegments.map((p) => (
+              <FilterButton
+                active={priceSegment === "all"}
+                onClick={() => setPriceSegment("all")}
+                count={brands.length}
+              >
+                Svi segmenti
+              </FilterButton>
+              {priceSegmentOptions.map((p) => (
                 <FilterButton
                   key={p.value}
                   active={priceSegment === p.value}
                   onClick={() => setPriceSegment(p.value)}
+                  count={p.count}
                 >
                   {p.label}
                 </FilterButton>
@@ -169,6 +213,21 @@ export function BrandDirectory({ brands }: BrandDirectoryProps) {
             </select>
           </div>
 
+          {activeCategoryLabel ? (
+            <p className="mt-4 text-sm text-muted">
+              Kategorija:{" "}
+              <span className="font-medium text-foreground">{activeCategoryLabel}</span>
+              {" · "}
+              <Link
+                href="/brands"
+                className="text-accent hover:underline"
+                onClick={() => setCategoryFilter("all")}
+              >
+                Prikaži sve
+              </Link>
+            </p>
+          ) : null}
+
           <p className="mt-6 text-sm text-muted">
             {filtered.length} brend{filtered.length === 1 ? "" : "ova"}
           </p>
@@ -213,23 +272,35 @@ function FilterButton({
   children,
   active,
   onClick,
+  count,
 }: {
   children: React.ReactNode;
   active: boolean;
   onClick: () => void;
+  count?: number;
 }) {
   return (
     <button
       type="button"
       onClick={onClick}
       className={cn(
-        "rounded-lg px-3 py-2 text-left text-sm transition-colors",
+        "flex items-center justify-between gap-3 rounded-lg px-3 py-2 text-left text-sm transition-colors",
         active
           ? "bg-accent font-medium text-white"
           : "text-muted hover:bg-background hover:text-foreground"
       )}
     >
-      {children}
+      <span>{children}</span>
+      {count != null ? (
+        <span
+          className={cn(
+            "tabular-nums text-xs",
+            active ? "text-white/80" : "text-muted"
+          )}
+        >
+          {count}
+        </span>
+      ) : null}
     </button>
   );
 }

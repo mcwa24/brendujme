@@ -1,8 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Building2, Search, ShoppingBag, Store, type LucideIcon } from "lucide-react";
+import { Building2, Search } from "lucide-react";
 import {
   Command,
   CommandGroup,
@@ -17,6 +18,9 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { RecentSearchPills } from "@/components/search/recent-search-pills";
+import { useSearch } from "@/components/search/search-provider";
+import { getBrandLetter } from "@/lib/brand-logo-resolve";
 import { OFFERING_LABELS } from "@/lib/data/brand-offerings";
 import { searchAll } from "@/lib/search";
 import { parseSearchIntent } from "@/lib/search-intent";
@@ -33,12 +37,6 @@ const typeLabels: Record<SearchResultType, string> = {
   "shopping-center": "Tržni centri",
 };
 
-const typeIcons: Record<SearchResultType, LucideIcon> = {
-  brand: ShoppingBag,
-  retailer: Store,
-  "shopping-center": Building2,
-};
-
 const OFFERING_GROUP_ORDER: BrandOfferingSlug[] = [
   "footwear",
   "sportswear",
@@ -48,13 +46,23 @@ const OFFERING_GROUP_ORDER: BrandOfferingSlug[] = [
 
 export function SearchModal({ open, onOpenChange }: SearchModalProps) {
   const router = useRouter();
+  const { pendingQuery, clearPendingQuery, recordSearch } = useSearch();
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (!open) setQuery("");
-  }, [open]);
+    if (!open) {
+      setQuery("");
+      clearPendingQuery();
+    }
+  }, [open, clearPendingQuery]);
+
+  useEffect(() => {
+    if (open && pendingQuery) {
+      setQuery(pendingQuery);
+    }
+  }, [open, pendingQuery]);
 
   useEffect(() => {
     const q = query.trim();
@@ -136,65 +144,72 @@ export function SearchModal({ open, onOpenChange }: SearchModalProps) {
     [results]
   );
 
-  const handleSelect = (href: string) => {
+  const handleSelect = (item: SearchResult) => {
+    recordSearch(item.title);
     onOpenChange(false);
-    router.push(href);
+    router.push(item.href);
   };
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="overflow-hidden rounded-[20px] border-border p-0 shadow-2xl sm:max-w-xl">
+      <DialogContent className="overflow-hidden rounded-[20px] border-border bg-card p-0 shadow-[0_8px_40px_rgb(0_0_0/0.12)] sm:max-w-lg">
         <DialogHeader className="sr-only">
           <DialogTitle>Pretraga</DialogTitle>
           <DialogDescription>
             Pretražite brendove, prodavce i tržne centre
           </DialogDescription>
         </DialogHeader>
-        <Command shouldFilter={false} className="bg-card">
+        <Command
+          shouldFilter={false}
+          className="rounded-none bg-card text-foreground [&_[cmdk-group-heading]]:px-4 [&_[cmdk-group-heading]]:text-[11px] [&_[cmdk-group-heading]]:font-semibold [&_[cmdk-group-heading]]:uppercase [&_[cmdk-group-heading]]:tracking-[0.12em] [&_[cmdk-group-heading]]:text-muted"
+        >
           <div className="flex items-center gap-3 border-b border-border px-4">
             <Search className="h-5 w-5 shrink-0 text-muted" />
             <input
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="npr. Nike patike, Nike majica, Buzz…"
+              placeholder="npr. Nike patike, New Balance, Buzz…"
               className="h-14 w-full bg-transparent text-base text-foreground outline-none placeholder:text-muted"
               autoFocus
               aria-label="Pretraga"
             />
           </div>
           {brandRefinements && hasQuery && !loading && (
-            <div className="flex flex-wrap gap-2 border-b border-border px-4 py-3">
+            <div className="flex flex-wrap gap-2 border-b border-border bg-background/60 px-4 py-3">
               <span className="w-full text-xs text-muted">Sužite pretragu:</span>
               <button
                 type="button"
                 onClick={() => setQuery(brandRefinements.patike)}
-                className="rounded-full border border-border bg-background px-3 py-1.5 text-sm hover:border-accent"
+                className="rounded-full border border-border bg-secondary px-3 py-1.5 text-sm text-foreground transition-colors hover:border-border hover:bg-background"
               >
                 {brandRefinements.patike}
               </button>
               <button
                 type="button"
                 onClick={() => setQuery(brandRefinements.odeca)}
-                className="rounded-full border border-border bg-background px-3 py-1.5 text-sm hover:border-accent"
+                className="rounded-full border border-border bg-secondary px-3 py-1.5 text-sm text-foreground transition-colors hover:border-border hover:bg-background"
               >
                 {brandRefinements.odeca}
               </button>
             </div>
           )}
-          <CommandList className="max-h-[360px]">
+          <CommandList className="max-h-[min(420px,50vh)] px-2 py-2">
             {!hasQuery && (
-              <p className="px-4 py-8 text-center text-sm text-muted">
-                Unesite brend i tip proizvoda (patike, majica…) ili naziv prodavca
-              </p>
+              <div className="px-3 py-6">
+                <RecentSearchPills />
+                <p className="mt-6 text-center text-sm text-muted">
+                  Unesite brend i tip proizvoda (patike, majica…) ili naziv prodavca
+                </p>
+              </div>
             )}
             {hasQuery && loading && (
-              <p className="px-4 py-10 text-center text-sm text-muted">
+              <p className="px-3 py-10 text-center text-sm text-muted">
                 Pretraga…
               </p>
             )}
             {hasQuery && !loading && results.length === 0 && (
-              <p className="px-4 py-10 text-center text-sm text-muted">
-                Nema rezultata. Pokušajte „Nike patike“ ili „Nike majica“.
+              <p className="px-3 py-10 text-center text-sm text-muted">
+                Nema rezultata. Pokušajte „Nike patike“ ili „New Balance“.
               </p>
             )}
             {hasQuery && !loading && results.length > 0 && (
@@ -212,7 +227,9 @@ export function SearchModal({ open, onOpenChange }: SearchModalProps) {
                 )}
                 {groupedRetailers.map((section, idx) => (
                   <div key={section.heading}>
-                    {(brandResults.length > 0 || idx > 0) && <CommandSeparator />}
+                    {(brandResults.length > 0 || idx > 0) && (
+                      <CommandSeparator className="my-2" />
+                    )}
                     <CommandGroup heading={section.heading}>
                       {section.items.map((item) => (
                         <SearchResultItem
@@ -226,7 +243,7 @@ export function SearchModal({ open, onOpenChange }: SearchModalProps) {
                 ))}
                 {mallResults.length > 0 && (
                   <>
-                    <CommandSeparator />
+                    <CommandSeparator className="my-2" />
                     <CommandGroup heading={typeLabels["shopping-center"]}>
                       {mallResults.map((item) => (
                         <SearchResultItem
@@ -241,11 +258,11 @@ export function SearchModal({ open, onOpenChange }: SearchModalProps) {
               </>
             )}
           </CommandList>
-          <div className="border-t border-border px-4 py-3 text-xs text-muted">
+          <div className="border-t border-border bg-background/50 px-4 py-3 text-xs text-muted">
             <span className="hidden sm:inline">
-              Enter za izbor · Esc za zatvaranje ·{" "}
+              Enter za izbor · Esc za zatvoriti ·{" "}
             </span>
-            <kbd className="rounded border border-border bg-background px-1.5 py-0.5">
+            <kbd className="rounded border border-border bg-card px-1.5 py-0.5 text-foreground">
               ⌘K
             </kbd>
           </div>
@@ -255,25 +272,60 @@ export function SearchModal({ open, onOpenChange }: SearchModalProps) {
   );
 }
 
+function SearchResultThumbnail({ item }: { item: SearchResult }) {
+  if (item.imageUrl) {
+    return (
+      <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-xl border border-border bg-white">
+        <Image
+          src={item.imageUrl}
+          alt=""
+          fill
+          className="object-contain p-1.5"
+          sizes="44px"
+          unoptimized={
+            item.imageUrl.startsWith("http") || item.imageUrl.startsWith("/logos/")
+          }
+        />
+      </div>
+    );
+  }
+
+  if (item.type === "shopping-center") {
+    return (
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-border bg-secondary text-muted">
+        <Building2 className="h-5 w-5" />
+      </div>
+    );
+  }
+
+  return (
+    <div
+      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-border bg-secondary font-display text-sm font-semibold text-muted-foreground"
+      aria-hidden
+    >
+      {getBrandLetter(item.title)}
+    </div>
+  );
+}
+
 function SearchResultItem({
   item,
   onSelect,
 }: {
   item: SearchResult;
-  onSelect: (href: string) => void;
+  onSelect: (item: SearchResult) => void;
 }) {
-  const Icon = typeIcons[item.type];
   return (
     <CommandItem
       value={`${item.title} ${item.subtitle}`}
       keywords={[item.title, item.subtitle, item.slug]}
-      onSelect={() => onSelect(item.href)}
-      className="cursor-pointer gap-3 py-3"
+      onSelect={() => onSelect(item)}
+      className="mb-1 cursor-pointer gap-3 rounded-xl border border-border/60 bg-secondary px-3 py-2.5 text-foreground hover:border-border hover:bg-background data-[selected=true]:border-border data-[selected=true]:bg-background aria-[selected=true]:border-border aria-[selected=true]:bg-background"
     >
-      <Icon className="h-4 w-4 text-muted" />
-      <div>
-        <p className="font-medium text-foreground">{item.title}</p>
-        <p className="text-sm text-muted">{item.subtitle}</p>
+      <SearchResultThumbnail item={item} />
+      <div className="min-w-0 flex-1">
+        <p className="truncate font-medium text-foreground">{item.title}</p>
+        <p className="truncate text-sm text-muted">{item.subtitle}</p>
       </div>
     </CommandItem>
   );

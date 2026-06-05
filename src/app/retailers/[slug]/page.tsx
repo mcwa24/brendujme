@@ -66,9 +66,9 @@ export default async function RetailerPage({ params }: PageProps) {
 
   return (
     <>
-      <section className="border-b border-border bg-card">
+      <section className="bg-card">
         <Container narrow className="py-16 md:py-24">
-          <FadeIn>
+          <FadeIn when="mount" direction="none">
             <RetailerPageHeader retailer={retailer}>
               <div className="mt-6 flex flex-wrap items-center gap-6 text-muted">
                 <span className="flex items-center gap-2">

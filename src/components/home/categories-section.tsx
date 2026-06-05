@@ -21,13 +21,13 @@ export function CategoriesSection({ categories }: CategoriesSectionProps) {
             Pregledajte kategorije
           </h2>
           <p className="mt-3 max-w-xl text-muted">
-            Od modne i lepote do luksuza i tehnologije — sve na jednom mestu.
+            Lepota, sport, luksuz i lifestyle — segmenti koji zaista razlikuju ponudu.
           </p>
         </FadeIn>
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {categories.map((category, i) => (
             <FadeIn key={category.slug} delay={i * 0.04}>
-              <Link href={`/categories/${category.slug}`}>
+              <Link href={`/brands?category=${category.slug}`}>
                 <motion.div
                   whileHover={{ y: -4 }}
                   transition={{ duration: 0.25 }}

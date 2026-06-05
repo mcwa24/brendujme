@@ -118,6 +118,18 @@ async function discoverFromWebsite(website: string): Promise<Buffer | null> {
   return null;
 }
 
+function loadManifest(): LogoManifest {
+  if (!fs.existsSync(MANIFEST_PATH)) return {};
+  return JSON.parse(fs.readFileSync(MANIFEST_PATH, "utf8")) as LogoManifest;
+}
+
+function manifestFileExists(entry: LogoManifest[string]): boolean {
+  if (!entry) return false;
+  const rel = typeof entry === "string" ? entry : entry.path;
+  if (!rel?.startsWith("/")) return false;
+  return fs.existsSync(path.join(ROOT, "public", rel.slice(1)));
+}
+
 function scanUploads(manifest: LogoManifest) {
   if (!fs.existsSync(UPLOAD_DIR)) return;
   for (const file of fs.readdirSync(UPLOAD_DIR)) {
@@ -130,14 +142,17 @@ function scanUploads(manifest: LogoManifest) {
 
 async function main() {
   ensureDir(CACHE_DIR);
-  const manifest: LogoManifest = {};
+  const manifest = loadManifest();
+  const existingCount = Object.keys(manifest).length;
 
   scanUploads(manifest);
-  console.log(`Upload scan: ${Object.keys(manifest).length} logoa`);
+  console.log(
+    `Manifest: ${existingCount} postojećih, upload scan: ${Object.keys(manifest).length} ukupno`
+  );
 
   for (const brand of brands) {
-    if (manifest[brand.slug]) {
-      console.log(`  skip ${brand.slug} (upload)`);
+    if (manifest[brand.slug] && manifestFileExists(manifest[brand.slug])) {
+      console.log(`  skip ${brand.slug} (već u manifestu)`);
       continue;
     }
 

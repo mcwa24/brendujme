@@ -1,7 +1,10 @@
 import { cache } from "react";
 import { brands as staticBrands, getBrandBySlug as getStaticBrandBySlug } from "@/lib/data/brands";
 import { enrichBrand } from "@/lib/data/enrich-brand";
-import { categories as staticCategories } from "@/lib/data/categories";
+import {
+  categories as staticCategories,
+  HIDDEN_CATEGORY_SLUGS,
+} from "@/lib/data/categories";
 import { newsArticles as staticNews } from "@/lib/data/news";
 import { fashionCompanyRetailer } from "@/lib/data/fashion-company";
 import { getRetailerCatalogMeta } from "@/lib/data/retailer-catalog-meta";
@@ -61,16 +64,33 @@ function mergeBySlug<T extends { slug: string }>(fromDb: T[], fromStatic: T[]): 
   return missing.length ? [...fromDb, ...missing] : fromDb;
 }
 
+function dedupeBySlug<T extends { slug: string }>(items: T[]): T[] {
+  const bySlug = new Map<string, T>();
+  for (const item of items) {
+    if (!bySlug.has(item.slug)) bySlug.set(item.slug, item);
+  }
+  return [...bySlug.values()];
+}
+
+/** DB dopunjava nazive/opise; redosled prati statičku listu (samo kategorije sa brendovima). */
+function mergeCategoriesBySlug(fromDb: Category[], fromStatic: Category[]): Category[] {
+  const dbBySlug = new Map(fromDb.map((c) => [c.slug, c]));
+  return fromStatic.map((stat) => {
+    const fromDbRow = dbBySlug.get(stat.slug);
+    return fromDbRow ? { ...stat, ...fromDbRow } : stat;
+  });
+}
+
 export const getAllBrands = cache(async (): Promise<Brand[]> => {
   if (isSupabaseConfigured()) {
     const fromDb = await fetchAllBrandsFromSupabase();
     if (fromDb?.length) {
-      return mergeBySlug(fromDb, staticBrands)
+      return dedupeBySlug(mergeBySlug(fromDb, staticBrands))
         .map(enrichBrand)
         .sort((a, b) => a.name.localeCompare(b.name, "sr"));
     }
   }
-  return staticBrands.map(enrichBrand);
+  return dedupeBySlug(staticBrands).map(enrichBrand);
 });
 
 export const getBrandBySlug = cache(async (slug: string): Promise<Brand | undefined> => {
@@ -92,9 +112,13 @@ export const getPopularBrands = cache(async () => {
   return all.filter((b) => b.popular);
 });
 
+function sortBrandsByName(brands: Brand[]): Brand[] {
+  return [...brands].sort((a, b) => a.name.localeCompare(b.name, "sr"));
+}
+
 export const getBrandsByCategory = cache(async (category: string) => {
   const all = await getAllBrands();
-  return all.filter((b) => b.category === category);
+  return sortBrandsByName(all.filter((b) => b.category === category));
 });
 
 export async function getRelatedBrands(brand: Brand): Promise<Brand[]> {
@@ -108,13 +132,22 @@ export async function getRelatedBrands(brand: Brand): Promise<Brand[]> {
 export const getAllCategories = cache(async (): Promise<Category[]> => {
   if (isSupabaseConfigured()) {
     const fromDb = await fetchCategoriesFromSupabase();
-    if (fromDb?.length) return fromDb;
+    if (fromDb?.length) return mergeCategoriesBySlug(fromDb, staticCategories);
   }
   return staticCategories;
 });
 
+/** Samo kategorije koje imaju bar jedan brend u katalogu. */
+export const getPopulatedCategories = cache(async (): Promise<Category[]> => {
+  const [categories, brands] = await Promise.all([getAllCategories(), getAllBrands()]);
+  const slugsWithBrands = new Set(brands.map((b) => b.category));
+  return categories.filter(
+    (c) => slugsWithBrands.has(c.slug) && !HIDDEN_CATEGORY_SLUGS.has(c.slug)
+  );
+});
+
 export async function getCategoryBySlug(slug: string): Promise<Category | undefined> {
-  const all = await getAllCategories();
+  const all = await getPopulatedCategories();
   return all.find((c) => c.slug === slug);
 }
 

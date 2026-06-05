@@ -1,5 +1,5 @@
 import { getBrandLetter } from "@/lib/brand-logo-resolve";
-import { getCategoryName } from "@/lib/data/categories";
+import { getFilterCategoryLabel } from "@/lib/brands/catalog-filters";
 import type { CategorySlug } from "@/types";
 import { cn } from "@/lib/utils";
 
@@ -66,9 +66,11 @@ export function BrandLogoPlaceholder({
           {name}
         </p>
       )}
-      {showCategory && category && (
-        <p className="mt-2 text-sm text-muted">{getCategoryName(category)}</p>
-      )}
+      {showCategory && category ? (
+        <p className="mt-2 text-sm text-muted">
+          {getFilterCategoryLabel(category as CategorySlug)}
+        </p>
+      ) : null}
     </div>
   );
 }

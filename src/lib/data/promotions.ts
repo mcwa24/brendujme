@@ -1,5 +1,8 @@
 import scraped from "@/lib/data/retailer-promotions-scraped.json";
-import { IMPORTED_RETAILER_EXTERNAL } from "@/lib/data/imported-retailers";
+import {
+  getRetailerWebsiteUrl,
+  IMPORTED_RETAILER_EXTERNAL,
+} from "@/lib/data/imported-retailers";
 import {
   getPrimaryRetailerForPromoGroup,
   getRetailerPromoGroupId,
@@ -81,8 +84,8 @@ function mapScrapedToHome(row: ScrapedPromotionRow): HomePromotion {
     retailerSlug: displaySlug,
     retailerName: retailer?.name ?? row.retailerName,
     retailerLogoUrl: retailer?.logoUrl,
-    sourceUrl:
-      row.sourceUrl || external?.website || `/retailers/${displaySlug}`,
+    sourceUrl: row.sourceUrl || external?.website || `/retailers/${displaySlug}`,
+    retailerWebsiteUrl: getRetailerWebsiteUrl(displaySlug, row.sourceUrl),
     href: `/retailers/${displaySlug}`,
     discountPercent: row.discountPercent,
     scope: row.scope,

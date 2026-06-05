@@ -19,10 +19,10 @@ export function NewsSection({ articles }: NewsSectionProps) {
         <FadeIn className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <h2 className="font-display text-3xl font-semibold tracking-tight md:text-5xl">
-              Najnovije vesti
+              Iz sveta mode
             </h2>
             <p className="mt-3 text-muted">
-              Moda, retail i trendovi sa srpskog tržišta.
+              Kolekcije, kampanje i trendovi sa globalne modne scene.
             </p>
           </div>
           <Link

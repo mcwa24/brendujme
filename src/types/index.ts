@@ -6,7 +6,8 @@ export type CategorySlug =
   | "lifestyle"
   | "home"
   | "technology"
-  | "kids";
+  | "kids"
+  | "footwear";
 
 export type PriceSegment = "budget" | "mid" | "premium" | "luxury";
 
@@ -139,6 +140,8 @@ export interface HomePromotion {
   retailerLogoUrl?: string;
   /** Link ka stranici akcije na sajtu prodavca */
   sourceUrl: string;
+  /** Zvanični sajt prodavca (home page) */
+  retailerWebsiteUrl: string;
   /** Interni link (npr. stranica prodavca) */
   href: string;
   discountPercent?: number | null;
@@ -155,6 +158,8 @@ export interface SearchResult {
   title: string;
   subtitle: string;
   href: string;
+  /** Logo za prikaz u pretrazi */
+  imageUrl?: string;
   /** Grupa ponude (patike vs odeća) — za grupisanje u pretrazi */
   offeringGroup?: BrandOfferingSlug;
 }

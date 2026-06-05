@@ -2,8 +2,8 @@ import Link from "next/link";
 import { MapPin } from "lucide-react";
 import { BrandIdentity } from "@/components/brands/brand-identity";
 import { hasBrandLogo } from "@/lib/brand-logo-resolve";
-import { getCategoryName } from "@/lib/data/categories";
-import type { Brand } from "@/types";
+import { getFilterCategoryLabel } from "@/lib/brands/catalog-filters";
+import type { Brand, CategorySlug } from "@/types";
 import { PremiumCard } from "@/components/ui/premium-card";
 import { buttonVariants } from "@/components/ui/button";
 import { formatLocationCount } from "@/lib/format/sr-plural";
@@ -39,7 +39,7 @@ export function BrandCard({ brand, variant = "default" }: BrandCardProps) {
               {brand.name}
             </h3>
             <p className="mt-1 text-sm text-muted">
-              {getCategoryName(brand.category)}
+              {getFilterCategoryLabel(brand.category as CategorySlug)}
             </p>
           </>
         )}

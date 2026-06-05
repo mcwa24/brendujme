@@ -1,5 +1,5 @@
 import { promotionTodayIso } from "@/lib/data/promotions";
-import { IMPORTED_RETAILER_EXTERNAL } from "@/lib/data/imported-retailers";
+import { getRetailerWebsiteUrl } from "@/lib/data/imported-retailers";
 import { createSupabaseReadClient } from "@/lib/supabase/read-client";
 import type { HomePromotion, PromotionCampaignType } from "@/types";
 
@@ -64,11 +64,6 @@ export async function fetchActiveHomePromotionsFromSupabase(): Promise<
     if (!retailer) continue;
 
     const { slug: retailerSlug, name: retailerName, logo_url } = retailer;
-    const external =
-      IMPORTED_RETAILER_EXTERNAL[
-        retailerSlug as keyof typeof IMPORTED_RETAILER_EXTERNAL
-      ];
-
     mapped.push({
       slug: row.slug,
       title: row.title,
@@ -82,7 +77,8 @@ export async function fetchActiveHomePromotionsFromSupabase(): Promise<
       retailerSlug,
       retailerName,
       retailerLogoUrl: logo_url ?? undefined,
-      sourceUrl: external?.website ?? `/retailers/${retailerSlug}`,
+      sourceUrl: getRetailerWebsiteUrl(retailerSlug),
+      retailerWebsiteUrl: getRetailerWebsiteUrl(retailerSlug),
       href: `/retailers/${retailerSlug}`,
     });
   }

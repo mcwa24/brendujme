@@ -7,7 +7,7 @@ import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
   title: "Vesti",
-  description: "Najnovije retail vesti, otvaranja brenda i trendovi na tržištu Srbije.",
+  description: "Najnovije vesti, kolekcije i trendovi sa globalne modne scene.",
   path: "/news",
 });
 
@@ -19,7 +19,7 @@ export default async function NewsPage() {
       <FadeIn>
         <h1 className="font-display text-4xl font-semibold md:text-5xl">Vesti</h1>
         <p className="mt-3 max-w-2xl text-muted">
-          Retail inteligencija — otvaranja, kolekcije, tržni centri i analize tržišta.
+          Kolekcije, kampanje, pokazivanja i trendovi sa globalne modne scene.
         </p>
       </FadeIn>
       <NewsList

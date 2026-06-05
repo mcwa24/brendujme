@@ -13,39 +13,39 @@
   },
   "rituals": {
     "path": "/logos/cache/rituals.png",
-    "source": "upload"
+    "source": "discovered"
   },
   "camper": {
-    "path": "/logos/cache/camper.jpg",
-    "source": "url"
+    "path": "/logos/cache/camper.png",
+    "source": "discovered"
   },
   "desigual": {
     "path": "/logos/cache/desigual.png",
-    "source": "url"
+    "source": "discovered"
   },
   "diesel": {
-    "path": "/logos/cache/diesel.jpg",
-    "source": "url"
+    "path": "/logos/cache/diesel.png",
+    "source": "discovered"
   },
   "inuikii": {
-    "path": "/logos/cache/inuikii.jpg",
-    "source": "url"
+    "path": "/logos/cache/inuikii.png",
+    "source": "discovered"
   },
   "patrizia-pepe": {
-    "path": "/logos/cache/patrizia-pepe.jpg",
-    "source": "url"
+    "path": "/logos/cache/patrizia-pepe.png",
+    "source": "discovered"
   },
   "lyle-scott": {
-    "path": "/logos/cache/lyle-scott.jpg",
-    "source": "url"
+    "path": "/logos/cache/lyle-scott.png",
+    "source": "discovered"
   },
   "kiko": {
     "path": "/logos/cache/kiko.png",
     "source": "discovered"
   },
   "liu-jo": {
-    "path": "/logos/cache/liu-jo.jpg",
-    "source": "url"
+    "path": "/logos/cache/liu-jo.png",
+    "source": "discovered"
   },
   "cesare-paciotti": {
     "path": "/logos/cache/cesare-paciotti.png",
@@ -56,20 +56,20 @@
     "source": "discovered"
   },
   "replay": {
-    "path": "/logos/cache/replay.jpg",
-    "source": "url"
+    "path": "/logos/cache/replay.png",
+    "source": "discovered"
   },
   "wellensteyn": {
     "path": "/logos/cache/wellensteyn.png",
     "source": "discovered"
   },
   "steve-madden": {
-    "path": "/logos/cache/steve-madden.jpg",
-    "source": "url"
+    "path": "/logos/cache/steve-madden.png",
+    "source": "discovered"
   },
   "armani-exchange": {
     "path": "/logos/cache/armani-exchange.png",
-    "source": "url"
+    "source": "discovered"
   },
   "dkny": {
     "path": "/logos/cache/dkny.png",
@@ -80,8 +80,8 @@
     "source": "discovered"
   },
   "karl-lagerfeld": {
-    "path": "/logos/cache/karl-lagerfeld.jpg",
-    "source": "url"
+    "path": "/logos/cache/karl-lagerfeld.png",
+    "source": "discovered"
   },
   "miss-sixty": {
     "path": "/logos/cache/miss-sixty.png",
@@ -92,16 +92,16 @@
     "source": "discovered"
   },
   "saint-barth": {
-    "path": "/logos/cache/saint-barth.jpg",
-    "source": "url"
+    "path": "/logos/cache/saint-barth.png",
+    "source": "discovered"
   },
   "superdry": {
-    "path": "/logos/cache/superdry.jpg",
-    "source": "url"
+    "path": "/logos/cache/superdry.png",
+    "source": "discovered"
   },
   "ugg": {
-    "path": "/logos/cache/ugg.jpg",
-    "source": "url"
+    "path": "/logos/cache/ugg.png",
+    "source": "discovered"
   },
   "nike": {
     "path": "/logos/cache/nike.jpg",
@@ -262,5 +262,29 @@
   "zaxy": {
     "path": "/logos/cache/zaxy.jpg",
     "source": "url"
+  },
+  "massimo-dutti": {
+    "path": "/logos/cache/massimo-dutti.svg",
+    "source": "upload"
+  },
+  "new-yorker": {
+    "path": "/logos/cache/new-yorker.png",
+    "source": "discovered"
+  },
+  "extra-sports": {
+    "path": "/logos/cache/extra-sports.png",
+    "source": "discovered"
+  },
+  "tike": {
+    "path": "/logos/cache/tike.png",
+    "source": "discovered"
+  },
+  "run-n-more": {
+    "path": "/logos/cache/run-n-more.png",
+    "source": "discovered"
+  },
+  "cos": {
+    "path": "/logos/cache/cos.jpg",
+    "source": "upload"
   }
 }

@@ -1,6 +1,11 @@
+import { resolveBrandLogoSrc } from "@/lib/brand-logo-resolve";
 import { fashionCompanyStores } from "@/lib/data/fashion-company";
 import { fashionAndFriendsMeta } from "@/lib/data/fashion-and-friends";
-import { getCategoryName } from "@/lib/data/categories";
+import { getFilterCategoryLabel } from "@/lib/brands/catalog-filters";
+import type { CategorySlug } from "@/types";
+import { getShoppingCenterImage } from "@/lib/data/shopping-center-images";
+import { resolveRetailerLogoSrc } from "@/lib/retailer-logo-resolve";
+import { getStoragePublicUrl } from "@/lib/supabase/storage";
 import {
   formatOfferingsLabel,
   getBrandRetailerOfferings,
@@ -21,6 +26,24 @@ function normalize(text: string): string {
     .toLowerCase()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "");
+}
+
+function searchImageForBrand(brand: Brand): string | undefined {
+  return resolveBrandLogoSrc(brand) ?? undefined;
+}
+
+function searchImageForRetailer(retailer: Retailer): string | undefined {
+  return resolveRetailerLogoSrc(retailer) ?? undefined;
+}
+
+function searchImageForCenter(center: ShoppingCenter): string | undefined {
+  const local = getShoppingCenterImage(center.slug);
+  return (
+    local?.src ||
+    center.logoUrl?.trim() ||
+    getStoragePublicUrl(center.logoStoragePath) ||
+    undefined
+  );
 }
 
 function collectBrandOfferingTypes(
@@ -70,8 +93,16 @@ export function buildSearchResults(
 
   const results: SearchResult[] = [];
   const seen = new Set<string>();
+  const seenBrandSlugs = new Set<string>();
 
   const add = (result: SearchResult) => {
+    if (result.type === "brand") {
+      if (seenBrandSlugs.has(result.slug)) return;
+      seenBrandSlugs.add(result.slug);
+      results.push(result);
+      return;
+    }
+
     const key = result.offeringGroup
       ? `${result.type}-${result.slug}-${result.offeringGroup}`
       : `${result.type}-${result.slug}`;
@@ -119,17 +150,22 @@ export function buildSearchResults(
         hint =
           types.length > 0
             ? `${types.map((t) => OFFERING_LABELS[t]).join(" · ")} — sužite: patike ili majica`
-            : getCategoryName(brand.category);
+            : getFilterCategoryLabel(brand.category as CategorySlug);
       } else {
-        hint = getCategoryName(brand.category);
+        hint = getFilterCategoryLabel(brand.category as CategorySlug);
       }
+
+      const subtitle = hint
+        ? `${hint} · ${formatLocationCount(brand.availabilityCount)}`
+        : formatLocationCount(brand.availabilityCount);
 
       add({
         type: "brand",
         slug: brand.slug,
         title: brand.name,
-        subtitle: `${hint} · ${formatLocationCount(brand.availabilityCount)}`,
+        subtitle,
         href: `/brands/${brand.slug}`,
+        imageUrl: searchImageForBrand(brand),
       });
     }
   }
@@ -172,6 +208,7 @@ export function buildSearchResults(
           ].join(" · "),
           href: `/retailers/${retailer.slug}`,
           offeringGroup: offering,
+          imageUrl: searchImageForRetailer(retailer),
         });
       }
       continue;
@@ -235,6 +272,7 @@ export function buildSearchResults(
         title: retailer.name,
         subtitle: subtitleParts.filter(Boolean).join(" · "),
         href: `/retailers/${retailer.slug}`,
+        imageUrl: searchImageForRetailer(retailer),
       });
     }
   }
@@ -251,6 +289,7 @@ export function buildSearchResults(
         title: center.name,
         subtitle: `${center.city} · ${formatBrandCount(center.brandCount)}`,
         href: `/shopping-centers/${center.slug}`,
+        imageUrl: searchImageForCenter(center),
       });
     }
   }
@@ -260,12 +299,14 @@ export function buildSearchResults(
     coreQ.replace(/\s/g, "") === "fashionandfriends" ||
     coreQ === "ff"
   ) {
+    const fcRetailer = retailers.find((r) => r.slug === "fashion-company");
     add({
       type: "retailer",
       slug: "fashion-company",
       title: "Fashion&Friends",
       subtitle: `${formatBrandCount(fashionAndFriendsMeta.brandCount)} · Fashion Company`,
       href: "/retailers/fashion-company",
+      imageUrl: fcRetailer ? searchImageForRetailer(fcRetailer) : undefined,
     });
   }
 
@@ -273,34 +314,47 @@ export function buildSearchResults(
     if (intent.offerings?.length && !offeringsOverlap(intent.offerings, ["apparel"])) {
       continue;
     }
-    if (
+
+    const brandNameMatch =
       normalize(store.brandName).includes(coreQ) ||
+      coreQ.includes(normalize(store.brandName));
+    const storeDetailMatch =
       normalize(store.storeName).includes(coreQ) ||
       normalize(store.address).includes(coreQ) ||
       normalize(store.cityLabel).includes(coreQ) ||
-      (store.shoppingCenter && normalize(store.shoppingCenter).includes(coreQ))
-    ) {
-      if (store.brandSlug) {
-        if (
-          intent.brandSlug &&
-          store.brandSlug !== intent.brandSlug &&
-          !retailerSellsBrandForOfferings(
-            store.brandSlug,
-            "fashion-company",
-            intent.offerings
-          )
-        ) {
-          continue;
-        }
-        add({
-          type: "brand",
-          slug: store.brandSlug,
-          title: store.brandName,
-          subtitle: `Odeća i moda · Fashion Company · ${store.cityLabel}`,
-          href: `/brands/${store.brandSlug}`,
-          offeringGroup: "apparel",
-        });
+      (store.shoppingCenter && normalize(store.shoppingCenter).includes(coreQ));
+
+    if (!storeDetailMatch && brandNameMatch) {
+      continue;
+    }
+
+    if (!storeDetailMatch) continue;
+
+    if (store.brandSlug && seenBrandSlugs.has(store.brandSlug)) {
+      continue;
+    }
+
+    if (store.brandSlug) {
+      if (
+        intent.brandSlug &&
+        store.brandSlug !== intent.brandSlug &&
+        !retailerSellsBrandForOfferings(
+          store.brandSlug,
+          "fashion-company",
+          intent.offerings
+        )
+      ) {
+        continue;
       }
+      const fcBrand = brands.find((b) => b.slug === store.brandSlug);
+      add({
+        type: "brand",
+        slug: store.brandSlug,
+        title: fcBrand?.name ?? store.brandName,
+        subtitle: `${store.storeName} · Fashion Company · ${store.cityLabel}`,
+        href: `/brands/${store.brandSlug}`,
+        imageUrl: fcBrand ? searchImageForBrand(fcBrand) : undefined,
+      });
     }
   }
 
