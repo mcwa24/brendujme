@@ -1,4 +1,5 @@
 import { HeroSection } from "@/components/home/hero-section";
+import { HeroPromotions } from "@/components/home/hero-promotions";
 import { FeaturedBrandsSection } from "@/components/home/featured-brands-section";
 import { ShoppingCentersSection } from "@/components/home/shopping-centers-section";
 import { NewsSection } from "@/components/home/news-section";
@@ -35,10 +36,10 @@ export default async function HomePage() {
 
   return (
     <>
-      <HeroSection
-        popularBrands={popularBrands.slice(0, 6)}
+      <HeroSection popularBrands={popularBrands.slice(0, 6)} />
+      <HeroPromotions
         promotions={homePromotions}
-        promotionBanners={promotionBanners}
+        bannerImages={promotionBanners}
       />
       <FeaturedBrandsSection brands={featuredBrands} />
       <NewsSection articles={latestNews} />

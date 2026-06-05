@@ -7,22 +7,14 @@ import { FadeIn } from "@/components/motion/fade-in";
 import { RecentSearchPills } from "@/components/search/recent-search-pills";
 import { useSearch } from "@/components/search/search-provider";
 import { Badge } from "@/components/ui/badge";
-import { HeroPromotions } from "@/components/home/hero-promotions";
 import { HOME_HERO_SECTION_PY } from "@/components/home/section-spacing";
-import type { PromotionBannerImage } from "@/lib/unsplash/promotion-banners";
-import type { Brand, HomePromotion } from "@/types";
+import type { Brand } from "@/types";
 
 interface HeroSectionProps {
   popularBrands: Brand[];
-  promotions?: HomePromotion[];
-  promotionBanners?: PromotionBannerImage[];
 }
 
-export function HeroSection({
-  popularBrands,
-  promotions = [],
-  promotionBanners = [],
-}: HeroSectionProps) {
+export function HeroSection({ popularBrands }: HeroSectionProps) {
   const { setOpen } = useSearch();
 
   return (
@@ -70,14 +62,6 @@ export function HeroSection({
             ))}
           </div>
         </FadeIn>
-        {promotions.length > 0 ? (
-          <FadeIn delay={0.35}>
-            <HeroPromotions
-              promotions={promotions}
-              bannerImages={promotionBanners}
-            />
-          </FadeIn>
-        ) : null}
       </Container>
     </section>
   );
