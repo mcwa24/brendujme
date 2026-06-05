@@ -105,12 +105,46 @@ export interface NewsArticle {
   title: string;
   excerpt: string;
   content: string;
+  /** Pun HTML sadržaj (Ghost) */
+  contentHtml?: string;
   publishedAt: string;
   category: string;
   featured?: boolean;
   brandSlugs?: string[];
   imageLabel: string;
   imageUrl?: string;
+  /** Original na bilbord.rs */
+  sourceUrl?: string;
+}
+
+export type PromotionCampaignType =
+  | "sale"
+  | "seasonal"
+  | "black_friday"
+  | "clearance"
+  | "new_collection"
+  | "collaboration"
+  | "other";
+
+export interface HomePromotion {
+  slug: string;
+  title: string;
+  shortDescription: string;
+  description: string;
+  campaignType: PromotionCampaignType;
+  startDate: string;
+  endDate: string;
+  retailerSlug: string;
+  retailerName: string;
+  retailerLogoUrl?: string;
+  /** Link ka stranici akcije na sajtu prodavca */
+  sourceUrl: string;
+  /** Interni link (npr. stranica prodavca) */
+  href: string;
+  discountPercent?: number | null;
+  scope?: string | null;
+  /** Hero baner sa sajta prodavca */
+  bannerImageUrl?: string;
 }
 
 export type SearchResultType = "brand" | "retailer" | "shopping-center";

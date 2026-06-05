@@ -1,15 +1,18 @@
+"use client";
+
 import Image from "next/image";
-import { Store } from "lucide-react";
+import { useState } from "react";
+import { getBrandLetter } from "@/lib/brand-logo-resolve";
 import { getRetailerDisplayName } from "@/lib/data/retailer-names";
 import { resolveRetailerLogoSrc } from "@/lib/retailer-logo-resolve";
 import { cn } from "@/lib/utils";
 
 const sizeMap = {
-  sm: { box: "h-8 w-8", img: 32 },
-  md: { box: "h-10 w-10", img: 40 },
-  lg: { box: "h-12 w-12", img: 48 },
-  xl: { box: "h-16 w-16", img: 64 },
-  hero: { box: "h-20 w-20 md:h-24 md:w-24", img: 96 },
+  sm: { box: "h-8 w-8", img: 32, letter: "text-sm" },
+  md: { box: "h-10 w-10", img: 40, letter: "text-base" },
+  lg: { box: "h-12 w-12", img: 48, letter: "text-xl" },
+  xl: { box: "h-16 w-16", img: 64, letter: "text-2xl" },
+  hero: { box: "h-20 w-20 md:h-24 md:w-24", img: 96, letter: "text-3xl md:text-4xl" },
 } as const;
 
 interface RetailerLogoProps {
@@ -20,6 +23,38 @@ interface RetailerLogoProps {
   className?: string;
   /** Stranica prodavca — npr. FCO ikona za Fashion Company */
   variant?: "default" | "page";
+}
+
+function RetailerLetterPlaceholder({
+  name,
+  dims,
+  className,
+}: {
+  name: string;
+  dims: (typeof sizeMap)[keyof typeof sizeMap];
+  className?: string;
+}) {
+  const letter = getBrandLetter(name);
+  return (
+    <div
+      className={cn(
+        "flex shrink-0 items-center justify-center rounded-lg border border-border bg-[#f5f5f3]",
+        dims.box,
+        className
+      )}
+      aria-label={`Prodavac ${name}`}
+      role="img"
+    >
+      <span
+        className={cn(
+          "font-display font-semibold leading-none text-accent/90",
+          dims.letter
+        )}
+      >
+        {letter}
+      </span>
+    </div>
+  );
 }
 
 export function RetailerLogo({
@@ -36,20 +71,18 @@ export function RetailerLogo({
     { page: variant === "page" }
   );
   const dims = sizeMap[size];
-  const isDarkBadge = variant === "page" && slug === "fashion-company";
+  const isDarkBadge =
+    slug === "fashion-friends" ||
+    (variant === "page" && slug === "fashion-company");
+  const [imageFailed, setImageFailed] = useState(false);
 
-  if (!src) {
+  if (!src || imageFailed) {
     return (
-      <div
-        className={cn(
-          "flex shrink-0 items-center justify-center rounded-lg bg-[#f0f0ed] text-muted/50",
-          dims.box,
-          className
-        )}
-        aria-hidden
-      >
-        <Store className="h-1/2 w-1/2" />
-      </div>
+      <RetailerLetterPlaceholder
+        name={displayName}
+        dims={dims}
+        className={className}
+      />
     );
   }
 
@@ -68,6 +101,7 @@ export function RetailerLogo({
         width={dims.img}
         height={dims.img}
         className="h-full w-full object-contain"
+        onError={() => setImageFailed(true)}
       />
     </div>
   );

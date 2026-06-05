@@ -1,0 +1,37 @@
+{
+  "scrapedAt": "2026-06-05T10:05:44.704Z",
+  "promotions": [
+    {
+      "retailerSlug": "sport-vision",
+      "retailerName": "Sport Vision",
+      "sourceUrl": "https://www.sportvision.rs/online-vikend-akcija",
+      "title": "Vikend akcija",
+      "description": "--> Online vikend akcija | Sport Vision Status porudžbine Prodavnice Sport&Bonus Obaveštenje o promeni naziva kompanije Pogledaj više VAŽNO OBAVEŠTENJE ZA POTROŠAČE Pogledaj više PLAĆANJE NA RATE Kreditnim karticama BANCA INTESA platite na 9 rata Pogledaj više POZOVITE NAS 011 422 1422 SINDIKALNA PRODAJA kupovina putem administrativne zabrane do 12 rata Prijavite se Registrujte se Meni 0 Omiljeno × Pretraži sajt Aktuelno Muškarci Nova kolekcija Patike Papuče Majice Šorcevi Dukserice Donji deo trenerke Pantalone Kopačke Žene Nova kolekcija Patike Papuče Majice Šorcevi Dukserice Helanke Donji deo trenerke Bra Jakne i prsluci Deca Nova kolekcija Patike Papuče Majice Šorcevi Dukserice Donji deo trenerke Trenerke Jakne i prsluci Kopačke Najtraženije Nike Air Max adidas Z.N.E. New Balance 9060 N",
+      "shortDescription": "5. 6. – 7. 6.",
+      "campaignType": "sale",
+      "startDate": "2026-06-05",
+      "endDate": "2026-06-07",
+      "discountPercent": null,
+      "scope": null,
+      "confidence": "high",
+      "bannerImageUrl": "https://www.sportvision.rs/files/images/2026/6/5/SV-akcija-MAJ26-1580x650-var-1.jpg.webp",
+      "detectedAt": "2026-06-05T10:05:26.520Z"
+    },
+    {
+      "retailerSlug": "djak-sport",
+      "retailerName": "Đak Sport",
+      "sourceUrl": "https://www.djaksport.com/letnji-izbor",
+      "title": "Letnji mix",
+      "description": "Letnji mix — popusti u Đak Sport online prodavnici.",
+      "shortDescription": "Do 20% (3+ artikla) · Važi za: majice, papuče, šortsevi, kupaći",
+      "campaignType": "seasonal",
+      "startDate": "2026-06-05",
+      "endDate": "2026-06-22",
+      "discountPercent": 20,
+      "scope": "majice, papuče, šortsevi, kupaći",
+      "confidence": "medium",
+      "bannerImageUrl": "https://www.djaksport.com/media/opti_image/webp/wysiwyg/01_1920x700_2.webp",
+      "detectedAt": "2026-06-05T10:05:23.797Z"
+    }
+  ]
+}

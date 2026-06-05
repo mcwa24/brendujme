@@ -6,14 +6,14 @@ import { NewsSection } from "@/components/home/news-section";
 import { StatsSection } from "@/components/home/stats-section";
 import { NewsletterSection } from "@/components/home/newsletter-section";
 import {
-  getAllBrands,
   getAllCategories,
   getAllShoppingCenters,
   getFeaturedBrands,
-  getFeaturedNews,
+  getHomePromotions,
   getLatestNews,
   getPopularBrands,
 } from "@/lib/data/repository";
+import { getPromotionBannerImages } from "@/lib/unsplash/promotion-banners";
 
 export default async function HomePage() {
   const [
@@ -21,27 +21,31 @@ export default async function HomePage() {
     featuredBrands,
     categories,
     shoppingCenters,
-    featuredNews,
     latestNews,
-    allBrands,
+    homePromotions,
   ] = await Promise.all([
     getPopularBrands(),
     getFeaturedBrands(),
     getAllCategories(),
     getAllShoppingCenters(),
-    getFeaturedNews(),
-    getLatestNews(4),
-    getAllBrands(),
+    getLatestNews(3),
+    getHomePromotions(3),
   ]);
+
+  const promotionBanners = await getPromotionBannerImages(homePromotions);
 
   return (
     <>
-      <HeroSection popularBrands={popularBrands.slice(0, 6)} />
+      <HeroSection
+        popularBrands={popularBrands.slice(0, 6)}
+        promotions={homePromotions}
+        promotionBanners={promotionBanners}
+      />
       <FeaturedBrandsSection brands={featuredBrands.slice(0, 8)} />
+      <NewsSection articles={latestNews} />
       <CategoriesSection categories={categories} />
       <ShoppingCentersSection centers={shoppingCenters.slice(0, 6)} />
-      <NewsSection featured={featuredNews} latest={latestNews} />
-      <StatsSection brandCount={allBrands.length} />
+      <StatsSection />
       <NewsletterSection />
     </>
   );

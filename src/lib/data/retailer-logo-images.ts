@@ -16,6 +16,26 @@ export const retailerPageLogoImages: Record<string, RetailerLogoImage> = {
     sourceUrl: "bundled:FCO-icon-za-web",
     alt: "Fashion Company",
   },
+  "fashion-friends": {
+    src: "/logos/retailers/fashion-friends.png",
+    sourceUrl: "bundled:fashion-and-friends-logo",
+    alt: "Fashion&Friends",
+  },
+  lpp: {
+    src: "/logos/retailers/lpp.png",
+    sourceUrl: "bundled:lpp-logo",
+    alt: "LPP",
+  },
+  tike: {
+    src: "/logos/retailers/tike.png",
+    sourceUrl: "bundled:tike-logo-black",
+    alt: "Tike",
+  },
+  "run-n-more": {
+    src: "/logos/retailers/run-n-more.png",
+    sourceUrl: "bundled:run-n-more-logo",
+    alt: "Run'n More",
+  },
 };
 
 /** Pun logo — naslovi sekcija na stranicama brenda */
@@ -24,6 +44,16 @@ export const retailerLogoImages: Record<string, RetailerLogoImage> = {
     src: "/logos/retailers/fashion-company-full.png",
     sourceUrl: "bundled:fashion-company-full",
     alt: "Fashion Company",
+  },
+  "fashion-friends": {
+    src: "/logos/retailers/fashion-friends.png",
+    sourceUrl: "bundled:fashion-and-friends-logo",
+    alt: "Fashion&Friends",
+  },
+  lpp: {
+    src: "/logos/retailers/lpp.png",
+    sourceUrl: "bundled:lpp-logo",
+    alt: "LPP",
   },
   "buzz-sneakers": {
     src: "/logos/retailers/buzz-sneakers.png",
@@ -64,12 +94,12 @@ export const retailerLogoImages: Record<string, RetailerLogoImage> = {
   },
   tike: {
     src: "/logos/retailers/tike.png",
-    sourceUrl: "https://www.tike.rs/files/images/tike.rs-redizajn/tike-logo.png",
+    sourceUrl: "bundled:tike-logo-black",
     alt: "Tike",
   },
   "run-n-more": {
     src: "/logos/retailers/run-n-more.png",
-    sourceUrl: "https://www.runnmore.com/media/logo/stores/1/logo.png",
+    sourceUrl: "bundled:run-n-more-logo",
     alt: "Run'n More",
   },
 };

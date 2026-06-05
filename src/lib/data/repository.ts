@@ -16,16 +16,35 @@ import {
   fetchBrandBySlugFromSupabase,
 } from "@/lib/supabase/fetch-brands";
 import {
+  dedupePromotionsByGroup,
+  getActiveHomePromotionsFromStatic,
+  HOME_PROMOTIONS_MAX,
+} from "@/lib/data/promotions";
+import {
+  getPrimaryRetailerForPromoGroup,
+  getRetailerPromoGroupId,
+} from "@/lib/data/retailer-promo-groups";
+import {
   fetchCategoriesFromSupabase,
   fetchNewsFromSupabase,
   fetchRetailersFromSupabase,
   fetchShoppingCentersFromSupabase,
 } from "@/lib/supabase/fetch-catalog";
+import { fetchActiveHomePromotionsFromSupabase } from "@/lib/supabase/fetch-promotions";
+import {
+  fetchAllGhostModaStilNews,
+  fetchGhostModaStilNewsPage,
+  fetchGhostNewsBySlug,
+} from "@/lib/ghost/fetch-news";
+import { isGhostConfigured } from "@/lib/ghost/env";
+import { NEWS_PAGE_SIZE } from "@/lib/news/constants";
+import type { NewsPageResult } from "@/lib/news/types";
 import { fetchRetailerStores } from "@/lib/supabase/fetch-retailer-stores";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 import type {
   Brand,
   Category,
+  HomePromotion,
   NewsArticle,
   Retailer,
   RetailerStore,
@@ -120,7 +139,9 @@ export const getAllRetailers = cache(async (): Promise<Retailer[]> => {
     list = staticImportedRetailers;
   }
   const withoutFashionCompany = list.filter((r) => r.slug !== "fashion-company");
-  return applyCatalogCounts([fashionCompanyRetailer, ...withoutFashionCompany]);
+  return sortRetailersByName(
+    applyCatalogCounts([fashionCompanyRetailer, ...withoutFashionCompany])
+  );
 });
 
 function applyCatalogCounts(retailers: Retailer[]): Retailer[] {
@@ -129,6 +150,11 @@ function applyCatalogCounts(retailers: Retailer[]): Retailer[] {
     if (!meta) return r;
     return { ...r, brandCount: meta.brandCount };
   });
+}
+
+function sortRetailersByName(retailers: Retailer[]): Retailer[] {
+  const collator = new Intl.Collator("sr");
+  return [...retailers].sort((a, b) => collator.compare(a.name, b.name));
 }
 
 export async function getRetailerBySlug(slug: string): Promise<Retailer | undefined> {
@@ -176,15 +202,49 @@ export async function getShoppingCenterBySlug(
   return all.find((s) => s.slug === slug);
 }
 
-export const getAllNews = cache(async (): Promise<NewsArticle[]> => {
+async function getAllNewsFallback(): Promise<NewsArticle[]> {
   if (isSupabaseConfigured()) {
     const fromDb = await fetchNewsFromSupabase();
     if (fromDb?.length) return fromDb;
   }
   return staticNews;
+}
+
+export const getAllNews = cache(async (): Promise<NewsArticle[]> => {
+  if (isGhostConfigured()) {
+    const fromGhost = await fetchAllGhostModaStilNews();
+    if (fromGhost.length) return fromGhost;
+  }
+  return getAllNewsFallback();
 });
 
+export async function getNewsPage(
+  page = 1,
+  pageSize = NEWS_PAGE_SIZE
+): Promise<NewsPageResult> {
+  if (isGhostConfigured()) {
+    const fromGhost = await fetchGhostModaStilNewsPage(page, pageSize);
+    if (fromGhost.articles.length) return fromGhost;
+  }
+
+  const all = await getAllNewsFallback();
+  const start = (page - 1) * pageSize;
+  const articles = all.slice(start, start + pageSize);
+
+  return {
+    articles,
+    page,
+    pageSize,
+    hasMore: start + pageSize < all.length,
+    total: all.length,
+  };
+}
+
 export async function getNewsBySlug(slug: string): Promise<NewsArticle | undefined> {
+  if (isGhostConfigured()) {
+    const fromGhost = await fetchGhostNewsBySlug(slug);
+    if (fromGhost) return fromGhost;
+  }
   const all = await getAllNews();
   return all.find((n) => n.slug === slug);
 }
@@ -195,11 +255,33 @@ export async function getFeaturedNews(): Promise<NewsArticle | undefined> {
 }
 
 export async function getLatestNews(limit = 6): Promise<NewsArticle[]> {
-  const all = await getAllNews();
-  return all.slice(0, limit);
+  const result = await getNewsPage(1, limit);
+  return result.articles;
 }
 
 export async function getNewsByBrand(brandSlug: string): Promise<NewsArticle[]> {
   const all = await getAllNews();
   return all.filter((n) => n.brandSlugs?.includes(brandSlug));
 }
+
+export const getHomePromotions = cache(async (
+  limit = HOME_PROMOTIONS_MAX
+): Promise<HomePromotion[]> => {
+  if (isSupabaseConfigured()) {
+    const fromDb = await fetchActiveHomePromotionsFromSupabase(limit * 2);
+    if (fromDb?.length) {
+      const score = (p: HomePromotion) => {
+        let s = p.discountPercent ?? 0;
+        if (
+          p.retailerSlug ===
+          getPrimaryRetailerForPromoGroup(getRetailerPromoGroupId(p.retailerSlug))
+        ) {
+          s += 50;
+        }
+        return s;
+      };
+      return dedupePromotionsByGroup(fromDb, score).slice(0, limit);
+    }
+  }
+  return getActiveHomePromotionsFromStatic(limit);
+});

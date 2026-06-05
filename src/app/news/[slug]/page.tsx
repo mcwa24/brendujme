@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
+import { NewsCover } from "@/components/news/news-cover";
 import {
   getAllNews,
   getBrandBySlug,
@@ -71,16 +72,41 @@ export default async function NewsArticlePage({ params }: PageProps) {
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <div className="mt-10 flex aspect-[21/9] items-center justify-center rounded-[20px] bg-accent">
-            <span className="font-display text-3xl text-white/90">
-              {article.imageLabel}
-            </span>
-          </div>
+          <NewsCover
+            title={article.title}
+            imageLabel={article.imageLabel}
+            imageUrl={article.imageUrl}
+            className="relative mt-10 flex aspect-[21/9] items-center justify-center overflow-hidden rounded-[20px] bg-accent"
+            sizes="(max-width: 768px) 100vw, 768px"
+            priority
+          />
         </FadeIn>
 
-        <FadeIn delay={0.15} className="prose prose-lg mt-12 max-w-3xl">
-          <p className="text-xl text-muted leading-relaxed">{article.excerpt}</p>
-          <p className="mt-6 text-foreground leading-relaxed">{article.content}</p>
+        <FadeIn delay={0.15} className="mt-12 max-w-3xl">
+          {article.contentHtml ? (
+            <div
+              className="ghost-content prose prose-lg max-w-none text-foreground prose-headings:font-display prose-a:text-accent"
+              dangerouslySetInnerHTML={{ __html: article.contentHtml }}
+            />
+          ) : (
+            <div className="prose prose-lg">
+              <p className="text-xl leading-relaxed text-muted">{article.excerpt}</p>
+              <p className="mt-6 leading-relaxed text-foreground">{article.content}</p>
+            </div>
+          )}
+          {article.sourceUrl ? (
+            <p className="mt-8 text-sm text-muted">
+              Izvor:{" "}
+              <a
+                href={article.sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-accent hover:underline"
+              >
+                Bilbord.rs
+              </a>
+            </p>
+          ) : null}
         </FadeIn>
 
         {relatedBrands.length > 0 && (

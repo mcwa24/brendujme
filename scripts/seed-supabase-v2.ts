@@ -23,6 +23,7 @@ import { shoppingCenterImages } from "../src/lib/data/shopping-center-images";
 import { createSupabaseAdminClient } from "../src/lib/supabase/server";
 import { storagePaths } from "../src/lib/supabase/storage";
 import { isSupabaseSeedConfigured } from "../src/lib/supabase/env";
+import { seedPromotionsFromScraped } from "./lib/seed-promotions";
 import { loadScrapedBundles } from "./lib/seed-scraped-stores";
 
 const retailersToSeed = retailers.filter((r) => isImportedRetailerSlug(r.slug));
@@ -692,6 +693,10 @@ async function main() {
       onConflict: "entity_type,entity_id",
     });
   }
+
+  console.log("Akcije / kampanje…");
+  const promoCount = await seedPromotionsFromScraped(db, retailerIds);
+  console.log(`  upsert kampanja: ${promoCount}`);
 
   const { count: brandCount } = await db
     .from("brands")
