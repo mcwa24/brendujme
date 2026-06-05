@@ -1,4 +1,5 @@
 import { Container } from "@/components/layout/container";
+import { HOME_SECTION_PY } from "@/components/home/section-spacing";
 import { FadeIn } from "@/components/motion/fade-in";
 
 const STATS = [
@@ -10,7 +11,7 @@ const STATS = [
 
 export function StatsSection() {
   return (
-    <section className="border-y border-border bg-card py-20">
+    <section className={`border-y border-border bg-card ${HOME_SECTION_PY}`}>
       <Container narrow>
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           {STATS.map((stat, i) => (

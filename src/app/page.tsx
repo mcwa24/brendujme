@@ -29,7 +29,7 @@ export default async function HomePage() {
     getAllCategories(),
     getAllShoppingCenters(),
     getLatestNews(3),
-    getHomePromotions(3),
+    getHomePromotions(),
   ]);
 
   const promotionBanners = await getPromotionBannerImages(homePromotions);

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/layout/container";
+import { HOME_SECTION_PY } from "@/components/home/section-spacing";
 import { FadeIn } from "@/components/motion/fade-in";
 import type { Category } from "@/types";
 
@@ -13,7 +14,7 @@ interface CategoriesSectionProps {
 
 export function CategoriesSection({ categories }: CategoriesSectionProps) {
   return (
-    <section className="py-20">
+    <section className={HOME_SECTION_PY}>
       <Container narrow>
         <FadeIn>
           <h2 className="font-display text-3xl font-semibold tracking-tight md:text-5xl">

@@ -16,9 +16,8 @@ import {
   fetchBrandBySlugFromSupabase,
 } from "@/lib/supabase/fetch-brands";
 import {
-  dedupePromotionsByGroup,
+  dedupePromotionsForHome,
   getActiveHomePromotionsFromStatic,
-  HOME_PROMOTIONS_MAX,
 } from "@/lib/data/promotions";
 import {
   getPrimaryRetailerForPromoGroup,
@@ -260,15 +259,17 @@ export async function getLatestNews(limit = 6): Promise<NewsArticle[]> {
 }
 
 export async function getNewsByBrand(brandSlug: string): Promise<NewsArticle[]> {
+  const brand = await getBrandBySlug(brandSlug);
+  if (!brand) return [];
+
+  const { filterNewsByBrand } = await import("@/lib/news/match-brand");
   const all = await getAllNews();
-  return all.filter((n) => n.brandSlugs?.includes(brandSlug));
+  return filterNewsByBrand(all, brand);
 }
 
-export const getHomePromotions = cache(async (
-  limit = HOME_PROMOTIONS_MAX
-): Promise<HomePromotion[]> => {
+export const getHomePromotions = cache(async (): Promise<HomePromotion[]> => {
   if (isSupabaseConfigured()) {
-    const fromDb = await fetchActiveHomePromotionsFromSupabase(limit * 2);
+    const fromDb = await fetchActiveHomePromotionsFromSupabase();
     if (fromDb?.length) {
       const score = (p: HomePromotion) => {
         let s = p.discountPercent ?? 0;
@@ -280,8 +281,10 @@ export const getHomePromotions = cache(async (
         }
         return s;
       };
-      return dedupePromotionsByGroup(fromDb, score).slice(0, limit);
+      return dedupePromotionsForHome(fromDb, score).sort(
+        (a, b) => score(b) - score(a)
+      );
     }
   }
-  return getActiveHomePromotionsFromStatic(limit);
+  return getActiveHomePromotionsFromStatic();
 });

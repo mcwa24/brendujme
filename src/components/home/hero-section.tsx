@@ -7,6 +7,7 @@ import { FadeIn } from "@/components/motion/fade-in";
 import { useSearch } from "@/components/search/search-provider";
 import { Badge } from "@/components/ui/badge";
 import { HeroPromotions } from "@/components/home/hero-promotions";
+import { HOME_HERO_SECTION_PY } from "@/components/home/section-spacing";
 import type { PromotionBannerImage } from "@/lib/unsplash/promotion-banners";
 import type { Brand, HomePromotion } from "@/types";
 
@@ -24,7 +25,7 @@ export function HeroSection({
   const { setOpen } = useSearch();
 
   return (
-    <section className="pt-16 pb-20 md:pt-24 md:pb-28">
+    <section className={HOME_HERO_SECTION_PY}>
       <Container narrow>
         <FadeIn>
           <h1 className="font-display max-w-4xl text-4xl font-semibold leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-[72px]">

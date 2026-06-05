@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
 import { BrandCard } from "@/components/brands/brand-card";
+import { HOME_SECTION_PY } from "@/components/home/section-spacing";
 import type { Brand } from "@/types";
 
 interface FeaturedBrandsSectionProps {
@@ -12,7 +13,7 @@ interface FeaturedBrandsSectionProps {
 export function FeaturedBrandsSection({ brands }: FeaturedBrandsSectionProps) {
 
   return (
-    <section className="py-20">
+    <section className={HOME_SECTION_PY}>
       <Container narrow>
         <FadeIn className="flex items-end justify-between gap-6">
           <div>

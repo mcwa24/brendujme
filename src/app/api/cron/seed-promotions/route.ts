@@ -32,6 +32,8 @@ export async function POST(request: Request) {
     return NextResponse.json({
       ok: true,
       count: result.count,
+      expired: result.expired,
+      activated: result.activated,
       scrapedAt: new Date().toISOString(),
     });
   } catch (err) {

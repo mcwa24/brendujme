@@ -1,21 +1,53 @@
 {
-  "scrapedAt": "2026-06-05T10:05:44.704Z",
+  "scrapedAt": "2026-06-05T11:28:07.383Z",
   "promotions": [
     {
       "retailerSlug": "sport-vision",
       "retailerName": "Sport Vision",
       "sourceUrl": "https://www.sportvision.rs/online-vikend-akcija",
-      "title": "Vikend akcija",
+      "title": "Online akcija",
       "description": "--> Online vikend akcija | Sport Vision Status porudžbine Prodavnice Sport&Bonus Obaveštenje o promeni naziva kompanije Pogledaj više VAŽNO OBAVEŠTENJE ZA POTROŠAČE Pogledaj više PLAĆANJE NA RATE Kreditnim karticama BANCA INTESA platite na 9 rata Pogledaj više POZOVITE NAS 011 422 1422 SINDIKALNA PRODAJA kupovina putem administrativne zabrane do 12 rata Prijavite se Registrujte se Meni 0 Omiljeno × Pretraži sajt Aktuelno Muškarci Nova kolekcija Patike Papuče Majice Šorcevi Dukserice Donji deo trenerke Pantalone Kopačke Žene Nova kolekcija Patike Papuče Majice Šorcevi Dukserice Helanke Donji deo trenerke Bra Jakne i prsluci Deca Nova kolekcija Patike Papuče Majice Šorcevi Dukserice Donji deo trenerke Trenerke Jakne i prsluci Kopačke Najtraženije Nike Air Max adidas Z.N.E. New Balance 9060 N",
-      "shortDescription": "5. 6. – 7. 6.",
+      "shortDescription": "Važi za: izabrani brendovi i artikli · 5. 6. – 7. 6.",
       "campaignType": "sale",
       "startDate": "2026-06-05",
       "endDate": "2026-06-07",
       "discountPercent": null,
-      "scope": null,
+      "scope": "izabrani brendovi i artikli",
       "confidence": "high",
       "bannerImageUrl": "https://www.sportvision.rs/files/images/2026/6/5/SV-akcija-MAJ26-1580x650-var-1.jpg.webp",
-      "detectedAt": "2026-06-05T10:05:26.520Z"
+      "detectedAt": "2026-06-05T11:27:50.275Z"
+    },
+    {
+      "retailerSlug": "fashion-friends",
+      "retailerName": "Fashion&Friends",
+      "sourceUrl": "https://www.fashionandfriends.com/rs/promo-all/promo-srb/",
+      "title": "Sezonska akcija",
+      "description": "Promo SRB - Promo ALL Please wait... The store will not work correctly when cookies are disabled. Fashion&Friends Facebook Fashion&Friends Instagram Fashion&Friends Twitter Fashion&Friends Pinterest Fashion&Friends YouTube Srbija Crna Gora Hrvatska Srpski English (Serbia) Žene Muškarci Deca Uporedite proizvode Moj korisnički nalog Moja lista želja Kreirajte korisnički nalog Prijava Mini korpa Odaberite pol za nastavak kupovine Početna Promo ALL Promo SRB Promo SRB Stranica Stranica 1 Stranica 2 Stranica 3 Stranica 4 Stranica Sledeće Stranica Last HUGO - Antilop ženske mokasine 23.990,00 RSD 16.793,00 RSD -30% HUGO - Kožne ženske sandale 26.490,00 RSD 18.543,00 RSD -30% HUGO - Heklana ženska kapa 7.990,00 RSD 5.593,00 RSD -30% HUGO - Bež muške pantalone 19.990,00 RSD 13.993,00 RSD -30% HUGO",
+      "shortDescription": "Do 30% popusta · Važi za: izabrani brendovi i artikli · 5. 6. – 26. 6.",
+      "campaignType": "sale",
+      "startDate": "2026-06-05",
+      "endDate": "2026-06-26",
+      "discountPercent": 30,
+      "scope": "izabrani brendovi i artikli",
+      "confidence": "medium",
+      "bannerImageUrl": "https://fashion-assets.fashionandfriends.com/media/weltpixel/owlcarouselslider/images/w/e/web_baner_1920x705_rs_31.jpg",
+      "detectedAt": "2026-06-05T11:27:57.308Z"
+    },
+    {
+      "retailerSlug": "fashion-friends",
+      "retailerName": "Fashion&Friends",
+      "sourceUrl": "https://www.fashionandfriends.com/rs/rasprodaja/mss-srb/",
+      "title": "MSS SRB",
+      "description": "MSS SRB - Sale Please wait... The store will not work correctly when cookies are disabled. Fashion&Friends Facebook Fashion&Friends Instagram Fashion&Friends Twitter Fashion&Friends Pinterest Fashion&Friends YouTube Srbija Crna Gora Hrvatska Srpski English (Serbia) Žene Muškarci Deca Uporedite proizvode Moj korisnički nalog Moja lista želja Kreirajte korisnički nalog Prijava Mini korpa Odaberite pol za nastavak kupovine Početna Sale MSS SRB MSS SRB Stranica Stranica 1 Stranica 2 Stranica 3 Stranica 4 Stranica Sledeće Stranica Last Steve Madden - Kožne muške mokasine 17.990,00 RSD 12.593,00 RSD -30% Armani Exchange - Teget muške farmerke 23.990,00 RSD 16.793,00 RSD -30% Armani Exchange - Maslinasti muški džemper 15.990,00 RSD 11.193,00 RSD -30% Armani Exchange - Bomber ženska jakna 32.490,0",
+      "shortDescription": "Do 30% popusta · Važi za: rasprodaja · 5. 6. – 26. 6.",
+      "campaignType": "clearance",
+      "startDate": "2026-06-05",
+      "endDate": "2026-06-26",
+      "discountPercent": 30,
+      "scope": "rasprodaja",
+      "confidence": "medium",
+      "bannerImageUrl": "https://fashion-assets.fashionandfriends.com/media/weltpixel/owlcarouselslider/images/w/e/web_baner_1920x705_rs_26.jpg",
+      "detectedAt": "2026-06-05T11:27:57.308Z"
     },
     {
       "retailerSlug": "djak-sport",
@@ -31,7 +63,23 @@
       "scope": "majice, papuče, šortsevi, kupaći",
       "confidence": "medium",
       "bannerImageUrl": "https://www.djaksport.com/media/opti_image/webp/wysiwyg/01_1920x700_2.webp",
-      "detectedAt": "2026-06-05T10:05:23.797Z"
+      "detectedAt": "2026-06-05T11:27:47.475Z"
+    },
+    {
+      "retailerSlug": "planeta-sport",
+      "retailerName": "Planeta Sport",
+      "sourceUrl": "https://planetasport.rs/vikend-akcija",
+      "title": "Vikend akcija",
+      "description": "Vikend Akcija| Popusti u Planeti Sport! The store will not work correctly when cookies are disabled. Lokacije prodavnica Toggle Nav Pretraga POPULARNE PRETRAGE KATEGORIJE ARTIKLI BRENDOVI POPULARNE PRETRAGE POPULARNE KATEGORIJE POPULARNI ARTIKLI POPULARNI BRENDOVI Pretraga Uloguj se ili kreiraj nalog Uloguj se za registrovane korisnike Sign in with Facebook Sign in with Google Sign in with Google Ili Ako imate nalog prijavite se sa vašom e-mail adresom Email Lozinka Zaboravili ste lozinku? Login Novi korisnik? Kreiraj nalog Moja korpa Menu Desktop PATIKE MUŠKARCI ŽENE DECA Aktuelno BRENDOVI HIT CENA EPLANETA OBUĆA OBUĆA PATIKE DUBOKE PATIKE PATIKE ZA FUDBAL PAPUČE KOPAČKE PATIKE ZA KOŠARKU PATIKE ZA TRČANJE PATIKE ZA TENIS JAPANKE PATIKE ZA ODBOJKU ZIMSKA OBUĆA BEDZ ODEĆA ODEĆA TRENERKE DU",
+      "shortDescription": "Važi za: izabrani brendovi i artikli · 5. 6. – 7. 6.",
+      "campaignType": "sale",
+      "startDate": "2026-06-05",
+      "endDate": "2026-06-07",
+      "discountPercent": null,
+      "scope": "izabrani brendovi i artikli",
+      "confidence": "medium",
+      "bannerImageUrl": "https://planetasport.rs/media/wysiwyg/HOME2026/Vikend_akcija_5-8.6._mobile_720x700.jpg",
+      "detectedAt": "2026-06-05T11:27:54.730Z"
     }
   ]
 }

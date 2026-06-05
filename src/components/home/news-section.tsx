@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
 import { NewsCard } from "@/components/news/news-card";
+import { HOME_SECTION_PY } from "@/components/home/section-spacing";
 import type { NewsArticle } from "@/types";
 
 interface NewsSectionProps {
@@ -13,7 +14,7 @@ export function NewsSection({ articles }: NewsSectionProps) {
   if (!articles.length) return null;
 
   return (
-    <section className="py-20">
+    <section className={HOME_SECTION_PY}>
       <Container narrow>
         <FadeIn className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>

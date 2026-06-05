@@ -1,6 +1,11 @@
 import fs from "fs";
 import path from "path";
 import type { SupabaseClient } from "@supabase/supabase-js";
+import {
+  isPromotionActive,
+  promotionCampaignKey,
+  promotionTodayIso,
+} from "@/lib/data/promotions";
 
 export interface ScrapedPromotionRow {
   retailerSlug: string;
@@ -10,11 +15,19 @@ export interface ScrapedPromotionRow {
   campaignType: string;
   startDate: string;
   endDate: string;
+  sourceUrl?: string;
 }
 
 export interface PromotionsScrapedFile {
   scrapedAt: string | null;
   promotions: ScrapedPromotionRow[];
+}
+
+export interface PromotionSeedResult {
+  count: number;
+  expired: number;
+  activated: number;
+  error?: string;
 }
 
 function slugify(text: string): string {
@@ -32,22 +45,68 @@ function campaignStatus(
   endDate: string,
   today: string
 ): "active" | "scheduled" | "ended" {
-  if (today < startDate) return "scheduled";
-  if (today > endDate) return "ended";
+  if (!isPromotionActive(startDate, endDate, today) && today < startDate) {
+    return "scheduled";
+  }
+  if (!isPromotionActive(startDate, endDate, today)) return "ended";
   return "active";
+}
+
+/** Istekle akcije → status ended (nestaju sa home sledećeg dana). */
+export async function expireEndedCampaigns(
+  db: SupabaseClient,
+  today = promotionTodayIso()
+): Promise<number> {
+  const { data, error } = await db
+    .from("campaigns")
+    .update({ status: "ended" })
+    .eq("status", "active")
+    .lt("end_date", today)
+    .select("id");
+
+  if (error) throw new Error(error.message);
+  return data?.length ?? 0;
+}
+
+/** Zakazane akcije čiji je početak stigao → active. */
+export async function activateScheduledCampaigns(
+  db: SupabaseClient,
+  today = promotionTodayIso()
+): Promise<number> {
+  const { data, error } = await db
+    .from("campaigns")
+    .update({ status: "active" })
+    .eq("status", "scheduled")
+    .lte("start_date", today)
+    .gte("end_date", today)
+    .select("id");
+
+  if (error) throw new Error(error.message);
+  return data?.length ?? 0;
+}
+
+export async function syncPromotionLifecycle(
+  db: SupabaseClient,
+  today = promotionTodayIso()
+): Promise<{ expired: number; activated: number }> {
+  const expired = await expireEndedCampaigns(db, today);
+  const activated = await activateScheduledCampaigns(db, today);
+  return { expired, activated };
 }
 
 export async function seedPromotionsFromScraped(
   db: SupabaseClient,
   retailerIdBySlug: Map<string, string>,
   filePath?: string
-): Promise<{ count: number; error?: string }> {
+): Promise<PromotionSeedResult> {
+  const { expired, activated } = await syncPromotionLifecycle(db);
+
   const resolved =
     filePath ??
     path.join(process.cwd(), "src/lib/data/retailer-promotions-scraped.json");
 
   if (!fs.existsSync(resolved)) {
-    return { count: 0, error: "retailer-promotions-scraped.json ne postoji" };
+    return { count: 0, expired, activated, error: "retailer-promotions-scraped.json ne postoji" };
   }
 
   const raw = JSON.parse(
@@ -55,17 +114,24 @@ export async function seedPromotionsFromScraped(
   ) as PromotionsScrapedFile;
 
   if (!raw.promotions?.length) {
-    return { count: 0, error: "JSON nema akcija" };
+    return { count: 0, expired, activated, error: "JSON nema akcija" };
   }
 
-  const today = new Date().toISOString().slice(0, 10);
+  const today = promotionTodayIso();
   let count = 0;
 
   for (const promo of raw.promotions) {
+    if (!isPromotionActive(promo.startDate, promo.endDate, today)) continue;
+
     const retailerId = retailerIdBySlug.get(promo.retailerSlug);
     if (!retailerId) continue;
 
-    const slug = `${promo.retailerSlug}-${slugify(promo.title)}`.slice(0, 150);
+    const slug = `${promo.retailerSlug}-${slugify(
+      promotionCampaignKey({
+        sourceUrl: promo.sourceUrl,
+        title: promo.title,
+      })
+    )}`.slice(0, 150);
     const status = campaignStatus(promo.startDate, promo.endDate, today);
 
     const { data: campaign, error: campErr } = await db
@@ -99,7 +165,7 @@ export async function seedPromotionsFromScraped(
     if (!targetErr) count += 1;
   }
 
-  return { count };
+  return { count, expired, activated };
 }
 
 export async function loadRetailerIdBySlug(

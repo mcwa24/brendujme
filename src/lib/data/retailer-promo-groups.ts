@@ -28,3 +28,8 @@ export function isPrimaryPromoRetailer(retailerSlug: string): boolean {
   const groupId = getRetailerPromoGroupId(retailerSlug);
   return getPrimaryRetailerForPromoGroup(groupId) === retailerSlug;
 }
+
+/** Deljeni shop (npr. Emperor) — jedan baner za celu grupu, ne po prodavcu. */
+export function isSharedPromoGroup(retailerSlug: string): boolean {
+  return getRetailerPromoGroupId(retailerSlug) !== retailerSlug;
+}

@@ -3,11 +3,25 @@ import { IMPORTED_RETAILER_EXTERNAL } from "@/lib/data/imported-retailers";
 import {
   getPrimaryRetailerForPromoGroup,
   getRetailerPromoGroupId,
+  isSharedPromoGroup,
 } from "@/lib/data/retailer-promo-groups";
 import { retailers } from "@/lib/data/retailers";
 import type { HomePromotion, PromotionCampaignType } from "@/types";
 
-export const HOME_PROMOTIONS_MAX = 3;
+/** Datum u Europe/Belgrade — akcija važi ceo dan endDate, nestaje sledećeg dana. */
+export function promotionTodayIso(): string {
+  return new Date().toLocaleDateString("en-CA", {
+    timeZone: "Europe/Belgrade",
+  });
+}
+
+export function isPromotionActive(
+  startDate: string,
+  endDate: string,
+  today = promotionTodayIso()
+): boolean {
+  return startDate <= today && today <= endDate;
+}
 
 interface ScrapedPromotionRow {
   retailerSlug: string;
@@ -35,10 +49,6 @@ function slugify(text: string): string {
     .slice(0, 60);
 }
 
-function isActiveOnDate(startDate: string, endDate: string, today: string): boolean {
-  return startDate <= today && today <= endDate;
-}
-
 const confRank = { high: 0, medium: 1, low: 2 };
 
 function promotionScore(row: ScrapedPromotionRow): number {
@@ -61,7 +71,7 @@ function mapScrapedToHome(row: ScrapedPromotionRow): HomePromotion {
     ];
 
   return {
-    slug: `${displaySlug}-${slugify(row.title)}`,
+    slug: `${displaySlug}-${slugify(promotionCampaignKey({ sourceUrl: row.sourceUrl, title: row.title }))}`,
     title: row.title,
     shortDescription: row.shortDescription,
     description: row.description,
@@ -80,19 +90,57 @@ function mapScrapedToHome(row: ScrapedPromotionRow): HomePromotion {
   };
 }
 
+export function promotionCampaignKey(item: {
+  slug?: string;
+  sourceUrl?: string;
+  title?: string;
+}): string {
+  if (item.slug?.trim()) return item.slug.trim();
+  if (item.sourceUrl?.trim()) {
+    try {
+      return new URL(item.sourceUrl).pathname.replace(/\/+$/, "") || "/";
+    } catch {
+      return item.sourceUrl;
+    }
+  }
+  return item.title?.trim() ?? "campaign";
+}
+
+/**
+ * Deljena grupa (Emperor): jedan baner. Inače više paralelnih akcija po prodavcu.
+ */
+export function dedupePromotionsForHome<
+  T extends { retailerSlug: string; slug?: string; sourceUrl?: string; title?: string },
+>(items: T[], scoreFn: (item: T) => number): T[] {
+  const sharedGroupBest = new Map<string, T>();
+  const campaignBest = new Map<string, T>();
+
+  for (const item of items) {
+    if (isSharedPromoGroup(item.retailerSlug)) {
+      const groupId = getRetailerPromoGroupId(item.retailerSlug);
+      const existing = sharedGroupBest.get(groupId);
+      if (!existing || scoreFn(item) > scoreFn(existing)) {
+        sharedGroupBest.set(groupId, item);
+      }
+      continue;
+    }
+
+    const key = `${item.retailerSlug}:${promotionCampaignKey(item)}`;
+    const existing = campaignBest.get(key);
+    if (!existing || scoreFn(item) > scoreFn(existing)) {
+      campaignBest.set(key, item);
+    }
+  }
+
+  return [...sharedGroupBest.values(), ...campaignBest.values()];
+}
+
+/** @deprecated Koristi dedupePromotionsForHome */
 export function dedupePromotionsByGroup<T extends { retailerSlug: string }>(
   items: T[],
   scoreFn: (item: T) => number
 ): T[] {
-  const best = new Map<string, T>();
-  for (const item of items) {
-    const groupId = getRetailerPromoGroupId(item.retailerSlug);
-    const existing = best.get(groupId);
-    if (!existing || scoreFn(item) > scoreFn(existing)) {
-      best.set(groupId, item);
-    }
-  }
-  return [...best.values()];
+  return dedupePromotionsForHome(items, scoreFn);
 }
 
 export function getStaticPromotions(): HomePromotion[] {
@@ -101,18 +149,14 @@ export function getStaticPromotions(): HomePromotion[] {
 }
 
 export function getActiveHomePromotionsFromStatic(
-  limit = HOME_PROMOTIONS_MAX,
-  today = new Date().toISOString().slice(0, 10)
+  today = promotionTodayIso()
 ): HomePromotion[] {
   const rows = (scraped.promotions ?? []) as ScrapedPromotionRow[];
   const active = rows.filter((row) =>
-    isActiveOnDate(row.startDate, row.endDate, today)
+    isPromotionActive(row.startDate, row.endDate, today)
   );
 
-  const deduped = dedupePromotionsByGroup(active, promotionScore);
-
-  return deduped
+  return dedupePromotionsForHome(active, promotionScore)
     .sort((a, b) => promotionScore(b) - promotionScore(a))
-    .slice(0, limit)
     .map(mapScrapedToHome);
 }

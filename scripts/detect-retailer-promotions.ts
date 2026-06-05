@@ -9,7 +9,11 @@ import {
   getPrimaryRetailerForPromoGroup,
   getRetailerPromoGroupId,
 } from "../src/lib/data/retailer-promo-groups";
-import { HOME_PROMOTIONS_MAX } from "../src/lib/data/promotions";
+import {
+  dedupePromotionsForHome,
+  isPromotionActive,
+  promotionTodayIso,
+} from "../src/lib/data/promotions";
 import { RETAILER_PROMO_SOURCES } from "../src/lib/data/retailer-promo-sources";
 import { retailers } from "../src/lib/data/retailers";
 import { detectDjakPromotions } from "./lib/promo-djak";
@@ -231,17 +235,10 @@ async function main() {
     return s;
   };
 
-  const bestByGroup = new Map<string, ScrapedRetailerPromotion>();
-  for (const promo of promotions) {
-    const groupId = getRetailerPromoGroupId(promo.retailerSlug);
-    const existing = bestByGroup.get(groupId);
-    if (!existing || score(promo) > score(existing)) {
-      bestByGroup.set(groupId, promo);
-    }
-  }
-  const deduped = [...bestByGroup.values()]
-    .sort((a, b) => score(b) - score(a))
-    .slice(0, HOME_PROMOTIONS_MAX);
+  const today = promotionTodayIso();
+  const deduped = dedupePromotionsForHome(promotions, score)
+    .filter((p) => isPromotionActive(p.startDate, p.endDate, today))
+    .sort((a, b) => score(b) - score(a));
 
   const payload: RetailerPromotionsScrapedFile = {
     scrapedAt: new Date().toISOString(),
@@ -249,7 +246,9 @@ async function main() {
   };
 
   fs.writeFileSync(OUT, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
-  console.log(`\nSačuvano ${deduped.length} akcija → ${OUT}`);
+  console.log(
+    `\nSačuvano ${deduped.length} aktivnih akcija (bez fiksnog limita) → ${OUT}`
+  );
 }
 
 main().catch((err) => {

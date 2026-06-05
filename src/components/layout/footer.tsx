@@ -19,6 +19,7 @@ const footerColumns = [
       { href: "/news", label: "Vesti" },
       { href: "/about", label: "O nama" },
       { href: "/contact", label: "Kontakt" },
+      { href: "/privacy", label: "Politika privatnosti" },
       { href: "/submit-brand", label: "Prijavi brend" },
     ],
   },
@@ -58,7 +59,12 @@ export function Footer() {
         </div>
         <Separator className="my-10" />
         <div className="flex flex-col gap-4 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Bilbord Brands. Sva prava zadržana.</p>
+          <p>
+            © {new Date().getFullYear()} Bilbord Brands. Sva prava zadržana.{" "}
+            <Link href="/privacy" className="hover:text-accent">
+              Politika privatnosti
+            </Link>
+          </p>
           <p>Premium Retail Intelligence Platform za Srbiju</p>
         </div>
       </Container>

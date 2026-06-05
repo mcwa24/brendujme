@@ -1,4 +1,5 @@
 import { unstable_cache } from "next/cache";
+import { brandSlugsFromGhostTags } from "@/lib/ghost/brand-tags";
 import { ghostAdminRequest } from "@/lib/ghost/client";
 import {
   GHOST_MODA_STIL_CATEGORY,
@@ -78,6 +79,10 @@ function mapGhostPost(
     publishedAt,
     category: publicCategory(post.tags),
     featured: post.featured === true || (page === 1 && index === 0),
+    brandSlugs: (() => {
+      const slugs = brandSlugsFromGhostTags(post.tags);
+      return slugs.length ? slugs : undefined;
+    })(),
     imageLabel: post.title.trim(),
     imageUrl: post.feature_image?.trim() || undefined,
     sourceUrl: post.url?.trim() || undefined,

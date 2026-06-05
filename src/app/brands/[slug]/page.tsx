@@ -1,6 +1,5 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ExternalLink, Globe, MapPin } from "lucide-react";
+import { ExternalLink, Globe } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
 import { RelatedBrandsCarousel } from "@/components/brands/related-brands-carousel";
@@ -8,8 +7,8 @@ import { BrandHero } from "@/components/brands/brand-hero";
 import { BrandLocationCard } from "@/components/brands/brand-location-card";
 import { BrandLocationsSection } from "@/components/brands/brand-locations-section";
 import { RetailerSectionTitle } from "@/components/retailers/retailer-section-title";
+import { BrandNewsList } from "@/components/news/brand-news-list";
 import { hasBrandLogo } from "@/lib/brand-logo-resolve";
-import { PremiumCard } from "@/components/ui/premium-card";
 import { getCategoryName } from "@/lib/data/categories";
 import {
   getAllBrands,
@@ -42,21 +41,13 @@ export async function generateMetadata({ params }: PageProps) {
   });
 }
 
-function formatDate(date: string) {
-  return new Date(date).toLocaleDateString("sr-Latn-RS", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
-}
-
 export default async function BrandDetailPage({ params }: PageProps) {
   const { slug } = await params;
   const brand = await getBrandBySlug(slug);
   if (!brand) notFound();
 
   const related = await getRelatedBrands(brand);
-  const news = (await getNewsByBrand(slug)).slice(0, 3);
+  const news = await getNewsByBrand(slug);
   const centers = (
     await Promise.all(
       brand.shoppingCenterSlugs.map((s) => getShoppingCenterBySlug(s))
@@ -153,41 +144,11 @@ export default async function BrandDetailPage({ params }: PageProps) {
           </section>
         )}
 
+        <BrandNewsList articles={news} brandName={brand.name} />
+
         <FadeIn>
           <RelatedBrandsCarousel brands={related} />
         </FadeIn>
-
-        {news.length > 0 && (
-          <section>
-            <FadeIn>
-              <h2 className="font-display text-3xl font-semibold md:text-4xl">
-                Najnovije vesti o brendu
-              </h2>
-            </FadeIn>
-            <div className="mt-10 grid gap-5 md:grid-cols-3">
-              {news.map((article, i) => (
-                <FadeIn key={article.slug} delay={i * 0.06}>
-                  <Link href={`/news/${article.slug}`}>
-                    <PremiumCard className="group h-full p-6">
-                      <span className="text-xs uppercase tracking-wider text-muted">
-                        {article.category}
-                      </span>
-                      <h3 className="font-display mt-3 text-lg font-semibold group-hover:text-accent">
-                        {article.title}
-                      </h3>
-                      <p className="mt-2 text-sm text-muted line-clamp-2">
-                        {article.excerpt}
-                      </p>
-                      <p className="mt-4 text-xs text-muted">
-                        {formatDate(article.publishedAt)}
-                      </p>
-                    </PremiumCard>
-                  </Link>
-                </FadeIn>
-              ))}
-            </div>
-          </section>
-        )}
       </Container>
     </>
   );

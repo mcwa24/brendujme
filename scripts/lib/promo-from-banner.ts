@@ -1,5 +1,6 @@
 import {
   extractDateRange,
+  extractDiscountPercent,
   extractH1,
   htmlToText,
   type ExtractedPromotion,
@@ -16,7 +17,8 @@ export interface BannerExtractedPromotion extends ExtractedPromotion {
   bannerImageUrl?: string;
 }
 
-const HERO_IMAGE_NAME = /akcij|popust|sale|flajer|promo|banner|vikend|rasprodaj/i;
+const HERO_IMAGE_NAME =
+  /akcij|popust|sale|flajer|promo|banner|baner|vikend|rasprodaj|owlcarouselslider/i;
 
 function addDays(iso: string, days: number): string {
   const d = new Date(`${iso}T12:00:00Z`);
@@ -30,7 +32,19 @@ function isHeroBannerImage(imageUrl: string): boolean {
 }
 
 function isShortOnlinePromoSlug(url: string): boolean {
-  return /online-akcij|vikend-akcij|akcij|popust|flajer/i.test(new URL(url).pathname);
+  return /online-akcij|vikend-akcij/i.test(new URL(url).pathname);
+}
+
+function isPromoLandingPath(url: string): boolean {
+  return /\/promo|rasprodaj|akcij/i.test(new URL(url).pathname);
+}
+
+function maxDiscountFromListingHtml(html: string): number | null {
+  const values = [...html.matchAll(/<span>-(\d{1,2})%<\/span>/gi)].map((m) =>
+    Number(m[1])
+  );
+  const valid = values.filter((n) => n >= 5 && n <= 90);
+  return valid.length ? Math.max(...valid) : null;
 }
 
 function landingSlugKey(url: string): string {
@@ -44,6 +58,11 @@ function formatPromoTitle(title: string, landingUrl: string): string {
     return "Online akcija";
   }
   if (/vikend\s+akcij/i.test(t)) return "Vikend akcija";
+  if (/^promo\s+srb$/i.test(t) || /promo-srb/i.test(landingUrl)) {
+    return "Sezonska akcija";
+  }
+  if (/\/rasprodaj\//i.test(landingUrl)) return "Rasprodaja";
+  if (/^promo\b/i.test(t)) return "Akcija";
   return t;
 }
 
@@ -103,7 +122,10 @@ async function buildFromBannerCandidate(
     (landingHtml ? extractH1(landingHtml) : null) ??
     titleFromBannerCandidate(candidate);
 
-  if (!/akcij|popust|sale|vikend|rasprodaj|online/i.test(title)) return null;
+  const promoLike =
+    /akcij|popust|sale|vikend|rasprodaj|online|promo/i.test(title) ||
+    isPromoLandingPath(candidate.landingUrl);
+  if (!promoLike) return null;
 
   let startDate = candidate.imageDate;
   let endDate: string | null = null;
@@ -112,26 +134,45 @@ async function buildFromBannerCandidate(
   if (parsed.startDate) startDate = parsed.startDate;
   if (parsed.endDate) endDate = parsed.endDate;
 
-  if (!startDate) return null;
+  const today = new Date().toISOString().slice(0, 10);
+  if (!startDate) startDate = today;
   if (!endDate && isShortOnlinePromoSlug(candidate.landingUrl)) {
     endDate = addDays(startDate, 2);
   }
+  if (!endDate && isPromoLandingPath(candidate.landingUrl)) {
+    endDate = addDays(startDate, 21);
+  }
   if (!endDate) return null;
+
+  const discountPercent =
+    (landingHtml ? maxDiscountFromListingHtml(landingHtml) : null) ??
+    extractDiscountPercent(landingHead);
 
   const scope =
     /izdvoj/i.test(landingHead) || /online-akcij/i.test(candidate.landingUrl)
       ? "izdvojena ponuda"
-      : null;
+      : /\/rasprodaj/i.test(candidate.landingUrl)
+        ? "rasprodaja"
+        : isPromoLandingPath(candidate.landingUrl)
+          ? "izabrani brendovi i artikli"
+          : null;
+
+  const formattedTitle = formatPromoTitle(title, candidate.landingUrl);
 
   return {
     hasPromotion: true,
-    title: formatPromoTitle(title, candidate.landingUrl),
-    description: landingHead.slice(0, 800),
-    shortDescription: buildShortDescription(null, scope, startDate, endDate),
-    campaignType: "sale",
+    title: formattedTitle,
+    description: landingHead.slice(0, 800) || `${formattedTitle} — Fashion&Friends.`,
+    shortDescription: buildShortDescription(
+      discountPercent,
+      scope,
+      startDate,
+      endDate
+    ),
+    campaignType: /rasprodaj/i.test(candidate.landingUrl) ? "clearance" : "sale",
     startDate,
     endDate,
-    discountPercent: null,
+    discountPercent,
     scope,
     confidence: candidate.imageDate && endDate ? "high" : "medium",
     sourceUrl: candidate.landingUrl,

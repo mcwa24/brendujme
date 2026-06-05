@@ -1,3 +1,4 @@
+import { promotionTodayIso } from "@/lib/data/promotions";
 import { IMPORTED_RETAILER_EXTERNAL } from "@/lib/data/imported-retailers";
 import { createSupabaseReadClient } from "@/lib/supabase/read-client";
 import type { HomePromotion, PromotionCampaignType } from "@/types";
@@ -20,13 +21,13 @@ interface CampaignRow {
   campaign_targets: CampaignTargetRow[] | null;
 }
 
-export async function fetchActiveHomePromotionsFromSupabase(
-  limit = 8
-): Promise<HomePromotion[] | null> {
+export async function fetchActiveHomePromotionsFromSupabase(): Promise<
+  HomePromotion[] | null
+> {
   const supabase = createSupabaseReadClient();
   if (!supabase) return null;
 
-  const today = new Date().toISOString().slice(0, 10);
+  const today = promotionTodayIso();
 
   const { data, error } = await supabase
     .from("campaigns")
@@ -48,8 +49,7 @@ export async function fetchActiveHomePromotionsFromSupabase(
     .eq("status", "active")
     .lte("start_date", today)
     .gte("end_date", today)
-    .order("end_date", { ascending: true })
-    .limit(limit);
+    .order("end_date", { ascending: true });
 
   if (error || !data?.length) return null;
 

@@ -9,5 +9,11 @@ export async function seedPromotionsFromScraped(
   if (result.error) {
     console.log(`  promotions: ${result.error}`);
   }
+  if (result.expired > 0) {
+    console.log(`  isteklo u bazi: ${result.expired}`);
+  }
+  if (result.activated > 0) {
+    console.log(`  aktivirano: ${result.activated}`);
+  }
   return result.count;
 }

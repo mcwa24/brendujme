@@ -5,6 +5,7 @@ import Link from "next/link";
 import { formatBrandCount } from "@/lib/format/sr-plural";
 import { ArrowUpRight, MapPin } from "lucide-react";
 import { Container } from "@/components/layout/container";
+import { HOME_SECTION_PY } from "@/components/home/section-spacing";
 import { FadeIn } from "@/components/motion/fade-in";
 import { PremiumCard } from "@/components/ui/premium-card";
 import { ShoppingCenterLogo } from "@/components/shopping-centers/shopping-center-logo";
@@ -23,7 +24,7 @@ export function ShoppingCentersSection({ centers }: ShoppingCentersSectionProps)
   if (!active) return null;
 
   return (
-    <section className="py-20">
+    <section className={HOME_SECTION_PY}>
       <Container narrow>
         <FadeIn>
           <h2 className="font-display text-3xl font-semibold tracking-tight md:text-5xl">

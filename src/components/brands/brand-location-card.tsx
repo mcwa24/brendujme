@@ -6,6 +6,7 @@ import { PremiumCard } from "@/components/ui/premium-card";
 import { buttonVariants } from "@/components/ui/button";
 import { formatOfferingsLabel } from "@/lib/data/brand-offerings";
 import { retailerHasPage, retailerPageHref } from "@/lib/data/retailer-names";
+import { googleMapsUrl } from "@/lib/maps/google-maps-url";
 import type { BrandOfferingSlug } from "@/types";
 import { cn } from "@/lib/utils";
 
@@ -41,11 +42,22 @@ export function BrandLocationCard({
           <RetailerLink slug={retailerSlug} />
         </p>
         <div className="mt-4 space-y-2 text-sm text-muted">
-          <p className="flex items-start gap-2">
+          <a
+            href={googleMapsUrl({ address, city })}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group/address flex items-start gap-2 transition-colors hover:text-accent"
+            aria-label={`${address}, ${city} — otvori u Google Maps`}
+          >
             <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
-            {address}
-          </p>
-          <p>{city}</p>
+            <span>
+              <span className="underline-offset-2 group-hover/address:underline">
+                {address}
+              </span>
+              <br />
+              {city}
+            </span>
+          </a>
         </div>
         {retailerHasPage(retailerSlug) && (
           <Link

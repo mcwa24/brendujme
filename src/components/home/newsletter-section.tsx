@@ -1,6 +1,7 @@
 "use client";
 
 import { Container } from "@/components/layout/container";
+import { HOME_SECTION_PY } from "@/components/home/section-spacing";
 import { FadeIn } from "@/components/motion/fade-in";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,7 +9,7 @@ import { PremiumCard } from "@/components/ui/premium-card";
 
 export function NewsletterSection() {
   return (
-    <section className="py-20">
+    <section className={HOME_SECTION_PY}>
       <Container narrow>
         <FadeIn>
           <PremiumCard className="px-8 py-12 md:px-16 md:py-16">
