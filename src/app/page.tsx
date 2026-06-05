@@ -5,10 +5,10 @@ import { NewsSection } from "@/components/home/news-section";
 import { StatsSection } from "@/components/home/stats-section";
 import { NewsletterSection } from "@/components/home/newsletter-section";
 import {
-  getAllBrands,
   getAllShoppingCenters,
   getFeaturedBrands,
   getHomePromotions,
+  getHomeStats,
   getLatestNews,
   getPopularBrands,
 } from "@/lib/data/repository";
@@ -18,17 +18,17 @@ export default async function HomePage() {
   const [
     popularBrands,
     featuredBrands,
-    allBrands,
     shoppingCenters,
     latestNews,
     homePromotions,
+    homeStats,
   ] = await Promise.all([
     getPopularBrands(),
     getFeaturedBrands(),
-    getAllBrands(),
     getAllShoppingCenters(),
     getLatestNews(3),
     getHomePromotions(),
+    getHomeStats(),
   ]);
 
   const promotionBanners = await getPromotionBannerImages(homePromotions);
@@ -43,7 +43,7 @@ export default async function HomePage() {
       <FeaturedBrandsSection brands={featuredBrands} />
       <NewsSection articles={latestNews} />
       <ShoppingCentersSection centers={shoppingCenters.slice(0, 6)} />
-      <StatsSection brandCount={allBrands.length} />
+      <StatsSection stats={homeStats} />
       <NewsletterSection />
     </>
   );

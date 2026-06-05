@@ -40,7 +40,7 @@ export function Header() {
         "sticky top-0 z-40",
         retailerDetail
           ? "bg-card"
-          : "border-b border-border/80 bg-background/90 backdrop-blur-md"
+          : "bg-background/90 backdrop-blur-md"
       )}
     >
       <Container narrow>

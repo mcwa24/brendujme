@@ -41,6 +41,10 @@ import {
 import { isGhostConfigured } from "@/lib/ghost/env";
 import { NEWS_PAGE_SIZE } from "@/lib/news/constants";
 import type { NewsPageResult } from "@/lib/news/types";
+import {
+  getCatalogStoreCityCount,
+  getCatalogStoreCount,
+} from "@/lib/data/home-location-stats";
 import { fetchRetailerStores } from "@/lib/supabase/fetch-retailer-stores";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 import type {
@@ -320,4 +324,25 @@ export const getHomePromotions = cache(async (): Promise<HomePromotion[]> => {
     }
   }
   return getActiveHomePromotionsFromStatic();
+});
+
+export interface HomeStats {
+  brandCount: number;
+  storeCount: number;
+  cityCount: number;
+  shoppingCenterCount: number;
+}
+
+export const getHomeStats = cache(async (): Promise<HomeStats> => {
+  const [brands, shoppingCenters] = await Promise.all([
+    getAllBrands(),
+    getAllShoppingCenters(),
+  ]);
+
+  return {
+    brandCount: brands.length,
+    storeCount: getCatalogStoreCount(),
+    cityCount: getCatalogStoreCityCount(),
+    shoppingCenterCount: shoppingCenters.length,
+  };
 });
