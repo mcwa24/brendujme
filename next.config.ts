@@ -1,5 +1,28 @@
 import type { NextConfig } from "next";
 
+function supabaseImagePattern():
+  | { protocol: "https"; hostname: string; pathname: string }
+  | null {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL?.trim();
+  if (!url) return null;
+  try {
+    return {
+      protocol: "https",
+      hostname: new URL(url).hostname,
+      pathname: "/storage/v1/object/public/**",
+    };
+  } catch {
+    return null;
+  }
+}
+
+const supabasePattern =
+  supabaseImagePattern() ?? {
+    protocol: "https" as const,
+    hostname: "wbmvlooxrwdmqsyxfpia.supabase.co",
+    pathname: "/storage/v1/object/public/**",
+  };
+
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   experimental: {
@@ -36,6 +59,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "bilbord.rs" },
       { protocol: "https", hostname: "images.unsplash.com" },
       { protocol: "https", hostname: "cdn.ghost.io" },
+      supabasePattern,
     ],
   },
 };

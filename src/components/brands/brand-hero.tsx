@@ -21,6 +21,7 @@ export function BrandHero({ brand }: BrandHeroProps) {
         src={resolvedSrc}
         alt={`Logo brenda ${brand.name}`}
         size={BRAND_LOGO_SIZE}
+        bare
         onFailed={() => setImageFailed(true)}
       />
     );

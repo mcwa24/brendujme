@@ -417,8 +417,24 @@ export function getBrandBySlug(slug: string): Brand | undefined {
   return brands.find((b) => b.slug === slug);
 }
 
+const FEATURED_EXCLUDED_RETAILERS = new Set([
+  "fashion-company",
+  "fashion-friends",
+]);
+
 export function getFeaturedBrands(): Brand[] {
-  return brands.filter((b) => b.featured);
+  return brands
+    .filter((b) =>
+      b.locations.some(
+        (loc) => !FEATURED_EXCLUDED_RETAILERS.has(loc.retailerSlug)
+      )
+    )
+    .sort((a, b) => {
+      if (a.featured !== b.featured) return a.featured ? -1 : 1;
+      if (a.popular !== b.popular) return a.popular ? -1 : 1;
+      return b.availabilityCount - a.availabilityCount;
+    })
+    .slice(0, 20);
 }
 
 export function getPopularBrands(): Brand[] {
@@ -429,8 +445,3 @@ export function getBrandsByCategory(category: string): Brand[] {
   return brands.filter((b) => b.category === category);
 }
 
-export function getRelatedBrands(brand: Brand): Brand[] {
-  return brand.relatedBrandSlugs
-    .map((slug) => getBrandBySlug(slug))
-    .filter((b): b is Brand => Boolean(b));
-}

@@ -154,7 +154,7 @@ export function FeaturedBrandsMarquee({ brands }: FeaturedBrandsMarqueeProps) {
       </div>
 
       <div className="hidden overflow-x-auto py-2 no-scrollbar motion-reduce:block">
-        <div className="flex w-max items-center gap-10 px-5 sm:gap-14 sm:px-8">
+        <div className="flex w-max items-center gap-10 sm:gap-14">
           {brands.map((brand) => (
             <MarqueeItem key={brand.slug} brand={brand} />
           ))}

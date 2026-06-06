@@ -114,9 +114,31 @@ export const getBrandsBySlugs = cache(async (slugs: string[]): Promise<Brand[]> 
     .filter((b): b is Brand => Boolean(b));
 });
 
+const FEATURED_EXCLUDED_RETAILERS = new Set([
+  "fashion-company",
+  "fashion-friends",
+]);
+
+function isAvailableOutsideFashionGroup(brand: Brand): boolean {
+  return brand.locations.some(
+    (loc) => !FEATURED_EXCLUDED_RETAILERS.has(loc.retailerSlug)
+  );
+}
+
+export const HOME_FEATURED_BRANDS_LIMIT = 20;
+
+function sortHomeFeaturedBrands(a: Brand, b: Brand): number {
+  if (a.featured !== b.featured) return a.featured ? -1 : 1;
+  if (a.popular !== b.popular) return a.popular ? -1 : 1;
+  return b.availabilityCount - a.availabilityCount;
+}
+
 export const getFeaturedBrands = cache(async () => {
   const all = await getAllBrands();
-  return all.filter((b) => b.featured);
+  return all
+    .filter(isAvailableOutsideFashionGroup)
+    .sort(sortHomeFeaturedBrands)
+    .slice(0, HOME_FEATURED_BRANDS_LIMIT);
 });
 
 const POPULAR_EXCLUDED_SLUGS = new Set(["extra-sports"]);
@@ -134,14 +156,6 @@ export const getBrandsByCategory = cache(async (category: string) => {
   const all = await getAllBrands();
   return sortBrandsByName(all.filter((b) => b.category === category));
 });
-
-export async function getRelatedBrands(brand: Brand): Promise<Brand[]> {
-  const all = await getAllBrands();
-  const bySlug = new Map(all.map((b) => [b.slug, b]));
-  return brand.relatedBrandSlugs
-    .map((slug) => bySlug.get(slug))
-    .filter((b): b is Brand => Boolean(b));
-}
 
 async function loadAllCategories(): Promise<Category[]> {
   if (isSupabaseConfigured()) {
@@ -293,13 +307,15 @@ export async function getLatestNews(limit = 3): Promise<NewsArticle[]> {
   return all.slice(0, limit);
 }
 
+const BRAND_NEWS_LIMIT = 10;
+
 export async function getNewsByBrand(brandSlug: string): Promise<NewsArticle[]> {
   const brand = await getBrandBySlug(brandSlug);
   if (!brand) return [];
 
   const { filterNewsByBrand } = await import("@/lib/news/match-brand");
   const all = await getAllNews();
-  return filterNewsByBrand(all, brand);
+  return filterNewsByBrand(all, brand).slice(0, BRAND_NEWS_LIMIT);
 }
 
 async function loadHomePromotions(): Promise<HomePromotion[]> {

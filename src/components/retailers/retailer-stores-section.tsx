@@ -8,6 +8,12 @@ import { PremiumCard } from "@/components/ui/premium-card";
 import { buttonVariants } from "@/components/ui/button";
 import type { RetailerStore } from "@/types";
 import { formatRetailerStoreCount } from "@/lib/format/sr-plural";
+import {
+  formatSerbianPhone,
+  shouldShowStorePhone,
+  storePhoneHref,
+} from "@/lib/format/store-phone";
+import { googleMapsUrl } from "@/lib/maps/google-maps-url";
 import { cn } from "@/lib/utils";
 
 interface CityOption {
@@ -106,14 +112,27 @@ export function RetailerStoresSection({
                     {store.name}
                   </h3>
                   <div className="mt-3 space-y-2 text-sm text-muted">
-                    <p className="flex items-start gap-2">
+                    <a
+                      href={googleMapsUrl({
+                        address: store.address,
+                        city: store.city,
+                        latitude: store.latitude,
+                        longitude: store.longitude,
+                      })}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group/address flex items-start gap-2 transition-colors hover:text-accent"
+                      aria-label={`${store.address}, ${store.city} — otvori u Google Maps`}
+                    >
                       <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
                       <span>
-                        {store.address}
+                        <span className="underline-offset-2 group-hover/address:underline">
+                          {store.address}
+                        </span>
                         <br />
                         {store.city}
                       </span>
-                    </p>
+                    </a>
                     {store.shoppingCenterSlug && (
                       <p>
                         <Link
@@ -124,17 +143,18 @@ export function RetailerStoresSection({
                         </Link>
                       </p>
                     )}
-                    {store.phone && (
-                      <p className="flex items-center gap-2">
-                        <Phone className="h-4 w-4 shrink-0" />
-                        <a
-                          href={`tel:${store.phone.replace(/\s/g, "")}`}
-                          className="hover:text-foreground"
-                        >
-                          {store.phone}
-                        </a>
-                      </p>
-                    )}
+                    {store.phone &&
+                      shouldShowStorePhone(store.city, store.phone) && (
+                        <p className="flex items-center gap-2">
+                          <Phone className="h-4 w-4 shrink-0" />
+                          <a
+                            href={storePhoneHref(store.phone)}
+                            className="hover:text-foreground"
+                          >
+                            {formatSerbianPhone(store.phone)}
+                          </a>
+                        </p>
+                      )}
                   </div>
                   {store.storeUrl && (
                     <a

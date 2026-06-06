@@ -41,6 +41,8 @@ export async function fetchRetailerStoresFromSupabase(
       address,
       city,
       phone,
+      latitude,
+      longitude,
       shopping_centers ( slug, name )
     `
     )
@@ -69,6 +71,14 @@ export async function fetchRetailerStoresFromSupabase(
       city: row.city as string,
       phone: (row.phone as string | null) ?? scraped?.phone ?? null,
       email: scraped?.email ?? null,
+      latitude:
+        row.latitude != null
+          ? Number(row.latitude)
+          : (scraped?.latitude ?? null),
+      longitude:
+        row.longitude != null
+          ? Number(row.longitude)
+          : (scraped?.longitude ?? null),
       shoppingCenterSlug: mallSlug ?? scraped?.shoppingCenterSlug ?? null,
       shoppingCenterName:
         (mall?.name as string | undefined) ??

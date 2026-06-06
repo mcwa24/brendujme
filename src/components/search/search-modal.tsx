@@ -153,7 +153,7 @@ export function SearchModal({ open, onOpenChange }: SearchModalProps) {
   );
 
   const handleSelect = (item: SearchResult) => {
-    recordSearch(item.title);
+    recordSearch({ title: item.title, href: item.href });
     onOpenChange(false);
     router.push(item.href);
   };

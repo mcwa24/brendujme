@@ -30,7 +30,6 @@ export function BrandDirectory({ brands }: BrandDirectoryProps) {
   const [query, setQuery] = useState("");
   const [country, setCountry] = useState("Sve zemlje");
   const [priceSegment, setPriceSegment] = useState<PriceSegment | "all">("all");
-  const [minAvailability, setMinAvailability] = useState(0);
   const [sort, setSort] = useState<"name" | "availability">("name");
 
   const filtered = useMemo(() => {
@@ -45,9 +44,6 @@ export function BrandDirectory({ brands }: BrandDirectoryProps) {
     if (priceSegment !== "all") {
       result = result.filter((b) => b.priceSegment === priceSegment);
     }
-    if (minAvailability > 0) {
-      result = result.filter((b) => b.availabilityCount >= minAvailability);
-    }
 
     result.sort((a, b) => {
       if (sort === "availability") {
@@ -57,7 +53,7 @@ export function BrandDirectory({ brands }: BrandDirectoryProps) {
     });
 
     return result;
-  }, [brands, query, country, priceSegment, minAvailability, sort]);
+  }, [brands, query, country, priceSegment, sort]);
 
   return (
     <Container narrow className="py-12 md:py-16">
@@ -112,27 +108,6 @@ export function BrandDirectory({ brands }: BrandDirectoryProps) {
                   {p.label}
                 </FilterButton>
               ))}
-            </FilterGroup>
-
-            <FilterGroup title="Dostupnost">
-              <FilterButton
-                active={minAvailability === 0}
-                onClick={() => setMinAvailability(0)}
-              >
-                Sve
-              </FilterButton>
-              <FilterButton
-                active={minAvailability === 10}
-                onClick={() => setMinAvailability(10)}
-              >
-                10+ lokacija
-              </FilterButton>
-              <FilterButton
-                active={minAvailability === 20}
-                onClick={() => setMinAvailability(20)}
-              >
-                20+ lokacija
-              </FilterButton>
             </FilterGroup>
           </div>
         </aside>

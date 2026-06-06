@@ -17,6 +17,8 @@ interface ScrapedStore {
   city: string;
   phone?: string | null;
   email?: string | null;
+  latitude?: number | null;
+  longitude?: number | null;
   shoppingCenterSlug?: string | null;
   storeUrl?: string | null;
   nikeUrl?: string | null;
@@ -44,6 +46,8 @@ function mapStore(store: ScrapedStore, retailerSlug: string): RetailerStore {
     city: store.city,
     phone: store.phone ?? null,
     email: store.email ?? null,
+    latitude: store.latitude ?? null,
+    longitude: store.longitude ?? null,
     shoppingCenterSlug: mallSlug,
     shoppingCenterName: mallSlug ? (MALL_NAMES[mallSlug] ?? null) : null,
     storeUrl: store.storeUrl ?? store.nikeUrl ?? null,

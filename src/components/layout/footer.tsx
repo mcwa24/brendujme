@@ -1,3 +1,4 @@
+import { CookieSettingsLink } from "@/components/cookies/cookie-settings-link";
 import { FooterSocialIcon } from "@/components/layout/footer-social-icon";
 import {
   BILBORD_IMPRESUM_URL,
@@ -10,7 +11,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="gh-footer gh-outer">
+    <footer className="gh-footer gh-outer !mt-[12vw]">
       <div className="gh-footer-inner gh-inner">
         <div className="gh-footer-wrap">
           <div className="gh-footer-top">
@@ -47,7 +48,11 @@ export function Footer() {
                 <ul className="gh-footer-column-list">
                   {column.links.map((link) => (
                     <li key={link.href}>
-                      <a href={link.href}>{link.label}</a>
+                      {link.label === "Kolačići" ? (
+                        <CookieSettingsLink />
+                      ) : (
+                        <a href={link.href}>{link.label}</a>
+                      )}
                     </li>
                   ))}
                 </ul>

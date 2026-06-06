@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import { ExternalLink, Globe } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
-import { RelatedBrandsCarousel } from "@/components/brands/related-brands-carousel";
 import { BrandHero } from "@/components/brands/brand-hero";
 import { BrandLocationCard } from "@/components/brands/brand-location-card";
 import { BrandLocationsSection } from "@/components/brands/brand-locations-section";
@@ -14,7 +13,6 @@ import {
   getAllBrands,
   getBrandBySlug,
   getNewsByBrand,
-  getRelatedBrands,
   getShoppingCenterBySlug,
 } from "@/lib/data/repository";
 import { getFashionCompanyStoresByBrand } from "@/lib/data/fashion-company";
@@ -48,8 +46,7 @@ export default async function BrandDetailPage({ params }: PageProps) {
   const brand = await getBrandBySlug(slug);
   if (!brand) notFound();
 
-  const [related, news, centerResults, brandWithStores] = await Promise.all([
-    getRelatedBrands(brand),
+  const [news, centerResults, brandWithStores] = await Promise.all([
     getNewsByBrand(slug),
     Promise.all(brand.shoppingCenterSlugs.map((s) => getShoppingCenterBySlug(s))),
     expandBrandLocations(brand),
@@ -134,10 +131,6 @@ export default async function BrandDetailPage({ params }: PageProps) {
         )}
 
         <BrandNewsList articles={news} brandName={brand.name} />
-
-        <FadeIn>
-          <RelatedBrandsCarousel brands={related} />
-        </FadeIn>
       </Container>
     </>
   );

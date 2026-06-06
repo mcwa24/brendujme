@@ -556,7 +556,7 @@ picture,
 
 /* Ghost footer — screen.css 21.x + bilbord-custom overrides */
 .gh-footer {
-  margin-top: 12vw;
+  /* margin-top: 12vw — na komponenti (!mt-[12vw]) da ne bude prepisano u dev bundle-u */
   font-size: 15px;
   font-weight: 400;
   line-height: 1.6;
@@ -728,5 +728,37 @@ picture,
 
   .gh-footer-social {
     gap: 8px 14px;
+  }
+}
+
+html.has-cookie-banner body {
+  padding-bottom: 0;
+}
+
+.gh-footer-cookie-settings {
+  padding: 0;
+  font: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  color: #878685;
+  cursor: pointer;
+  background: none;
+  border: 0;
+}
+
+.gh-footer-cookie-settings:hover {
+  opacity: 0.85;
+}
+
+@media (max-width: 380px) {
+  .gh-cookie-banner-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .gh-cookie-banner .gh-button {
+    width: 100%;
   }
 }

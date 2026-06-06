@@ -42,7 +42,10 @@ export function BrandLogoBox({
         alt={alt}
         width={size}
         height={size}
-        className="h-full w-full bg-transparent object-contain p-3"
+        className={cn(
+          "h-full w-full bg-transparent object-contain",
+          bare ? "p-0" : "p-3"
+        )}
         decoding="async"
         onError={() => {
           setFailed(true);

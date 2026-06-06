@@ -82,6 +82,8 @@ export interface RetailerStore {
   city: string;
   phone?: string | null;
   email?: string | null;
+  latitude?: number | null;
+  longitude?: number | null;
   shoppingCenterSlug?: string | null;
   shoppingCenterName?: string | null;
   storeUrl?: string | null;

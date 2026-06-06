@@ -42,7 +42,7 @@ export function BrandNewsList({ articles, brandName }: BrandNewsListProps) {
         </a>
       </FadeIn>
 
-      <ul className="mt-8 divide-y divide-border overflow-hidden rounded-none border border-border bg-card">
+      <ul className="mt-8 divide-y divide-border">
         {articles.map((article, i) => (
           <li key={article.slug}>
             <FadeIn delay={i * 0.04}>
@@ -50,7 +50,7 @@ export function BrandNewsList({ articles, brandName }: BrandNewsListProps) {
                 href={getNewsArticleUrl(article)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex gap-4 p-4 transition-colors hover:bg-background sm:gap-5 sm:p-5"
+                className="group flex gap-4 py-5 transition-colors sm:gap-5 sm:py-6"
               >
                 <div className="relative h-[72px] w-[104px] shrink-0 overflow-hidden rounded-none sm:h-20 sm:w-28">
                   <NewsCover

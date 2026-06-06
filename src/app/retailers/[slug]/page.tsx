@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { ExternalLink, MapPin } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
-import { BrandCard } from "@/components/brands/brand-card";
+import { BrandLogoGrid } from "@/components/brands/brand-logo-grid";
 import { RetailerCatalogMetaBar } from "@/components/retailers/retailer-catalog-meta";
 import { FashionCompanyDetail } from "@/components/retailers/fashion-company-detail";
 import { RetailerPageHeader } from "@/components/retailers/retailer-page-header";
@@ -19,8 +19,6 @@ import { isImportedRetailerSlug } from "@/lib/data/imported-retailers";
 import { fashionCompanyMeta } from "@/lib/data/fashion-company";
 import { formatBrandCount, formatLocationCount, formatStoreCount } from "@/lib/format/sr-plural";
 import { createMetadata } from "@/lib/seo";
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -87,17 +85,6 @@ export default async function RetailerPage({ params }: PageProps) {
                     <ExternalLink className="h-3.5 w-3.5" />
                   </a>
                 )}
-                {stores.length > 0 && (
-                  <a
-                    href="#prodavnice"
-                    className={cn(
-                      buttonVariants({ variant: "default", size: "sm" }),
-                      "rounded-none"
-                    )}
-                  >
-                    Sve prodavnice ({stores.length})
-                  </a>
-                )}
               </div>
               <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted">
                 {isFashionCompany
@@ -136,16 +123,9 @@ export default async function RetailerPage({ params }: PageProps) {
 
           <section>
             <h2 className="font-display text-2xl font-semibold">Brendovi u ponudi</h2>
-            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {retailerBrands.map(
-                (brand, i) =>
-                  brand && (
-                    <FadeIn key={brand.slug} delay={i * 0.04}>
-                      <BrandCard brand={brand} variant="compact" />
-                    </FadeIn>
-                  )
-              )}
-            </div>
+            <FadeIn>
+              <BrandLogoGrid brands={retailerBrands} className="mt-8" />
+            </FadeIn>
           </section>
         </>
       )}

@@ -277,6 +277,12 @@ export function getLatestNews(limit = 6): NewsArticle[] {
     .slice(0, limit);
 }
 
-export function getNewsByBrand(slug: string): NewsArticle[] {
-  return newsArticles.filter((n) => n.brandSlugs?.includes(slug));
+export function getNewsByBrand(slug: string, limit = 10): NewsArticle[] {
+  return newsArticles
+    .filter((n) => n.brandSlugs?.includes(slug))
+    .sort(
+      (a, b) =>
+        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+    )
+    .slice(0, limit);
 }

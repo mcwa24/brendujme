@@ -1,7 +1,12 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { Clock, X } from "lucide-react";
 import { useSearch } from "@/components/search/search-provider";
+import {
+  resolveRecentSearchHref,
+  type RecentSearchEntry,
+} from "@/lib/search/recent-searches";
 
 interface RecentSearchPillsProps {
   className?: string;
@@ -12,9 +17,19 @@ export function RecentSearchPills({
   className = "",
   showHeading = true,
 }: RecentSearchPillsProps) {
+  const router = useRouter();
   const { recentSearches, openWithQuery, clearRecentSearches } = useSearch();
 
   if (!recentSearches.length) return null;
+
+  const handleClick = (entry: RecentSearchEntry) => {
+    const href = entry.href || resolveRecentSearchHref(entry.title);
+    if (href) {
+      router.push(href);
+      return;
+    }
+    openWithQuery(entry.title);
+  };
 
   return (
     <div className={className}>
@@ -34,14 +49,14 @@ export function RecentSearchPills({
         </div>
       ) : null}
       <div className="flex flex-wrap gap-2">
-        {recentSearches.map((query) => (
+        {recentSearches.map((entry) => (
           <button
-            key={query}
+            key={entry.title}
             type="button"
-            onClick={() => openWithQuery(query)}
+            onClick={() => handleClick(entry)}
             className="rounded-none border border-border bg-secondary px-3.5 py-1.5 text-sm text-foreground transition-colors hover:border-border hover:bg-background"
           >
-            {query}
+            {entry.title}
           </button>
         ))}
         {!showHeading ? (

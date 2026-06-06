@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ScrollToTop } from "@/components/layout/scroll-to-top";
+import { CookieConsentProvider } from "@/components/cookies/cookie-consent-provider";
 import { SearchProvider } from "@/components/search/search-provider";
 import { inter } from "@/lib/fonts";
 import { baseMetadata } from "@/lib/seo";
@@ -25,14 +26,16 @@ export default function RootLayout({
       <body
         className={`${inter.className} min-h-screen bg-background text-foreground antialiased`}
       >
-        <SearchProvider>
-          <ScrollToTop />
-          <Header />
-          <main id="gh-main" className="gh-main flex-1">
-            {children}
-          </main>
-          <Footer />
-        </SearchProvider>
+        <CookieConsentProvider>
+          <SearchProvider>
+            <ScrollToTop />
+            <Header />
+            <main id="gh-main" className="gh-main flex-1">
+              {children}
+            </main>
+            <Footer />
+          </SearchProvider>
+        </CookieConsentProvider>
       </body>
     </html>
   );

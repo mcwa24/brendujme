@@ -40,11 +40,9 @@ export default async function RetailersPage() {
                   <RetailerLogo
                     slug={retailer.slug}
                     name={retailer.name}
+                    logoUrl={retailer.logoUrl}
                     size="lg"
-                    variant={
-                      retailer.slug === "fashion-company" ? "page" : "default"
-                    }
-                    className="rounded-none"
+                    variant="bare"
                   />
                   <h2 className="font-display text-2xl font-semibold">{retailer.name}</h2>
                 </div>

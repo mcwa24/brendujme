@@ -13,6 +13,7 @@ import {
   clearRecentSearches as clearStoredRecentSearches,
   readRecentSearches,
   writeRecentSearch,
+  type RecentSearchEntry,
 } from "@/lib/search/recent-searches";
 
 const SearchModal = dynamic(
@@ -26,8 +27,8 @@ interface SearchContextValue {
   openWithQuery: (query: string) => void;
   pendingQuery: string;
   clearPendingQuery: () => void;
-  recentSearches: string[];
-  recordSearch: (query: string) => void;
+  recentSearches: RecentSearchEntry[];
+  recordSearch: (entry: RecentSearchEntry) => void;
   clearRecentSearches: () => void;
 }
 
@@ -36,7 +37,7 @@ const SearchContext = createContext<SearchContextValue | null>(null);
 export function SearchProvider({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = useState(false);
   const [pendingQuery, setPendingQuery] = useState("");
-  const [recentSearches, setRecentSearches] = useState<string[]>([]);
+  const [recentSearches, setRecentSearches] = useState<RecentSearchEntry[]>([]);
 
   useEffect(() => {
     setRecentSearches(readRecentSearches());
@@ -53,8 +54,8 @@ export function SearchProvider({ children }: { children: React.ReactNode }) {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, []);
 
-  const recordSearch = useCallback((query: string) => {
-    setRecentSearches(writeRecentSearch(query));
+  const recordSearch = useCallback((entry: RecentSearchEntry) => {
+    setRecentSearches(writeRecentSearch(entry));
   }, []);
 
   const clearRecentSearches = useCallback(() => {
