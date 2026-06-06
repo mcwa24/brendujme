@@ -31,7 +31,7 @@ export function BrandLogoBox({
     <div
       className={cn(
         "flex shrink-0 items-center justify-center overflow-hidden",
-        !bare && "rounded-[20px] border border-border bg-background",
+        !bare && "rounded-none border border-border bg-background",
         className
       )}
       style={{ width: size, height: size }}

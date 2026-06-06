@@ -69,7 +69,7 @@
   },
   "armani-exchange": {
     "path": "/logos/cache/armani-exchange.png",
-    "source": "discovered"
+    "source": "manual"
   },
   "dkny": {
     "path": "/logos/cache/dkny.png",
@@ -289,6 +289,14 @@
   },
   "zara": {
     "path": "/logos/cache/zara.png",
+    "source": "manual"
+  },
+  "adidas-originals": {
+    "path": "/logos/cache/adidas-originals.png",
+    "source": "manual"
+  },
+  "bershka": {
+    "path": "/logos/cache/bershka.png",
     "source": "manual"
   }
 }

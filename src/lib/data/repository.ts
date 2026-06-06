@@ -36,11 +36,8 @@ import { fetchActiveHomePromotionsFromSupabase } from "@/lib/supabase/fetch-prom
 import {
   fetchAllGhostModaStilNews,
   fetchGhostModaStilNewsPage,
-  fetchGhostNewsBySlug,
 } from "@/lib/ghost/fetch-news";
 import { isGhostConfigured } from "@/lib/ghost/env";
-import { NEWS_PAGE_SIZE } from "@/lib/news/constants";
-import type { NewsPageResult } from "@/lib/news/types";
 import {
   getCatalogStoreCityCount,
   getCatalogStoreCount,
@@ -111,9 +108,11 @@ export const getFeaturedBrands = cache(async () => {
   return all.filter((b) => b.featured);
 });
 
+const POPULAR_EXCLUDED_SLUGS = new Set(["extra-sports"]);
+
 export const getPopularBrands = cache(async () => {
   const all = await getAllBrands();
-  return all.filter((b) => b.popular);
+  return all.filter((b) => b.popular && !POPULAR_EXCLUDED_SLUGS.has(b.slug));
 });
 
 function sortBrandsByName(brands: Brand[]): Brand[] {
@@ -246,7 +245,7 @@ async function getAllNewsFallback(): Promise<NewsArticle[]> {
   return staticNews;
 }
 
-export const getAllNews = cache(async (): Promise<NewsArticle[]> => {
+const getAllNews = cache(async (): Promise<NewsArticle[]> => {
   if (isGhostConfigured()) {
     const fromGhost = await fetchAllGhostModaStilNews();
     if (fromGhost.length) return fromGhost;
@@ -254,45 +253,13 @@ export const getAllNews = cache(async (): Promise<NewsArticle[]> => {
   return getAllNewsFallback();
 });
 
-export async function getNewsPage(
-  page = 1,
-  pageSize = NEWS_PAGE_SIZE
-): Promise<NewsPageResult> {
+export async function getLatestNews(limit = 3): Promise<NewsArticle[]> {
   if (isGhostConfigured()) {
-    const fromGhost = await fetchGhostModaStilNewsPage(page, pageSize);
-    if (fromGhost.articles.length) return fromGhost;
+    const fromGhost = await fetchGhostModaStilNewsPage(1, limit);
+    if (fromGhost.articles.length) return fromGhost.articles;
   }
-
   const all = await getAllNewsFallback();
-  const start = (page - 1) * pageSize;
-  const articles = all.slice(start, start + pageSize);
-
-  return {
-    articles,
-    page,
-    pageSize,
-    hasMore: start + pageSize < all.length,
-    total: all.length,
-  };
-}
-
-export async function getNewsBySlug(slug: string): Promise<NewsArticle | undefined> {
-  if (isGhostConfigured()) {
-    const fromGhost = await fetchGhostNewsBySlug(slug);
-    if (fromGhost) return fromGhost;
-  }
-  const all = await getAllNews();
-  return all.find((n) => n.slug === slug);
-}
-
-export async function getFeaturedNews(): Promise<NewsArticle | undefined> {
-  const all = await getAllNews();
-  return all.find((n) => n.featured);
-}
-
-export async function getLatestNews(limit = 6): Promise<NewsArticle[]> {
-  const result = await getNewsPage(1, limit);
-  return result.articles;
+  return all.slice(0, limit);
 }
 
 export async function getNewsByBrand(brandSlug: string): Promise<NewsArticle[]> {
@@ -330,19 +297,14 @@ export interface HomeStats {
   brandCount: number;
   storeCount: number;
   cityCount: number;
-  shoppingCenterCount: number;
 }
 
 export const getHomeStats = cache(async (): Promise<HomeStats> => {
-  const [brands, shoppingCenters] = await Promise.all([
-    getAllBrands(),
-    getAllShoppingCenters(),
-  ]);
+  const brands = await getAllBrands();
 
   return {
     brandCount: brands.length,
     storeCount: getCatalogStoreCount(),
     cityCount: getCatalogStoreCityCount(),
-    shoppingCenterCount: shoppingCenters.length,
   };
 });

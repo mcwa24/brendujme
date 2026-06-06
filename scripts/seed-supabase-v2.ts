@@ -21,6 +21,7 @@ import { retailers } from "../src/lib/data/retailers";
 import { shoppingCenters } from "../src/lib/data/shopping-centers";
 import { shoppingCenterImages } from "../src/lib/data/shopping-center-images";
 import { createSupabaseAdminClient } from "../src/lib/supabase/server";
+import { getBrandCountry } from "../src/lib/data/brand-countries";
 import { storagePaths } from "../src/lib/supabase/storage";
 import { isSupabaseSeedConfigured } from "../src/lib/supabase/env";
 import { seedPromotionsFromScraped } from "./lib/seed-promotions";
@@ -273,6 +274,7 @@ async function main() {
           slug: b.slug,
           name: b.name,
           category_id: sportsCat,
+          country_of_origin: getBrandCountry(b.slug) ?? null,
           description: `${b.name} u ponudi Tike prodavnice (tike.rs).`,
           short_description: `${b.name} · Tike`,
           price_segment: "mid",

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/layout/container";
+import { BILBORD_CONTACT_URL } from "@/lib/bilbord";
 import { FadeIn } from "@/components/motion/fade-in";
 import { createMetadata } from "@/lib/seo";
 
@@ -29,9 +30,17 @@ export default function PrivacyPage() {
             </h2>
             <p>
               Katalog brendova i prodajnih lokacija prikazuje javno dostupne
-              retail informacije. Ako nas kontaktirate putem forme za prijavu
-              brenda ili kontakt stranice, koristimo podatke koje nam pošaljete
-              isključivo radi odgovora na upit.
+              retail informacije. Ako nas kontaktirate putem{" "}
+              <a
+                href={BILBORD_CONTACT_URL}
+                className="text-accent hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                kontakt stranice na bilbord.rs
+              </a>
+              , koristimo podatke koje nam pošaljete isključivo radi odgovora na
+              upit.
             </p>
           </section>
 
@@ -85,9 +94,14 @@ export default function PrivacyPage() {
             </h2>
             <p>
               Za pitanja u vezi privatnosti pišite nam putem{" "}
-              <Link href="/contact" className="text-accent hover:underline">
-                kontakt stranice
-              </Link>
+              <a
+                href={BILBORD_CONTACT_URL}
+                className="text-accent hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                bilbord.rs/kontakt
+              </a>
               .
             </p>
           </section>

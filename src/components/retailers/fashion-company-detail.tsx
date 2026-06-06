@@ -101,7 +101,7 @@ export function FashionCompanyDetail() {
                 <Link key={brand.name} href={`/brands/${slug}`}>
                   <Badge
                     variant="outline"
-                    className="cursor-pointer rounded-full px-3 py-1.5 text-sm hover:border-accent hover:text-accent"
+                    className="cursor-pointer rounded-none px-3 py-1.5 text-sm hover:border-accent hover:text-accent"
                   >
                     {brand.name}
                   </Badge>
@@ -112,7 +112,7 @@ export function FashionCompanyDetail() {
               <Badge
                 key={brand.name}
                 variant="outline"
-                className="rounded-full px-3 py-1.5 text-sm text-muted"
+                className="rounded-none px-3 py-1.5 text-sm text-muted"
               >
                 {brand.name}
               </Badge>
@@ -156,7 +156,7 @@ export function FashionCompanyDetail() {
                 <Link key={brand.ffSlug} href={`/brands/${slug}`}>
                   <Badge
                     variant="outline"
-                    className="cursor-pointer rounded-full px-3 py-1.5 text-sm hover:border-accent hover:text-accent"
+                    className="cursor-pointer rounded-none px-3 py-1.5 text-sm hover:border-accent hover:text-accent"
                   >
                     {brand.name}
                   </Badge>
@@ -172,7 +172,7 @@ export function FashionCompanyDetail() {
               >
                 <Badge
                   variant="outline"
-                  className="cursor-pointer rounded-full px-3 py-1.5 text-sm text-muted hover:border-accent hover:text-accent"
+                  className="cursor-pointer rounded-none px-3 py-1.5 text-sm text-muted hover:border-accent hover:text-accent"
                 >
                   {brand.name}
                 </Badge>
@@ -251,13 +251,13 @@ export function FashionCompanyDetail() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Pretraži prodavnicu, brend, adresu..."
-              className="h-12 rounded-full pl-11"
+              className="h-12 rounded-none pl-11"
             />
           </div>
           <select
             value={brandFilter}
             onChange={(e) => setBrandFilter(e.target.value)}
-            className="h-12 rounded-full border border-border bg-card px-4 text-sm"
+            className="h-12 rounded-none border border-border bg-card px-4 text-sm"
             aria-label="Filter po brendu"
           >
             <option value="all">Svi brendovi</option>
@@ -294,7 +294,7 @@ export function FashionCompanyDetail() {
         </div>
       </section>
 
-      <section className="rounded-[20px] border border-border bg-[#fafaf8] p-6 text-sm text-muted">
+      <section className="rounded-none border border-border bg-secondary p-6 text-sm text-muted">
         <p>
           <strong className="text-foreground">Napomena:</strong> Kompletna mreža Fashion
           Company obuhvata 148+ maloprodajnih objekata u Srbiji i regionu. Ova lista

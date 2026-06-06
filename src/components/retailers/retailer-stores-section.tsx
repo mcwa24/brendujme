@@ -69,7 +69,7 @@ export function RetailerStoresSection({
               type="button"
               onClick={() => setSelectedCity(city)}
               className={cn(
-                "rounded-full border px-4 py-2 text-sm transition-colors",
+                "rounded-none border px-4 py-2 text-sm transition-colors",
                 selectedCity === city
                   ? "border-accent bg-accent font-medium text-white"
                   : "border-border bg-card text-muted hover:border-accent/40 hover:text-foreground"
@@ -90,7 +90,7 @@ export function RetailerStoresSection({
       </div>
 
       {!selectedCity ? (
-        <p className="mt-10 rounded-[20px] border border-dashed border-border bg-card/50 px-6 py-10 text-center text-muted">
+        <p className="mt-10 rounded-none border border-dashed border-border bg-card/50 px-6 py-10 text-center text-muted">
           Izaberite grad da vidite adrese prodavnica.
         </p>
       ) : (
@@ -143,7 +143,7 @@ export function RetailerStoresSection({
                       rel="noopener noreferrer"
                       className={cn(
                         buttonVariants({ variant: "outline", size: "sm" }),
-                        "mt-4 inline-flex gap-1.5 rounded-full"
+                        "mt-4 inline-flex gap-1.5 rounded-none"
                       )}
                     >
                       Detalji na sajtu

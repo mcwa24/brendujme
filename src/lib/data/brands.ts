@@ -231,7 +231,7 @@ const coreBrands: Brand[] = [
     priceSegment: "premium",
     availabilityCount: 16,
     featured: false,
-    popular: false,
+    popular: true,
     locations: [
       {
         id: "14",

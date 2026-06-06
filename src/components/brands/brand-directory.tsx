@@ -72,7 +72,7 @@ export function BrandDirectory({ brands }: BrandDirectoryProps) {
 
       <div className="mt-12 flex flex-col gap-10 lg:flex-row">
         <aside className="lg:w-64 lg:shrink-0">
-          <div className="sticky top-28 space-y-8 rounded-[20px] border border-border bg-card p-6">
+          <div className="sticky top-28 space-y-8 rounded-none border border-border bg-card p-6">
             <FilterGroup title="Zemlja">
               <FilterButton
                 active={country === "Sve zemlje"}
@@ -144,7 +144,7 @@ export function BrandDirectory({ brands }: BrandDirectoryProps) {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Pretraži brendove..."
-                className="h-12 rounded-full border-border pl-11"
+                className="h-12 rounded-none border-border pl-11"
               />
             </div>
             <select
@@ -152,7 +152,7 @@ export function BrandDirectory({ brands }: BrandDirectoryProps) {
               onChange={(e) =>
                 setSort(e.target.value as "name" | "availability")
               }
-              className="h-12 rounded-full border border-border bg-card px-4 text-sm text-foreground outline-none"
+              className="h-12 rounded-none border border-border bg-card px-4 text-sm text-foreground outline-none"
               aria-label="Sortiranje"
             >
               <option value="name">Naziv A–Z</option>
@@ -216,7 +216,7 @@ function FilterButton({
       type="button"
       onClick={onClick}
       className={cn(
-        "flex items-center justify-between gap-3 rounded-lg px-3 py-2 text-left text-sm transition-colors",
+        "flex items-center justify-between gap-3 rounded-none px-3 py-2 text-left text-sm transition-colors",
         active
           ? "bg-accent font-medium text-white"
           : "text-muted hover:bg-background hover:text-foreground"

@@ -45,8 +45,8 @@ export function ShoppingCenterLogo({
     return (
       <div
         className={cn(
-          "flex shrink-0 items-center justify-center rounded-xl bg-[#f0f0ed] text-muted/40",
-          variant === "banner" ? "h-40 w-full rounded-t-[20px]" : dims.box,
+          "flex shrink-0 items-center justify-center rounded-none bg-secondary text-muted/40",
+          variant === "banner" ? "h-40 w-full rounded-none" : dims.box,
           className
         )}
         aria-hidden
@@ -60,7 +60,7 @@ export function ShoppingCenterLogo({
     return (
       <div
         className={cn(
-          "flex h-40 items-center justify-center rounded-t-[20px] bg-[#fafaf8] px-8",
+          "flex h-40 items-center justify-center rounded-none bg-secondary px-8",
           className
         )}
       >
@@ -79,7 +79,7 @@ export function ShoppingCenterLogo({
   return (
     <div
       className={cn(
-        "relative flex shrink-0 items-center justify-center overflow-hidden rounded-xl bg-[#fafaf8] p-1",
+        "relative flex shrink-0 items-center justify-center overflow-hidden rounded-none bg-secondary p-1",
         dims.box,
         className
       )}

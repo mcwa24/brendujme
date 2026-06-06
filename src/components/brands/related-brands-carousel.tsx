@@ -32,7 +32,7 @@ export function RelatedBrandsCarousel({ brands }: RelatedBrandsCarouselProps) {
           <Button
             variant="outline"
             size="icon"
-            className="rounded-full"
+            className="rounded-none"
             onClick={() => scroll("left")}
             aria-label="Prethodni"
           >
@@ -41,7 +41,7 @@ export function RelatedBrandsCarousel({ brands }: RelatedBrandsCarouselProps) {
           <Button
             variant="outline"
             size="icon"
-            className="rounded-full"
+            className="rounded-none"
             onClick={() => scroll("right")}
             aria-label="Sledeći"
           >

@@ -92,7 +92,7 @@ export default async function RetailerPage({ params }: PageProps) {
                     href="#prodavnice"
                     className={cn(
                       buttonVariants({ variant: "default", size: "sm" }),
-                      "rounded-full"
+                      "rounded-none"
                     )}
                   >
                     Sve prodavnice ({stores.length})

@@ -15,7 +15,7 @@ export default function NotFound() {
         href="/"
         className={cn(
           buttonVariants({ size: "lg" }),
-          "mt-8 rounded-full bg-accent hover:bg-accent-hover"
+          "mt-8 rounded-none bg-accent hover:bg-accent-hover"
         )}
       >
         Nazad na početnu

@@ -30,7 +30,7 @@ function MarqueeItem({ brand }: { brand: Brand }) {
     <Link
       href={`/brands/${brand.slug}`}
       aria-label={brand.name}
-      className="shrink-0 transition-transform duration-300 hover:scale-[1.04]"
+      className="relative z-20 shrink-0 transition-transform duration-300 hover:scale-[1.04]"
     >
       {showImage && src ? (
         <BrandLogoBox
@@ -43,7 +43,7 @@ function MarqueeItem({ brand }: { brand: Brand }) {
         />
       ) : (
         <div
-          className="flex items-center justify-center rounded-[20px] border border-border bg-background font-display text-4xl font-semibold text-accent/90"
+          className="flex items-center justify-center rounded-none border border-border bg-background font-display text-4xl font-semibold text-accent/90"
           style={{ width: LOGO_SIZE, height: LOGO_SIZE }}
           role="img"
           aria-label={`Logo brenda ${brand.name}`}
@@ -91,7 +91,6 @@ export function FeaturedBrandsMarquee({ brands }: FeaturedBrandsMarqueeProps) {
   const segment = useMemo(() => buildMarqueeSegment(brands), [brands]);
   const segmentRef = useRef<HTMLDivElement>(null);
   const [segmentWidth, setSegmentWidth] = useState(0);
-  const [paused, setPaused] = useState(false);
 
   useLayoutEffect(() => {
     const el = segmentRef.current;
@@ -121,7 +120,6 @@ export function FeaturedBrandsMarquee({ brands }: FeaturedBrandsMarqueeProps) {
   const trackStyle = {
     "--marquee-width": `${segmentWidth}px`,
     "--marquee-duration": `${duration}s`,
-    animationPlayState: paused ? "paused" : "running",
   } as CSSProperties;
 
   if (brands.length === 0) return null;
@@ -137,11 +135,7 @@ export function FeaturedBrandsMarquee({ brands }: FeaturedBrandsMarqueeProps) {
         aria-hidden
       />
 
-      <div
-        className="overflow-hidden py-2 motion-reduce:hidden"
-        onPointerEnter={() => setPaused(true)}
-        onPointerLeave={() => setPaused(false)}
-      >
+      <div className="overflow-hidden py-2 motion-reduce:hidden">
         <div
           className={cn(
             "marquee-infinite flex w-max items-center",

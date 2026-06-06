@@ -42,7 +42,7 @@ export default async function RetailersPage() {
                     variant={
                       retailer.slug === "fashion-company" ? "page" : "default"
                     }
-                    className="rounded-xl"
+                    className="rounded-none"
                   />
                   <h2 className="font-display text-2xl font-semibold">{retailer.name}</h2>
                 </div>

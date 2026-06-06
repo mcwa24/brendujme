@@ -1,7 +1,7 @@
-import Link from "next/link";
 import { Calendar } from "lucide-react";
 import { NewsCover } from "@/components/news/news-cover";
 import { PremiumCard } from "@/components/ui/premium-card";
+import { getNewsArticleUrl } from "@/lib/news/urls";
 import type { NewsArticle } from "@/types";
 
 function formatDate(date: string) {
@@ -19,7 +19,12 @@ interface NewsCardProps {
 
 export function NewsCard({ article, showCategory = true }: NewsCardProps) {
   return (
-    <Link href={`/news/${article.slug}`}>
+    <a
+      href={getNewsArticleUrl(article)}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block h-full"
+    >
       <PremiumCard className="group h-full overflow-hidden">
         <NewsCover
           title={article.title}
@@ -44,6 +49,6 @@ export function NewsCard({ article, showCategory = true }: NewsCardProps) {
           </div>
         </div>
       </PremiumCard>
-    </Link>
+    </a>
   );
 }

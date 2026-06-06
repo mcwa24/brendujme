@@ -51,7 +51,7 @@ export function ShoppingCentersSection({ centers }: ShoppingCentersSectionProps)
                   aria-selected={isActive}
                   onClick={() => setActiveSlug(center.slug)}
                   className={cn(
-                    "flex shrink-0 items-center gap-2.5 rounded-full border px-3 py-2 text-left transition-all sm:px-4 sm:py-2.5",
+                    "flex shrink-0 items-center gap-2.5 rounded-none border px-3 py-2 text-left transition-all sm:px-4 sm:py-2.5",
                     isActive
                       ? "border-accent bg-card shadow-[var(--shadow-card)]"
                       : "border-border bg-transparent text-muted hover:border-accent/30 hover:text-foreground"

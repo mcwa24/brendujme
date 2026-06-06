@@ -152,11 +152,11 @@ export function SearchModal({ open, onOpenChange }: SearchModalProps) {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="overflow-hidden rounded-[20px] border-border bg-card p-0 shadow-[0_8px_40px_rgb(0_0_0/0.12)] sm:max-w-lg">
+      <DialogContent className="overflow-hidden rounded-none border-border bg-card p-0 shadow-[0_8px_40px_rgb(0_0_0/0.12)] sm:max-w-lg">
         <DialogHeader className="sr-only">
-          <DialogTitle>Pretraga</DialogTitle>
+          <DialogTitle>Pretraga brendova</DialogTitle>
           <DialogDescription>
-            Pretražite brendove, prodavce i tržne centre
+            Pretražite modne brendove i prodavce u Srbiji
           </DialogDescription>
         </DialogHeader>
         <Command
@@ -180,14 +180,14 @@ export function SearchModal({ open, onOpenChange }: SearchModalProps) {
               <button
                 type="button"
                 onClick={() => setQuery(brandRefinements.patike)}
-                className="rounded-full border border-border bg-secondary px-3 py-1.5 text-sm text-foreground transition-colors hover:border-border hover:bg-background"
+                className="rounded-none border border-border bg-secondary px-3 py-1.5 text-sm text-foreground transition-colors hover:border-border hover:bg-background"
               >
                 {brandRefinements.patike}
               </button>
               <button
                 type="button"
                 onClick={() => setQuery(brandRefinements.odeca)}
-                className="rounded-full border border-border bg-secondary px-3 py-1.5 text-sm text-foreground transition-colors hover:border-border hover:bg-background"
+                className="rounded-none border border-border bg-secondary px-3 py-1.5 text-sm text-foreground transition-colors hover:border-border hover:bg-background"
               >
                 {brandRefinements.odeca}
               </button>
@@ -275,7 +275,7 @@ export function SearchModal({ open, onOpenChange }: SearchModalProps) {
 function SearchResultThumbnail({ item }: { item: SearchResult }) {
   if (item.imageUrl) {
     return (
-      <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-xl border border-border bg-white">
+      <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-none border border-border bg-white">
         <Image
           src={item.imageUrl}
           alt=""
@@ -292,7 +292,7 @@ function SearchResultThumbnail({ item }: { item: SearchResult }) {
 
   if (item.type === "shopping-center") {
     return (
-      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-border bg-secondary text-muted">
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-none border border-border bg-secondary text-muted">
         <Building2 className="h-5 w-5" />
       </div>
     );
@@ -300,7 +300,7 @@ function SearchResultThumbnail({ item }: { item: SearchResult }) {
 
   return (
     <div
-      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-border bg-secondary font-display text-sm font-semibold text-muted-foreground"
+      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-none border border-border bg-secondary font-display text-sm font-semibold text-muted-foreground"
       aria-hidden
     >
       {getBrandLetter(item.title)}
@@ -320,7 +320,7 @@ function SearchResultItem({
       value={`${item.title} ${item.subtitle}`}
       keywords={[item.title, item.subtitle, item.slug]}
       onSelect={() => onSelect(item)}
-      className="mb-1 cursor-pointer gap-3 rounded-xl border border-border/60 bg-secondary px-3 py-2.5 text-foreground hover:border-border hover:bg-background data-[selected=true]:border-border data-[selected=true]:bg-background aria-[selected=true]:border-border aria-[selected=true]:bg-background"
+      className="mb-1 cursor-pointer gap-3 rounded-none border border-border/60 bg-secondary px-3 py-2.5 text-foreground hover:border-border hover:bg-background data-[selected=true]:border-border data-[selected=true]:bg-background aria-[selected=true]:border-border aria-[selected=true]:bg-background"
     >
       <SearchResultThumbnail item={item} />
       <div className="min-w-0 flex-1">

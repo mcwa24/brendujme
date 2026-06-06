@@ -22,7 +22,7 @@ export function BrandMark({
       alt="Bilbord Shop"
       className={cn(
         "block shrink-0 bg-transparent object-contain",
-        logoHeight == null && "h-8 w-auto md:h-9",
+        logoHeight == null && "h-10 w-auto max-h-10",
         logoClassName
       )}
       style={logoHeight != null ? { height: logoHeight, width: "auto" } : undefined}

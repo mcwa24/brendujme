@@ -1,7 +1,7 @@
-import Link from "next/link";
 import { ArrowRight, Calendar } from "lucide-react";
 import { FadeIn } from "@/components/motion/fade-in";
 import { NewsCover } from "@/components/news/news-cover";
+import { BILBORD_MODA_STIL_URL, getNewsArticleUrl } from "@/lib/news/urls";
 import type { NewsArticle } from "@/types";
 
 function formatDate(date: string) {
@@ -31,24 +31,28 @@ export function BrandNewsList({ articles, brandName }: BrandNewsListProps) {
             Najnovije iz moda & stil sekcije vezano za {brandName}.
           </p>
         </div>
-        <Link
-          href="/news"
+        <a
+          href={BILBORD_MODA_STIL_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center gap-1 text-sm font-medium text-accent"
         >
           Sve vesti
           <ArrowRight className="h-4 w-4" />
-        </Link>
+        </a>
       </FadeIn>
 
-      <ul className="mt-8 divide-y divide-border overflow-hidden rounded-2xl border border-border bg-card">
+      <ul className="mt-8 divide-y divide-border overflow-hidden rounded-none border border-border bg-card">
         {articles.map((article, i) => (
           <li key={article.slug}>
             <FadeIn delay={i * 0.04}>
-              <Link
-                href={`/news/${article.slug}`}
+              <a
+                href={getNewsArticleUrl(article)}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group flex gap-4 p-4 transition-colors hover:bg-background sm:gap-5 sm:p-5"
               >
-                <div className="relative h-[72px] w-[104px] shrink-0 overflow-hidden rounded-xl sm:h-20 sm:w-28">
+                <div className="relative h-[72px] w-[104px] shrink-0 overflow-hidden rounded-none sm:h-20 sm:w-28">
                   <NewsCover
                     title={article.title}
                     imageLabel={article.imageLabel}
@@ -69,7 +73,7 @@ export function BrandNewsList({ articles, brandName }: BrandNewsListProps) {
                     {formatDate(article.publishedAt)}
                   </p>
                 </div>
-              </Link>
+              </a>
             </FadeIn>
           </li>
         ))}

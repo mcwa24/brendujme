@@ -28,7 +28,7 @@ export function BrandCard({ brand, variant = "default" }: BrandCardProps) {
 
   return (
     <PremiumCard className="flex h-full flex-col overflow-hidden">
-      <div className="border-b border-border bg-[#fafaf8] p-6">
+      <div className="border-b border-border bg-secondary p-6">
         <BrandIdentity brand={brand} variant="card" />
       </div>
       <div className="flex flex-1 flex-col p-6">
@@ -50,8 +50,8 @@ export function BrandCard({ brand, variant = "default" }: BrandCardProps) {
           <Link
             href={`/brands/${brand.slug}`}
             className={cn(
-              buttonVariants({ variant: "outline", size: "lg" }),
-              "h-11 w-full rounded-full border-border text-accent hover:bg-accent hover:text-white"
+              buttonVariants({ variant: "outline" }),
+              "w-full border-border text-accent hover:bg-accent hover:text-white"
             )}
           >
             Pogledaj profil

@@ -52,7 +52,6 @@ const BRAND_META: Record<
       "Fer cena sportske opreme — deo Sport Vision grupe, 25+ lokacija i online shop.",
     priceSegment: "budget",
     category: "sports",
-    popular: true,
     networkTotal: 25,
     relatedBrandSlugs: ["sport-vision", "nike", "adidas"],
   },

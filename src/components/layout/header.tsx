@@ -1,10 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import { BILBORD_CONTACT_URL } from "@/lib/bilbord";
+import { BILBORD_MODA_STIL_URL } from "@/lib/news/urls";
+import { inter } from "@/lib/fonts";
 import { usePathname } from "next/navigation";
-import { Menu, Plus, Search } from "lucide-react";
+import { Menu, Search } from "lucide-react";
 import { useState } from "react";
 import { BrandMark } from "@/components/layout/brand-mark";
+import { HeaderSearchButton } from "@/components/layout/header-icon-button";
 import { Container } from "@/components/layout/container";
 import { Button, buttonVariants } from "@/components/ui/button";
 import {
@@ -17,12 +21,15 @@ import {
 import { useSearch } from "@/components/search/search-provider";
 import { cn } from "@/lib/utils";
 
+const navLinkClass =
+  "text-[15px] font-[550] leading-6 text-foreground no-underline transition-opacity hover:opacity-80";
+
 const navItems = [
   { href: "/brands", label: "Brendovi" },
   { href: "/retailers", label: "Prodavci" },
   { href: "/shopping-centers", label: "Tržni centri" },
-  { href: "/news", label: "Vesti" },
-];
+  { href: BILBORD_MODA_STIL_URL, label: "Vesti", external: true },
+] as const;
 
 function isRetailerDetailPath(pathname: string): boolean {
   return /^\/retailers\/[^/]+$/.test(pathname);
@@ -37,51 +44,61 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-40",
-        retailerDetail
-          ? "bg-card"
-          : "bg-background/90 backdrop-blur-md"
+        "sticky top-0 z-40 bg-background",
+        retailerDetail && "bg-background"
       )}
     >
       <Container narrow>
-        <div className="flex h-16 items-center justify-between gap-4 md:h-20">
-          <BrandMark />
+        {/*
+          Ghost bilbord .gh-navigation.is-left-logo:
+          grid auto 1fr auto — logo | meni (odmah pored) | akcije
+        */}
+        <div
+          className={cn(
+            "grid h-16 grid-cols-[auto_1fr_auto] items-center gap-x-6 md:h-[100px]",
+            inter.className
+          )}
+        >
+          <div className="flex min-w-0 items-center gap-4">
+            <BrandMark />
+            <HeaderSearchButton
+              className="md:hidden"
+              onClick={() => setOpen(true)}
+            />
+          </div>
 
-          <nav className="hidden items-center gap-8 lg:flex">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={cn(
-                  "text-sm font-medium transition-colors hover:text-accent",
-                  pathname.startsWith(item.href)
-                    ? "text-accent"
-                    : "text-muted"
-                )}
-              >
-                {item.label}
-              </Link>
-            ))}
+          <nav className="hidden min-w-0 items-center gap-7 pl-4 min-[992px]:mr-[100px] lg:flex">
+            {navItems.map((item) =>
+              "external" in item && item.external ? (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={navLinkClass}
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link key={item.href} href={item.href} className={navLinkClass}>
+                  {item.label}
+                </Link>
+              )
+            )}
           </nav>
 
-          <div className="flex items-center gap-2">
-            <Button
-              variant="ghost"
-              size="icon"
-              className="rounded-full"
+          <div className="flex items-center justify-end gap-6">
+            <HeaderSearchButton
+              className="hidden md:inline-flex"
               onClick={() => setOpen(true)}
-              aria-label="Pretraga"
-            >
-              <Search className="h-5 w-5" />
-            </Button>
+            />
             <Link
-              href="/contact?topic=brand"
+              href={BILBORD_CONTACT_URL}
               className={cn(
-                buttonVariants({ variant: "default", size: "sm" }),
-                "hidden rounded-full bg-accent px-4 hover:bg-accent-hover sm:inline-flex"
+                buttonVariants({ variant: "default" }),
+                "hidden bg-accent hover:bg-accent-hover hover:opacity-100 sm:inline-flex"
               )}
             >
-              <Plus className="mr-1.5 h-4 w-4" />
               Prijavi brend
             </Link>
 
@@ -89,59 +106,71 @@ export function Header() {
               <SheetTrigger
                 className={cn(
                   buttonVariants({ variant: "ghost", size: "icon" }),
-                  "rounded-full lg:hidden"
+                  "lg:hidden"
                 )}
                 aria-label="Meni"
               >
                 <Menu className="h-5 w-5" />
               </SheetTrigger>
-              <SheetContent side="right" className="w-full max-w-sm rounded-l-[20px]">
+              <SheetContent side="right" className="w-full max-w-sm rounded-none">
                 <SheetHeader>
                   <SheetTitle className="text-left font-normal">
-                    <BrandMark logoHeight={32} asLink={false} />
+                    <BrandMark logoHeight={40} asLink={false} />
                   </SheetTitle>
                 </SheetHeader>
-                <nav className="mt-8 flex flex-col gap-4">
-                  {navItems.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      onClick={() => setMobileOpen(false)}
-                      className={cn(
-                        "text-lg font-medium",
-                        pathname.startsWith(item.href)
-                          ? "text-accent"
-                          : "text-muted"
-                      )}
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
+                <nav
+                  className={cn(
+                    "mt-8 flex flex-col gap-5",
+                    inter.className
+                  )}
+                >
+                  {navItems.map((item) =>
+                    "external" in item && item.external ? (
+                      <a
+                        key={item.href}
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setMobileOpen(false)}
+                        className="text-[1.75rem] font-semibold leading-[1.4] text-foreground no-underline transition-opacity hover:opacity-80"
+                      >
+                        {item.label}
+                      </a>
+                    ) : (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        onClick={() => setMobileOpen(false)}
+                        className="text-[1.75rem] font-semibold leading-[1.4] text-foreground no-underline transition-opacity hover:opacity-80"
+                      >
+                        {item.label}
+                      </Link>
+                    )
+                  )}
                 </nav>
                 <div className="mt-8 flex flex-col gap-3">
                   <Button
                     variant="outline"
-                    className="h-12 rounded-full justify-start"
+                    className="w-full justify-start"
                     onClick={() => {
                       setMobileOpen(false);
                       setOpen(true);
                     }}
                   >
-                    <Search className="mr-2 h-4 w-4" />
+                    <Search className="h-4 w-4" />
                     Pretraga
-                    <kbd className="ml-auto rounded border border-border px-2 text-xs text-muted">
+                    <kbd className="ml-auto border border-border px-2 text-xs text-muted">
                       ⌘K
                     </kbd>
                   </Button>
                   <Link
-                    href="/contact?topic=brand"
+                    href={BILBORD_CONTACT_URL}
                     onClick={() => setMobileOpen(false)}
                     className={cn(
-                      buttonVariants({ size: "lg" }),
-                      "h-12 rounded-full bg-accent hover:bg-accent-hover"
+                      buttonVariants(),
+                      "w-full bg-accent hover:bg-accent-hover hover:opacity-100"
                     )}
                   >
-                    <Plus className="mr-2 h-4 w-4" />
                     Prijavi brend
                   </Link>
                 </div>

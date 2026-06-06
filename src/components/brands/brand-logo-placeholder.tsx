@@ -30,7 +30,7 @@ export function BrandLogoPlaceholder({
     return (
       <div
         className={cn(
-          "flex h-[120px] w-[120px] shrink-0 flex-col items-center justify-center rounded-[20px] border border-border bg-[#f5f5f3]",
+          "flex h-[120px] w-[120px] shrink-0 flex-col items-center justify-center rounded-none border border-border bg-secondary",
           className
         )}
         aria-label={`Brend ${name}`}
@@ -46,7 +46,7 @@ export function BrandLogoPlaceholder({
   return (
     <div
       className={cn(
-        "flex min-h-[200px] w-full flex-col items-center justify-center rounded-[20px] border border-border bg-[#f5f5f3] px-6 py-10 text-center",
+        "flex min-h-[200px] w-full flex-col items-center justify-center rounded-none border border-border bg-secondary px-6 py-10 text-center",
         className
       )}
       aria-label={`Brend ${name}`}

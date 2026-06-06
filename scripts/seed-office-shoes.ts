@@ -9,6 +9,7 @@ import path from "path";
 import type { OfficeShoesScraped } from "./scrape-office-shoes";
 import { createSupabaseAdminClient } from "../src/lib/supabase/server";
 import { isSupabaseSeedConfigured } from "../src/lib/supabase/env";
+import { getBrandCountry } from "../src/lib/data/brand-countries";
 import { storagePaths } from "../src/lib/supabase/storage";
 
 const SCRAPED = path.join(process.cwd(), "src/lib/data/office-shoes-scraped.json");
@@ -116,6 +117,7 @@ async function main() {
         slug: b.slug,
         name: b.name,
         category_id: footwearCat,
+        country_of_origin: getBrandCountry(b.slug) ?? null,
         description: `${b.name} dostupan u Office Shoes prodavnicama u Srbiji.`,
         short_description: `${b.name} u Office Shoes mreži.`,
         price_segment: "mid",

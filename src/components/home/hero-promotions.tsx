@@ -75,13 +75,13 @@ export function HeroPromotions({
               return (
                 <article
                   key={promo.slug}
-                  className="group relative flex min-h-[280px] flex-col justify-end overflow-hidden rounded-2xl shadow-[0_1px_2px_rgb(0_0_0/0.08),0_4px_16px_rgb(0_0_0/0.1)] transition-shadow duration-200 hover:shadow-[0_2px_6px_rgb(0_0_0/0.1),0_8px_24px_rgb(0_0_0/0.14)]"
+                  className="group relative flex min-h-[280px] flex-col justify-end overflow-hidden rounded-none shadow-[0_1px_2px_rgb(0_0_0/0.08),0_4px_16px_rgb(0_0_0/0.1)] transition-shadow duration-200 hover:shadow-[0_2px_6px_rgb(0_0_0/0.1),0_8px_24px_rgb(0_0_0/0.14)]"
                 >
                   <a
                     href={promo.retailerWebsiteUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="absolute inset-0 z-[1] cursor-pointer rounded-2xl"
+                    className="absolute inset-0 z-[1] cursor-pointer rounded-none"
                     aria-label={`${promo.title} — ${promo.retailerName}, otvori sajt prodavca`}
                   />
 

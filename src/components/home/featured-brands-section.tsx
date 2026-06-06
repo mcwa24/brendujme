@@ -8,13 +8,20 @@ import type { Brand } from "@/types";
 
 interface FeaturedBrandsSectionProps {
   brands: Brand[];
+  /** U hero bloku odmah ispod pretrage — bez dodatnog section paddinga. */
+  embedded?: boolean;
 }
 
-export function FeaturedBrandsSection({ brands }: FeaturedBrandsSectionProps) {
+export function FeaturedBrandsSection({
+  brands,
+  embedded = false,
+}: FeaturedBrandsSectionProps) {
   if (brands.length === 0) return null;
 
+  const Wrapper = embedded ? "div" : "section";
+
   return (
-    <section className={HOME_SECTION_PY}>
+    <Wrapper className={HOME_SECTION_PY}>
       <Container narrow>
         <FadeIn className="flex items-end justify-between gap-6">
           <div>
@@ -40,7 +47,7 @@ export function FeaturedBrandsSection({ brands }: FeaturedBrandsSectionProps) {
       </FadeIn>
 
       <Container narrow>
-        <div className="mt-8 sm:hidden">
+        <div className="mt-6 sm:hidden">
           <Link
             href="/brands"
             className="inline-flex items-center gap-1 text-sm font-medium text-accent"
@@ -50,6 +57,6 @@ export function FeaturedBrandsSection({ brands }: FeaturedBrandsSectionProps) {
           </Link>
         </div>
       </Container>
-    </section>
+    </Wrapper>
   );
 }

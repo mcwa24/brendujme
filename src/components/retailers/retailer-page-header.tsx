@@ -15,7 +15,7 @@ export function RetailerPageHeader({ retailer, children }: RetailerPageHeaderPro
         logoUrl={retailer.logoUrl}
         size="hero"
         variant="page"
-        className="rounded-2xl"
+        className="rounded-none"
       />
       <div className="min-w-0 flex-1">
         <p className="text-sm font-medium uppercase tracking-wider text-muted">

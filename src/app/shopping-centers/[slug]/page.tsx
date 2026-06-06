@@ -64,7 +64,7 @@ export default async function ShoppingCenterPage({ params }: PageProps) {
               slug={center.slug}
               name={center.name}
               size="xl"
-              className="h-24 w-24 rounded-[20px] p-3"
+              className="h-24 w-24 rounded-none p-3"
               logoUrl={center.logoUrl}
               logoStoragePath={center.logoStoragePath}
             />

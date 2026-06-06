@@ -1,27 +1,30 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fafaf8;
-  --foreground: #171717;
+  /* bilbord.rs paleta — sav primarni tekst #2A2A2A */
+  --text-default: #2a2a2a;
+  --background: #ffffff;
+  --foreground: var(--text-default);
   --card: #ffffff;
-  --card-foreground: #171717;
+  --card-foreground: var(--text-default);
   --popover: #ffffff;
-  --popover-foreground: #171717;
-  --primary: #0f172a;
+  --popover-foreground: var(--text-default);
+  --primary: var(--text-default);
   --primary-foreground: #ffffff;
-  --secondary: #f5f5f3;
-  --secondary-foreground: #171717;
-  --muted: #6b7280;
-  --muted-foreground: #6b7280;
-  --accent: #0f172a;
+  --secondary: #f2f2f2;
+  --secondary-foreground: var(--text-default);
+  --muted: #6b6b6b;
+  --muted-foreground: #9a9a9a;
+  --accent: var(--text-default);
   --accent-foreground: #ffffff;
-  --accent-hover: #111827;
-  --success: #166534;
-  --border: #e5e7eb;
-  --input: #e5e7eb;
-  --ring: #0f172a;
-  --destructive: #dc2626;
-  --radius: 20px;
+  --accent-hover: #1a1a1a;
+  --success: #4a7c59;
+  --border: #e6e1da;
+  --input: #e6e1da;
+  --ring: var(--text-default);
+  --destructive: #b94a48;
+  --radius: 0;
+  --image-radius: 0;
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -53,6 +56,7 @@
 
 @theme inline {
   --animate-marquee: marquee var(--marquee-duration, 40s) linear infinite;
+  --color-black: #2a2a2a;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -73,10 +77,10 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-destructive: var(--destructive);
-  --font-sans: var(--font-geist-sans);
-  --font-display: var(--font-geist-sans);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-inter);
   --radius-xl: var(--radius);
-  --shadow-card: 0 1px 3px rgb(0 0 0 / 0.04), 0 8px 24px rgb(0 0 0 / 0.04);
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.03), 0 4px 12px rgb(0 0 0 / 0.02);
 }
 
 * {
@@ -85,6 +89,7 @@
 
 html {
   scroll-behavior: auto;
+  scrollbar-gutter: stable;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -96,7 +101,7 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont,
+  font-family: var(--font-inter), Inter, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
   font-size: 17px;
   line-height: 1.55;
@@ -104,7 +109,40 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+img,
+video,
+picture,
+[class*="rounded"] img {
+  border-radius: var(--image-radius);
+}
+
 @layer base {
+  :where(h1, h2, h3, h4, h5, h6, p, li, dt, dd, th, td, blockquote, figcaption) {
+    color: var(--text-default);
+  }
+
+  :where(strong, b) {
+    color: var(--text-default);
+  }
+
+  .prose {
+    --tw-prose-body: var(--text-default);
+    --tw-prose-headings: var(--text-default);
+    --tw-prose-bold: var(--text-default);
+    --tw-prose-counters: var(--text-default);
+    --tw-prose-bullets: var(--muted-foreground);
+    --tw-prose-links: var(--text-default);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  a:hover {
+    opacity: 0.8;
+  }
+
   a[href],
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -124,7 +162,7 @@ body {
 }
 
 .font-display {
-  font-family: var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont,
+  font-family: var(--font-inter), Inter, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
   letter-spacing: -0.03em;
 }

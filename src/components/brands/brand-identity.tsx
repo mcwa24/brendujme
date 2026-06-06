@@ -58,7 +58,7 @@ export function BrandIdentity({
           src={resolvedSrc}
           alt={alt}
           size={48}
-          className={cn("!h-12 !w-12 rounded-xl", className)}
+          className={cn("!h-12 !w-12 rounded-none", className)}
           onFailed={() => setImageFailed(true)}
         />
       );
@@ -66,7 +66,7 @@ export function BrandIdentity({
     return (
       <div
         className={cn(
-          "flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-border bg-[#f5f5f3] font-display text-lg font-semibold text-accent",
+          "flex h-12 w-12 shrink-0 items-center justify-center rounded-none border border-border bg-secondary font-display text-lg font-semibold text-accent",
           className
         )}
         aria-label={alt}

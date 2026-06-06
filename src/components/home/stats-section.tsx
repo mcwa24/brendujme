@@ -12,13 +12,12 @@ export function StatsSection({ stats }: StatsSectionProps) {
     { value: String(stats.brandCount), label: "Modnih brendova" },
     { value: String(stats.storeCount), label: "Prodajnih lokacija" },
     { value: String(stats.cityCount), label: "Gradova" },
-    { value: String(stats.shoppingCenterCount), label: "Tržnih centara" },
   ] as const;
 
   return (
     <section className={HOME_SECTION_PY}>
       <Container narrow>
-        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-12 sm:grid-cols-3">
           {items.map((stat, i) => (
             <FadeIn key={stat.label} delay={i * 0.08} className="text-center">
               <p className="font-display text-5xl font-semibold tracking-tight text-accent md:text-6xl">

@@ -8,6 +8,7 @@ import path from "path";
 import type { BuzzSneakersScraped } from "./scrape-buzz-sneakers";
 import { createSupabaseAdminClient } from "../src/lib/supabase/server";
 import { isSupabaseSeedConfigured } from "../src/lib/supabase/env";
+import { getBrandCountry } from "../src/lib/data/brand-countries";
 import { storagePaths } from "../src/lib/supabase/storage";
 
 const SCRAPED = path.join(process.cwd(), "src/lib/data/buzz-sneakers-scraped.json");
@@ -117,6 +118,7 @@ async function main() {
         slug: b.slug,
         name: b.name,
         category_id: sportsCat,
+        country_of_origin: getBrandCountry(b.slug) ?? null,
         description: `${b.name} dostupan u Buzz Sneakers prodavnicama u Srbiji.`,
         short_description: `${b.name} u Buzz mreži.`,
         price_segment: "mid",

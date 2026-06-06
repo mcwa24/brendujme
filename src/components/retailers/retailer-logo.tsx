@@ -38,7 +38,7 @@ function RetailerLetterPlaceholder({
   return (
     <div
       className={cn(
-        "flex shrink-0 items-center justify-center rounded-lg border border-border bg-[#f5f5f3]",
+        "flex shrink-0 items-center justify-center rounded-none border border-border bg-secondary",
         dims.box,
         className
       )}
@@ -89,8 +89,8 @@ export function RetailerLogo({
   return (
     <div
       className={cn(
-        "relative flex shrink-0 items-center justify-center overflow-hidden rounded-lg p-1",
-        isDarkBadge ? "bg-black" : "bg-[#fafaf8]",
+        "relative flex shrink-0 items-center justify-center overflow-hidden rounded-none p-1",
+        isDarkBadge ? "bg-black" : "bg-secondary",
         dims.box,
         className
       )}
