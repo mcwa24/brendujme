@@ -9,6 +9,8 @@ import { getAllRetailers } from "@/lib/data/repository";
 import { formatBrandCount, formatStoreCount } from "@/lib/format/sr-plural";
 import { createMetadata } from "@/lib/seo";
 
+export const revalidate = 3600;
+
 export const metadata = createMetadata({
   title: "Prodavci",
   description:
@@ -32,7 +34,7 @@ export default async function RetailersPage() {
           const catalogMeta = getRetailerCatalogMeta(retailer.slug);
           return (
           <FadeIn key={retailer.slug} delay={i * 0.04}>
-            <Link href={`/retailers/${retailer.slug}`}>
+            <Link href={`/retailers/${retailer.slug}`} prefetch={false}>
               <PremiumCard className="p-8">
                 <div className="flex items-center gap-4">
                   <RetailerLogo

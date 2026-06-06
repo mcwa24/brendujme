@@ -1,6 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  poweredByHeader: false,
+  experimental: {
+    optimizePackageImports: ["lucide-react", "framer-motion", "cmdk"],
+  },
   async redirects() {
     return [
       {
@@ -26,11 +30,12 @@ const nextConfig: NextConfig = {
     ];
   },
   images: {
+    minimumCacheTTL: 86400,
+    formats: ["image/avif", "image/webp"],
     remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "**",
-      },
+      { protocol: "https", hostname: "bilbord.rs" },
+      { protocol: "https", hostname: "images.unsplash.com" },
+      { protocol: "https", hostname: "cdn.ghost.io" },
     ],
   },
 };

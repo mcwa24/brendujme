@@ -57,21 +57,37 @@ export function ShoppingCenterLogo({
   }
 
   if (variant === "banner") {
+    const coverSrc = local?.coverSrc;
+
+    if (coverSrc) {
+      return (
+        <div
+          className={cn(
+            "relative aspect-[16/9] overflow-hidden rounded-none bg-secondary",
+            className
+          )}
+        >
+          <Image
+            src={coverSrc}
+            alt={alt}
+            fill
+            className="object-cover"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          />
+        </div>
+      );
+    }
+
     return (
       <div
         className={cn(
-          "flex h-40 items-center justify-center rounded-none bg-secondary px-8",
+          "flex aspect-[16/9] items-center justify-center rounded-none bg-accent/90",
           className
         )}
       >
-        <Image
-          src={src}
-          alt={alt}
-          width={280}
-          height={112}
-          className="max-h-24 w-auto max-w-full object-contain"
-          sizes="(max-width: 768px) 240px, 280px"
-        />
+        <span className="font-display px-4 text-center text-lg text-white/90 md:text-xl">
+          {name}
+        </span>
       </div>
     );
   }

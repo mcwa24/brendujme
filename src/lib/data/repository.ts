@@ -1,4 +1,5 @@
 import { cache } from "react";
+import { catalogCache } from "@/lib/data/catalog-cache";
 import { brands as staticBrands, getBrandBySlug as getStaticBrandBySlug } from "@/lib/data/brands";
 import { enrichBrand } from "@/lib/data/enrich-brand";
 import {
@@ -14,10 +15,7 @@ import {
   sortImportedRetailers,
 } from "@/lib/data/imported-retailers";
 import { shoppingCenters as staticShoppingCenters } from "@/lib/data/shopping-centers";
-import {
-  fetchAllBrandsFromSupabase,
-  fetchBrandBySlugFromSupabase,
-} from "@/lib/supabase/fetch-brands";
+import { fetchAllBrandsFromSupabase } from "@/lib/supabase/fetch-brands";
 import {
   dedupePromotionsForHome,
   getActiveHomePromotionsFromStatic,
@@ -82,7 +80,7 @@ function mergeCategoriesBySlug(fromDb: Category[], fromStatic: Category[]): Cate
   });
 }
 
-export const getAllBrands = cache(async (): Promise<Brand[]> => {
+async function loadAllBrands(): Promise<Brand[]> {
   if (isSupabaseConfigured()) {
     const fromDb = await fetchAllBrandsFromSupabase();
     if (fromDb?.length) {
@@ -92,15 +90,28 @@ export const getAllBrands = cache(async (): Promise<Brand[]> => {
     }
   }
   return dedupeBySlug(staticBrands).map(enrichBrand);
-});
+}
+
+export const getAllBrands = cache(async (): Promise<Brand[]> =>
+  catalogCache(["all-brands"], loadAllBrands, ["catalog", "brands"])
+);
 
 export const getBrandBySlug = cache(async (slug: string): Promise<Brand | undefined> => {
-  if (isSupabaseConfigured()) {
-    const fromDb = await fetchBrandBySlugFromSupabase(slug);
-    if (fromDb) return enrichBrand(fromDb);
-  }
+  const all = await getAllBrands();
+  const fromCatalog = all.find((b) => b.slug === slug);
+  if (fromCatalog) return fromCatalog;
+
   const staticBrand = getStaticBrandBySlug(slug);
   return staticBrand ? enrichBrand(staticBrand) : undefined;
+});
+
+export const getBrandsBySlugs = cache(async (slugs: string[]): Promise<Brand[]> => {
+  if (!slugs.length) return [];
+  const all = await getAllBrands();
+  const bySlug = new Map(all.map((b) => [b.slug, b]));
+  return slugs
+    .map((slug) => bySlug.get(slug))
+    .filter((b): b is Brand => Boolean(b));
 });
 
 export const getFeaturedBrands = cache(async () => {
@@ -132,13 +143,17 @@ export async function getRelatedBrands(brand: Brand): Promise<Brand[]> {
     .filter((b): b is Brand => Boolean(b));
 }
 
-export const getAllCategories = cache(async (): Promise<Category[]> => {
+async function loadAllCategories(): Promise<Category[]> {
   if (isSupabaseConfigured()) {
     const fromDb = await fetchCategoriesFromSupabase();
     if (fromDb?.length) return mergeCategoriesBySlug(fromDb, staticCategories);
   }
   return staticCategories;
-});
+}
+
+export const getAllCategories = cache(async (): Promise<Category[]> =>
+  catalogCache(["all-categories"], loadAllCategories, ["catalog", "categories"])
+);
 
 /** Sve kategorije koje imaju bar jedan brend (uključujući fashion → Ostali brendovi). */
 export const getPopulatedCategories = cache(async (): Promise<Category[]> => {
@@ -149,10 +164,10 @@ export const getPopulatedCategories = cache(async (): Promise<Category[]> => {
   return list;
 });
 
-export async function getCategoryBySlug(slug: string): Promise<Category | undefined> {
+export const getCategoryBySlug = cache(async (slug: string): Promise<Category | undefined> => {
   const all = await getPopulatedCategories();
   return all.find((c) => c.slug === slug);
-}
+});
 
 export async function getCategoryName(slug: string): Promise<string> {
   const cat = await getCategoryBySlug(slug);
@@ -163,7 +178,7 @@ const staticImportedRetailers = sortImportedRetailers(
   staticRetailers.filter((r) => isImportedRetailerSlug(r.slug))
 );
 
-export const getAllRetailers = cache(async (): Promise<Retailer[]> => {
+async function loadAllRetailers(): Promise<Retailer[]> {
   let list: Retailer[];
   if (isSupabaseConfigured()) {
     const fromDb = await fetchRetailersFromSupabase();
@@ -177,7 +192,11 @@ export const getAllRetailers = cache(async (): Promise<Retailer[]> => {
   return sortRetailersByName(
     applyCatalogCounts([fashionCompanyRetailer, ...withoutFashionCompany])
   );
-});
+}
+
+export const getAllRetailers = cache(async (): Promise<Retailer[]> =>
+  catalogCache(["all-retailers"], loadAllRetailers, ["catalog", "retailers"])
+);
 
 function applyCatalogCounts(retailers: Retailer[]): Retailer[] {
   return retailers.map((r) => {
@@ -192,11 +211,11 @@ function sortRetailersByName(retailers: Retailer[]): Retailer[] {
   return [...retailers].sort((a, b) => collator.compare(a.name, b.name));
 }
 
-export async function getRetailerBySlug(slug: string): Promise<Retailer | undefined> {
+export const getRetailerBySlug = cache(async (slug: string): Promise<Retailer | undefined> => {
   if (slug === "fashion-company") return fashionCompanyRetailer;
   const all = await getAllRetailers();
   return all.find((r) => r.slug === slug);
-}
+});
 
 export const getRetailerStores = cache(
   async (retailerSlug: string): Promise<RetailerStore[]> => {
@@ -222,20 +241,28 @@ function enrichShoppingCentersFromStatic(
   });
 }
 
-export const getAllShoppingCenters = cache(async (): Promise<ShoppingCenter[]> => {
+async function loadAllShoppingCenters(): Promise<ShoppingCenter[]> {
   if (isSupabaseConfigured()) {
     const fromDb = await fetchShoppingCentersFromSupabase();
     if (fromDb?.length) return enrichShoppingCentersFromStatic(fromDb);
   }
   return staticShoppingCenters;
-});
-
-export async function getShoppingCenterBySlug(
-  slug: string
-): Promise<ShoppingCenter | undefined> {
-  const all = await getAllShoppingCenters();
-  return all.find((s) => s.slug === slug);
 }
+
+export const getAllShoppingCenters = cache(async (): Promise<ShoppingCenter[]> =>
+  catalogCache(
+    ["all-shopping-centers"],
+    loadAllShoppingCenters,
+    ["catalog", "shopping-centers"]
+  )
+);
+
+export const getShoppingCenterBySlug = cache(
+  async (slug: string): Promise<ShoppingCenter | undefined> => {
+    const all = await getAllShoppingCenters();
+    return all.find((s) => s.slug === slug);
+  }
+);
 
 async function getAllNewsFallback(): Promise<NewsArticle[]> {
   if (isSupabaseConfigured()) {
@@ -245,13 +272,17 @@ async function getAllNewsFallback(): Promise<NewsArticle[]> {
   return staticNews;
 }
 
-const getAllNews = cache(async (): Promise<NewsArticle[]> => {
+async function loadAllNews(): Promise<NewsArticle[]> {
   if (isGhostConfigured()) {
     const fromGhost = await fetchAllGhostModaStilNews();
     if (fromGhost.length) return fromGhost;
   }
   return getAllNewsFallback();
-});
+}
+
+const getAllNews = cache(async (): Promise<NewsArticle[]> =>
+  catalogCache(["all-news"], loadAllNews, ["catalog", "news"])
+);
 
 export async function getLatestNews(limit = 3): Promise<NewsArticle[]> {
   if (isGhostConfigured()) {
@@ -271,7 +302,7 @@ export async function getNewsByBrand(brandSlug: string): Promise<NewsArticle[]> 
   return filterNewsByBrand(all, brand);
 }
 
-export const getHomePromotions = cache(async (): Promise<HomePromotion[]> => {
+async function loadHomePromotions(): Promise<HomePromotion[]> {
   if (isSupabaseConfigured()) {
     const fromDb = await fetchActiveHomePromotionsFromSupabase();
     if (fromDb?.length) {
@@ -291,7 +322,11 @@ export const getHomePromotions = cache(async (): Promise<HomePromotion[]> => {
     }
   }
   return getActiveHomePromotionsFromStatic();
-});
+}
+
+export const getHomePromotions = cache(async (): Promise<HomePromotion[]> =>
+  catalogCache(["home-promotions"], loadHomePromotions, ["catalog", "promotions"])
+);
 
 export interface HomeStats {
   brandCount: number;

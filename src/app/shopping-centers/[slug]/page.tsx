@@ -7,7 +7,7 @@ import { BrandCard } from "@/components/brands/brand-card";
 import { ShoppingCenterLogo } from "@/components/shopping-centers/shopping-center-logo";
 import {
   getAllShoppingCenters,
-  getBrandBySlug,
+  getBrandsBySlugs,
   getShoppingCenterBySlug,
 } from "@/lib/data/repository";
 import { formatBrandCountPlus } from "@/lib/format/sr-plural";
@@ -16,6 +16,8 @@ import { createMetadata } from "@/lib/seo";
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
+
+export const revalidate = 3600;
 
 export async function generateStaticParams() {
   const centers = await getAllShoppingCenters();
@@ -38,9 +40,7 @@ export default async function ShoppingCenterPage({ params }: PageProps) {
   const center = await getShoppingCenterBySlug(slug);
   if (!center) notFound();
 
-  const centerBrands = (
-    await Promise.all(center.brandSlugs.map((s) => getBrandBySlug(s)))
-  ).filter(Boolean);
+  const centerBrands = await getBrandsBySlugs(center.brandSlugs);
 
   const mapsHref = center.address
     ? googleMapsUrl({

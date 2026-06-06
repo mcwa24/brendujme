@@ -1,5 +1,6 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import {
   createContext,
   useCallback,
@@ -7,12 +8,17 @@ import {
   useEffect,
   useState,
 } from "react";
+import { sanitizeSearchQuery } from "@/lib/security/sanitize-search-query";
 import {
   clearRecentSearches as clearStoredRecentSearches,
   readRecentSearches,
   writeRecentSearch,
 } from "@/lib/search/recent-searches";
-import { SearchModal } from "./search-modal";
+
+const SearchModal = dynamic(
+  () => import("./search-modal").then((m) => m.SearchModal),
+  { ssr: false }
+);
 
 interface SearchContextValue {
   open: boolean;
@@ -57,7 +63,7 @@ export function SearchProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const openWithQuery = useCallback((query: string) => {
-    setPendingQuery(query.trim());
+    setPendingQuery(sanitizeSearchQuery(query));
     setOpen(true);
   }, []);
 
@@ -79,7 +85,7 @@ export function SearchProvider({ children }: { children: React.ReactNode }) {
       }}
     >
       {children}
-      <SearchModal open={open} onOpenChange={setOpen} />
+      {open ? <SearchModal open={open} onOpenChange={setOpen} /> : null}
     </SearchContext.Provider>
   );
 }

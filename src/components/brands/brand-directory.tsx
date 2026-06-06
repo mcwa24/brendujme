@@ -12,11 +12,12 @@ import {
   getCountryFilterOptions,
   getPriceSegmentFilterOptions,
 } from "@/lib/brands/catalog-filters";
-import type { Brand, PriceSegment } from "@/types";
+import type { BrandDirectoryItem } from "@/lib/data/brand-directory-item";
+import type { PriceSegment } from "@/types";
 import { cn } from "@/lib/utils";
 
 interface BrandDirectoryProps {
-  brands: Brand[];
+  brands: BrandDirectoryItem[];
 }
 
 export function BrandDirectory({ brands }: BrandDirectoryProps) {

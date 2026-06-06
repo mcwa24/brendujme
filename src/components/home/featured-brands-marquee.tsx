@@ -29,6 +29,7 @@ function MarqueeItem({ brand }: { brand: Brand }) {
   return (
     <Link
       href={`/brands/${brand.slug}`}
+      prefetch={false}
       aria-label={brand.name}
       className="relative z-20 shrink-0 transition-transform duration-300 hover:scale-[1.04]"
     >

@@ -29,11 +29,10 @@ export function HeroSection({ stats }: HeroSectionProps) {
             <FadeIn delay={0.1}>
               <p className="mt-6 max-w-2xl text-lg text-muted md:text-xl">
                 Vodič kroz fashion brendove — od patika i streetweara do premium
-                odeće. Pronađite prodavnicu, tržni centar ili grad i saznajte gde
-                možete kupiti.
+                odeće.
               </p>
             </FadeIn>
-            <FadeIn delay={0.2} className="mt-10">
+            <FadeIn delay={0.2} when="mount" className="mt-10 max-md:hidden">
               <button
                 type="button"
                 onClick={() => setOpen(true)}

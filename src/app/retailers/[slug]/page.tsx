@@ -11,7 +11,7 @@ import { RetailerStoresSection } from "@/components/retailers/retailer-stores-se
 import { getRetailerCatalogMeta } from "@/lib/data/retailer-catalog-meta";
 import {
   getAllRetailers,
-  getBrandBySlug,
+  getBrandsBySlugs,
   getRetailerBySlug,
   getRetailerStores,
 } from "@/lib/data/repository";
@@ -25,6 +25,8 @@ import { cn } from "@/lib/utils";
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
+
+export const revalidate = 3600;
 
 export async function generateStaticParams() {
   const retailers = await getAllRetailers();
@@ -55,9 +57,7 @@ export default async function RetailerPage({ params }: PageProps) {
 
   const isFashionCompany = slug === "fashion-company";
 
-  const retailerBrands = (
-    await Promise.all(retailer.brandSlugs.map((s) => getBrandBySlug(s)))
-  ).filter(Boolean);
+  const retailerBrands = await getBrandsBySlugs(retailer.brandSlugs);
 
   const stores = isImportedRetailerSlug(slug)
     ? await getRetailerStores(slug)

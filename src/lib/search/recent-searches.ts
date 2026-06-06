@@ -1,8 +1,10 @@
+import { sanitizeSearchQuery } from "@/lib/security/sanitize-search-query";
+
 const STORAGE_KEY = "brendujme-recent-searches";
 const MAX_RECENT = 6;
 
 function normalizeQuery(query: string): string {
-  return query.trim().replace(/\s+/g, " ");
+  return sanitizeSearchQuery(query).replace(/\s+/g, " ");
 }
 
 export function readRecentSearches(): string[] {

@@ -1,4 +1,10 @@
-import type { Brand, PriceSegment } from "@/types";
+import type { BrandDirectoryItem } from "@/lib/data/brand-directory-item";
+import type { PriceSegment } from "@/types";
+
+type BrandFilterInput = Pick<
+  BrandDirectoryItem,
+  "name" | "country" | "priceSegment" | "availabilityCount"
+>;
 
 export interface CountryFilterOption {
   value: string;
@@ -21,7 +27,7 @@ const PRICE_SEGMENT_LABELS: Record<PriceSegment, string> = {
   luxury: "Luksuz",
 };
 
-export function getCountryFilterOptions(brands: Brand[]): CountryFilterOption[] {
+export function getCountryFilterOptions(brands: BrandFilterInput[]): CountryFilterOption[] {
   const counts = new Map<string, number>();
   for (const brand of brands) {
     const key = brand.country?.trim() || UNKNOWN_COUNTRY;
@@ -34,7 +40,7 @@ export function getCountryFilterOptions(brands: Brand[]): CountryFilterOption[] 
 }
 
 export function getPriceSegmentFilterOptions(
-  brands: Brand[]
+  brands: BrandFilterInput[]
 ): PriceSegmentFilterOption[] {
   const counts = new Map<PriceSegment, number>();
   for (const brand of brands) {
@@ -51,13 +57,13 @@ export function getPriceSegmentFilterOptions(
     }));
 }
 
-export function brandMatchesCountry(brand: Brand, country: string): boolean {
+export function brandMatchesCountry(brand: BrandFilterInput, country: string): boolean {
   if (country === "Sve zemlje") return true;
   const brandCountry = brand.country?.trim() || UNKNOWN_COUNTRY;
   return brandCountry === country;
 }
 
-export function brandMatchesSearch(brand: Brand, query: string): boolean {
+export function brandMatchesSearch(brand: BrandFilterInput, query: string): boolean {
   const q = query.trim().toLowerCase();
   if (!q) return true;
   return brand.name.toLowerCase().includes(q);

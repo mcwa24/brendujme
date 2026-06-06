@@ -22,6 +22,10 @@ import { RecentSearchPills } from "@/components/search/recent-search-pills";
 import { useSearch } from "@/components/search/search-provider";
 import { getBrandLetter } from "@/lib/brand-logo-resolve";
 import { OFFERING_LABELS } from "@/lib/data/brand-offerings";
+import {
+  SEARCH_QUERY_MAX_LENGTH,
+  sanitizeSearchQuery,
+} from "@/lib/security/sanitize-search-query";
 import { searchAll } from "@/lib/search";
 import { parseSearchIntent } from "@/lib/search-intent";
 import type { BrandOfferingSlug, SearchResult, SearchResultType } from "@/types";
@@ -60,12 +64,12 @@ export function SearchModal({ open, onOpenChange }: SearchModalProps) {
 
   useEffect(() => {
     if (open && pendingQuery) {
-      setQuery(pendingQuery);
+      setQuery(sanitizeSearchQuery(pendingQuery));
     }
   }, [open, pendingQuery]);
 
   useEffect(() => {
-    const q = query.trim();
+    const q = sanitizeSearchQuery(query);
     if (!q) {
       setResults([]);
       return;
@@ -74,6 +78,10 @@ export function SearchModal({ open, onOpenChange }: SearchModalProps) {
       setLoading(true);
       try {
         const res = await fetch(`/api/search?q=${encodeURIComponent(q)}`);
+        if (!res.ok) {
+          setResults([]);
+          return;
+        }
         const data = (await res.json()) as { results?: SearchResult[] };
         setResults(data.results ?? []);
       } catch {
@@ -167,10 +175,13 @@ export function SearchModal({ open, onOpenChange }: SearchModalProps) {
             <Search className="h-5 w-5 shrink-0 text-muted" />
             <input
               value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={(e) => setQuery(sanitizeSearchQuery(e.target.value))}
+              maxLength={SEARCH_QUERY_MAX_LENGTH}
               placeholder="npr. Nike patike, New Balance, Buzz…"
               className="h-14 w-full bg-transparent text-base text-foreground outline-none placeholder:text-muted"
               autoFocus
+              autoComplete="off"
+              spellCheck={false}
               aria-label="Pretraga"
             />
           </div>

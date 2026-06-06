@@ -28,7 +28,9 @@ export default function RootLayout({
         <SearchProvider>
           <ScrollToTop />
           <Header />
-          <main className="flex-1">{children}</main>
+          <main id="gh-main" className="gh-main flex-1">
+            {children}
+          </main>
           <Footer />
         </SearchProvider>
       </body>

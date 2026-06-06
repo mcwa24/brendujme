@@ -7,6 +7,8 @@ export interface ShoppingCenterImage {
   src: string;
   sourceUrl: string;
   alt: string;
+  /** Hero fotografija za kartice (16:9, object-cover) — dodaje se redom po centru */
+  coverSrc?: string;
 }
 
 export const shoppingCenterImages: Record<string, ShoppingCenterImage> = {
@@ -15,58 +17,68 @@ export const shoppingCenterImages: Record<string, ShoppingCenterImage> = {
     sourceUrl:
       "https://usceshoppingcenter.rs/wp-content/uploads/2017/03/Logo-usce.png",
     alt: "Ušće Shopping Center",
+    coverSrc: "/shopping-centers/usce-cover.jpg",
   },
   galerija: {
     src: "/shopping-centers/galerija.png",
     sourceUrl: "https://www.galerijabelgrade.com/android-chrome-512x512.png",
     alt: "Galerija Beograd",
+    coverSrc: "/shopping-centers/galerija-cover.jpg",
   },
   "delta-city": {
     src: "/shopping-centers/delta-city.jpg",
     sourceUrl: "https://www.deltacity.rs/wp-content/uploads/2024/12/delta-logo.jpg",
     alt: "Delta City",
+    coverSrc: "/shopping-centers/delta-city-cover.jpg",
   },
   "big-fashion": {
     src: "/shopping-centers/big-fashion.png",
     sourceUrl:
       "https://www.bigcenters.rs/beograd/wp-content/uploads/sites/3/2022/02/big-fashion-logo.png",
     alt: "BIG Fashion Park Beograd",
+    coverSrc: "/shopping-centers/big-fashion-cover.jpg",
   },
   promenada: {
     src: "/shopping-centers/promenada.png",
     sourceUrl:
       "https://www.bigcenters.rs/novi-sad/wp-content/uploads/sites/4/2022/03/BIG-logo-01.png",
     alt: "BIG FASHION Novi Sad (bivša Promenada)",
+    coverSrc: "/shopping-centers/promenada-cover.jpg",
   },
   mercator: {
     src: "/shopping-centers/mercator.png",
     sourceUrl:
       "https://mercatorcentar.rs/wp-content/themes/mercator/img/mercator_logo.png",
     alt: "Mercator Centar Niš",
+    coverSrc: "/shopping-centers/mercator-cover.jpg",
   },
   stadion: {
     src: "/shopping-centers/stadion.png",
     sourceUrl:
       "https://stadionshoppingcenter.rs/wp-content/themes/Stadion/images/stadion-logo.png",
     alt: "Stadion Shopping Center",
+    coverSrc: "/shopping-centers/stadion-cover.png",
   },
   "kragujevac-plaza": {
     src: "/shopping-centers/kragujevac-plaza.png",
     sourceUrl:
       "https://www.bigcenters.rs/kragujevac/wp-content/uploads/sites/7/2022/03/big-fashion-logo-1.png",
     alt: "BIG FASHION Kragujevac (bivša Plaza)",
+    coverSrc: "/shopping-centers/kragujevac-plaza-cover.jpg",
   },
   zlatibor: {
     src: "/shopping-centers/zlatibor.png",
     sourceUrl:
       "https://cdn.cpi-europe.com/uploads/production/602b986b5851a4f31d39b6b0/stopshop_logo_rgb_v1.png",
     alt: "Stop Shop Zlatibor",
+    coverSrc: "/shopping-centers/zlatibor-cover.jpg",
   },
   rajiceva: {
     src: "/shopping-centers/rajiceva.jpg",
     sourceUrl:
       "https://www.rajicevashoppingcenter.rs/wp-content/uploads/2022/11/rajiceva-logo-crn.jpg",
     alt: "Rajićeva Shopping Center",
+    coverSrc: "/shopping-centers/rajiceva-cover.jpg",
   },
 };
 

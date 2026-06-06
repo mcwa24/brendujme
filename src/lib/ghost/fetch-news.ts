@@ -172,9 +172,7 @@ export async function fetchGhostModaStilNewsPage(
   return fetchGhostPostsPageCached(page, pageSize);
 }
 
-export async function fetchAllGhostModaStilNews(): Promise<NewsArticle[]> {
-  if (!isGhostConfigured()) return [];
-
+async function fetchAllGhostModaStilNewsUncached(): Promise<NewsArticle[]> {
   const all: NewsArticle[] = [];
   let page = 1;
   let hasMore = true;
@@ -188,6 +186,19 @@ export async function fetchAllGhostModaStilNews(): Promise<NewsArticle[]> {
   }
 
   return all;
+}
+
+function fetchAllGhostModaStilNewsCached(): Promise<NewsArticle[]> {
+  return unstable_cache(
+    fetchAllGhostModaStilNewsUncached,
+    ["ghost-moda-stil-all-posts"],
+    { revalidate: 600, tags: ["ghost-news"] }
+  )();
+}
+
+export async function fetchAllGhostModaStilNews(): Promise<NewsArticle[]> {
+  if (!isGhostConfigured()) return [];
+  return fetchAllGhostModaStilNewsCached();
 }
 
 /** @deprecated Koristi fetchGhostModaStilNewsPage ili fetchAllGhostModaStilNews */

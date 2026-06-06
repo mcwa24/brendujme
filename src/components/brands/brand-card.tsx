@@ -2,14 +2,17 @@ import Link from "next/link";
 import { MapPin } from "lucide-react";
 import { BrandIdentity } from "@/components/brands/brand-identity";
 import { hasBrandLogo } from "@/lib/brand-logo-resolve";
+import type { BrandDirectoryItem } from "@/lib/data/brand-directory-item";
 import type { Brand } from "@/types";
 import { PremiumCard } from "@/components/ui/premium-card";
 import { buttonVariants } from "@/components/ui/button";
 import { formatLocationCount } from "@/lib/format/sr-plural";
 import { cn } from "@/lib/utils";
 
+type BrandCardData = BrandDirectoryItem | Brand;
+
 interface BrandCardProps {
-  brand: Brand;
+  brand: BrandCardData;
   variant?: "default" | "compact";
 }
 
@@ -18,7 +21,7 @@ export function BrandCard({ brand, variant = "default" }: BrandCardProps) {
 
   if (variant === "compact") {
     return (
-      <Link href={`/brands/${brand.slug}`} className="group block">
+      <Link href={`/brands/${brand.slug}`} prefetch={false} className="group block">
         <PremiumCard className="p-5 transition-colors group-hover:border-accent/20">
           <BrandIdentity brand={brand} variant="compact" />
         </PremiumCard>
@@ -49,6 +52,7 @@ export function BrandCard({ brand, variant = "default" }: BrandCardProps) {
         <div className="mt-auto pt-6">
           <Link
             href={`/brands/${brand.slug}`}
+            prefetch={false}
             className={cn(
               buttonVariants({ variant: "outline" }),
               "w-full border-border text-accent hover:bg-accent hover:text-white"

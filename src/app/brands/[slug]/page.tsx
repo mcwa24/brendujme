@@ -9,6 +9,7 @@ import { BrandLocationsSection } from "@/components/brands/brand-locations-secti
 import { RetailerSectionTitle } from "@/components/retailers/retailer-section-title";
 import { BrandNewsList } from "@/components/news/brand-news-list";
 import { hasBrandLogo } from "@/lib/brand-logo-resolve";
+import { expandBrandLocations } from "@/lib/data/expand-brand-locations";
 import {
   getAllBrands,
   getBrandBySlug,
@@ -23,6 +24,8 @@ import { createMetadata } from "@/lib/seo";
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
+
+export const revalidate = 3600;
 
 export async function generateStaticParams() {
   const brands = await getAllBrands();
@@ -45,20 +48,17 @@ export default async function BrandDetailPage({ params }: PageProps) {
   const brand = await getBrandBySlug(slug);
   if (!brand) notFound();
 
-  const related = await getRelatedBrands(brand);
-  const news = await getNewsByBrand(slug);
-  const centers = (
-    await Promise.all(
-      brand.shoppingCenterSlugs.map((s) => getShoppingCenterBySlug(s))
-    )
-  ).filter((c): c is NonNullable<typeof c> => Boolean(c));
+  const [related, news, centerResults, brandWithStores] = await Promise.all([
+    getRelatedBrands(brand),
+    getNewsByBrand(slug),
+    Promise.all(brand.shoppingCenterSlugs.map((s) => getShoppingCenterBySlug(s))),
+    expandBrandLocations(brand),
+  ]);
+  const centers = centerResults.filter((c): c is NonNullable<typeof c> =>
+    Boolean(c)
+  );
   const showLogoHero = hasBrandLogo(brand);
   const fcStores = getFashionCompanyStoresByBrand(slug);
-
-  const { expandBrandLocations } = await import(
-    "@/lib/data/expand-brand-locations"
-  );
-  const brandWithStores = await expandBrandLocations(brand);
 
   return (
     <>

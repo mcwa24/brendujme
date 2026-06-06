@@ -1,3 +1,4 @@
+import { catalogCache } from "@/lib/data/catalog-cache";
 import { getStaticRetailerStores } from "@/lib/data/retailer-stores-static";
 import { isImportedRetailerSlug } from "@/lib/data/imported-retailers";
 import { createSupabaseReadClient } from "@/lib/supabase/read-client";
@@ -79,7 +80,7 @@ export async function fetchRetailerStoresFromSupabase(
   });
 }
 
-export async function fetchRetailerStores(
+async function fetchRetailerStoresUncached(
   retailerSlug: string
 ): Promise<RetailerStore[]> {
   if (!isImportedRetailerSlug(retailerSlug)) return [];
@@ -88,4 +89,14 @@ export async function fetchRetailerStores(
   if (fromDb?.length) return fromDb;
 
   return getStaticRetailerStores(retailerSlug);
+}
+
+export function fetchRetailerStores(
+  retailerSlug: string
+): Promise<RetailerStore[]> {
+  return catalogCache(
+    ["retailer-stores", retailerSlug],
+    () => fetchRetailerStoresUncached(retailerSlug),
+    ["catalog", "retailer-stores", retailerSlug]
+  );
 }

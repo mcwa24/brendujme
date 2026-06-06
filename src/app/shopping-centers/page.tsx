@@ -8,6 +8,8 @@ import { getAllShoppingCenters } from "@/lib/data/repository";
 import { formatBrandCount } from "@/lib/format/sr-plural";
 import { createMetadata } from "@/lib/seo";
 
+export const revalidate = 3600;
+
 export const metadata = createMetadata({
   title: "Tržni centri",
   description:
@@ -25,13 +27,13 @@ export default async function ShoppingCentersPage() {
           Tržni centri
         </h1>
         <p className="mt-3 max-w-2xl text-muted">
-          Najveće retail destinacije u Srbiji sa kompletnom ponudom brenda.
+          Najveće retail destinacije u Srbiji sa kompletnom ponudom brendova.
         </p>
       </FadeIn>
       <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {shoppingCenters.map((center, i) => (
           <FadeIn key={center.slug} delay={i * 0.04}>
-            <Link href={`/shopping-centers/${center.slug}`}>
+            <Link href={`/shopping-centers/${center.slug}`} prefetch={false}>
               <PremiumCard className="overflow-hidden">
                 <ShoppingCenterLogo
                   slug={center.slug}

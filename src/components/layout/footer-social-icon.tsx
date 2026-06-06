@@ -11,7 +11,7 @@ interface FooterSocialIconProps {
 }
 
 export function FooterSocialIcon({ name }: FooterSocialIconProps) {
-  const className = "size-5 shrink-0";
+  const className = "icon";
 
   switch (name) {
     case "facebook":

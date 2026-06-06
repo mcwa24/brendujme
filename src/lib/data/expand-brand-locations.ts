@@ -44,9 +44,13 @@ export async function expandBrandLocations(brand: Brand): Promise<Brand> {
     merged.push(loc);
   }
 
-  for (const retailerSlug of retailerSlugs) {
-    const stores = await fetchRetailerStores(retailerSlug);
-    for (const store of stores) {
+  const storeBatches = await Promise.all(
+    retailerSlugs.map((retailerSlug) => fetchRetailerStores(retailerSlug))
+  );
+
+  for (let i = 0; i < retailerSlugs.length; i++) {
+    const retailerSlug = retailerSlugs[i]!;
+    for (const store of storeBatches[i] ?? []) {
       const loc = storeToLocation(store, retailerSlug);
       const key = locationKey(loc);
       if (seen.has(key)) continue;

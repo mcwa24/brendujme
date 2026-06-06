@@ -5,4 +5,6 @@ export const inter = Inter({
   subsets: ["latin", "latin-ext"],
   display: "swap",
   variable: "--font-inter",
+  /** Ghost koristi inter-roman.woff2 bez metric-adjust fallbacka */
+  adjustFontFallback: false,
 });
