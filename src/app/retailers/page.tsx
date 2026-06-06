@@ -11,7 +11,8 @@ import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
   title: "Prodavci",
-  description: "Retail partneri i distributeri premium brenda u Srbiji.",
+  description:
+    "Prodavci i distributeri modnih brendova u Srbiji — gde možete kupiti patike, streetwear i premium modu.",
   path: "/retailers",
 });
 
@@ -23,7 +24,7 @@ export default async function RetailersPage() {
       <FadeIn>
         <h1 className="font-display text-4xl font-semibold md:text-5xl">Prodavci</h1>
         <p className="mt-3 max-w-2xl text-muted">
-          Distributeri i retail partneri koji zastupaju međunarodne brendove u Srbiji.
+          Gde kupiti — distributeri i prodavci modnih brendova u Srbiji.
         </p>
       </FadeIn>
       <div className="mt-12 grid gap-6 sm:grid-cols-2">

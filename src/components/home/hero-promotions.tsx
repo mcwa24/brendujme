@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Calendar } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
-import { HOME_SECTION_PY } from "@/components/home/section-spacing";
+import { HOME_SECTION_PY, HOME_SECTION_TITLE } from "@/components/home/section-spacing";
 import type { PromotionBannerImage } from "@/lib/unsplash/promotion-banners";
 import type { HomePromotion, PromotionCampaignType } from "@/types";
 
@@ -60,7 +60,7 @@ export function HeroPromotions({
     <section className={HOME_SECTION_PY}>
       <Container narrow>
         <FadeIn>
-          <h2 className="font-display text-3xl font-semibold tracking-tight md:text-5xl">
+          <h2 className={HOME_SECTION_TITLE}>
             Aktuelne akcije
           </h2>
         </FadeIn>

@@ -75,7 +75,7 @@ export function Header() {
               <Search className="h-5 w-5" />
             </Button>
             <Link
-              href="/submit-brand"
+              href="/contact?topic=brand"
               className={cn(
                 buttonVariants({ variant: "default", size: "sm" }),
                 "hidden rounded-full bg-accent px-4 hover:bg-accent-hover sm:inline-flex"
@@ -134,7 +134,7 @@ export function Header() {
                     </kbd>
                   </Button>
                   <Link
-                    href="/submit-brand"
+                    href="/contact?topic=brand"
                     onClick={() => setMobileOpen(false)}
                     className={cn(
                       buttonVariants({ size: "lg" }),

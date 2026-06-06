@@ -9,7 +9,7 @@ interface StatsSectionProps {
 
 export function StatsSection({ stats }: StatsSectionProps) {
   const items = [
-    { value: String(stats.brandCount), label: "Brenda u direktorijumu" },
+    { value: String(stats.brandCount), label: "Modnih brendova" },
     { value: String(stats.storeCount), label: "Prodajnih lokacija" },
     { value: String(stats.cityCount), label: "Gradova" },
     { value: String(stats.shoppingCenterCount), label: "Tržnih centara" },

@@ -248,9 +248,9 @@ export const newsArticles: NewsArticle[] = [
   },
   {
     slug: "retail-intelligence-2026",
-    title: "Retail Intelligence: Stanje premium brenda u Srbiji 2026",
+    title: "Gde kupiti modne brendove u Srbiji — pregled 2026",
     excerpt:
-      "Godišnji izveštaj Bilbord Brands o rastu i trendovima na tržištu.",
+      "Pregled dostupnosti fashion brendova i trendova na tržištu Srbije.",
     content:
       "Analiza pokazuje rast premium segmenta od 18%, sa najvećim interesovanjem za beauty, contemporary luxury i sustainable fashion brendove.",
     publishedAt: "2026-04-10",

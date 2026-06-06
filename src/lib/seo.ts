@@ -1,32 +1,34 @@
 import type { Metadata } from "next";
 
-export const siteName = "Bilbord Brands";
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://bilbordbrands.rs";
+export const siteName = "Bilbord Shop";
+export const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://shop.bilbord.rs";
 
-export const defaultTitle =
-  "Bilbord Brands — Otkrijte brendove dostupne u Srbiji";
+export const siteTagline = "Gde kupiti modne brendove u Srbiji";
+
+export const defaultTitle = `${siteName} — ${siteTagline}`;
 
 export const defaultDescription =
-  "Premium platforma za otkrivanje brenda u Srbiji. Pronađite modu, lepotu, sport, lifestyle i luksuzne brendove — saznajte gde se prodaju u tržnim centrima i kod zvaničnih distributera.";
+  "Pronađite modne brendove u Srbiji — patike, streetwear i premium odeća. Saznajte u kojoj prodavnici, tržnom centru ili gradu možete kupiti omiljeni fashion brend.";
 
 export const siteKeywords = [
-  "brendovi Srbija",
-  "modni brendovi",
+  "gde kupiti modne brendove",
+  "modni brendovi Srbija",
+  "patike Srbija",
+  "streetwear Srbija",
   "tržni centri Beograd",
   "Fashion Company",
   "Fashion and Friends",
-  "direktorijum brenda",
-  "gde kupiti",
-  "luksuzni brendovi",
-  "obuća brendovi",
-  "lepota kozmetika",
+  "prodavnice moda",
+  "fashion brendovi",
+  "shop bilbord",
 ];
 
 const ogImage = {
   url: "/og-image.png",
   width: 402,
   height: 410,
-  alt: "Bilbord Brands",
+  alt: siteName,
   type: "image/png" as const,
 };
 
@@ -40,7 +42,7 @@ export const baseMetadata: Metadata = {
   description: defaultDescription,
   keywords: siteKeywords,
   applicationName: siteName,
-  authors: [{ name: siteName, url: siteUrl }],
+  authors: [{ name: "Bilbord", url: "https://bilbord.rs" }],
   creator: siteName,
   publisher: siteName,
   category: "shopping",

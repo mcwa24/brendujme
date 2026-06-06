@@ -22,13 +22,14 @@ export function HeroSection({ popularBrands }: HeroSectionProps) {
       <Container narrow>
         <FadeIn>
           <h1 className="font-display max-w-4xl text-4xl font-semibold leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-[72px]">
-            Otkrijte brendove dostupne u Srbiji
+            Gde kupiti modne brendove u Srbiji
           </h1>
         </FadeIn>
         <FadeIn delay={0.1}>
           <p className="mt-6 max-w-2xl text-lg text-muted md:text-xl">
-            Pronađite modu, lepotu, lifestyle i luksuzne brendove, saznajte gde
-            se prodaju i istražite najnovije retail vesti.
+            Vodič kroz fashion brendove — od patika i streetweara do premium
+            odeće. Pronađite prodavnicu, tržni centar ili grad i saznajte gde
+            možete kupiti.
           </p>
         </FadeIn>
         <FadeIn delay={0.2} className="mt-10">
@@ -39,7 +40,7 @@ export function HeroSection({ popularBrands }: HeroSectionProps) {
           >
             <Search className="h-5 w-5 shrink-0 text-muted" />
             <span className="text-muted">
-              Pretražite brendove, prodavce ili tržne centre...
+              Pretražite modne brendove, prodavce ili tržne centre...
             </span>
             <kbd className="ml-auto hidden rounded-md border border-border bg-background px-2.5 py-1 text-xs text-muted md:inline">
               ⌘K

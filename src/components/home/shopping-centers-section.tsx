@@ -5,7 +5,7 @@ import Link from "next/link";
 import { formatBrandCount } from "@/lib/format/sr-plural";
 import { ArrowUpRight, MapPin } from "lucide-react";
 import { Container } from "@/components/layout/container";
-import { HOME_SECTION_PY } from "@/components/home/section-spacing";
+import { HOME_SECTION_PY, HOME_SECTION_TITLE } from "@/components/home/section-spacing";
 import { FadeIn } from "@/components/motion/fade-in";
 import { PremiumCard } from "@/components/ui/premium-card";
 import { ShoppingCenterLogo } from "@/components/shopping-centers/shopping-center-logo";
@@ -27,11 +27,11 @@ export function ShoppingCentersSection({ centers }: ShoppingCentersSectionProps)
     <section className={HOME_SECTION_PY}>
       <Container narrow>
         <FadeIn>
-          <h2 className="font-display text-3xl font-semibold tracking-tight md:text-5xl">
+          <h2 className={HOME_SECTION_TITLE}>
             Popularni tržni centri
           </h2>
           <p className="mt-3 max-w-xl text-muted">
-            Najveće retail destinacije sa najbogatijom ponudom brenda.
+            Gde kupiti modne brendove — najveći tržni centri u Srbiji.
           </p>
         </FadeIn>
 

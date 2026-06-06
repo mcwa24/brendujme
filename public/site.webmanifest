@@ -1,11 +1,11 @@
 {
-  "name": "Bilbord Brands",
-  "short_name": "Bilbord",
-  "description": "Otkrijte brendove dostupne u Srbiji — moda, lepota, sport i luksuz.",
+  "name": "Bilbord Shop",
+  "short_name": "Shop",
+  "description": "Gde kupiti modne brendove u Srbiji — patike, streetwear i premium moda.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#000000",
+  "background_color": "#fafaf8",
+  "theme_color": "#0f172a",
   "lang": "sr",
   "icons": [
     {

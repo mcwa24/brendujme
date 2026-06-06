@@ -62,11 +62,11 @@ export function BrandDirectory({ brands }: BrandDirectoryProps) {
     <Container narrow className="py-12 md:py-16">
       <FadeIn>
         <h1 className="font-display text-4xl font-semibold tracking-tight md:text-5xl">
-          Direktorijum brenda
+          Modni brendovi
         </h1>
         <p className="mt-3 max-w-2xl text-muted">
-          {brands.length} brenda u katalogu — pretražite po nazivu, zemlji ili cenovnom
-          segmentu.
+          {brands.length} fashion brendova — pretražite gde ih možete kupiti u
+          Srbiji po nazivu, zemlji ili cenovnom segmentu.
         </p>
       </FadeIn>
 

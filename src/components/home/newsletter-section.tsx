@@ -1,7 +1,7 @@
 "use client";
 
 import { Container } from "@/components/layout/container";
-import { HOME_SECTION_PY } from "@/components/home/section-spacing";
+import { HOME_SECTION_PY, HOME_SECTION_TITLE } from "@/components/home/section-spacing";
 import { FadeIn } from "@/components/motion/fade-in";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -14,12 +14,12 @@ export function NewsletterSection() {
         <FadeIn>
           <PremiumCard className="px-8 py-12 md:px-16 md:py-16">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="font-display text-3xl font-semibold tracking-tight md:text-4xl">
+              <h2 className={HOME_SECTION_TITLE}>
                 Budite u toku sa novim brendima u Srbiji
               </h2>
               <p className="mt-4 text-muted">
-                Mesečni pregled novih otvaranja, retail vesti i premium brenda
-                na vašem emailu.
+                Mesečni pregled novih prodavnica, modnih vesti i brendova koje
+                možete kupiti u Srbiji.
               </p>
               <form
                 className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center"

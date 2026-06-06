@@ -19,7 +19,7 @@ const footerColumns = [
       { href: "/about", label: "O nama" },
       { href: "/contact", label: "Kontakt" },
       { href: "/privacy", label: "Politika privatnosti" },
-      { href: "/submit-brand", label: "Prijavi brend" },
+      { href: "/contact?topic=brand", label: "Prijavi brend" },
     ],
   },
 ];
@@ -32,8 +32,8 @@ export function Footer() {
           <div className="lg:col-span-2">
             <BrandMark logoHeight={36} />
             <p className="mt-3 max-w-md text-sm leading-relaxed text-muted">
-              Premium platforma za otkrivanje brenda dostupnih u Srbiji.
-              Retail inteligencija za modu, lepotu i lifestyle.
+              Vodič kroz modne brendove i prodavnice u Srbiji — gde kupiti
+              patike, streetwear i premium odeću. Deo Bilbord ekosistema.
             </p>
           </div>
           {footerColumns.map((col) => (
@@ -59,12 +59,12 @@ export function Footer() {
         <Separator className="my-8" />
         <div className="flex flex-col gap-3 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {new Date().getFullYear()} Bilbord Brands. Sva prava zadržana.{" "}
+            © {new Date().getFullYear()} Bilbord Shop. Sva prava zadržana.{" "}
             <Link href="/privacy" className="hover:text-accent">
               Politika privatnosti
             </Link>
           </p>
-          <p>Premium Retail Intelligence Platform za Srbiju</p>
+          <p>shop.bilbord.rs</p>
         </div>
       </Container>
     </footer>

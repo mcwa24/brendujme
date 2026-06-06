@@ -6,7 +6,7 @@ import { createMetadata } from "@/lib/seo";
 export const metadata = createMetadata({
   title: "Politika privatnosti",
   description:
-    "Politika privatnosti Bilbord Brands platforme, uključujući korišćenje fotografija sa Unsplash-a.",
+    "Politika privatnosti Bilbord Shop-a (shop.bilbord.rs), uključujući korišćenje fotografija sa Unsplash-a.",
   path: "/privacy",
 });
 
@@ -19,8 +19,8 @@ export default function PrivacyPage() {
         </h1>
         <div className="prose prose-neutral mt-8 max-w-3xl space-y-6 text-muted">
           <p className="text-lg text-foreground">
-            Ova stranica opisuje kako Bilbord Brands postupa sa podacima i
-            sadržajem trećih strana na platformi.
+            Ova stranica opisuje kako Bilbord Shop postupa sa podacima i
+            sadržajem trećih strana na shop.bilbord.rs.
           </p>
 
           <section className="space-y-3">

@@ -5,7 +5,7 @@ import { createMetadata } from "@/lib/seo";
 export const metadata = createMetadata({
   title: "Brendovi",
   description:
-    "Pregledajte i pretražite premium brendove dostupne u Srbiji.",
+    "Pretražite modne brendove u Srbiji i saznajte gde ih možete kupiti.",
   path: "/brands",
 });
 

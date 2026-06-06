@@ -221,10 +221,10 @@ export function FashionCompanyDetail() {
       {brandsInApp.length > 0 && (
         <section>
           <h2 className="font-display text-2xl font-semibold md:text-3xl">
-            U našem direktorijumu
+            Gde kupiti na Bilbord Shop-u
           </h2>
           <p className="mt-2 text-muted">
-            Brendovi iz FC portfolija sa profilom na Bilbord Brands.
+            Brendovi iz FC portfolija — prodavnice i lokacije u Srbiji.
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {brandsInApp.map(

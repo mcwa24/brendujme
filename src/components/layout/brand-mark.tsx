@@ -19,7 +19,7 @@ export function BrandMark({
     // eslint-disable-next-line @next/next/no-img-element
     <img
       src="/bilbord-logo.png"
-      alt="Bilbord"
+      alt="Bilbord Shop"
       className={cn(
         "block shrink-0 bg-transparent object-contain",
         logoHeight == null && "h-8 w-auto md:h-9",

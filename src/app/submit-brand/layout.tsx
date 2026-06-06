@@ -2,7 +2,7 @@ import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
   title: "Prijavite brend",
-  description: "Predložite brend za uključivanje u Bilbord Brands direktorijum.",
+  description: "Predložite modni brend za uključivanje u Bilbord Shop.",
   path: "/submit-brand",
 });
 
