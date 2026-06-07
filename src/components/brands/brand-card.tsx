@@ -23,9 +23,9 @@ export function BrandCard({ brand, variant = "default", uniformLogo = false }: B
 
   if (variant === "compact") {
     return (
-      <Link href={`/brands/${brand.slug}`} prefetch={false} className="group block">
-        <PremiumCard className="p-5 transition-colors group-hover:border-accent/20">
-          <BrandIdentity brand={brand} variant="compact" uniformLogo={uniformLogo} />
+      <Link href={`/brands/${brand.slug}`} prefetch={false} className="group block h-full">
+        <PremiumCard className="flex h-full flex-col p-3 transition-colors group-hover:border-accent/20 sm:p-5">
+          <BrandIdentity brand={brand} variant="compact" uniformLogo={uniformLogo} className="flex-1" />
         </PremiumCard>
       </Link>
     );

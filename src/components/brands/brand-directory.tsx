@@ -72,8 +72,59 @@ export function BrandDirectory({ brands }: BrandDirectoryProps) {
         </p>
       </FadeIn>
 
-      <div className="mt-12 flex flex-col gap-10 lg:flex-row">
-        <aside className="lg:w-64 lg:shrink-0">
+      <FadeIn delay={0.06} className="mt-8 md:mt-10">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+          <div className="relative flex-1">
+            <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted" />
+            <Input
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Pretraži brendove..."
+              className={cn(
+                "h-12 rounded-none border-border pl-11",
+                hasSearchQuery && "pr-11"
+              )}
+            />
+            {hasSearchQuery && (
+              <button
+                type="button"
+                onClick={clearSearch}
+                className="absolute right-3 top-1/2 -translate-y-1/2 rounded-none p-1 text-muted transition-colors hover:text-foreground"
+                aria-label="Obriši pretragu"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            )}
+          </div>
+          <select
+            value={sort}
+            onChange={(e) =>
+              setSort(e.target.value as "name" | "availability")
+            }
+            className="hidden h-12 rounded-none border border-border bg-card px-4 text-sm text-foreground outline-none sm:block"
+            aria-label="Sortiranje"
+          >
+            <option value="name">Naziv A–Z</option>
+            <option value="availability">Najviše lokacija</option>
+          </select>
+        </div>
+
+        <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted">
+          <p>{formatBrandCount(filtered.length)}</p>
+          {hasSearchQuery && (
+            <button
+              type="button"
+              onClick={clearSearch}
+              className="font-medium text-accent hover:underline"
+            >
+              Obriši pretragu
+            </button>
+          )}
+        </div>
+      </FadeIn>
+
+      <div className="mt-8 flex flex-col gap-10 lg:mt-10 lg:flex-row">
+        <aside className="hidden lg:block lg:w-64 lg:shrink-0">
           <div className="sticky top-28 space-y-8 rounded-none border border-border bg-card p-6">
             <FilterGroup title="Zemlja">
               <FilterButton
@@ -118,58 +169,9 @@ export function BrandDirectory({ brands }: BrandDirectoryProps) {
         </aside>
 
         <div className="min-w-0 flex-1">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-            <div className="relative flex-1">
-              <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted" />
-              <Input
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder="Pretraži brendove..."
-                className={cn(
-                  "h-12 rounded-none border-border pl-11",
-                  hasSearchQuery && "pr-11"
-                )}
-              />
-              {hasSearchQuery && (
-                <button
-                  type="button"
-                  onClick={clearSearch}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 rounded-none p-1 text-muted transition-colors hover:text-foreground"
-                  aria-label="Obriši pretragu"
-                >
-                  <X className="h-4 w-4" />
-                </button>
-              )}
-            </div>
-            <select
-              value={sort}
-              onChange={(e) =>
-                setSort(e.target.value as "name" | "availability")
-              }
-              className="h-12 rounded-none border border-border bg-card px-4 text-sm text-foreground outline-none"
-              aria-label="Sortiranje"
-            >
-              <option value="name">Naziv A–Z</option>
-              <option value="availability">Najviše lokacija</option>
-            </select>
-          </div>
-
-          <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted">
-            <p>{formatBrandCount(filtered.length)}</p>
-            {hasSearchQuery && (
-              <button
-                type="button"
-                onClick={clearSearch}
-                className="font-medium text-accent hover:underline"
-              >
-                Obriši pretragu
-              </button>
-            )}
-          </div>
-
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+          <div className="grid grid-cols-2 items-stretch gap-4 sm:gap-6 xl:grid-cols-3">
             {filtered.map((brand, i) => (
-              <FadeIn key={brand.slug} delay={(i % 6) * 0.04}>
+              <FadeIn key={brand.slug} delay={(i % 6) * 0.04} className="h-full">
                 <BrandCard brand={brand} variant="compact" uniformLogo />
               </FadeIn>
             ))}

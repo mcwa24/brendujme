@@ -11,7 +11,8 @@ import {
 import type { BrandLogoInput } from "@/types";
 import { cn } from "@/lib/utils";
 
-const COMPACT_LOGO_SLOT = "h-[120px] w-[140px]";
+const COMPACT_LOGO_SLOT =
+  "h-[88px] w-full max-w-[104px] sm:h-[120px] sm:max-w-[140px]";
 
 interface BrandIdentityProps {
   brand: BrandLogoInput;
@@ -127,9 +128,14 @@ export function BrandIdentity({
 
     if (uniformLogo) {
       return (
-        <div className={cn("flex flex-col items-center gap-4 text-center", className)}>
+        <div
+          className={cn(
+            "flex h-full flex-col items-center justify-between gap-3 text-center sm:gap-4",
+            className
+          )}
+        >
           {logoSlot}
-          <p className="font-display text-lg font-semibold text-foreground">
+          <p className="font-display line-clamp-2 flex min-h-[2.5rem] w-full items-center justify-center text-xs font-semibold leading-tight text-foreground sm:min-h-[2.75rem] sm:text-sm md:text-base lg:text-lg">
             {brand.name}
           </p>
         </div>
