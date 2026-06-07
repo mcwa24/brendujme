@@ -16,6 +16,8 @@ import { cn } from "@/lib/utils";
 
 const LOGO_SIZE = 120;
 const PIXELS_PER_SECOND = 52;
+const MARQUEE_GAP = "gap-12 sm:gap-16";
+const MARQUEE_GAP_PX = "pr-12 sm:pr-16";
 
 interface FeaturedBrandsMarqueeProps {
   brands: Brand[];
@@ -31,7 +33,7 @@ function MarqueeItem({ brand }: { brand: Brand }) {
       href={`/brands/${brand.slug}`}
       prefetch={false}
       aria-label={brand.name}
-      className="relative z-20 shrink-0 transition-transform duration-300 hover:scale-[1.04]"
+      className="relative z-20 block shrink-0 overflow-hidden transition-transform duration-300 hover:scale-[1.04]"
     >
       {showImage && src ? (
         <BrandLogoBox
@@ -69,7 +71,11 @@ function MarqueeStrip({
   return (
     <div
       ref={innerRef}
-      className="flex shrink-0 items-center gap-10 sm:gap-14"
+      className={cn(
+        "flex shrink-0 items-center",
+        MARQUEE_GAP,
+        MARQUEE_GAP_PX
+      )}
       aria-hidden={stripId === "clone" ? true : undefined}
     >
       {brands.map((brand, index) => (
@@ -155,7 +161,7 @@ export function FeaturedBrandsMarquee({ brands }: FeaturedBrandsMarqueeProps) {
       </div>
 
       <div className="hidden overflow-x-auto py-2 no-scrollbar motion-reduce:block">
-        <div className="flex w-max items-center gap-10 sm:gap-14">
+        <div className={cn("flex w-max items-center", MARQUEE_GAP)}>
           {brands.map((brand) => (
             <MarqueeItem key={brand.slug} brand={brand} />
           ))}
