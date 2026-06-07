@@ -1,5 +1,6 @@
 import { mapBrand } from "@/lib/supabase/mappers";
 import { DEPRECATED_BRAND_SLUGS } from "@/lib/data/imported-retailers";
+import { filterPublishedShoppingCenterSlugs } from "@/lib/data/shopping-centers";
 import { createSupabaseReadClient } from "@/lib/supabase/read-client";
 import type {
   DbBrand,
@@ -82,7 +83,9 @@ function assembleBrands(
   return rows.map((row) =>
     mapBrand(row, {
       locations: relations.locByBrandId.get(row.id) ?? [],
-      shoppingCenterSlugs: relations.mallsByBrandId.get(row.id) ?? [],
+      shoppingCenterSlugs: filterPublishedShoppingCenterSlugs(
+        relations.mallsByBrandId.get(row.id) ?? []
+      ),
       relatedBrandSlugs: relations.relatedByBrandId.get(row.id) ?? [],
     })
   );
@@ -168,7 +171,7 @@ export async function fetchBrandBySlugFromSupabase(
 
   return mapBrand(row as DbBrand, {
     locations: (locations.data ?? []) as DbBrandLocationJoin[],
-    shoppingCenterSlugs: mallSlugs,
+    shoppingCenterSlugs: filterPublishedShoppingCenterSlugs(mallSlugs),
     relatedBrandSlugs: relatedSlugs,
   });
 }

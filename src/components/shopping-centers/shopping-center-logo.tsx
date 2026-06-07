@@ -19,6 +19,8 @@ interface ShoppingCenterLogoProps {
   size?: keyof typeof sizeMap;
   className?: string;
   variant?: "icon" | "banner";
+  /** Bez okvira i pozadine — samo logo */
+  bare?: boolean;
   logoUrl?: string | null;
   logoStoragePath?: string | null;
 }
@@ -29,6 +31,7 @@ export function ShoppingCenterLogo({
   size = "md",
   className,
   variant = "icon",
+  bare = false,
   logoUrl,
   logoStoragePath,
 }: ShoppingCenterLogoProps) {
@@ -95,7 +98,8 @@ export function ShoppingCenterLogo({
   return (
     <div
       className={cn(
-        "relative flex shrink-0 items-center justify-center overflow-hidden rounded-none bg-secondary p-1",
+        "relative flex shrink-0 items-center justify-center overflow-hidden rounded-none",
+        bare ? "bg-transparent p-0" : "bg-secondary p-1",
         dims.box,
         className
       )}

@@ -24,7 +24,11 @@ import {
   isImportedRetailerSlug,
   sortImportedRetailers,
 } from "@/lib/data/imported-retailers";
-import { shoppingCenters as staticShoppingCenters } from "@/lib/data/shopping-centers";
+import {
+  filterPublishedShoppingCenters,
+  isPublishedShoppingCenterSlug,
+  shoppingCenters as staticShoppingCenters,
+} from "@/lib/data/shopping-centers";
 import { fetchAllBrandsFromSupabase } from "@/lib/supabase/fetch-brands";
 import {
   dedupePromotionsForHome,
@@ -330,6 +334,8 @@ function enrichShoppingCentersFromStatic(
     if (!fallback) return center;
     return {
       ...center,
+      name: fallback.name,
+      description: fallback.description,
       address: center.address || fallback.address,
       latitude: center.latitude ?? fallback.latitude,
       longitude: center.longitude ?? fallback.longitude,
@@ -340,14 +346,18 @@ function enrichShoppingCentersFromStatic(
 async function loadAllShoppingCenters(): Promise<ShoppingCenter[]> {
   if (isSupabaseConfigured()) {
     const fromDb = await fetchShoppingCentersFromSupabase();
-    if (fromDb?.length) return enrichShoppingCentersFromStatic(fromDb);
+    if (fromDb?.length) {
+      return filterPublishedShoppingCenters(
+        enrichShoppingCentersFromStatic(fromDb)
+      );
+    }
   }
   return staticShoppingCenters;
 }
 
 export const getAllShoppingCenters = cache(async (): Promise<ShoppingCenter[]> =>
   catalogCache(
-    ["all-shopping-centers"],
+    ["all-shopping-centers", "v3-excluded-malls"],
     loadAllShoppingCenters,
     ["catalog", "shopping-centers"]
   )
@@ -355,6 +365,7 @@ export const getAllShoppingCenters = cache(async (): Promise<ShoppingCenter[]> =
 
 export const getShoppingCenterBySlug = cache(
   async (slug: string): Promise<ShoppingCenter | undefined> => {
+    if (!isPublishedShoppingCenterSlug(slug)) return undefined;
     const all = await getAllShoppingCenters();
     return all.find((s) => s.slug === slug);
   }

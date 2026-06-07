@@ -9,6 +9,7 @@ const MALL_NAMES: Record<string, string> = {
   "big-fashion": "BIG Fashion",
   promenada: "Promenada",
   stadion: "Stadion",
+  rajiceva: "Rajićeva",
   mercator: "Merkator",
   "kragujevac-plaza": "Plaza Kragujevac",
 };

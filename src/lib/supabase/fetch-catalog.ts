@@ -8,6 +8,7 @@ import {
   mapRetailer,
   mapShoppingCenter,
 } from "@/lib/supabase/mappers";
+import { filterPublishedShoppingCenters } from "@/lib/data/shopping-centers";
 import { createSupabaseReadClient } from "@/lib/supabase/read-client";
 import type {
   DbArticle,
@@ -110,8 +111,13 @@ export async function fetchShoppingCentersFromSupabase(): Promise<
     centers.map((c) => [c.slug as string, c.id as string])
   );
 
-  return (centers as DbShoppingCenter[]).map((row) =>
-    mapShoppingCenter(row, brandsByMallId.get(mallIdBySlug.get(row.slug) ?? "") ?? [])
+  return filterPublishedShoppingCenters(
+    (centers as DbShoppingCenter[]).map((row) =>
+      mapShoppingCenter(
+        row,
+        brandsByMallId.get(mallIdBySlug.get(row.slug) ?? "") ?? []
+      )
+    )
   );
 }
 

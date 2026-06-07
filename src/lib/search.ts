@@ -1,7 +1,10 @@
 import { brands } from "@/lib/data/brands";
 import { DEPRECATED_BRAND_SLUGS } from "@/lib/data/imported-retailers";
 import { retailers } from "@/lib/data/retailers";
-import { shoppingCenters } from "@/lib/data/shopping-centers";
+import {
+  filterPublishedShoppingCenters,
+  shoppingCenters,
+} from "@/lib/data/shopping-centers";
 import { enrichBrand } from "@/lib/data/enrich-brand";
 import { buildSearchResults } from "@/lib/search-catalog";
 import { sanitizeSearchQuery } from "@/lib/security/sanitize-search-query";
@@ -19,6 +22,6 @@ export function searchAll(query: string): SearchResult[] {
       .filter((b) => !EXCLUDED_BRAND_SLUGS.has(b.slug))
       .map(enrichBrand),
     retailers,
-    shoppingCenters
+    filterPublishedShoppingCenters(shoppingCenters)
   );
 }

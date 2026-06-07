@@ -1,5 +1,27 @@
 import type { ShoppingCenter } from "@/types";
 
+/** Skriveni sa sajta — i dalje mogu postojati u scraped podacima prodavaca */
+export const EXCLUDED_SHOPPING_CENTER_SLUGS = new Set([
+  "mercator",
+  "kragujevac-plaza",
+  "zlatibor",
+  "promenada",
+]);
+
+export function isPublishedShoppingCenterSlug(slug: string): boolean {
+  return !EXCLUDED_SHOPPING_CENTER_SLUGS.has(slug);
+}
+
+export function filterPublishedShoppingCenterSlugs(slugs: string[]): string[] {
+  return slugs.filter(isPublishedShoppingCenterSlug);
+}
+
+export function filterPublishedShoppingCenters(
+  centers: ShoppingCenter[]
+): ShoppingCenter[] {
+  return centers.filter((c) => isPublishedShoppingCenterSlug(c.slug));
+}
+
 export const shoppingCenters: ShoppingCenter[] = [
   {
     slug: "usce",
@@ -59,15 +81,6 @@ export const shoppingCenters: ShoppingCenter[] = [
     brandSlugs: ["zara", "mango", "nike", "rituals", "cos"],
   },
   {
-    slug: "mercator",
-    name: "Mercator Centar",
-    city: "Niš",
-    address: "Vizantijski bulevar 1",
-    brandCount: 52,
-    description: "Regionalni retail hub sa međunarodnim modnim brendima.",
-    brandSlugs: ["h-and-m", "bershka", "adidas", "pull-and-bear"],
-  },
-  {
     slug: "stadion",
     name: "Stadion Shopping Center",
     city: "Beograd",
@@ -79,30 +92,8 @@ export const shoppingCenters: ShoppingCenter[] = [
     brandSlugs: ["nike", "adidas", "puma", "under-armour"],
   },
   {
-    slug: "kragujevac-plaza",
-    name: "Plaza Kragujevac",
-    city: "Kragujevac",
-    address: "Bulevar kraljice Marije 56",
-    latitude: 44.0083113,
-    longitude: 20.89644,
-    brandCount: 41,
-    description: "Moderni tržni centar u srcu Šumadije.",
-    brandSlugs: ["reserved", "house", "mohito", "cropp"],
-  },
-  {
-    slug: "zlatibor",
-    name: "Stop Shop Zlatibor",
-    city: "Zlatibor",
-    address: "Tržni centar bb",
-    latitude: 43.726002,
-    longitude: 19.697006,
-    brandCount: 28,
-    description: "Planinski retail sa lifestyle i outdoor brendima.",
-    brandSlugs: ["north-face", "columbia", "timberland"],
-  },
-  {
     slug: "rajiceva",
-    name: "Rajiceva Shopping Center",
+    name: "Rajićeva Shopping Center",
     city: "Beograd",
     address: "Knez Mihailova 54",
     brandCount: 38,
@@ -115,5 +106,6 @@ export const shoppingCenters: ShoppingCenter[] = [
 export function getShoppingCenterBySlug(
   slug: string
 ): ShoppingCenter | undefined {
+  if (!isPublishedShoppingCenterSlug(slug)) return undefined;
   return shoppingCenters.find((s) => s.slug === slug);
 }

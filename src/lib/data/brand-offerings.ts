@@ -12,6 +12,7 @@ export const OFFERING_LABELS: Record<BrandOfferingSlug, string> = {
   apparel: "Odeća i moda",
   sportswear: "Sportska odeća",
   accessories: "Dodaci i oprema",
+  beauty: "Kozmetika i negovanje",
 };
 
 /** Podrazumevani fokus prodavca (ako nema posebnog pravila za brend) */
@@ -27,6 +28,9 @@ export const RETAILER_OFFERING_FOCUS: Record<string, OfferingSlug[]> = {
   "sport-vision": ["footwear", "sportswear"],
   "planeta-sport": ["footwear", "sportswear"],
   "djak-sport": ["footwear", "sportswear"],
+  "beauty-world": ["beauty"],
+  sephora: ["beauty"],
+  lilly: ["beauty"],
 };
 
 /** Uži skup po brendu + prodavcu (nadjašnja RETAILER_OFFERING_FOCUS) */
@@ -96,6 +100,12 @@ const BRAND_AT_RETAILER: Record<string, Record<string, OfferingSlug[]>> = {
     "fashion-company": ["apparel"],
     "fashion-friends": ["apparel"],
   },
+  rituals: {
+    "beauty-world": ["beauty"],
+  },
+  mac: {
+    "beauty-world": ["beauty"],
+  },
 };
 
 export function getBrandRetailerOfferings(
@@ -106,7 +116,7 @@ export function getBrandRetailerOfferings(
   if (specific?.length) return specific;
   const fallback = RETAILER_OFFERING_FOCUS[retailerSlug];
   if (fallback?.length) return fallback;
-  return ["sportswear"];
+  return [];
 }
 
 /** Tražena odeća (majica, garderoba) uključuje i sportsku odeću u multibrend radnjama */
@@ -130,6 +140,7 @@ export const OFFERING_GROUP_ORDER: OfferingSlug[] = [
   "footwear",
   "sportswear",
   "apparel",
+  "beauty",
   "accessories",
 ];
 

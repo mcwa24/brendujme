@@ -37,7 +37,7 @@ const coreBrands: Brand[] = [
       },
       {
         id: "2",
-        storeName: "Rajiceva Shopping Center",
+        storeName: "Rajićeva Shopping Center",
         retailerSlug: "premium-mall",
         address: "Knez Mihailova 5",
         city: "Beograd",
@@ -87,7 +87,7 @@ const coreBrands: Brand[] = [
         id: "7",
         storeName: "Luxury Gallery",
         retailerSlug: "luxury-gallery",
-        address: "Rajiceva Shopping Center",
+        address: "Rajićeva Shopping Center",
         city: "Beograd",
       },
     ],
@@ -170,7 +170,7 @@ const coreBrands: Brand[] = [
         city: "Beograd",
       },
     ],
-    shoppingCenterSlugs: ["delta-city", "mercator", "stadion"],
+    shoppingCenterSlugs: ["delta-city", "stadion"],
     relatedBrandSlugs: ["nike", "puma", "new-balance"],
   },
   {
@@ -286,7 +286,7 @@ const coreBrands: Brand[] = [
         id: "17",
         storeName: "Luxury Gallery",
         retailerSlug: "luxury-gallery",
-        address: "Rajiceva Shopping Center",
+        address: "Rajićeva Shopping Center",
         city: "Beograd",
       },
     ],
@@ -314,7 +314,7 @@ const coreBrands: Brand[] = [
         city: "Beograd",
       },
     ],
-    shoppingCenterSlugs: ["big-fashion", "zlatibor"],
+    shoppingCenterSlugs: ["big-fashion"],
     relatedBrandSlugs: ["north-face", "columbia", "levis"],
   },
   {
@@ -386,7 +386,7 @@ const coreBrands: Brand[] = [
         city: "Zlatibor",
       },
     ],
-    shoppingCenterSlugs: ["zlatibor", "stadion"],
+    shoppingCenterSlugs: ["stadion"],
     relatedBrandSlugs: ["columbia", "timberland", "patagonia"],
   },
 ];

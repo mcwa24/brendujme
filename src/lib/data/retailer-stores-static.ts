@@ -7,6 +7,7 @@ import fashionScraped from "./fast-fashion-serbia-scraped.json";
 import officeScraped from "./office-shoes-scraped.json";
 import nikeScraped from "./nike-serbia-scraped.json";
 import tikeScraped from "./tike-scraped.json";
+import { isPublishedShoppingCenterSlug } from "@/lib/data/shopping-centers";
 import type { RetailerStore } from "@/types";
 
 interface ScrapedStore {
@@ -31,6 +32,7 @@ const MALL_NAMES: Record<string, string> = {
   "big-fashion": "BIG Fashion",
   promenada: "Promenada",
   stadion: "Stadion",
+  rajiceva: "Rajićeva",
   mercator: "Mercator",
   "kragujevac-plaza": "Plaza Kragujevac",
   zlatibor: "Stop Shop Zlatibor",
@@ -38,7 +40,11 @@ const MALL_NAMES: Record<string, string> = {
 
 function mapStore(store: ScrapedStore, retailerSlug: string): RetailerStore {
   const storeKey = store.path ?? store.slug ?? store.name;
-  const mallSlug = store.shoppingCenterSlug ?? null;
+  const rawMallSlug = store.shoppingCenterSlug ?? null;
+  const mallSlug =
+    rawMallSlug && isPublishedShoppingCenterSlug(rawMallSlug)
+      ? rawMallSlug
+      : null;
   return {
     id: `${retailerSlug}-${storeKey}`,
     name: store.name,

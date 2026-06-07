@@ -8,7 +8,6 @@ import { Container } from "@/components/layout/container";
 import { HOME_SECTION_PY, HOME_SECTION_TITLE } from "@/components/home/section-spacing";
 import { FadeIn } from "@/components/motion/fade-in";
 import { PremiumCard } from "@/components/ui/premium-card";
-import { ShoppingCenterLogo } from "@/components/shopping-centers/shopping-center-logo";
 import { cn } from "@/lib/utils";
 import type { ShoppingCenter } from "@/types";
 
@@ -51,19 +50,12 @@ export function ShoppingCentersSection({ centers }: ShoppingCentersSectionProps)
                   aria-selected={isActive}
                   onClick={() => setActiveSlug(center.slug)}
                   className={cn(
-                    "flex shrink-0 items-center gap-2.5 rounded-none border px-3 py-2 text-left transition-all sm:px-4 sm:py-2.5",
+                    "shrink-0 rounded-none border px-3 py-2 text-left transition-all sm:px-4 sm:py-2.5",
                     isActive
                       ? "border-accent bg-card shadow-[var(--shadow-card)]"
                       : "border-border bg-transparent text-muted hover:border-accent/30 hover:text-foreground"
                   )}
                 >
-                  <ShoppingCenterLogo
-                    slug={center.slug}
-                    name={center.name}
-                    size="tab"
-                    logoUrl={center.logoUrl}
-                    logoStoragePath={center.logoStoragePath}
-                  />
                   <span
                     className={cn(
                       "max-w-[120px] truncate text-sm font-medium sm:max-w-none",
@@ -81,13 +73,6 @@ export function ShoppingCentersSection({ centers }: ShoppingCentersSectionProps)
         <FadeIn delay={0.12} className="mt-8">
           <Link href={`/shopping-centers/${active.slug}`} className="block">
             <PremiumCard className="overflow-hidden transition-shadow hover:shadow-[0_8px_32px_rgb(0_0_0/0.08)]">
-              <ShoppingCenterLogo
-                slug={active.slug}
-                name={active.name}
-                variant="banner"
-                logoUrl={active.logoUrl}
-                logoStoragePath={active.logoStoragePath}
-              />
               <div className="p-6 md:p-8">
                 <div className="flex items-start justify-between gap-4">
                   <div>

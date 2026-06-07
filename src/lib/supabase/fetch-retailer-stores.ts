@@ -1,4 +1,5 @@
 import { catalogCache } from "@/lib/data/catalog-cache";
+import { isPublishedShoppingCenterSlug } from "@/lib/data/shopping-centers";
 import { getStaticRetailerStores } from "@/lib/data/retailer-stores-static";
 import { isImportedRetailerSlug } from "@/lib/data/imported-retailers";
 import { createSupabaseReadClient } from "@/lib/supabase/read-client";
@@ -11,6 +12,7 @@ const MALL_NAMES: Record<string, string> = {
   "big-fashion": "BIG Fashion",
   promenada: "Promenada",
   stadion: "Stadion",
+  rajiceva: "Rajićeva",
   mercator: "Mercator",
   "kragujevac-plaza": "Plaza Kragujevac",
   zlatibor: "Stop Shop Zlatibor",
@@ -61,8 +63,13 @@ export async function fetchRetailerStoresFromSupabase(
     const mall = Array.isArray(row.shopping_centers)
       ? row.shopping_centers[0]
       : row.shopping_centers;
-    const mallSlug = mall?.slug as string | undefined;
     const scraped = staticByNameCity.get(`${row.name}|${row.city}`);
+    const rawMallSlug =
+      (mall?.slug as string | undefined) ?? scraped?.shoppingCenterSlug ?? null;
+    const mallSlug =
+      rawMallSlug && isPublishedShoppingCenterSlug(rawMallSlug)
+        ? rawMallSlug
+        : null;
 
     return {
       id: row.id as string,
@@ -79,12 +86,13 @@ export async function fetchRetailerStoresFromSupabase(
         row.longitude != null
           ? Number(row.longitude)
           : (scraped?.longitude ?? null),
-      shoppingCenterSlug: mallSlug ?? scraped?.shoppingCenterSlug ?? null,
-      shoppingCenterName:
-        (mall?.name as string | undefined) ??
-        (mallSlug ? (MALL_NAMES[mallSlug] ?? null) : null) ??
-        scraped?.shoppingCenterName ??
-        null,
+      shoppingCenterSlug: mallSlug,
+      shoppingCenterName: mallSlug
+        ? ((mall?.name as string | undefined) ??
+          MALL_NAMES[mallSlug] ??
+          scraped?.shoppingCenterName ??
+          null)
+        : null,
       storeUrl: scraped?.storeUrl ?? null,
     };
   });

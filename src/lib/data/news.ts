@@ -7,7 +7,7 @@ export const newsArticles: NewsArticle[] = [
     excerpt:
       "Holandski premium brend proširuje prisustvo na srpskom tržištu novim retail prostorom u Rajicevoj.",
     content:
-      "Scotch & Soda najavljuje otvaranje flagship prodavnice koja će spojiti Amsterdamski dizajn sa lokalnim retail iskustvom. Lokacija u Rajiceva Shopping Center-u pozicionira brend u epicentru premium modne scene Beograda.",
+      "Scotch & Soda najavljuje otvaranje flagship prodavnice koja će spojiti Amsterdamski dizajn sa lokalnim retail iskustvom. Lokacija u Rajićeva Shopping Center-u pozicionira brend u epicentru premium modne scene Beograda.",
     publishedAt: "2026-05-28",
     category: "Otvaranja",
     featured: true,

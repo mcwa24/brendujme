@@ -45,6 +45,7 @@ const OFFERING_GROUP_ORDER: BrandOfferingSlug[] = [
   "footwear",
   "sportswear",
   "apparel",
+  "beauty",
   "accessories",
 ];
 

@@ -61,6 +61,7 @@ function offeringFiltersInLocations(
     "footwear",
     "apparel",
     "sportswear",
+    "beauty",
     "accessories",
   ];
   return ["all", ...order.filter((o) => seen.has(o))];

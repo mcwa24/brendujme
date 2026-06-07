@@ -7,6 +7,7 @@ import { FadeIn } from "@/components/motion/fade-in";
 import { PremiumCard } from "@/components/ui/premium-card";
 import { buttonVariants } from "@/components/ui/button";
 import type { RetailerStore } from "@/types";
+import { EXCLUDED_SHOPPING_CENTER_SLUGS } from "@/lib/data/shopping-centers";
 import { formatRetailerStoreCount } from "@/lib/format/sr-plural";
 import {
   formatSerbianPhone,
@@ -133,16 +134,20 @@ export function RetailerStoresSection({
                         {store.city}
                       </span>
                     </a>
-                    {store.shoppingCenterSlug && (
-                      <p>
-                        <Link
-                          href={`/shopping-centers/${store.shoppingCenterSlug}`}
-                          className="text-accent hover:underline"
-                        >
-                          {store.shoppingCenterName ?? store.shoppingCenterSlug}
-                        </Link>
-                      </p>
-                    )}
+                    {store.shoppingCenterSlug &&
+                      !EXCLUDED_SHOPPING_CENTER_SLUGS.has(
+                        store.shoppingCenterSlug
+                      ) && (
+                        <p>
+                          <Link
+                            href={`/shopping-centers/${store.shoppingCenterSlug}`}
+                            className="text-accent hover:underline"
+                          >
+                            {store.shoppingCenterName ??
+                              store.shoppingCenterSlug}
+                          </Link>
+                        </p>
+                      )}
                     {store.phone &&
                       shouldShowStorePhone(store.city, store.phone) && (
                         <p className="flex items-center gap-2">

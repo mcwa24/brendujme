@@ -121,7 +121,6 @@ const FF_CENTER_SLUGS = [
   "delta-city",
   "big-fashion",
   "galerija",
-  "promenada",
 ];
 
 function ffLocations(slug: string) {

@@ -21,6 +21,8 @@ const MARQUEE_GAP_PX = "pr-12 sm:pr-16";
 
 interface FeaturedBrandsMarqueeProps {
   brands: Brand[];
+  /** Edge-to-edge traka preko cele širine ekrana */
+  fullWidth?: boolean;
 }
 
 function MarqueeItem({ brand }: { brand: Brand }) {
@@ -95,7 +97,10 @@ function buildMarqueeSegment(brands: Brand[]): Brand[] {
   return segment;
 }
 
-export function FeaturedBrandsMarquee({ brands }: FeaturedBrandsMarqueeProps) {
+export function FeaturedBrandsMarquee({
+  brands,
+  fullWidth = false,
+}: FeaturedBrandsMarqueeProps) {
   const segment = useMemo(() => buildMarqueeSegment(brands), [brands]);
   const segmentRef = useRef<HTMLDivElement>(null);
   const [segmentWidth, setSegmentWidth] = useState(0);
@@ -132,14 +137,22 @@ export function FeaturedBrandsMarquee({ brands }: FeaturedBrandsMarqueeProps) {
 
   if (brands.length === 0) return null;
 
+  const fadeWidth = fullWidth ? "w-16 sm:w-32 lg:w-40" : "w-12 sm:w-24";
+
   return (
-    <div className="relative w-full">
+    <div className={cn("relative w-full", fullWidth && "overflow-hidden")}>
       <div
-        className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-background to-transparent sm:w-24"
+        className={cn(
+          "pointer-events-none absolute inset-y-0 left-0 z-10 bg-gradient-to-r from-background to-transparent",
+          fadeWidth
+        )}
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-r from-transparent to-background sm:w-24"
+        className={cn(
+          "pointer-events-none absolute inset-y-0 right-0 z-10 bg-gradient-to-r from-transparent to-background",
+          fadeWidth
+        )}
         aria-hidden
       />
 

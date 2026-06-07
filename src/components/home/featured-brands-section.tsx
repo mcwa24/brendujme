@@ -40,11 +40,13 @@ export function FeaturedBrandsSection({
             <ArrowRight className="h-4 w-4" />
           </Link>
         </FadeIn>
+      </Container>
 
-        <FadeIn delay={0.08} className="mt-10">
-          <FeaturedBrandsMarquee brands={brands} />
-        </FadeIn>
+      <FadeIn delay={0.08} className="mt-10 w-full">
+        <FeaturedBrandsMarquee brands={brands} fullWidth />
+      </FadeIn>
 
+      <Container narrow>
         <div className="mt-6 sm:hidden">
           <Link
             href="/brands"

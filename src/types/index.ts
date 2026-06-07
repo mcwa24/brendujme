@@ -33,7 +33,8 @@ export type BrandOfferingSlug =
   | "footwear"
   | "apparel"
   | "sportswear"
-  | "accessories";
+  | "accessories"
+  | "beauty";
 
 export interface RetailLocation {
   id: string;
