@@ -11,16 +11,7 @@ function manifestPath(slug: string): string | undefined {
   return entry.path;
 }
 
-/** Brendovi bez logotipa — samo typography placeholder */
-const BRAND_LETTER_ONLY = new Set([
-  "collegium",
-  "dekker",
-  "house",
-  "kurt-geiger",
-  "massimo-dutti",
-]);
-
-/** Typography placeholder umesto logotipa */
+/** Typography placeholder kad nema loga u manifestu */
 const BRAND_LETTER_OVERRIDE: Record<string, string> = {
   dekker: "D",
   house: "H",
@@ -46,8 +37,6 @@ export function getBrandDisplayTitle(name: string): string {
  * Prioritet: lokalni keš / manifest → logoUrl (ne-Storage) → Supabase Storage
  */
 export function resolveBrandLogoSrc(brand: BrandLogoInput): string | null {
-  if (BRAND_LETTER_ONLY.has(brand.slug)) return null;
-
   const cached = manifestPath(brand.slug);
 
   if (brand.hasCustomLogo) {

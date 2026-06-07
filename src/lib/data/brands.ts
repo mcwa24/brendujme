@@ -426,8 +426,11 @@ const FEATURED_EXCLUDED_RETAILERS = new Set([
   "fashion-friends",
 ]);
 
+const HOME_FEATURED_EXCLUDED_BRANDS = new Set(["house", "mohito"]);
+
 export function getFeaturedBrands(): Brand[] {
   return brands
+    .filter((b) => !HOME_FEATURED_EXCLUDED_BRANDS.has(b.slug))
     .filter((b) =>
       b.locations.some(
         (loc) => !FEATURED_EXCLUDED_RETAILERS.has(loc.retailerSlug)

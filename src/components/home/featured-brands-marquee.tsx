@@ -45,7 +45,7 @@ function MarqueeItem({ brand }: { brand: Brand }) {
         />
       ) : (
         <div
-          className="flex items-center justify-center rounded-none border border-border bg-background font-display text-4xl font-semibold text-accent/90"
+          className="flex items-center justify-center bg-transparent font-display text-4xl font-semibold text-accent/90"
           style={{ width: LOGO_SIZE, height: LOGO_SIZE }}
           role="img"
           aria-label={`Logo brenda ${brand.name}`}

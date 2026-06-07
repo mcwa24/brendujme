@@ -383,6 +383,10 @@
     "path": "/logos/cache/run-n-more.png",
     "source": "manual"
   },
+  "massimo-dutti": {
+    "path": "/logos/cache/massimo-dutti.svg",
+    "source": "manual"
+  },
   "flower-mountain": {
     "path": "/logos/cache/flower-mountain.svg",
     "source": "official",

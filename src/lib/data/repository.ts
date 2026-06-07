@@ -168,6 +168,8 @@ const FEATURED_EXCLUDED_RETAILERS = new Set([
   "fashion-friends",
 ]);
 
+const HOME_FEATURED_EXCLUDED_BRANDS = new Set(["house", "mohito"]);
+
 function isAvailableOutsideFashionGroup(brand: Brand): boolean {
   return brand.locations.some(
     (loc) => !FEATURED_EXCLUDED_RETAILERS.has(loc.retailerSlug)
@@ -186,6 +188,7 @@ export const getFeaturedBrands = cache(async () => {
   const all = await getAllBrands();
   return all
     .filter(isAvailableOutsideFashionGroup)
+    .filter((b) => !HOME_FEATURED_EXCLUDED_BRANDS.has(b.slug))
     .sort(sortHomeFeaturedBrands)
     .slice(0, HOME_FEATURED_BRANDS_LIMIT);
 });
