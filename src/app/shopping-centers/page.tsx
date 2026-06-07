@@ -39,8 +39,6 @@ export default async function ShoppingCentersPage() {
                   slug={center.slug}
                   name={center.name}
                   variant="banner"
-                  logoUrl={center.logoUrl}
-                  logoStoragePath={center.logoStoragePath}
                 />
                 <div className="p-6">
                   <h2 className="font-display text-xl font-semibold">{center.name}</h2>

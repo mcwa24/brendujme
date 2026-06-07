@@ -392,5 +392,9 @@
     "source": "official",
     "remoteUrl": "https://www.flowermountain.com/media/1c/f2/3b/1771946516/logo-flower-mountain-2026.svg",
     "fetchedAt": "2026-06-07T07:55:36.227Z"
+  },
+  "tory-burch": {
+    "path": "/logos/cache/tory-burch.png",
+    "source": "manual"
   }
 }

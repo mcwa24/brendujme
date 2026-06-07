@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { MapPin } from "lucide-react";
 import { FadeIn } from "@/components/motion/fade-in";
-import { ShoppingCenterLogo } from "@/components/shopping-centers/shopping-center-logo";
 import { PremiumCard } from "@/components/ui/premium-card";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -17,12 +16,6 @@ export function BrandMallCard({ center, delay = 0 }: BrandMallCardProps) {
     <FadeIn delay={delay}>
       <Link href={`/shopping-centers/${center.slug}`}>
         <PremiumCard className="h-full p-6 transition-shadow hover:shadow-md md:p-8">
-          <ShoppingCenterLogo
-            slug={center.slug}
-            name={center.name}
-            size="md"
-            className="mb-4"
-          />
           <h3 className="font-display text-lg font-semibold md:text-xl">
             {center.name}
           </h3>

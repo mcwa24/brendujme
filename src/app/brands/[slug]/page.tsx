@@ -59,7 +59,7 @@ export default async function BrandDetailPage({ params }: PageProps) {
 
   return (
     <>
-      <section className="border-b border-border bg-card">
+      <section className="bg-card">
         <Container narrow className="py-16 md:py-24">
           <FadeIn className="flex flex-col gap-8 md:flex-row md:items-start md:gap-12">
             <BrandHero brand={brand} />

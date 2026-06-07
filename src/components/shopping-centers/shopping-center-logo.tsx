@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Building2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { getShoppingCenterImage } from "@/lib/data/shopping-center-images";
-import { getStoragePublicUrl } from "@/lib/supabase/storage";
 
 const sizeMap = {
   sm: { box: "h-8 w-8", img: 32 },
@@ -19,10 +18,8 @@ interface ShoppingCenterLogoProps {
   size?: keyof typeof sizeMap;
   className?: string;
   variant?: "icon" | "banner";
-  /** Bez okvira i pozadine — samo logo */
+  /** Bez okvira i pozadine — samo ikonica */
   bare?: boolean;
-  logoUrl?: string | null;
-  logoStoragePath?: string | null;
 }
 
 export function ShoppingCenterLogo({
@@ -32,32 +29,10 @@ export function ShoppingCenterLogo({
   className,
   variant = "icon",
   bare = false,
-  logoUrl,
-  logoStoragePath,
 }: ShoppingCenterLogoProps) {
   const local = getShoppingCenterImage(slug);
-  const src =
-    local?.src ||
-    logoUrl?.trim() ||
-    getStoragePublicUrl(logoStoragePath) ||
-    null;
   const alt = local?.alt || name;
   const dims = sizeMap[size];
-
-  if (!src) {
-    return (
-      <div
-        className={cn(
-          "flex shrink-0 items-center justify-center rounded-none bg-secondary text-muted/40",
-          variant === "banner" ? "h-40 w-full rounded-none" : dims.box,
-          className
-        )}
-        aria-hidden
-      >
-        <Building2 className="h-1/2 w-1/2" />
-      </div>
-    );
-  }
 
   if (variant === "banner") {
     const coverSrc = local?.coverSrc;
@@ -98,19 +73,14 @@ export function ShoppingCenterLogo({
   return (
     <div
       className={cn(
-        "relative flex shrink-0 items-center justify-center overflow-hidden rounded-none",
-        bare ? "bg-transparent p-0" : "bg-secondary p-1",
+        "flex shrink-0 items-center justify-center rounded-none bg-secondary text-muted/40",
+        bare ? "bg-transparent" : "",
         dims.box,
         className
       )}
+      aria-hidden
     >
-      <Image
-        src={src}
-        alt={alt}
-        width={dims.img}
-        height={dims.img}
-        className="h-full w-full object-contain"
-      />
+      <Building2 className="h-1/2 w-1/2" />
     </div>
   );
 }

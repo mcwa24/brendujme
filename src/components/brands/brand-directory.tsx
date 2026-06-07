@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Search } from "lucide-react";
+import { Search, X } from "lucide-react";
 import { BrandCard } from "@/components/brands/brand-card";
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
@@ -32,6 +32,10 @@ export function BrandDirectory({ brands }: BrandDirectoryProps) {
   const [country, setCountry] = useState("Sve zemlje");
   const [priceSegment, setPriceSegment] = useState<PriceSegment | "all">("all");
   const [sort, setSort] = useState<"name" | "availability">("name");
+
+  const hasSearchQuery = query.trim().length > 0;
+
+  const clearSearch = () => setQuery("");
 
   const filtered = useMemo(() => {
     let result = [...brands];
@@ -121,8 +125,21 @@ export function BrandDirectory({ brands }: BrandDirectoryProps) {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Pretraži brendove..."
-                className="h-12 rounded-none border-border pl-11"
+                className={cn(
+                  "h-12 rounded-none border-border pl-11",
+                  hasSearchQuery && "pr-11"
+                )}
               />
+              {hasSearchQuery && (
+                <button
+                  type="button"
+                  onClick={clearSearch}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 rounded-none p-1 text-muted transition-colors hover:text-foreground"
+                  aria-label="Obriši pretragu"
+                >
+                  <X className="h-4 w-4" />
+                </button>
+              )}
             </div>
             <select
               value={sort}
@@ -137,9 +154,18 @@ export function BrandDirectory({ brands }: BrandDirectoryProps) {
             </select>
           </div>
 
-          <p className="mt-6 text-sm text-muted">
-            {formatBrandCount(filtered.length)}
-          </p>
+          <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted">
+            <p>{formatBrandCount(filtered.length)}</p>
+            {hasSearchQuery && (
+              <button
+                type="button"
+                onClick={clearSearch}
+                className="font-medium text-accent hover:underline"
+              >
+                Obriši pretragu
+              </button>
+            )}
+          </div>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
             {filtered.map((brand, i) => (

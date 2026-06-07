@@ -1,9 +1,7 @@
 import { resolveBrandLogoSrc } from "@/lib/brand-logo-resolve";
 import { fashionCompanyStores } from "@/lib/data/fashion-company";
 import { fashionAndFriendsMeta } from "@/lib/data/fashion-and-friends";
-import { getShoppingCenterImage } from "@/lib/data/shopping-center-images";
 import { resolveRetailerLogoSrc } from "@/lib/retailer-logo-resolve";
-import { getStoragePublicUrl } from "@/lib/supabase/storage";
 import {
   formatOfferingsLabel,
   getBrandRetailerOfferings,
@@ -32,14 +30,8 @@ function searchImageForRetailer(retailer: Retailer): string | undefined {
   return resolveRetailerLogoSrc(retailer) ?? undefined;
 }
 
-function searchImageForCenter(center: ShoppingCenter): string | undefined {
-  const local = getShoppingCenterImage(center.slug);
-  return (
-    local?.src ||
-    center.logoUrl?.trim() ||
-    getStoragePublicUrl(center.logoStoragePath) ||
-    undefined
-  );
+function searchImageForCenter(_center: ShoppingCenter): string | undefined {
+  return undefined;
 }
 
 function collectBrandOfferingTypes(

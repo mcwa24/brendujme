@@ -96,19 +96,22 @@ export function BrandLocationsSection({
     [byOffering, shoppingCenters]
   );
 
+  const activeCity =
+    cities.length === 1 ? cities[0].city : selectedCity;
+
   const filteredStores = useMemo(() => {
-    if (!selectedCity) return [];
+    if (!activeCity) return [];
     return byOffering.filter(
-      (loc) => normalizeCity(loc.city) === selectedCity
+      (loc) => normalizeCity(loc.city) === activeCity
     );
-  }, [byOffering, selectedCity]);
+  }, [byOffering, activeCity]);
 
   const filteredMalls = useMemo(() => {
-    if (!selectedCity) return [];
+    if (!activeCity) return [];
     return shoppingCenters.filter(
-      (c) => normalizeCity(c.city) === selectedCity
+      (c) => normalizeCity(c.city) === activeCity
     );
-  }, [shoppingCenters, selectedCity]);
+  }, [shoppingCenters, activeCity]);
 
   const totalPlaces =
     locations.length + shoppingCenters.length;
@@ -161,7 +164,7 @@ export function BrandLocationsSection({
               onClick={() => setSelectedCity(city)}
               className={cn(
                 "rounded-none border px-4 py-2 text-sm transition-colors",
-                selectedCity === city
+                activeCity === city
                   ? "border-accent bg-accent font-medium text-white"
                   : "border-border bg-card text-muted hover:border-accent/40 hover:text-foreground"
               )}
@@ -170,7 +173,7 @@ export function BrandLocationsSection({
               <span
                 className={cn(
                   "ml-1.5 tabular-nums",
-                  selectedCity === city ? "text-white/80" : "text-muted"
+                  activeCity === city ? "text-white/80" : "text-muted"
                 )}
               >
                 ({count})
@@ -180,7 +183,7 @@ export function BrandLocationsSection({
         </div>
       </div>
 
-      {!selectedCity ? (
+      {!activeCity ? (
         <p className="mt-10 rounded-none border border-dashed border-border bg-card/50 px-6 py-10 text-center text-muted">
           Izaberite grad da vidite prodavnice, tržne centre i adrese.
           {offeringFilter !== "all" && (
@@ -192,12 +195,12 @@ export function BrandLocationsSection({
         </p>
       ) : resultCount === 0 ? (
         <p className="mt-10 text-center text-muted">
-          Nema lokacija u gradu {selectedCity} za izabrani tip ponude.
+          Nema lokacija u gradu {activeCity} za izabrani tip ponude.
         </p>
       ) : (
         <>
           <p className="mt-6 text-sm text-muted">
-            {formatLocationCount(resultCount)} u gradu {selectedCity}
+            {formatLocationCount(resultCount)} u gradu {activeCity}
             {filteredMalls.length > 0 && filteredStores.length > 0 && (
               <>
                 {" "}
