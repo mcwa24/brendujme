@@ -17,7 +17,7 @@ export const tikeMeta = {
 export const tikeBrands = scraped.brands;
 export const tikeStores = scraped.stores;
 
-/** Jedinstveni Bilbord slugovi za retailer.brandSlugs i seed */
+/** Jedinstveni slugovi iz scrape-a (modni filter u repository / retailers.ts) */
 export const tikeBrandSlugs = [...new Set(scraped.brands.map((b) => b.slug))].sort(
   (a, b) => a.localeCompare(b, "sr")
 );

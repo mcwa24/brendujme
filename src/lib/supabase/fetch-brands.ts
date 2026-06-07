@@ -1,4 +1,5 @@
 import { mapBrand } from "@/lib/supabase/mappers";
+import { DEPRECATED_BRAND_SLUGS } from "@/lib/data/imported-retailers";
 import { createSupabaseReadClient } from "@/lib/supabase/read-client";
 import type {
   DbBrand,
@@ -7,6 +8,12 @@ import type {
   DbBrandRelated,
 } from "@/lib/supabase/types-db";
 import type { Brand } from "@/types";
+
+const EXCLUDED_BRAND_SLUGS = new Set<string>(DEPRECATED_BRAND_SLUGS);
+
+function withoutExcludedBrands(brands: Brand[]): Brand[] {
+  return brands.filter((b) => !EXCLUDED_BRAND_SLUGS.has(b.slug));
+}
 
 async function loadBrandRelations(
   supabase: NonNullable<ReturnType<typeof createSupabaseReadClient>>
@@ -94,7 +101,9 @@ export async function fetchAllBrandsFromSupabase(): Promise<Brand[] | null> {
   if (error || !brandRows?.length) return null;
 
   const relations = await loadBrandRelations(supabase);
-  return assembleBrands(brandRows as (DbBrand & { id: string })[], relations);
+  return withoutExcludedBrands(
+    assembleBrands(brandRows as (DbBrand & { id: string })[], relations)
+  );
 }
 
 export async function fetchBrandBySlugFromSupabase(
@@ -110,7 +119,7 @@ export async function fetchBrandBySlugFromSupabase(
     .eq("status", "published")
     .maybeSingle();
 
-  if (error || !row) return null;
+  if (error || !row || EXCLUDED_BRAND_SLUGS.has(slug)) return null;
 
   const brandId = row.id as string;
 

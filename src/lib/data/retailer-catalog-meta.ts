@@ -1,6 +1,7 @@
 import { buzzSneakersMeta } from "@/lib/data/buzz-sneakers";
 import { tikeMeta } from "@/lib/data/tike";
 import { fashionCompanyMeta } from "@/lib/data/fashion-company";
+import { fashionAndFriendsMeta } from "@/lib/data/fashion-and-friends";
 import { IMPORTED_RETAILER_EXTERNAL } from "@/lib/data/imported-retailers";
 import { djakSportMeta } from "@/lib/data/djak-sport";
 import scrapedFs from "@/lib/data/fashion-sport-serbia-scraped.json";
@@ -35,22 +36,13 @@ const CATALOG_META: Record<string, RetailerCatalogMeta> = {
     websiteLabel: "fashioncompany.rs",
   },
   "fashion-friends": {
-    brandCount: 30,
+    brandCount: fashionAndFriendsMeta.brandCount,
     storeCount: scrapedFs.stores.filter((s) => s.retailerSlug === "fashion-friends").length,
     lastSynced: syncedFromIso(scrapedFs.scrapedAt),
     sourceUrl: "https://www.fashionandfriends.com/rs/brendovi/",
     sourceLabel: "fashionandfriends.com",
     website: IMPORTED_RETAILER_EXTERNAL["fashion-friends"].website,
     websiteLabel: IMPORTED_RETAILER_EXTERNAL["fashion-friends"].websiteLabel,
-  },
-  "extra-sports": {
-    brandCount: 1,
-    storeCount: 25,
-    lastSynced: syncedFromIso(scrapedFs.scrapedAt),
-    sourceUrl: "https://www.extrasports.com/SRB_rs/prodavnice",
-    sourceLabel: "extrasports.com",
-    website: IMPORTED_RETAILER_EXTERNAL["extra-sports"].website,
-    websiteLabel: IMPORTED_RETAILER_EXTERNAL["extra-sports"].websiteLabel,
   },
   tike: {
     brandCount: tikeMeta.brandCount,
@@ -60,15 +52,6 @@ const CATALOG_META: Record<string, RetailerCatalogMeta> = {
     sourceLabel: "tike.rs/brendovi",
     website: IMPORTED_RETAILER_EXTERNAL.tike.website,
     websiteLabel: IMPORTED_RETAILER_EXTERNAL.tike.websiteLabel,
-  },
-  "run-n-more": {
-    brandCount: 1,
-    storeCount: scrapedFs.stores.filter((s) => s.retailerSlug === "run-n-more").length,
-    lastSynced: syncedFromIso(scrapedFs.scrapedAt),
-    sourceUrl: "https://www.sportvision.rs/radnje/82-runnmore",
-    sourceLabel: "runnmore.com",
-    website: IMPORTED_RETAILER_EXTERNAL["run-n-more"].website,
-    websiteLabel: IMPORTED_RETAILER_EXTERNAL["run-n-more"].websiteLabel,
   },
   "buzz-sneakers": {
     brandCount: buzzSneakersMeta.brandCount,

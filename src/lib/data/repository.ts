@@ -9,8 +9,18 @@ import {
 import { newsArticles as staticNews } from "@/lib/data/news";
 import { fashionCompanyRetailer } from "@/lib/data/fashion-company";
 import { getRetailerCatalogMeta } from "@/lib/data/retailer-catalog-meta";
+import {
+  getScrapedBrandsForRetailer,
+  uniqueScrapedBrandSlugs,
+} from "@/lib/data/retailer-scraped-brands";
+import {
+  filterModniBrands,
+  filterModniScrapedEntries,
+} from "@/lib/data/modni-retailer-brands";
 import { retailers as staticRetailers } from "@/lib/data/retailers";
 import {
+  DEPRECATED_BRAND_SLUGS,
+  isExcludedRetailerSlug,
   isImportedRetailerSlug,
   sortImportedRetailers,
 } from "@/lib/data/imported-retailers";
@@ -34,8 +44,10 @@ import { fetchActiveHomePromotionsFromSupabase } from "@/lib/supabase/fetch-prom
 import {
   fetchAllGhostModaStilNews,
   fetchGhostModaStilNewsPage,
+  fetchGhostNewsBySlug,
 } from "@/lib/ghost/fetch-news";
 import { isGhostConfigured } from "@/lib/ghost/env";
+import type { NewsPageResult } from "@/lib/news/types";
 import {
   getCatalogStoreCityCount,
   getCatalogStoreCount,
@@ -80,16 +92,24 @@ function mergeCategoriesBySlug(fromDb: Category[], fromStatic: Category[]): Cate
   });
 }
 
+const DEPRECATED_BRAND_SLUG_SET = new Set<string>(DEPRECATED_BRAND_SLUGS);
+
+function withoutDeprecatedBrands(brands: Brand[]): Brand[] {
+  return brands.filter((b) => !DEPRECATED_BRAND_SLUG_SET.has(b.slug));
+}
+
 async function loadAllBrands(): Promise<Brand[]> {
   if (isSupabaseConfigured()) {
     const fromDb = await fetchAllBrandsFromSupabase();
     if (fromDb?.length) {
-      return dedupeBySlug(mergeBySlug(fromDb, staticBrands))
-        .map(enrichBrand)
-        .sort((a, b) => a.name.localeCompare(b.name, "sr"));
+      return withoutDeprecatedBrands(
+        dedupeBySlug(mergeBySlug(fromDb, staticBrands))
+          .map(enrichBrand)
+          .sort((a, b) => a.name.localeCompare(b.name, "sr"))
+      );
     }
   }
-  return dedupeBySlug(staticBrands).map(enrichBrand);
+  return withoutDeprecatedBrands(dedupeBySlug(staticBrands).map(enrichBrand));
 }
 
 export const getAllBrands = cache(async (): Promise<Brand[]> =>
@@ -97,12 +117,15 @@ export const getAllBrands = cache(async (): Promise<Brand[]> =>
 );
 
 export const getBrandBySlug = cache(async (slug: string): Promise<Brand | undefined> => {
+  if (DEPRECATED_BRAND_SLUG_SET.has(slug)) return undefined;
+
   const all = await getAllBrands();
   const fromCatalog = all.find((b) => b.slug === slug);
   if (fromCatalog) return fromCatalog;
 
   const staticBrand = getStaticBrandBySlug(slug);
-  return staticBrand ? enrichBrand(staticBrand) : undefined;
+  if (!staticBrand || DEPRECATED_BRAND_SLUG_SET.has(slug)) return undefined;
+  return enrichBrand(staticBrand);
 });
 
 export const getBrandsBySlugs = cache(async (slugs: string[]): Promise<Brand[]> => {
@@ -113,6 +136,32 @@ export const getBrandsBySlugs = cache(async (slugs: string[]): Promise<Brand[]> 
     .map((slug) => bySlug.get(slug))
     .filter((b): b is Brand => Boolean(b));
 });
+
+export const getRetailerPageBrands = cache(
+  async (retailerSlug: string): Promise<Brand[]> => {
+    const scraped = getScrapedBrandsForRetailer(retailerSlug);
+    const all = await getAllBrands();
+    const bySlug = new Map(all.map((b) => [b.slug, b]));
+
+    if (!scraped?.length) {
+      const retailer = await getRetailerBySlug(retailerSlug);
+      if (!retailer) return [];
+      return sortBrandsByName(
+        filterModniBrands(await getBrandsBySlugs(retailer.brandSlugs))
+      );
+    }
+
+    const modniEntries = filterModniScrapedEntries(scraped, retailerSlug, bySlug);
+    const brands: Brand[] = [];
+
+    for (const entry of modniEntries) {
+      const catalog = bySlug.get(entry.slug);
+      if (catalog) brands.push(catalog);
+    }
+
+    return sortBrandsByName(brands);
+  }
+);
 
 const FEATURED_EXCLUDED_RETAILERS = new Set([
   "fashion-company",
@@ -141,11 +190,9 @@ export const getFeaturedBrands = cache(async () => {
     .slice(0, HOME_FEATURED_BRANDS_LIMIT);
 });
 
-const POPULAR_EXCLUDED_SLUGS = new Set(["extra-sports"]);
-
 export const getPopularBrands = cache(async () => {
   const all = await getAllBrands();
-  return all.filter((b) => b.popular && !POPULAR_EXCLUDED_SLUGS.has(b.slug));
+  return all.filter((b) => b.popular);
 });
 
 function sortBrandsByName(brands: Brand[]): Brand[] {
@@ -189,35 +236,66 @@ export async function getCategoryName(slug: string): Promise<string> {
 }
 
 const staticImportedRetailers = sortImportedRetailers(
-  staticRetailers.filter((r) => isImportedRetailerSlug(r.slug))
+  staticRetailers.filter(
+    (r) => isImportedRetailerSlug(r.slug) && !isExcludedRetailerSlug(r.slug)
+  )
 );
+
+function withoutExcludedRetailers(retailers: Retailer[]): Retailer[] {
+  return retailers.filter((r) => !isExcludedRetailerSlug(r.slug));
+}
+
+const staticRetailerBySlug = new Map(staticRetailers.map((r) => [r.slug, r]));
+
+function applyStaticRetailerCopy(retailers: Retailer[]): Retailer[] {
+  return retailers.map((r) => {
+    const stat = staticRetailerBySlug.get(r.slug);
+    if (!stat) return r;
+    return { ...r, description: stat.description };
+  });
+}
 
 async function loadAllRetailers(): Promise<Retailer[]> {
   let list: Retailer[];
   if (isSupabaseConfigured()) {
     const fromDb = await fetchRetailersFromSupabase();
     list = fromDb?.length
-      ? sortImportedRetailers(mergeBySlug(fromDb, staticImportedRetailers))
+      ? sortImportedRetailers(
+          withoutExcludedRetailers(mergeBySlug(fromDb, staticImportedRetailers))
+        )
       : staticImportedRetailers;
   } else {
     list = staticImportedRetailers;
   }
   const withoutFashionCompany = list.filter((r) => r.slug !== "fashion-company");
   return sortRetailersByName(
-    applyCatalogCounts([fashionCompanyRetailer, ...withoutFashionCompany])
+    applyStaticRetailerCopy(
+      await applyModniBrandCounts(
+        withoutExcludedRetailers([
+          fashionCompanyRetailer,
+          ...withoutFashionCompany,
+        ])
+      )
+    )
   );
 }
 
 export const getAllRetailers = cache(async (): Promise<Retailer[]> =>
-  catalogCache(["all-retailers"], loadAllRetailers, ["catalog", "retailers"])
+  catalogCache(["all-retailers", "v7"], loadAllRetailers, ["catalog", "retailers"])
 );
 
-function applyCatalogCounts(retailers: Retailer[]): Retailer[] {
-  return retailers.map((r) => {
-    const meta = getRetailerCatalogMeta(r.slug);
-    if (!meta) return r;
-    return { ...r, brandCount: meta.brandCount };
-  });
+async function applyModniBrandCounts(retailers: Retailer[]): Promise<Retailer[]> {
+  return Promise.all(
+    retailers.map(async (r) => {
+      if (!getScrapedBrandsForRetailer(r.slug)?.length) return r;
+      const pageBrands = await getRetailerPageBrands(r.slug);
+      return {
+        ...r,
+        brandCount: pageBrands.length,
+        brandSlugs: pageBrands.map((b) => b.slug),
+      };
+    })
+  );
 }
 
 function sortRetailersByName(retailers: Retailer[]): Retailer[] {
@@ -226,6 +304,7 @@ function sortRetailersByName(retailers: Retailer[]): Retailer[] {
 }
 
 export const getRetailerBySlug = cache(async (slug: string): Promise<Retailer | undefined> => {
+  if (isExcludedRetailerSlug(slug)) return undefined;
   if (slug === "fashion-company") return fashionCompanyRetailer;
   const all = await getAllRetailers();
   return all.find((r) => r.slug === slug);
@@ -294,9 +373,40 @@ async function loadAllNews(): Promise<NewsArticle[]> {
   return getAllNewsFallback();
 }
 
-const getAllNews = cache(async (): Promise<NewsArticle[]> =>
+export const getAllNews = cache(async (): Promise<NewsArticle[]> =>
   catalogCache(["all-news"], loadAllNews, ["catalog", "news"])
 );
+
+export async function getNewsBySlug(
+  slug: string
+): Promise<NewsArticle | undefined> {
+  if (isGhostConfigured()) {
+    const fromGhost = await fetchGhostNewsBySlug(slug);
+    if (fromGhost) return fromGhost;
+  }
+  const all = await getAllNewsFallback();
+  return all.find((a) => a.slug === slug);
+}
+
+export async function getNewsPage(
+  page: number,
+  pageSize: number
+): Promise<NewsPageResult> {
+  if (isGhostConfigured()) {
+    const fromGhost = await fetchGhostModaStilNewsPage(page, pageSize);
+    if (fromGhost.articles.length || fromGhost.hasMore) return fromGhost;
+  }
+  const all = await getAllNewsFallback();
+  const start = (page - 1) * pageSize;
+  const articles = all.slice(start, start + pageSize);
+  return {
+    articles,
+    page,
+    pageSize,
+    hasMore: start + pageSize < all.length,
+    total: all.length,
+  };
+}
 
 export async function getLatestNews(limit = 3): Promise<NewsArticle[]> {
   if (isGhostConfigured()) {

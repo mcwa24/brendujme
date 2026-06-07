@@ -89,7 +89,7 @@ async function main() {
       slug: RETAILER_SLUG,
       name: scraped.retailerName,
       description:
-        "Najveći multibrend lanac sportske opreme u Srbiji — Nike, Adidas, Puma, Reebok, Hummel, New Balance i 160+ brenda u mreži prodavnica.",
+        "Najveći multibrend lanac sportske opreme u Srbiji — Nike, Adidas, Puma, Reebok, Hummel, New Balance i dr.",
       headquarters_city: "Beograd",
       headquarters_city_id: cityIds.get("beograd") ?? null,
       website: "https://www.djaksport.com",

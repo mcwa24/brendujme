@@ -10,7 +10,7 @@ import {
 } from "react";
 import Link from "next/link";
 import { BrandLogoBox } from "@/components/brands/brand-logo-box";
-import { getBrandLetter, resolveBrandLogoSrc } from "@/lib/brand-logo-resolve";
+import { getBrandLetter, getBrandLogoDisplayScale, resolveBrandLogoSrc } from "@/lib/brand-logo-resolve";
 import type { Brand } from "@/types";
 import { cn } from "@/lib/utils";
 
@@ -38,6 +38,7 @@ function MarqueeItem({ brand }: { brand: Brand }) {
           src={src}
           alt={`Logo brenda ${brand.name}`}
           size={LOGO_SIZE}
+          displayScale={getBrandLogoDisplayScale(brand.slug)}
           bare
           className="!border-0 !bg-transparent !p-0"
           onFailed={() => setFailed(true)}
@@ -49,7 +50,7 @@ function MarqueeItem({ brand }: { brand: Brand }) {
           role="img"
           aria-label={`Logo brenda ${brand.name}`}
         >
-          {getBrandLetter(brand.name)}
+          {getBrandLetter(brand.name, brand.slug)}
         </div>
       )}
     </Link>

@@ -55,19 +55,8 @@ export const RETAILER_PROMO_SOURCES: RetailerPromoSource[] = [
     ],
   },
   {
-    retailerSlug: "extra-sports",
-    urls: [
-      "https://www.extrasports.com/SRB_rs/",
-      "https://www.extrasports.com/SRB_rs/akcije",
-    ],
-  },
-  {
     retailerSlug: "tike",
     urls: ["https://www.tike.rs/", "https://www.tike.rs/akcije"],
-  },
-  {
-    retailerSlug: "run-n-more",
-    urls: ["https://www.runnmore.com/"],
   },
   {
     retailerSlug: "sport-time",

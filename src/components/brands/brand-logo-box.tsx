@@ -10,8 +10,10 @@ interface BrandLogoBoxProps {
   alt: string;
   className?: string;
   size?: number;
+  /** 0–1, smanjuje logo unutar okvira bez menjanja slot dimenzija */
+  displayScale?: number;
   onFailed?: () => void;
-  /** Bez okvira i pozadine — za marquee / providne PNG logoe */
+  /** Bez okvira — samo logo, transparentna pozadina */
   bare?: boolean;
 }
 
@@ -20,6 +22,7 @@ export function BrandLogoBox({
   alt,
   className,
   size = LOGO_SIZE,
+  displayScale = 1,
   onFailed,
   bare = false,
 }: BrandLogoBoxProps) {
@@ -30,8 +33,8 @@ export function BrandLogoBox({
   return (
     <div
       className={cn(
-        "flex shrink-0 items-center justify-center overflow-hidden",
-        !bare && "rounded-none border border-border bg-background",
+        "brand-logo-slot flex shrink-0 items-center justify-center overflow-hidden",
+        bare ? "brand-logo-slot--bare bg-transparent" : "rounded-none border border-border bg-background",
         className
       )}
       style={{ width: size, height: size }}
@@ -42,10 +45,11 @@ export function BrandLogoBox({
         alt={alt}
         width={size}
         height={size}
-        className={cn(
-          "h-full w-full bg-transparent object-contain",
-          bare ? "p-0" : "p-3"
-        )}
+        className={cn("brand-logo-img object-contain", bare ? "p-0" : "p-3")}
+        style={{
+          maxHeight: `${displayScale * 100}%`,
+          maxWidth: `${displayScale * 100}%`,
+        }}
         decoding="async"
         onError={() => {
           setFailed(true);

@@ -89,7 +89,7 @@ async function main() {
       slug: RETAILER_SLUG,
       name: scraped.retailerName,
       description:
-        "Multibrend lanac sportske opreme u Srbiji — Nike, Adidas, Puma, The North Face, Columbia, Salomon i 55+ brenda u mreži prodavnica.",
+        "Multibrend lanac sportske opreme u Srbiji — Nike, Adidas, Puma, The North Face, Columbia, Salomon i dr.",
       headquarters_city: "Beograd",
       headquarters_city_id: cityIds.get("beograd") ?? null,
       website: "https://www.sportvision.rs",

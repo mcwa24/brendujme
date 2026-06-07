@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import { BrandLogoBox, BRAND_LOGO_SIZE } from "@/components/brands/brand-logo-box";
 import { BrandLogoPlaceholder } from "@/components/brands/brand-logo-placeholder";
-import { resolveBrandLogoSrc } from "@/lib/brand-logo-resolve";
+import { getBrandLogoDisplayScale, resolveBrandLogoSrc } from "@/lib/brand-logo-resolve";
 import type { BrandLogoInput } from "@/types";
 
 interface BrandHeroProps {
@@ -21,6 +21,7 @@ export function BrandHero({ brand }: BrandHeroProps) {
         src={resolvedSrc}
         alt={`Logo brenda ${brand.name}`}
         size={BRAND_LOGO_SIZE}
+        displayScale={getBrandLogoDisplayScale(brand.slug)}
         bare
         onFailed={() => setImageFailed(true)}
       />
@@ -28,6 +29,6 @@ export function BrandHero({ brand }: BrandHeroProps) {
   }
 
   return (
-    <BrandLogoPlaceholder name={brand.name} variant="hero" />
+    <BrandLogoPlaceholder name={brand.name} slug={brand.slug} variant="hero" />
   );
 }

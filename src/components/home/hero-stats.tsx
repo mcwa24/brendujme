@@ -25,18 +25,18 @@ function StatBlock({
 
   const valueClass =
     size === "apex"
-      ? "text-5xl font-semibold sm:text-6xl md:text-[4.25rem]"
-      : "text-4xl font-semibold sm:text-5xl";
+      ? "text-4xl font-semibold sm:text-5xl md:text-[4.25rem]"
+      : "text-3xl font-semibold sm:text-4xl md:text-5xl";
 
   return (
     <div className={`${alignClass} w-full`}>
       <p
-        className={`font-display tabular-nums leading-none tracking-tight text-accent ${valueClass}`}
+        className={`font-display tabular-nums leading-none text-accent max-md:tracking-normal ${valueClass}`}
       >
         {value}
       </p>
       <p
-        className={`mt-1.5 text-xs leading-snug text-muted sm:text-sm ${
+        className={`mt-2 text-[0.8125rem] leading-snug text-muted sm:mt-1.5 sm:text-sm ${
           align === "center"
             ? "mx-auto max-w-[7.5rem] text-center sm:max-w-[8.5rem]"
             : align === "right"

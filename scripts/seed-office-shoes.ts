@@ -93,7 +93,7 @@ async function main() {
       slug: RETAILER_SLUG,
       name: "Office Shoes",
       description:
-        "Vodeća mreža prodavnica obuće u Srbiji — Timberland, Calvin Klein, New Balance, Dr. Martens, Skechers i 40+ brenda.",
+        "Vodeća mreža prodavnica obuće u Srbiji — Timberland, Calvin Klein, New Balance, Dr. Martens, Skechers i dr.",
       headquarters_city: "Beograd",
       headquarters_city_id: cityIds.get("beograd") ?? null,
       website: "https://www.officeshoes.rs",

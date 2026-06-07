@@ -16,12 +16,16 @@
     "source": "manual"
   },
   "camper": {
-    "path": "/logos/cache/camper.png",
-    "source": "discovered"
+    "path": "/logos/cache/camper.svg",
+    "source": "official",
+    "remoteUrl": "https://www.camper.com/_next/static/media/logoCamperlab.915e01f0.svg",
+    "fetchedAt": "2026-06-07T07:55:26.088Z"
   },
   "desigual": {
     "path": "/logos/cache/desigual.png",
-    "source": "discovered"
+    "source": "official",
+    "remoteUrl": "https://assets.desigual.com/mails/logo/desigual-logo.png",
+    "fetchedAt": "2026-06-07T07:55:27.214Z"
   },
   "diesel": {
     "path": "/logos/cache/diesel.png",
@@ -29,31 +33,43 @@
   },
   "inuikii": {
     "path": "/logos/cache/inuikii.png",
-    "source": "discovered"
+    "source": "manual"
   },
   "patrizia-pepe": {
-    "path": "/logos/cache/patrizia-pepe.png",
-    "source": "discovered"
+    "path": "/logos/cache/patrizia-pepe.svg",
+    "source": "official",
+    "remoteUrl": "https://www.patriziapepe.com/on/demandware.static/Sites-patriziapepe_EU-Site/-/default/dw0cfb2f48/images/logo.svg",
+    "fetchedAt": "2026-06-07T07:55:29.418Z"
   },
   "lyle-scott": {
     "path": "/logos/cache/lyle-scott.png",
-    "source": "discovered"
+    "source": "official",
+    "remoteUrl": "https://www.lyleandscott.com/cdn/shop/files/L_S_LOGO-03_72e31967-d5f2-4d41-953b-3b8afab93afd.png?v=1704302755&width=400",
+    "fetchedAt": "2026-06-07T07:55:31.237Z"
   },
   "kiko": {
     "path": "/logos/cache/kiko.png",
-    "source": "discovered"
+    "source": "manual"
+  },
+  "labubu": {
+    "path": "/logos/cache/labubu.png",
+    "source": "manual"
   },
   "liu-jo": {
-    "path": "/logos/cache/liu-jo.png",
-    "source": "discovered"
+    "path": "/logos/cache/liu-jo.svg",
+    "source": "official",
+    "remoteUrl": "https://www.liujo.com/on/demandware.static/Sites-liujo-row-Site/-/default/dw0056a951/images/logo.svg",
+    "fetchedAt": "2026-06-07T07:55:32.491Z"
   },
   "cesare-paciotti": {
-    "path": "/logos/cache/cesare-paciotti.png",
-    "source": "discovered"
+    "path": "/logos/cache/cesare-paciotti.svg",
+    "source": "manual"
   },
   "premiata": {
     "path": "/logos/cache/premiata.png",
-    "source": "discovered"
+    "source": "official",
+    "remoteUrl": "https://premiata.eu/cdn/shop/files/premiata_logo_3_600x200.png",
+    "fetchedAt": "2026-06-07T07:55:33.644Z"
   },
   "replay": {
     "path": "/logos/cache/replay.png",
@@ -61,11 +77,11 @@
   },
   "wellensteyn": {
     "path": "/logos/cache/wellensteyn.png",
-    "source": "discovered"
+    "source": "manual"
   },
   "steve-madden": {
     "path": "/logos/cache/steve-madden.png",
-    "source": "discovered"
+    "source": "manual"
   },
   "armani-exchange": {
     "path": "/logos/cache/armani-exchange.png",
@@ -73,31 +89,39 @@
   },
   "dkny": {
     "path": "/logos/cache/dkny.png",
-    "source": "discovered"
+    "source": "manual"
   },
   "dolce-vita": {
     "path": "/logos/cache/dolce-vita.png",
-    "source": "discovered"
+    "source": "manual"
   },
   "karl-lagerfeld": {
     "path": "/logos/cache/karl-lagerfeld.png",
-    "source": "discovered"
+    "source": "official",
+    "remoteUrl": "https://www.karllagerfeld.com/cdn/shop/files/karl-lagerfeld-logo-mail.png",
+    "fetchedAt": "2026-06-07T07:55:38.795Z"
   },
   "miss-sixty": {
     "path": "/logos/cache/miss-sixty.png",
-    "source": "discovered"
+    "source": "manual"
+  },
+  "mou": {
+    "path": "/logos/cache/mou.png",
+    "source": "manual"
   },
   "moschino-jeans": {
     "path": "/logos/cache/moschino-jeans.png",
-    "source": "discovered"
+    "source": "manual"
   },
   "saint-barth": {
     "path": "/logos/cache/saint-barth.png",
     "source": "discovered"
   },
   "superdry": {
-    "path": "/logos/cache/superdry.png",
-    "source": "discovered"
+    "path": "/logos/cache/superdry.svg",
+    "source": "official",
+    "remoteUrl": "https://www.superdry.com/on/demandware.static/Sites-sd-uk-Site/-/default/dwbcd12705/images/superdry-logo.svg",
+    "fetchedAt": "2026-06-07T07:55:42.235Z"
   },
   "ugg": {
     "path": "/logos/cache/ugg.png",
@@ -108,179 +132,179 @@
     "source": "manual"
   },
   "adidas": {
-    "path": "/logos/cache/adidas.jpg",
+    "path": "/logos/cache/adidas.png",
     "source": "url"
   },
   "tommy-hilfiger": {
-    "path": "/logos/cache/tommy-hilfiger.jpg",
-    "source": "url"
+    "path": "/logos/cache/tommy-hilfiger.svg",
+    "source": "official",
+    "remoteUrl": "https://de.tommy.com/prod/live/th/shared-assets/active/ogImage/th/logoDesktop.svg",
+    "fetchedAt": "2026-06-07T07:55:14.592Z"
   },
   "calvin-klein": {
-    "path": "/logos/cache/calvin-klein.jpg",
-    "source": "url"
+    "path": "/logos/cache/calvin-klein.svg",
+    "source": "official",
+    "remoteUrl": "https://www.calvinklein.de/prod/live/ck/shared-assets/active/ogImage/ck/logoDesktop.svg",
+    "fetchedAt": "2026-06-07T07:55:15.601Z"
   },
   "lacoste": {
-    "path": "/logos/cache/lacoste.jpg",
-    "source": "url"
+    "path": "/logos/cache/lacoste.png",
+    "source": "official",
+    "remoteUrl": "https://static1.lacoste.com/static/on/demandware.static/Sites-DE-Site/-/de/dw725d2da5/img/brand/lacoste_casual_logo_RVB.png",
+    "fetchedAt": "2026-06-07T07:55:17.519Z"
   },
   "timberland": {
-    "path": "/logos/cache/timberland.jpg",
-    "source": "url"
+    "path": "/logos/cache/timberland.svg",
+    "source": "official",
+    "remoteUrl": "https://assets.timberland.com/image/upload/v1775852707/Timberland_2025_Horizontal_Lock-Up_RGB_Black_R.svg",
+    "fetchedAt": "2026-06-07T07:55:20.051Z"
   },
   "bata": {
-    "path": "/logos/cache/bata.jpg",
-    "source": "url"
+    "path": "/logos/cache/bata.png",
+    "source": "manual"
   },
   "guess": {
     "path": "/logos/cache/guess.png",
     "source": "manual"
   },
   "levis": {
-    "path": "/logos/cache/levis.jpg",
+    "path": "/logos/cache/levis.png",
     "source": "url"
   },
   "hugo": {
-    "path": "/logos/cache/hugo.jpg",
-    "source": "url"
+    "path": "/logos/cache/hugo.png",
+    "source": "manual"
   },
   "boss": {
-    "path": "/logos/cache/boss.jpg",
-    "source": "url"
+    "path": "/logos/cache/boss.svg",
+    "source": "official",
+    "remoteUrl": "https://www.hugoboss.com/on/demandware.static/Sites-DE-Site/-/default/dw8b5994ba/svg/output_files/boss_logo.svg",
+    "fetchedAt": "2026-06-07T07:55:34.308Z"
   },
   "love-moschino": {
-    "path": "/logos/cache/love-moschino.jpg",
+    "path": "/logos/cache/love-moschino.png",
     "source": "url"
   },
   "new-balance": {
-    "path": "/logos/cache/new-balance.jpg",
-    "source": "url"
+    "path": "/logos/cache/new-balance.svg",
+    "source": "official",
+    "remoteUrl": "https://www.newbalance.com/on/demandware.static/-/Library-Sites-NBUS-NBCA/default/dw3de6aa04/images/homepage/footer/logo.svg",
+    "fetchedAt": "2026-06-07T07:55:40.719Z"
   },
   "bama": {
-    "path": "/logos/cache/bama.jpg",
+    "path": "/logos/cache/bama.png",
     "source": "url"
   },
   "birkenstock": {
-    "path": "/logos/cache/birkenstock.jpg",
+    "path": "/logos/cache/birkenstock.png",
     "source": "url"
   },
   "blauer": {
-    "path": "/logos/cache/blauer.jpg",
+    "path": "/logos/cache/blauer.png",
     "source": "url"
   },
   "buffalo": {
-    "path": "/logos/cache/buffalo.jpg",
+    "path": "/logos/cache/buffalo.png",
     "source": "url"
   },
   "cartago": {
-    "path": "/logos/cache/cartago.jpg",
+    "path": "/logos/cache/cartago.png",
     "source": "url"
   },
   "collonil": {
-    "path": "/logos/cache/collonil.jpg",
+    "path": "/logos/cache/collonil.png",
     "source": "url"
   },
   "converse": {
-    "path": "/logos/cache/converse.jpg",
+    "path": "/logos/cache/converse.png",
     "source": "url"
   },
   "crocs": {
-    "path": "/logos/cache/crocs.jpg",
+    "path": "/logos/cache/crocs.png",
     "source": "url"
   },
   "dfns": {
-    "path": "/logos/cache/dfns.jpg",
+    "path": "/logos/cache/dfns.png",
     "source": "url"
   },
   "dr-martens": {
-    "path": "/logos/cache/dr-martens.jpg",
+    "path": "/logos/cache/dr-martens.png",
     "source": "url"
   },
   "g-star-raw": {
-    "path": "/logos/cache/g-star-raw.jpg",
+    "path": "/logos/cache/g-star-raw.png",
     "source": "url"
   },
   "gant": {
-    "path": "/logos/cache/gant.jpg",
+    "path": "/logos/cache/gant.png",
     "source": "url"
   },
   "gap": {
-    "path": "/logos/cache/gap.jpg",
+    "path": "/logos/cache/gap.png",
     "source": "url"
   },
   "ipanema": {
-    "path": "/logos/cache/ipanema.jpg",
+    "path": "/logos/cache/ipanema.png",
     "source": "url"
   },
   "kickers": {
-    "path": "/logos/cache/kickers.jpg",
+    "path": "/logos/cache/kickers.png",
     "source": "url"
   },
   "lumberjack": {
-    "path": "/logos/cache/lumberjack.jpg",
+    "path": "/logos/cache/lumberjack.png",
     "source": "url"
   },
   "moon-boot": {
-    "path": "/logos/cache/moon-boot.jpg",
+    "path": "/logos/cache/moon-boot.png",
     "source": "url"
   },
   "napapijri": {
-    "path": "/logos/cache/napapijri.jpg",
+    "path": "/logos/cache/napapijri.png",
     "source": "url"
   },
   "palladium": {
-    "path": "/logos/cache/palladium.jpg",
+    "path": "/logos/cache/palladium.png",
     "source": "url"
   },
   "pepe-jeans": {
-    "path": "/logos/cache/pepe-jeans.jpg",
+    "path": "/logos/cache/pepe-jeans.png",
     "source": "url"
   },
   "polo-ralph-lauren": {
-    "path": "/logos/cache/polo-ralph-lauren.jpg",
+    "path": "/logos/cache/polo-ralph-lauren.png",
     "source": "url"
   },
   "puma": {
-    "path": "/logos/cache/puma.jpg",
+    "path": "/logos/cache/puma.png",
     "source": "url"
   },
   "rider": {
-    "path": "/logos/cache/rider.jpg",
+    "path": "/logos/cache/rider.png",
     "source": "url"
   },
   "skechers": {
-    "path": "/logos/cache/skechers.jpg",
+    "path": "/logos/cache/skechers.png",
     "source": "url"
   },
   "vagabond": {
-    "path": "/logos/cache/vagabond.jpg",
+    "path": "/logos/cache/vagabond.png",
     "source": "url"
   },
   "vans": {
-    "path": "/logos/cache/vans.jpg",
+    "path": "/logos/cache/vans.png",
     "source": "url"
   },
   "zaxy": {
-    "path": "/logos/cache/zaxy.jpg",
+    "path": "/logos/cache/zaxy.png",
     "source": "url"
   },
-  "massimo-dutti": {
-    "path": "/logos/cache/massimo-dutti.svg",
-    "source": "upload"
-  },
   "new-yorker": {
-    "path": "/logos/cache/new-yorker.png",
-    "source": "discovered"
-  },
-  "extra-sports": {
-    "path": "/logos/cache/extra-sports.png",
-    "source": "discovered"
+    "path": "/logos/cache/new-yorker.svg",
+    "source": "manual"
   },
   "tike": {
     "path": "/logos/cache/tike.png",
-    "source": "discovered"
-  },
-  "run-n-more": {
-    "path": "/logos/cache/run-n-more.png",
     "source": "discovered"
   },
   "cos": {
@@ -298,5 +322,71 @@
   "bershka": {
     "path": "/logos/cache/bershka.png",
     "source": "manual"
+  },
+  "reserved": {
+    "path": "/logos/cache/reserved.png",
+    "source": "manual"
+  },
+  "sinsay": {
+    "path": "/logos/cache/sinsay.png",
+    "source": "manual"
+  },
+  "cropp": {
+    "path": "/logos/cache/cropp.png",
+    "source": "manual"
+  },
+  "pull-and-bear": {
+    "path": "/logos/cache/pull-and-bear.png",
+    "source": "manual"
+  },
+  "oysho": {
+    "path": "/logos/cache/oysho.png",
+    "source": "manual"
+  },
+  "antony-morato": {
+    "path": "/logos/cache/antony-morato.png",
+    "source": "manual"
+  },
+  "arket": {
+    "path": "/logos/cache/arket.png",
+    "source": "manual"
+  },
+  "burberry": {
+    "path": "/logos/cache/burberry.svg",
+    "source": "manual"
+  },
+  "h-and-m": {
+    "path": "/logos/cache/h-and-m.svg",
+    "source": "manual"
+  },
+  "dirty-london": {
+    "path": "/logos/cache/dirty-london.png",
+    "source": "manual"
+  },
+  "mango": {
+    "path": "/logos/cache/mango.png",
+    "source": "manual"
+  },
+  "north-face": {
+    "path": "/logos/cache/north-face.png",
+    "source": "manual"
+  },
+  "stradivarius": {
+    "path": "/logos/cache/stradivarius.png",
+    "source": "manual"
+  },
+  "extra-sports": {
+    "path": "/logos/cache/extra-sports.png",
+    "source": "manual"
+  },
+  "run-n-more": {
+    "path": "/logos/cache/run-n-more.png",
+    "source": "manual"
+  },
+  "flower-mountain": {
+    "path": "/logos/cache/flower-mountain.svg",
+    "source": "official",
+    "remoteUrl": "https://www.flowermountain.com/media/1c/f2/3b/1771946516/logo-flower-mountain-2026.svg",
+    "fetchedAt": "2026-06-07T07:55:36.227Z"
   }
 }

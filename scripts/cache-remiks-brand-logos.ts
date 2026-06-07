@@ -28,6 +28,7 @@ const REMIKS_SLUG_ALIASES: Record<string, string[]> = {
   "under-armour": ["under_armour"],
   "massimo-dutti": ["massimo_dutti"],
   "pull-and-bear": ["pull_and_bear"],
+  stradivarius: ["stradivarius"],
   "tory-burch": ["tory_burch"],
   "armani-exchange": ["armani_exchange"],
   "steve-madden": ["steve_madden"],

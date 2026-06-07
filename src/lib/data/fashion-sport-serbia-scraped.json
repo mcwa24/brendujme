@@ -1,16 +1,13 @@
 {
   "scrapedAt": "2026-06-04T15:35:53.655Z",
-  "sourceNote": "FC fashioncompany.rs; F&F; Extra Sports extrasports.com; Tike; Runnmore; Burberry Terazije 28; adidas Originals trendmaker/adidasoriginals.rs",
+  "sourceNote": "FC fashioncompany.rs; F&F; Tike; Burberry Terazije 28; adidas Originals trendmaker/adidasoriginals.rs",
   "brands": [
     "fashion-company",
     "fashion-friends",
     "diesel",
     "levis",
     "burberry",
-    "adidas-originals",
-    "extra-sports",
-    "tike",
-    "run-n-more"
+    "adidas-originals"
   ],
   "stores": [
     {
@@ -604,106 +601,6 @@
       "storeUrl": "https://www.fashionandfriends.com/rs/"
     },
     {
-      "name": "Extra Sports Roda",
-      "address": "Đorđa Stanojevića 35",
-      "city": "Beograd",
-      "citySlug": "beograd",
-      "shoppingCenterSlug": null,
-      "storeUrl": "https://www.extrasports.com/SRB_rs/prodavnice",
-      "brandSlug": "extra-sports",
-      "retailerSlug": "extra-sports"
-    },
-    {
-      "name": "Extra Sports Stadion",
-      "address": "Zaplanjska 32, TC Stadion",
-      "city": "Beograd",
-      "citySlug": "beograd",
-      "shoppingCenterSlug": "stadion",
-      "storeUrl": "https://www.extrasports.com/SRB_rs/prodavnice",
-      "brandSlug": "extra-sports",
-      "retailerSlug": "extra-sports"
-    },
-    {
-      "name": "Extra Sports Borča",
-      "address": "Bratstva i jedinstva 2g",
-      "city": "Beograd",
-      "citySlug": "beograd",
-      "shoppingCenterSlug": null,
-      "storeUrl": "https://www.extrasports.com/SRB_rs/prodavnice",
-      "brandSlug": "extra-sports",
-      "retailerSlug": "extra-sports"
-    },
-    {
-      "name": "Extra Sports BIG Novi Sad",
-      "address": "Sentandrejski put 11",
-      "city": "Novi Sad",
-      "citySlug": "novi-sad",
-      "shoppingCenterSlug": "promenada",
-      "storeUrl": "https://www.extrasports.com/SRB_rs/prodavnice",
-      "brandSlug": "extra-sports",
-      "retailerSlug": "extra-sports"
-    },
-    {
-      "name": "Extra Sports Delta Niš",
-      "address": "Bulevar Nemanjića 11b",
-      "city": "Niš",
-      "citySlug": "nis",
-      "shoppingCenterSlug": "delta-city",
-      "storeUrl": "https://www.extrasports.com/SRB_rs/prodavnice",
-      "brandSlug": "extra-sports",
-      "retailerSlug": "extra-sports"
-    },
-    {
-      "name": "Extra Sports Kragujevac",
-      "address": "Bulevar Kraljice Marije 56",
-      "city": "Kragujevac",
-      "citySlug": "kragujevac",
-      "shoppingCenterSlug": "kragujevac-plaza",
-      "storeUrl": "https://www.extrasports.com/SRB_rs/prodavnice",
-      "brandSlug": "extra-sports",
-      "retailerSlug": "extra-sports"
-    },
-    {
-      "name": "Extra Sports Šabac",
-      "address": "Cara Dušana 1",
-      "city": "Šabac",
-      "citySlug": "sabac",
-      "shoppingCenterSlug": null,
-      "storeUrl": "https://www.extrasports.com/SRB_rs/prodavnice",
-      "brandSlug": "extra-sports",
-      "retailerSlug": "extra-sports"
-    },
-    {
-      "name": "Extra Sports Čačak",
-      "address": "Braće Spasića bb",
-      "city": "Čačak",
-      "citySlug": "cacak",
-      "shoppingCenterSlug": null,
-      "storeUrl": "https://www.extrasports.com/SRB_rs/prodavnice",
-      "brandSlug": "extra-sports",
-      "retailerSlug": "extra-sports"
-    },
-    {
-      "name": "Extra Sports Subotica",
-      "address": "Segedinski put 88",
-      "city": "Subotica",
-      "citySlug": "subotica",
-      "shoppingCenterSlug": null,
-      "storeUrl": "https://www.extrasports.com/SRB_rs/prodavnice",
-      "brandSlug": "extra-sports",
-      "retailerSlug": "extra-sports"
-    },
-    {
-      "name": "Extra Sports Zrenjanin",
-      "address": "Bagljaš zapad 5",
-      "city": "Zrenjanin",
-      "citySlug": "zrenjanin",
-      "shoppingCenterSlug": "big-fashion",
-      "storeUrl": "https://www.extrasports.com/SRB_rs/prodavnice",
-      "brandSlug": "extra-sports",
-      "retailerSlug": "extra-sports"
-    },
-    {
       "brandSlug": "tike",
       "name": "Tike Shop",
       "address": "Kralja Petra 24",
@@ -712,16 +609,6 @@
       "shoppingCenterSlug": null,
       "retailerSlug": "tike",
       "storeUrl": "https://www.tike.rs/"
-    },
-    {
-      "brandSlug": "run-n-more",
-      "name": "Runnmore",
-      "address": "Uzun Mirkova 10",
-      "city": "Beograd",
-      "citySlug": "beograd",
-      "shoppingCenterSlug": null,
-      "retailerSlug": "run-n-more",
-      "storeUrl": "https://www.runnmore.com/"
     },
     {
       "brandSlug": "burberry",

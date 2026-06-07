@@ -89,7 +89,7 @@ async function main() {
       slug: RETAILER_SLUG,
       name: scraped.retailerName,
       description:
-        `Sneaker temple u centru Beograda — ${scraped.brands.length} brendova prema tike.rs/brendovi.`,
+        "Sneaker temple u centru Beograda — Nike, Jordan, Adidas, New Balance i dr. prema zvaničnom katalogu na tike.rs.",
       headquarters_city: "Beograd",
       headquarters_city_id: cityIds.get("beograd") ?? null,
       website: "https://www.tike.rs/",

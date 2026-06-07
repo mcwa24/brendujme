@@ -7,7 +7,8 @@ import { bilbordSlugFromFfSlug } from "@/lib/data/ff-brand-slugs";
 
 const FF_BASE = "https://www.fashionandfriends.com/rs/brendovi";
 
-const OFFICIAL_WEBSITES: Record<string, string> = {
+/** Zvanični sajtovi (ne F&F listing stranice) — za sync logoa */
+export const BRAND_OFFICIAL_WEBSITES: Record<string, string> = {
   diesel: "https://www.diesel.com",
   replay: "https://www.replayjeans.com",
   guess: "https://www.guess.eu",
@@ -175,7 +176,7 @@ export function buildFashionAndFriendsDirectoryBrands(
     added.add(slug);
 
     const website =
-      OFFICIAL_WEBSITES[slug] ?? `${FF_BASE}/${ff.ffSlug}`;
+      BRAND_OFFICIAL_WEBSITES[slug] ?? `${FF_BASE}/${ff.ffSlug}`;
 
     result.push({
       slug,

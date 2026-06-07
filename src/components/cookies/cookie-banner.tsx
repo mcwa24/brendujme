@@ -52,7 +52,7 @@ export function CookieBanner() {
         >
           <X className="h-3.5 w-3.5" strokeWidth={2} aria-hidden />
         </button>
-        <p className="m-0 pr-5 text-[14px] font-[450] leading-[1.45] text-foreground">
+        <p className="m-0 pr-5 text-sm font-normal leading-[1.45] text-foreground">
           Koristimo kolačiće radi boljeg iskustva. Nastavkom posete ovom sajtu
           prihvatate upotrebu kolačića.
         </p>

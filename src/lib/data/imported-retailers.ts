@@ -10,9 +10,7 @@ export const IMPORTED_RETAILER_SLUGS = [
   "planeta-sport",
   "inditex",
   "lpp",
-  "extra-sports",
   "tike",
-  "run-n-more",
 ] as const;
 
 export type ImportedRetailerSlug = (typeof IMPORTED_RETAILER_SLUGS)[number];
@@ -33,15 +31,27 @@ export const DEPRECATED_RETAILER_SLUGS = [
   "dm",
   "lilly",
   "jasmin",
+  "extra-sports",
+  "run-n-more",
 ] as const;
 
 export const DEPRECATED_BRAND_SLUGS = [
   ...DEPRECATED_RETAILER_SLUGS,
   "alexandar-cosmetics",
+  /** Prodavci / lanci — samo na /retailers, ne u /brands */
+  ...IMPORTED_RETAILER_SLUGS,
 ] as const;
+
+export function isExcludedBrandSlug(slug: string): boolean {
+  return (DEPRECATED_BRAND_SLUGS as readonly string[]).includes(slug);
+}
 
 export function isImportedRetailerSlug(slug: string): slug is ImportedRetailerSlug {
   return (IMPORTED_RETAILER_SLUGS as readonly string[]).includes(slug);
+}
+
+export function isExcludedRetailerSlug(slug: string): boolean {
+  return (DEPRECATED_RETAILER_SLUGS as readonly string[]).includes(slug);
 }
 
 export function sortImportedRetailers<T extends { slug: string }>(items: T[]): T[] {
@@ -95,17 +105,9 @@ export const IMPORTED_RETAILER_EXTERNAL: Record<
     website: "https://www.fashionandfriends.com/rs/",
     websiteLabel: "fashionandfriends.com",
   },
-  "extra-sports": {
-    website: "https://www.extrasports.com/SRB_rs/",
-    websiteLabel: "extrasports.com",
-  },
   tike: {
     website: "https://www.tike.rs/",
     websiteLabel: "tike.rs",
-  },
-  "run-n-more": {
-    website: "https://www.runnmore.com/",
-    websiteLabel: "runnmore.com",
   },
 };
 

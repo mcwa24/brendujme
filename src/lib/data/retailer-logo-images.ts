@@ -31,11 +31,6 @@ export const retailerPageLogoImages: Record<string, RetailerLogoImage> = {
     sourceUrl: "bundled:tike-logo-black",
     alt: "Tike",
   },
-  "run-n-more": {
-    src: "/logos/retailers/run-n-more.png",
-    sourceUrl: "bundled:run-n-more-logo",
-    alt: "Run'n More",
-  },
 };
 
 /** Pun logo — naslovi sekcija na stranicama brenda */
@@ -77,8 +72,8 @@ export const retailerLogoImages: Record<string, RetailerLogoImage> = {
     alt: "Đak Sport",
   },
   "sport-vision": {
-    src: "/logos/retailers/sport-vision.png",
-    sourceUrl: "https://www.sportvision.rs/files/files/sv_redizajn/rnm-lllogo.png",
+    src: "/logos/retailers/sport-vision-2026.png",
+    sourceUrl: "bundled:sport-vision-logo-2026",
     alt: "Sport Vision",
   },
   "planeta-sport": {
@@ -87,20 +82,16 @@ export const retailerLogoImages: Record<string, RetailerLogoImage> = {
       "https://planetasport.rs/static/version1779922508/frontend/PlanetasportV2/default/sr_Latn_RS/images/logo.svg",
     alt: "Planeta Sport",
   },
-  "extra-sports": {
-    src: "/logos/retailers/extra-sports.png",
-    sourceUrl: "https://www.extrasports.com/SRB_rs/skin/frontend/extrasports/default/images/logo.png",
-    alt: "Extra Sports",
+  inditex: {
+    src: "/logos/retailers/inditex.svg",
+    sourceUrl:
+      "https://www.inditex.com/itxcomweb/_next/static/media/logo_big.0nk5izeu-d548.svg",
+    alt: "Inditex",
   },
   tike: {
     src: "/logos/retailers/tike.png",
     sourceUrl: "bundled:tike-logo-black",
     alt: "Tike",
-  },
-  "run-n-more": {
-    src: "/logos/retailers/run-n-more.png",
-    sourceUrl: "bundled:run-n-more-logo",
-    alt: "Run'n More",
   },
 };
 

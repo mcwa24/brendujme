@@ -1,0 +1,33 @@
+---
+description: Pravila za brend logoe — ručni unos, bez sync-a
+globs: public/logos/**/*,src/components/brands/**/*,scripts/*brand-logo*
+alwaysApply: false
+---
+
+# Brend logoi
+
+- **Svi logoi ručno** — korisnik šalje slike; agent optimizuje i postavlja. **Bez automatskog sync-a**.
+- Keš: `public/logos/cache/{slug}.png` + `logo-manifest.json` sa `source: "manual"`.
+- Instalacija: `python3 scripts/install-brand-logo.py <slug> <fajl>` ili `npm run logos:install -- <slug> <fajl>`.
+
+## Transparent PNG — važno
+
+- **Crni logo na providnoj pozadini = OK** (Diesel, Zara, Nike…). To NIJE „crna pozadina“.
+- macOS Preview (šahovska tabla) = providnost — veruj korisniku ako fajl ima alpha.
+- **Crna pozadina** = ceo fajl neprovidan i crn (chat/seeklogo garbage) — retko na Macu OK.
+- **Beli logo na providnom** = problem na belim karticama (ne crna pozadina).
+
+## Chat vs Finder
+
+- Chat upload često **pokvari binarni PNG** (fajl postane crni kvadrat). Ako korisnik kaže da je na Macu OK:
+  1. ne tvrdi „crna pozadina“ za normalan transparent PNG
+  2. predloži kopiju preko Findera u projekat pa `install-brand-logo.py`
+  3. ili `--force` ako je fajl lokalno proveren
+
+- Skripta uklanja samo **Belu/svetlo sivu** pozadinu — nikad crnu (crni znak ostaje).
+
+## Zabrane
+
+- Ne pokreći sync/remiks/batch normalizaciju.
+- Nikad CSS `invert`.
+- Seeklogo „transparent" PNG-ovi sa crnim kvadratom — odbij; traži original.

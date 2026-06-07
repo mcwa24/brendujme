@@ -3,18 +3,23 @@ import { cn } from "@/lib/utils";
 
 interface BrandLogoPlaceholderProps {
   name: string;
+  slug?: string;
   variant?: "card" | "compact" | "hero";
   className?: string;
   showName?: boolean;
+  /** Nevidljivi okvir iste veličine — katalog brendova */
+  uniform?: boolean;
 }
 
 export function BrandLogoPlaceholder({
   name,
+  slug,
   variant = "card",
   className,
   showName = true,
+  uniform = false,
 }: BrandLogoPlaceholderProps) {
-  const letter = getBrandLetter(name);
+  const letter = getBrandLetter(name, slug);
 
   if (variant === "hero") {
     return (
@@ -30,7 +35,8 @@ export function BrandLogoPlaceholder({
     return (
       <div
         className={cn(
-          "flex h-[120px] w-[120px] shrink-0 flex-col items-center justify-center rounded-none border border-border bg-secondary",
+          "flex shrink-0 flex-col items-center justify-center",
+          uniform ? "h-full w-full" : "h-[120px] w-[120px] rounded-none border border-border bg-secondary",
           className
         )}
         aria-label={`Brend ${name}`}

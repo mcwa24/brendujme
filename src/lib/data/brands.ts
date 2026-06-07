@@ -8,6 +8,7 @@ import {
   FAST_FASHION_BRAND_SLUGS,
 } from "@/lib/data/fast-fashion-brands";
 import { buildFashionAndFriendsDirectoryBrands } from "@/lib/data/ff-directory-brands";
+import { DEPRECATED_BRAND_SLUGS } from "@/lib/data/imported-retailers";
 
 const FAST_FASHION_SLUGS = new Set<string>(FAST_FASHION_BRAND_SLUGS);
 const FASHION_SPORT_SLUGS = new Set<string>(FASHION_SPORT_BRAND_SLUGS);
@@ -401,6 +402,8 @@ function dedupeBrandsBySlug(list: Brand[]): Brand[] {
   });
 }
 
+const DEPRECATED_BRAND_SLUG_SET = new Set<string>(DEPRECATED_BRAND_SLUGS);
+
 export const brands: Brand[] = dedupeBrandsBySlug([
   ...coreWithoutCurated,
   ...buildFastFashionBrands(),
@@ -411,9 +414,10 @@ export const brands: Brand[] = dedupeBrandsBySlug([
       ...CURATED_SLUGS,
     ])
   ),
-]);
+]).filter((b) => !DEPRECATED_BRAND_SLUG_SET.has(b.slug));
 
 export function getBrandBySlug(slug: string): Brand | undefined {
+  if (DEPRECATED_BRAND_SLUG_SET.has(slug)) return undefined;
   return brands.find((b) => b.slug === slug);
 }
 

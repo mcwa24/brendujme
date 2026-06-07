@@ -11,11 +11,14 @@ export type CategorySlug =
 
 export type PriceSegment = "budget" | "mid" | "premium" | "luxury";
 
-export type LogoSource = "upload" | "url" | "discovered";
+export type LogoSource = "upload" | "url" | "discovered" | "official" | "manual";
 
 export interface LogoManifestEntry {
   path: string;
   source: LogoSource;
+  /** Legacy — sync više ne koristimo; samo ručni unos */
+  remoteUrl?: string;
+  fetchedAt?: string;
 }
 
 export type LogoManifest = Record<string, LogoManifestEntry>;

@@ -286,12 +286,12 @@ export function SearchModal({ open, onOpenChange }: SearchModalProps) {
 function SearchResultThumbnail({ item }: { item: SearchResult }) {
   if (item.imageUrl) {
     return (
-      <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-none border border-border bg-white">
+      <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-none border border-border bg-transparent">
         <Image
           src={item.imageUrl}
           alt=""
           fill
-          className="object-contain p-1.5"
+          className="brand-logo-img object-contain p-1.5"
           sizes="44px"
           unoptimized={
             item.imageUrl.startsWith("http") || item.imageUrl.startsWith("/logos/")
@@ -314,7 +314,7 @@ function SearchResultThumbnail({ item }: { item: SearchResult }) {
       className="flex h-11 w-11 shrink-0 items-center justify-center rounded-none border border-border bg-secondary font-display text-sm font-semibold text-muted-foreground"
       aria-hidden
     >
-      {getBrandLetter(item.title)}
+      {getBrandLetter(item.title, item.type === "brand" ? item.slug : undefined)}
     </div>
   );
 }

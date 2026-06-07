@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="de-DE">
+  <head>
+    <title>NEW YORKER | Dress for the moment</title>
+
+    <meta charset="utf-8">
+    <meta name="apple-itunes-app" content="app-id=391120743">
+    <meta name="google-play-app" content="app-id=de.pilot.newyorker.android">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0">
+
+    <meta name="application-name" content="NewYorker.de"/>
+    <meta name="msapplication-TileColor" content="#ffffff"/>
+    <meta name="msapplication-TileImage" content="/ny_logo.png"/>
+    <meta name="msapplication-config" content="/browserconfig.xml">
+
+    <meta property="og:title" content="NEW YORKER | Dress for the moment"/>
+    <meta name="DC.title" content="NEW YORKER | Dress for the moment"/>
+
+    
+    <meta name="google-site-verification" content="t0yypCJbYFI06Meg21a2RA4sUqwNcI-drJawDj6vWbE" /> 
+    <meta name="msvalidate.01" content="3BF08D2A42F24CCD4A9B72E2AA894D07" />
+
+    
+    <meta name="p:domain_verify" content="5f287284baefbd4826c6e2a3ff524876"/>
+
+    <meta name="description" content="Entdecke die neuesten Modetrends für Damen und Herren bei NEW YORKER. Kleidung von AMISU, CENSORED, FISHBONE, SMOG und BLACK SQUAD."/>
+    <meta property="og:description" content="Entdecke die neuesten Modetrends für Damen und Herren bei NEW YORKER. Kleidung von AMISU, CENSORED, FISHBONE, SMOG und BLACK SQUAD."/>
+    <meta name="DC.Description" content="Entdecke die neuesten Modetrends für Damen und Herren bei NEW YORKER. Kleidung von AMISU, CENSORED, FISHBONE, SMOG und BLACK SQUAD."/>
+
+    <meta property="og:image" content="/ny_logo.png"/>
+    <meta name="keywords" content="Amisu, Smog, Fishbone, Censored, Accessoires, Denim, Streetwear, Sportwear, Underwear, Trends, Outfits, Kollektionen" />
+    <meta name="DC.Subject" content="Amisu, Smog, Fishbone, Censored, Accessoires, Denim, Streetwear, Sportwear, Underwear, Trends, Outfits, Kollektionen" />
+    <meta name="DC.Language" scheme="NISOZ39.50" content="de" />
+    <meta name="date" content="2018-07-19T14:17:01+02:00" />
+    <meta name="DC.date" content="2018-07-19T14:17:01+02:00" />
+    <meta name="robots" content="index,follow" />
+
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="NEW YORKER"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="X-UA-Compatible" content="IE=edge">
+
+    <link rel="stylesheet" type="text/css" href="/fonts/open-sans.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/fonts/roboto.css" media="all">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16 32x32"/>
+    <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32"/>
+    <link rel="apple-touch-icon" sizes="128x128" href="/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="256x256" href="/apple-touch-icon-256px.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="/apple-touch-icon-512px.png">
+
+    <link rel="start" href="https://www.newyorker.de/" />
+    <link rel="up" href="https://www.newyorker.de/fashion-lifestyle/" />
+    <link rel="next" href="https://www.newyorker.de/lifestyle/" />
+    <link rel="canonical" href="https://www.newyorker.de/404.html" />
+
+    
+    <link rel="stylesheet" href="https://www.newyorker.de/lib/flatpickr/flatpickr.min.ab029dd9f6ee3291323b30a7fb805609bd81269ea4d80e88c5b8f63a215a1ef7.css">
+
+    
+    <link rel="stylesheet" href="https://www.newyorker.de/scss/main.min.2beb3ea0bebfe7bb14f225d5470dc6ca5c5d43cfa890e6b3449f8ffe0fb036ff.css">
+
+    
+    
+
+    
+
+    
+        <link rel="alternate" hreflang="x-default" href="https://www.newyorker.de/404.html" />
+        <link rel="alternate" hreflang="ru-RU" href="https://www.newyorker.de/ru/404.html" />
+        <link rel="alternate" hreflang="uz-UZ" href="https://www.newyorker.de/uz/404.html" />
+        <link rel="alternate" hreflang="en-FI" href="https://www.newyorker.de/fi/404.html" />
+        <link rel="alternate" hreflang="en-MD" href="https://www.newyorker.de/md/404.html" />
+        <link rel="alternate" hreflang="en-ME" href="https://www.newyorker.de/me/404.html" />
+        <link rel="alternate" hreflang="en-NL" href="https://www.newyorker.de/nl/404.html" />
+        <link rel="alternate" hreflang="en-NO" href="https://www.newyorker.de/no/404.html" />
+        <link rel="alternate" hreflang="en-PT" href="https://www.newyorker.de/pt/404.html" />
+        <link rel="alternate" hreflang="en-QA" href="https://www.newyorker.de/qa/404.html" />
+        <link rel="alternate" hreflang="en-SE" href="https://www.newyorker.de/se/404.html" />
+        <link rel="alternate" hreflang="en-LU" href="https://www.newyorker.de/lu/404.html" />
+        <link rel="alternate" hreflang="en-BE" href="https://www.newyorker.de/be/404.html" />
+        <link rel="alternate" hreflang="en-BG" href="https://www.newyorker.de/bg/404.html" />
+        <link rel="alternate" hreflang="en-BH" href="https://www.newyorker.de/bh/404.html" />
+        <link rel="alternate" hreflang="cs-CZ" href="https://www.newyorker.de/cz/404.html" />
+        <link rel="alternate" hreflang="en-GE" href="https://www.newyorker.de/ge/404.html" />
+        <link rel="alternate" hreflang="en-IT" href="https://www.newyorker.de/it/404.html" />
+        <link rel="alternate" hreflang="be-BY" href="https://www.newyorker.de/by/404.html" />
+        <link rel="alternate" hreflang="el-GR" href="https://www.newyorker.de/gr/404.html" />
+        <link rel="alternate" hreflang="en-HU" href="https://www.newyorker.de/hu/404.html" />
+        <link rel="alternate" hreflang="pl-PL" href="https://www.newyorker.de/pl/404.html" />
+        <link rel="alternate" hreflang="en-SK" href="https://www.newyorker.de/sk/404.html" />
+        <link rel="alternate" hreflang="en-AE" href="https://www.newyorker.de/ae/404.html" />
+        <link rel="alternate" hreflang="en-ES" href="https://www.newyorker.de/es/404.html" />
+        <link rel="alternate" hreflang="en-MK" href="https://www.newyorker.de/mk/404.html" />
+        <link rel="alternate" hreflang="en-MT" href="https://www.newyorker.de/mt/404.html" />
+        <link rel="alternate" hreflang="en-RO" href="https://www.newyorker.de/ro/404.html" />
+        <link rel="alternate" hreflang="en-SA" href="https://www.newyorker.de/sa/404.html" />
+        <link rel="alternate" hreflang="sl-SI" href="https://www.newyorker.de/si/404.html" />
+        <link rel="alternate" hreflang="en-AL" href="https://www.newyorker.de/al/404.html" />
+        <link rel="alternate" hreflang="hy-AM" href="https://www.newyorker.de/am/404.html" />
+        <link rel="alternate" hreflang="de-AT" href="https://www.newyorker.de/at/404.html" />
+        <link rel="alternate" hreflang="en-EE" href="https://www.newyorker.de/ee/404.html" />
+        <link rel="alternate" hreflang="hr-HR" href="https://www.newyorker.de/hr/404.html" />
+        <link rel="alternate" hreflang="en-KZ" href="https://www.newyorker.de/kz/404.html" />
+        <link rel="alternate" hreflang="en-LT" href="https://www.newyorker.de/lt/404.html" />
+        <link rel="alternate" hreflang="en-LV" href="https://www.newyorker.de/lv/404.html" />
+        <link rel="alternate" hreflang="en-AZ" href="https://www.newyorker.de/az/404.html" />
+        <link rel="alternate" hreflang="en-DK" href="https://www.newyorker.de/dk/404.html" />
+        <link rel="alternate" hreflang="en-FR" href="https://www.newyorker.de/fr/404.html" />
+        <link rel="alternate" hreflang="en-IS" href="https://www.newyorker.de/is/404.html" />
+        <link rel="alternate" hreflang="en-OM" href="https://www.newyorker.de/om/404.html" />
+        <link rel="alternate" hreflang="sr-RS" href="https://www.newyorker.de/rs/404.html" />
+        <link rel="alternate" hreflang="en-UA" href="https://www.newyorker.de/ua/404.html" />
+        <link rel="alternate" hreflang="en-XK" href="https://www.newyorker.de/xk/404.html" />
+        <link rel="alternate" hreflang="de-CH" href="https://www.newyorker.de/ch/404.html" />
+        <link rel="alternate" hreflang="de-DE" href="https://www.newyorker.de/404.html" />
+        <link rel="alternate" hreflang="ar-KW" href="https://www.newyorker.de/kw/404.html" />
+        <link rel="alternate" hreflang="bs-BA" href="https://www.newyorker.de/ba/404.html" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "NEW YORKER",
+        "url": "https://newyorker.de/",
+        "logo": "https://newyorker.de/images/logo.png",
+        "sameAs": [
+          "https://www.wikidata.org/wiki/Q706421",
+          "https://de.wikipedia.org/wiki/New_Yorker_(Unternehmen)",
+          "https://www.instagram.com/newyorkeronline/",
+          "https://www.tiktok.com/@newyorkeronline",
+          "https://de.linkedin.com/company/new-yorker",
+          "https://www.facebook.com/NewYorker.Fashion/",
+          "https://www.youtube.com/channel/UCvDz84HSvkOltgKYkL4nDjQ",
+          "https://de.pinterest.com/newyorkeronline/"
+        ],
+        "description": "Entdecke die neuesten Modetrends für Damen und Herren bei NEW YORKER. Kleidung von AMISU, CENSORED, FISHBONE, SMOG und BLACK SQUAD.",
+        "foundingDate": "1971",
+        "numberOfEmployees": 25000,
+        "email": "service@newyorker.de",
+        "telephone": "+4953121350",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Hansestraße 48",
+          "addressLocality": "Braunschweig",
+          "postalCode": "38112",
+          "addressCountry": "DE"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Friedrich Knapp"
+        }
+      }
+    </script>
+
+    
+  </head>
+
+  <body id="fashion">
+    
+    
+
+    
+
+    
+    <script src="/web-dist/services-22vJdLqt.js" type="module" crossorigin></script>
+    <script src="/web-dist/fashion-m9DBOecw.js" type="module" crossorigin></script>
+
+    
+    
+      <script src="/web-dist/widgets-CTgXozu0.js" type="module" crossorigin></script>
+    
+
+    <country-picker mobileImageKey="https://api.newyorker.de/blob/cms-startpage/bb79f335849dc7c8a7fd88f48a084a87.jpg" imageKey="https://api.newyorker.de/blob/cms-startpage/9a103c1bb548e90f74855faddf24a97f.jpg"></country-picker>
+
+    
+
+    
+
+
+
+<header role="banner" class="site-header">
+  <div class="left-items">
+    <hamburger-menu class="small">
+      <div class="blur-backdrop"></div>
+      <div class="menu">
+        <div class="menu-header"></div>
+        <nav class="menu-content">
+          <div class="gender-picker">
+            <a class="item women"
+                href="/women/">Damen</a>
+            <span></span>
+            <a class="item men"
+                href="/men/">Herren</a>
+          </div>
+
+          <ul class="menu-links-1">
+            
+              
+                
+                  <menu-item
+                    class="item-group-1"
+                    
+                       href="/products/?gender=FEMALE" 
+                    
+                    
+                    isExternal=""
+                    customerGroup="FEMALE"
+                    role="link"
+                  >
+                    Produkte
+                  </menu-item>
+                
+              
+            
+              
+                
+                  <menu-item
+                    class="item-group-1"
+                    
+                       href="/products/?gender=MALE" 
+                    
+                    
+                    isExternal=""
+                    customerGroup="MALE"
+                    role="link"
+                  >
+                    Produkte
+                  </menu-item>
+                
+              
+            
+              
+                
+                  <ul class="is-sub-menu" tabindex="0">
+                    <span>Guides</span>
+                    
+                      
+                        <menu-item
+                          class="sub-menu-item item-group-1"
+                           href="/denim-fit-guide/?gender=FEMALE" 
+                          
+                          isExternal=""
+                          customerGroup="FEMALE"
+                          role="link"
+                        >
+                          Denim-Fit
+                        </menu-item>
+                      
+                    
+                      
+                        <menu-item
+                          class="sub-menu-item item-group-1"
+                           href="/denim-fit-guide/?gender=MALE" 
+                          
+                          isExternal=""
+                          customerGroup="MALE"
+                          role="link"
+                        >
+                          Denim-Fit
+                        </menu-item>
+                      
+                    
+                  </ul>
+                
+              
+            
+              
+                
+                  <menu-item
+                    class="item-group-1"
+                    
+                       href="/instafashion-women/" 
+                    
+                    
+                    isExternal=""
+                    customerGroup="FEMALE"
+                    role="link"
+                  >
+                    Instafashion
+                  </menu-item>
+                
+              
+            
+              
+                
+                  <menu-item
+                    class="item-group-1"
+                    
+                       href="/instafashion-men/" 
+                    
+                    
+                    isExternal=""
+                    customerGroup="MALE"
+                    role="link"
+                  >
+                    Instafashion
+                  </menu-item>
+                
+              
+            
+              
+                
+                  <menu-item
+                    class="item-group-1"
+                    
+                       href="/get-more-club/" 
+                    
+                    
+                    isExternal=""
+                    customerGroup=""
+                    role="link"
+                  >
+                    GET MORE club
+                  </menu-item>
+                
+              
+            
+              
+                
+                  <menu-item
+                    class="item-group-1"
+                    
+                       href="/stores/" 
+                    
+                    
+                    isExternal=""
+                    customerGroup=""
+                    role="link"
+                  >
+                    Filiale finden
+                  </menu-item>
+                
+              
+            
+              
+                
+                  <menu-item
+                    class="item-group-1"
+                    
+                       href="/lifestyle/" 
+                    
+                    
+                    isExternal=""
+                    customerGroup=""
+                    role="link"
+                  >
+                    Lifestyle
+                  </menu-item>
+                
+              
+            
+              
+                
+                  <menu-item
+                    class="item-group-1"
+                    
+                        href="https://www.newyorker-giftcard.de" target="_blank" 
+                    
+                    
+                    isExternal="true"
+                    customerGroup=""
+                    role="link"
+                  >
+                    Gutscheine
+                  </menu-item>
+                
+              
+            
+              
+                
+                  <menu-item
+                    class="item-group-1"
+                    
+                        href="https://jobs.newyorker.de/?utm_source=website&#43;&amp;utm_medium=menu&amp;utm_campaign=jobs&amp;utm_content=de" target="_blank" 
+                    
+                    
+                    isExternal="true"
+                    customerGroup=""
+                    role="link"
+                  >
+                    Jobs
+                  </menu-item>
+                
+              
+            
+              
+            
+              
+            
+              
+                
+                  <menu-item
+                    class="item-group-1"
+                    
+                       href="/app/" 
+                    
+                    
+                    isExternal=""
+                    customerGroup=""
+                    role="link"
+                  >
+                    Mobile App
+                  </menu-item>
+                
+              
+            
+          </ul>
+
+          <div class="menu-footer">
+            <ul class="menu-links-2">
+              
+                
+                  
+                    <menu-item
+                      class="item-group-2"
+                       href="/newsletter/" 
+                      
+                      isExternal=""
+                      customerGroup=""
+                      role="link"
+                    >
+                      Newsletter
+                    </menu-item>
+                  
+                
+              
+                
+                  
+                    <menu-item
+                      class="item-group-2"
+                       href="/faq/" 
+                      
+                      isExternal=""
+                      customerGroup=""
+                      role="link"
+                    >
+                      FAQ
+                    </menu-item>
+                  
+                
+              
+                
+                  
+                    <menu-item
+                      class="item-group-2"
+                       href="/legal/imprint/" 
+                      
+                      isExternal=""
+                      customerGroup=""
+                      role="link"
+                    >
+                      Impressum
+                    </menu-item>
+                  
+                
+              
+                
+                  
+                    <menu-item
+                      class="item-group-2"
+                       href="/legal/privacy/" 
+                      
+                      isExternal=""
+                      customerGroup=""
+                      role="link"
+                    >
+                      Datenschutz
+                    </menu-item>
+                  
+                
+              
+                
+                  
+                    <menu-item
+                      class="item-group-2"
+                      
+                       event="ny-cookie-settings-open" 
+                      isExternal=""
+                      customerGroup=""
+                      role="link"
+                    >
+                      Cookie-Einstellungen
+                    </menu-item>
+                  
+                
+              
+                
+                  
+                    <menu-item
+                      class="item-group-2"
+                       href="/legal/cookie-notice/" 
+                      
+                      isExternal=""
+                      customerGroup=""
+                      role="link"
+                    >
+                      Cookie-Hinweise
+                    </menu-item>
+                  
+                
+              
+                
+                  
+                    <ul class="is-sub-menu" tabindex="0">
+                      <span>Kontakt</span>
+                      
+                        
+                          <menu-item
+                            class="sub-menu-item item-group-2"
+                             href="/company/#contact" 
+                            
+                            isExternal=""
+                            customerGroup=""
+                            role="link"
+                          >
+                            Kundenservice
+                          </menu-item>
+                        
+                      
+                        
+                          <menu-item
+                            class="sub-menu-item item-group-2"
+                             href="/company/#press" 
+                            
+                            isExternal=""
+                            customerGroup=""
+                            role="link"
+                          >
+                            Pressekontakt
+                          </menu-item>
+                        
+                      
+                        
+                      
+                    </ul>
+                  
+                
+              
+                
+              
+                
+                  
+                    <ul class="is-sub-menu" tabindex="0">
+                      <span>Company</span>
+                      
+                        
+                          <menu-item
+                            class="sub-menu-item item-group-2"
+                             href="/company/" 
+                            
+                            isExternal=""
+                            customerGroup=""
+                            role="link"
+                          >
+                            Company
+                          </menu-item>
+                        
+                      
+                        
+                          <menu-item
+                            class="sub-menu-item item-group-2"
+                             href="/brands/" 
+                            
+                            isExternal=""
+                            customerGroup=""
+                            role="link"
+                          >
+                            Brands
+                          </menu-item>
+                        
+                      
+                        
+                          <menu-item
+                            class="sub-menu-item item-group-2"
+                             href="/ce-declaration/" 
+                            
+                            isExternal=""
+                            customerGroup=""
+                            role="link"
+                          >
+                            CE-Deklarationen
+                          </menu-item>
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                    </ul>
+                  
+                
+              
+            </ul>
+
+            <ul class="menu-social-media">
+              
+                
+                  <social-icon customerGroup="">
+                    <a href="https://facebook.com/NewYorker.Fashion" target="_blank" title="Facebook in einem neuen Tab öffnen" aria-label="Facebook in einem neuen Tab öffnen">
+                      <img class="icon" src="/img/icons/facebook.svg" alt="">
+                    </a>
+                  </social-icon>
+                
+              
+                
+              
+                
+              
+                
+                  <social-icon customerGroup="FEMALE">
+                    <a href="https://www.instagram.com/newyorkeronline/" target="_blank" title="Instagram in einem neuen Tab öffnen" aria-label="Instagram in einem neuen Tab öffnen">
+                      <img class="icon" src="/img/icons/instagram.svg" alt="">
+                    </a>
+                  </social-icon>
+                
+              
+                
+                  <social-icon customerGroup="MALE">
+                    <a href="https://www.instagram.com/newyorkerman/" target="_blank" title="Instagram in einem neuen Tab öffnen" aria-label="Instagram in einem neuen Tab öffnen">
+                      <img class="icon" src="/img/icons/instagram.svg" alt="">
+                    </a>
+                  </social-icon>
+                
+              
+                
+              
+                
+                  <social-icon customerGroup="">
+                    <a href="https://youtube.com/user/newyorkertv" target="_blank" title="Youtube in einem neuen Tab öffnen" aria-label="Youtube in einem neuen Tab öffnen">
+                      <img class="icon" src="/img/icons/youtube.svg" alt="">
+                    </a>
+                  </social-icon>
+                
+              
+                
+                  <social-icon customerGroup="">
+                    <a href="https://www.threads.net/@newyorkeronline" target="_blank" title="Threads in einem neuen Tab öffnen" aria-label="Threads in einem neuen Tab öffnen">
+                      <img class="icon" src="/img/icons/threads.svg" alt="">
+                    </a>
+                  </social-icon>
+                
+              
+                
+                  <social-icon customerGroup="">
+                    <a href="https://pinterest.com/newyorkeronline/" target="_blank" title="Pinterest in einem neuen Tab öffnen" aria-label="Pinterest in einem neuen Tab öffnen">
+                      <img class="icon" src="/img/icons/pinterest.svg" alt="">
+                    </a>
+                  </social-icon>
+                
+              
+                
+                  <social-icon customerGroup="">
+                    <a href="https://www.tiktok.com/@newyorkeronline" target="_blank" title="TikTok in einem neuen Tab öffnen" aria-label="TikTok in einem neuen Tab öffnen">
+                      <img class="icon" src="/img/icons/tiktok.svg" alt="">
+                    </a>
+                  </social-icon>
+                
+              
+            </ul>
+
+            <div class="copyright">
+              &copy; Copyright 2026 NEW YORKER Marketing & Media International GmbH
+            </div>
+          </div>
+        </nav>
+      </div>
+    </hamburger-menu>
+    <div class="logo">
+      <ny-logo class="small"></ny-logo>
+    </div>
+  </div>
+  <div class="right-items">
+    
+      <customer-widget class="small" customerGroup="" countryCode=""></customer-widget>
+      <div class="separator"></div>
+    
+    <country-switcher class="small" id="country-switcher"></country-switcher>
+  </div>
+</header>
+
+
+    <div id="legacy-browser">
+            <span aria-hidden="true" class="icon">
+              <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/>
+              </svg>
+            </span>
+      <span class="text">Dein Browser wird nicht mehr unterstützt. Nutze einen aktuellen Browser, um alle Inhalte in vollem Umfang nutzen zu können.<br><a href="/legacy-browser">Zurück zur Startseite</a> </span>
+    </div>
+
+    
+
+    <main>
+      
+  <div class="not-found">
+    <img class="image" src="/img/icons/face-frown.svg" alt=""/>
+    <span class="title">404</span>
+    <span class="subtitle">Page not found</span>
+    <span class="text">Sorry! The page you are looking for doesn't exist or an error occured.</span>
+    <span class="text">Please refresh or go back to  <a href="https://www.newyorker.de/">https://www.newyorker.de/</a> to choose a new direction.</span>
+  </div>
+
+    </main>
+
+    
+
+
+
+
+
+<footer id="footer" class="">
+    <nav>
+  <div class="links">
+      <ul class="list group-1">
+        
+          <li class="item">
+          
+            
+              
+                <a class="item"  href="https://www.newyorker.de/products/" >
+                  Produkte
+                </a>
+              
+            
+            </li>
+          
+        
+      </ul>
+      <ul class="list group-2">
+        
+          
+            
+                <li class="item">
+                  
+                    <a class="item"  href="https://www.newyorker.de/faq/"  >
+                      FAQ
+                    </a>
+                  
+                </li>
+            
+          
+        
+          
+            
+                <li class="item">
+                  
+                    <a class="item"  href="https://jobs.newyorker.de"
+                       target="_blank"  >
+                      Jobs
+                    </a>
+                  
+                </li>
+            
+          
+        
+          
+            
+          
+        
+          
+            
+                <li class="item">
+                  
+                    <a class="item"  href="https://www.newyorker.de/company/#contact"  >
+                      Kundenservice
+                    </a>
+                  
+                </li>
+            
+          
+        
+          
+            
+                <li class="item">
+                  
+                    <a class="item"  href="https://www.newyorker.de/company/"  >
+                      Company
+                    </a>
+                  
+                </li>
+            
+          
+        
+          
+            
+                <li class="item">
+                  
+                    <a class="item"  href="https://www.newyorker.de/brands/"  >
+                      Brands
+                    </a>
+                  
+                </li>
+            
+          
+        
+          
+            
+                <li class="item">
+                  
+                    <a class="item"  href="https://www.newyorker.de/legal/privacy/"  >
+                      Datenschutz
+                    </a>
+                  
+                </li>
+            
+          
+        
+          
+            
+                <li class="item">
+                  
+                    <a class="item"  href="https://www.newyorker.de/legal/imprint/"  >
+                      Impressum
+                    </a>
+                  
+                </li>
+            
+          
+        
+          
+            
+                <li class="item">
+                  
+                    <menu-item class="footer-event-item item" event="ny-cookie-settings-open"
+                               isExternal="" customerGroup="">
+                      Cookie-Einstellungen
+                    </menu-item>
+                  
+                </li>
+            
+          
+        
+      </ul>
+      <ul class="list social-media">
+        
+          
+            
+              <li>
+                <social-icon customerGroup="">
+                  <a class="item" href="https://facebook.com/NewYorker.Fashion" target="_blank" title="Facebook in einem neuen Tab öffnen" aria-label="Facebook in einem neuen Tab öffnen">
+                    <img class="icon" src="/img/icons/facebook.svg" alt="">
+                  </a>
+                </social-icon>
+              </li>
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+              <li>
+                <social-icon customerGroup="FEMALE">
+                  <a class="item" href="https://www.instagram.com/newyorkeronline/" target="_blank" title="Instagram in einem neuen Tab öffnen" aria-label="Instagram in einem neuen Tab öffnen">
+                    <img class="icon" src="/img/icons/instagram.svg" alt="">
+                  </a>
+                </social-icon>
+              </li>
+            
+          
+        
+          
+            
+              <li>
+                <social-icon customerGroup="MALE">
+                  <a class="item" href="https://www.instagram.com/newyorkerman/" target="_blank" title="Instagram in einem neuen Tab öffnen" aria-label="Instagram in einem neuen Tab öffnen">
+                    <img class="icon" src="/img/icons/instagram.svg" alt="">
+                  </a>
+                </social-icon>
+              </li>
+            
+          
+        
+          
+            
+          
+        
+          
+            
+              <li>
+                <social-icon customerGroup="">
+                  <a class="item" href="https://youtube.com/user/newyorkertv" target="_blank" title="Youtube in einem neuen Tab öffnen" aria-label="Youtube in einem neuen Tab öffnen">
+                    <img class="icon" src="/img/icons/youtube.svg" alt="">
+                  </a>
+                </social-icon>
+              </li>
+            
+          
+        
+          
+            
+              <li>
+                <social-icon customerGroup="">
+                  <a class="item" href="https://threads.net/@newyorkeronline" target="_blank" title="Threads in einem neuen Tab öffnen" aria-label="Threads in einem neuen Tab öffnen">
+                    <img class="icon" src="/img/icons/threads.svg" alt="">
+                  </a>
+                </social-icon>
+              </li>
+            
+          
+        
+          
+            
+              <li>
+                <social-icon customerGroup="">
+                  <a class="item" href="https://pinterest.com/newyorkeronline/" target="_blank" title="Pinterest in einem neuen Tab öffnen" aria-label="Pinterest in einem neuen Tab öffnen">
+                    <img class="icon" src="/img/icons/pinterest.svg" alt="">
+                  </a>
+                </social-icon>
+              </li>
+            
+          
+        
+          
+            
+              <li>
+                <social-icon customerGroup="">
+                  <a class="item" href="https://www.tiktok.com/@newyorkeronline" target="_blank" title="TikTok in einem neuen Tab öffnen" aria-label="TikTok in einem neuen Tab öffnen">
+                    <img class="icon" src="/img/icons/tiktok.svg" alt="">
+                  </a>
+                </social-icon>
+              </li>
+            
+          
+        
+      </ul>
+    </div>
+
+    <ul class="buttons">
+      
+        
+          
+            <li class="item">
+              <a class="link" href="/app/"
+                 target="_blank" >
+                <img class="icon" src="/img/icons/app.svg" alt="">
+                <div>NEW YORKER App</div>
+              </a>
+            </li>
+          
+        
+      
+        
+          
+            <li class="item">
+              <a class="link"  href="https://www.newyorker.de/get-more-club/#/" >
+                <img class="icon" src="/img/icons/user-plus.svg" alt="">
+                <div>GET MORE club</div>
+              </a>
+            </li>
+          
+        
+      
+        
+          
+            <li class="item">
+              <a class="link"  href="https://www.newyorker.de/stores/" >
+                <img class="icon" src="/img/icons/store.svg" alt="">
+                <div>Stores</div>
+              </a>
+            </li>
+          
+        
+      
+        
+          
+            <li class="item">
+              <a class="link" href="https://www.newyorker-giftcard.de"
+                 target="_blank" >
+                <img class="icon" src="/img/icons/gift.svg" alt="">
+                <div>Gutscheine</div>
+              </a>
+            </li>
+          
+        
+      
+        
+          
+            <li class="item">
+              <a class="link"  href="https://www.newyorker.de/lifestyle/" >
+                <img class="icon" src="/img/icons/lifestyle.svg" alt="">
+                <div>Lifestyle</div>
+              </a>
+            </li>
+          
+        
+      
+    </ul>
+  </nav>
+
+  <div class="copyright">
+    &copy; Copyright 2026 NEW YORKER Marketing & Media International GmbH
+  </div>
+
+</footer>
+
+
+    <country-switcher-confirmation-dialog></country-switcher-confirmation-dialog>
+
+    <cookie-banner></cookie-banner>
+    <cookie-settings context="ny_website"></cookie-settings>
+
+    <script>
+      window.lazySizesConfig = window.lazySizesConfig || {};
+      window.lazySizesConfig.loadMode = 1;
+      window.lazySizesConfig.loadHidden = false;
+    </script>
+
+    
+    
+    
+    <script src="https://www.newyorker.de/js/libs.min.aa7b0e9306866b7256e83c7427996067ae888998ee1be6f9d622704a6b3bafc7f5cf777c97d3dd23cad3dec4b0a1b5f42f7a2269345e07d19615b3dd4d0af88c.js" type="text/javascript"></script>
+
+    
+    
+    
+    <script src="https://www.newyorker.de/js/index-bundle.min.8e29ac9a96249efb3f816bed78888369b97d2e43f2da77c83ef6d03a97cb4de5.js" type="text/javascript"></script>
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    <script src="/web-dist/alpinejs-DWOHZ754.js" type="module" crossorigin></script>
+    <script src="https://api.newyorker.de/public/lib/ny-web-components/v1.5.13/cookie-banner.js" type="module" crossorigin></script>
+    <script src="https://api.newyorker.de/public/lib/ny-web-components/v1.5.13/youtube-player.js" type="module" crossorigin></script>
+    <script src="https://api.newyorker.de/public/lib/ny-web-components/v1.5.13/button.js" type="module" crossorigin></script>
+  </body>
+</html>

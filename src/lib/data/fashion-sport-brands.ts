@@ -4,7 +4,6 @@
 
 import type { Brand, RetailLocation } from "@/types";
 import scraped from "./fashion-sport-serbia-scraped.json";
-import { tikeBrandSlugs } from "@/lib/data/tike";
 
 type StoreRow = (typeof scraped.stores)[number];
 
@@ -43,39 +42,6 @@ const BRAND_META: Record<
     category: "sports",
     popular: true,
     relatedBrandSlugs: ["nike", "converse", "adidas"],
-  },
-  "extra-sports": {
-    name: "Extra Sports",
-    country: "Srbija",
-    website: "https://www.extrasports.com/SRB_rs/",
-    description:
-      "Fer cena sportske opreme — deo Sport Vision grupe, 25+ lokacija i online shop.",
-    priceSegment: "budget",
-    category: "sports",
-    networkTotal: 25,
-    relatedBrandSlugs: ["sport-vision", "nike", "adidas"],
-  },
-  tike: {
-    name: "Tike",
-    country: "Srbija",
-    website: "https://www.tike.rs/",
-    description:
-      "Beogradski sneaker temple — limitirane kolekcije u Kralja Petra 24; Sport Vision grupa.",
-    priceSegment: "premium",
-    category: "sports",
-    relatedBrandSlugs: tikeBrandSlugs.filter((s) =>
-      ["nike", "jordan", "adidas", "new-balance", "converse"].includes(s)
-    ),
-  },
-  "run-n-more": {
-    name: "Run'n More",
-    country: "Srbija",
-    website: "https://www.runnmore.com/",
-    description:
-      "Trkačka specijalizovana radnja — patike i oprema za trčanje, Uzun Mirkova 10 Beograd.",
-    priceSegment: "mid",
-    category: "sports",
-    relatedBrandSlugs: ["nike", "asics", "sport-vision"],
   },
 };
 

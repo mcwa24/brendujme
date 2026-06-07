@@ -1,23 +1,20 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ExternalLink, MapPin } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
 import { BrandLogoGrid } from "@/components/brands/brand-logo-grid";
 import { RetailerCatalogMetaBar } from "@/components/retailers/retailer-catalog-meta";
-import { FashionCompanyDetail } from "@/components/retailers/fashion-company-detail";
 import { RetailerPageHeader } from "@/components/retailers/retailer-page-header";
 import { RetailerStoresSection } from "@/components/retailers/retailer-stores-section";
 import { getRetailerCatalogMeta } from "@/lib/data/retailer-catalog-meta";
 import {
   getAllRetailers,
-  getBrandsBySlugs,
   getRetailerBySlug,
+  getRetailerPageBrands,
   getRetailerStores,
 } from "@/lib/data/repository";
 import { isImportedRetailerSlug } from "@/lib/data/imported-retailers";
-import { fashionCompanyMeta } from "@/lib/data/fashion-company";
-import { formatBrandCount, formatLocationCount, formatStoreCount } from "@/lib/format/sr-plural";
+import { formatLocationCount, formatModniBrandCount } from "@/lib/format/sr-plural";
 import { createMetadata } from "@/lib/seo";
 
 interface PageProps {
@@ -37,13 +34,9 @@ export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
   const retailer = await getRetailerBySlug(slug);
   if (!retailer) return {};
-  const description =
-    slug === "fashion-company"
-      ? `Fashion Company zastupa ${formatBrandCount(fashionCompanyMeta.brandCount)} sa ${formatStoreCount(fashionCompanyMeta.storeCount)} u Srbiji.`
-      : retailer.description;
   return createMetadata({
     title: retailer.name,
-    description,
+    description: retailer.description,
     path: `/retailers/${retailer.slug}`,
   });
 }
@@ -53,10 +46,7 @@ export default async function RetailerPage({ params }: PageProps) {
   const retailer = await getRetailerBySlug(slug);
   if (!retailer) notFound();
 
-  const isFashionCompany = slug === "fashion-company";
-
-  const retailerBrands = await getBrandsBySlugs(retailer.brandSlugs);
-
+  const retailerBrands = await getRetailerPageBrands(slug);
   const stores = isImportedRetailerSlug(slug)
     ? await getRetailerStores(slug)
     : [];
@@ -72,7 +62,6 @@ export default async function RetailerPage({ params }: PageProps) {
                 <span className="flex items-center gap-2">
                   <MapPin className="h-4 w-4" />
                   {retailer.city}
-                  {isFashionCompany && " · Region"}
                 </span>
                 {catalogMeta && (
                   <a
@@ -87,48 +76,47 @@ export default async function RetailerPage({ params }: PageProps) {
                 )}
               </div>
               <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted">
-                {isFashionCompany
-                  ? "Najveći distributer međunarodnih modnih brenda u regionu. Više od 40 godina prisustva na tržištu Srbije sa mono-brand prodavnicama, Fashion&Friends multibrand konceptom i premium lokacijama u tržnim centrima i centrima gradova."
-                  : retailer.description}
+                {retailer.description}
               </p>
-              {catalogMeta && <RetailerCatalogMetaBar meta={catalogMeta} />}
+              {catalogMeta && (
+                <RetailerCatalogMetaBar
+                  meta={catalogMeta}
+                  brandCount={retailer.brandCount}
+                />
+              )}
             </RetailerPageHeader>
           </FadeIn>
         </Container>
       </section>
 
       <Container narrow className="space-y-20 py-16 md:py-20">
-      {isFashionCompany ? (
-        <FashionCompanyDetail />
-      ) : (
-        <>
-          {stores.length > 0 && (
-            <section id="prodavnice" className="scroll-mt-28">
-              <FadeIn>
-                <h2 className="font-display text-2xl font-semibold md:text-3xl">
-                  Prodavnice
-                </h2>
-                <p className="mt-2 text-muted">
-                  {formatLocationCount(stores.length)} {retailer.name} u Srbiji —
-                  izaberite
-                  grad.
-                </p>
-              </FadeIn>
-              <RetailerStoresSection
-                retailerName={retailer.name}
-                stores={stores}
-              />
-            </section>
-          )}
-
-          <section>
-            <h2 className="font-display text-2xl font-semibold">Brendovi u ponudi</h2>
+        {stores.length > 0 && (
+          <section id="prodavnice" className="scroll-mt-28">
             <FadeIn>
-              <BrandLogoGrid brands={retailerBrands} className="mt-8" />
+              <h2 className="font-display text-2xl font-semibold md:text-3xl">
+                Prodavnice
+              </h2>
+              <p className="mt-2 text-muted">
+                {formatLocationCount(stores.length)} {retailer.name} u Srbiji —
+                izaberite grad.
+              </p>
             </FadeIn>
+            <RetailerStoresSection
+              retailerName={retailer.name}
+              stores={stores}
+            />
           </section>
-        </>
-      )}
+        )}
+
+        <section>
+          <h2 className="font-display text-2xl font-semibold">Brendovi u ponudi</h2>
+          <p className="mt-2 text-sm text-muted">
+            {formatModniBrandCount(retailerBrands.length)} u ponudi.
+          </p>
+          <FadeIn>
+            <BrandLogoGrid brands={retailerBrands} className="mt-8" />
+          </FadeIn>
+        </section>
       </Container>
     </>
   );

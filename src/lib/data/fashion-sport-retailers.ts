@@ -1,7 +1,22 @@
 import scraped from "./fashion-sport-serbia-scraped.json";
-import { tikeBrandSlugs, tikeMeta } from "@/lib/data/tike";
+import {
+  fashionAndFriendsBrands,
+} from "@/lib/data/fashion-and-friends";
+import { brands as staticBrands } from "@/lib/data/brands";
+import { uniqueModniCatalogBrandSlugs } from "@/lib/data/modni-retailer-brands";
 import type { Retailer } from "@/types";
 import type { RetailerStore } from "@/types";
+
+const catalogBySlug = new Map(staticBrands.map((b) => [b.slug, b]));
+const tikeCatalogSlugs = uniqueModniCatalogBrandSlugs("tike", catalogBySlug);
+
+const fashionFriendsBrandSlugs = [
+  ...new Set(
+    fashionAndFriendsBrands
+      .map((b) => b.bilbordSlug)
+      .filter((s): s is string => Boolean(s && catalogBySlug.has(s)))
+  ),
+].sort((a, b) => a.localeCompare(b, "sr"));
 
 const MALL_NAMES: Record<string, string> = {
   usce: "Ušće",
@@ -39,37 +54,19 @@ export const fashionSportRetailers: Retailer[] = [
     slug: "fashion-friends",
     name: "Fashion&Friends",
     description:
-      "Multibrand koncept Fashion Company — Diesel, Replay, Guess, Superdry, Liu Jo i 30+ brendova u Ušću, Rajićevoj, Galeriji i regionu.",
+      "Multibrand koncept Fashion Company — Diesel, Replay, Guess, Superdry, Liu Jo i dr. u Ušću, Rajićevoj, Galeriji i regionu.",
     city: "Beograd",
-    brandCount: 30,
-    brandSlugs: ["diesel", "levis", "guess", "replay", "superdry"],
-  },
-  {
-    slug: "extra-sports",
-    name: "Extra Sports",
-    description:
-      "Sport Vision grupa — fer cena sportske opreme, Nike, Adidas, Puma i 25+ prodavnica u Srbiji.",
-    city: "Beograd",
-    brandCount: 1,
-    brandSlugs: ["extra-sports"],
+    brandCount: fashionFriendsBrandSlugs.length,
+    brandSlugs: fashionFriendsBrandSlugs,
   },
   {
     slug: "tike",
     name: "Tike",
     description:
-      `Sneaker temple u centru Beograda — ${tikeMeta.brandCount} brendova (Nike, Jordan, Adidas, New Balance i dr.) prema zvaničnom katalogu na tike.rs.`,
+      "Sneaker temple u centru Beograda — Nike, Jordan, Adidas, New Balance i dr. prema zvaničnom katalogu na tike.rs.",
     city: "Beograd",
-    brandCount: tikeMeta.brandCount,
-    brandSlugs: tikeBrandSlugs,
-  },
-  {
-    slug: "run-n-more",
-    name: "Run'n More",
-    description:
-      "Specijalizovana trkačka radnja u centru Beograda — patike i oprema za trčanje (Runnmore).",
-    city: "Beograd",
-    brandCount: 1,
-    brandSlugs: ["run-n-more"],
+    brandCount: tikeCatalogSlugs.length,
+    brandSlugs: tikeCatalogSlugs,
   },
 ];
 

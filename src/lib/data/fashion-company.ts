@@ -7,7 +7,10 @@
  */
 
 import { bilbordSlugFromBrandName } from "@/lib/data/ff-brand-slugs";
+import { brands as staticBrands } from "@/lib/data/brands";
 import type { Retailer } from "@/types";
+
+const catalogBySlug = new Map(staticBrands.map((b) => [b.slug, b]));
 
 export interface FashionCompanyBrand {
   name: string;
@@ -239,16 +242,22 @@ export const fashionCompanyStores: FashionCompanyStore[] = [
   },
 ];
 
+const fashionCompanyBrandSlugs = [
+  ...new Set(
+    fashionCompanyBrands
+      .map((b) => b.slug ?? bilbordSlugFromBrandName(b.name))
+      .filter((s): s is string => Boolean(s && catalogBySlug.has(s)))
+  ),
+];
+
 export const fashionCompanyRetailer: Retailer = {
   slug: "fashion-company",
   name: "Fashion Company",
   description:
     "Najveći distributer međunarodnih modnih brenda u regionu — mono-brand prodavnice, Fashion&Friends i premium lokacije u Srbiji.",
   city: "Novi Beograd",
-  brandCount: fashionCompanyBrands.length,
-  brandSlugs: fashionCompanyBrands
-    .map((b) => b.slug)
-    .filter((s): s is string => Boolean(s)),
+  brandCount: fashionCompanyBrandSlugs.length,
+  brandSlugs: fashionCompanyBrandSlugs,
 };
 
 export const fashionCompanyMeta = {

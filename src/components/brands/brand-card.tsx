@@ -14,16 +14,18 @@ type BrandCardData = BrandDirectoryItem | Brand;
 interface BrandCardProps {
   brand: BrandCardData;
   variant?: "default" | "compact";
+  /** Katalog — logo u fiksnom nevidljivom okviru (jednaka veličina) */
+  uniformLogo?: boolean;
 }
 
-export function BrandCard({ brand, variant = "default" }: BrandCardProps) {
+export function BrandCard({ brand, variant = "default", uniformLogo = false }: BrandCardProps) {
   const hasLogo = hasBrandLogo(brand);
 
   if (variant === "compact") {
     return (
       <Link href={`/brands/${brand.slug}`} prefetch={false} className="group block">
         <PremiumCard className="p-5 transition-colors group-hover:border-accent/20">
-          <BrandIdentity brand={brand} variant="compact" />
+          <BrandIdentity brand={brand} variant="compact" uniformLogo={uniformLogo} />
         </PremiumCard>
       </Link>
     );

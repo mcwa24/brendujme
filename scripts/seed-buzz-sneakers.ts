@@ -89,7 +89,7 @@ async function main() {
       slug: RETAILER_SLUG,
       name: scraped.retailerName,
       description:
-        "Vodeća sneaker i lifestyle mreža u regionu — Nike, Adidas, New Balance, Puma, Converse i 35+ brenda u Srbiji.",
+        "Sneaker i lifestyle mreža — Nike, Adidas, New Balance, Puma, Converse i dr. u radnjama širom Srbije.",
       headquarters_city: "Beograd",
       headquarters_city_id: cityIds.get("beograd") ?? null,
       website: "https://www.buzzsneakers.rs",

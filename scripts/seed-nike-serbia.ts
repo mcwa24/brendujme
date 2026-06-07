@@ -100,7 +100,7 @@ async function main() {
       slug: retailerSlug,
       name: retailerName,
       description:
-        "Ovlašćeni Nike partner u Srbiji — zvanične Nike prodavnice u Beogradu, Novom Sadu, Nišu i Kragujevcu.",
+        "Ovlašćeni Nike partner u Srbiji — zvanične Nike prodavnice prema nike.com/retail/directory/serbia.",
       headquarters_city: "Beograd",
       headquarters_city_id: cityIds.get("beograd") ?? null,
       website: "https://www.nike.com/retail/directory/serbia",

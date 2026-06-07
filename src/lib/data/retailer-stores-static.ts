@@ -104,7 +104,6 @@ const STATIC_STORES: Record<string, RetailerStore[]> = {
       storeUrl: s.storeUrl,
     })),
   "fashion-friends": mapFsStores("fashion-friends"),
-  "extra-sports": mapFsStores("extra-sports"),
   tike: tikeScraped.stores.map((s) =>
     mapStore(
       {
@@ -119,7 +118,6 @@ const STATIC_STORES: Record<string, RetailerStore[]> = {
       "tike"
     )
   ),
-  "run-n-more": mapFsStores("run-n-more"),
   "fashion-company": mapFsStores("fashion-company"),
 };
 

@@ -12,9 +12,7 @@ import { getRetailerCatalogMeta } from "@/lib/data/retailer-catalog-meta";
 const CATALOG_RETAILER_SLUGS = [
   "fashion-company",
   "fashion-friends",
-  "extra-sports",
   "tike",
-  "run-n-more",
   "buzz-sneakers",
   "office-shoes",
   "sport-time",

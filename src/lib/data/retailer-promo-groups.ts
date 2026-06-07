@@ -2,11 +2,9 @@ import type { ImportedRetailerSlug } from "@/lib/data/imported-retailers";
 
 /**
  * Prodavci koji dele istu platformu / matičnu kompaniju — jedan baner po grupi.
- * Sport Vision i Run'n More koriste isti web shop engine (nb / Emperor grupa).
  */
 const PROMO_GROUP_BY_RETAILER: Partial<Record<ImportedRetailerSlug, string>> = {
   "sport-vision": "emperor",
-  "run-n-more": "emperor",
 };
 
 /** Koji slug predstavlja grupu na home baneru */

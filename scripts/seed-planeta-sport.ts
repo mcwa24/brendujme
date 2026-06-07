@@ -89,7 +89,7 @@ async function main() {
       slug: RETAILER_SLUG,
       name: scraped.retailerName,
       description:
-        "Multibrend lanac sportske opreme u Srbiji — Nike, Adidas, Puma, Reebok, Columbia, Skechers i 85+ brenda u mreži prodavnica.",
+        "Multibrend lanac sportske opreme u Srbiji — Nike, Adidas, Puma, Reebok, Columbia, Skechers i dr.",
       headquarters_city: "Beograd",
       headquarters_city_id: cityIds.get("beograd") ?? null,
       website: "https://planetasport.rs",

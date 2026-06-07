@@ -89,35 +89,6 @@ for (const s of fashionAndFriendsStores) {
   });
 }
 
-// Extra Sports (Sport Vision grupa) — uzorak ključnih
-const extraSports: Omit<FsStore, "brandSlug" | "retailerSlug">[] = [
-  { name: "Extra Sports Roda", address: "Đorđa Stanojevića 35", city: "Beograd", citySlug: "beograd", shoppingCenterSlug: null, storeUrl: "https://www.extrasports.com/SRB_rs/prodavnice" },
-  { name: "Extra Sports Stadion", address: "Zaplanjska 32, TC Stadion", city: "Beograd", citySlug: "beograd", shoppingCenterSlug: "stadion", storeUrl: "https://www.extrasports.com/SRB_rs/prodavnice" },
-  { name: "Extra Sports Borča", address: "Bratstva i jedinstva 2g", city: "Beograd", citySlug: "beograd", shoppingCenterSlug: null, storeUrl: "https://www.extrasports.com/SRB_rs/prodavnice" },
-  { name: "Extra Sports BIG Novi Sad", address: "Sentandrejski put 11", city: "Novi Sad", citySlug: "novi-sad", shoppingCenterSlug: "promenada", storeUrl: "https://www.extrasports.com/SRB_rs/prodavnice" },
-  { name: "Extra Sports Delta Niš", address: "Bulevar Nemanjića 11b", city: "Niš", citySlug: "nis", shoppingCenterSlug: "delta-city", storeUrl: "https://www.extrasports.com/SRB_rs/prodavnice" },
-  { name: "Extra Sports Kragujevac", address: "Bulevar Kraljice Marije 56", city: "Kragujevac", citySlug: "kragujevac", shoppingCenterSlug: "kragujevac-plaza", storeUrl: "https://www.extrasports.com/SRB_rs/prodavnice" },
-  { name: "Extra Sports Šabac", address: "Cara Dušana 1", city: "Šabac", citySlug: "sabac", shoppingCenterSlug: null, storeUrl: "https://www.extrasports.com/SRB_rs/prodavnice" },
-  { name: "Extra Sports Čačak", address: "Braće Spasića bb", city: "Čačak", citySlug: "cacak", shoppingCenterSlug: null, storeUrl: "https://www.extrasports.com/SRB_rs/prodavnice" },
-  { name: "Extra Sports Subotica", address: "Segedinski put 88", city: "Subotica", citySlug: "subotica", shoppingCenterSlug: null, storeUrl: "https://www.extrasports.com/SRB_rs/prodavnice" },
-  { name: "Extra Sports Zrenjanin", address: "Bagljaš zapad 5", city: "Zrenjanin", citySlug: "zrenjanin", shoppingCenterSlug: "big-fashion", storeUrl: "https://www.extrasports.com/SRB_rs/prodavnice" },
-];
-for (const s of extraSports) {
-  stores.push({ ...s, brandSlug: "extra-sports", retailerSlug: "extra-sports" });
-}
-
-// Run'n More
-stores.push({
-  brandSlug: "run-n-more",
-  name: "Runnmore",
-  address: "Uzun Mirkova 10",
-  city: "Beograd",
-  citySlug: "beograd",
-  shoppingCenterSlug: null,
-  retailerSlug: "run-n-more",
-  storeUrl: "https://www.runnmore.com/",
-});
-
 // Burberry (istorijska mono-boutique lokacija)
 stores.push({
   brandSlug: "burberry",
@@ -147,7 +118,7 @@ for (const s of originals) {
 const payload = {
   scrapedAt: new Date().toISOString(),
   sourceNote:
-    "FC fashioncompany.rs; F&F; Extra Sports extrasports.com; Runnmore; Burberry Terazije 28; adidas Originals trendmaker/adidasoriginals.rs (Tike → scrape:tike)",
+    "FC fashioncompany.rs; F&F; Burberry Terazije 28; adidas Originals trendmaker/adidasoriginals.rs (Tike → scrape:tike)",
   brands: [
     "fashion-company",
     "fashion-friends",
@@ -155,8 +126,6 @@ const payload = {
     "levis",
     "burberry",
     "adidas-originals",
-    "extra-sports",
-    "run-n-more",
   ],
   stores,
 };

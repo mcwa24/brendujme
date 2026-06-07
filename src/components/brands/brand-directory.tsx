@@ -13,6 +13,7 @@ import {
   getPriceSegmentFilterOptions,
 } from "@/lib/brands/catalog-filters";
 import type { BrandDirectoryItem } from "@/lib/data/brand-directory-item";
+import { formatBrandCount, formatFashionBrandCount } from "@/lib/format/sr-plural";
 import type { PriceSegment } from "@/types";
 import { cn } from "@/lib/utils";
 
@@ -58,11 +59,11 @@ export function BrandDirectory({ brands }: BrandDirectoryProps) {
   return (
     <Container narrow className="py-12 md:py-16">
       <FadeIn>
-        <h1 className="font-display text-4xl font-semibold tracking-tight md:text-5xl">
+        <h1 className="font-display text-3xl font-semibold leading-tight md:text-5xl">
           Modni brendovi
         </h1>
         <p className="mt-3 max-w-2xl text-muted">
-          {brands.length} fashion brendova — pretražite gde ih možete kupiti u
+          {formatFashionBrandCount(brands.length)} — pretražite gde ih možete kupiti u
           Srbiji po nazivu, zemlji ili cenovnom segmentu.
         </p>
       </FadeIn>
@@ -137,13 +138,13 @@ export function BrandDirectory({ brands }: BrandDirectoryProps) {
           </div>
 
           <p className="mt-6 text-sm text-muted">
-            {filtered.length} brend{filtered.length === 1 ? "" : "ova"}
+            {formatBrandCount(filtered.length)}
           </p>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
             {filtered.map((brand, i) => (
               <FadeIn key={brand.slug} delay={(i % 6) * 0.04}>
-                <BrandCard brand={brand} variant="compact" />
+                <BrandCard brand={brand} variant="compact" uniformLogo />
               </FadeIn>
             ))}
           </div>

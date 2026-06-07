@@ -17,13 +17,19 @@ Skripta parsira sajt brenda (favicon, apple-touch-icon, OpenGraph, SVG), čuva l
 
 ## Ručna zamena (preporučeno)
 
-Chat često pokvari PNG (ceo fajl postane crn). **Nemoj slati logoe kroz chat** — kopiraj fajl direktno:
+**Transparent PNG sa crnim logotipom je ispravan** — šahovska tabla u Preview-u znači providnost, ne crnu pozadinu.
+
+Chat ponekad **pokvari binarni fajl** (ceo PNG postane crn kvadrat). Ako ti na Macu izgleda OK, a agent kaže da je pokvaren:
+
+1. Kopiraj fajl u projekat (Finder), npr. `public/logos/incoming/`
+2. Instaliraj:
 
 ```bash
 python3 scripts/install-brand-logo.py replay ~/Downloads/replay-logo.png
+python3 scripts/install-brand-logo.py --force slug fajl.png   # samo ako si siguran
 ```
 
-Skripta čuva transparentnost, uklanja belu/svetlo sivu pozadinu i ažurira manifest.
+Skripta uklanja **belu/svetlo sivu** pozadinu (ne crnu), crop, max ~512px, manifest.
 
 Ili ručno: `public/logos/cache/{slug}.png` (binarni copy, bez konverzije).
 

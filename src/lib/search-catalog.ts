@@ -14,8 +14,7 @@ import {
   retailerSellsBrandForOfferings,
 } from "@/lib/data/brand-offerings";
 import { parseSearchIntent } from "@/lib/search-intent";
-import { getRetailerCatalogMeta } from "@/lib/data/retailer-catalog-meta";
-import { formatBrandCount, formatLocationCount } from "@/lib/format/sr-plural";
+import { formatBrandCount, formatModniBrandCount, formatLocationCount } from "@/lib/format/sr-plural";
 import type { Brand, BrandOfferingSlug, Retailer, SearchResult, ShoppingCenter } from "@/types";
 
 function normalize(text: string): string {
@@ -132,7 +131,7 @@ export function buildSearchResults(
       } else if (brandIntentMatch) {
         const types = collectBrandOfferingTypes(brand.slug, retailers);
         if (types.length > 0) {
-          hint = `${types.map((t) => OFFERING_LABELS[t]).join(" · ")} — sužite: patike ili majica`;
+          hint = `${types.map((t) => OFFERING_LABELS[t]).join(" · ")} — sužite: obuća ili odeća`;
         }
       }
 
@@ -203,10 +202,7 @@ export function buildSearchResults(
           if (!sellsAny) continue;
         }
         matched = true;
-        const meta = getRetailerCatalogMeta(retailer.slug);
-        subtitleParts.push(
-          meta ? formatBrandCount(meta.brandCount) : formatBrandCount(retailer.brandCount)
-        );
+        subtitleParts.push(formatModniBrandCount(retailer.brandCount));
       }
     }
 
@@ -276,7 +272,7 @@ export function buildSearchResults(
       type: "retailer",
       slug: "fashion-company",
       title: "Fashion&Friends",
-      subtitle: `${formatBrandCount(fashionAndFriendsMeta.brandCount)} · Fashion Company`,
+      subtitle: `${formatModniBrandCount(fashionAndFriendsMeta.brandCount)} · Fashion Company`,
       href: "/retailers/fashion-company",
       imageUrl: fcRetailer ? searchImageForRetailer(fcRetailer) : undefined,
     });

@@ -92,6 +92,19 @@ async function fetchBuffer(url: string): Promise<Buffer | null> {
   }
 }
 
+/** Favicon / apple-touch-icon — ne koristiti kao brend logo */
+function isLikelyFavicon(buf: Buffer): boolean {
+  if (buf.length >= 24 && buf[0] === 0x89 && buf[1] === 0x50) {
+    const width = buf.readUInt32BE(16);
+    const height = buf.readUInt32BE(20);
+    if (width <= 64 && height <= 64) return true;
+  }
+  if (buf.length >= 6 && buf[0] === 0 && buf[1] === 0 && buf[2] === 1 && buf[3] === 0) {
+    return true;
+  }
+  return false;
+}
+
 async function discoverFromWebsite(website: string): Promise<Buffer | null> {
   const pageRes = await fetch(website, {
     headers: { "User-Agent": USER_AGENT },
@@ -113,7 +126,7 @@ async function discoverFromWebsite(website: string): Promise<Buffer | null> {
 
   for (const url of candidates) {
     const buf = await fetchBuffer(url);
-    if (buf) return buf;
+    if (buf && !isLikelyFavicon(buf)) return buf;
   }
   return null;
 }
@@ -158,7 +171,7 @@ async function main() {
 
     if (brand.logoUrl?.trim()) {
       const buf = await fetchBuffer(brand.logoUrl.trim());
-      if (buf) {
+      if (buf && !isLikelyFavicon(buf)) {
         const out = path.join(CACHE_DIR, `${brand.slug}.png`);
         fs.writeFileSync(out, buf);
         manifest[brand.slug] = {
@@ -173,7 +186,7 @@ async function main() {
     if (!brand.website) continue;
 
     const buf = await discoverFromWebsite(brand.website);
-    if (buf) {
+    if (buf && !isLikelyFavicon(buf)) {
       const out = path.join(CACHE_DIR, `${brand.slug}.png`);
       fs.writeFileSync(out, buf);
       manifest[brand.slug] = {

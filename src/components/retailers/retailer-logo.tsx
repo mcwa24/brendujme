@@ -121,7 +121,7 @@ export function RetailerLogo({
           alt={`${displayName} logo`}
           width={dims.img}
           height={dims.img}
-          className="max-h-full max-w-full object-contain"
+          className="brand-logo-img max-h-full max-w-full object-contain"
           onError={() => setImageFailed(true)}
         />
       </span>
@@ -137,7 +137,7 @@ export function RetailerLogo({
         height={dims.img}
         style={{ width: "auto", height: "auto" }}
         className={cn(
-          "h-20 max-h-24 max-w-[220px] shrink-0 object-contain md:h-24",
+          "brand-logo-img h-20 max-h-24 max-w-[220px] shrink-0 object-contain md:h-24",
           isDarkBadge && "rounded-none bg-black px-2 py-1",
           className
         )}
@@ -160,7 +160,7 @@ export function RetailerLogo({
         alt={`${displayName} logo`}
         width={dims.img}
         height={dims.img}
-        className="h-full w-full object-contain"
+        className="brand-logo-img h-full w-full object-contain"
         onError={() => setImageFailed(true)}
       />
     </div>
