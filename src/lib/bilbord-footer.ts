@@ -35,6 +35,7 @@ export const bilbordFooterColumns = [
       { label: "Partner", href: `${BILBORD_SITE_URL}/partner-program/` },
       { label: "PMP", href: `${BILBORD_SITE_URL}/priority-media-publishing/` },
       { label: "PR", href: `${BILBORD_SITE_URL}/pr/` },
+      { label: "Bilbord Portal", href: `${BILBORD_SITE_URL}/` },
     ],
   },
 ] as const;
