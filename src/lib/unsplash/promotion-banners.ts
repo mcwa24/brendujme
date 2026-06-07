@@ -37,6 +37,7 @@ const OFFERING_UNSPLASH: Record<OfferingSlug, string> = {
   sportswear: "sportswear",
   apparel: "fashion apparel",
   accessories: "sport accessories",
+  beauty: "cosmetics beauty products",
 };
 
 const FALLBACK_STUDIO_POOL: PromotionBannerImage[] = [
