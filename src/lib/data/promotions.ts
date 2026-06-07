@@ -163,3 +163,45 @@ export function getActiveHomePromotionsFromStatic(
     .sort((a, b) => promotionScore(b) - promotionScore(a))
     .map(mapScrapedToHome);
 }
+
+/** Preostali dani akcije (0 = poslednji dan važenja). */
+export function promotionDaysUntilEnd(
+  endDate: string,
+  today = promotionTodayIso()
+): number {
+  const end = new Date(`${endDate}T12:00:00`).getTime();
+  const start = new Date(`${today}T12:00:00`).getTime();
+  return Math.max(0, Math.round((end - start) / 86_400_000));
+}
+
+function dayWord(count: number): string {
+  const n = Math.abs(count);
+  const mod10 = n % 10;
+  const mod100 = n % 100;
+  if (mod100 >= 11 && mod100 <= 14) return "dana";
+  if (mod10 === 1) return "dan";
+  return "dana";
+}
+
+export function formatPromotionExpiryUrgency(
+  endDate: string,
+  today = promotionTodayIso()
+): string {
+  const days = promotionDaysUntilEnd(endDate, today);
+  if (days === 0) return "Poslednji dan";
+  if (days === 1) return "Ističe sutra";
+  return `Ističe za ${days} ${dayWord(days)}`;
+}
+
+/** Akcija koja najpre ističe među aktivnim ponudama. */
+export function pickExpiringSoonPromotion(
+  promotions: HomePromotion[]
+): HomePromotion | null {
+  if (!promotions.length) return null;
+
+  return [...promotions].sort((a, b) => {
+    const byEnd = a.endDate.localeCompare(b.endDate);
+    if (byEnd !== 0) return byEnd;
+    return a.startDate.localeCompare(b.startDate);
+  })[0];
+}
