@@ -6,7 +6,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { BILBORD_SITE_URL } from "@/lib/bilbord-footer";
 import { cn } from "@/lib/utils";
 
-const BILBORD_NEWSLETTER_URL = `${BILBORD_SITE_URL}/newsletter/`;
+const BILBORD_NEWSLETTER_URL = `${BILBORD_SITE_URL}/newsletter/?source=shop`;
 
 export function NewsletterBanner() {
   return (
