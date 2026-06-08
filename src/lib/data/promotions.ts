@@ -1,12 +1,16 @@
 import scraped from "@/lib/data/retailer-promotions-scraped.json";
+import { fashionCompanyRetailer } from "@/lib/data/fashion-company";
 import {
   getRetailerWebsiteUrl,
   IMPORTED_RETAILER_EXTERNAL,
+  normalizeRetailerSlug,
 } from "@/lib/data/imported-retailers";
+import { isSerbiaMarketUrl } from "@/lib/data/retailer-serbia-urls";
 import {
   getPrimaryRetailerForPromoGroup,
   getRetailerPromoGroupId,
-  isSharedPromoGroup,
+  isPromoGroupMember,
+  isSingleBannerPromoGroup,
 } from "@/lib/data/retailer-promo-groups";
 import { retailers } from "@/lib/data/retailers";
 import type { HomePromotion, PromotionCampaignType } from "@/types";
@@ -64,14 +68,24 @@ function promotionScore(row: ScrapedPromotionRow): number {
   return score;
 }
 
-function mapScrapedToHome(row: ScrapedPromotionRow): HomePromotion {
-  const groupId = getRetailerPromoGroupId(row.retailerSlug);
+function resolveRetailerForPromo(slug: string) {
+  if (slug === "fashion-company") return fashionCompanyRetailer;
+  return retailers.find((r) => r.slug === slug);
+}
+
+function mapScrapedToHome(row: ScrapedPromotionRow): HomePromotion | null {
+  if (!isSerbiaMarketUrl(row.sourceUrl)) return null;
+
+  const normalizedSlug = normalizeRetailerSlug(row.retailerSlug);
+  const groupId = getRetailerPromoGroupId(normalizedSlug);
   const displaySlug = getPrimaryRetailerForPromoGroup(groupId);
-  const retailer = retailers.find((r) => r.slug === displaySlug);
+  const retailer = resolveRetailerForPromo(displaySlug);
   const external =
     IMPORTED_RETAILER_EXTERNAL[
       displaySlug as keyof typeof IMPORTED_RETAILER_EXTERNAL
     ];
+  const sourceUrl =
+    row.sourceUrl || external?.website || `/retailers/${displaySlug}`;
 
   return {
     slug: `${displaySlug}-${slugify(promotionCampaignKey({ sourceUrl: row.sourceUrl, title: row.title }))}`,
@@ -84,8 +98,8 @@ function mapScrapedToHome(row: ScrapedPromotionRow): HomePromotion {
     retailerSlug: displaySlug,
     retailerName: retailer?.name ?? row.retailerName,
     retailerLogoUrl: retailer?.logoUrl,
-    sourceUrl: row.sourceUrl || external?.website || `/retailers/${displaySlug}`,
-    retailerWebsiteUrl: getRetailerWebsiteUrl(displaySlug, row.sourceUrl),
+    sourceUrl,
+    retailerWebsiteUrl: getRetailerWebsiteUrl(displaySlug, sourceUrl),
     href: `/retailers/${displaySlug}`,
     discountPercent: row.discountPercent,
     scope: row.scope,
@@ -109,33 +123,42 @@ export function promotionCampaignKey(item: {
   return item.title?.trim() ?? "campaign";
 }
 
+/** Ključ za deduplikaciju home banera (grupa + kampanja). */
+export function getHomePromoDedupeKey(item: {
+  retailerSlug: string;
+  slug?: string;
+  sourceUrl?: string;
+  title?: string;
+}): string {
+  const retailerSlug = normalizeRetailerSlug(item.retailerSlug);
+  const groupId = getRetailerPromoGroupId(retailerSlug);
+  if (isSingleBannerPromoGroup(groupId)) {
+    return `single:${groupId}`;
+  }
+  const campaignKey = promotionCampaignKey(item);
+  if (isPromoGroupMember(retailerSlug)) {
+    return `${groupId}:${campaignKey}`;
+  }
+  return `${retailerSlug}:${campaignKey}`;
+}
+
 /**
- * Deljena grupa (Emperor): jedan baner. Inače više paralelnih akcija po prodavcu.
+ * Emperor: jedan baner po grupi. Inače više paralelnih akcija po prodavcu.
  */
 export function dedupePromotionsForHome<
   T extends { retailerSlug: string; slug?: string; sourceUrl?: string; title?: string },
 >(items: T[], scoreFn: (item: T) => number): T[] {
-  const sharedGroupBest = new Map<string, T>();
-  const campaignBest = new Map<string, T>();
+  const best = new Map<string, T>();
 
   for (const item of items) {
-    if (isSharedPromoGroup(item.retailerSlug)) {
-      const groupId = getRetailerPromoGroupId(item.retailerSlug);
-      const existing = sharedGroupBest.get(groupId);
-      if (!existing || scoreFn(item) > scoreFn(existing)) {
-        sharedGroupBest.set(groupId, item);
-      }
-      continue;
-    }
-
-    const key = `${item.retailerSlug}:${promotionCampaignKey(item)}`;
-    const existing = campaignBest.get(key);
+    const key = getHomePromoDedupeKey(item);
+    const existing = best.get(key);
     if (!existing || scoreFn(item) > scoreFn(existing)) {
-      campaignBest.set(key, item);
+      best.set(key, item);
     }
   }
 
-  return [...sharedGroupBest.values(), ...campaignBest.values()];
+  return [...best.values()];
 }
 
 /** @deprecated Koristi dedupePromotionsForHome */
@@ -146,9 +169,15 @@ export function dedupePromotionsByGroup<T extends { retailerSlug: string }>(
   return dedupePromotionsForHome(items, scoreFn);
 }
 
+function mapScrapedRows(rows: ScrapedPromotionRow[]): HomePromotion[] {
+  return rows
+    .map(mapScrapedToHome)
+    .filter((row): row is HomePromotion => Boolean(row));
+}
+
 export function getStaticPromotions(): HomePromotion[] {
   const rows = (scraped.promotions ?? []) as ScrapedPromotionRow[];
-  return rows.map(mapScrapedToHome);
+  return mapScrapedRows(rows);
 }
 
 export function getActiveHomePromotionsFromStatic(
@@ -159,9 +188,11 @@ export function getActiveHomePromotionsFromStatic(
     isPromotionActive(row.startDate, row.endDate, today)
   );
 
-  return dedupePromotionsForHome(active, promotionScore)
-    .sort((a, b) => promotionScore(b) - promotionScore(a))
-    .map(mapScrapedToHome);
+  return mapScrapedRows(
+    dedupePromotionsForHome(active, promotionScore).sort(
+      (a, b) => promotionScore(b) - promotionScore(a)
+    )
+  );
 }
 
 /** Preostali dani akcije (0 = poslednji dan važenja). */

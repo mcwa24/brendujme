@@ -22,13 +22,13 @@ export const RETAILER_OFFERING_FOCUS: Record<string, OfferingSlug[]> = {
   "sport-time": ["footwear"],
   tike: ["footwear"],
   "fashion-company": ["apparel"],
-  "fashion-friends": ["apparel"],
   inditex: ["apparel"],
   lpp: ["apparel"],
   "sport-vision": ["footwear", "sportswear"],
   "planeta-sport": ["footwear", "sportswear"],
   "djak-sport": ["footwear", "sportswear"],
   "urban-shop": ["footwear", "apparel", "accessories"],
+  "n-sport": ["footwear", "sportswear", "apparel"],
   "beauty-world": ["beauty"],
   sephora: ["beauty"],
   lilly: ["beauty"],
@@ -44,15 +44,13 @@ const BRAND_AT_RETAILER: Record<string, Record<string, OfferingSlug[]>> = {
     "sport-vision": ["footwear", "sportswear"],
     "planeta-sport": ["footwear", "sportswear"],
     "djak-sport": ["footwear", "sportswear"],
-    "fashion-company": ["sportswear"],
-    "fashion-friends": ["sportswear"],
+    "fashion-company": ["sportswear", "apparel"],
   },
   adidas: {
     "buzz-sneakers": ["footwear"],
     "sport-vision": ["footwear", "sportswear"],
     "planeta-sport": ["footwear", "sportswear"],
     "djak-sport": ["footwear", "sportswear"],
-    "fashion-friends": ["sportswear", "apparel"],
     "fashion-company": ["sportswear", "apparel"],
   },
   puma: {
@@ -86,7 +84,7 @@ const BRAND_AT_RETAILER: Record<string, Record<string, OfferingSlug[]>> = {
   crocs: { tike: ["footwear"] },
   hoka: { tike: ["footwear"] },
   salomon: { tike: ["footwear"], "urban-shop": ["footwear"] },
-  superdry: { "urban-shop": ["apparel"], "fashion-friends": ["apparel"] },
+  superdry: { "urban-shop": ["apparel"], "fashion-company": ["apparel"] },
   "dr-martens": {
     "office-shoes": ["footwear"],
     "urban-shop": ["footwear"],
@@ -101,11 +99,9 @@ const BRAND_AT_RETAILER: Record<string, Record<string, OfferingSlug[]>> = {
   stance: { tike: ["accessories"] },
   diesel: {
     "fashion-company": ["apparel"],
-    "fashion-friends": ["apparel"],
   },
   levis: {
     "fashion-company": ["apparel"],
-    "fashion-friends": ["apparel"],
   },
   rituals: {
     "beauty-world": ["beauty"],

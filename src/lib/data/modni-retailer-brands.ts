@@ -11,14 +11,6 @@ export const MODNI_CATEGORY_SLUGS = new Set<CategorySlug>([
   "lifestyle",
 ]);
 
-/** Prodavci gde je ponuda prvenstveno obuća — nepoznati brendovi iz scrape-a su ok (osim blockliste) */
-const FOOTWEAR_FOCUSED_RETAILERS = new Set([
-  "buzz-sneakers",
-  "tike",
-  "office-shoes",
-  "sport-time",
-]);
-
 /**
  * Igračke, rekviziti, oprema, suplementi — nisu modni brendovi na Bilbordu.
  * Ručno kurirano iz scrape kataloga (Đak, Planeta, Sport Vision, Buzz…).
@@ -78,23 +70,17 @@ export function isModniBrand(brand: Brand): boolean {
   return isModniCategory(brand.category) && isModniBrandSlug(brand.slug);
 }
 
+/**
+ * Izvor istine: zvaničan spisak brendova prodavca (scrape / direktorijum).
+ * Katalog samo obogaćuje profil — ne sme skraćivati listu.
+ * Isključujemo samo opremu / igračke / suplemente (NON_MODNI_BRAND_SLUGS).
+ */
 export function isModniScrapedEntry(
   entry: ScrapedRetailerBrandEntry,
-  retailerSlug: string,
-  catalogBrand?: Brand
+  _retailerSlug: string,
+  _catalogBrand?: Brand
 ): boolean {
-  if (!isModniBrandSlug(entry.slug)) return false;
-
-  if (catalogBrand) {
-    return isModniBrand(catalogBrand);
-  }
-
-  if (FOOTWEAR_FOCUSED_RETAILERS.has(retailerSlug)) {
-    return true;
-  }
-
-  /** Multibrend prodavnice — prikaži sve osim igračaka / opreme / suplemenata */
-  return true;
+  return isModniBrandSlug(entry.slug);
 }
 
 export function filterModniScrapedEntries(
@@ -140,19 +126,18 @@ export function uniqueModniScrapedBrandSlugs(
   );
 }
 
-/** Samo modni brendovi koji postoje u Bilbord katalogu (bez scrape stubova) */
+/** @deprecated Koristi uniqueModniScrapedBrandSlugs — pun scrape, ne presek sa katalogom */
 export function uniqueModniCatalogBrandSlugs(
   retailerSlug: string,
   catalogBySlug: Map<string, Brand>
 ): string[] {
-  return uniqueModniScrapedBrandSlugs(retailerSlug, catalogBySlug)
-    .filter((slug) => catalogBySlug.has(slug))
-    .sort((a, b) => a.localeCompare(b, "sr"));
+  return uniqueModniScrapedBrandSlugs(retailerSlug, catalogBySlug);
 }
 
+/** @deprecated Koristi countModniScrapedBrands */
 export function countModniCatalogBrands(
   retailerSlug: string,
   catalogBySlug: Map<string, Brand>
 ): number {
-  return uniqueModniCatalogBrandSlugs(retailerSlug, catalogBySlug).length;
+  return countModniScrapedBrands(retailerSlug, catalogBySlug);
 }

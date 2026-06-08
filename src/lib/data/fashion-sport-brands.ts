@@ -30,7 +30,7 @@ const BRAND_META: Record<
       "Britanski luxury brend — ranije mono-boutique na Terazijama; parfemi dostupni na aerodromu.",
     priceSegment: "luxury",
     category: "luxury",
-    relatedBrandSlugs: ["fashion-company", "fashion-friends"],
+    relatedBrandSlugs: ["fashion-company"],
   },
   "adidas-originals": {
     name: "adidas Originals",

@@ -23,6 +23,8 @@
     "db:seed:tike": "tsx --env-file=.env.local scripts/seed-tike.ts",
     "scrape:urbanshop": "tsx scripts/scrape-urban-shop.ts",
     "db:seed:urbanshop": "tsx --env-file=.env.local scripts/seed-urban-shop.ts",
+    "scrape:nsport": "tsx scripts/scrape-n-sport.ts",
+    "db:seed:nsport": "tsx --env-file=.env.local scripts/seed-n-sport.ts",
     "db:seed:buzz": "tsx --env-file=.env.local scripts/seed-buzz-sneakers.ts",
     "scrape:djak": "tsx scripts/scrape-djak-sport.ts",
     "db:seed:djak": "tsx --env-file=.env.local scripts/seed-djak-sport.ts",

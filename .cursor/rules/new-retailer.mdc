@@ -24,7 +24,7 @@ Kad korisnik traži novog prodavca, ne smeš završiti samo sa scrape/seed skrip
 | `retailer-stores-static.ts` | radnje (fallback bez Supabase) |
 | `retailer-logo-images.ts` | logo prodavca |
 | `brand-offerings.ts` | `RETAILER_OFFERING_FOCUS` (+ `BRAND_AT_RETAILER` za poznate brendove) |
-| `retailer-promo-sources.ts` | **cron akcija / sale** |
+| `retailer-promo-sources.ts` | **cron akcija / sale** — samo `.rs` ili `/rs/` URL-ovi (nikad corporate PL/ES) |
 
 `home-location-stats.ts` i `/retailers` lista koriste `IMPORTED_RETAILER_SLUGS` automatski — ne treba ručno.
 

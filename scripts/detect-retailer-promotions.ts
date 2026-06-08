@@ -11,10 +11,12 @@ import {
 } from "../src/lib/data/retailer-promo-groups";
 import {
   dedupePromotionsForHome,
+  getHomePromoDedupeKey,
   isPromotionActive,
   promotionTodayIso,
 } from "../src/lib/data/promotions";
 import { RETAILER_PROMO_SOURCES } from "../src/lib/data/retailer-promo-sources";
+import { isSerbiaMarketUrl } from "../src/lib/data/retailer-serbia-urls";
 import { retailers } from "../src/lib/data/retailers";
 import { detectDjakPromotions } from "./lib/promo-djak";
 import {
@@ -58,31 +60,17 @@ export interface RetailerPromotionsScrapedFile {
   promotions: ScrapedRetailerPromotion[];
 }
 
-function slugify(text: string): string {
-  return text
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "")
-    .slice(0, 80);
-}
-
-function promotionKey(
-  retailerSlug: string,
-  title: string,
-  sourceUrl: string
-): string {
-  return `${retailerSlug}:${slugify(title)}:${new URL(sourceUrl).pathname}`;
-}
-
 function pushPromotion(
   promotions: ScrapedRetailerPromotion[],
   seen: Set<string>,
   row: Omit<ScrapedRetailerPromotion, "detectedAt">,
   label: string
 ) {
-  const key = promotionKey(row.retailerSlug, row.title, row.sourceUrl);
+  if (!isSerbiaMarketUrl(row.sourceUrl)) {
+    console.log(`    ⊗ preskočeno (nije srpski URL): ${row.sourceUrl}`);
+    return;
+  }
+  const key = getHomePromoDedupeKey(row);
   if (seen.has(key)) return;
   seen.add(key);
   promotions.push({ ...row, detectedAt: new Date().toISOString() });

@@ -4,6 +4,8 @@ import { officeShoesBrands } from "@/lib/data/office-shoes";
 import { planetaSportBrands } from "@/lib/data/planeta-sport";
 import { sportVisionBrands } from "@/lib/data/sport-vision";
 import { tikeBrands } from "@/lib/data/tike";
+import { fashionCompanyScrapedBrands } from "@/lib/data/fashion-company";
+import { nSportBrands } from "@/lib/data/n-sport";
 import { urbanShopBrands } from "@/lib/data/urban-shop";
 import type { Brand, PriceSegment } from "@/types";
 
@@ -15,6 +17,7 @@ export interface ScrapedRetailerBrandEntry {
 }
 
 export const SCRAPED_BY_RETAILER: Record<string, ScrapedRetailerBrandEntry[]> = {
+  "fashion-company": fashionCompanyScrapedBrands,
   "buzz-sneakers": buzzSneakersBrands,
   "office-shoes": officeShoesBrands,
   "djak-sport": djakSportBrands,
@@ -22,6 +25,7 @@ export const SCRAPED_BY_RETAILER: Record<string, ScrapedRetailerBrandEntry[]> = 
   "planeta-sport": planetaSportBrands,
   tike: tikeBrands,
   "urban-shop": urbanShopBrands,
+  "n-sport": nSportBrands,
 };
 
 export function getScrapedBrandsForRetailer(

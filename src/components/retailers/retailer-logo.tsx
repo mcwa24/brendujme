@@ -75,9 +75,7 @@ export function RetailerLogo({
     variant === "page" || (variant === "bare" && slug === "fashion-company");
   const src = resolveRetailerLogoSrc({ slug, logoUrl }, { page: usePageLogo });
   const dims = sizeMap[size];
-  const isDarkBadge =
-    slug === "fashion-friends" ||
-    (variant === "page" && slug === "fashion-company");
+  const isDarkBadge = variant === "page" && slug === "fashion-company";
   const [imageFailed, setImageFailed] = useState(false);
 
   if (!src || imageFailed) {

@@ -1,9 +1,15 @@
+import { brands as staticBrands } from "@/lib/data/brands";
 import { buzzSneakersMeta } from "@/lib/data/buzz-sneakers";
+import { countModniScrapedBrands } from "@/lib/data/modni-retailer-brands";
+import { getScrapedBrandsForRetailer } from "@/lib/data/retailer-scraped-brands";
 import { tikeMeta } from "@/lib/data/tike";
+import { nSportMeta } from "@/lib/data/n-sport";
 import { urbanShopMeta } from "@/lib/data/urban-shop";
 import { fashionCompanyMeta } from "@/lib/data/fashion-company";
-import { fashionAndFriendsMeta } from "@/lib/data/fashion-and-friends";
-import { IMPORTED_RETAILER_EXTERNAL } from "@/lib/data/imported-retailers";
+import {
+  resolveRetailerPublicWebsite,
+} from "@/lib/data/imported-retailers";
+import { isSerbiaMarketUrl } from "@/lib/data/retailer-serbia-urls";
 import { djakSportMeta } from "@/lib/data/djak-sport";
 import scrapedFs from "@/lib/data/fashion-sport-serbia-scraped.json";
 import scrapedFashion from "@/lib/data/fast-fashion-serbia-scraped.json";
@@ -26,24 +32,21 @@ function syncedFromIso(iso: string): string {
   return iso.slice(0, 10);
 }
 
+const catalogBySlug = new Map(staticBrands.map((b) => [b.slug, b]));
+
 const CATALOG_META: Record<string, RetailerCatalogMeta> = {
   "fashion-company": {
     brandCount: fashionCompanyMeta.brandCount,
-    storeCount: scrapedFs.stores.filter((s) => s.retailerSlug === "fashion-company").length,
+    storeCount: scrapedFs.stores.filter(
+      (s) =>
+        s.retailerSlug === "fashion-company" ||
+        s.retailerSlug === "fashion-friends"
+    ).length,
     lastSynced: syncedFromIso(scrapedFs.scrapedAt),
     sourceUrl: fashionCompanyMeta.brandsUrl,
     sourceLabel: "fashioncompany.rs",
     website: fashionCompanyMeta.website,
     websiteLabel: "fashioncompany.rs",
-  },
-  "fashion-friends": {
-    brandCount: fashionAndFriendsMeta.brandCount,
-    storeCount: scrapedFs.stores.filter((s) => s.retailerSlug === "fashion-friends").length,
-    lastSynced: syncedFromIso(scrapedFs.scrapedAt),
-    sourceUrl: "https://www.fashionandfriends.com/rs/brendovi/",
-    sourceLabel: "fashionandfriends.com",
-    website: IMPORTED_RETAILER_EXTERNAL["fashion-friends"].website,
-    websiteLabel: IMPORTED_RETAILER_EXTERNAL["fashion-friends"].websiteLabel,
   },
   tike: {
     brandCount: tikeMeta.brandCount,
@@ -51,8 +54,8 @@ const CATALOG_META: Record<string, RetailerCatalogMeta> = {
     lastSynced: syncedFromIso(tikeMeta.scrapedAt),
     sourceUrl: tikeMeta.brandsUrl,
     sourceLabel: "tike.rs/brendovi",
-    website: IMPORTED_RETAILER_EXTERNAL.tike.website,
-    websiteLabel: IMPORTED_RETAILER_EXTERNAL.tike.websiteLabel,
+    website: "https://www.tike.rs/",
+    websiteLabel: "tike.rs",
   },
   "urban-shop": {
     brandCount: urbanShopMeta.brandCount,
@@ -60,8 +63,17 @@ const CATALOG_META: Record<string, RetailerCatalogMeta> = {
     lastSynced: syncedFromIso(urbanShopMeta.scrapedAt),
     sourceUrl: urbanShopMeta.brandsUrl,
     sourceLabel: "urbanshop.rs/brands",
-    website: IMPORTED_RETAILER_EXTERNAL["urban-shop"].website,
-    websiteLabel: IMPORTED_RETAILER_EXTERNAL["urban-shop"].websiteLabel,
+    website: "https://www.urbanshop.rs/",
+    websiteLabel: "urbanshop.rs",
+  },
+  "n-sport": {
+    brandCount: nSportMeta.brandCount,
+    storeCount: nSportMeta.storeCount,
+    lastSynced: syncedFromIso(nSportMeta.scrapedAt),
+    sourceUrl: nSportMeta.brandsUrl,
+    sourceLabel: "n-sport.net/brands",
+    website: "https://www.n-sport.net/",
+    websiteLabel: "n-sport.net",
   },
   "buzz-sneakers": {
     brandCount: buzzSneakersMeta.brandCount,
@@ -69,8 +81,8 @@ const CATALOG_META: Record<string, RetailerCatalogMeta> = {
     lastSynced: syncedFromIso(buzzSneakersMeta.scrapedAt),
     sourceUrl: buzzSneakersMeta.brandsUrl,
     sourceLabel: "buzzsneakers.rs",
-    website: IMPORTED_RETAILER_EXTERNAL["buzz-sneakers"].website,
-    websiteLabel: IMPORTED_RETAILER_EXTERNAL["buzz-sneakers"].websiteLabel,
+    website: "https://www.buzzsneakers.rs/",
+    websiteLabel: "buzzsneakers.rs",
   },
   "office-shoes": {
     brandCount: officeShoesMeta.brandCount,
@@ -78,17 +90,17 @@ const CATALOG_META: Record<string, RetailerCatalogMeta> = {
     lastSynced: syncedFromIso(officeShoesMeta.scrapedAt),
     sourceUrl: officeShoesMeta.brandsUrl,
     sourceLabel: "officeshoes.rs",
-    website: IMPORTED_RETAILER_EXTERNAL["office-shoes"].website,
-    websiteLabel: IMPORTED_RETAILER_EXTERNAL["office-shoes"].websiteLabel,
+    website: "https://www.officeshoes.rs/",
+    websiteLabel: "officeshoes.rs",
   },
   "sport-time": {
     brandCount: 1,
     storeCount: nikeSerbiaMeta.storeCount,
     lastSynced: syncedFromIso(nikeSerbiaMeta.scrapedAt),
     sourceUrl: nikeSerbiaMeta.directoryUrl,
-    sourceLabel: "nike.com",
-    website: IMPORTED_RETAILER_EXTERNAL["sport-time"].website,
-    websiteLabel: IMPORTED_RETAILER_EXTERNAL["sport-time"].websiteLabel,
+    sourceLabel: "nike.com/rs",
+    website: "https://www.nike.com/rs/",
+    websiteLabel: "nike.com/rs",
   },
   "djak-sport": {
     brandCount: djakSportMeta.brandCount,
@@ -96,8 +108,8 @@ const CATALOG_META: Record<string, RetailerCatalogMeta> = {
     lastSynced: syncedFromIso(djakSportMeta.scrapedAt),
     sourceUrl: djakSportMeta.brandsUrl,
     sourceLabel: "djaksport.com",
-    website: IMPORTED_RETAILER_EXTERNAL["djak-sport"].website,
-    websiteLabel: IMPORTED_RETAILER_EXTERNAL["djak-sport"].websiteLabel,
+    website: "https://www.djaksport.com/",
+    websiteLabel: "djaksport.com",
   },
   "sport-vision": {
     brandCount: sportVisionMeta.brandCount,
@@ -105,8 +117,8 @@ const CATALOG_META: Record<string, RetailerCatalogMeta> = {
     lastSynced: syncedFromIso(sportVisionMeta.scrapedAt),
     sourceUrl: sportVisionMeta.brandsUrl,
     sourceLabel: "sportvision.rs",
-    website: IMPORTED_RETAILER_EXTERNAL["sport-vision"].website,
-    websiteLabel: IMPORTED_RETAILER_EXTERNAL["sport-vision"].websiteLabel,
+    website: "https://www.sportvision.rs/",
+    websiteLabel: "sportvision.rs",
   },
   "planeta-sport": {
     brandCount: planetaSportMeta.brandCount,
@@ -114,31 +126,57 @@ const CATALOG_META: Record<string, RetailerCatalogMeta> = {
     lastSynced: syncedFromIso(planetaSportMeta.scrapedAt),
     sourceUrl: planetaSportMeta.brandsUrl,
     sourceLabel: "planetasport.rs",
-    website: IMPORTED_RETAILER_EXTERNAL["planeta-sport"].website,
-    websiteLabel: IMPORTED_RETAILER_EXTERNAL["planeta-sport"].websiteLabel,
+    website: "https://planetasport.rs/",
+    websiteLabel: "planetasport.rs",
   },
   inditex: {
     brandCount: 6,
     storeCount: scrapedFashion.stores.filter((s) => s.retailerSlug === "inditex").length,
     lastSynced: syncedFromIso(scrapedFashion.scrapedAt),
     sourceUrl: "https://www.zara.com/rs/",
-    sourceLabel: "inditex.com",
-    website: IMPORTED_RETAILER_EXTERNAL.inditex.website,
-    websiteLabel: IMPORTED_RETAILER_EXTERNAL.inditex.websiteLabel,
+    sourceLabel: "zara.com/rs",
+    website: "https://www.zara.com/rs/",
+    websiteLabel: "zara.com/rs",
   },
   lpp: {
     brandCount: 5,
     storeCount: scrapedFashion.stores.filter((s) => s.retailerSlug === "lpp").length,
     lastSynced: syncedFromIso(scrapedFashion.scrapedAt),
     sourceUrl: "https://www.reserved.com/rs/sr/storelocator",
-    sourceLabel: "lpp.com",
-    website: IMPORTED_RETAILER_EXTERNAL.lpp.website,
-    websiteLabel: IMPORTED_RETAILER_EXTERNAL.lpp.websiteLabel,
+    sourceLabel: "reserved.com/rs",
+    website: "https://www.reserved.com/rs/sr/",
+    websiteLabel: "reserved.com/rs",
   },
 };
 
+function withResolvedWebsite(
+  slug: string,
+  meta: RetailerCatalogMeta
+): RetailerCatalogMeta {
+  const { url, label } = resolveRetailerPublicWebsite(slug);
+  const sourceUrl = isSerbiaMarketUrl(meta.sourceUrl)
+    ? meta.sourceUrl
+    : url.startsWith("http")
+      ? url
+      : meta.sourceUrl;
+
+  return {
+    ...meta,
+    website: url.startsWith("http") ? url : meta.website,
+    websiteLabel: label,
+    sourceUrl,
+    sourceLabel: label,
+  };
+}
+
 export function getRetailerCatalogMeta(slug: string): RetailerCatalogMeta | null {
-  return CATALOG_META[slug] ?? null;
+  const meta = CATALOG_META[slug];
+  if (!meta) return null;
+  const scraped = getScrapedBrandsForRetailer(slug);
+  const brandCount = scraped?.length
+    ? countModniScrapedBrands(slug, catalogBySlug)
+    : meta.brandCount;
+  return withResolvedWebsite(slug, { ...meta, brandCount });
 }
 
 export function getRetailerCatalogMetaSlugs(): string[] {

@@ -6,6 +6,7 @@ import {
   promotionCampaignKey,
   promotionTodayIso,
 } from "@/lib/data/promotions";
+import { isSerbiaMarketUrl } from "@/lib/data/retailer-serbia-urls";
 
 export interface ScrapedPromotionRow {
   retailerSlug: string;
@@ -16,6 +17,9 @@ export interface ScrapedPromotionRow {
   startDate: string;
   endDate: string;
   sourceUrl?: string;
+  bannerImageUrl?: string;
+  discountPercent?: number | null;
+  scope?: string | null;
 }
 
 export interface PromotionsScrapedFile {
@@ -122,6 +126,7 @@ export async function seedPromotionsFromScraped(
 
   for (const promo of raw.promotions) {
     if (!isPromotionActive(promo.startDate, promo.endDate, today)) continue;
+    if (promo.sourceUrl && !isSerbiaMarketUrl(promo.sourceUrl)) continue;
 
     const retailerId = retailerIdBySlug.get(promo.retailerSlug);
     if (!retailerId) continue;
@@ -146,6 +151,10 @@ export async function seedPromotionsFromScraped(
           start_date: promo.startDate,
           end_date: promo.endDate,
           status,
+          source_url: promo.sourceUrl?.slice(0, 2000) ?? null,
+          banner_image: promo.bannerImageUrl?.slice(0, 2000) ?? null,
+          discount_percent: promo.discountPercent ?? null,
+          promo_scope: promo.scope?.slice(0, 320) ?? null,
         },
         { onConflict: "slug" }
       )

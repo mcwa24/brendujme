@@ -1,0 +1,2161 @@
+{
+  "scrapedAt": "2026-06-08T12:44:55.888Z",
+  "sourceUrl": "https://www.n-sport.net/brands/",
+  "brandsUrl": "https://www.n-sport.net/brands/",
+  "storesUrl": "https://www.n-sport.net/gde-kupiti.html",
+  "retailerSlug": "n-sport",
+  "retailerName": "N Sport",
+  "modniBrandCount": 108,
+  "brands": [
+    {
+      "nsSlug": "361-degrees",
+      "name": "361 Degrees",
+      "slug": "361-degrees",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/361%20Degrees.svg",
+      "productUrl": "https://www.n-sport.net/brands/361-degrees.html"
+    },
+    {
+      "nsSlug": "4f",
+      "name": "4F",
+      "slug": "4f",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/4F.svg",
+      "productUrl": "https://www.n-sport.net/brands/4f.html"
+    },
+    {
+      "nsSlug": "action",
+      "name": "Action",
+      "slug": "action",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Action.svg",
+      "productUrl": "https://www.n-sport.net/brands/action.html"
+    },
+    {
+      "nsSlug": "adidas",
+      "name": "Adidas",
+      "slug": "adidas",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Adidas.svg",
+      "productUrl": "https://www.n-sport.net/brands/adidas.html"
+    },
+    {
+      "nsSlug": "antony-morato",
+      "name": "Antony Morato",
+      "slug": "antony-morato",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Antony%20Morato.svg",
+      "productUrl": "https://www.n-sport.net/brands/antony-morato.html"
+    },
+    {
+      "nsSlug": "arena",
+      "name": "Arena",
+      "slug": "arena",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Arena.svg",
+      "productUrl": "https://www.n-sport.net/brands/arena.html"
+    },
+    {
+      "nsSlug": "armani-exchange",
+      "name": "Armani Exchange",
+      "slug": "armani-exchange",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Armani%20Exchange.svg",
+      "productUrl": "https://www.n-sport.net/brands/armani-exchange.html"
+    },
+    {
+      "nsSlug": "asics",
+      "name": "Asics",
+      "slug": "asics",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Asics.svg",
+      "productUrl": "https://www.n-sport.net/brands/asics.html"
+    },
+    {
+      "nsSlug": "autry",
+      "name": "AUTRY",
+      "slug": "autry",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/AUTRY.svg",
+      "productUrl": "https://www.n-sport.net/brands/autry.html"
+    },
+    {
+      "nsSlug": "benjamin-berner",
+      "name": "Benjamin Berner",
+      "slug": "benjamin-berner",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Benjamin%20Berner.svg",
+      "productUrl": "https://www.n-sport.net/brands/benjamin-berner.html"
+    },
+    {
+      "nsSlug": "blauer",
+      "name": "BLAUER",
+      "slug": "blauer",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/BLAUER.svg",
+      "productUrl": "https://www.n-sport.net/brands/blauer.html"
+    },
+    {
+      "nsSlug": "bogner",
+      "name": "Bogner",
+      "slug": "bogner",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Bogner.svg",
+      "productUrl": "https://www.n-sport.net/brands/bogner.html"
+    },
+    {
+      "nsSlug": "boss",
+      "name": "Boss",
+      "slug": "boss",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Boss.svg",
+      "productUrl": "https://www.n-sport.net/brands/boss.html"
+    },
+    {
+      "nsSlug": "calvin-klein",
+      "name": "Calvin Klein",
+      "slug": "calvin-klein",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Calvin%20Klein.svg",
+      "productUrl": "https://www.n-sport.net/brands/calvin-klein.html"
+    },
+    {
+      "nsSlug": "cartago-1",
+      "name": "Cartago",
+      "slug": "cartago",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Cartago.svg",
+      "productUrl": "https://www.n-sport.net/brands/cartago-1.html"
+    },
+    {
+      "nsSlug": "cat",
+      "name": "Cat",
+      "slug": "cat-footwear",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Cat.svg",
+      "productUrl": "https://www.n-sport.net/brands/cat.html"
+    },
+    {
+      "nsSlug": "cesare-paccioti",
+      "name": "Cesare Paciotti",
+      "slug": "cesare-paciotti",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Cesare%20Paciotti.svg",
+      "productUrl": "https://www.n-sport.net/brands/cesare-paccioti.html"
+    },
+    {
+      "nsSlug": "champion",
+      "name": "Champion",
+      "slug": "champion",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Champion.svg",
+      "productUrl": "https://www.n-sport.net/brands/champion.html"
+    },
+    {
+      "nsSlug": "clae-1",
+      "name": "Clae",
+      "slug": "clae",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Clae.svg",
+      "productUrl": "https://www.n-sport.net/brands/clae-1.html"
+    },
+    {
+      "nsSlug": "coccinelle",
+      "name": "Coccinelle",
+      "slug": "coccinelle",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Coccinelle.svg",
+      "productUrl": "https://www.n-sport.net/brands/coccinelle.html"
+    },
+    {
+      "nsSlug": "colmar",
+      "name": "Colmar",
+      "slug": "colmar",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Colmar.svg",
+      "productUrl": "https://www.n-sport.net/brands/colmar.html"
+    },
+    {
+      "nsSlug": "converse",
+      "name": "Converse",
+      "slug": "converse",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Converse.svg",
+      "productUrl": "https://www.n-sport.net/brands/converse.html"
+    },
+    {
+      "nsSlug": "cool-moon",
+      "name": "Cool Moon",
+      "slug": "cool-moon",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Cool%20Moon.svg",
+      "productUrl": "https://www.n-sport.net/brands/cool-moon.html"
+    },
+    {
+      "nsSlug": "copperminer",
+      "name": "Copperminer",
+      "slug": "copperminer",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Copperminer.svg",
+      "productUrl": "https://www.n-sport.net/brands/copperminer.html"
+    },
+    {
+      "nsSlug": "crocs",
+      "name": "Crocs",
+      "slug": "crocs",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Crocs.svg",
+      "productUrl": "https://www.n-sport.net/brands/crocs.html"
+    },
+    {
+      "nsSlug": "cruyff",
+      "name": "Cruyff",
+      "slug": "cruyff",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Cruyff.svg",
+      "productUrl": "https://www.n-sport.net/brands/cruyff.html"
+    },
+    {
+      "nsSlug": "d-frenklin",
+      "name": "D. Frenklin",
+      "slug": "d-frenklin",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/D.%20Frenklin.svg",
+      "productUrl": "https://www.n-sport.net/brands/d-frenklin.html"
+    },
+    {
+      "nsSlug": "date-1",
+      "name": "Date",
+      "slug": "date",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Date.svg",
+      "productUrl": "https://www.n-sport.net/brands/date-1.html"
+    },
+    {
+      "nsSlug": "diadora",
+      "name": "Diadora",
+      "slug": "diadora",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Diadora.svg",
+      "productUrl": "https://www.n-sport.net/brands/diadora.html"
+    },
+    {
+      "nsSlug": "didriksons-1",
+      "name": "Didriksons",
+      "slug": "didriksons",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Didriksons.svg",
+      "productUrl": "https://www.n-sport.net/brands/didriksons-1.html"
+    },
+    {
+      "nsSlug": "dr-martens",
+      "name": "Dr.Martens",
+      "slug": "dr-martens",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Dr.Martens.svg",
+      "productUrl": "https://www.n-sport.net/brands/dr-martens.html"
+    },
+    {
+      "nsSlug": "ea7",
+      "name": "EA7",
+      "slug": "ea7",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/EA7.svg",
+      "productUrl": "https://www.n-sport.net/brands/ea7.html"
+    },
+    {
+      "nsSlug": "ellesse",
+      "name": "Ellesse",
+      "slug": "ellesse",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Ellesse.svg",
+      "productUrl": "https://www.n-sport.net/brands/ellesse.html"
+    },
+    {
+      "nsSlug": "fila",
+      "name": "Fila",
+      "slug": "fila",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Fila.svg",
+      "productUrl": "https://www.n-sport.net/brands/fila.html"
+    },
+    {
+      "nsSlug": "fire-ice",
+      "name": "Fire+Ice",
+      "slug": "fire-ice",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Fire%2BIce.svg",
+      "productUrl": "https://www.n-sport.net/brands/fire-ice.html"
+    },
+    {
+      "nsSlug": "fratteli",
+      "name": "Fratteli",
+      "slug": "fratteli",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Fratteli.svg",
+      "productUrl": "https://www.n-sport.net/brands/fratteli.html"
+    },
+    {
+      "nsSlug": "furla",
+      "name": "Furla",
+      "slug": "furla",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Furla.svg",
+      "productUrl": "https://www.n-sport.net/brands/furla.html"
+    },
+    {
+      "nsSlug": "gaimo",
+      "name": "Gaimo",
+      "slug": "gaimo",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Gaimo.svg",
+      "productUrl": "https://www.n-sport.net/brands/gaimo.html"
+    },
+    {
+      "nsSlug": "grisport",
+      "name": "Grisport",
+      "slug": "grisport",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Grisport.svg",
+      "productUrl": "https://www.n-sport.net/brands/grisport.html"
+    },
+    {
+      "nsSlug": "guess",
+      "name": "Guess",
+      "slug": "guess",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Guess.svg",
+      "productUrl": "https://www.n-sport.net/brands/guess.html"
+    },
+    {
+      "nsSlug": "harmont-blaine",
+      "name": "Harmont&Blaine",
+      "slug": "harmont-blaine",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Harmont%26Blaine.svg",
+      "productUrl": "https://www.n-sport.net/brands/harmont-blaine.html"
+    },
+    {
+      "nsSlug": "hey-dude",
+      "name": "Hey Dude",
+      "slug": "hey-dude",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Hey%20Dude.svg",
+      "productUrl": "https://www.n-sport.net/brands/hey-dude.html"
+    },
+    {
+      "nsSlug": "hoka",
+      "name": "Hoka",
+      "slug": "hoka",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Hoka.svg",
+      "productUrl": "https://www.n-sport.net/brands/hoka.html"
+    },
+    {
+      "nsSlug": "hugo-1",
+      "name": "Hugo",
+      "slug": "hugo",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Hugo.svg",
+      "productUrl": "https://www.n-sport.net/brands/hugo-1.html"
+    },
+    {
+      "nsSlug": "ice-peak",
+      "name": "Ice Peak",
+      "slug": "icepeak",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Ice%20Peak.svg",
+      "productUrl": "https://www.n-sport.net/brands/ice-peak.html"
+    },
+    {
+      "nsSlug": "inuikii-1",
+      "name": "Inuikii",
+      "slug": "inuikii",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Inuikii.svg",
+      "productUrl": "https://www.n-sport.net/brands/inuikii-1.html"
+    },
+    {
+      "nsSlug": "ipanema-1",
+      "name": "Ipanema",
+      "slug": "ipanema",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Ipanema.svg",
+      "productUrl": "https://www.n-sport.net/brands/ipanema-1.html"
+    },
+    {
+      "nsSlug": "jack-jones",
+      "name": "Jack & Jones",
+      "slug": "jack-jones",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Jack%20%26%20Jones.svg",
+      "productUrl": "https://www.n-sport.net/brands/jack-jones.html"
+    },
+    {
+      "nsSlug": "joop",
+      "name": "Joop",
+      "slug": "joop",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Joop.svg",
+      "productUrl": "https://www.n-sport.net/brands/joop.html"
+    },
+    {
+      "nsSlug": "k-way-1",
+      "name": "K-Way",
+      "slug": "k-way",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/K-Way.svg",
+      "productUrl": "https://www.n-sport.net/brands/k-way-1.html"
+    },
+    {
+      "nsSlug": "kana-jutelia",
+      "name": "Kana&Jutelia",
+      "slug": "kana-jutelia",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Kana%26Jutelia.svg",
+      "productUrl": "https://www.n-sport.net/brands/kana-jutelia.html"
+    },
+    {
+      "nsSlug": "kangoo",
+      "name": "Kangoo",
+      "slug": "kangoo",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Kangoo.svg",
+      "productUrl": "https://www.n-sport.net/brands/kangoo.html"
+    },
+    {
+      "nsSlug": "kappa",
+      "name": "Kappa",
+      "slug": "kappa",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Kappa.svg",
+      "productUrl": "https://www.n-sport.net/brands/kappa.html"
+    },
+    {
+      "nsSlug": "karl-lagerfeld",
+      "name": "Karl Lagerfeld",
+      "slug": "karl-lagerfeld",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Karl%20Lagerfeld.svg",
+      "productUrl": "https://www.n-sport.net/brands/karl-lagerfeld.html"
+    },
+    {
+      "nsSlug": "lacoste",
+      "name": "Lacoste",
+      "slug": "lacoste",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Lacoste.svg",
+      "productUrl": "https://www.n-sport.net/brands/lacoste.html"
+    },
+    {
+      "nsSlug": "liu-jo",
+      "name": "Liu Jo",
+      "slug": "liu-jo",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Liu%20Jo.svg",
+      "productUrl": "https://www.n-sport.net/brands/liu-jo.html"
+    },
+    {
+      "nsSlug": "lola",
+      "name": "Lola",
+      "slug": "lola",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Lola.svg",
+      "productUrl": "https://www.n-sport.net/brands/lola.html"
+    },
+    {
+      "nsSlug": "lumberjack-1",
+      "name": "Lumberjack",
+      "slug": "lumberjack",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Lumberjack.svg",
+      "productUrl": "https://www.n-sport.net/brands/lumberjack-1.html"
+    },
+    {
+      "nsSlug": "lyle-scott",
+      "name": "Lyle&Scott",
+      "slug": "lyle-scott",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Lyle%26Scott.svg",
+      "productUrl": "https://www.n-sport.net/brands/lyle-scott.html"
+    },
+    {
+      "nsSlug": "marina-militare",
+      "name": "Marina Militare",
+      "slug": "marina-militare",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Marina%20Militare.svg",
+      "productUrl": "https://www.n-sport.net/brands/marina-militare.html"
+    },
+    {
+      "nsSlug": "merrell",
+      "name": "Merrell",
+      "slug": "merrell",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Merrell.svg",
+      "productUrl": "https://www.n-sport.net/brands/merrell.html"
+    },
+    {
+      "nsSlug": "michael-kors",
+      "name": "Michael  Kors",
+      "slug": "michael-kors",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Michael%20%20Kors.svg",
+      "productUrl": "https://www.n-sport.net/brands/michael-kors.html"
+    },
+    {
+      "nsSlug": "moon-boot",
+      "name": "Moon Boot",
+      "slug": "moon-boot",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Moon%20Boot.svg",
+      "productUrl": "https://www.n-sport.net/brands/moon-boot.html"
+    },
+    {
+      "nsSlug": "mou-1",
+      "name": "Mou",
+      "slug": "mou",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Mou.svg",
+      "productUrl": "https://www.n-sport.net/brands/mou-1.html"
+    },
+    {
+      "nsSlug": "musala",
+      "name": "Musala",
+      "slug": "musala",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Musala.svg",
+      "productUrl": "https://www.n-sport.net/brands/musala.html"
+    },
+    {
+      "nsSlug": "nautica",
+      "name": "Nautica",
+      "slug": "nautica",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Nautica.svg",
+      "productUrl": "https://www.n-sport.net/brands/nautica.html"
+    },
+    {
+      "nsSlug": "new-balance",
+      "name": "New Balance",
+      "slug": "new-balance",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/New%20Balance.svg",
+      "productUrl": "https://www.n-sport.net/brands/new-balance.html"
+    },
+    {
+      "nsSlug": "new-era-1",
+      "name": "New Era",
+      "slug": "new-era",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/New%20Era.svg",
+      "productUrl": "https://www.n-sport.net/brands/new-era-1.html"
+    },
+    {
+      "nsSlug": "nike",
+      "name": "Nike",
+      "slug": "nike",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Nike.svg",
+      "productUrl": "https://www.n-sport.net/brands/nike.html"
+    },
+    {
+      "nsSlug": "on",
+      "name": "On",
+      "slug": "on-running",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/On.svg",
+      "productUrl": "https://www.n-sport.net/brands/on.html"
+    },
+    {
+      "nsSlug": "paez",
+      "name": "Paez",
+      "slug": "paez",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Paez.svg",
+      "productUrl": "https://www.n-sport.net/brands/paez.html"
+    },
+    {
+      "nsSlug": "palladium",
+      "name": "Palladium",
+      "slug": "palladium",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Palladium.svg",
+      "productUrl": "https://www.n-sport.net/brands/palladium.html"
+    },
+    {
+      "nsSlug": "patrizia-pepe",
+      "name": "Patrizia Pepe",
+      "slug": "patrizia-pepe",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Patrizia%20Pepe.svg",
+      "productUrl": "https://www.n-sport.net/brands/patrizia-pepe.html"
+    },
+    {
+      "nsSlug": "perfect-moment",
+      "name": "Perfect Moment",
+      "slug": "perfect-moment",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Perfect%20Moment.svg",
+      "productUrl": "https://www.n-sport.net/brands/perfect-moment.html"
+    },
+    {
+      "nsSlug": "petite-jolie",
+      "name": "Petite Jolie",
+      "slug": "petite-jolie",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Petite%20Jolie.svg",
+      "productUrl": "https://www.n-sport.net/brands/petite-jolie.html"
+    },
+    {
+      "nsSlug": "puma",
+      "name": "Puma",
+      "slug": "puma",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Puma.svg",
+      "productUrl": "https://www.n-sport.net/brands/puma.html"
+    },
+    {
+      "nsSlug": "red-star-1",
+      "name": "Red Star",
+      "slug": "red-star",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Red%20Star.svg",
+      "productUrl": "https://www.n-sport.net/brands/red-star-1.html"
+    },
+    {
+      "nsSlug": "reebok",
+      "name": "Reebok",
+      "slug": "reebok",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Reebok.svg",
+      "productUrl": "https://www.n-sport.net/brands/reebok.html"
+    },
+    {
+      "nsSlug": "regatta",
+      "name": "Regatta",
+      "slug": "regatta",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Regatta.svg",
+      "productUrl": "https://www.n-sport.net/brands/regatta.html"
+    },
+    {
+      "nsSlug": "replay",
+      "name": "Replay",
+      "slug": "replay",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Replay.svg",
+      "productUrl": "https://www.n-sport.net/brands/replay.html"
+    },
+    {
+      "nsSlug": "rider",
+      "name": "Rider",
+      "slug": "rider",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Rider.svg",
+      "productUrl": "https://www.n-sport.net/brands/rider.html"
+    },
+    {
+      "nsSlug": "run-of",
+      "name": "Run Of",
+      "slug": "run-of",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Run%20Of.svg",
+      "productUrl": "https://www.n-sport.net/brands/run-of.html"
+    },
+    {
+      "nsSlug": "russell-athletic",
+      "name": "Russell Athletic",
+      "slug": "russell-athletic",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Russell%20Athletic.svg",
+      "productUrl": "https://www.n-sport.net/brands/russell-athletic.html"
+    },
+    {
+      "nsSlug": "salomon",
+      "name": "Salomon",
+      "slug": "salomon",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Salomon.svg",
+      "productUrl": "https://www.n-sport.net/brands/salomon.html"
+    },
+    {
+      "nsSlug": "selected",
+      "name": "Selected",
+      "slug": "selected",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Selected.svg",
+      "productUrl": "https://www.n-sport.net/brands/selected.html"
+    },
+    {
+      "nsSlug": "self-portrait",
+      "name": "Self Portrait",
+      "slug": "self-portrait",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Self%20Portrait.svg",
+      "productUrl": "https://www.n-sport.net/brands/self-portrait.html"
+    },
+    {
+      "nsSlug": "sergio-tacchini",
+      "name": "Sergio Tacchini",
+      "slug": "sergio-tacchini",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Sergio%20Tacchini.svg",
+      "productUrl": "https://www.n-sport.net/brands/sergio-tacchini.html"
+    },
+    {
+      "nsSlug": "skandia",
+      "name": "Skandia",
+      "slug": "skandia",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Skandia.svg",
+      "productUrl": "https://www.n-sport.net/brands/skandia.html"
+    },
+    {
+      "nsSlug": "skechers",
+      "name": "Skechers",
+      "slug": "skechers",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Skechers.svg",
+      "productUrl": "https://www.n-sport.net/brands/skechers.html"
+    },
+    {
+      "nsSlug": "spalding",
+      "name": "Spalding",
+      "slug": "spalding",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Spalding.svg",
+      "productUrl": "https://www.n-sport.net/brands/spalding.html"
+    },
+    {
+      "nsSlug": "speedo",
+      "name": "Speedo",
+      "slug": "speedo",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Speedo.svg",
+      "productUrl": "https://www.n-sport.net/brands/speedo.html"
+    },
+    {
+      "nsSlug": "staff-jeans",
+      "name": "Staff Jeans",
+      "slug": "staff-jeans",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Staff%20Jeans.svg",
+      "productUrl": "https://www.n-sport.net/brands/staff-jeans.html"
+    },
+    {
+      "nsSlug": "steve-madden",
+      "name": "Steve Madden",
+      "slug": "steve-madden",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Steve%20Madden.svg",
+      "productUrl": "https://www.n-sport.net/brands/steve-madden.html"
+    },
+    {
+      "nsSlug": "stokton",
+      "name": "Stokton",
+      "slug": "stokton",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Stokton.svg",
+      "productUrl": "https://www.n-sport.net/brands/stokton.html"
+    },
+    {
+      "nsSlug": "sun68-1",
+      "name": "Sun68",
+      "slug": "sun68",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Sun68.svg",
+      "productUrl": "https://www.n-sport.net/brands/sun68-1.html"
+    },
+    {
+      "nsSlug": "superdry",
+      "name": "Superdry",
+      "slug": "superdry",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Superdry.svg",
+      "productUrl": "https://www.n-sport.net/brands/superdry.html"
+    },
+    {
+      "nsSlug": "terinda",
+      "name": "Terinda",
+      "slug": "terinda",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Terinda.svg",
+      "productUrl": "https://www.n-sport.net/brands/terinda.html"
+    },
+    {
+      "nsSlug": "timberland",
+      "name": "Timberland",
+      "slug": "timberland",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Timberland.svg",
+      "productUrl": "https://www.n-sport.net/brands/timberland.html"
+    },
+    {
+      "nsSlug": "tom-tailor-1",
+      "name": "Tom Tailor",
+      "slug": "tom-tailor",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Tom%20Tailor.svg",
+      "productUrl": "https://www.n-sport.net/brands/tom-tailor-1.html"
+    },
+    {
+      "nsSlug": "tommy-hilfiger",
+      "name": "Tommy Hilfiger",
+      "slug": "tommy-hilfiger",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Tommy%20Hilfiger.svg",
+      "productUrl": "https://www.n-sport.net/brands/tommy-hilfiger.html"
+    },
+    {
+      "nsSlug": "tosca-blu",
+      "name": "Tosca Blu",
+      "slug": "tosca-blu",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Tosca%20Blu.svg",
+      "productUrl": "https://www.n-sport.net/brands/tosca-blu.html"
+    },
+    {
+      "nsSlug": "tripmates",
+      "name": "TRIPMATES",
+      "slug": "tripmates",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/TRIPMATES.svg",
+      "productUrl": "https://www.n-sport.net/brands/tripmates.html"
+    },
+    {
+      "nsSlug": "trussardi",
+      "name": "Trussardi",
+      "slug": "trussardi",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Trussardi.svg",
+      "productUrl": "https://www.n-sport.net/brands/trussardi.html"
+    },
+    {
+      "nsSlug": "ugg",
+      "name": "Ugg",
+      "slug": "ugg",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Ugg.svg",
+      "productUrl": "https://www.n-sport.net/brands/ugg.html"
+    },
+    {
+      "nsSlug": "under-armour",
+      "name": "Under Armour",
+      "slug": "under-armour",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Under%20Armour.svg",
+      "productUrl": "https://www.n-sport.net/brands/under-armour.html"
+    },
+    {
+      "nsSlug": "ventus-1",
+      "name": "Ventus",
+      "slug": "ventus",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Ventus.svg",
+      "productUrl": "https://www.n-sport.net/brands/ventus-1.html"
+    },
+    {
+      "nsSlug": "vero-moda-1",
+      "name": "Vero Moda",
+      "slug": "vero-moda",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Vero%20Moda.svg",
+      "productUrl": "https://www.n-sport.net/brands/vero-moda-1.html"
+    },
+    {
+      "nsSlug": "versace-jeans",
+      "name": "Versace Jeans",
+      "slug": "versace-jeans",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Versace%20Jeans.svg",
+      "productUrl": "https://www.n-sport.net/brands/versace-jeans.html"
+    },
+    {
+      "nsSlug": "wilson",
+      "name": "Wilson",
+      "slug": "wilson",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Wilson.svg",
+      "productUrl": "https://www.n-sport.net/brands/wilson.html"
+    },
+    {
+      "nsSlug": "zaxy-1",
+      "name": "Zaxy",
+      "slug": "zaxy",
+      "logoUrl": "https://www.n-sport.net/UserFiles/brands/Zaxy.svg",
+      "productUrl": "https://www.n-sport.net/brands/zaxy-1.html"
+    }
+  ],
+  "stores": [
+    {
+      "path": "107ar-aran-elovac-ara-retail-park-zanatlijska-112a",
+      "name": "N SPORT<br>N FASHION",
+      "address": "Ara Retail Park,Zanatlijska 112a",
+      "city": "Aranđelovac",
+      "citySlug": "aran-elovac",
+      "phone": "+381 60 0800 953",
+      "email": "arandjelovac2@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 44.3066,
+      "longitude": 20.5669,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "09-bp-backa-palanka-kralja-petra-i-10",
+      "name": "N SPORT",
+      "address": "Kralja Petra I 10",
+      "city": "Bačka Palanka",
+      "citySlug": "backa-palanka",
+      "phone": "+381 62 8008 149",
+      "email": "bpalanka@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 45.2499458,
+      "longitude": 19.3858778,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "65-bc-becej-zelena-37",
+      "name": "N SPORT",
+      "address": "Zelena 37",
+      "city": "Bečej",
+      "citySlug": "becej",
+      "phone": "+381 62 405 223",
+      "email": "becej@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 45.6149201,
+      "longitude": 20.0463466,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "95-bg-beograd-beo-shopping-center-vojislava-ilica-141",
+      "name": "N SPORT",
+      "address": "BEO Shopping Center, Vojislava Ilića 141",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381 60 0800 994",
+      "email": "beonsport@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 44.7863678,
+      "longitude": 20.5009577,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "97-bg-beograd-beo-shopping-center-vojislava-ilica-141",
+      "name": "N SELECTION",
+      "address": "BEO Shopping Center, Vojislava Ilića 141",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381 60 0800 996",
+      "email": "beonselection@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 44.7863678,
+      "longitude": 20.5009577,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "96-bg-beograd-beo-shopping-center-vojislava-ilica-141",
+      "name": "N FASHION",
+      "address": "BEO Shopping Center, Vojislava Ilića 141",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381 60 0800 995",
+      "email": "beonfashion@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 44.7863678,
+      "longitude": 20.5009577,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "08-bg-beograd-bul-arsenija-carnojevica-97a",
+      "name": "N SPORT",
+      "address": "Bul. Arsenija Čarnojevića 97a",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381 62 8008 147",
+      "email": "arena@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 44.8120594,
+      "longitude": 20.4196405,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "42-bg-beograd-kneza-mihaila-33",
+      "name": "N FASHION",
+      "address": "Kneza Mihaila 33",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381 63 8622 074",
+      "email": "knezfashion@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 44.81758471080285,
+      "longitude": 20.456917415339515,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "94-bg-beograd-kneza-mihaila-47",
+      "name": "LACOSTE",
+      "address": "Kneza Mihaila 47",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381 60 0800839",
+      "email": "knezlacoste@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 43.92463,
+      "longitude": 21.37525,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "71-bg-beograd-sc-usce-bulevar-mihajla-pupina-6",
+      "name": "LACOSTE",
+      "address": "SC UŠĆE, Bulevar Mihajla Pupina 6",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381 60 0800 843",
+      "email": "usce2@n-sport.net",
+      "shoppingCenterSlug": "usce",
+      "latitude": 44.8150575,
+      "longitude": 20.4366382,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "36-bg-beograd-sc-usce-bulevar-mihajla-pupina-6",
+      "name": "N FASHION",
+      "address": "SC UŠĆE, Bulevar Mihajla Pupina 6",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381 62 504 229",
+      "email": "usce@n-sport.net",
+      "shoppingCenterSlug": "usce",
+      "latitude": 44.8150575,
+      "longitude": 20.4366382,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "89-bg-beograd-tc-ada-mall-radnicka-9",
+      "name": "N FASHION",
+      "address": "TC Ada Mall, Radnička 9",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381 60 0800 976",
+      "email": "ada_nfashion@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 44.787577,
+      "longitude": 20.418976,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "90-bg-beograd-tc-big-fashion-visnjicka-84",
+      "name": "N SPORT",
+      "address": "TC Big Fashion, Višnjička 84",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381 60 0800 981",
+      "email": "bigfashion90@n-sport.net",
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": 44.8157758,
+      "longitude": 20.5078979,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "103bg-beograd-tc-big-fashion-visnjicka-84",
+      "name": "N SELECTION",
+      "address": "TC Big Fashion, Višnjička 84",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381 60 0800 984",
+      "email": "bigfashion103@n-sport.net",
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": 44.8157758,
+      "longitude": 20.5078979,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "77-bg-beograd-tc-big-fashion-visnjicka-84",
+      "name": "N FASHION",
+      "address": "TC Big Fashion, Višnjička 84",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381 63 274 502",
+      "email": "bigfashion77@n-sport.net",
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": 44.8157758,
+      "longitude": 20.5078979,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "92-bg-beograd-tc-big-rakovica-patrijarha-dimitrija-14",
+      "name": "N SPORT",
+      "address": "TC BIG Rakovica, Patrijarha Dimitrija 14",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381 62 8008 125",
+      "email": "rakovica@n-sport.net",
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": 44.7399386,
+      "longitude": 20.4356783,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "35-bg-beograd-tc-bn-bos-batajnicki-drum-1",
+      "name": "N SPORT",
+      "address": "TC BN BOS, Batajnički drum 1",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381 60 0800 934",
+      "email": "bnbos@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 44.8622806,
+      "longitude": 20.3651159,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "25-bg-beograd-tc-bw-galerija-bulevar-vudroa-vilsona-12",
+      "name": "PUMA STORE",
+      "address": "TC BW Galerija, Bulevar Vudroa Vilsona 12",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381 63 8601 220",
+      "email": "bwgpuma@n-sport.net",
+      "shoppingCenterSlug": "galerija",
+      "latitude": 44.8036229,
+      "longitude": 20.445097,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "30-bg-beograd-tc-bw-galerija-bulevar-vudroa-vilsona-12",
+      "name": "N SELECTION",
+      "address": "TC BW Galerija, Bulevar Vudroa Vilsona 12",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381 63 8601 375",
+      "email": "bwgnselection@n-sport.net",
+      "shoppingCenterSlug": "galerija",
+      "latitude": 44.8036229,
+      "longitude": 20.445097,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "33-bg-beograd-tc-bw-galerija-bulevar-vudroa-vilsona-12",
+      "name": "N FASHION",
+      "address": "TC BW Galerija, Bulevar Vudroa Vilsona 12",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381 63 8602 374",
+      "email": "bwgnfashion@n-sport.net",
+      "shoppingCenterSlug": "galerija",
+      "latitude": 44.8036229,
+      "longitude": 20.445097,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "120bg-beograd-tc-bw-galerija-bulevar-vudroa-vilsona-12",
+      "name": "FURLA",
+      "address": "TC BW Galerija, Bulevar Vudroa Vilsona 12",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381 62 215 831",
+      "email": "furla@n-sport.net",
+      "shoppingCenterSlug": "galerija",
+      "latitude": 44.8036229,
+      "longitude": 20.445097,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "29-bg-beograd-tc-delta-city-jurija-gagarina-16",
+      "name": "N SELECTION",
+      "address": "TC Delta City, Jurija Gagarina 16",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381 62 8008 134",
+      "email": "deltacity@n-sport.net",
+      "shoppingCenterSlug": "delta-city",
+      "latitude": 44.805693,
+      "longitude": 20.4052079,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "70-bg-beograd-tc-delta-city-jurija-gagarina-16",
+      "name": "LACOSTE",
+      "address": "TC Delta City, Jurija Gagarina 16",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381 60 0800 829",
+      "email": "deltacity2@n-sport.net",
+      "shoppingCenterSlug": "delta-city",
+      "latitude": 44.805693,
+      "longitude": 20.4052079,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "18-bg-beograd-tc-delta-city-jurija-gagarina-16",
+      "name": "N FASHION",
+      "address": "TC Delta City, Jurija Gagarina 16",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381 62 203 195",
+      "email": "deltacity5@n-sport.net",
+      "shoppingCenterSlug": "delta-city",
+      "latitude": 44.805693,
+      "longitude": 20.4052079,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "67-bg-beograd-tc-forum-park-autoput-beograd-novi-sad-124-126",
+      "name": "N SPORT",
+      "address": "TC Forum Park, Autoput Beograd - Novi Sad 124-126",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381 62 8008 744",
+      "email": "ibczemun@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 44.867671,
+      "longitude": 20.345864,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "49-bg-beograd-tc-immo-centar-gandijeva-21",
+      "name": "N SPORT",
+      "address": "TC Immo Centar, Gandijeva 21",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381 62 8008 162",
+      "email": "immocentar@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 44.807694,
+      "longitude": 20.386419,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "41-bg-beograd-tc-mercator-bulevar-umetnosti-4",
+      "name": "N FASHION<br>N SELECTION",
+      "address": "TC Mercator, Bulevar umetnosti 4",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381 62 8008 135",
+      "email": "mercator_bg@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 44.820792,
+      "longitude": 20.414271,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "117bg-beograd-tc-stadion-zaplanjska-32",
+      "name": "N FASHION",
+      "address": "TC Stadion, Zaplanjska 32",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381 62 623 206",
+      "email": "stadionnfashion@n-sport.net",
+      "shoppingCenterSlug": "stadion",
+      "latitude": 44.7746556,
+      "longitude": 20.489642,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "76-bg-beograd-tc-stop-shop-borca-bratstva-i-jedinstva-2g",
+      "name": "N SPORT",
+      "address": "TC Stop Shop Borča, Bratstva i  jedinstva 2g",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "+381 63 275 217",
+      "email": "borca@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 44.8887261,
+      "longitude": 20.4567798,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "79-bo-bor-tc-big-cee-bor-alberta-ajnstajna-4",
+      "name": "N SPORT<br>N FASHION",
+      "address": "TC Big CEE Bor, Alberta Ajnštajna 4",
+      "city": "Bor",
+      "citySlug": "bor",
+      "phone": "+381 62 8008 168",
+      "email": "bor@n-sport.net",
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": 44.06989,
+      "longitude": 22.09851,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "149ca-cacak-nikole-tesle-9",
+      "name": "N SPORT<br>N FASHION",
+      "address": "Nikole Tesle 9",
+      "city": "Čačak",
+      "citySlug": "cacak",
+      "phone": "+381 063 276 421",
+      "email": "cacak3@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 43.890917,
+      "longitude": 20.370627,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "20-ca-cacak-zupana-stacimira-8",
+      "name": "N FASHION",
+      "address": "Župana Stacimira 8",
+      "city": "Čačak",
+      "citySlug": "cacak",
+      "phone": "+381 62 8008 163",
+      "email": "cacak2@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 43.892248,
+      "longitude": 20.349962,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "50-gm-gornji-milanovac-shop-park-naselje-parac-18d",
+      "name": "N SPORT",
+      "address": "Shop Park, Naselje Parac 18d",
+      "city": "Gornji Milanovac",
+      "citySlug": "gornji-milanovac",
+      "phone": "+381 63 275 764",
+      "email": "gmilanovac@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 44.0317585,
+      "longitude": 20.4720683,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "44-in-in-ija-vojvode-putnika-bb",
+      "name": "N SPORT",
+      "address": "Vojvode Putnika bb",
+      "city": "Inđija",
+      "citySlug": "in-ija",
+      "phone": "+381 63 274 337",
+      "email": "indjija@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 45.070179,
+      "longitude": 20.136233,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "72-in-in-ija-vojvode-putnika-bb",
+      "name": "LACOSTE",
+      "address": "Vojvode Putnika bb",
+      "city": "Inđija",
+      "citySlug": "in-ija",
+      "phone": "+381 60 0800 832",
+      "email": "indjija2@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 45.070179,
+      "longitude": 20.136233,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "122ic-ivanjica-milinka-kusica-106-1",
+      "name": "N SPORT<br>N FASHION",
+      "address": "Milinka Kušića 106/1",
+      "city": "Ivanjica",
+      "citySlug": "ivanjica",
+      "phone": "+381 62 8008 075",
+      "email": "ivanjica@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 43.590333,
+      "longitude": 20.224444,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "27-ja-jagodina-stevana-ivanovica-1a",
+      "name": "N SPORT<br>N FASHION",
+      "address": "Stevana Ivanovića 1a",
+      "city": "Jagodina",
+      "citySlug": "jagodina",
+      "phone": "+381 62 8008 131",
+      "email": "jagodina@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 43.9680397,
+      "longitude": 21.2613282,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "15-kg-kragujevac-kralja-aleksandra-i-kara-or-evica-26",
+      "name": "N SPORT<br>N FASHION",
+      "address": "Kralja Aleksandra I Karađorđevića 26",
+      "city": "Kragujevac",
+      "citySlug": "kragujevac",
+      "phone": "+381 62 8008 158",
+      "email": "kragujevac@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 44.0111135,
+      "longitude": 20.9143558,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "54-kg-kragujevac-tc-big-fashion-kragujevac-bulevar-kraljice-marije-56",
+      "name": "N FASHION",
+      "address": "TC Big Fashion Kragujevac, Bulevar kraljice Marije 56",
+      "city": "Kragujevac",
+      "citySlug": "kragujevac",
+      "phone": "+381 62 8008 126",
+      "email": "kragujevac3@n-sport.net",
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": 44.0088526,
+      "longitude": 20.8963133,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "125kg-kragujevac-tc-big-fashion-kragujevac-bulevar-kraljice-marije-56",
+      "name": "N SPORT",
+      "address": "TC Big Fashion Kragujevac, Bulevar kraljice Marije 56",
+      "city": "Kragujevac",
+      "citySlug": "kragujevac",
+      "phone": "+381 62 247 812",
+      "email": "kragujevac5@n-sport.net",
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": 44.0088526,
+      "longitude": 20.8963133,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "69-kg-kragujevac-tc-big-fashion-kragujevac-bulevar-kraljice-marije-56",
+      "name": "N SELECTION",
+      "address": "TC Big Fashion Kragujevac, Bulevar kraljice Marije 56",
+      "city": "Kragujevac",
+      "citySlug": "kragujevac",
+      "phone": "+381 62 540 266",
+      "email": "kragujevac4@n-sport.net",
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": 44.00888,
+      "longitude": 20.896224,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "59-kv-kraljevo-milosa-velikog-3",
+      "name": "N SPORT",
+      "address": "Miloša Velikog 3",
+      "city": "Kraljevo",
+      "citySlug": "kraljevo",
+      "phone": "+381 63 276 413",
+      "email": "kraljevo2@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 43.7233353,
+      "longitude": 20.688229,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "109kv-kraljevo-omladinska-1",
+      "name": "N FASHION",
+      "address": "Omladinska 1",
+      "city": "Kraljevo",
+      "citySlug": "kraljevo",
+      "phone": "+381 62 203 875",
+      "email": "kraljevo3@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 43.7237801,
+      "longitude": 20.685805,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "46-kv-kraljevo-omladinska-13",
+      "name": "N SPORT",
+      "address": "Omladinska 13",
+      "city": "Kraljevo",
+      "citySlug": "kraljevo",
+      "phone": "+381 63 274 516",
+      "email": "kraljevo@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 43.7241936,
+      "longitude": 20.6860588,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "133kv-kraljevo-tc-tempo-plus-adranska-111",
+      "name": "N SPORT<br>N FASHION",
+      "address": "TC TEMPO PLUS, Adranska 111",
+      "city": "Kraljevo",
+      "citySlug": "kraljevo",
+      "phone": "+381 62 603 585",
+      "email": "kraljevo4@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 43.767,
+      "longitude": 20.63265,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "118ks-krusevac-tc-big-krfska-37",
+      "name": "N SPORT",
+      "address": "TC BIG, Krfska 37",
+      "city": "Kruševac",
+      "citySlug": "krusevac",
+      "phone": "+381 62 215 498",
+      "email": "krusevac3@n-sport.net",
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": 43.5694799,
+      "longitude": 21.338401,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "106ks-krusevac-vidovdanska-103",
+      "name": "N FASHION",
+      "address": "Vidovdanska 103",
+      "city": "Kruševac",
+      "citySlug": "krusevac",
+      "phone": "+ 381 62 611 975",
+      "email": "krusevac2@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 43.580179,
+      "longitude": 21.3299891,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "06-ks-krusevac-vidovdanska-12",
+      "name": "N SPORT",
+      "address": "Vidovdanska 12",
+      "city": "Kruševac",
+      "citySlug": "krusevac",
+      "phone": "+381 62 8008 145",
+      "email": "krusevac@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 43.5817723,
+      "longitude": 21.327644,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "74-la-lazarevac-beograd-lazarevac-zeleznicka-bb",
+      "name": "N SPORT",
+      "address": "Železnička bb",
+      "city": "Lazarevac (Beograd-Lazarevac)",
+      "citySlug": "lazarevac-beograd-lazarevac",
+      "phone": "+381 60 0800 862",
+      "email": "lazarevac@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 44.3869645,
+      "longitude": 20.2514779,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "91-le-leskovac-bulevar-oslobo-enja-bb",
+      "name": "N FASHION",
+      "address": "Bulevar oslobođenja bb",
+      "city": "Leskovac",
+      "citySlug": "leskovac",
+      "phone": "+381 60 0800 986",
+      "email": "leskovac3@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 42.9963769,
+      "longitude": 21.9471511,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "87-le-leskovac-stop-shop-28-marta-10",
+      "name": "N SPORT",
+      "address": "Stop Shop, 28. marta 10",
+      "city": "Leskovac",
+      "citySlug": "leskovac",
+      "phone": "+381 60 0800 977",
+      "email": "leskovac2@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 43.0004589,
+      "longitude": 21.9515236,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "64-lo-loznica-trg-vuka-karadzica-bb",
+      "name": "N SPORT<br>N FASHION",
+      "address": "Trg Vuka Karadžića bb",
+      "city": "Loznica",
+      "citySlug": "loznica",
+      "phone": "+381 62 8008 137",
+      "email": "loznica@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 44.5328745,
+      "longitude": 19.223998,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "114ml-mladenovac-brace-badzak-2",
+      "name": "N SPORT",
+      "address": "Braće Badžak 2",
+      "city": "Mladenovac",
+      "citySlug": "mladenovac",
+      "phone": "+381 62 621 618",
+      "email": "mladenovac@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 44.4464277,
+      "longitude": 20.6847222,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "05-ni-nis-nade-tomic-1",
+      "name": "N SPORT",
+      "address": "Nade Tomić 1",
+      "city": "Niš",
+      "citySlug": "nis",
+      "phone": "+381 62 8008 144",
+      "email": "nis@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 43.3205316,
+      "longitude": 21.8963018,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "73-ni-nis-stop-shop-bulevar-svetog-cara-konstantina-bb",
+      "name": "N SPORT",
+      "address": "Stop Shop, Bulevar Svetog cara Konstantina bb",
+      "city": "Niš",
+      "citySlug": "nis",
+      "phone": "+381 60 0800 835",
+      "email": "nis5@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 43.3105998,
+      "longitude": 21.9346232,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "14-ni-nis-tc-delta-planet-bulevar-nemanjica-11b",
+      "name": "PUMA STORE",
+      "address": "TC Delta Planet, Bulevar Nemanjića 11b",
+      "city": "Niš",
+      "citySlug": "nis",
+      "phone": "+381 62 259 520",
+      "email": "nis_puma@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 43.3244068,
+      "longitude": 21.9093308,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "52-ni-nis-tc-delta-planet-bulevar-nemanjica-11b",
+      "name": "N SELECTION",
+      "address": "TC Delta Planet, Bulevar Nemanjića 11b",
+      "city": "Niš",
+      "citySlug": "nis",
+      "phone": "+381 62 237 683",
+      "email": "nis_nselection@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 43.3244068,
+      "longitude": 21.9093308,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "40-ni-nis-tc-delta-planet-bulevar-nemanjica-11b",
+      "name": "N FASHION",
+      "address": "TC Delta Planet, Bulevar Nemanjića 11b",
+      "city": "Niš",
+      "citySlug": "nis",
+      "phone": "+ 381 62 258 653",
+      "email": "nis_nfashion@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 43.3244068,
+      "longitude": 21.9093308,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "147ni-nis-tc-tempo-plus-bulevar-12-februar-br-80",
+      "name": "PUMA OUTLET",
+      "address": "TC Tempo plus, Bulevar 12. februar br. 80",
+      "city": "Niš",
+      "citySlug": "nis",
+      "phone": "+381 62 501 267",
+      "email": "pumaoutlet@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 43.337747,
+      "longitude": 21.880192,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "32-np-novi-pazar-28-novembra-52",
+      "name": "N SPORT<br>N FASHION",
+      "address": "28. novembra 52",
+      "city": "Novi Pazar",
+      "citySlug": "novi-pazar",
+      "phone": "+381 62 8031 404",
+      "email": "novipazar@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 43.140649,
+      "longitude": 20.5117699,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "81-ns-novi-sad-tc-big-fashion-bulevar-oslobo-enja-119",
+      "name": "N FASHION",
+      "address": "TC Big Fashion, Bulevar oslobođenja 119",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "phone": "+381 60 0800 943",
+      "email": "novisad6@n-sport.net",
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": 45.2472304,
+      "longitude": 19.837911,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "01-ns-novi-sad-tc-big-fashion-bulevar-oslobo-enja-119",
+      "name": "N SPORT",
+      "address": "TC Big Fashion, Bulevar oslobođenja 119",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "phone": "+381 62 800 81 41",
+      "email": "novisad1@n-sport.net",
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": 45.2471099,
+      "longitude": 19.8455184,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "82-ns-novi-sad-tc-big-fashion-bulevar-oslobo-enja-119",
+      "name": "LACOSTE",
+      "address": "TC Big Fashion, Bulevar oslobođenja 119",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "phone": "+381 60 0800 944",
+      "email": "novisad7@n-sport.net",
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": 45.2469584,
+      "longitude": 19.8396123,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "62-ns-novi-sad-tc-big-sentandrejski-put-11",
+      "name": "N SPORT",
+      "address": "TC BIG, Sentandrejski put 11",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "phone": "+381 62 204 815",
+      "email": "novisad5@n-sport.net",
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": 45.2919893,
+      "longitude": 19.8237078,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "101ns-novi-sad-tc-big-sentandrejski-put-11",
+      "name": "N SELECTION",
+      "address": "TC BIG, Sentandrejski put 11",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "phone": "+381 62 226 037",
+      "email": "novisad11@n-sport.net",
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": 45.2919893,
+      "longitude": 19.8237078,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "19-ns-novi-sad-tc-big-sentandrejski-put-11",
+      "name": "N FASHION",
+      "address": "TC BIG, Sentandrejski put 11",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "phone": "+381 63 8624 194",
+      "email": "novisad9@n-sport.net",
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": 45.2919893,
+      "longitude": 19.8237078,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "17-ns-novi-sad-tc-rodic-temerinski-put-50",
+      "name": "N SPORT",
+      "address": "TC Rodić, Temerinski put 50",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "phone": "+381 62 8008 161",
+      "email": "novisad3@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 45.3047843,
+      "longitude": 19.8330497,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "128ns-novi-sad-tc-rodic-temerinski-put-50",
+      "name": "N FASHION",
+      "address": "TC Rodić, Temerinski put 50",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "phone": "+381 62 601 547",
+      "email": "novisad12@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 45.3047843,
+      "longitude": 19.8330497,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "22-ns-novi-sad-trg-slobode-4",
+      "name": "N SPORT<br>N FASHION<br>N SELECTION",
+      "address": "Trg slobode 4",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "phone": "+381 62 8008 165",
+      "email": "novisad4@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 45.2547124,
+      "longitude": 19.8453142,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "78-ob-obrenovac-beograd-obrenovac-milosa-obrenovica-47",
+      "name": "N FASHION",
+      "address": "Miloša Obrenovića 47",
+      "city": "Obrenovac (Beograd-Obrenovac)",
+      "citySlug": "obrenovac-beograd-obrenovac",
+      "phone": "+381 60 0800 927",
+      "email": "obrenovac2@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 44.6519736,
+      "longitude": 20.1944169,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "100ob-obrenovac-beograd-obrenovac-tc-big-obrenovac-kralja-aleksandra-prvog-157",
+      "name": "N SPORT",
+      "address": "TC Big Obrenovac, Kralja Aleksandra Prvog 157",
+      "city": "Obrenovac (Beograd-Obrenovac)",
+      "citySlug": "obrenovac-beograd-obrenovac",
+      "phone": "+381 62 223 702",
+      "email": "obrenovac3@n-sport.net",
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": 44.6565813,
+      "longitude": 20.1989149,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "55-pa-pancevo-big-sc-pancevo-milosa-obrenovica-12",
+      "name": "N FASHION",
+      "address": "BIG SC Pančevo, Miloša Obrenovića 12",
+      "city": "Pančevo",
+      "citySlug": "pancevo",
+      "phone": "+381 63 274 954",
+      "email": "pancevo3@n-sport.net",
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": 44.8684089,
+      "longitude": 20.6597847,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "61-pa-pancevo-big-sc-pancevo-milosa-obrenovica-12",
+      "name": "N SPORT",
+      "address": "BIG SC Pančevo, Miloša Obrenovića 12",
+      "city": "Pančevo",
+      "citySlug": "pancevo",
+      "phone": "+381 60 0800 993",
+      "email": "pancevo4@n-sport.net",
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": 44.8684089,
+      "longitude": 20.6597847,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "10-pn-paracin-vozda-kara-or-a-10",
+      "name": "N SPORT<br>N FASHION",
+      "address": "Vožda Karađorđa 10",
+      "city": "Paraćin",
+      "citySlug": "paracin",
+      "phone": "+381 62 8008 153",
+      "email": "paracin@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 43.8584824,
+      "longitude": 21.4112002,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "104pi-pirot-puls-shopping-park-vojvode-misica-bb",
+      "name": "N SPORT<br>N FASHION",
+      "address": "Puls Shopping Park, Vojvode Mišića bb",
+      "city": "Pirot",
+      "citySlug": "pirot",
+      "phone": "+381 62 225 753",
+      "email": "pirot2@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 43.1606352,
+      "longitude": 22.5823845,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "80-po-pozarevac-stop-shop-ure-akovica-bb",
+      "name": "N SPORT",
+      "address": "Stop Shop, Đure Đakovića bb",
+      "city": "Požarevac",
+      "citySlug": "pozarevac",
+      "phone": "+381 60 0800 928",
+      "email": "pozarevac2@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 44.6058962,
+      "longitude": 21.163371,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "04-po-pozarevac-tabacka-carsija-9",
+      "name": "N FASHION",
+      "address": "Tabačka čaršija 9",
+      "city": "Požarevac",
+      "citySlug": "pozarevac",
+      "phone": "+381 62 8008 143",
+      "email": "pozarevac@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 44.619865,
+      "longitude": 21.184086,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "121pz-pozega-vojvode-misica-50",
+      "name": "N SPORT<br>N FASHION",
+      "address": "Vojvode Mišića 50",
+      "city": "Požega",
+      "citySlug": "pozega",
+      "phone": "+381 62 8008 074",
+      "email": "pozega@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 43.8445668,
+      "longitude": 20.0385573,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "132pk-prokuplje-tc-penta-park-vuka-stefanovica-karadzica-3i",
+      "name": "N SPORT<br>N FASHION",
+      "address": "TC Penta Park,Vuka Stefanovića Karadžića 3I",
+      "city": "Prokuplje",
+      "citySlug": "prokuplje",
+      "phone": "+381 63 275 768",
+      "email": "prokuplje@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 43.2498812,
+      "longitude": 21.6046928,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "84-ru-ruma-glavna-141",
+      "name": "N SPORT<br>N FASHION",
+      "address": "Glavna 141",
+      "city": "Ruma",
+      "citySlug": "ruma",
+      "phone": "+381 62 800 81 64",
+      "email": "ruma@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 45.00815,
+      "longitude": 19.82345,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "16-sa-sabac-kara-or-eva-4",
+      "name": "N SPORT",
+      "address": "Karađorđeva 4",
+      "city": "Šabac",
+      "citySlug": "sabac",
+      "phone": "+381 62 8008 159",
+      "email": "sabac@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 44.7566325,
+      "longitude": 19.6946432,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "124sa-sabac-masarikova-2",
+      "name": "N FASHION",
+      "address": "Masarikova 2",
+      "city": "Šabac",
+      "citySlug": "sabac",
+      "phone": "+381 62 608 245",
+      "email": "sabac3@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 44.7570309,
+      "longitude": 19.693752,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "34-sa-sabac-stop-shop-zapadna-transverzala-i-4",
+      "name": "N SPORT",
+      "address": "Stop Shop, Zapadna Transverzala I 4",
+      "city": "Šabac",
+      "citySlug": "sabac",
+      "phone": "+381 62 204 864",
+      "email": "sabac2@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 44.754056,
+      "longitude": 19.6616193,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "150sa-sabac-tc-big-cee-sabac-vojvoda-janka-stojicevica-3",
+      "name": "N FASHION",
+      "address": "TC BIG CEE Šabac,Vojvoda Janka Stojićevića 3",
+      "city": "Šabac",
+      "citySlug": "sabac",
+      "phone": "+381 62 603 991",
+      "email": "sabac4@n-sport.net",
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": 44.748636085956626,
+      "longitude": 19.705696886321743,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "28-sd-smederevo-kralja-petra-i-9",
+      "name": "N SPORT<br>N FASHION",
+      "address": "Kralja Petra I 9",
+      "city": "Smederevo",
+      "citySlug": "smederevo",
+      "phone": "+381 62 8008 132",
+      "email": "smederevo@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 44.6651306,
+      "longitude": 20.9245731,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "110so-sombor-kralja-petra-prvog-20",
+      "name": "N SPORT",
+      "address": "Kralja Petra Prvog 20",
+      "city": "Sombor",
+      "citySlug": "sombor",
+      "phone": "+381 62 204 603",
+      "email": "sombor2@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 45.772222,
+      "longitude": 19.1135929,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "13-so-sombor-laze-kostica-3",
+      "name": "N FASHION",
+      "address": "Laze Kostića 3",
+      "city": "Sombor",
+      "citySlug": "sombor",
+      "phone": "+381 62 8008 156",
+      "email": "sombor@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 45.7722592,
+      "longitude": 19.1147798,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "47-sm-sremska-mitrovica-stop-shop-bulevar-konstantina-velikog-74",
+      "name": "N SPORT",
+      "address": "Stop Shop, Bulevar Konstantina Velikog 74",
+      "city": "Sremska Mitrovica",
+      "citySlug": "sremska-mitrovica",
+      "phone": "+381 63 274 579",
+      "email": "smitrovica@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 44.977088,
+      "longitude": 19.5895511,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "127st-stara-pazova-vojacki-put-1a",
+      "name": "N SPORT",
+      "address": "Vojački put 1a",
+      "city": "Stara Pazova",
+      "citySlug": "stara-pazova",
+      "phone": "+381 62 8008 069",
+      "email": "starapazova@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 44.9546934,
+      "longitude": 20.1994928,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "39-su-subotica-stop-shop-segedinski-put-88a",
+      "name": "N SPORT",
+      "address": ", Stop Shop, Segedinski put 88a",
+      "city": "Subotica",
+      "citySlug": "subotica",
+      "phone": "+381 62 8008 166",
+      "email": "subotica2@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 46.1002822,
+      "longitude": 19.6979477,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "131ub-ub-stublenica-bb",
+      "name": "PRODAVNICA BR. 131 UB",
+      "address": "Stublenica bb",
+      "city": "Ub",
+      "citySlug": "ub",
+      "phone": "+381 62 204 459",
+      "email": "ub@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 44.4516257,
+      "longitude": 20.1052269,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "123ue-uzice-dimitrija-tucovica-44",
+      "name": "N SPORT",
+      "address": "Dimitrija Tucovića 44",
+      "city": "Užice",
+      "citySlug": "uzice",
+      "phone": "+381 62 607 975",
+      "email": "uzice2@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 43.8553689,
+      "longitude": 19.8434294,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "07-ue-uzice-dimitrija-tucovica-97",
+      "name": "N FASHION",
+      "address": "Dimitrija Tucovića 97",
+      "city": "Užice",
+      "citySlug": "uzice",
+      "phone": "+381 62 8008 146",
+      "email": "uzice@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 43.8555519,
+      "longitude": 19.8419114,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "11-va-valjevo-cika-ljubina-4-6",
+      "name": "N SPORT<br>N FASHION",
+      "address": "Čika Ljubina 4-6",
+      "city": "Valjevo",
+      "citySlug": "valjevo",
+      "phone": "+381 62 8008 154",
+      "email": "valjevo@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 44.2689164,
+      "longitude": 19.8847795,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "75-va-valjevo-stop-shop-uzun-mirkova-2g",
+      "name": "N SPORT",
+      "address": "Stop Shop, Uzun Mirkova 2g",
+      "city": "Valjevo",
+      "citySlug": "valjevo",
+      "phone": "+381 60 0800 865",
+      "email": "valjevo2@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 44.2704892,
+      "longitude": 19.8967503,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "105vr-vranje-kralja-stefana-prvovencanog-160",
+      "name": "N FASHION",
+      "address": "Kralja Stefana Prvovenčanog 160",
+      "city": "Vranje",
+      "citySlug": "vranje",
+      "phone": "+381 62 612 434",
+      "email": "vranje2@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 42.5508719,
+      "longitude": 21.8981187,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "58-vr-vranje-kralja-stefana-prvovencanog-51",
+      "name": "N SPORT",
+      "address": "Kralja Stefana Prvovenčanog 51",
+      "city": "Vranje",
+      "citySlug": "vranje",
+      "phone": "+381 62 8008 169",
+      "email": "vranje@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 42.5522307,
+      "longitude": 21.8990993,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "102vb-vrnjacka-banja-tc-zepterme-vrnjacka-12",
+      "name": "N SPORT<br>N FASHION",
+      "address": "TC Zepterme, Vrnjačka 12",
+      "city": "Vrnjačka Banja",
+      "citySlug": "vrnjacka-banja",
+      "phone": "+381 62 226 257",
+      "email": "vbanja@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 43.611884,
+      "longitude": 20.8921281,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "24-vs-vrsac-bulevar-milosa-obilica-bb",
+      "name": "N SPORT",
+      "address": "Bulevar Miloša Obilića bb",
+      "city": "Vršac",
+      "citySlug": "vrsac",
+      "phone": "+381 62 8008 167",
+      "email": "vrsac@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 45.1316955,
+      "longitude": 21.2856644,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "56-za-zajecar-stop-shop-cupiceva-2",
+      "name": "N SPORT",
+      "address": "Stop Shop, Čupićeva 2",
+      "city": "Zaječar",
+      "citySlug": "zajecar",
+      "phone": "+381 63 276 129",
+      "email": "zajecar@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 43.9020409,
+      "longitude": 22.2783203,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "108zl-zlatibor-miladina-pecinara-31a",
+      "name": "N FASHION",
+      "address": "Miladina Pećinara 31a",
+      "city": "Zlatibor",
+      "citySlug": "zlatibor",
+      "phone": "+381 62 203 794",
+      "email": "zlatibor@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 43.730264,
+      "longitude": 19.6969176,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "02-zr-zrenjanin-tc-big-zrenjanin-bagljas-zapad-5",
+      "name": "N FASHION",
+      "address": "TC BIG Zrenjanin, Bagljaš zapad 5",
+      "city": "Zrenjanin",
+      "citySlug": "zrenjanin",
+      "phone": "+381 62 8008 142",
+      "email": "zrenjanin@n-sport.net",
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": 45.3782849,
+      "longitude": 20.3528554,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "126zr-zrenjanin-tc-big-zrenjanin-bagljas-zapad-5",
+      "name": "N SPORT",
+      "address": "TC BIG Zrenjanin, Bagljaš zapad 5",
+      "city": "Zrenjanin",
+      "citySlug": "zrenjanin",
+      "phone": "+381 62 8008 067",
+      "email": "zrenjanin2@n-sport.net",
+      "shoppingCenterSlug": "big-fashion",
+      "latitude": 45.378029,
+      "longitude": 20.354347,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "112bg-zuce-tc-ava-shopping-park-astrid-lindgren-11",
+      "name": "N FASHION",
+      "address": "TC AVA Shopping Park, Astrid Lindgren 11",
+      "city": "Zuce",
+      "citySlug": "zuce",
+      "phone": "+381 60 0800 957",
+      "email": "avanfashion@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 44.7131312,
+      "longitude": 20.5593127,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "113bg-zuce-tc-ava-shopping-park-astrid-lindgren-11",
+      "name": "PUMA STORE",
+      "address": "TC AVA Shopping Park, Astrid Lindgren 11",
+      "city": "Zuce",
+      "citySlug": "zuce",
+      "phone": "+381 60 0800 985",
+      "email": "avapuma@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 44.7131312,
+      "longitude": 20.5593127,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    },
+    {
+      "path": "111bg-zuce-tc-ava-shopping-park-astrid-lindgren-11",
+      "name": "LACOSTE",
+      "address": "TC AVA Shopping Park, Astrid Lindgren 11",
+      "city": "Zuce",
+      "citySlug": "zuce",
+      "phone": "+381 60 0800 956",
+      "email": "avalacoste@n-sport.net",
+      "shoppingCenterSlug": null,
+      "latitude": 44.7131312,
+      "longitude": 20.5593127,
+      "storeUrl": "https://www.n-sport.net/gde-kupiti.html"
+    }
+  ]
+}

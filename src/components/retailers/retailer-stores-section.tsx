@@ -7,6 +7,7 @@ import { FadeIn } from "@/components/motion/fade-in";
 import { PremiumCard } from "@/components/ui/premium-card";
 import { buttonVariants } from "@/components/ui/button";
 import type { RetailerStore } from "@/types";
+import { resolveStoreExternalUrl } from "@/lib/data/imported-retailers";
 import { EXCLUDED_SHOPPING_CENTER_SLUGS } from "@/lib/data/shopping-centers";
 import { formatRetailerStoreCount } from "@/lib/format/sr-plural";
 import {
@@ -42,11 +43,13 @@ function buildCityOptions(stores: RetailerStore[]): CityOption[] {
 
 interface RetailerStoresSectionProps {
   retailerName: string;
+  retailerSlug: string;
   stores: RetailerStore[];
 }
 
 export function RetailerStoresSection({
   retailerName,
+  retailerSlug,
   stores,
 }: RetailerStoresSectionProps) {
   const cities = useMemo(() => buildCityOptions(stores), [stores]);
@@ -106,7 +109,12 @@ export function RetailerStoresSection({
             {formatRetailerStoreCount(filtered.length)} u gradu {selectedCity}
           </p>
           <div className="mt-8 grid gap-5 md:grid-cols-2">
-            {filtered.map((store, i) => (
+            {filtered.map((store, i) => {
+              const storeExternalUrl = resolveStoreExternalUrl(
+                store.storeUrl,
+                retailerSlug
+              );
+              return (
               <FadeIn key={store.id} delay={i * 0.05}>
                 <PremiumCard className="p-6">
                   <h3 className="font-display text-lg font-semibold">
@@ -161,9 +169,9 @@ export function RetailerStoresSection({
                         </p>
                       )}
                   </div>
-                  {store.storeUrl && (
+                  {storeExternalUrl && (
                     <a
-                      href={store.storeUrl}
+                      href={storeExternalUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={cn(
@@ -177,7 +185,8 @@ export function RetailerStoresSection({
                   )}
                 </PremiumCard>
               </FadeIn>
-            ))}
+            );
+            })}
           </div>
         </>
       )}

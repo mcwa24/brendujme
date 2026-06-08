@@ -98,6 +98,11 @@ export const retailerLogoImages: Record<string, RetailerLogoImage> = {
     sourceUrl: "bundled:urban-shop-logo",
     alt: "Urban Shop",
   },
+  "n-sport": {
+    src: "/logos/retailers/n-sport.png",
+    sourceUrl: "bundled:n-sport-logo",
+    alt: "N Sport",
+  },
 };
 
 export function getRetailerLogoImage(slug: string): RetailerLogoImage | undefined {

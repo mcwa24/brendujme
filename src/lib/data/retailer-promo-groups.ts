@@ -1,11 +1,15 @@
 import type { ImportedRetailerSlug } from "@/lib/data/imported-retailers";
 
 /**
- * Prodavci koji dele istu platformu / matičnu kompaniju — jedan baner po grupi.
+ * Prodavci koji dele istu platformu / matičnu kompaniju.
+ * emperor: jedan baner na home (Sport Vision / Buzz / Office dele shop)
  */
 const PROMO_GROUP_BY_RETAILER: Partial<Record<ImportedRetailerSlug, string>> = {
   "sport-vision": "emperor",
 };
+
+/** Grupe gde na home ide najviše jedan baner ukupno (ne po kampanji). */
+const SINGLE_BANNER_PROMO_GROUPS = new Set(["emperor"]);
 
 /** Koji slug predstavlja grupu na home baneru */
 const GROUP_PRIMARY_RETAILER: Record<string, ImportedRetailerSlug> = {
@@ -27,7 +31,17 @@ export function isPrimaryPromoRetailer(retailerSlug: string): boolean {
   return getPrimaryRetailerForPromoGroup(groupId) === retailerSlug;
 }
 
-/** Deljeni shop (npr. Emperor) — jedan baner za celu grupu, ne po prodavcu. */
-export function isSharedPromoGroup(retailerSlug: string): boolean {
+/** Član promo grupe (npr. Fashion Company pod F&F platformom). */
+export function isPromoGroupMember(retailerSlug: string): boolean {
   return getRetailerPromoGroupId(retailerSlug) !== retailerSlug;
+}
+
+/** Emperor i sl. — na home najviše jedan baner za celu grupu. */
+export function isSingleBannerPromoGroup(groupId: string): boolean {
+  return SINGLE_BANNER_PROMO_GROUPS.has(groupId);
+}
+
+/** @deprecated Koristi isSingleBannerPromoGroup */
+export function isSharedPromoGroup(retailerSlug: string): boolean {
+  return isSingleBannerPromoGroup(getRetailerPromoGroupId(retailerSlug));
 }

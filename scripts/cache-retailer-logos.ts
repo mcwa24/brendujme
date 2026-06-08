@@ -36,6 +36,11 @@ const BUNDLED_URBAN_SHOP = path.join(
   process.cwd(),
   "assets/urban-shop/urban-shop-logo.png"
 );
+const BUNDLED_N_SPORT = path.join(process.cwd(), "assets/n-sport/n-sport-logo.png");
+const BUNDLED_N_SPORT_FALLBACK = path.join(
+  process.cwd(),
+  "../.cursor/projects/Users-ivanmarcetic-Library-Mobile-Documents-com-apple-CloudDocs-Projects-brendujme/assets/deltacity-logo-n-sport-fcac4d53-ac23-4b59-af34-34b261ee86b9.png"
+);
 
 async function download(url: string, dest: string): Promise<boolean> {
   const res = await fetch(url, {
@@ -119,6 +124,15 @@ async function main() {
         console.log(`✓ ${slug} → ${fileName} (bundled)`);
       } else {
         console.error(`✗ ${slug}: nedostaje assets/urban-shop/urban-shop-logo.png`);
+      }
+      continue;
+    }
+
+    if (slug === "n-sport" && meta.sourceUrl.startsWith("bundled:")) {
+      if (await copyFirstExisting([BUNDLED_N_SPORT, BUNDLED_N_SPORT_FALLBACK], dest)) {
+        console.log(`✓ ${slug} → ${fileName} (bundled)`);
+      } else {
+        console.error(`✗ ${slug}: nedostaje assets/n-sport/n-sport-logo.png`);
       }
       continue;
     }

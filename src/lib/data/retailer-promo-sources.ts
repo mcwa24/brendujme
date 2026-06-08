@@ -44,17 +44,10 @@ export const RETAILER_PROMO_SOURCES: RetailerPromoSource[] = [
     ],
   },
   {
-    retailerSlug: "fashion-friends",
+    retailerSlug: "fashion-company",
     urls: [
       "https://www.fashionandfriends.com/rs/",
       "https://www.fashionandfriends.com/rs/akcije",
-    ],
-  },
-  {
-    retailerSlug: "fashion-company",
-    urls: [
-      "https://www.fashioncompany.rs/",
-      "https://www.fashioncompany.rs/akcije",
     ],
   },
   {
@@ -69,11 +62,32 @@ export const RETAILER_PROMO_SOURCES: RetailerPromoSource[] = [
     ],
   },
   {
+    retailerSlug: "n-sport",
+    urls: [
+      "https://www.n-sport.net/",
+      "https://www.n-sport.net/promos/",
+    ],
+  },
+  {
     retailerSlug: "sport-time",
     urls: ["https://www.nike.com/rs/"],
   },
   {
     retailerSlug: "lpp",
-    urls: ["https://www.reserved.com/rs/sr/"],
+    urls: [
+      "https://www.reserved.com/rs/sr/",
+      "https://www.sinsay.com/rs/sr/",
+      "https://www.mohito.com/rs/sr/",
+      "https://www.cropp.com/rs/sr/",
+      "https://www.housebrand.com/rs/sr/",
+    ],
+  },
+  {
+    retailerSlug: "inditex",
+    urls: [
+      "https://www.zara.com/rs/",
+      "https://www.bershka.com/rs/",
+      "https://www.pullandbear.com/rs/",
+    ],
   },
 ];

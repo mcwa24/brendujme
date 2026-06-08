@@ -421,10 +421,7 @@ export function getBrandBySlug(slug: string): Brand | undefined {
   return brands.find((b) => b.slug === slug);
 }
 
-const FEATURED_EXCLUDED_RETAILERS = new Set([
-  "fashion-company",
-  "fashion-friends",
-]);
+const FEATURED_EXCLUDED_RETAILERS = new Set(["fashion-company"]);
 
 const HOME_FEATURED_EXCLUDED_BRANDS = new Set(["house", "mohito"]);
 

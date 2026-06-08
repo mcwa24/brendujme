@@ -2,7 +2,11 @@ import type { Retailer } from "@/types";
 import { brands as staticBrands } from "@/lib/data/brands";
 import { fashionRetailers } from "@/lib/data/fashion-retailers";
 import { fashionSportRetailers } from "@/lib/data/fashion-sport-retailers";
-import { uniqueModniCatalogBrandSlugs } from "@/lib/data/modni-retailer-brands";
+import {
+  countModniScrapedBrands,
+  isModniBrandSlug,
+  uniqueModniScrapedBrandSlugs,
+} from "@/lib/data/modni-retailer-brands";
 import { IMPORTED_RETAILER_SLUGS, sortImportedRetailers } from "@/lib/data/imported-retailers";
 
 const catalogBySlug = new Map(staticBrands.map((b) => [b.slug, b]));
@@ -11,15 +15,17 @@ function catalogBrandSlugs(
   retailerSlug: string,
   fallbackSlugs: string[] = []
 ): string[] {
-  const fromScrape = uniqueModniCatalogBrandSlugs(retailerSlug, catalogBySlug);
+  const fromScrape = uniqueModniScrapedBrandSlugs(retailerSlug, catalogBySlug);
   if (fromScrape.length) return fromScrape;
-  return fallbackSlugs.filter((s) => catalogBySlug.has(s));
+  return fallbackSlugs.filter((s) => isModniBrandSlug(s));
 }
 
 function catalogBrandCount(
   retailerSlug: string,
   fallbackSlugs: string[] = []
 ): number {
+  const scrapedCount = countModniScrapedBrands(retailerSlug, catalogBySlug);
+  if (scrapedCount) return scrapedCount;
   return catalogBrandSlugs(retailerSlug, fallbackSlugs).length;
 }
 
@@ -87,6 +93,15 @@ const importedRetailers: Retailer[] = [
     city: "Beograd",
     brandCount: catalogBrandCount("urban-shop"),
     brandSlugs: catalogBrandSlugs("urban-shop"),
+  },
+  {
+    slug: "n-sport",
+    name: "N Sport",
+    description:
+      "Najveća mreža sportskih i modnih prodavnica u Srbiji — Nike, Puma, Adidas, Timberland, Tommy Hilfiger i dr. u 100+ lokacija.",
+    city: "Beograd",
+    brandCount: catalogBrandCount("n-sport"),
+    brandSlugs: catalogBrandSlugs("n-sport"),
   },
 ];
 

@@ -114,6 +114,17 @@ export const fashionAndFriendsBrands: FashionAndFriendsBrand[] = FF_BRAND_SLUGS.
   })
 );
 
+/** Za SCRAPED_BY_RETAILER — kompletan F&F direktorijum */
+export const fashionFriendsScrapedBrands = fashionAndFriendsBrands
+  .filter((b): b is FashionAndFriendsBrand & { bilbordSlug: string } =>
+    Boolean(b.bilbordSlug)
+  )
+  .map((b) => ({
+    slug: b.bilbordSlug,
+    name: b.name,
+    productUrl: b.url,
+  }));
+
 export const fashionAndFriendsMeta = {
   website: "https://www.fashionandfriends.com/rs/",
   brandsUrl: `${FF_BASE}/`,

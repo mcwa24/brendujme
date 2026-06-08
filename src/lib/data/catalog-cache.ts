@@ -7,7 +7,7 @@ export const CATALOG_REVALIDATE_SECONDS = 3600;
  * Povećaj posle seed-a novog prodavca/brendova — `unstable_cache` ključevi uključuju ovu verziju.
  * Alternativa: POST /api/revalidate-catalog (poziva se iz seed skripti).
  */
-export const CATALOG_CACHE_VERSION = "v9";
+export const CATALOG_CACHE_VERSION = "v14";
 
 export const CATALOG_CACHE_TAGS = [
   "catalog",

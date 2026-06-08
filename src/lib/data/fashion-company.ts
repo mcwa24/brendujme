@@ -6,11 +6,9 @@
  * Poslednja verifikacija: jun 2026
  */
 
+import { fashionFriendsScrapedBrands } from "@/lib/data/fashion-and-friends";
 import { bilbordSlugFromBrandName } from "@/lib/data/ff-brand-slugs";
-import { brands as staticBrands } from "@/lib/data/brands";
 import type { Retailer } from "@/types";
-
-const catalogBySlug = new Map(staticBrands.map((b) => [b.slug, b]));
 
 export interface FashionCompanyBrand {
   name: string;
@@ -242,19 +240,47 @@ export const fashionCompanyStores: FashionCompanyStore[] = [
   },
 ];
 
-const fashionCompanyBrandSlugs = [
-  ...new Set(
-    fashionCompanyBrands
-      .map((b) => b.slug ?? bilbordSlugFromBrandName(b.name))
-      .filter((s): s is string => Boolean(s && catalogBySlug.has(s)))
-  ),
-];
+function mergeScrapedBrandEntries(
+  ...lists: { slug: string; name: string; productUrl: string }[][]
+): { slug: string; name: string; productUrl: string }[] {
+  const bySlug = new Map<string, { slug: string; name: string; productUrl: string }>();
+  for (const list of lists) {
+    for (const entry of list) {
+      if (!bySlug.has(entry.slug)) bySlug.set(entry.slug, entry);
+    }
+  }
+  return [...bySlug.values()].sort((a, b) =>
+    a.name.localeCompare(b.name, "sr")
+  );
+}
+
+const portfolioScrapedBrands = fashionCompanyBrands
+  .map((b) => {
+    const slug = b.slug ?? bilbordSlugFromBrandName(b.name);
+    if (!slug) return null;
+    return {
+      slug,
+      name: b.name,
+      productUrl: "https://www.fashioncompany.rs/brands/",
+    };
+  })
+  .filter((b): b is { slug: string; name: string; productUrl: string } =>
+    Boolean(b)
+  );
+
+/** FC portfolio + F&F multibrand katalog — jedan prodavac na Bilbordu */
+export const fashionCompanyScrapedBrands = mergeScrapedBrandEntries(
+  portfolioScrapedBrands,
+  fashionFriendsScrapedBrands
+);
+
+const fashionCompanyBrandSlugs = fashionCompanyScrapedBrands.map((b) => b.slug);
 
 export const fashionCompanyRetailer: Retailer = {
   slug: "fashion-company",
   name: "Fashion Company",
   description:
-    "Najveći distributer međunarodnih modnih brenda u regionu — mono-brand prodavnice, Fashion&Friends i premium lokacije u Srbiji.",
+    "Najveći distributer međunarodnih modnih brenda u regionu — mono-brand prodavnice, multibrand Fashion&Friends lokacije i premium adrese u Srbiji.",
   city: "Novi Beograd",
   brandCount: fashionCompanyBrandSlugs.length,
   brandSlugs: fashionCompanyBrandSlugs,
@@ -267,7 +293,7 @@ export const fashionCompanyMeta = {
   headquarters: "Bulevar Mihajla Pupina 115b, 11070 Novi Beograd",
   phone: "+381 11 3532 497",
   storeCount: fashionCompanyStores.length,
-  brandCount: fashionCompanyBrands.length,
+  brandCount: fashionCompanyScrapedBrands.length,
   lastSynced: "2026-06-04",
 };
 

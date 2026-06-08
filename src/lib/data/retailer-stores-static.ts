@@ -7,6 +7,7 @@ import fashionScraped from "./fast-fashion-serbia-scraped.json";
 import officeScraped from "./office-shoes-scraped.json";
 import nikeScraped from "./nike-serbia-scraped.json";
 import tikeScraped from "./tike-scraped.json";
+import nSportScraped from "./n-sport-scraped.json";
 import urbanShopScraped from "./urban-shop-scraped.json";
 import { isPublishedShoppingCenterSlug } from "@/lib/data/shopping-centers";
 import type { RetailerStore } from "@/types";
@@ -110,7 +111,6 @@ const STATIC_STORES: Record<string, RetailerStore[]> = {
         : null,
       storeUrl: s.storeUrl,
     })),
-  "fashion-friends": mapFsStores("fashion-friends"),
   tike: tikeScraped.stores.map((s) =>
     mapStore(
       {
@@ -139,14 +139,64 @@ const STATIC_STORES: Record<string, RetailerStore[]> = {
       "urban-shop"
     )
   ),
-  "fashion-company": mapFsStores("fashion-company"),
+  "n-sport": nSportScraped.stores.map((s) =>
+    mapStore(
+      {
+        slug: s.path,
+        name: s.name,
+        address: s.address,
+        city: s.city,
+        phone: s.phone,
+        email: s.email,
+        shoppingCenterSlug: s.shoppingCenterSlug,
+        latitude: s.latitude,
+        longitude: s.longitude,
+        storeUrl: s.storeUrl,
+      },
+      "n-sport"
+    )
+  ),
+  "fashion-company": mapFashionCompanyStores(),
 };
 
-function mapFsStores(retailerSlug: string): RetailerStore[] {
-  return fsScraped.stores
-    .filter((s) => s.retailerSlug === retailerSlug)
-    .map((s, i) => ({
-      id: `${retailerSlug}-${i}`,
+function isFashionAndFriendsStoreName(name: string): boolean {
+  return /fashion\s*&\s*friends/i.test(name);
+}
+
+function fashionCompanyStoreKey(store: {
+  name: string;
+  address: string;
+  city: string;
+}): string {
+  if (isFashionAndFriendsStoreName(store.name)) {
+    return `ff:${store.address.toLowerCase()}|${store.city.toLowerCase()}`;
+  }
+  return `store:${store.name.toLowerCase()}|${store.address.toLowerCase()}|${store.city.toLowerCase()}`;
+}
+
+function mapFashionCompanyStores(): RetailerStore[] {
+  const seen = new Set<string>();
+  const stores: RetailerStore[] = [];
+
+  const fcStores = fsScraped.stores.filter(
+    (s) =>
+      s.retailerSlug === "fashion-company" ||
+      s.retailerSlug === "fashion-friends"
+  );
+
+  const sorted = [...fcStores].sort((a, b) => {
+    const aFf = a.retailerSlug === "fashion-friends" ? 0 : 1;
+    const bFf = b.retailerSlug === "fashion-friends" ? 0 : 1;
+    return aFf - bFf;
+  });
+
+  for (const s of sorted) {
+    const key = fashionCompanyStoreKey(s);
+    if (seen.has(key)) continue;
+    seen.add(key);
+
+    stores.push({
+      id: `fashion-company-${stores.length}`,
       name: s.name,
       address: s.address,
       city: s.city,
@@ -157,7 +207,10 @@ function mapFsStores(retailerSlug: string): RetailerStore[] {
         ? (MALL_NAMES[s.shoppingCenterSlug] ?? null)
         : null,
       storeUrl: s.storeUrl,
-    }));
+    });
+  }
+
+  return stores;
 }
 
 export function getStaticRetailerStores(retailerSlug: string): RetailerStore[] {

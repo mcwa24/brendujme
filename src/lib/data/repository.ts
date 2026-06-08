@@ -11,6 +11,7 @@ import { fashionCompanyRetailer } from "@/lib/data/fashion-company";
 import { getRetailerCatalogMeta } from "@/lib/data/retailer-catalog-meta";
 import {
   getScrapedBrandsForRetailer,
+  scrapedBrandToStub,
   uniqueScrapedBrandSlugs,
 } from "@/lib/data/retailer-scraped-brands";
 import {
@@ -150,9 +151,16 @@ export const getRetailerPageBrands = cache(
     if (!scraped?.length) {
       const retailer = await getRetailerBySlug(retailerSlug);
       if (!retailer) return [];
-      return sortBrandsByName(
-        filterModniBrands(await getBrandsBySlugs(retailer.brandSlugs))
-      );
+      const brands: Brand[] = [];
+      for (const slug of retailer.brandSlugs) {
+        const catalog = bySlug.get(slug);
+        brands.push(
+          catalog ?? {
+            ...scrapedBrandToStub({ slug, name: slug }),
+          }
+        );
+      }
+      return sortBrandsByName(filterModniBrands(brands));
     }
 
     const modniEntries = filterModniScrapedEntries(scraped, retailerSlug, bySlug);
@@ -160,17 +168,14 @@ export const getRetailerPageBrands = cache(
 
     for (const entry of modniEntries) {
       const catalog = bySlug.get(entry.slug);
-      if (catalog) brands.push(catalog);
+      brands.push(catalog ?? scrapedBrandToStub(entry));
     }
 
     return sortBrandsByName(brands);
   }
 );
 
-const FEATURED_EXCLUDED_RETAILERS = new Set([
-  "fashion-company",
-  "fashion-friends",
-]);
+const FEATURED_EXCLUDED_RETAILERS = new Set(["fashion-company"]);
 
 const HOME_FEATURED_EXCLUDED_BRANDS = new Set(["house", "mohito"]);
 

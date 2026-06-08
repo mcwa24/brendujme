@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { ExternalLink, MapPin } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
@@ -43,6 +43,9 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function RetailerPage({ params }: PageProps) {
   const { slug } = await params;
+  if (slug === "fashion-friends") {
+    redirect("/retailers/fashion-company");
+  }
   const retailer = await getRetailerBySlug(slug);
   if (!retailer) notFound();
 
@@ -103,6 +106,7 @@ export default async function RetailerPage({ params }: PageProps) {
             </FadeIn>
             <RetailerStoresSection
               retailerName={retailer.name}
+              retailerSlug={slug}
               stores={stores}
             />
           </section>
