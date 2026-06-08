@@ -23,13 +23,13 @@ export function HeroSection({ stats }: HeroSectionProps) {
           <div className="flex min-w-0 flex-col justify-center">
             <FadeIn>
               <h1 className="font-display max-w-4xl text-[1.75rem] font-semibold leading-[1.18] text-foreground sm:text-4xl sm:leading-[1.12] md:text-6xl md:leading-[1.05] lg:text-[4.5rem] lg:leading-[1.02]">
-                Sve modne adrese na jednom mestu
+                Gde kupiti modne brendove
               </h1>
             </FadeIn>
             <FadeIn delay={0.1}>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted md:mt-6 md:text-lg lg:text-xl">
-                Vodič kroz fashion brendove — od patika i streetweara do premium
-                odeće, uz akcije, popuste i promocije.
+                Patike, streetwear i premium u Srbiji — prodavci, lokacije i
+                aktuelne akcije.
               </p>
             </FadeIn>
             <FadeIn delay={0.2} when="mount" className="mt-10">
