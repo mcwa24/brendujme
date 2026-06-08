@@ -32,6 +32,10 @@ const BUNDLED_FULL_FALLBACK = path.join(
   process.cwd(),
   "../.cursor/projects/Users-ivanmarcetic-Library-Mobile-Documents-com-apple-CloudDocs-Projects-brendujme/assets/fashion-company-4049f25c-2509-420c-862d-562dddcd7332.png"
 );
+const BUNDLED_URBAN_SHOP = path.join(
+  process.cwd(),
+  "assets/urban-shop/urban-shop-logo.png"
+);
 
 async function download(url: string, dest: string): Promise<boolean> {
   const res = await fetch(url, {
@@ -106,6 +110,15 @@ async function main() {
         console.log(`✓ ${slug} → ${fileName} (kopija logos/cache/nike.jpg)`);
       } catch {
         console.error(`✗ ${slug}: preuzimanje i fallback nisu uspeli`);
+      }
+      continue;
+    }
+
+    if (slug === "urban-shop" && meta.sourceUrl.startsWith("bundled:")) {
+      if (await copyFirstExisting([BUNDLED_URBAN_SHOP], dest)) {
+        console.log(`✓ ${slug} → ${fileName} (bundled)`);
+      } else {
+        console.error(`✗ ${slug}: nedostaje assets/urban-shop/urban-shop-logo.png`);
       }
       continue;
     }

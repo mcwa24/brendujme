@@ -1,41 +1,12 @@
-import buzzScraped from "@/lib/data/buzz-sneakers-scraped.json";
-import djakScraped from "@/lib/data/djak-sport-scraped.json";
-import scrapedFashion from "@/lib/data/fast-fashion-serbia-scraped.json";
-import scrapedFs from "@/lib/data/fashion-sport-serbia-scraped.json";
-import nikeScraped from "@/lib/data/nike-serbia-scraped.json";
-import officeScraped from "@/lib/data/office-shoes-scraped.json";
-import planetaScraped from "@/lib/data/planeta-sport-scraped.json";
-import sportVisionScraped from "@/lib/data/sport-vision-scraped.json";
-import tikeScraped from "@/lib/data/tike-scraped.json";
+import { IMPORTED_RETAILER_SLUGS } from "@/lib/data/imported-retailers";
+import { getAllStaticStoreCityRows } from "@/lib/data/retailer-stores-static";
 import { getRetailerCatalogMeta } from "@/lib/data/retailer-catalog-meta";
 
+/** Svi uvezeni prodavci + Fashion Company (poseban zapis) */
 const CATALOG_RETAILER_SLUGS = [
   "fashion-company",
-  "fashion-friends",
-  "tike",
-  "buzz-sneakers",
-  "office-shoes",
-  "sport-time",
-  "djak-sport",
-  "sport-vision",
-  "planeta-sport",
-  "inditex",
-  "lpp",
+  ...IMPORTED_RETAILER_SLUGS,
 ] as const;
-
-type StoreRow = { city?: string };
-
-const ALL_STORE_ROWS: StoreRow[] = [
-  ...scrapedFs.stores,
-  ...scrapedFashion.stores,
-  ...djakScraped.stores,
-  ...buzzScraped.stores,
-  ...officeScraped.stores,
-  ...planetaScraped.stores,
-  ...sportVisionScraped.stores,
-  ...tikeScraped.stores,
-  ...nikeScraped.stores,
-];
 
 /** Ukupan broj prodajnih lokacija iz sinhronizovanih retailer kataloga. */
 export function getCatalogStoreCount(): number {
@@ -44,10 +15,10 @@ export function getCatalogStoreCount(): number {
   }, 0);
 }
 
-/** Jedinstveni gradovi iz scrape podataka prodavnica. */
+/** Jedinstveni gradovi iz statičkih scrape podataka prodavnica. */
 export function getCatalogStoreCityCount(): number {
   const cities = new Set<string>();
-  for (const store of ALL_STORE_ROWS) {
+  for (const store of getAllStaticStoreCityRows()) {
     const city = store.city?.trim();
     if (city) cities.add(city);
   }

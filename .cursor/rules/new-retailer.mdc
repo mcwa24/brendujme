@@ -1,0 +1,53 @@
+---
+description: Obavezna checklista kad se dodaje novi prodavac — scrape, sajt, cron, logoi
+alwaysApply: true
+---
+
+# Novi prodavac — uradi SVE odjednom
+
+Kad korisnik traži novog prodavca, ne smeš završiti samo sa scrape/seed skriptom. Prodavac i njegovi brendovi moraju odmah raditi na celom sajtu.
+
+## 1. Scrape + seed
+- `scripts/scrape-{slug}.ts` → `src/lib/data/{slug}-scraped.json`
+- `scripts/seed-{slug}.ts` + `package.json` (`scrape:*`, `db:seed:*`)
+- `src/lib/data/{slug}-brand-slugs.ts`
+- `src/lib/data/{slug}.ts` (meta + brendovi)
+- `brand-countries.ts` — zemlje za nove brendove
+
+## 2. Registri na sajtu (obavezno)
+| Fajl | Šta |
+|------|-----|
+| `imported-retailers.ts` | `IMPORTED_RETAILER_SLUGS` + `IMPORTED_RETAILER_EXTERNAL` |
+| `retailer-scraped-brands.ts` | `SCRAPED_BY_RETAILER` |
+| `retailers.ts` | statički fallback zapis |
+| `retailer-catalog-meta.ts` | meta bar na `/retailers/[slug]` |
+| `retailer-stores-static.ts` | radnje (fallback bez Supabase) |
+| `retailer-logo-images.ts` | logo prodavca |
+| `brand-offerings.ts` | `RETAILER_OFFERING_FOCUS` (+ `BRAND_AT_RETAILER` za poznate brendove) |
+| `retailer-promo-sources.ts` | **cron akcija / sale** |
+
+`home-location-stats.ts` i `/retailers` lista koriste `IMPORTED_RETAILER_SLUGS` automatski — ne treba ručno.
+
+## 3. Logoi brendova
+```bash
+npm run logos:{slug}   # keš + Supabase Photos + brands.logo_url
+```
+
+## 4. Katalog keš (obavezno posle seed-a)
+Next.js kešira brendove/prodavce (`catalog-cache.ts`). Bez osveženja sajt pokazuje stare brojeve.
+
+```bash
+npx tsx scripts/revalidate-catalog.ts   # ili restart dev servera
+```
+
+Seed skripte pozivaju revalidaciju automatski ako je `BRANDS_CRON_SECRET` / `CRON_SECRET` u `.env.local`.
+
+## 5. Pokreni i proveri
+```bash
+npm run scrape:{slug}
+npm run db:seed:{slug}
+npm run logos:{slug}
+npx tsx scripts/verify-retailer-alignment.ts
+```
+
+`verify-retailer-alignment.ts` pada ako scraped prodavac fali u bilo kom registru iz tabele iznad.

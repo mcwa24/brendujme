@@ -1,5 +1,6 @@
 import { buzzSneakersMeta } from "@/lib/data/buzz-sneakers";
 import { tikeMeta } from "@/lib/data/tike";
+import { urbanShopMeta } from "@/lib/data/urban-shop";
 import { fashionCompanyMeta } from "@/lib/data/fashion-company";
 import { fashionAndFriendsMeta } from "@/lib/data/fashion-and-friends";
 import { IMPORTED_RETAILER_EXTERNAL } from "@/lib/data/imported-retailers";
@@ -52,6 +53,15 @@ const CATALOG_META: Record<string, RetailerCatalogMeta> = {
     sourceLabel: "tike.rs/brendovi",
     website: IMPORTED_RETAILER_EXTERNAL.tike.website,
     websiteLabel: IMPORTED_RETAILER_EXTERNAL.tike.websiteLabel,
+  },
+  "urban-shop": {
+    brandCount: urbanShopMeta.brandCount,
+    storeCount: urbanShopMeta.storeCount,
+    lastSynced: syncedFromIso(urbanShopMeta.scrapedAt),
+    sourceUrl: urbanShopMeta.brandsUrl,
+    sourceLabel: "urbanshop.rs/brands",
+    website: IMPORTED_RETAILER_EXTERNAL["urban-shop"].website,
+    websiteLabel: IMPORTED_RETAILER_EXTERNAL["urban-shop"].websiteLabel,
   },
   "buzz-sneakers": {
     brandCount: buzzSneakersMeta.brandCount,
@@ -129,4 +139,8 @@ const CATALOG_META: Record<string, RetailerCatalogMeta> = {
 
 export function getRetailerCatalogMeta(slug: string): RetailerCatalogMeta | null {
   return CATALOG_META[slug] ?? null;
+}
+
+export function getRetailerCatalogMetaSlugs(): string[] {
+  return Object.keys(CATALOG_META).sort((a, b) => a.localeCompare(b, "sr"));
 }

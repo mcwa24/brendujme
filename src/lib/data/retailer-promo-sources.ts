@@ -6,7 +6,10 @@ export interface RetailerPromoSource {
   urls: string[];
 }
 
-/** Izvori za automatsko prepoznavanje akcija (cron: npm run promotions:detect) */
+/**
+ * Izvori za automatsko prepoznavanje akcija (cron: npm run promotions:detect).
+ * Svaki novi scraped prodavac MORA biti ovde — vidi .cursor/rules/new-retailer.mdc
+ */
 export const RETAILER_PROMO_SOURCES: RetailerPromoSource[] = [
   {
     retailerSlug: "buzz-sneakers",
@@ -57,6 +60,13 @@ export const RETAILER_PROMO_SOURCES: RetailerPromoSource[] = [
   {
     retailerSlug: "tike",
     urls: ["https://www.tike.rs/", "https://www.tike.rs/akcije"],
+  },
+  {
+    retailerSlug: "urban-shop",
+    urls: [
+      "https://www.urbanshop.rs/",
+      "https://www.urbanshop.rs/catalog/najnoviji-proizvodi",
+    ],
   },
   {
     retailerSlug: "sport-time",

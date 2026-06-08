@@ -4,6 +4,7 @@ import { officeShoesBrands } from "@/lib/data/office-shoes";
 import { planetaSportBrands } from "@/lib/data/planeta-sport";
 import { sportVisionBrands } from "@/lib/data/sport-vision";
 import { tikeBrands } from "@/lib/data/tike";
+import { urbanShopBrands } from "@/lib/data/urban-shop";
 import type { Brand, PriceSegment } from "@/types";
 
 export interface ScrapedRetailerBrandEntry {
@@ -13,19 +14,24 @@ export interface ScrapedRetailerBrandEntry {
   productUrl?: string;
 }
 
-const SCRAPED_BY_RETAILER: Record<string, ScrapedRetailerBrandEntry[]> = {
+export const SCRAPED_BY_RETAILER: Record<string, ScrapedRetailerBrandEntry[]> = {
   "buzz-sneakers": buzzSneakersBrands,
   "office-shoes": officeShoesBrands,
   "djak-sport": djakSportBrands,
   "sport-vision": sportVisionBrands,
   "planeta-sport": planetaSportBrands,
   tike: tikeBrands,
+  "urban-shop": urbanShopBrands,
 };
 
 export function getScrapedBrandsForRetailer(
   retailerSlug: string
 ): ScrapedRetailerBrandEntry[] | undefined {
   return SCRAPED_BY_RETAILER[retailerSlug];
+}
+
+export function getScrapedRetailerSlugs(): string[] {
+  return Object.keys(SCRAPED_BY_RETAILER).sort((a, b) => a.localeCompare(b, "sr"));
 }
 
 export function uniqueScrapedBrandSlugs(

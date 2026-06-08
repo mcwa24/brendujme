@@ -7,6 +7,7 @@ import fashionScraped from "./fast-fashion-serbia-scraped.json";
 import officeScraped from "./office-shoes-scraped.json";
 import nikeScraped from "./nike-serbia-scraped.json";
 import tikeScraped from "./tike-scraped.json";
+import urbanShopScraped from "./urban-shop-scraped.json";
 import { isPublishedShoppingCenterSlug } from "@/lib/data/shopping-centers";
 import type { RetailerStore } from "@/types";
 
@@ -124,6 +125,20 @@ const STATIC_STORES: Record<string, RetailerStore[]> = {
       "tike"
     )
   ),
+  "urban-shop": urbanShopScraped.stores.map((s) =>
+    mapStore(
+      {
+        slug: s.path,
+        name: s.name,
+        address: s.address,
+        city: s.city,
+        phone: s.phone,
+        email: s.email,
+        storeUrl: s.storeUrl,
+      },
+      "urban-shop"
+    )
+  ),
   "fashion-company": mapFsStores("fashion-company"),
 };
 
@@ -147,4 +162,12 @@ function mapFsStores(retailerSlug: string): RetailerStore[] {
 
 export function getStaticRetailerStores(retailerSlug: string): RetailerStore[] {
   return STATIC_STORES[retailerSlug] ?? [];
+}
+
+export function getStaticRetailerStoreSlugs(): string[] {
+  return Object.keys(STATIC_STORES).sort((a, b) => a.localeCompare(b, "sr"));
+}
+
+export function getAllStaticStoreCityRows(): { city?: string }[] {
+  return Object.values(STATIC_STORES).flat();
 }

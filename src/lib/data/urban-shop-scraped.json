@@ -1,0 +1,157 @@
+{
+  "scrapedAt": "2026-06-08T11:59:51.550Z",
+  "sourceUrl": "https://www.urbanshop.rs/brands",
+  "brandsUrl": "https://www.urbanshop.rs/brands",
+  "storesUrl": "https://www.urbanshop.rs/info/prodavnice-beograd-i-novi-sad",
+  "retailerSlug": "urban-shop",
+  "retailerName": "Urban Shop",
+  "brands": [
+    {
+      "urbanSlug": "alpha-industries-11000230",
+      "name": "Alpha Industries",
+      "slug": "alpha-industries",
+      "logoUrl": "https://c.cdnmp.net/223810479/brands/11000230_logo.png?rv=1773657991",
+      "productUrl": "https://www.urbanshop.rs/catalog/brand/alpha-industries-11000230"
+    },
+    {
+      "urbanSlug": "bench-11000240",
+      "name": "Bench",
+      "slug": "bench",
+      "logoUrl": "https://c.cdnmp.net/223810479/brands/11000240_logo.png?rv=1754992385",
+      "productUrl": "https://www.urbanshop.rs/catalog/brand/bench-11000240"
+    },
+    {
+      "urbanSlug": "cat-bags-11000241",
+      "name": "CAT Bags",
+      "slug": "cat-bags",
+      "logoUrl": "https://c.cdnmp.net/223810479/brands/11000241_logo.png?rv=1755075946",
+      "productUrl": "https://www.urbanshop.rs/catalog/brand/cat-bags-11000241"
+    },
+    {
+      "urbanSlug": "cat-footwear-11000250",
+      "name": "CAT Footwear",
+      "slug": "cat-footwear",
+      "logoUrl": "https://c.cdnmp.net/223810479/brands/11000250_logo.png?rv=1754906128",
+      "productUrl": "https://www.urbanshop.rs/catalog/brand/cat-footwear-11000250"
+    },
+    {
+      "urbanSlug": "dr-martens-11000229",
+      "name": "Dr. Martens",
+      "slug": "dr-martens",
+      "logoUrl": "https://c.cdnmp.net/223810479/brands/11000229_logo.jpg?rv=1779795617",
+      "productUrl": "https://www.urbanshop.rs/catalog/brand/dr-martens-11000229"
+    },
+    {
+      "urbanSlug": "dvs-shoes-11000236",
+      "name": "DVS Shoes",
+      "slug": "dvs-shoes",
+      "logoUrl": "https://c.cdnmp.net/223810479/brands/11000236_logo.png?rv=1755076061",
+      "productUrl": "https://www.urbanshop.rs/catalog/brand/dvs-shoes-11000236"
+    },
+    {
+      "urbanSlug": "etnies-11000234",
+      "name": "Etnies",
+      "slug": "etnies",
+      "logoUrl": "https://c.cdnmp.net/223810479/brands/11000234_logo.jpg?rv=1754906025",
+      "productUrl": "https://www.urbanshop.rs/catalog/brand/etnies-11000234"
+    },
+    {
+      "urbanSlug": "fred-perry-11000232",
+      "name": "Fred Perry",
+      "slug": "fred-perry",
+      "logoUrl": "https://c.cdnmp.net/223810479/brands/11000232_logo.png?rv=1754908161",
+      "productUrl": "https://www.urbanshop.rs/catalog/brand/fred-perry-11000232"
+    },
+    {
+      "urbanSlug": "globe-11000235",
+      "name": "Globe",
+      "slug": "globe",
+      "logoUrl": "https://c.cdnmp.net/223810479/brands/11000235_logo.jpg?rv=1754906297",
+      "productUrl": "https://www.urbanshop.rs/catalog/brand/globe-11000235"
+    },
+    {
+      "urbanSlug": "jet-lag-11000238",
+      "name": "Jet Lag",
+      "slug": "jet-lag",
+      "logoUrl": "https://c.cdnmp.net/223810479/brands/11000238_logo.jpg?rv=1755075739",
+      "productUrl": "https://www.urbanshop.rs/catalog/brand/jet-lag-11000238"
+    },
+    {
+      "urbanSlug": "miltec-11000244",
+      "name": "Miltec",
+      "slug": "miltec",
+      "logoUrl": "https://c.cdnmp.net/223810479/brands/11000244_logo.jpg?rv=1754906181",
+      "productUrl": "https://www.urbanshop.rs/catalog/brand/miltec-11000244"
+    },
+    {
+      "urbanSlug": "nevermind-11000233",
+      "name": "Nevermind",
+      "slug": "nevermind",
+      "logoUrl": "https://c.cdnmp.net/223810479/brands/11000233_logo.jpg?rv=1754992157",
+      "productUrl": "https://www.urbanshop.rs/catalog/brand/nevermind-11000233"
+    },
+    {
+      "urbanSlug": "salomon-11000253",
+      "name": "Salomon",
+      "slug": "salomon",
+      "logoUrl": "https://c.cdnmp.net/223810479/brands/11000253_logo.png?rv=1755084408",
+      "productUrl": "https://www.urbanshop.rs/catalog/brand/salomon-11000253"
+    },
+    {
+      "urbanSlug": "shellys-rangers-11000231",
+      "name": "Shellys Rangers",
+      "slug": "shellys-rangers",
+      "logoUrl": "https://c.cdnmp.net/223810479/brands/11000231_logo.png?rv=1754991894",
+      "productUrl": "https://www.urbanshop.rs/catalog/brand/shellys-rangers-11000231"
+    },
+    {
+      "urbanSlug": "superdry-11000239",
+      "name": "Superdry",
+      "slug": "superdry",
+      "logoUrl": "https://c.cdnmp.net/223810479/brands/11000239_logo.png?rv=1754906751",
+      "productUrl": "https://www.urbanshop.rs/catalog/brand/superdry-11000239"
+    },
+    {
+      "urbanSlug": "surplus-11000242",
+      "name": "Surplus",
+      "slug": "surplus",
+      "logoUrl": "https://c.cdnmp.net/223810479/brands/11000242_logo.jpg?rv=1754906675",
+      "productUrl": "https://www.urbanshop.rs/catalog/brand/surplus-11000242"
+    },
+    {
+      "urbanSlug": "vintage-industries-11000237",
+      "name": "Vintage Industries",
+      "slug": "vintage-industries",
+      "logoUrl": "https://c.cdnmp.net/223810479/brands/11000237_logo.jpg?rv=1754906567",
+      "productUrl": "https://www.urbanshop.rs/catalog/brand/vintage-industries-11000237"
+    }
+  ],
+  "stores": [
+    {
+      "path": "beograd-euro-centar",
+      "name": "Urban Shop Beograd",
+      "address": "Makedonska 30 / Dečanska 5, Euro Centar",
+      "city": "Beograd",
+      "citySlug": "beograd",
+      "phone": "011 337 33 66",
+      "email": "eurocentar@fmcompany.co.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 44.815082995465225,
+      "longitude": 20.462766427660313,
+      "storeUrl": "https://www.urbanshop.rs/info/prodavnice-beograd-i-novi-sad"
+    },
+    {
+      "path": "novi-sad-pozorisni-trg",
+      "name": "Urban Shop Novi Sad",
+      "address": "Pozorišni trg 4",
+      "city": "Novi Sad",
+      "citySlug": "novi-sad",
+      "phone": "021 402 589",
+      "email": "novi.sad@fmcompany.co.rs",
+      "shoppingCenterSlug": null,
+      "latitude": 45.25468009912332,
+      "longitude": 19.84214518609003,
+      "storeUrl": "https://www.urbanshop.rs/info/prodavnice-beograd-i-novi-sad"
+    }
+  ]
+}

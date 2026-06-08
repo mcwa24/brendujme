@@ -93,6 +93,11 @@ export const retailerLogoImages: Record<string, RetailerLogoImage> = {
     sourceUrl: "bundled:tike-logo-black",
     alt: "Tike",
   },
+  "urban-shop": {
+    src: "/logos/retailers/urban-shop.png",
+    sourceUrl: "bundled:urban-shop-logo",
+    alt: "Urban Shop",
+  },
 };
 
 export function getRetailerLogoImage(slug: string): RetailerLogoImage | undefined {

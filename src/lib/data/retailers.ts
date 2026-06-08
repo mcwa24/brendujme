@@ -79,6 +79,15 @@ const importedRetailers: Retailer[] = [
     brandCount: catalogBrandCount("planeta-sport"),
     brandSlugs: catalogBrandSlugs("planeta-sport"),
   },
+  {
+    slug: "urban-shop",
+    name: "Urban Shop",
+    description:
+      "Urban i streetwear prodavnica — Fred Perry, Dr. Martens, Superdry, Salomon i dr. u Beogradu i Novom Sadu.",
+    city: "Beograd",
+    brandCount: catalogBrandCount("urban-shop"),
+    brandSlugs: catalogBrandSlugs("urban-shop"),
+  },
 ];
 
 export const retailers: Retailer[] = sortImportedRetailers([

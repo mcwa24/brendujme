@@ -11,6 +11,7 @@ export const IMPORTED_RETAILER_SLUGS = [
   "inditex",
   "lpp",
   "tike",
+  "urban-shop",
 ] as const;
 
 export type ImportedRetailerSlug = (typeof IMPORTED_RETAILER_SLUGS)[number];
@@ -108,6 +109,10 @@ export const IMPORTED_RETAILER_EXTERNAL: Record<
   tike: {
     website: "https://www.tike.rs/",
     websiteLabel: "tike.rs",
+  },
+  "urban-shop": {
+    website: "https://www.urbanshop.rs/",
+    websiteLabel: "urbanshop.rs",
   },
 };
 

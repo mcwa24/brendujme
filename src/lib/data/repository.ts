@@ -288,7 +288,7 @@ async function loadAllRetailers(): Promise<Retailer[]> {
 }
 
 export const getAllRetailers = cache(async (): Promise<Retailer[]> =>
-  catalogCache(["all-retailers", "v7"], loadAllRetailers, ["catalog", "retailers"])
+  catalogCache(["all-retailers"], loadAllRetailers, ["catalog", "retailers"])
 );
 
 async function applyModniBrandCounts(retailers: Retailer[]): Promise<Retailer[]> {
@@ -357,7 +357,7 @@ async function loadAllShoppingCenters(): Promise<ShoppingCenter[]> {
 
 export const getAllShoppingCenters = cache(async (): Promise<ShoppingCenter[]> =>
   catalogCache(
-    ["all-shopping-centers", "v3-excluded-malls"],
+    ["all-shopping-centers"],
     loadAllShoppingCenters,
     ["catalog", "shopping-centers"]
   )

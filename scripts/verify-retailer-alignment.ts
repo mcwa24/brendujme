@@ -1,13 +1,27 @@
 /**
- * Provera usklađenosti prodavaca — brojevi = samo brendovi u Bilbord katalogu.
+ * Provera usklađenosti prodavaca — katalog, sajt, cron akcija.
  * npx tsx scripts/verify-retailer-alignment.ts
  */
 
 import { brands } from "../src/lib/data/brands";
+import { RETAILER_OFFERING_FOCUS } from "../src/lib/data/brand-offerings";
 import { fashionCompanyRetailer } from "../src/lib/data/fashion-company";
-import { IMPORTED_RETAILER_SLUGS, DEPRECATED_RETAILER_SLUGS } from "../src/lib/data/imported-retailers";
+import {
+  IMPORTED_RETAILER_SLUGS,
+  DEPRECATED_RETAILER_SLUGS,
+} from "../src/lib/data/imported-retailers";
 import { uniqueModniCatalogBrandSlugs } from "../src/lib/data/modni-retailer-brands";
-import { getScrapedBrandsForRetailer } from "../src/lib/data/retailer-scraped-brands";
+import {
+  getScrapedBrandsForRetailer,
+  getScrapedRetailerSlugs,
+} from "../src/lib/data/retailer-scraped-brands";
+import {
+  getRetailerCatalogMeta,
+  getRetailerCatalogMetaSlugs,
+} from "../src/lib/data/retailer-catalog-meta";
+import { retailerLogoImages } from "../src/lib/data/retailer-logo-images";
+import { RETAILER_PROMO_SOURCES } from "../src/lib/data/retailer-promo-sources";
+import { getStaticRetailerStoreSlugs } from "../src/lib/data/retailer-stores-static";
 import { retailers } from "../src/lib/data/retailers";
 
 const catalog = new Map(brands.map((b) => [b.slug, b]));
@@ -50,6 +64,60 @@ for (const r of allRetailers) {
     fail(`${r.slug}: brandSlugs ${r.brandSlugs.length} ≠ katalog ${expectedSlugs.length}`);
   } else {
     ok(`${r.slug}: ${r.brandCount} modnih brendova u katalogu`);
+  }
+}
+
+console.log("\n=== Site integracija (scraped prodavci) ===\n");
+
+const promoSlugs = new Set(RETAILER_PROMO_SOURCES.map((s) => s.retailerSlug));
+const catalogMetaSlugs = new Set(getRetailerCatalogMetaSlugs());
+const staticStoreSlugs = new Set(getStaticRetailerStoreSlugs());
+const importedSet = new Set<string>(IMPORTED_RETAILER_SLUGS);
+
+for (const slug of getScrapedRetailerSlugs()) {
+  if (!importedSet.has(slug)) {
+    fail(`${slug} u scrape ali nije u IMPORTED_RETAILER_SLUGS`);
+    continue;
+  }
+  if (!retailerSlugs.has(slug)) {
+    fail(`${slug} nema u static retailers`);
+    continue;
+  }
+  if (!catalogMetaSlugs.has(slug)) {
+    fail(`${slug} nema u retailer-catalog-meta.ts`);
+    continue;
+  }
+  if (!RETAILER_OFFERING_FOCUS[slug]) {
+    fail(`${slug} nema u brand-offerings RETAILER_OFFERING_FOCUS`);
+    continue;
+  }
+  if (!retailerLogoImages[slug]) {
+    fail(`${slug} nema u retailer-logo-images.ts`);
+    continue;
+  }
+  if (!promoSlugs.has(slug)) {
+    fail(`${slug} nije u RETAILER_PROMO_SOURCES (cron akcija)`);
+    continue;
+  }
+
+  const storeCount = getRetailerCatalogMeta(slug)?.storeCount ?? 0;
+  if (storeCount > 0 && !staticStoreSlugs.has(slug)) {
+    fail(`${slug} ima ${storeCount} radnji ali nema u retailer-stores-static.ts`);
+    continue;
+  }
+
+  ok(`${slug} integrisan na sajtu`);
+}
+
+console.log("\n=== Cron akcija (RETAILER_PROMO_SOURCES) ===\n");
+
+for (const slug of IMPORTED_RETAILER_SLUGS) {
+  const scraped = getScrapedBrandsForRetailer(slug);
+  if (!scraped?.length) continue;
+  if (!promoSlugs.has(slug)) {
+    fail(`${slug} ima scrape katalog ali nije u RETAILER_PROMO_SOURCES`);
+  } else {
+    ok(`${slug} u dnevnoj detekciji akcija`);
   }
 }
 

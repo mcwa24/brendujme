@@ -118,10 +118,8 @@
     "source": "discovered"
   },
   "superdry": {
-    "path": "/logos/cache/superdry.svg",
-    "source": "official",
-    "remoteUrl": "https://www.superdry.com/on/demandware.static/Sites-sd-uk-Site/-/default/dwbcd12705/images/superdry-logo.svg",
-    "fetchedAt": "2026-06-07T07:55:42.235Z"
+    "path": "/logos/cache/superdry.png",
+    "source": "manual"
   },
   "ugg": {
     "path": "/logos/cache/ugg.png",
@@ -396,5 +394,95 @@
   "tory-burch": {
     "path": "/logos/cache/tory-burch.png",
     "source": "manual"
+  },
+  "alpha-industries": {
+    "path": "/logos/cache/alpha-industries.png",
+    "source": "url",
+    "remoteUrl": "https://c.cdnmp.net/223810479/brands/11000230_logo.png?rv=1773657991",
+    "fetchedAt": "2026-06-08"
+  },
+  "bench": {
+    "path": "/logos/cache/bench.png",
+    "source": "url",
+    "remoteUrl": "https://c.cdnmp.net/223810479/brands/11000240_logo.png?rv=1754992385",
+    "fetchedAt": "2026-06-08"
+  },
+  "cat-bags": {
+    "path": "/logos/cache/cat-bags.png",
+    "source": "url",
+    "remoteUrl": "https://c.cdnmp.net/223810479/brands/11000241_logo.png?rv=1755075946",
+    "fetchedAt": "2026-06-08"
+  },
+  "cat-footwear": {
+    "path": "/logos/cache/cat-footwear.png",
+    "source": "url",
+    "remoteUrl": "https://c.cdnmp.net/223810479/brands/11000250_logo.png?rv=1754906128",
+    "fetchedAt": "2026-06-08"
+  },
+  "dvs-shoes": {
+    "path": "/logos/cache/dvs-shoes.png",
+    "source": "url",
+    "remoteUrl": "https://c.cdnmp.net/223810479/brands/11000236_logo.png?rv=1755076061",
+    "fetchedAt": "2026-06-08"
+  },
+  "etnies": {
+    "path": "/logos/cache/etnies.jpg",
+    "source": "url",
+    "remoteUrl": "https://c.cdnmp.net/223810479/brands/11000234_logo.jpg?rv=1754906025",
+    "fetchedAt": "2026-06-08"
+  },
+  "fred-perry": {
+    "path": "/logos/cache/fred-perry.png",
+    "source": "url",
+    "remoteUrl": "https://c.cdnmp.net/223810479/brands/11000232_logo.png?rv=1754908161",
+    "fetchedAt": "2026-06-08"
+  },
+  "globe": {
+    "path": "/logos/cache/globe.jpg",
+    "source": "url",
+    "remoteUrl": "https://c.cdnmp.net/223810479/brands/11000235_logo.jpg?rv=1754906297",
+    "fetchedAt": "2026-06-08"
+  },
+  "jet-lag": {
+    "path": "/logos/cache/jet-lag.jpg",
+    "source": "url",
+    "remoteUrl": "https://c.cdnmp.net/223810479/brands/11000238_logo.jpg?rv=1755075739",
+    "fetchedAt": "2026-06-08"
+  },
+  "miltec": {
+    "path": "/logos/cache/miltec.jpg",
+    "source": "url",
+    "remoteUrl": "https://c.cdnmp.net/223810479/brands/11000244_logo.jpg?rv=1754906181",
+    "fetchedAt": "2026-06-08"
+  },
+  "nevermind": {
+    "path": "/logos/cache/nevermind.jpg",
+    "source": "url",
+    "remoteUrl": "https://c.cdnmp.net/223810479/brands/11000233_logo.jpg?rv=1754992157",
+    "fetchedAt": "2026-06-08"
+  },
+  "salomon": {
+    "path": "/logos/cache/salomon.png",
+    "source": "url",
+    "remoteUrl": "https://c.cdnmp.net/223810479/brands/11000253_logo.png?rv=1755084408",
+    "fetchedAt": "2026-06-08"
+  },
+  "shellys-rangers": {
+    "path": "/logos/cache/shellys-rangers.png",
+    "source": "url",
+    "remoteUrl": "https://c.cdnmp.net/223810479/brands/11000231_logo.png?rv=1754991894",
+    "fetchedAt": "2026-06-08"
+  },
+  "surplus": {
+    "path": "/logos/cache/surplus.jpg",
+    "source": "url",
+    "remoteUrl": "https://c.cdnmp.net/223810479/brands/11000242_logo.jpg?rv=1754906675",
+    "fetchedAt": "2026-06-08"
+  },
+  "vintage-industries": {
+    "path": "/logos/cache/vintage-industries.jpg",
+    "source": "url",
+    "remoteUrl": "https://c.cdnmp.net/223810479/brands/11000237_logo.jpg?rv=1754906567",
+    "fetchedAt": "2026-06-08"
   }
 }
