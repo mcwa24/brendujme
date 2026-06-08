@@ -34,6 +34,7 @@ import { fetchAllBrandsFromSupabase } from "@/lib/supabase/fetch-brands";
 import {
   dedupePromotionsForHome,
   getActiveHomePromotionsFromStatic,
+  getHomePromoDedupeKey,
 } from "@/lib/data/promotions";
 import {
   getPrimaryRetailerForPromoGroup,
@@ -447,26 +448,35 @@ export async function getNewsByBrand(brandSlug: string): Promise<NewsArticle[]> 
   return filterNewsByBrand(all, brand).slice(0, BRAND_NEWS_LIMIT);
 }
 
-async function loadHomePromotions(): Promise<HomePromotion[]> {
-  if (isSupabaseConfigured()) {
-    const fromDb = await fetchActiveHomePromotionsFromSupabase();
-    if (fromDb?.length) {
-      const score = (p: HomePromotion) => {
-        let s = p.discountPercent ?? 0;
-        if (
-          p.retailerSlug ===
-          getPrimaryRetailerForPromoGroup(getRetailerPromoGroupId(p.retailerSlug))
-        ) {
-          s += 50;
-        }
-        return s;
-      };
-      return dedupePromotionsForHome(fromDb, score).sort(
-        (a, b) => score(b) - score(a)
-      );
-    }
+function homePromotionScore(p: HomePromotion): number {
+  let score = p.discountPercent ?? 0;
+  if (
+    p.retailerSlug ===
+    getPrimaryRetailerForPromoGroup(getRetailerPromoGroupId(p.retailerSlug))
+  ) {
+    score += 50;
   }
-  return getActiveHomePromotionsFromStatic();
+  if (p.bannerImageUrl) score += 10;
+  return score;
+}
+
+async function loadHomePromotions(): Promise<HomePromotion[]> {
+  const staticActive = getActiveHomePromotionsFromStatic();
+  let fromDb: HomePromotion[] = [];
+
+  if (isSupabaseConfigured()) {
+    fromDb = (await fetchActiveHomePromotionsFromSupabase()) ?? [];
+  }
+
+  const dbKeys = new Set(fromDb.map((p) => getHomePromoDedupeKey(p)));
+  const staticFill = staticActive.filter(
+    (p) => !dbKeys.has(getHomePromoDedupeKey(p))
+  );
+  const combined = fromDb.length ? [...fromDb, ...staticFill] : staticActive;
+
+  return dedupePromotionsForHome(combined, homePromotionScore).sort(
+    (a, b) => homePromotionScore(b) - homePromotionScore(a)
+  );
 }
 
 export const getHomePromotions = cache(async (): Promise<HomePromotion[]> =>

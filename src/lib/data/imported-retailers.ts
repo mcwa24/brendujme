@@ -152,15 +152,16 @@ export function resolveRetailerPublicWebsite(retailerSlug: string): {
   label: string;
   isSerbia: boolean;
 } {
+  const slug = normalizeRetailerSlug(retailerSlug);
   const external =
     IMPORTED_RETAILER_EXTERNAL[
-      retailerSlug as keyof typeof IMPORTED_RETAILER_EXTERNAL
+      slug as keyof typeof IMPORTED_RETAILER_EXTERNAL
     ];
 
   if (!external) {
     return {
-      url: `/retailers/${retailerSlug}`,
-      label: retailerSlug,
+      url: `/retailers/${slug}`,
+      label: slug,
       isSerbia: false,
     };
   }

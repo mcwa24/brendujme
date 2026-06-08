@@ -61,10 +61,12 @@ const confRank = { high: 0, medium: 1, low: 2 };
 function promotionScore(row: ScrapedPromotionRow): number {
   let score = (3 - confRank[row.confidence]) * 100;
   if (row.discountPercent) score += row.discountPercent;
+  const retailerSlug = normalizeRetailerSlug(row.retailerSlug);
   const primary = getPrimaryRetailerForPromoGroup(
-    getRetailerPromoGroupId(row.retailerSlug)
+    getRetailerPromoGroupId(retailerSlug)
   );
-  if (row.retailerSlug === primary) score += 50;
+  if (retailerSlug === primary) score += 50;
+  if (row.bannerImageUrl) score += 10;
   return score;
 }
 

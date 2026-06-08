@@ -1,4 +1,7 @@
-import { getRetailerWebsiteUrl } from "@/lib/data/imported-retailers";
+import {
+  getRetailerWebsiteUrl,
+  normalizeRetailerSlug,
+} from "@/lib/data/imported-retailers";
 import { isSerbiaMarketUrl } from "@/lib/data/retailer-serbia-urls";
 
 /**
@@ -20,7 +23,7 @@ export function resolveCampaignSourceUrl(
   const inferred = CAMPAIGN_SOURCE_BY_SLUG[campaignSlug];
   if (inferred && isSerbiaMarketUrl(inferred)) return inferred;
 
-  return getRetailerWebsiteUrl(retailerSlug);
+  return getRetailerWebsiteUrl(normalizeRetailerSlug(retailerSlug));
 }
 
 export function discountFromShortDescription(text: string | null | undefined): number | null {
