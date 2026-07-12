@@ -1,10 +1,5 @@
 import type { NextConfig } from "next";
 
-const shopBasePath = (process.env.NEXT_PUBLIC_SHOP_BASE_PATH?.trim() || "/shop").replace(
-  /\/+$/,
-  "",
-);
-
 function supabaseImagePattern():
   | { protocol: "https"; hostname: string; pathname: string }
   | null {
@@ -28,61 +23,32 @@ const supabasePattern =
     pathname: "/storage/v1/object/public/**",
   };
 
-const legacyShopRedirects = [
-  "/",
-  "/brands",
-  "/brands/:path*",
-  "/retailers",
-  "/retailers/:path*",
-  "/shopping-centers",
-  "/shopping-centers/:path*",
-  "/categories",
-  "/categories/:path*",
-].map((source) => ({
-  source,
-  destination: `${shopBasePath}${source === "/" ? "" : source}`,
-  permanent: true,
-  basePath: false as const,
-}));
-
 const nextConfig: NextConfig = {
-  basePath: shopBasePath || undefined,
   poweredByHeader: false,
   experimental: {
     optimizePackageImports: ["lucide-react", "framer-motion", "cmdk"],
   },
   async redirects() {
     return [
-      ...legacyShopRedirects,
-      {
-        source: "/api/promotions/home",
-        destination: `${shopBasePath}/api/promotions/home`,
-        permanent: false,
-        basePath: false,
-      },
       {
         source: "/contact",
         destination: "https://bilbord.rs/kontakt/",
         permanent: false,
-        basePath: false,
       },
       {
         source: "/submit-brand",
         destination: "https://bilbord.rs/kontakt/",
         permanent: false,
-        basePath: false,
       },
       {
         source: "/news",
         destination: "https://bilbord.rs/moda-stil/",
         permanent: false,
-        basePath: false,
       },
       {
         source: "/news/:slug",
         destination: "https://bilbord.rs/:slug/",
         permanent: false,
-        basePath: false,
       },
     ];
   },
