@@ -16,7 +16,7 @@ import { useSearch } from "@/components/search/search-provider";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { href: BILBORD_SITE_URL, label: "Portal", external: true },
+  { href: BILBORD_SITE_URL, label: "Portal" },
   { href: "/brands", label: "Brendovi" },
   { href: "/retailers", label: "Prodavci" },
   { href: "/shopping-centers", label: "Tržni centri" },
@@ -35,6 +35,10 @@ function NavMenu({ onNavigate }: { onNavigate?: () => void }) {
               rel="noopener noreferrer"
               onClick={onNavigate}
             >
+              {item.label}
+            </a>
+          ) : item.href.startsWith("http") ? (
+            <a href={item.href} onClick={onNavigate}>
               {item.label}
             </a>
           ) : (
