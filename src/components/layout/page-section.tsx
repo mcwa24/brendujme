@@ -1,7 +1,8 @@
 import { cn } from "@/lib/utils";
 import {
-  PAGE_DETAIL_HERO_PY,
-  PAGE_SECTION_PY,
+  PAGE_DETAIL_PB,
+  PAGE_SECTION_CLASS,
+  PAGE_SECTION_PB,
 } from "@/components/home/section-spacing";
 
 interface PageSectionProps {
@@ -11,7 +12,7 @@ interface PageSectionProps {
   detail?: boolean;
 }
 
-/** Ista struktura kao home hero: padding na section, ne na container. */
+/** Ghost page wrapper — padding-top preko .s-page-section. */
 export function PageSection({
   children,
   className,
@@ -19,7 +20,11 @@ export function PageSection({
 }: PageSectionProps) {
   return (
     <section
-      className={cn(detail ? PAGE_DETAIL_HERO_PY : PAGE_SECTION_PY, className)}
+      className={cn(
+        PAGE_SECTION_CLASS,
+        detail ? PAGE_DETAIL_PB : PAGE_SECTION_PB,
+        className
+      )}
     >
       {children}
     </section>

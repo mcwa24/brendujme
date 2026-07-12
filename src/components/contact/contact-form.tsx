@@ -8,10 +8,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { PremiumCard } from "@/components/ui/premium-card";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  PAGE_LEAD,
-  PAGE_TITLE,
-} from "@/components/home/section-spacing";
+import { PageHeader } from "@/components/layout/page-header";
+import { PAGE_CONTENT_MT } from "@/components/home/section-spacing";
 import { cn } from "@/lib/utils";
 
 type ContactTopic = "general" | "brand";
@@ -88,8 +86,8 @@ export function ContactForm() {
   if (status === "success") {
     return (
       <>
-        <h1 className={PAGE_TITLE}>{title}</h1>
-        <PremiumCard className="mt-12 p-8 text-center">
+        <PageHeader title={title} />
+        <PremiumCard className={cn(PAGE_CONTENT_MT, "p-8 text-center")}>
         <p className="font-display text-2xl font-semibold text-foreground">
           Poruka je poslata
         </p>
@@ -111,9 +109,8 @@ export function ContactForm() {
 
   return (
     <>
-      <h1 className={PAGE_TITLE}>{title}</h1>
-      <p className={PAGE_LEAD}>{description}</p>
-      <PremiumCard className="mt-12 p-8 md:p-10">
+      <PageHeader title={title} description={description} />
+      <PremiumCard className={cn(PAGE_CONTENT_MT, "p-8 md:p-10")}>
       <div className={tagListClassName("mb-8")}>
         <TagChip active={topic === "general"} onClick={() => setTopic("general")}>
           Opšti kontakt

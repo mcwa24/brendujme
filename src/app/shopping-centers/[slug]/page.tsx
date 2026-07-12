@@ -1,19 +1,17 @@
 import { notFound } from "next/navigation";
-import { ExternalLink, MapPin } from "lucide-react";
-import { googleMapsUrl } from "@/lib/maps/google-maps-url";
-import { PAGE_TITLE } from "@/components/home/section-spacing";
 import { Container } from "@/components/layout/container";
 import { PageSection } from "@/components/layout/page-section";
 import { FadeIn } from "@/components/motion/fade-in";
 import { BrandLogoGrid } from "@/components/brands/brand-logo-grid";
+import { ShoppingCenterPageHeader } from "@/components/shopping-centers/shopping-center-page-header";
 import {
   getAllShoppingCenters,
   getBrandsBySlugs,
   getShoppingCenterBySlug,
 } from "@/lib/data/repository";
 import { formatBrandCountPlus } from "@/lib/format/sr-plural";
+import { googleMapsUrl } from "@/lib/maps/google-maps-url";
 import { createMetadata } from "@/lib/seo";
-import { cn } from "@/lib/utils";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -59,41 +57,14 @@ export default async function ShoppingCenterPage({ params }: PageProps) {
     <PageSection detail>
       <Container>
         <FadeIn when="mount" direction="none">
-          <p className="text-sm font-medium uppercase tracking-wider text-muted">
-            Tržni centar
-          </p>
-          <h1 className={cn(PAGE_TITLE, "mt-2")}>{center.name}</h1>
-          <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-muted">
-            {center.address ? (
-              <span className="flex items-start gap-2">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
-                <span>
-                  {center.address}
-                  <span className="text-muted"> · {center.city}</span>
-                </span>
-              </span>
-            ) : (
-              <span className="flex items-center gap-2">
-                <MapPin className="h-4 w-4" />
-                {center.city}
-              </span>
-            )}
-            {mapsHref && (
-              <a
-                href={mapsHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-accent hover:underline"
-              >
-                Google Maps
-                <ExternalLink className="h-3.5 w-3.5" />
-              </a>
-            )}
-          </div>
-          <p className="mt-4 max-w-2xl text-muted">{center.description}</p>
-          <p className="mt-4 font-medium text-success">
-            {formatBrandCountPlus(center.brandCount)}
-          </p>
+          <ShoppingCenterPageHeader
+            name={center.name}
+            city={center.city}
+            address={center.address}
+            description={center.description}
+            mapsHref={mapsHref}
+            brandCountLabel={formatBrandCountPlus(center.brandCount)}
+          />
         </FadeIn>
 
         <div className="mt-16 md:mt-20">

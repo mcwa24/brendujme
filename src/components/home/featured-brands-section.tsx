@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
 import { FeaturedBrandsMarquee } from "@/components/home/featured-brands-marquee";
-import { HOME_SECTION_PY, HOME_SECTION_TITLE } from "@/components/home/section-spacing";
+import { HOME_FEATURED_BAND_MY, HOME_FEATURED_BAND_PY, HOME_SECTION_TITLE } from "@/components/home/section-spacing";
 import { SectionCtaLink } from "@/components/ui/section-cta-link";
 import type { Brand } from "@/types";
 import { cn } from "@/lib/utils";
@@ -25,7 +25,8 @@ export function FeaturedBrandsSection({
     <Wrapper
       className={cn(
         "w-full bg-card",
-        embedded ? "py-12 md:py-16" : HOME_SECTION_PY
+        HOME_FEATURED_BAND_PY,
+        embedded && HOME_FEATURED_BAND_MY
       )}
     >
       <Container narrow>

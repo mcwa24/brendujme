@@ -53,10 +53,11 @@ function StatBlock({
 export function HeroStats({ stats }: HeroStatsProps) {
   return (
     <FadeIn delay={0.15}>
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-start">
         <StatBlock
           value={stats.storeCount}
           label="Prodajnih lokacija"
+          align="left"
           size="apex"
         />
 
@@ -64,9 +65,9 @@ export function HeroStats({ stats }: HeroStatsProps) {
           <StatBlock
             value={stats.brandCount}
             label="Modnih brendova"
-            align="center"
+            align="left"
           />
-          <StatBlock value={stats.cityCount} label="Gradova" align="center" />
+          <StatBlock value={stats.cityCount} label="Gradova" align="left" />
         </div>
       </div>
     </FadeIn>

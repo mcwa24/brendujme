@@ -33,7 +33,7 @@ export function getBilbordTagUrl(slug: string): string {
 
 /** Ghost ponekad vraća /tag/{slug}/ — na bilbord.rs rubrike su /{slug}/. */
 export function normalizeBilbordTagUrl(
-  url: string | undefined,
+  url: string | null | undefined,
   slug: string
 ): string {
   const canonical = getBilbordTagUrl(slug);

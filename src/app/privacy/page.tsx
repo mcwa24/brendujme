@@ -1,12 +1,12 @@
 import Link from "next/link";
-import {
-  PAGE_TITLE,
-} from "@/components/home/section-spacing";
 import { Container } from "@/components/layout/container";
+import { PageHeader } from "@/components/layout/page-header";
 import { PageSection } from "@/components/layout/page-section";
+import { PAGE_CONTENT_MT } from "@/components/home/section-spacing";
 import { BILBORD_CONTACT_URL } from "@/lib/bilbord";
 import { FadeIn } from "@/components/motion/fade-in";
 import { createMetadata } from "@/lib/seo";
+import { cn } from "@/lib/utils";
 
 export const metadata = createMetadata({
   title: "Politika privatnosti",
@@ -19,9 +19,8 @@ export default function PrivacyPage() {
   return (
     <PageSection>
       <Container>
-      <FadeIn>
-        <h1 className={PAGE_TITLE}>Politika privatnosti</h1>
-        <div className="prose prose-neutral mt-8 max-w-3xl space-y-6 text-muted">
+        <PageHeader title="Politika privatnosti" />
+        <FadeIn delay={0.06} className={cn(PAGE_CONTENT_MT, "prose prose-neutral max-w-3xl space-y-6 text-muted")}>
           <p className="text-lg text-foreground">
             Ova stranica opisuje kako Bilbord Shop postupa sa podacima i
             sadržajem trećih strana na shop.bilbord.rs.
@@ -110,8 +109,7 @@ export default function PrivacyPage() {
           </section>
 
           <p className="text-sm">Poslednje ažuriranje: jun 2026.</p>
-        </div>
-      </FadeIn>
+        </FadeIn>
       </Container>
     </PageSection>
   );

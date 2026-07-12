@@ -1,13 +1,11 @@
 import Link from "next/link";
 import { MapPin } from "lucide-react";
-import {
-  PAGE_LEAD,
-  PAGE_TITLE,
-} from "@/components/home/section-spacing";
 import { Container } from "@/components/layout/container";
+import { PageHeader } from "@/components/layout/page-header";
 import { PageSection } from "@/components/layout/page-section";
 import { FadeIn } from "@/components/motion/fade-in";
 import { PremiumCard } from "@/components/ui/premium-card";
+import { PAGE_CONTENT_MT } from "@/components/home/section-spacing";
 import { ShoppingCenterLogo } from "@/components/shopping-centers/shopping-center-logo";
 import { getAllShoppingCenters } from "@/lib/data/repository";
 import { formatBrandCount } from "@/lib/format/sr-plural";
@@ -28,13 +26,11 @@ export default async function ShoppingCentersPage() {
   return (
     <PageSection>
       <Container>
-      <FadeIn when="mount" direction="none">
-        <h1 className={PAGE_TITLE}>Tržni centri</h1>
-        <p className={PAGE_LEAD}>
-          Najveće retail destinacije u Srbiji sa kompletnom ponudom brendova.
-        </p>
-      </FadeIn>
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <PageHeader
+          title="Tržni centri"
+          description="Najveće retail destinacije u Srbiji sa kompletnom ponudom brendova."
+        />
+        <div className={`grid gap-6 sm:grid-cols-2 lg:grid-cols-3 ${PAGE_CONTENT_MT}`}>
         {shoppingCenters.map((center, i) => (
           <FadeIn key={center.slug} delay={i * 0.04}>
             <Link href={`/shopping-centers/${center.slug}`} prefetch={false}>
