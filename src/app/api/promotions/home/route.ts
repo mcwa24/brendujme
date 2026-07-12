@@ -5,6 +5,7 @@ import {
   applyPublicApiCorsHeaders,
   resolvePublicApiCorsOrigin,
 } from "@/lib/security/public-api-cors";
+import { getPromotionBannerImages } from "@/lib/unsplash/promotion-banners";
 import type { HomePromotion, PromotionCampaignType } from "@/types";
 
 export const runtime = "nodejs";
@@ -73,7 +74,13 @@ export async function GET(request: NextRequest) {
 
   try {
     const all = await getHomePromotions();
-    const promotions = all.slice(0, limit).map(serializePromotion);
+    const slice = all.slice(0, limit);
+    const banners = await getPromotionBannerImages(slice);
+    const promotions = slice.map((promo, index) => ({
+      ...serializePromotion(promo),
+      bannerImageUrl:
+        promo.bannerImageUrl ?? banners[index]?.imageUrl ?? null,
+    }));
     return jsonResponse({ promotions }, request);
   } catch (err) {
     return jsonResponse(
