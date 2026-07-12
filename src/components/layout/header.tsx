@@ -13,6 +13,7 @@ import {
   HeaderSearchButton,
 } from "@/components/layout/header-icon-button";
 import { useSearch } from "@/components/search/search-provider";
+import { cn } from "@/lib/utils";
 
 const navItems = [
   { href: BILBORD_SITE_URL, label: "Portal", external: true },
@@ -51,10 +52,25 @@ export function Header() {
   const pathname = usePathname();
   const { setOpen } = useSearch();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [isDesktopNav, setIsDesktopNav] = useState(false);
 
   useEffect(() => {
     setMobileOpen(false);
   }, [pathname]);
+
+  useEffect(() => {
+    function syncViewport() {
+      const desktop = window.innerWidth >= 1024;
+      setIsDesktopNav(desktop);
+      if (desktop) {
+        setMobileOpen(false);
+      }
+    }
+
+    syncViewport();
+    window.addEventListener("resize", syncViewport);
+    return () => window.removeEventListener("resize", syncViewport);
+  }, []);
 
   useEffect(() => {
     document.body.classList.toggle("s-nav-open", mobileOpen);
@@ -64,7 +80,11 @@ export function Header() {
   }, [mobileOpen]);
 
   const closeMenu = () => setMobileOpen(false);
-  const toggleMenu = () => setMobileOpen((open) => !open);
+  const openMenu = () => {
+    if (!mobileOpen) {
+      setMobileOpen(true);
+    }
+  };
   const openSearch = () => {
     closeMenu();
     setOpen(true);
@@ -78,30 +98,44 @@ export function Header() {
           <img src="/bilbord-logo.png" alt="Bilbord Shop" decoding="async" />
         </Link>
 
-        <nav className="s-nav" aria-hidden={mobileOpen ? "false" : "true"}>
-          <NavMenu onNavigate={closeMenu} />
-          <div className="s-utils s-utils--nav">
-            <div className="s-utils-account">
+        <nav
+          className={cn("s-nav", mobileOpen && "s-nav-open")}
+          aria-hidden={isDesktopNav || mobileOpen ? "false" : "true"}
+        >
+          <div className="s-menu-panel">
+            <NavMenu onNavigate={closeMenu} />
+            <div className="s-utils-account s-utils-account--menu">
               <Link href={BILBORD_CONTACT_URL} className="s-btn" onClick={closeMenu}>
                 <span>Prijavi brend</span>
               </Link>
             </div>
-            <HeaderCloseButton className="s-utils-close" onClick={closeMenu} />
           </div>
+          {mobileOpen && !isDesktopNav ? (
+            <HeaderCloseButton className="s-utils-close" onClick={closeMenu} />
+          ) : null}
         </nav>
 
-        <div className="s-utils">
-          <HeaderSearchButton className="s-utils-search" onClick={openSearch} />
+        <div
+          className={cn(
+            "s-utils",
+            mobileOpen && !isDesktopNav && "s-utils--mobile-bar-hidden"
+          )}
+        >
+          {!mobileOpen || isDesktopNav ? (
+            <>
+              <HeaderSearchButton className="s-utils-search" onClick={openSearch} />
+              <HeaderBurgerButton
+                className="s-utils-burger"
+                aria-expanded={mobileOpen}
+                onClick={openMenu}
+              />
+            </>
+          ) : null}
           <div className="s-utils-account">
             <Link href={BILBORD_CONTACT_URL} className="s-btn">
               <span>Prijavi brend</span>
             </Link>
           </div>
-          <HeaderBurgerButton
-            className="s-utils-burger"
-            isOpen={mobileOpen}
-            onClick={toggleMenu}
-          />
         </div>
       </div>
     </header>

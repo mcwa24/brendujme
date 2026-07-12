@@ -34,40 +34,27 @@ export function HeaderSearchButton({
 
 export function HeaderBurgerButton({
   className,
-  isOpen,
   ...props
-}: Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "children"> & {
-  isOpen?: boolean;
-}) {
+}: Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "children">) {
   return (
     <HeaderIconButton
       type="button"
-      className={cn("s-utils-burger", isOpen && "is-open", className)}
-      aria-label={isOpen ? "Zatvori meni" : "Meni"}
-      aria-expanded={isOpen}
+      className={cn("s-utils-burger", className)}
+      aria-label="Meni"
       {...props}
     >
       <svg
+        width={16}
+        height={12}
+        viewBox="0 0 16 12"
+        fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        width={20}
-        height={20}
-        fill="currentColor"
-        viewBox="0 0 256 256"
         aria-hidden
-        className="s-utils-burger-open"
       >
-        <path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z" />
-      </svg>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width={20}
-        height={20}
-        fill="currentColor"
-        viewBox="0 0 256 256"
-        aria-hidden
-        className="s-utils-burger-close"
-      >
-        <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z" />
+        <path
+          d="M16 12H0V10H16V12ZM16 7H0V5H16V7ZM16 2H0V0H16V2Z"
+          fill="currentColor"
+        />
       </svg>
     </HeaderIconButton>
   );
@@ -84,14 +71,25 @@ export function HeaderCloseButton({
       {...props}
     >
       <svg
+        width={19}
+        height={19}
+        viewBox="0 0 19 19"
+        fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        width={20}
-        height={20}
-        fill="currentColor"
-        viewBox="0 0 256 256"
         aria-hidden
       >
-        <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z" />
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M17.5686 17.5078C17.2135 17.8628 16.6379 17.8628 16.2829 17.5078L0.854299 2.07922C0.499259 1.72418 0.499259 1.14854 0.854299 0.793503C1.20934 0.438463 1.78497 0.438463 2.14001 0.793503L17.5686 16.2221C17.9236 16.5771 17.9236 17.1527 17.5686 17.5078Z"
+          fill="currentColor"
+        />
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M17.5686 0.793667C17.9236 1.14871 17.9236 1.72434 17.5686 2.07938L2.14001 17.5079C1.78497 17.863 1.20933 17.863 0.854294 17.5079C0.499254 17.1529 0.499254 16.5773 0.854294 16.2222L16.2829 0.793667C16.6379 0.438627 17.2135 0.438627 17.5686 0.793667Z"
+          fill="currentColor"
+        />
       </svg>
     </HeaderIconButton>
   );

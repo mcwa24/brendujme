@@ -30,7 +30,7 @@ export function FeaturedBrandsSection({
       )}
     >
       <Container narrow>
-        <FadeIn className="flex items-end justify-between gap-6">
+        <FadeIn className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between sm:gap-6">
           <div>
             <h2 className={HOME_SECTION_TITLE}>
               Istaknuti brendovi
@@ -39,7 +39,7 @@ export function FeaturedBrandsSection({
               Brendovi koje najčešće tražite — i gde ih možete kupiti u Srbiji.
             </p>
           </div>
-          <SectionCtaLink href="/brands" className="hidden shrink-0 sm:flex">
+          <SectionCtaLink href="/brands" className="shrink-0 self-start sm:self-auto">
             Svi brendovi
             <ArrowRight className="h-3.5 w-3.5 shrink-0" />
           </SectionCtaLink>
@@ -49,15 +49,6 @@ export function FeaturedBrandsSection({
       <FadeIn delay={0.08} className="mt-8 w-full md:mt-10">
         <FeaturedBrandsMarquee brands={brands} fullWidth />
       </FadeIn>
-
-      <Container narrow>
-        <div className="mt-6 sm:hidden">
-          <SectionCtaLink href="/brands">
-            Svi brendovi
-            <ArrowRight className="h-3.5 w-3.5 shrink-0" />
-          </SectionCtaLink>
-        </div>
-      </Container>
     </Wrapper>
   );
 }
