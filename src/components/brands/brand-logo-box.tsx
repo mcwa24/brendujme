@@ -34,7 +34,7 @@ export function BrandLogoBox({
     <div
       className={cn(
         "brand-logo-slot flex shrink-0 items-center justify-center overflow-hidden",
-        bare ? "brand-logo-slot--bare bg-transparent" : "rounded-none border border-border bg-background",
+        bare ? "brand-logo-slot--bare bg-transparent" : "rounded-[var(--radius)] border border-border bg-background",
         className
       )}
       style={{ width: size, height: size }}

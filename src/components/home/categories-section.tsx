@@ -31,7 +31,7 @@ export function CategoriesSection({ categories }: CategoriesSectionProps) {
                 <motion.div
                   whileHover={{ y: -4 }}
                   transition={{ duration: 0.25 }}
-                  className="group relative overflow-hidden rounded-none border border-border bg-card p-8 shadow-[var(--shadow-card)]"
+                  className="group relative overflow-hidden rounded-[var(--radius)] border border-border bg-card p-8 shadow-[var(--shadow-card)]"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-accent/[0.03] to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
                   <ArrowUpRight className="absolute right-6 top-6 h-5 w-5 text-muted transition-colors group-hover:text-accent" />

@@ -10,7 +10,7 @@ export function PremiumCard({ children, className, hover = true }: PremiumCardPr
   return (
     <div
       className={cn(
-        "rounded-none border border-border bg-card shadow-[var(--shadow-card)]",
+        "rounded-[var(--radius)] border border-border bg-card shadow-[var(--shadow-card)]",
         hover &&
           "transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgb(0_0_0/0.06)]",
         className

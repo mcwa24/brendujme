@@ -28,13 +28,10 @@ export function NewsletterSection() {
                 <Input
                   type="email"
                   placeholder="vaš@email.com"
-                  className="h-12 flex-1 rounded-full border-border bg-background px-5 text-base"
+                  className="h-12 flex-1 border-0 px-5 text-base shadow-none focus-visible:shadow-none"
                   required
                 />
-                <Button
-                  type="submit"
-                  className="h-12 rounded-full bg-accent px-8 hover:bg-accent-hover"
-                >
+                <Button type="submit" className="px-8">
                   Prijavite se
                 </Button>
               </form>

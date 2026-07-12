@@ -43,7 +43,7 @@ function RetailerLetterPlaceholder({
   return (
     <div
       className={cn(
-        "flex shrink-0 items-center justify-center rounded-none border border-border bg-secondary",
+        "flex shrink-0 items-center justify-center rounded-[var(--radius)] border border-border bg-secondary",
         dims.box,
         className
       )}
@@ -136,7 +136,7 @@ export function RetailerLogo({
         style={{ width: "auto", height: "auto" }}
         className={cn(
           "brand-logo-img h-20 max-h-24 max-w-[220px] shrink-0 object-contain md:h-24",
-          isDarkBadge && "rounded-none bg-black px-2 py-1",
+          isDarkBadge && "rounded-[var(--radius)] bg-black px-2 py-1",
           className
         )}
         onError={() => setImageFailed(true)}
@@ -147,7 +147,7 @@ export function RetailerLogo({
   return (
     <div
       className={cn(
-        "relative flex shrink-0 items-center justify-center overflow-hidden rounded-none p-1",
+        "relative flex shrink-0 items-center justify-center overflow-hidden rounded-[var(--radius)] p-1",
         isDarkBadge ? "bg-black" : "bg-secondary",
         dims.box,
         className

@@ -64,7 +64,7 @@ export function BrandLocationCard({
             href={retailerPageHref(retailerSlug)}
             className={cn(
               buttonVariants({ variant: "outline", size: "sm" }),
-              "mt-6 rounded-none"
+              "mt-6 rounded-[var(--radius)]"
             )}
           >
             Profil prodavca

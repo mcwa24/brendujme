@@ -52,7 +52,7 @@ export function BrandNewsList({ articles, brandName }: BrandNewsListProps) {
                 rel="noopener noreferrer"
                 className="group flex gap-4 py-5 transition-colors sm:gap-5 sm:py-6"
               >
-                <div className="relative h-[72px] w-[104px] shrink-0 overflow-hidden rounded-none sm:h-20 sm:w-28">
+                <div className="relative h-[72px] w-[104px] shrink-0 overflow-hidden rounded-[var(--radius)] sm:h-20 sm:w-28">
                   <NewsCover
                     title={article.title}
                     imageLabel={article.imageLabel}

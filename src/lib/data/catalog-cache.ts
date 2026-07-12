@@ -23,7 +23,7 @@ const CATALOG_PATHS = ["/", "/brands", "/retailers", "/shopping-centers"] as con
 
 export function revalidateCatalogCache(): void {
   for (const tag of CATALOG_CACHE_TAGS) {
-    revalidateTag(tag);
+    revalidateTag(tag, "max");
   }
   for (const path of CATALOG_PATHS) {
     revalidatePath(path);

@@ -54,7 +54,7 @@ export function RecentSearchPills({
             key={entry.title}
             type="button"
             onClick={() => handleClick(entry)}
-            className="rounded-none border border-border bg-secondary px-3.5 py-1.5 text-sm text-foreground transition-colors hover:border-border hover:bg-background"
+            className="rounded-full border border-border bg-secondary px-3.5 py-1.5 text-sm text-foreground transition-colors hover:bg-card"
           >
             {entry.title}
           </button>
@@ -63,7 +63,7 @@ export function RecentSearchPills({
           <button
             type="button"
             onClick={clearRecentSearches}
-            className="inline-flex items-center gap-1 rounded-none border border-dashed border-border px-3 py-1.5 text-xs text-muted transition-colors hover:text-foreground"
+            className="inline-flex items-center gap-1 rounded-full border border-dashed border-border px-3 py-1.5 text-xs text-muted transition-colors hover:text-foreground"
             aria-label="Obriši poslednje pretrage"
           >
             <X className="h-3 w-3" />

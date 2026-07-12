@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
 import { FeaturedBrandsMarquee } from "@/components/home/featured-brands-marquee";
-import { HOME_SECTION_PY, HOME_SECTION_TITLE } from "@/components/home/section-spacing";
+import { HOME_EMBEDDED_SECTION_PY, HOME_SECTION_PY, HOME_SECTION_TITLE } from "@/components/home/section-spacing";
 import type { Brand } from "@/types";
 
 interface FeaturedBrandsSectionProps {
@@ -21,7 +21,7 @@ export function FeaturedBrandsSection({
   const Wrapper = embedded ? "div" : "section";
 
   return (
-    <Wrapper className={HOME_SECTION_PY}>
+    <Wrapper className={embedded ? HOME_EMBEDDED_SECTION_PY : HOME_SECTION_PY}>
       <Container narrow>
         <FadeIn className="flex items-end justify-between gap-6">
           <div>
@@ -42,7 +42,7 @@ export function FeaturedBrandsSection({
         </FadeIn>
       </Container>
 
-      <FadeIn delay={0.08} className="mt-10 w-full">
+      <FadeIn delay={0.08} className="mt-6 w-full">
         <FeaturedBrandsMarquee brands={brands} fullWidth />
       </FadeIn>
 

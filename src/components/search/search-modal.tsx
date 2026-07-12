@@ -161,7 +161,7 @@ export function SearchModal({ open, onOpenChange }: SearchModalProps) {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="overflow-hidden rounded-none border-border bg-card p-0 shadow-[0_8px_40px_rgb(0_0_0/0.12)] sm:max-w-lg">
+      <DialogContent className="overflow-hidden rounded-[var(--radius)] border-border bg-card p-0 shadow-[0_8px_40px_rgb(0_0_0/0.12)] sm:max-w-lg">
         <DialogHeader className="sr-only">
           <DialogTitle>Pretraga brendova</DialogTitle>
           <DialogDescription>
@@ -170,7 +170,7 @@ export function SearchModal({ open, onOpenChange }: SearchModalProps) {
         </DialogHeader>
         <Command
           shouldFilter={false}
-          className="rounded-none bg-card text-foreground [&_[cmdk-group-heading]]:px-4 [&_[cmdk-group-heading]]:text-[11px] [&_[cmdk-group-heading]]:font-semibold [&_[cmdk-group-heading]]:uppercase [&_[cmdk-group-heading]]:tracking-[0.12em] [&_[cmdk-group-heading]]:text-muted"
+          className="rounded-[var(--radius)] bg-card text-foreground [&_[cmdk-group-heading]]:px-4 [&_[cmdk-group-heading]]:font-display [&_[cmdk-group-heading]]:text-[11px] [&_[cmdk-group-heading]]:font-semibold [&_[cmdk-group-heading]]:uppercase [&_[cmdk-group-heading]]:tracking-[0.12em] [&_[cmdk-group-heading]]:text-muted"
         >
           <div className="flex items-center gap-3 border-b border-border px-4">
             <Search className="h-5 w-5 shrink-0 text-muted" />
@@ -179,7 +179,7 @@ export function SearchModal({ open, onOpenChange }: SearchModalProps) {
               onChange={(e) => setQuery(sanitizeSearchQuery(e.target.value))}
               maxLength={SEARCH_QUERY_MAX_LENGTH}
               placeholder="npr. Nike patike, New Balance, Buzz…"
-              className="h-14 w-full bg-transparent text-base text-foreground outline-none placeholder:text-muted"
+              className="bilbord-field h-14 w-full rounded-none border-0 bg-transparent px-0 py-0 shadow-none focus-visible:shadow-none"
               autoFocus
               autoComplete="off"
               spellCheck={false}
@@ -192,14 +192,14 @@ export function SearchModal({ open, onOpenChange }: SearchModalProps) {
               <button
                 type="button"
                 onClick={() => setQuery(brandRefinements.patike)}
-                className="rounded-none border border-border bg-secondary px-3 py-1.5 text-sm text-foreground transition-colors hover:border-border hover:bg-background"
+                className="rounded-full border border-border bg-secondary px-3 py-1.5 text-sm text-foreground transition-colors hover:bg-card"
               >
                 {brandRefinements.patike}
               </button>
               <button
                 type="button"
                 onClick={() => setQuery(brandRefinements.odeca)}
-                className="rounded-none border border-border bg-secondary px-3 py-1.5 text-sm text-foreground transition-colors hover:border-border hover:bg-background"
+                className="rounded-full border border-border bg-secondary px-3 py-1.5 text-sm text-foreground transition-colors hover:bg-card"
               >
                 {brandRefinements.odeca}
               </button>
@@ -274,7 +274,7 @@ export function SearchModal({ open, onOpenChange }: SearchModalProps) {
             <span className="hidden sm:inline">
               Enter za izbor · Esc za zatvoriti ·{" "}
             </span>
-            <kbd className="rounded border border-border bg-card px-1.5 py-0.5 text-foreground">
+            <kbd className="rounded-full border border-border bg-card px-2 py-0.5 text-foreground">
               ⌘K
             </kbd>
           </div>
@@ -287,7 +287,7 @@ export function SearchModal({ open, onOpenChange }: SearchModalProps) {
 function SearchResultThumbnail({ item }: { item: SearchResult }) {
   if (item.imageUrl) {
     return (
-      <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-none border border-border bg-transparent">
+      <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-[var(--radius)] border border-border bg-transparent">
         <Image
           src={item.imageUrl}
           alt=""
@@ -304,7 +304,7 @@ function SearchResultThumbnail({ item }: { item: SearchResult }) {
 
   if (item.type === "shopping-center") {
     return (
-      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-none border border-border bg-secondary text-muted">
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[var(--radius)] border border-border bg-secondary text-muted">
         <Building2 className="h-5 w-5" />
       </div>
     );
@@ -312,7 +312,7 @@ function SearchResultThumbnail({ item }: { item: SearchResult }) {
 
   return (
     <div
-      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-none border border-border bg-secondary font-display text-sm font-semibold text-muted-foreground"
+      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[var(--radius)] border border-border bg-secondary font-display text-sm font-semibold text-muted-foreground"
       aria-hidden
     >
       {getBrandLetter(item.title, item.type === "brand" ? item.slug : undefined)}
@@ -332,7 +332,7 @@ function SearchResultItem({
       value={`${item.title} ${item.subtitle}`}
       keywords={[item.title, item.subtitle, item.slug]}
       onSelect={() => onSelect(item)}
-      className="mb-1 cursor-pointer gap-3 rounded-none border border-border/60 bg-secondary px-3 py-2.5 text-foreground hover:border-border hover:bg-background data-[selected=true]:border-border data-[selected=true]:bg-background aria-[selected=true]:border-border aria-[selected=true]:bg-background"
+      className="mb-1 cursor-pointer gap-3 rounded-[var(--radius)] border border-border/60 bg-secondary px-3 py-2.5 text-foreground hover:border-border hover:bg-card data-[selected=true]:border-accent/20 data-[selected=true]:bg-card aria-[selected=true]:border-accent/20 aria-[selected=true]:bg-card"
     >
       <SearchResultThumbnail item={item} />
       <div className="min-w-0 flex-1">

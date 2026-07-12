@@ -72,7 +72,7 @@ export function BrandIdentity({
           alt={alt}
           size={48}
           displayScale={displayScale}
-          className={cn("!h-12 !w-12 rounded-none", className)}
+          className={cn("!h-12 !w-12 rounded-[var(--radius)]", className)}
           onFailed={() => setImageFailed(true)}
         />
       );
@@ -80,7 +80,7 @@ export function BrandIdentity({
     return (
       <div
         className={cn(
-          "flex h-12 w-12 shrink-0 items-center justify-center rounded-none border border-border bg-secondary font-display text-lg font-semibold text-accent",
+          "flex h-12 w-12 shrink-0 items-center justify-center rounded-[var(--radius)] border border-border bg-secondary font-display text-lg font-semibold text-accent",
           className
         )}
         aria-label={alt}
@@ -95,7 +95,7 @@ export function BrandIdentity({
     const logoSlot = (
       <span
         className={cn(
-          "inline-flex shrink-0 items-center justify-center rounded-none",
+          "inline-flex shrink-0 items-center justify-center rounded-[var(--radius)]",
           uniformLogo
             ? "bg-transparent"
             : "border border-border bg-background",

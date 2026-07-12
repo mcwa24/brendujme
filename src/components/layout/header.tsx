@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { golosText } from "@/lib/fonts";
 import { BILBORD_CONTACT_URL } from "@/lib/bilbord";
 import { BILBORD_SITE_URL } from "@/lib/bilbord-footer";
 import { BILBORD_MODA_STIL_URL } from "@/lib/news/urls";
@@ -8,10 +9,10 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import {
   HeaderBurgerButton,
+  HeaderCloseButton,
   HeaderSearchButton,
 } from "@/components/layout/header-icon-button";
 import { useSearch } from "@/components/search/search-provider";
-import { cn } from "@/lib/utils";
 
 const navItems = [
   { href: BILBORD_SITE_URL, label: "Portal", external: true },
@@ -21,9 +22,9 @@ const navItems = [
   { href: BILBORD_MODA_STIL_URL, label: "Vesti", external: true },
 ] as const;
 
-function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
+function NavMenu({ onNavigate }: { onNavigate?: () => void }) {
   return (
-    <ul className="nav">
+    <ul className={`s-menu ${golosText.className}`}>
       {navItems.map((item) => (
         <li key={item.href}>
           {"external" in item && item.external ? (
@@ -50,74 +51,57 @@ export function Header() {
   const pathname = usePathname();
   const { setOpen } = useSearch();
   const [mobileOpen, setMobileOpen] = useState(false);
+
   useEffect(() => {
     setMobileOpen(false);
   }, [pathname]);
 
   useEffect(() => {
-    if (mobileOpen) {
-      document.documentElement.style.overflowY = "hidden";
-    } else {
-      document.documentElement.style.overflowY = "";
-    }
+    document.body.classList.toggle("s-nav-open", mobileOpen);
     return () => {
-      document.documentElement.style.overflowY = "";
+      document.body.classList.remove("s-nav-open");
     };
-  }, [mobileOpen]);
-
-  useEffect(() => {
-    const items = document.querySelectorAll("#gh-navigation .nav li");
-    const isMobile = window.matchMedia("(max-width: 767px)").matches;
-    items.forEach((item, index) => {
-      const el = item as HTMLElement;
-      if (mobileOpen && isMobile) {
-        el.style.transitionDelay = `${0.03 * (index + 1)}s`;
-      } else {
-        el.style.transitionDelay = "";
-      }
-    });
   }, [mobileOpen]);
 
   const closeMenu = () => setMobileOpen(false);
   const toggleMenu = () => setMobileOpen((open) => !open);
+  const openSearch = () => {
+    closeMenu();
+    setOpen(true);
+  };
 
   return (
-    <header
-      id="gh-navigation"
-      className={cn("gh-navigation gh-outer is-left-logo z-40", mobileOpen && "is-open")}
-    >
-      <div className="gh-navigation-inner gh-inner">
-        <div className="gh-navigation-brand">
-          <Link href="/" className="gh-navigation-logo" suppressHydrationWarning>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/bilbord-logo.png"
-              alt="Bilbord Shop"
-              decoding="async"
-            />
-          </Link>
-          <HeaderSearchButton
-            className="gh-search gh-icon-button"
-            onClick={() => {
-              closeMenu();
-              setOpen(true);
-            }}
-          />
-          <HeaderBurgerButton isOpen={mobileOpen} onClick={toggleMenu} />
-        </div>
+    <header className="s-header">
+      <div className="s-container">
+        <Link href="/" className="s-logo s-logo--image" suppressHydrationWarning>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/bilbord-logo.png" alt="Bilbord Shop" decoding="async" />
+        </Link>
 
-        <nav className="gh-navigation-menu">
-          <NavLinks onNavigate={closeMenu} />
+        <nav className="s-nav" aria-hidden={mobileOpen ? "false" : "true"}>
+          <NavMenu onNavigate={closeMenu} />
+          <div className="s-utils s-utils--nav">
+            <div className="s-utils-account">
+              <Link href={BILBORD_CONTACT_URL} className="s-btn" onClick={closeMenu}>
+                <span>Prijavi brend</span>
+              </Link>
+            </div>
+            <HeaderCloseButton className="s-utils-close" onClick={closeMenu} />
+          </div>
         </nav>
 
-        <div className="gh-navigation-actions">
-          <HeaderSearchButton
-            className="gh-search gh-icon-button"
-            onClick={() => setOpen(true)}
+        <div className="s-utils">
+          <HeaderSearchButton className="s-utils-search" onClick={openSearch} />
+          <div className="s-utils-account">
+            <Link href={BILBORD_CONTACT_URL} className="s-btn">
+              <span>Prijavi brend</span>
+            </Link>
+          </div>
+          <HeaderBurgerButton
+            className="s-utils-burger"
+            isOpen={mobileOpen}
+            onClick={toggleMenu}
           />
-          <Link href={BILBORD_CONTACT_URL} className="gh-button">
-            Prijavi brend
-          </Link>
         </div>
       </div>
     </header>

@@ -81,7 +81,7 @@ export function BrandDirectory({ brands }: BrandDirectoryProps) {
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Pretraži brendove..."
               className={cn(
-                "h-12 rounded-none border-border pl-11",
+                "h-12 rounded-[var(--radius)] border-border pl-11",
                 hasSearchQuery && "pr-11"
               )}
             />
@@ -89,7 +89,7 @@ export function BrandDirectory({ brands }: BrandDirectoryProps) {
               <button
                 type="button"
                 onClick={clearSearch}
-                className="absolute right-3 top-1/2 -translate-y-1/2 rounded-none p-1 text-muted transition-colors hover:text-foreground"
+                className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1 text-muted transition-colors hover:text-foreground"
                 aria-label="Obriši pretragu"
               >
                 <X className="h-4 w-4" />
@@ -101,7 +101,7 @@ export function BrandDirectory({ brands }: BrandDirectoryProps) {
             onChange={(e) =>
               setSort(e.target.value as "name" | "availability")
             }
-            className="hidden h-12 rounded-none border border-border bg-card px-4 text-sm text-foreground outline-none sm:block"
+            className="hidden h-12 rounded-[var(--radius)] border border-border bg-card px-4 text-sm text-foreground outline-none sm:block"
             aria-label="Sortiranje"
           >
             <option value="name">Naziv A–Z</option>
@@ -125,7 +125,7 @@ export function BrandDirectory({ brands }: BrandDirectoryProps) {
 
       <div className="mt-8 flex flex-col gap-10 lg:mt-10 lg:flex-row">
         <aside className="hidden lg:block lg:w-64 lg:shrink-0">
-          <div className="sticky top-28 space-y-8 rounded-none border border-border bg-card p-6">
+          <div className="sticky top-28 space-y-8 rounded-[var(--radius)] border border-border bg-card p-6">
             <FilterGroup title="Zemlja">
               <FilterButton
                 active={country === "Sve zemlje"}
@@ -221,7 +221,7 @@ function FilterButton({
       type="button"
       onClick={onClick}
       className={cn(
-        "flex items-center justify-between gap-3 rounded-none px-3 py-2 text-left text-sm transition-colors",
+        "flex items-center justify-between gap-3 rounded-[var(--radius)] px-3 py-2 text-left text-sm transition-colors",
         active
           ? "bg-accent font-medium text-white"
           : "text-muted hover:bg-background hover:text-foreground"

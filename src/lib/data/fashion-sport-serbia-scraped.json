@@ -1,6 +1,6 @@
 {
-  "scrapedAt": "2026-06-04T15:35:53.655Z",
-  "sourceNote": "FC fashioncompany.rs; F&F; Tike; Burberry Terazije 28; adidas Originals trendmaker/adidasoriginals.rs",
+  "scrapedAt": "2026-07-12T05:48:34.420Z",
+  "sourceNote": "FC fashioncompany.rs; F&F; Burberry Terazije 28; adidas Originals trendmaker/adidasoriginals.rs (Tike → scrape:tike)",
   "brands": [
     "fashion-company",
     "fashion-friends",
@@ -599,16 +599,6 @@
       "shoppingCenterSlug": null,
       "retailerSlug": "fashion-friends",
       "storeUrl": "https://www.fashionandfriends.com/rs/"
-    },
-    {
-      "brandSlug": "tike",
-      "name": "Tike Shop",
-      "address": "Kralja Petra 24",
-      "city": "Beograd",
-      "citySlug": "beograd",
-      "shoppingCenterSlug": null,
-      "retailerSlug": "tike",
-      "storeUrl": "https://www.tike.rs/"
     },
     {
       "brandSlug": "burberry",

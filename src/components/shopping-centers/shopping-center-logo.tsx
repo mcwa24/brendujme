@@ -41,7 +41,7 @@ export function ShoppingCenterLogo({
       return (
         <div
           className={cn(
-            "relative aspect-[16/9] overflow-hidden rounded-none bg-secondary",
+            "relative aspect-[16/9] overflow-hidden rounded-[var(--radius)] bg-secondary",
             className
           )}
         >
@@ -59,7 +59,7 @@ export function ShoppingCenterLogo({
     return (
       <div
         className={cn(
-          "flex aspect-[16/9] items-center justify-center rounded-none bg-accent/90",
+          "flex aspect-[16/9] items-center justify-center rounded-[var(--radius)] bg-accent/90",
           className
         )}
       >
@@ -73,7 +73,7 @@ export function ShoppingCenterLogo({
   return (
     <div
       className={cn(
-        "flex shrink-0 items-center justify-center rounded-none bg-secondary text-muted/40",
+        "flex shrink-0 items-center justify-center rounded-[var(--radius)] bg-secondary text-muted/40",
         bare ? "bg-transparent" : "",
         dims.box,
         className

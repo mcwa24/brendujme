@@ -30,7 +30,7 @@ function ShoppingCenterBannerCard({
   return (
     <FadeIn delay={delay}>
       <Link href={href} className="group block h-full">
-        <article className="relative flex min-h-[300px] flex-col justify-end overflow-hidden rounded-none shadow-[0_1px_2px_rgb(0_0_0/0.08),0_4px_16px_rgb(0_0_0/0.1)] transition-shadow duration-200 hover:shadow-[0_2px_6px_rgb(0_0_0/0.1),0_8px_24px_rgb(0_0_0/0.14)] sm:min-h-[340px] lg:min-h-[380px]">
+        <article className="relative flex min-h-[300px] flex-col justify-end overflow-hidden rounded-[var(--radius)] shadow-[0_1px_2px_rgb(0_0_0/0.08),0_4px_16px_rgb(0_0_0/0.1)] transition-shadow duration-200 hover:shadow-[0_2px_6px_rgb(0_0_0/0.1),0_8px_24px_rgb(0_0_0/0.14)] sm:min-h-[340px] lg:min-h-[380px]">
           {coverSrc ? (
             <Image
               src={coverSrc}

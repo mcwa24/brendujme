@@ -13,7 +13,7 @@ export function RetailerSectionTitle({
 }: RetailerSectionTitleProps) {
   return (
     <div className="flex items-center gap-3 md:gap-4">
-      <RetailerLogo slug={retailerSlug} size="lg" className="rounded-none" />
+      <RetailerLogo slug={retailerSlug} size="lg" className="rounded-[var(--radius)]" />
       <h2 className="font-display text-3xl font-semibold md:text-4xl">
         <RetailerLink
           slug={retailerSlug}

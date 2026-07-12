@@ -65,7 +65,7 @@ export function HeroPromotions({
             Aktuelne akcije
           </h2>
         </FadeIn>
-        <FadeIn delay={0.08} className="mt-10">
+        <FadeIn delay={0.08} className="mt-6">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {promotions.map((promo, index) => {
               const offerLine = promotionOfferLine(promo);
@@ -76,13 +76,13 @@ export function HeroPromotions({
               return (
                 <article
                   key={promo.slug}
-                  className="group relative flex min-h-[280px] flex-col justify-end overflow-hidden rounded-none shadow-[0_1px_2px_rgb(0_0_0/0.08),0_4px_16px_rgb(0_0_0/0.1)] transition-shadow duration-200 hover:shadow-[0_2px_6px_rgb(0_0_0/0.1),0_8px_24px_rgb(0_0_0/0.14)]"
+                  className="group relative flex min-h-[280px] flex-col justify-end overflow-hidden rounded-[var(--radius)] shadow-[0_1px_2px_rgb(0_0_0/0.08),0_4px_16px_rgb(0_0_0/0.1)] transition-shadow duration-200 hover:shadow-[0_2px_6px_rgb(0_0_0/0.1),0_8px_24px_rgb(0_0_0/0.14)]"
                 >
                   <a
                     href={getPromotionExternalUrl(promo)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="absolute inset-0 z-[1] cursor-pointer rounded-none"
+                    className="absolute inset-0 z-[1] cursor-pointer rounded-[var(--radius)]"
                     aria-label={`${promo.title} — ${promo.retailerName}, otvori akciju na sajtu prodavca`}
                   />
 

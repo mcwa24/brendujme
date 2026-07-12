@@ -74,12 +74,12 @@ export function ExpiringSoonPromotionBanner({
         </FadeIn>
 
         <FadeIn delay={0.08} className="mt-10">
-          <article className="group relative flex min-h-[320px] flex-col justify-end overflow-hidden rounded-none shadow-[0_1px_2px_rgb(0_0_0/0.08),0_4px_16px_rgb(0_0_0/0.1)] transition-shadow duration-200 hover:shadow-[0_2px_6px_rgb(0_0_0/0.1),0_8px_24px_rgb(0_0_0/0.14)] sm:min-h-[380px] lg:min-h-[420px]">
+          <article className="group relative flex min-h-[320px] flex-col justify-end overflow-hidden rounded-[var(--radius)] shadow-[0_1px_2px_rgb(0_0_0/0.08),0_4px_16px_rgb(0_0_0/0.1)] transition-shadow duration-200 hover:shadow-[0_2px_6px_rgb(0_0_0/0.1),0_8px_24px_rgb(0_0_0/0.14)] sm:min-h-[380px] lg:min-h-[420px]">
             <a
               href={getPromotionExternalUrl(promotion)}
               target="_blank"
               rel="noopener noreferrer"
-              className="absolute inset-0 z-[1] cursor-pointer rounded-none"
+              className="absolute inset-0 z-[1] cursor-pointer rounded-[var(--radius)]"
               aria-label={`${promotion.title} — ${promotion.retailerName}, otvori akciju na sajtu prodavca`}
             />
 
@@ -101,7 +101,7 @@ export function ExpiringSoonPromotionBanner({
             <div className="pointer-events-none relative z-[3] p-6 sm:p-8 lg:p-10">
               <div className="[text-shadow:0_1px_2px_rgb(0_0_0/0.95),0_2px_12px_rgb(0_0_0/0.65)]">
                 <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-                  <span className="inline-flex items-center gap-1.5 rounded-none bg-white/95 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.14em] text-black">
+                  <span className="inline-flex items-center gap-1.5 rounded-[var(--radius)] bg-white/95 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.14em] text-black">
                     <Clock className="h-3.5 w-3.5 shrink-0" />
                     {urgency}
                   </span>
