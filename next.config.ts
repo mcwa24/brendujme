@@ -55,6 +55,12 @@ const nextConfig: NextConfig = {
     return [
       ...legacyShopRedirects,
       {
+        source: "/api/promotions/home",
+        destination: `${shopBasePath}/api/promotions/home`,
+        permanent: false,
+        basePath: false,
+      },
+      {
         source: "/contact",
         destination: "https://bilbord.rs/kontakt/",
         permanent: false,
