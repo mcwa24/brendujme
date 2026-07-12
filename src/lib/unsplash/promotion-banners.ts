@@ -312,3 +312,9 @@ export async function getPromotionBannerImages(
     { revalidate: 86400, tags: ["unsplash-promo-banners"] }
   )();
 }
+
+/** Sinhroni Unsplash fallback kad API/cache nije dostupan (npr. Ghost embed). */
+export function getPromotionFallbackBannerUrl(index = 0): string {
+  const pool = FALLBACK_STUDIO_POOL;
+  return pool[index % pool.length]?.imageUrl ?? pool[0].imageUrl;
+}

@@ -5,7 +5,10 @@ import {
   applyPublicApiCorsHeaders,
   resolvePublicApiCorsOrigin,
 } from "@/lib/security/public-api-cors";
-import { getPromotionBannerImages } from "@/lib/unsplash/promotion-banners";
+import {
+  getPromotionBannerImages,
+  getPromotionFallbackBannerUrl,
+} from "@/lib/unsplash/promotion-banners";
 import type { HomePromotion, PromotionCampaignType } from "@/types";
 
 export const runtime = "nodejs";
@@ -30,7 +33,23 @@ function clampLimit(raw: string | null): number {
   return Math.min(n, MAX_LIMIT);
 }
 
-function serializePromotion(promo: HomePromotion) {
+function resolveBannerImageUrl(
+  promo: HomePromotion,
+  index: number,
+  fromUnsplash?: string,
+): string {
+  return (
+    promo.bannerImageUrl?.trim() ||
+    fromUnsplash?.trim() ||
+    getPromotionFallbackBannerUrl(index)
+  );
+}
+
+function serializePromotion(
+  promo: HomePromotion,
+  index: number,
+  fromUnsplash?: string,
+) {
   return {
     slug: promo.slug,
     title: promo.title,
@@ -45,7 +64,7 @@ function serializePromotion(promo: HomePromotion) {
     scope: promo.scope ?? null,
     externalUrl: getPromotionExternalUrl(promo),
     retailerHref: promo.href,
-    bannerImageUrl: promo.bannerImageUrl ?? null,
+    bannerImageUrl: resolveBannerImageUrl(promo, index, fromUnsplash),
   };
 }
 
@@ -54,7 +73,7 @@ function jsonResponse(body: unknown, request: NextRequest, init?: ResponseInit) 
   applyPublicApiCorsHeaders(res, request);
   res.headers.set(
     "Cache-Control",
-    "public, s-maxage=3600, stale-while-revalidate=86400",
+    "public, s-maxage=300, stale-while-revalidate=3600",
   );
   return res;
 }
@@ -75,12 +94,17 @@ export async function GET(request: NextRequest) {
   try {
     const all = await getHomePromotions();
     const slice = all.slice(0, limit);
-    const banners = await getPromotionBannerImages(slice);
-    const promotions = slice.map((promo, index) => ({
-      ...serializePromotion(promo),
-      bannerImageUrl:
-        promo.bannerImageUrl ?? banners[index]?.imageUrl ?? null,
-    }));
+
+    let banners: Awaited<ReturnType<typeof getPromotionBannerImages>> = [];
+    try {
+      banners = await getPromotionBannerImages(slice);
+    } catch (bannerError) {
+      console.error("promotions/home banner fetch failed:", bannerError);
+    }
+
+    const promotions = slice.map((promo, index) =>
+      serializePromotion(promo, index, banners[index]?.imageUrl),
+    );
     return jsonResponse({ promotions }, request);
   } catch (err) {
     return jsonResponse(
