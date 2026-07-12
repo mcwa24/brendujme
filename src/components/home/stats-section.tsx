@@ -20,10 +20,10 @@ export function StatsSection({ stats }: StatsSectionProps) {
         <div className="grid gap-12 sm:grid-cols-3">
           {items.map((stat, i) => (
             <FadeIn key={stat.label} delay={i * 0.08} className="text-center">
-              <p className="font-display text-5xl font-semibold tracking-tight text-accent md:text-6xl">
+              <p className="font-display text-5xl font-semibold tracking-tight text-foreground md:text-6xl">
                 {stat.value}
               </p>
-              <p className="mt-2 text-muted">{stat.label}</p>
+              <p className="mt-2 text-muted-foreground">{stat.label}</p>
             </FadeIn>
           ))}
         </div>

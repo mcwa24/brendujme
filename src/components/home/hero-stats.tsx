@@ -31,12 +31,12 @@ function StatBlock({
   return (
     <div className={`${alignClass} w-full`}>
       <p
-        className={`font-display tabular-nums leading-none text-accent max-md:tracking-normal ${valueClass}`}
+        className={`font-display tabular-nums leading-none text-foreground max-md:tracking-normal ${valueClass}`}
       >
         {value}
       </p>
       <p
-        className={`mt-2 text-[0.8125rem] leading-snug text-muted sm:mt-1.5 sm:text-sm ${
+        className={`mt-2 text-[0.8125rem] leading-snug text-muted-foreground sm:mt-1.5 sm:text-sm ${
           align === "center"
             ? "mx-auto max-w-[7.5rem] text-center sm:max-w-[8.5rem]"
             : align === "right"
