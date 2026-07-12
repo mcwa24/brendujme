@@ -1,34 +1,46 @@
 @import "tailwindcss";
 
 :root {
-  /* Ghost layout */
-  --container-width: 1320px;
+  /* Article / bilbord.rs nova tema — default.hbs */
+  --container-width: 1280px;
   --container-gap: clamp(24px, 1.7032rem + 1.9355vw, 48px);
+  --corner-radius: 8px;
+  --corner-radius-lg: 12px;
+  --ghost-accent-color: #173dd0;
 
-  /* bilbord.rs paleta — sav primarni tekst #2A2A2A */
-  --text-default: #2a2a2a;
-  --background: #ffffff;
-  --foreground: var(--text-default);
+  --heading-letter-spacing: -0.05em;
+  --body-letter-spacing: -0.04em;
+
+  --text-default: #0f172a;
+  --background: #f5f7fb;
+  --foreground: #0f172a;
   --card: #ffffff;
-  --card-foreground: var(--text-default);
+  --card-foreground: #0f172a;
   --popover: #ffffff;
-  --popover-foreground: var(--text-default);
-  --primary: var(--text-default);
+  --popover-foreground: #0f172a;
+  --primary: #173dd0;
   --primary-foreground: #ffffff;
-  --secondary: #f2f2f2;
-  --secondary-foreground: var(--text-default);
-  --muted: #6b6b6b;
-  --muted-foreground: #9a9a9a;
-  --accent: var(--text-default);
+  --secondary: #e3e8ef;
+  --secondary-foreground: #0f172a;
+  --muted: #575757;
+  --muted-foreground: #767676;
+  --accent: #173dd0;
   --accent-foreground: #ffffff;
-  --accent-hover: #1a1a1a;
+  --accent-hover: #1231a8;
   --success: #4a7c59;
-  --border: #e6e1da;
-  --input: #e6e1da;
-  --ring: var(--text-default);
-  --destructive: #b94a48;
-  --radius: 0;
-  --image-radius: 0;
+  --border: #e3e8ef;
+  --input: #e6e6e6;
+  --ring: #173dd0;
+  --destructive: #b42318;
+  --radius: var(--corner-radius);
+  --image-radius: var(--corner-radius);
+  --desktop-logo-height: 40px;
+  --mobile-logo-height: 32px;
+  --color-black-600: #575757;
+  --color-black-400: #a5a5a5;
+  --color-black-300: #d6d6d6;
+  --color-black-200: #e6e6e6;
+  --color-chip-bg: #e3e8ef;
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -60,7 +72,7 @@
 
 @theme inline {
   --animate-marquee: marquee var(--marquee-duration, 40s) linear infinite;
-  --color-black: #2a2a2a;
+  --color-black: #0f172a;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -82,7 +94,10 @@
   --color-ring: var(--ring);
   --color-destructive: var(--destructive);
   --font-sans: var(--font-inter);
-  --font-display: var(--font-inter);
+  --font-display: var(--font-golos);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: var(--corner-radius-lg, 12px);
   --radius-xl: var(--radius);
   --shadow-card: 0 1px 2px rgb(0 0 0 / 0.03), 0 4px 12px rgb(0 0 0 / 0.02);
 }
@@ -110,7 +125,8 @@ body {
   font-family: var(--font-inter), Inter, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.65;
+  letter-spacing: var(--body-letter-spacing);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -118,7 +134,6 @@ body {
 @media (min-width: 768px) {
   body {
     font-size: 17px;
-    line-height: 1.55;
   }
 }
 
@@ -130,6 +145,15 @@ picture,
 }
 
 @layer base {
+  :where(h1, h2, h3, h4, h5, h6) {
+    font-family: var(--font-golos), "Golos Text", var(--font-inter), Inter, system-ui,
+      sans-serif;
+    font-weight: 600;
+    letter-spacing: var(--heading-letter-spacing);
+    line-height: 1.35;
+    color: var(--text-default);
+  }
+
   :where(h1, h2, h3, h4, h5, h6, p, li, dt, dd, th, td, blockquote, figcaption) {
     color: var(--text-default);
   }
@@ -185,15 +209,49 @@ picture,
 }
 
 .font-display {
-  font-family: var(--font-inter), Inter, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif;
-  letter-spacing: -0.02em;
+  font-family: var(--font-golos), "Golos Text", var(--font-inter), Inter, system-ui,
+    sans-serif;
+  font-weight: 600;
+  letter-spacing: var(--heading-letter-spacing);
 }
 
 @media (max-width: 767px) {
   .font-display {
-    letter-spacing: -0.01em;
+    letter-spacing: -0.03em;
   }
+}
+
+/* Ghost / Article polja — kontakt, newsletter, pretraga */
+.bilbord-field {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 16px;
+  line-height: 1.65;
+  letter-spacing: var(--body-letter-spacing);
+  color: var(--foreground);
+  background-color: var(--card);
+  border: none;
+  border-radius: var(--corner-radius);
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.bilbord-field::placeholder {
+  color: var(--muted-foreground);
+}
+
+.bilbord-field:focus-visible {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+.bilbord-field-bordered {
+  border: 1px solid var(--input);
+}
+
+.bilbord-field-bordered:focus-visible {
+  border-color: var(--accent);
 }
 
 /* Ghost layout shell */
@@ -211,24 +269,27 @@ picture,
   flex-grow: 1;
 }
 
-/* Ghost buttons — screen.css 3.x (px vrednosti: Ghost html 62.5%) */
+/* Ghost buttons — Article .s-btn (pill, accent) */
 .gh-button {
   display: inline-flex;
   gap: 0.4em;
   align-items: center;
   justify-content: center;
-  padding: 0.8em 1.4em;
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: -0.004em;
-  line-height: 1;
-  color: #fff;
+  padding: 12px 18px;
+  font-family: var(--font-golos), "Golos Text", var(--font-inter), Inter, system-ui,
+    sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: var(--heading-letter-spacing);
+  line-height: 1.05;
+  color: var(--accent-foreground);
   text-decoration: none;
   white-space: nowrap;
   cursor: pointer;
   background-color: var(--accent);
   border: 0;
-  border-radius: 0;
+  border-radius: 9999px;
+  transition: background-color 0.2s ease;
 }
 
 .gh-button:hover {
@@ -259,12 +320,12 @@ picture,
   height: 20px;
 }
 
-/* Ghost navigation — screen.css 6.x + bilbord-custom mobile menu */
+/* Ghost navigation — Article header na #F5F7FB */
 .gh-navigation {
-  height: 100px;
-  font-size: 15px;
+  padding: 24px 0;
+  font-size: 16px;
   font-weight: 500;
-  background-color: #fff;
+  background-color: transparent;
   color: var(--foreground);
 }
 
@@ -324,9 +385,12 @@ picture,
 }
 
 .gh-navigation .nav a {
-  font-size: 15px;
+  font-family: var(--font-golos), "Golos Text", var(--font-inter), Inter, system-ui,
+    sans-serif;
+  font-size: 16px;
   font-weight: 500;
   line-height: 1.6;
+  letter-spacing: var(--heading-letter-spacing);
 }
 
 .gh-navigation-actions {
@@ -334,7 +398,7 @@ picture,
   gap: 24px;
   align-items: center;
   justify-content: flex-end;
-  background-color: #fff;
+  background-color: transparent;
 }
 
 .gh-search {
@@ -499,14 +563,14 @@ picture,
     height: 100%;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
-    background-color: #fff;
+    background-color: var(--background);
   }
 
   .is-open#gh-navigation,
   .is-open#gh-navigation .gh-navigation-inner,
   .is-open#gh-navigation .gh-navigation-menu,
   .is-open#gh-navigation .gh-navigation-actions {
-    background-color: #fff;
+    background-color: var(--background);
   }
 
   .is-open#gh-navigation .gh-navigation-inner {
@@ -537,7 +601,7 @@ picture,
   }
 
   .is-open#gh-navigation .nav a {
-    color: #2a2a2a;
+    color: var(--foreground);
   }
 
   .is-open#gh-navigation .nav li {
@@ -580,180 +644,242 @@ picture,
   }
 }
 
-/* Ghost footer — screen.css 21.x + bilbord-custom overrides */
-.gh-footer {
-  /* margin-top: 12vw — na komponenti (!mt-[12vw]) da ne bude prepisano u dev bundle-u */
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 1.6;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-synthesis: none;
+/* Ghost Article footer — s-footer (bilbord.rs) */
+.s-container {
+  margin: 0 auto;
+  max-width: var(--container-width);
+  padding: 0 20px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .s-container {
+    padding: 0 32px;
+  }
+}
+
+.sr-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.s-footer {
+  background-color: var(--card);
   color: var(--foreground);
-  background: #fff;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  margin-top: clamp(48px, 12vw, 120px);
 }
 
-.gh-footer a:not(.gh-button) {
-  color: inherit;
-  text-decoration: none;
+.s-footer-stack {
+  padding: 32px 0;
 }
 
-.gh-footer a:not(.gh-button):hover {
-  opacity: 0.85;
+@media (min-width: 1024px) {
+  .s-footer-stack {
+    padding: 64px 0;
+  }
 }
 
-.gh-footer-inner {
-  padding-bottom: clamp(18px, 2.5vw, 32px);
-}
-
-.gh-footer-wrap {
+.s-footer-main {
   display: flex;
   flex-direction: column;
-  gap: clamp(32px, 4vw, 48px);
-  padding-top: clamp(28px, 3vw, 40px);
-  border-top: 0;
+  gap: 2rem;
+  padding: 2rem 0 4rem;
+  font-size: 16px;
 }
 
-.gh-footer-top {
+@media (min-width: 1024px) {
+  .s-footer-main {
+    flex-direction: row;
+    gap: clamp(56px, 12vw, 240px);
+  }
+}
+
+.s-footer-brand {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px 32px;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 450px;
 }
 
-.gh-footer-brand {
+@media (min-width: 1024px) {
+  .s-footer-brand {
+    width: 40%;
+  }
+}
+
+.s-footer-brand-logo {
   display: inline-flex;
-  align-items: center;
   line-height: 1;
   color: inherit;
 }
 
-.gh-footer-brand-logo {
+.s-footer-brand-logo img {
   display: block;
-  max-height: 40px;
+  height: var(--mobile-logo-height);
+  min-height: 20px;
   width: auto;
 }
 
-.gh-footer-social {
+@media (min-width: 768px) {
+  .s-footer-brand-logo img {
+    height: var(--desktop-logo-height);
+  }
+}
+
+.s-footer-brand > p {
+  margin: 0;
+  color: inherit;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: var(--body-letter-spacing);
+}
+
+.s-social {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 8px 14px;
+  gap: 8px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.gh-footer-social > li {
+.s-social li {
   display: flex;
   margin: 0;
   padding: 0;
-  list-style: none;
 }
 
-.gh-footer-social a {
+.s-social a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  margin: 0;
-  color: #2a2a2a !important;
-  opacity: 0.9;
+  width: 32px;
+  height: 32px;
+  color: inherit;
+  background-color: var(--secondary);
+  border-radius: 9999px;
+  transition: all 0.15s ease;
 }
 
-.gh-footer-social a:hover {
-  opacity: 1;
+.s-social a:hover {
+  background-color: var(--accent);
+  color: #fff;
 }
 
-.gh-footer-social svg {
-  width: 20px;
-  height: 20px;
+.s-social a svg {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
 }
 
-.gh-footer-columns {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: clamp(24px, 3vw, 40px);
-  width: 100%;
-}
-
-.gh-footer-column {
+.s-footer-nav {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  min-width: 0;
+  gap: 2rem;
+  justify-content: space-between;
 }
 
-.gh-footer-column-title {
-  margin: 0;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: #2a2a2a !important;
+@media (min-width: 768px) {
+  .s-footer-nav {
+    flex-direction: row;
+    gap: clamp(56px, 8vw, 7.5rem);
+    justify-content: space-evenly;
+    padding-right: 3rem;
+    width: 60%;
+  }
 }
 
-.gh-footer .gh-footer-column-list a:not(.gh-button) {
-  color: #878685;
-  font-size: inherit;
-  font-weight: inherit;
-  line-height: inherit;
-  letter-spacing: inherit;
-}
-
-.gh-footer-column-list {
+.s-footer-nav ul {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0.5rem;
   margin: 0;
   padding: 0;
   list-style: none;
-  font-size: 14.5px;
+}
+
+.s-footer-nav ul li span[role="heading"] {
+  display: block;
+  margin-bottom: 12px;
+  font-family: var(--font-golos), "Golos Text", var(--font-inter), Inter, system-ui,
+    sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  pointer-events: none;
+}
+
+.s-footer-nav ul li a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.s-footer-nav ul li a:hover {
+  opacity: 0.85;
+}
+
+.s-footer-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 20px;
+  margin-top: clamp(8px, 1.5vw, 16px);
+  padding: clamp(20px, 2.5vw, 28px) 0 0;
+  border-top: 1px solid var(--border);
+}
+
+.s-footer-bar-copyright {
+  margin: 0;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 1.4;
-  letter-spacing: 0;
-}
-
-.gh-footer-column-list li {
-  line-height: 1.35;
-}
-
-.gh-footer-bottom {
-  margin-top: clamp(28px, 3vw, 40px);
-  padding-top: clamp(20px, 2vw, 28px);
-  border-top: 0;
-}
-
-.gh-footer-copyright {
-  margin: 0 auto;
-  width: 100%;
-  font-size: 13.5px;
-  font-weight: 500;
   line-height: 1.6;
-  letter-spacing: -0.01em;
-  text-align: center;
-  color: #878685;
+  letter-spacing: var(--body-letter-spacing);
+  color: var(--muted-foreground);
+  text-align: left;
 }
 
-.gh-footer-copyright a:not(.gh-button) {
-  color: #878685;
-  font-weight: inherit;
-  letter-spacing: inherit;
+.s-footer-bar-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px 12px;
+  margin-left: auto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.s-footer-bar-links a {
+  color: var(--muted-foreground);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.s-footer-bar-links a:hover {
+  color: var(--accent);
 }
 
 @media (max-width: 576px) {
-  .gh-footer-top {
-    flex-direction: column;
+  .s-footer-bar {
     align-items: flex-start;
+    flex-direction: column;
   }
 
-  .gh-footer-social {
-    gap: 8px 14px;
+  .s-footer-bar-links {
+    justify-content: flex-start;
+    margin-left: 0;
   }
 }
 

@@ -1,9 +1,9 @@
-import { CookieSettingsLink } from "@/components/cookies/cookie-settings-link";
 import { FooterSocialIcon } from "@/components/layout/footer-social-icon";
 import {
-  BILBORD_IMPRESUM_URL,
+  BILBORD_FOOTER_TAGLINE,
   BILBORD_SITE_URL,
-  bilbordFooterColumns,
+  bilbordFooterBarLinks,
+  bilbordFooterNavColumns,
   bilbordFooterSocial,
 } from "@/lib/bilbord-footer";
 
@@ -11,65 +11,63 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="gh-footer gh-outer !mt-[12vw]">
-      <div className="gh-footer-inner gh-inner">
-        <div className="gh-footer-wrap">
-          <div className="gh-footer-top">
-            <a href={BILBORD_SITE_URL} className="gh-footer-brand">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/bilbord-logo.png"
-                alt="Bilbord Media"
-                className="gh-footer-brand-logo"
-                decoding="async"
-              />
-            </a>
+    <footer className="s-footer">
+      <div className="s-container">
+        <div className="s-footer-stack">
+          <div className="s-footer-main">
+            <div className="s-footer-brand">
+              <a href={BILBORD_SITE_URL} className="s-footer-brand-logo">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/bilbord-logo.png" alt="Bilbord.rs" decoding="async" />
+              </a>
+              <p>{BILBORD_FOOTER_TAGLINE}</p>
+              <ul className="s-social">
+                {bilbordFooterSocial.map((item) => (
+                  <li key={item.href}>
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={item.label}
+                    >
+                      <FooterSocialIcon name={item.icon} />
+                      <span className="sr-text">{item.label}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-            <ul className="gh-footer-social">
-              {bilbordFooterSocial.map((item) => (
-                <li key={item.href}>
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={item.label}
-                  >
-                    <FooterSocialIcon name={item.icon} />
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <nav className="gh-footer-columns" aria-label="Navigacija u podnožju">
-            {bilbordFooterColumns.map((column) => (
-              <section key={column.title} className="gh-footer-column">
-                <h3 className="gh-footer-column-title">{column.title}</h3>
-                <ul className="gh-footer-column-list">
+            <nav className="s-footer-nav" aria-label="Navigacija u podnožju">
+              {bilbordFooterNavColumns.map((column) => (
+                <ul key={column.title}>
+                  <li>
+                    <span role="heading" aria-level={4}>
+                      {column.title}
+                    </span>
+                  </li>
                   {column.links.map((link) => (
                     <li key={link.href}>
-                      {link.label === "Kolačići" ? (
-                        <CookieSettingsLink />
-                      ) : (
-                        <a href={link.href}>{link.label}</a>
-                      )}
+                      <a href={link.href}>{link.label}</a>
                     </li>
                   ))}
                 </ul>
-              </section>
-            ))}
-          </nav>
-        </div>
+              ))}
+            </nav>
+          </div>
 
-        <div className="gh-footer-bottom">
-          <p className="gh-footer-copyright">
-            © {year} Bilbord Media
-            <span className="gh-footer-copyright-sep" aria-hidden="true">
-              {" "}
-              ·{" "}
-            </span>
-            <a href={BILBORD_IMPRESUM_URL}>Impresum</a>
-          </p>
+          <div className="s-footer-bar">
+            <p className="s-footer-bar-copyright">
+              © {year} Bilbord.rs. Sva prava zadržana.
+            </p>
+            <nav className="s-footer-bar-links" aria-label="Pravni linkovi">
+              {bilbordFooterBarLinks.map((link) => (
+                <a key={link.href} href={link.href}>
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+          </div>
         </div>
       </div>
     </footer>
