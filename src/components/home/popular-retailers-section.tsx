@@ -4,6 +4,7 @@ import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
 import { RetailerLogo } from "@/components/retailers/retailer-logo";
 import { PremiumCard } from "@/components/ui/premium-card";
+import { SectionCtaLink } from "@/components/ui/section-cta-link";
 import { HOME_SECTION_PY, HOME_SECTION_TITLE } from "@/components/home/section-spacing";
 import { getRetailerCatalogMeta } from "@/lib/data/retailer-catalog-meta";
 import { formatModniBrandCount, formatStoreCount } from "@/lib/format/sr-plural";
@@ -34,13 +35,10 @@ export function PopularRetailersSection({ retailers }: PopularRetailersSectionPr
               Mreže koje najčešće tražite — sneaker i sport u Srbiji.
             </p>
           </div>
-          <Link
-            href="/retailers"
-            className="inline-flex items-center gap-1 text-sm font-medium text-accent hover:underline"
-          >
+          <SectionCtaLink href="/retailers">
             Svi prodavci
-            <ArrowRight className="h-4 w-4" />
-          </Link>
+            <ArrowRight className="h-3.5 w-3.5 shrink-0" />
+          </SectionCtaLink>
         </FadeIn>
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">

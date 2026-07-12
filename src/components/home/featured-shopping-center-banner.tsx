@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
 import { HOME_SECTION_PY, HOME_SECTION_TITLE } from "@/components/home/section-spacing";
+import { SectionCtaLink } from "@/components/ui/section-cta-link";
 import { formatBrandCount } from "@/lib/format/sr-plural";
 import { getShoppingCenterImage } from "@/lib/data/shopping-center-images";
 import { cn } from "@/lib/utils";
@@ -108,13 +109,10 @@ export function FeaturedShoppingCenterBanner({
               Destinacije koje najčešće otvarate — Galerija i Rajićeva u Beogradu.
             </p>
           </div>
-          <Link
-            href="/shopping-centers"
-            className="inline-flex items-center gap-1 text-sm font-medium text-accent hover:underline"
-          >
+          <SectionCtaLink href="/shopping-centers">
             Svi tržni centri
-            <ArrowRight className="h-4 w-4" />
-          </Link>
+            <ArrowRight className="h-3.5 w-3.5 shrink-0" />
+          </SectionCtaLink>
         </FadeIn>
 
         <div className="mt-10 grid gap-4 lg:grid-cols-2 lg:gap-6">

@@ -1,7 +1,10 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar } from "lucide-react";
+import { PAGE_TITLE } from "@/components/home/section-spacing";
+import { TagLink, tagListClassName } from "@/components/ui/tag-chip";
 import { Container } from "@/components/layout/container";
+import { PageSection } from "@/components/layout/page-section";
 import { FadeIn } from "@/components/motion/fade-in";
 import { NewsCover } from "@/components/news/news-cover";
 import {
@@ -50,7 +53,8 @@ export default async function NewsArticlePage({ params }: PageProps) {
 
   return (
     <article>
-      <Container narrow className="py-12 md:py-16">
+      <PageSection>
+        <Container>
         <FadeIn>
           <Link
             href="/news"
@@ -62,9 +66,7 @@ export default async function NewsArticlePage({ params }: PageProps) {
           <span className="mt-8 block text-sm font-medium uppercase tracking-wider text-muted">
             {article.category}
           </span>
-          <h1 className="font-display mt-4 max-w-4xl text-3xl font-semibold leading-tight md:text-5xl">
-            {article.title}
-          </h1>
+          <h1 className={PAGE_TITLE}>{article.title}</h1>
           <div className="mt-6 flex items-center gap-2 text-muted">
             <Calendar className="h-4 w-4" />
             {formatDate(article.publishedAt)}
@@ -112,23 +114,20 @@ export default async function NewsArticlePage({ params }: PageProps) {
         {relatedBrands.length > 0 && (
           <FadeIn delay={0.2} className="mt-16">
             <h2 className="font-display text-xl font-semibold">Povezani brendovi</h2>
-            <div className="mt-4 flex flex-wrap gap-3">
+            <div className={tagListClassName("mt-4")}>
               {relatedBrands.map(
                 (brand) =>
                   brand && (
-                    <Link
-                      key={brand.slug}
-                      href={`/brands/${brand.slug}`}
-                      className="rounded-full border border-border bg-card px-4 py-2 text-sm font-medium hover:border-accent hover:text-accent"
-                    >
+                    <TagLink key={brand.slug} href={`/brands/${brand.slug}`}>
                       {brand.name}
-                    </Link>
+                    </TagLink>
                   )
               )}
             </div>
           </FadeIn>
         )}
       </Container>
+      </PageSection>
     </article>
   );
 }

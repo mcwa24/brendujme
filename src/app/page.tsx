@@ -4,7 +4,6 @@ import { FeaturedBrandsSection } from "@/components/home/featured-brands-section
 import { NewsSection } from "@/components/home/news-section";
 import { ExpiringSoonPromotionBanner } from "@/components/home/expiring-soon-promotion-banner";
 import { FeaturedShoppingCenterBanner } from "@/components/home/featured-shopping-center-banner";
-import { NewsletterBanner } from "@/components/home/newsletter-banner";
 import { PopularRetailersSection } from "@/components/home/popular-retailers-section";
 import {
   getFeaturedBrands,
@@ -78,7 +77,6 @@ export default async function HomePage() {
       ) : null}
       <PopularRetailersSection retailers={popularRetailers} />
       <FeaturedShoppingCenterBanner centers={featuredShoppingCenters} />
-      <NewsletterBanner />
     </>
   );
 }

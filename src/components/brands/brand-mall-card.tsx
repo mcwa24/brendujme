@@ -33,8 +33,8 @@ export function BrandMallCard({ center, delay = 0 }: BrandMallCardProps) {
           </div>
           <span
             className={cn(
-              buttonVariants({ variant: "outline", size: "sm" }),
-              "mt-6 inline-flex rounded-[var(--radius)]"
+              buttonVariants({ size: "sm" }),
+              "mt-6 inline-flex"
             )}
           >
             Profil centra

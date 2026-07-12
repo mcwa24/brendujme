@@ -3,6 +3,7 @@ import { isPublishedShoppingCenterSlug } from "@/lib/data/shopping-centers";
 import { getStaticRetailerStores } from "@/lib/data/retailer-stores-static";
 import { isImportedRetailerSlug } from "@/lib/data/imported-retailers";
 import { createSupabaseReadClient } from "@/lib/supabase/read-client";
+import { normalizeScrapedDisplayText } from "@/lib/format/display-text";
 import type { RetailerStore } from "@/types";
 
 const MALL_NAMES: Record<string, string> = {
@@ -73,7 +74,7 @@ export async function fetchRetailerStoresFromSupabase(
 
     return {
       id: row.id as string,
-      name: row.name as string,
+      name: normalizeScrapedDisplayText(row.name as string),
       address: (row.address as string) || "",
       city: row.city as string,
       phone: (row.phone as string | null) ?? scraped?.phone ?? null,

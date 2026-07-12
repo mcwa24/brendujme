@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { Clock, X } from "lucide-react";
+import { TagChip, tagListClassName } from "@/components/ui/tag-chip";
 import { useSearch } from "@/components/search/search-provider";
 import {
   resolveRecentSearchHref,
@@ -48,27 +49,20 @@ export function RecentSearchPills({
           </button>
         </div>
       ) : null}
-      <div className="flex flex-wrap gap-2">
+      <div className={tagListClassName()}>
         {recentSearches.map((entry) => (
-          <button
-            key={entry.title}
-            type="button"
-            onClick={() => handleClick(entry)}
-            className="rounded-full border border-border bg-secondary px-3.5 py-1.5 text-sm text-foreground transition-colors hover:bg-card"
-          >
+          <TagChip key={entry.title} onClick={() => handleClick(entry)}>
             {entry.title}
-          </button>
+          </TagChip>
         ))}
         {!showHeading ? (
-          <button
-            type="button"
+          <TagChip
             onClick={clearRecentSearches}
-            className="inline-flex items-center gap-1 rounded-full border border-dashed border-border px-3 py-1.5 text-xs text-muted transition-colors hover:text-foreground"
             aria-label="Obriši poslednje pretrage"
           >
             <X className="h-3 w-3" />
             Obriši
-          </button>
+          </TagChip>
         ) : null}
       </div>
     </div>

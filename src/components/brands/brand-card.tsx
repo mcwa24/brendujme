@@ -24,7 +24,7 @@ export function BrandCard({ brand, variant = "default", uniformLogo = false }: B
   if (variant === "compact") {
     return (
       <Link href={`/brands/${brand.slug}`} prefetch={false} className="group block h-full">
-        <PremiumCard className="flex h-full flex-col p-3 transition-colors group-hover:border-accent/20 sm:p-5">
+        <PremiumCard className="flex h-full flex-col p-3 transition-colors sm:p-5">
           <BrandIdentity brand={brand} variant="compact" uniformLogo={uniformLogo} className="flex-1" />
         </PremiumCard>
       </Link>
@@ -55,10 +55,7 @@ export function BrandCard({ brand, variant = "default", uniformLogo = false }: B
           <Link
             href={`/brands/${brand.slug}`}
             prefetch={false}
-            className={cn(
-              buttonVariants({ variant: "outline" }),
-              "w-full border-border text-accent hover:bg-accent hover:text-white"
-            )}
+            className={cn(buttonVariants(), "w-full")}
           >
             Pogledaj profil
           </Link>

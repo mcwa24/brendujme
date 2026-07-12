@@ -6,7 +6,7 @@ import { FadeIn } from "@/components/motion/fade-in";
 import { HeroStats } from "@/components/home/hero-stats";
 import { RecentSearchPills } from "@/components/search/recent-search-pills";
 import { useSearch } from "@/components/search/search-provider";
-import { HOME_HERO_SECTION_PY } from "@/components/home/section-spacing";
+import { HOME_HERO_SECTION_PY, PAGE_TITLE } from "@/components/home/section-spacing";
 import type { HomeStats } from "@/lib/data/repository";
 
 interface HeroSectionProps {
@@ -22,7 +22,7 @@ export function HeroSection({ stats }: HeroSectionProps) {
         <div className="grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-16">
           <div className="min-w-0">
             <FadeIn>
-              <h1 className="font-display text-[2rem] font-semibold leading-[1.12] text-foreground sm:text-[2.25rem] md:text-[2.75rem] md:leading-[1.08]">
+              <h1 className={PAGE_TITLE}>
                 Akcije, ponude i brendovi
               </h1>
             </FadeIn>
@@ -42,7 +42,7 @@ export function HeroSection({ stats }: HeroSectionProps) {
                 <span className="text-muted-foreground">
                   Pretražite modne brendove ili prodavce...
                 </span>
-                <kbd className="ml-auto hidden rounded-full border border-border bg-secondary px-2 py-0.5 text-[11px] text-muted md:inline">
+                <kbd className="ml-auto hidden rounded-full bg-[var(--color-chip-bg)] px-2 py-0.5 text-[11px] text-muted md:inline">
                   ⌘K
                 </kbd>
               </button>

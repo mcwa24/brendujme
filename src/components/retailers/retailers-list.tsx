@@ -20,14 +20,14 @@ function retailerStats(retailer: Retailer): string {
 
 export function RetailersList({ retailers }: RetailersListProps) {
   return (
-    <ul className="mt-12 divide-y divide-border border-t border-border">
+    <ul className="s-list-tabs">
       {retailers.map((retailer, i) => (
         <li key={retailer.slug}>
           <FadeIn delay={Math.min(i * 0.03, 0.24)}>
             <Link
               href={`/retailers/${retailer.slug}`}
               prefetch={false}
-              className="group -mx-4 flex gap-5 px-4 py-8 transition-colors hover:bg-secondary/30 md:-mx-6 md:gap-8 md:px-6 md:py-10"
+              className="s-list-tab s-list-tab--row group"
             >
               <div className="flex w-[5.5rem] shrink-0 items-center justify-center md:w-32">
                 <RetailerLogo

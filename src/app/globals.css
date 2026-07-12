@@ -50,6 +50,8 @@
   --color-black-300: #d6d6d6;
   --color-black-200: #e6e6e6;
   --color-chip-bg: #e3e8ef;
+  --card-image-aspect: 16 / 10;
+  --color-card-bg: var(--card);
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -253,14 +255,6 @@ picture,
 
 .bilbord-field:focus-visible {
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
-}
-
-.bilbord-field-bordered {
-  border: 1px solid var(--input);
-}
-
-.bilbord-field-bordered:focus-visible {
-  border-color: var(--accent);
 }
 
 /* Ghost layout shell */
@@ -546,6 +540,236 @@ body.s-nav-open {
 .s-btn:hover {
   opacity: 1;
   background-color: var(--accent-hover);
+}
+
+/* Ghost Article tag čipovi — s-tags / s-tag (bilbord.rs post tag) */
+.s-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.s-tags :is(a, button).s-tag {
+  appearance: none;
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+  margin: 0;
+  padding: 3px 10px;
+  border: none;
+  border-radius: 9999px;
+  background-color: var(--color-chip-bg);
+  color: inherit;
+  font-family: var(--gh-font-heading, var(--heading-font-family)), "Helvetica", "Arial",
+    sans-serif;
+  font-size: 14px;
+  font-weight: var(--heading-font-weight);
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.s-tags .s-tag .s-tag-count {
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  opacity: 0.72;
+}
+
+@media (hover: hover) {
+  .s-tags :is(a, button).s-tag:hover {
+    background-color: var(--accent);
+    color: var(--accent-foreground);
+  }
+
+  .s-tags :is(a, button).s-tag:hover .s-tag-count {
+    opacity: 0.85;
+  }
+}
+
+.s-tags :is(a, button).s-tag.is-active,
+.s-tags :is(a, button).s-tag.is-active:hover,
+.s-tags :is(a, button).s-tag.is-active:focus-visible {
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+}
+
+.s-tags .s-tag.is-active .s-tag-count {
+  opacity: 0.85;
+}
+
+.s-tags :is(a, button).s-tag:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Beli tab redovi — lista (prodavci) */
+.s-list-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: none;
+  list-style: none;
+  padding: 0;
+  margin-inline: 0;
+  margin-bottom: 0;
+}
+
+.s-list-tab {
+  display: block;
+  border: none;
+  border-radius: var(--corner-radius-lg);
+  background-color: var(--color-card-bg);
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: var(--shadow-card);
+}
+
+.s-list-tab--row {
+  display: flex;
+  gap: 1.25rem;
+  padding: 1.5rem 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .s-list-tab--row {
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (hover: hover) {
+  .s-list-tab--row:hover {
+    background-color: color-mix(in srgb, var(--secondary) 35%, var(--color-card-bg));
+  }
+}
+
+.s-list-tab--panel {
+  padding: 1.5rem 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .s-list-tab--panel {
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* Ghost feed kartice — s-cards / s-card (tag archive list) */
+.s-cards--list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 966px;
+}
+
+.s-card {
+  padding: 8px;
+  background-color: var(--color-card-bg);
+  border-radius: var(--corner-radius-lg);
+}
+
+.s-card--list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .s-card--list {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 8px;
+  }
+}
+
+.s-card--list .s-card-image {
+  flex: 1 1 50%;
+  aspect-ratio: var(--card-image-aspect);
+  overflow: hidden;
+  border-radius: calc(var(--corner-radius-lg) - 4px);
+}
+
+.s-card--list .s-card-image a {
+  display: block;
+  height: 100%;
+  color: inherit;
+}
+
+.s-card--list .s-card-image .s-image {
+  position: relative;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .s-card--list .s-card-image .s-image {
+    aspect-ratio: auto;
+  }
+}
+
+.s-card--list .s-card-content {
+  display: flex;
+  flex: 1 1 50%;
+  flex-direction: column;
+  gap: 16px;
+  align-self: center;
+  padding: 0 16px 12px;
+}
+
+@media (min-width: 768px) {
+  .s-card--list .s-card-content {
+    padding: 24px 16px;
+  }
+}
+
+.s-card-title {
+  font-family: var(--gh-font-heading, var(--heading-font-family)), "Helvetica", "Arial",
+    sans-serif;
+  font-size: 1.125rem;
+  font-weight: var(--heading-font-weight);
+  line-height: 1.3;
+  letter-spacing: var(--heading-letter-spacing);
+}
+
+@media (min-width: 768px) {
+  .s-card-title {
+    font-size: 1.25rem;
+  }
+}
+
+.s-card-title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+@media (min-width: 1024px) {
+  .s-card-title a:hover {
+    color: var(--ghost-accent-color);
+  }
+}
+
+.s-card-excerpt {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-size: 15px;
+  line-height: 1.65;
+  letter-spacing: var(--body-letter-spacing);
+  opacity: 0.8;
+}
+
+.s-byline-date {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
 }
 
 .gh-icon-button {

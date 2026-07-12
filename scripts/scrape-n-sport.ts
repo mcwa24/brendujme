@@ -10,6 +10,7 @@ import path from "path";
 import { brands as staticBrands } from "../src/lib/data/brands";
 import { bilbordSlugFromNSportBrand } from "../src/lib/data/n-sport-brand-slugs";
 import { filterModniScrapedEntries } from "../src/lib/data/modni-retailer-brands";
+import { normalizeScrapedDisplayText } from "../src/lib/format/display-text";
 
 const BASE = "https://www.n-sport.net";
 const OUT = path.join(process.cwd(), "src/lib/data/n-sport-scraped.json");
@@ -145,7 +146,7 @@ function parseStores(html: string): NSportStoreScraped[] {
 
     stores.push({
       path,
-      name: shop.name?.trim() || "N Sport",
+      name: normalizeScrapedDisplayText(shop.name?.trim() || "N Sport"),
       address: address || decodeHtml(shop.address),
       city,
       citySlug,

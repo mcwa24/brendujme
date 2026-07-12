@@ -3,10 +3,15 @@
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
+import { TagChip, tagListClassName } from "@/components/ui/tag-chip";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { PremiumCard } from "@/components/ui/premium-card";
 import { Textarea } from "@/components/ui/textarea";
+import {
+  PAGE_LEAD,
+  PAGE_TITLE,
+} from "@/components/home/section-spacing";
 import { cn } from "@/lib/utils";
 
 type ContactTopic = "general" | "brand";
@@ -83,7 +88,7 @@ export function ContactForm() {
   if (status === "success") {
     return (
       <>
-        <h1 className="font-display text-4xl font-semibold md:text-5xl">{title}</h1>
+        <h1 className={PAGE_TITLE}>{title}</h1>
         <PremiumCard className="mt-12 p-8 text-center">
         <p className="font-display text-2xl font-semibold text-foreground">
           Poruka je poslata
@@ -106,34 +111,16 @@ export function ContactForm() {
 
   return (
     <>
-      <h1 className="font-display text-4xl font-semibold md:text-5xl">{title}</h1>
-      <p className="mt-3 max-w-2xl text-muted">{description}</p>
+      <h1 className={PAGE_TITLE}>{title}</h1>
+      <p className={PAGE_LEAD}>{description}</p>
       <PremiumCard className="mt-12 p-8 md:p-10">
-      <div className="mb-8 flex flex-wrap gap-2">
-        <button
-          type="button"
-          onClick={() => setTopic("general")}
-          className={cn(
-            "rounded-full border px-4 py-2 text-sm font-medium transition-colors",
-            topic === "general"
-              ? "border-accent bg-accent text-white"
-              : "border-border text-muted hover:text-foreground"
-          )}
-        >
+      <div className={tagListClassName("mb-8")}>
+        <TagChip active={topic === "general"} onClick={() => setTopic("general")}>
           Opšti kontakt
-        </button>
-        <button
-          type="button"
-          onClick={() => setTopic("brand")}
-          className={cn(
-            "rounded-full border px-4 py-2 text-sm font-medium transition-colors",
-            topic === "brand"
-              ? "border-accent bg-accent text-white"
-              : "border-border text-muted hover:text-foreground"
-          )}
-        >
+        </TagChip>
+        <TagChip active={topic === "brand"} onClick={() => setTopic("brand")}>
           Prijava brenda
-        </button>
+        </TagChip>
       </div>
 
       <form

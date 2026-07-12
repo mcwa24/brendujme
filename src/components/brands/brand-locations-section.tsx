@@ -1,13 +1,13 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { TagChip, tagListClassName } from "@/components/ui/tag-chip";
 import { BrandLocationCard } from "@/components/brands/brand-location-card";
 import { BrandMallCard } from "@/components/brands/brand-mall-card";
 import { OFFERING_LABELS } from "@/lib/data/brand-offerings";
 import { filterLocationsByOfferings } from "@/lib/data/enrich-brand";
 import type { BrandOfferingSlug, RetailLocation, ShoppingCenter } from "@/types";
 import { formatLocationCount } from "@/lib/format/sr-plural";
-import { cn } from "@/lib/utils";
 
 interface CityOption {
   city: string;
@@ -129,62 +129,43 @@ export function BrandLocationsSection({
   return (
     <>
       {offeringChips.length > 2 && (
-        <div className="mt-8">
+        <div className="mt-6">
           <p className="text-sm font-medium text-muted">Šta tražite</p>
-          <div className="mt-3 flex flex-wrap gap-2">
+          <div className={tagListClassName("mt-2")}>
             {offeringChips.map((chip) => (
-              <button
+              <TagChip
                 key={chip}
-                type="button"
+                active={offeringFilter === chip}
                 onClick={() => {
                   setOfferingFilter(chip);
                   setSelectedCity(null);
                 }}
-                className={cn(
-                  "rounded-[var(--radius)] border px-4 py-2 text-sm transition-colors",
-                  offeringFilter === chip
-                    ? "border-accent bg-accent font-medium text-white"
-                    : "border-border bg-card text-muted hover:border-accent/40 hover:text-foreground"
-                )}
               >
                 {chip === "all" ? "Sve" : OFFERING_LABELS[chip]}
-              </button>
+              </TagChip>
             ))}
           </div>
         </div>
       )}
 
-      <div className="mt-8">
+      <div className="mt-6">
         <p className="text-sm font-medium text-muted">Grad</p>
-        <div className="mt-3 flex flex-wrap gap-2">
+        <div className={tagListClassName("mt-2")}>
           {cities.map(({ city, count }) => (
-            <button
+            <TagChip
               key={city}
-              type="button"
+              active={activeCity === city}
               onClick={() => setSelectedCity(city)}
-              className={cn(
-                "rounded-[var(--radius)] border px-4 py-2 text-sm transition-colors",
-                activeCity === city
-                  ? "border-accent bg-accent font-medium text-white"
-                  : "border-border bg-card text-muted hover:border-accent/40 hover:text-foreground"
-              )}
             >
               {city}
-              <span
-                className={cn(
-                  "ml-1.5 tabular-nums",
-                  activeCity === city ? "text-white/80" : "text-muted"
-                )}
-              >
-                ({count})
-              </span>
-            </button>
+              <span className="s-tag-count">({count})</span>
+            </TagChip>
           ))}
         </div>
       </div>
 
       {!activeCity ? (
-        <p className="mt-10 rounded-[var(--radius)] border border-dashed border-border bg-card/50 px-6 py-10 text-center text-muted">
+        <p className="mt-10 rounded-[var(--radius)] bg-[var(--color-chip-bg)] px-6 py-10 text-center text-muted">
           Izaberite grad da vidite prodavnice, tržne centre i adrese.
           {offeringFilter !== "all" && (
             <>
@@ -219,7 +200,6 @@ export function BrandLocationsSection({
                 retailerSlug={loc.retailerSlug}
                 address={loc.address}
                 city={loc.city}
-                offerings={loc.offerings}
                 delay={i * 0.05}
               />
             ))}

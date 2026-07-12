@@ -122,6 +122,14 @@ export interface NewsArticle {
   imageUrl?: string;
   /** Original na bilbord.rs */
   sourceUrl?: string;
+  /** Javni Ghost tagovi za feed kartice (kao na tag stranici). */
+  tags?: NewsArticleTag[];
+}
+
+export interface NewsArticleTag {
+  name: string;
+  slug: string;
+  url: string;
 }
 
 export type PromotionCampaignType =

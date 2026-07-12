@@ -3,12 +3,13 @@
 import { useState } from "react";
 import Link from "next/link";
 import { formatBrandCount } from "@/lib/format/sr-plural";
-import { ArrowUpRight, MapPin } from "lucide-react";
+import { ArrowRight, ArrowUpRight, MapPin } from "lucide-react";
+import { TagChip, tagListClassName } from "@/components/ui/tag-chip";
 import { Container } from "@/components/layout/container";
 import { HOME_SECTION_PY, HOME_SECTION_TITLE } from "@/components/home/section-spacing";
 import { FadeIn } from "@/components/motion/fade-in";
 import { PremiumCard } from "@/components/ui/premium-card";
-import { cn } from "@/lib/utils";
+import { SectionCtaLink } from "@/components/ui/section-cta-link";
 import type { ShoppingCenter } from "@/types";
 
 interface ShoppingCentersSectionProps {
@@ -36,35 +37,23 @@ export function ShoppingCentersSection({ centers }: ShoppingCentersSectionProps)
 
         <FadeIn delay={0.08} className="mt-10">
           <div
-            className="flex gap-2 overflow-x-auto pb-2 scrollbar-thin"
+            className={tagListClassName("mt-10 overflow-x-auto pb-2 scrollbar-thin")}
             role="tablist"
             aria-label="Tržni centri"
           >
             {centers.map((center) => {
               const isActive = center.slug === active.slug;
               return (
-                <button
+                <TagChip
                   key={center.slug}
-                  type="button"
                   role="tab"
                   aria-selected={isActive}
+                  active={isActive}
                   onClick={() => setActiveSlug(center.slug)}
-                  className={cn(
-                    "shrink-0 rounded-[var(--radius)] border px-3 py-2 text-left transition-all sm:px-4 sm:py-2.5",
-                    isActive
-                      ? "border-accent bg-card shadow-[var(--shadow-card)]"
-                      : "border-border bg-transparent text-muted hover:border-accent/30 hover:text-foreground"
-                  )}
+                  className="max-w-[160px] truncate sm:max-w-none"
                 >
-                  <span
-                    className={cn(
-                      "max-w-[120px] truncate text-sm font-medium sm:max-w-none",
-                      isActive ? "text-foreground" : ""
-                    )}
-                  >
-                    {center.name.replace(/ Shopping Center| Park/gi, "")}
-                  </span>
-                </button>
+                  {center.name.replace(/ Shopping Center| Park/gi, "")}
+                </TagChip>
               );
             })}
           </div>
@@ -97,13 +86,11 @@ export function ShoppingCentersSection({ centers }: ShoppingCentersSectionProps)
           </Link>
         </FadeIn>
 
-        <FadeIn delay={0.16} className="mt-6 text-center">
-          <Link
-            href="/shopping-centers"
-            className="text-sm font-medium text-accent hover:underline"
-          >
-            Svi tržni centri →
-          </Link>
+        <FadeIn delay={0.16} className="mt-6 flex justify-center">
+          <SectionCtaLink href="/shopping-centers">
+            Svi tržni centri
+            <ArrowRight className="h-3.5 w-3.5 shrink-0" />
+          </SectionCtaLink>
         </FadeIn>
       </Container>
     </section>

@@ -1,46 +1,35 @@
-import Link from "next/link";
 import { MapPin } from "lucide-react";
 import { FadeIn } from "@/components/motion/fade-in";
 import { PremiumCard } from "@/components/ui/premium-card";
 import { formatBrandLocationTitle } from "@/lib/format/display-text";
-import { retailerHasPage, retailerPageHref } from "@/lib/data/retailer-names";
 import { googleMapsUrl } from "@/lib/maps/google-maps-url";
 
-interface BrandLocationCardProps {
-  storeName: string;
-  retailerSlug: string;
+interface RetailerStoreCardProps {
+  name: string;
   address: string;
   city: string;
+  latitude?: number | null;
+  longitude?: number | null;
   delay?: number;
 }
 
-export function BrandLocationCard({
-  storeName,
-  retailerSlug,
+export function RetailerStoreCard({
+  name,
   address,
   city,
+  latitude,
+  longitude,
   delay = 0,
-}: BrandLocationCardProps) {
-  const title = formatBrandLocationTitle(storeName, city);
-  const profileHref = retailerHasPage(retailerSlug)
-    ? retailerPageHref(retailerSlug)
-    : null;
+}: RetailerStoreCardProps) {
+  const title = formatBrandLocationTitle(name, city);
 
   return (
     <FadeIn delay={delay}>
       <PremiumCard className="p-6 md:p-8">
-        <h3 className="font-display text-lg font-semibold md:text-xl">
-          {profileHref ? (
-            <Link href={profileHref} className="text-accent hover:underline">
-              {title}
-            </Link>
-          ) : (
-            title
-          )}
-        </h3>
+        <h3 className="font-display text-lg font-semibold md:text-xl">{title}</h3>
         <div className="mt-2 text-sm text-muted">
           <a
-            href={googleMapsUrl({ address, city })}
+            href={googleMapsUrl({ address, city, latitude, longitude })}
             target="_blank"
             rel="noopener noreferrer"
             className="group/address inline-flex items-start gap-2 transition-colors hover:text-accent"

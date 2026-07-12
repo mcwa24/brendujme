@@ -1,5 +1,9 @@
 import Link from "next/link";
+import {
+  PAGE_TITLE,
+} from "@/components/home/section-spacing";
 import { Container } from "@/components/layout/container";
+import { PageSection } from "@/components/layout/page-section";
 import { BILBORD_CONTACT_URL } from "@/lib/bilbord";
 import { FadeIn } from "@/components/motion/fade-in";
 import { createMetadata } from "@/lib/seo";
@@ -13,11 +17,10 @@ export const metadata = createMetadata({
 
 export default function PrivacyPage() {
   return (
-    <Container narrow className="py-12 md:py-16">
+    <PageSection>
+      <Container>
       <FadeIn>
-        <h1 className="font-display text-4xl font-semibold md:text-5xl">
-          Politika privatnosti
-        </h1>
+        <h1 className={PAGE_TITLE}>Politika privatnosti</h1>
         <div className="prose prose-neutral mt-8 max-w-3xl space-y-6 text-muted">
           <p className="text-lg text-foreground">
             Ova stranica opisuje kako Bilbord Shop postupa sa podacima i
@@ -109,6 +112,7 @@ export default function PrivacyPage() {
           <p className="text-sm">Poslednje ažuriranje: jun 2026.</p>
         </div>
       </FadeIn>
-    </Container>
+      </Container>
+    </PageSection>
   );
 }

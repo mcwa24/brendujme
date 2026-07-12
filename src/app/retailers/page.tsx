@@ -1,4 +1,9 @@
+import {
+  PAGE_LEAD,
+  PAGE_TITLE,
+} from "@/components/home/section-spacing";
 import { Container } from "@/components/layout/container";
+import { PageSection } from "@/components/layout/page-section";
 import { FadeIn } from "@/components/motion/fade-in";
 import { RetailersList } from "@/components/retailers/retailers-list";
 import { getAllRetailers } from "@/lib/data/repository";
@@ -18,17 +23,17 @@ export default async function RetailersPage() {
   const retailers = await getAllRetailers();
 
   return (
-    <Container narrow className="py-12 md:py-16">
-      <FadeIn when="mount">
-        <h1 className="font-display text-3xl font-semibold leading-tight md:text-5xl">
-          Prodavci
-        </h1>
-        <p className="mt-3 max-w-2xl text-muted">
-          {formatRetailerCount(retailers.length)} — gde možete kupiti modne brendove u
-          Srbiji, od sneaker shopova do multibrend lanaca.
-        </p>
-      </FadeIn>
-      <RetailersList retailers={retailers} />
-    </Container>
+    <PageSection>
+      <Container>
+        <FadeIn when="mount" direction="none" className="pb-12 md:pb-16">
+          <h1 className={PAGE_TITLE}>Prodavci</h1>
+          <p className={PAGE_LEAD}>
+            {formatRetailerCount(retailers.length)} — gde možete kupiti modne brendove u
+            Srbiji, od sneaker shopova do multibrend lanaca.
+          </p>
+        </FadeIn>
+        <RetailersList retailers={retailers} />
+      </Container>
+    </PageSection>
   );
 }

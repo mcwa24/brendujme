@@ -1,10 +1,11 @@
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
 import { FeaturedBrandsMarquee } from "@/components/home/featured-brands-marquee";
-import { HOME_EMBEDDED_SECTION_PY, HOME_SECTION_PY, HOME_SECTION_TITLE } from "@/components/home/section-spacing";
+import { HOME_SECTION_PY, HOME_SECTION_TITLE } from "@/components/home/section-spacing";
+import { SectionCtaLink } from "@/components/ui/section-cta-link";
 import type { Brand } from "@/types";
+import { cn } from "@/lib/utils";
 
 interface FeaturedBrandsSectionProps {
   brands: Brand[];
@@ -21,7 +22,12 @@ export function FeaturedBrandsSection({
   const Wrapper = embedded ? "div" : "section";
 
   return (
-    <Wrapper className={embedded ? HOME_EMBEDDED_SECTION_PY : HOME_SECTION_PY}>
+    <Wrapper
+      className={cn(
+        "w-full bg-card",
+        embedded ? "py-12 md:py-16" : HOME_SECTION_PY
+      )}
+    >
       <Container narrow>
         <FadeIn className="flex items-end justify-between gap-6">
           <div>
@@ -32,29 +38,23 @@ export function FeaturedBrandsSection({
               Brendovi koje najčešće tražite — i gde ih možete kupiti u Srbiji.
             </p>
           </div>
-          <Link
-            href="/brands"
-            className="hidden shrink-0 items-center gap-1 text-sm font-medium text-accent hover:underline sm:flex"
-          >
+          <SectionCtaLink href="/brands" className="hidden shrink-0 sm:flex">
             Svi brendovi
-            <ArrowRight className="h-4 w-4" />
-          </Link>
+            <ArrowRight className="h-3.5 w-3.5 shrink-0" />
+          </SectionCtaLink>
         </FadeIn>
       </Container>
 
-      <FadeIn delay={0.08} className="mt-6 w-full">
+      <FadeIn delay={0.08} className="mt-8 w-full md:mt-10">
         <FeaturedBrandsMarquee brands={brands} fullWidth />
       </FadeIn>
 
       <Container narrow>
         <div className="mt-6 sm:hidden">
-          <Link
-            href="/brands"
-            className="inline-flex items-center gap-1 text-sm font-medium text-accent"
-          >
+          <SectionCtaLink href="/brands">
             Svi brendovi
-            <ArrowRight className="h-4 w-4" />
-          </Link>
+            <ArrowRight className="h-3.5 w-3.5 shrink-0" />
+          </SectionCtaLink>
         </div>
       </Container>
     </Wrapper>

@@ -3,6 +3,7 @@ import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
 import { NewsCard } from "@/components/news/news-card";
 import { HOME_SECTION_PY, HOME_SECTION_TITLE } from "@/components/home/section-spacing";
+import { SectionCtaLink } from "@/components/ui/section-cta-link";
 import { BILBORD_MODA_STIL_URL } from "@/lib/news/urls";
 import type { NewsArticle } from "@/types";
 
@@ -25,15 +26,10 @@ export function NewsSection({ articles }: NewsSectionProps) {
               Kolekcije, kampanje i trendovi sa globalne modne scene.
             </p>
           </div>
-          <a
-            href={BILBORD_MODA_STIL_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-sm font-medium text-accent"
-          >
+          <SectionCtaLink href={BILBORD_MODA_STIL_URL} external>
             Sve vesti
-            <ArrowRight className="h-4 w-4" />
-          </a>
+            <ArrowRight className="h-3.5 w-3.5 shrink-0" />
+          </SectionCtaLink>
         </FadeIn>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">

@@ -1,13 +1,12 @@
 import { notFound } from "next/navigation";
-import { ExternalLink, Globe } from "lucide-react";
 import { Container } from "@/components/layout/container";
+import { PageSection } from "@/components/layout/page-section";
 import { FadeIn } from "@/components/motion/fade-in";
-import { BrandHero } from "@/components/brands/brand-hero";
+import { BrandPageHeader } from "@/components/brands/brand-page-header";
 import { BrandLocationCard } from "@/components/brands/brand-location-card";
 import { BrandLocationsSection } from "@/components/brands/brand-locations-section";
 import { RetailerSectionTitle } from "@/components/retailers/retailer-section-title";
 import { BrandNewsList } from "@/components/news/brand-news-list";
-import { hasBrandLogo } from "@/lib/brand-logo-resolve";
 import { expandBrandLocations } from "@/lib/data/expand-brand-locations";
 import {
   getAllBrands,
@@ -54,44 +53,16 @@ export default async function BrandDetailPage({ params }: PageProps) {
   const centers = centerResults.filter((c): c is NonNullable<typeof c> =>
     Boolean(c)
   );
-  const showLogoHero = hasBrandLogo(brand);
   const fcStores = getFashionCompanyStoresByBrand(slug);
 
   return (
-    <>
-      <section className="bg-card">
-        <Container narrow className="py-16 md:py-24">
-          <FadeIn className="flex flex-col gap-8 md:flex-row md:items-start md:gap-12">
-            <BrandHero brand={brand} />
-            <div className="flex-1">
-              {showLogoHero && (
-                <h1 className="font-display text-4xl font-semibold tracking-tight md:text-6xl">
-                  {brand.name}
-                </h1>
-              )}
-              <div className="mt-6 flex flex-wrap gap-6 text-muted">
-                <span>{brand.country}</span>
-                <a
-                  href={brand.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-accent hover:underline"
-                >
-                  <Globe className="h-4 w-4" />
-                  Veb sajt
-                  <ExternalLink className="h-3.5 w-3.5" />
-                </a>
-              </div>
-              <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted">
-                {brand.description}
-              </p>
-            </div>
-          </FadeIn>
-        </Container>
-      </section>
+    <PageSection detail>
+      <Container>
+        <FadeIn when="mount" direction="none">
+          <BrandPageHeader brand={brand} />
+        </FadeIn>
 
-      <Container narrow className="space-y-20 py-16 md:py-20">
-        <section>
+        <section className="mt-10 md:mt-12">
           <FadeIn>
             <h2 className="font-display text-3xl font-semibold md:text-4xl">
               Gde kupiti
@@ -108,7 +79,7 @@ export default async function BrandDetailPage({ params }: PageProps) {
         </section>
 
         {fcStores.length > 0 && (
-          <section>
+          <section className="mt-16 md:mt-20">
             <FadeIn>
               <RetailerSectionTitle retailerSlug="fashion-company" />
               <p className="mt-2 text-muted">
@@ -130,8 +101,10 @@ export default async function BrandDetailPage({ params }: PageProps) {
           </section>
         )}
 
-        <BrandNewsList articles={news} brandName={brand.name} />
+        <div className="mt-16 md:mt-20">
+          <BrandNewsList articles={news} brandName={brand.name} />
+        </div>
       </Container>
-    </>
+    </PageSection>
   );
 }

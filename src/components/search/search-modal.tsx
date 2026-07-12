@@ -18,6 +18,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { TagChip, tagListClassName } from "@/components/ui/tag-chip";
 import { RecentSearchPills } from "@/components/search/recent-search-pills";
 import { useSearch } from "@/components/search/search-provider";
 import { getBrandLetter } from "@/lib/brand-logo-resolve";
@@ -161,7 +162,7 @@ export function SearchModal({ open, onOpenChange }: SearchModalProps) {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="overflow-hidden rounded-[var(--radius)] border-border bg-card p-0 shadow-[0_8px_40px_rgb(0_0_0/0.12)] sm:max-w-lg">
+      <DialogContent className="overflow-hidden rounded-[var(--radius)] border-0 bg-card p-0 shadow-[0_8px_40px_rgb(0_0_0/0.12)] sm:max-w-lg">
         <DialogHeader className="sr-only">
           <DialogTitle>Pretraga brendova</DialogTitle>
           <DialogDescription>
@@ -172,7 +173,7 @@ export function SearchModal({ open, onOpenChange }: SearchModalProps) {
           shouldFilter={false}
           className="rounded-[var(--radius)] bg-card text-foreground [&_[cmdk-group-heading]]:px-4 [&_[cmdk-group-heading]]:font-display [&_[cmdk-group-heading]]:text-[11px] [&_[cmdk-group-heading]]:font-semibold [&_[cmdk-group-heading]]:uppercase [&_[cmdk-group-heading]]:tracking-[0.12em] [&_[cmdk-group-heading]]:text-muted"
         >
-          <div className="flex items-center gap-3 border-b border-border px-4">
+          <div className="flex items-center gap-3 px-4 pb-3">
             <Search className="h-5 w-5 shrink-0 text-muted" />
             <input
               value={query}
@@ -187,22 +188,16 @@ export function SearchModal({ open, onOpenChange }: SearchModalProps) {
             />
           </div>
           {brandRefinements && hasQuery && !loading && (
-            <div className="flex flex-wrap gap-2 border-b border-border bg-background/60 px-4 py-3">
-              <span className="w-full text-xs text-muted">Sužite pretragu:</span>
-              <button
-                type="button"
-                onClick={() => setQuery(brandRefinements.patike)}
-                className="rounded-full border border-border bg-secondary px-3 py-1.5 text-sm text-foreground transition-colors hover:bg-card"
-              >
-                {brandRefinements.patike}
-              </button>
-              <button
-                type="button"
-                onClick={() => setQuery(brandRefinements.odeca)}
-                className="rounded-full border border-border bg-secondary px-3 py-1.5 text-sm text-foreground transition-colors hover:bg-card"
-              >
-                {brandRefinements.odeca}
-              </button>
+            <div className="bg-background/60 px-4 py-3">
+              <span className="mb-2 block w-full text-xs text-muted">Sužite pretragu:</span>
+              <div className={tagListClassName()}>
+                <TagChip onClick={() => setQuery(brandRefinements.patike)}>
+                  {brandRefinements.patike}
+                </TagChip>
+                <TagChip onClick={() => setQuery(brandRefinements.odeca)}>
+                  {brandRefinements.odeca}
+                </TagChip>
+              </div>
             </div>
           )}
           <CommandList className="max-h-[min(420px,50vh)] px-2 py-2">
@@ -270,11 +265,11 @@ export function SearchModal({ open, onOpenChange }: SearchModalProps) {
               </>
             )}
           </CommandList>
-          <div className="border-t border-border bg-background/50 px-4 py-3 text-xs text-muted">
+          <div className="bg-background/50 px-4 py-3 text-xs text-muted">
             <span className="hidden sm:inline">
               Enter za izbor · Esc za zatvoriti ·{" "}
             </span>
-            <kbd className="rounded-full border border-border bg-card px-2 py-0.5 text-foreground">
+            <kbd className="rounded-full bg-[var(--color-chip-bg)] px-2 py-0.5 text-foreground">
               ⌘K
             </kbd>
           </div>
@@ -287,7 +282,7 @@ export function SearchModal({ open, onOpenChange }: SearchModalProps) {
 function SearchResultThumbnail({ item }: { item: SearchResult }) {
   if (item.imageUrl) {
     return (
-      <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-[var(--radius)] border border-border bg-transparent">
+      <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-[var(--radius)] bg-[var(--color-chip-bg)]">
         <Image
           src={item.imageUrl}
           alt=""
@@ -304,7 +299,7 @@ function SearchResultThumbnail({ item }: { item: SearchResult }) {
 
   if (item.type === "shopping-center") {
     return (
-      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[var(--radius)] border border-border bg-secondary text-muted">
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[var(--radius)] bg-[var(--color-chip-bg)] text-muted">
         <Building2 className="h-5 w-5" />
       </div>
     );
@@ -312,7 +307,7 @@ function SearchResultThumbnail({ item }: { item: SearchResult }) {
 
   return (
     <div
-      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[var(--radius)] border border-border bg-secondary font-display text-sm font-semibold text-muted-foreground"
+      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[var(--radius)] bg-[var(--color-chip-bg)] font-display text-sm font-semibold text-muted-foreground"
       aria-hidden
     >
       {getBrandLetter(item.title, item.type === "brand" ? item.slug : undefined)}
@@ -332,7 +327,7 @@ function SearchResultItem({
       value={`${item.title} ${item.subtitle}`}
       keywords={[item.title, item.subtitle, item.slug]}
       onSelect={() => onSelect(item)}
-      className="mb-1 cursor-pointer gap-3 rounded-[var(--radius)] border border-border/60 bg-secondary px-3 py-2.5 text-foreground hover:border-border hover:bg-card data-[selected=true]:border-accent/20 data-[selected=true]:bg-card aria-[selected=true]:border-accent/20 aria-[selected=true]:bg-card"
+      className="mb-1 cursor-pointer gap-3 rounded-[var(--radius)] bg-[var(--color-chip-bg)] px-3 py-2.5 text-foreground data-[selected=true]:bg-accent data-[selected=true]:text-white aria-[selected=true]:bg-accent aria-[selected=true]:text-white"
     >
       <SearchResultThumbnail item={item} />
       <div className="min-w-0 flex-1">

@@ -6,6 +6,7 @@ import {
   getGhostNewsTagSlug,
   isGhostConfigured,
 } from "@/lib/ghost/env";
+import { mapGhostPublicTags } from "@/lib/news/tags";
 import { NEWS_PAGE_SIZE } from "@/lib/news/constants";
 import type { NewsPageResult } from "@/lib/news/types";
 import type { NewsArticle } from "@/types";
@@ -14,6 +15,7 @@ type GhostTag = {
   slug: string;
   name: string;
   visibility?: string;
+  url?: string | null;
 };
 
 type GhostPost = {
@@ -83,6 +85,7 @@ function mapGhostPost(
       const slugs = brandSlugsFromGhostTags(post.tags);
       return slugs.length ? slugs : undefined;
     })(),
+    tags: mapGhostPublicTags(post.tags),
     imageLabel: post.title.trim(),
     imageUrl: post.feature_image?.trim() || undefined,
     sourceUrl: post.url?.trim() || undefined,

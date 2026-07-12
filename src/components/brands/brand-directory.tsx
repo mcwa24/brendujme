@@ -3,7 +3,12 @@
 import { useMemo, useState } from "react";
 import { Search, X } from "lucide-react";
 import { BrandCard } from "@/components/brands/brand-card";
+import {
+  PAGE_LEAD,
+  PAGE_TITLE,
+} from "@/components/home/section-spacing";
 import { Container } from "@/components/layout/container";
+import { PageSection } from "@/components/layout/page-section";
 import { FadeIn } from "@/components/motion/fade-in";
 import { Input } from "@/components/ui/input";
 import {
@@ -61,12 +66,11 @@ export function BrandDirectory({ brands }: BrandDirectoryProps) {
   }, [brands, query, country, priceSegment, sort]);
 
   return (
-    <Container narrow className="py-12 md:py-16">
-      <FadeIn>
-        <h1 className="font-display text-3xl font-semibold leading-tight md:text-5xl">
-          Modni brendovi
-        </h1>
-        <p className="mt-3 max-w-2xl text-muted">
+    <PageSection>
+      <Container>
+      <FadeIn when="mount" direction="none">
+        <h1 className={PAGE_TITLE}>Modni brendovi</h1>
+        <p className={PAGE_LEAD}>
           {formatFashionBrandCount(brands.length)} — pretražite gde ih možete kupiti u
           Srbiji po nazivu, zemlji ili cenovnom segmentu.
         </p>
@@ -81,7 +85,7 @@ export function BrandDirectory({ brands }: BrandDirectoryProps) {
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Pretraži brendove..."
               className={cn(
-                "h-12 rounded-[var(--radius)] border-border pl-11",
+                "h-12 rounded-[var(--radius)] pl-11",
                 hasSearchQuery && "pr-11"
               )}
             />
@@ -101,7 +105,7 @@ export function BrandDirectory({ brands }: BrandDirectoryProps) {
             onChange={(e) =>
               setSort(e.target.value as "name" | "availability")
             }
-            className="hidden h-12 rounded-[var(--radius)] border border-border bg-card px-4 text-sm text-foreground outline-none sm:block"
+            className="bilbord-field hidden h-12 px-4 text-sm sm:block"
             aria-label="Sortiranje"
           >
             <option value="name">Naziv A–Z</option>
@@ -125,7 +129,7 @@ export function BrandDirectory({ brands }: BrandDirectoryProps) {
 
       <div className="mt-8 flex flex-col gap-10 lg:mt-10 lg:flex-row">
         <aside className="hidden lg:block lg:w-64 lg:shrink-0">
-          <div className="sticky top-28 space-y-8 rounded-[var(--radius)] border border-border bg-card p-6">
+          <div className="sticky top-28 space-y-8 rounded-[var(--radius)] bg-card p-6 shadow-[var(--shadow-card)]">
             <FilterGroup title="Zemlja">
               <FilterButton
                 active={country === "Sve zemlje"}
@@ -184,7 +188,8 @@ export function BrandDirectory({ brands }: BrandDirectoryProps) {
           )}
         </div>
       </div>
-    </Container>
+      </Container>
+    </PageSection>
   );
 }
 

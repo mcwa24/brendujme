@@ -13,7 +13,7 @@ export function NewsletterBanner() {
     <section className={HOME_SECTION_PY}>
       <Container>
         <FadeIn>
-          <div className="rounded-[var(--radius)] border border-border bg-card px-6 py-10 shadow-[var(--shadow-card)] sm:px-10 sm:py-12 lg:px-12 lg:py-14">
+          <div className="rounded-[var(--radius)] bg-card px-6 py-10 shadow-[var(--shadow-card)] sm:px-10 sm:py-12 lg:px-12 lg:py-14">
             <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-12">
               <div className="max-w-2xl">
                 <div className="flex items-center gap-3 text-accent">

@@ -138,25 +138,28 @@ export function FeaturedBrandsMarquee({
   if (brands.length === 0) return null;
 
   const fadeWidth = fullWidth ? "w-16 sm:w-32 lg:w-40" : "w-12 sm:w-24";
+  const fadeFrom = fullWidth ? "from-card" : "from-background";
 
   return (
     <div className={cn("relative w-full", fullWidth && "overflow-hidden")}>
       <div
         className={cn(
-          "pointer-events-none absolute inset-y-0 left-0 z-10 bg-gradient-to-r from-background to-transparent",
+          "pointer-events-none absolute inset-y-0 left-0 z-10 bg-gradient-to-r to-transparent",
+          fadeFrom,
           fadeWidth
         )}
         aria-hidden
       />
       <div
         className={cn(
-          "pointer-events-none absolute inset-y-0 right-0 z-10 bg-gradient-to-r from-transparent to-background",
+          "pointer-events-none absolute inset-y-0 right-0 z-10 bg-gradient-to-r from-transparent",
+          fullWidth ? "to-card" : "to-background",
           fadeWidth
         )}
         aria-hidden
       />
 
-      <div className="overflow-hidden py-2 motion-reduce:hidden">
+      <div className="overflow-hidden py-4 motion-reduce:hidden">
         <div
           className={cn(
             "marquee-infinite flex w-max items-center",
@@ -173,7 +176,7 @@ export function FeaturedBrandsMarquee({
         </div>
       </div>
 
-      <div className="hidden overflow-x-auto py-2 no-scrollbar motion-reduce:block">
+      <div className="hidden overflow-x-auto py-4 no-scrollbar motion-reduce:block">
         <div className={cn("flex w-max items-center", MARQUEE_GAP)}>
           {brands.map((brand) => (
             <MarqueeItem key={brand.slug} brand={brand} />

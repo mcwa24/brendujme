@@ -1,4 +1,5 @@
 import { enrichRetailLocations } from "@/lib/data/enrich-brand";
+import { normalizeScrapedDisplayText } from "@/lib/format/display-text";
 import { getStaticBrandRetailerSlugs } from "@/lib/supabase/fetch-brand-retailers";
 import { fetchBrandRetailerSlugs } from "@/lib/supabase/fetch-brand-retailers";
 import { fetchRetailerStores } from "@/lib/supabase/fetch-retailer-stores";
@@ -15,7 +16,7 @@ function storeToLocation(
 ): RetailLocation {
   return {
     id: store.id,
-    storeName: store.name,
+    storeName: normalizeScrapedDisplayText(store.name),
     retailerSlug,
     address: store.address,
     city: store.city,

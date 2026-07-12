@@ -1,6 +1,11 @@
 import Link from "next/link";
 import { MapPin } from "lucide-react";
+import {
+  PAGE_LEAD,
+  PAGE_TITLE,
+} from "@/components/home/section-spacing";
 import { Container } from "@/components/layout/container";
+import { PageSection } from "@/components/layout/page-section";
 import { FadeIn } from "@/components/motion/fade-in";
 import { PremiumCard } from "@/components/ui/premium-card";
 import { ShoppingCenterLogo } from "@/components/shopping-centers/shopping-center-logo";
@@ -21,12 +26,11 @@ export default async function ShoppingCentersPage() {
   const shoppingCenters = await getAllShoppingCenters();
 
   return (
-    <Container narrow className="py-12 md:py-16">
-      <FadeIn>
-        <h1 className="font-display text-4xl font-semibold md:text-5xl">
-          Tržni centri
-        </h1>
-        <p className="mt-3 max-w-2xl text-muted">
+    <PageSection>
+      <Container>
+      <FadeIn when="mount" direction="none">
+        <h1 className={PAGE_TITLE}>Tržni centri</h1>
+        <p className={PAGE_LEAD}>
           Najveće retail destinacije u Srbiji sa kompletnom ponudom brendova.
         </p>
       </FadeIn>
@@ -55,6 +59,7 @@ export default async function ShoppingCentersPage() {
           </FadeIn>
         ))}
       </div>
-    </Container>
+      </Container>
+    </PageSection>
   );
 }

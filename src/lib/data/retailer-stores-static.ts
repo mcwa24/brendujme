@@ -10,6 +10,7 @@ import tikeScraped from "./tike-scraped.json";
 import nSportScraped from "./n-sport-scraped.json";
 import urbanShopScraped from "./urban-shop-scraped.json";
 import { isPublishedShoppingCenterSlug } from "@/lib/data/shopping-centers";
+import { normalizeScrapedDisplayText } from "@/lib/format/display-text";
 import type { RetailerStore } from "@/types";
 
 interface ScrapedStore {
@@ -49,7 +50,7 @@ function mapStore(store: ScrapedStore, retailerSlug: string): RetailerStore {
       : null;
   return {
     id: `${retailerSlug}-${storeKey}`,
-    name: store.name,
+    name: normalizeScrapedDisplayText(store.name),
     address: store.address,
     city: store.city,
     phone: store.phone ?? null,

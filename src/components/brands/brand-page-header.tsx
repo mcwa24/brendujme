@@ -1,22 +1,25 @@
 import { ExternalLink, Globe } from "lucide-react";
 import { PAGE_LEAD, PAGE_TITLE } from "@/components/home/section-spacing";
-import type { Retailer } from "@/types";
 import { cn } from "@/lib/utils";
 
-interface RetailerPageHeaderProps {
-  retailer: Retailer;
-  website?: string | null;
+interface BrandPageHeaderProps {
+  brand: {
+    name: string;
+    country: string;
+    description: string;
+    website?: string | null;
+  };
 }
 
-export function RetailerPageHeader({ retailer, website }: RetailerPageHeaderProps) {
+export function BrandPageHeader({ brand }: BrandPageHeaderProps) {
   return (
     <header>
-      <h1 className={PAGE_TITLE}>{retailer.name}</h1>
+      <h1 className={PAGE_TITLE}>{brand.name}</h1>
       <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted md:mt-4">
-        <span>{retailer.city}</span>
-        {website ? (
+        <span>{brand.country}</span>
+        {brand.website ? (
           <a
-            href={website}
+            href={brand.website}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-accent hover:underline"
@@ -27,7 +30,7 @@ export function RetailerPageHeader({ retailer, website }: RetailerPageHeaderProp
           </a>
         ) : null}
       </div>
-      <p className={cn(PAGE_LEAD, "max-w-3xl")}>{retailer.description}</p>
+      <p className={cn(PAGE_LEAD, "max-w-3xl")}>{brand.description}</p>
     </header>
   );
 }
