@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import { shopPublicOrigin } from "@/lib/shop-base-path";
 
 export const siteName = "Bilbord Shop";
-export const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://shop.bilbord.rs";
+const configuredSiteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://shop.bilbord.rs";
+export const siteUrl = shopPublicOrigin(configuredSiteUrl);
 
 export const siteTagline = "Gde kupiti modne brendove u Srbiji";
 
