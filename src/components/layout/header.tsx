@@ -9,7 +9,6 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import {
   HeaderBurgerButton,
-  HeaderCloseButton,
   HeaderSearchButton,
 } from "@/components/layout/header-icon-button";
 import { useSearch } from "@/components/search/search-provider";
@@ -84,11 +83,7 @@ export function Header() {
   }, [mobileOpen]);
 
   const closeMenu = () => setMobileOpen(false);
-  const openMenu = () => {
-    if (!mobileOpen) {
-      setMobileOpen(true);
-    }
-  };
+  const toggleMenu = () => setMobileOpen((open) => !open);
   const openSearch = () => {
     closeMenu();
     setOpen(true);
@@ -114,26 +109,16 @@ export function Header() {
               </Link>
             </div>
           </div>
-          {mobileOpen && !isDesktopNav ? (
-            <HeaderCloseButton className="s-utils-close" onClick={closeMenu} />
-          ) : null}
         </nav>
 
-        <div
-          className={cn(
-            "s-utils",
-            mobileOpen && !isDesktopNav && "s-utils--mobile-bar-hidden"
-          )}
-        >
-          {!mobileOpen || isDesktopNav ? (
-            <>
-              <HeaderSearchButton className="s-utils-search" onClick={openSearch} />
-              <HeaderBurgerButton
-                className="s-utils-burger"
-                aria-expanded={mobileOpen}
-                onClick={openMenu}
-              />
-            </>
+        <div className="s-utils">
+          <HeaderSearchButton className="s-utils-search" onClick={openSearch} />
+          {!isDesktopNav ? (
+            <HeaderBurgerButton
+              className="s-utils-burger"
+              open={mobileOpen}
+              onClick={toggleMenu}
+            />
           ) : null}
           <div className="s-utils-account">
             <Link href={BILBORD_CONTACT_URL} className="s-btn">

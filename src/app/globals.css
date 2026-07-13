@@ -525,9 +525,6 @@ body.s-nav-open .s-header .s-menu {
 }
 
 .s-header .s-utils-close {
-  position: absolute;
-  top: 24px;
-  right: 24px;
   width: 40px;
   height: 40px;
 }
@@ -540,6 +537,19 @@ body.s-nav-open .s-header .s-menu {
 
 .s-header .s-utils-burger svg {
   width: 20px;
+}
+
+.s-header .s-utils-burger svg:last-child {
+  display: none;
+  width: 19px;
+}
+
+.s-header .s-utils-burger.is-open svg:first-child {
+  display: none;
+}
+
+.s-header .s-utils-burger.is-open svg:last-child {
+  display: block;
 }
 
 @media (min-width: 1024px) {
@@ -563,9 +573,10 @@ body.s-nav-open .s-header .s-menu {
     flex-shrink: 0;
   }
 
-  .s-header > .s-container > .s-utils.s-utils--mobile-bar-hidden {
-    visibility: hidden;
-    pointer-events: none;
+  body.s-nav-open .s-header > .s-container > .s-logo,
+  body.s-nav-open .s-header > .s-container > .s-utils {
+    position: relative;
+    z-index: 10002;
   }
 
   body.s-nav-open #gh-main,
