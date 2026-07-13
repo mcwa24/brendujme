@@ -58,6 +58,24 @@ function slugify(text: string): string {
 
 const confRank = { high: 0, medium: 1, low: 2 };
 
+/** Privremeno sakriveno sa home „Aktuelne akcije“. */
+const HOME_SECTION_HIDDEN_PROMO_RETAILER_SLUGS = new Set([
+  "fashion-company",
+  "fashion-friends",
+]);
+
+export function isHiddenFromHomePromotionsSection(promo: HomePromotion): boolean {
+  const slug = normalizeRetailerSlug(promo.retailerSlug);
+  if (HOME_SECTION_HIDDEN_PROMO_RETAILER_SLUGS.has(slug)) return true;
+
+  const name = promo.retailerName.toLowerCase();
+  return (
+    name.includes("fashion company") ||
+    name.includes("fashion and friends") ||
+    name.includes("fashion & friends")
+  );
+}
+
 function promotionScore(row: ScrapedPromotionRow): number {
   let score = (3 - confRank[row.confidence]) * 100;
   if (row.discountPercent) score += row.discountPercent;

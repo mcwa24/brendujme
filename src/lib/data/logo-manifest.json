@@ -484,5 +484,25 @@
     "source": "url",
     "remoteUrl": "https://c.cdnmp.net/223810479/brands/11000237_logo.jpg?rv=1754906567",
     "fetchedAt": "2026-06-08"
+  },
+  "361-degrees": {
+    "path": "/logos/cache/361-degrees.png",
+    "source": "manual"
+  },
+  "arena": {
+    "path": "/logos/cache/arena.png",
+    "source": "manual"
+  },
+  "collegium": {
+    "path": "/logos/cache/collegium.png",
+    "source": "manual"
+  },
+  "mohito": {
+    "path": "/logos/cache/mohito.png",
+    "source": "manual"
+  },
+  "vero-moda": {
+    "path": "/logos/cache/vero-moda.png",
+    "source": "manual"
   }
 }

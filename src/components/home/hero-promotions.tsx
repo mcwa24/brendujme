@@ -7,6 +7,7 @@ import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
 import { HOME_SECTION_PY, HOME_SECTION_TITLE } from "@/components/home/section-spacing";
 import { getPromotionExternalUrl } from "@/lib/data/retailer-serbia-urls";
+import { isHiddenFromHomePromotionsSection } from "@/lib/data/promotions";
 import type { PromotionBannerImage } from "@/lib/unsplash/promotion-banners";
 import type { HomePromotion, PromotionCampaignType } from "@/types";
 
@@ -55,7 +56,11 @@ export function HeroPromotions({
   promotions,
   bannerImages = [],
 }: HeroPromotionsProps) {
-  if (!promotions.length) return null;
+  const items = promotions
+    .map((promo, index) => ({ promo, banner: bannerImages[index] }))
+    .filter(({ promo }) => !isHiddenFromHomePromotionsSection(promo));
+
+  if (!items.length) return null;
 
   return (
     <section className={HOME_SECTION_PY}>
@@ -67,11 +72,10 @@ export function HeroPromotions({
         </FadeIn>
         <FadeIn delay={0.08} className="mt-6">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {promotions.map((promo, index) => {
+            {items.map(({ promo, banner }, index) => {
               const offerLine = promotionOfferLine(promo);
               const hasDiscount =
                 promo.discountPercent != null && promo.discountPercent > 0;
-              const banner = bannerImages[index];
 
               return (
                 <article

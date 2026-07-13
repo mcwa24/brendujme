@@ -1,17 +1,18 @@
 "use client";
 
+import Image from "next/image";
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
-import { HeroStats } from "@/components/home/hero-stats";
-import { HeroSearchTrigger } from "@/components/search/hero-search-field";
-import { RecentSearchPills } from "@/components/search/recent-search-pills";
-import {
-  HOME_HERO_SECTION_PB,
-  PAGE_SECTION_CLASS,
-} from "@/components/home/section-spacing";
-import { PageHeader } from "@/components/layout/page-header";
+import { HOME_HERO_SECTION_PB } from "@/components/home/section-spacing";
+import { tagChipClassName, tagListClassName } from "@/components/ui/tag-chip";
 import { cn } from "@/lib/utils";
 import type { HomeStats } from "@/lib/data/repository";
+
+const HERO_IMAGE =
+  "https://images.unsplash.com/photo-1555529733-ba28d9c4587c?auto=format&fit=crop&w=1800&q=80";
+
+const HERO_EXCERPT =
+  "Pronađite modne brendove i prodavce, uporedite ponude i pratite aktuelne akcije na jednom mestu u Srbiji.";
 
 interface HeroSectionProps {
   stats: HomeStats;
@@ -19,24 +20,46 @@ interface HeroSectionProps {
 
 export function HeroSection({ stats }: HeroSectionProps) {
   return (
-    <section className={cn(PAGE_SECTION_CLASS, HOME_HERO_SECTION_PB)}>
+    <section className={cn("s-home-hero pt-3", HOME_HERO_SECTION_PB)}>
       <Container>
-        <div className="grid gap-8 lg:grid-cols-2 lg:items-start lg:gap-12 xl:gap-16">
-          <div className="min-w-0">
-            <PageHeader
-              title="Bilbord Shop"
-              description="Akcije, ponude i brendovi"
-            />
-            <FadeIn delay={0.06} when="mount" className="mt-5 max-w-xl md:mt-6">
-              <HeroSearchTrigger />
-              <RecentSearchPills className="mt-2.5" />
-            </FadeIn>
-          </div>
+        <FadeIn when="mount">
+          <div className="s-slide">
+            <div className="s-slide-image">
+              <Image
+                src={HERO_IMAGE}
+                alt=""
+                fill
+                className="object-cover object-center"
+                sizes="(min-width: 1280px) 1280px, 100vw"
+                priority
+              />
+            </div>
 
-          <aside className="hidden md:flex md:items-center md:justify-center md:self-center">
-            <HeroStats stats={stats} />
-          </aside>
-        </div>
+            <div className={tagListClassName("s-home-hero-tags")}>
+              <span className={tagChipClassName()}>Bilbord shop</span>
+            </div>
+
+            <div className="s-slide-content">
+              <h1 className="s-slide-heading">Akcije, ponude i brendovi</h1>
+              <p className="s-slide-excerpt">{HERO_EXCERPT}</p>
+
+              <div className="s-home-hero-stats">
+                <div>
+                  <strong>{stats.storeCount}</strong>
+                  <span>Prodajnih lokacija</span>
+                </div>
+                <div>
+                  <strong>{stats.brandCount}</strong>
+                  <span>Modnih brendova</span>
+                </div>
+                <div>
+                  <strong>{stats.cityCount}</strong>
+                  <span>Gradova</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </FadeIn>
       </Container>
     </section>
   );

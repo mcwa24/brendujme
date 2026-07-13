@@ -583,6 +583,186 @@ body.s-nav-open {
   margin: 0;
 }
 
+/* Ghost home hero — isti slider baner kao bilbord.rs */
+.s-home-hero .s-slide {
+  position: relative;
+  height: 480px;
+  overflow: hidden;
+  border-radius: var(--corner-radius-lg);
+}
+
+@media (min-width: 1024px) {
+  .s-home-hero .s-slide {
+    height: 600px;
+  }
+}
+
+.s-home-hero .s-slide-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.s-home-hero .s-slide-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+}
+
+.s-home-hero .s-slide-image img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.s-home-hero .s-slide-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  padding: 24px;
+  color: #fff;
+}
+
+@media (min-width: 640px) {
+  .s-home-hero .s-slide-content {
+    padding: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .s-home-hero .s-slide-content {
+    padding: 56px;
+  }
+}
+
+.s-home-hero .s-slide-heading,
+.s-home-hero .s-slide-excerpt,
+.s-home-hero .s-home-hero-stats strong,
+.s-home-hero .s-home-hero-stats span {
+  color: #fff;
+}
+
+.s-home-hero .s-slide-heading,
+.s-home-hero .s-slide-excerpt {
+  max-width: 636px;
+}
+
+.s-home-hero .s-slide > .s-tags {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 3;
+}
+
+@media (min-width: 640px) {
+  .s-home-hero .s-slide > .s-tags {
+    top: 40px;
+    left: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .s-home-hero .s-slide > .s-tags {
+    top: 56px;
+    left: 56px;
+  }
+}
+
+.s-home-hero .s-slide > .s-tags .s-tag {
+  appearance: none;
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+  margin: 0;
+  padding: 3px 10px;
+  border: none;
+  border-radius: 9999px;
+  background-color: #fff;
+  color: var(--foreground);
+  font-family: var(--gh-font-heading, var(--heading-font-family)), "Helvetica", "Arial",
+    sans-serif;
+  font-size: 14px;
+  font-weight: var(--heading-font-weight);
+  line-height: 1.2;
+  letter-spacing: var(--heading-letter-spacing);
+  white-space: nowrap;
+}
+
+.s-home-hero .s-slide-heading {
+  font-family: var(--gh-font-heading, var(--heading-font-family)), "Helvetica", "Arial",
+    sans-serif;
+  font-size: 28px;
+  font-weight: var(--heading-font-weight);
+  line-height: 1.2;
+  letter-spacing: var(--heading-letter-spacing);
+}
+
+@media (min-width: 640px) {
+  .s-home-hero .s-slide-heading {
+    font-size: 36px;
+  }
+}
+
+.s-home-hero .s-slide-excerpt {
+  margin-top: 1rem;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  opacity: 0.8;
+}
+
+@media (min-width: 1024px) {
+  .s-home-hero .s-slide-excerpt {
+    font-size: 17px;
+  }
+}
+
+.s-home-hero .s-home-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+  max-width: 28rem;
+}
+
+.s-home-hero .s-home-hero-stats strong {
+  display: block;
+  font-family: var(--gh-font-heading, var(--heading-font-family)), "Helvetica", "Arial",
+    sans-serif;
+  font-size: 1.75rem;
+  font-weight: var(--heading-font-weight);
+  line-height: 1;
+}
+
+@media (min-width: 640px) {
+  .s-home-hero .s-home-hero-stats strong {
+    font-size: 2rem;
+  }
+}
+
+.s-home-hero .s-home-hero-stats span {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.8125rem;
+  line-height: 1.35;
+  opacity: 0.85;
+}
+
+@media (min-width: 640px) {
+  .s-home-hero .s-home-hero-stats span {
+    font-size: 0.875rem;
+  }
+}
+
 /* Ghost page naslov — isti top offset na svim stranicama */
 .s-page-section {
   padding-top: var(--page-top-gap);
