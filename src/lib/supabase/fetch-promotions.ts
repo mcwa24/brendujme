@@ -1,3 +1,4 @@
+import { decodeHtmlEntities } from "@/lib/text/decode-html-entities";
 import {
   discountFromShortDescription,
   resolveCampaignSourceUrl,
@@ -133,11 +134,11 @@ export async function fetchActiveHomePromotionsFromSupabase(): Promise<
 
     mapped.push({
       slug: row.slug,
-      title: row.title,
-      shortDescription:
-        row.short_description?.trim() ||
-        row.description.slice(0, 160),
-      description: row.description,
+      title: decodeHtmlEntities(row.title),
+      shortDescription: decodeHtmlEntities(
+        row.short_description?.trim() || row.description.slice(0, 160)
+      ),
+      description: decodeHtmlEntities(row.description),
       campaignType: row.campaign_type,
       startDate: row.start_date,
       endDate: row.end_date,
@@ -150,7 +151,7 @@ export async function fetchActiveHomePromotionsFromSupabase(): Promise<
       discountPercent:
         row.discount_percent ??
         discountFromShortDescription(row.short_description),
-      scope: row.promo_scope ?? undefined,
+      scope: row.promo_scope ? decodeHtmlEntities(row.promo_scope) : undefined,
       bannerImageUrl: row.banner_image ?? undefined,
     });
   }

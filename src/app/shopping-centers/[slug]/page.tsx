@@ -9,7 +9,7 @@ import {
   getBrandsBySlugs,
   getShoppingCenterBySlug,
 } from "@/lib/data/repository";
-import { formatBrandCountPlus } from "@/lib/format/sr-plural";
+import { formatBrandCountPlus, formatModniBrandCount } from "@/lib/format/sr-plural";
 import { googleMapsUrl } from "@/lib/maps/google-maps-url";
 import { createMetadata } from "@/lib/seo";
 
@@ -67,12 +67,21 @@ export default async function ShoppingCenterPage({ params }: PageProps) {
           />
         </FadeIn>
 
-        <div className="mt-16 md:mt-20">
-          <h2 className="font-display text-2xl font-semibold">Brendovi u centru</h2>
+        <section className="mt-16 md:mt-20">
           <FadeIn>
-            <BrandLogoGrid brands={brands} className="mt-8" />
+            <h2 className="font-display text-3xl font-semibold md:text-4xl">
+              Brendovi u centru
+            </h2>
+            <p className="mt-2 text-muted">
+              {formatModniBrandCount(brands.length)} u ponudi.
+            </p>
           </FadeIn>
-        </div>
+          {brands.length > 0 && (
+            <div className="s-list-tab s-list-tab--panel mt-10">
+              <BrandLogoGrid brands={brands} />
+            </div>
+          )}
+        </section>
       </Container>
     </PageSection>
   );

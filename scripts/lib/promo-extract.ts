@@ -121,8 +121,17 @@ export function extractMetaTitle(html: string): string | null {
 }
 
 function decodeEntities(s: string): string {
-  return s
-    .replace(/&amp;/g, "&")
+  let result = s;
+  for (let i = 0; i < 2; i += 1) {
+    result = result.replace(/&amp;/gi, "&");
+  }
+  return result
+    .replace(/&#x([0-9a-f]+);/gi, (_, hex) =>
+      String.fromCodePoint(Number.parseInt(hex, 16))
+    )
+    .replace(/&#(\d+);/g, (_, dec) =>
+      String.fromCodePoint(Number.parseInt(dec, 10))
+    )
     .replace(/&quot;/g, '"')
     .replace(/&#39;/g, "'")
     .replace(/&lt;/g, "<")

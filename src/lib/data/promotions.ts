@@ -1,3 +1,4 @@
+import { decodeHtmlEntities } from "@/lib/text/decode-html-entities";
 import scraped from "@/lib/data/retailer-promotions-scraped.json";
 import { fashionCompanyRetailer } from "@/lib/data/fashion-company";
 import {
@@ -58,7 +59,7 @@ function slugify(text: string): string {
 
 const confRank = { high: 0, medium: 1, low: 2 };
 
-/** Privremeno sakriveno sa home „Aktuelne akcije“. */
+/** Privremeno sakriveno sa home „Aktuelne akcije” i „Uskoro ističe”. */
 const HOME_SECTION_HIDDEN_PROMO_RETAILER_SLUGS = new Set([
   "fashion-company",
   "fashion-friends",
@@ -109,9 +110,9 @@ function mapScrapedToHome(row: ScrapedPromotionRow): HomePromotion | null {
 
   return {
     slug: `${displaySlug}-${slugify(promotionCampaignKey({ sourceUrl: row.sourceUrl, title: row.title }))}`,
-    title: row.title,
-    shortDescription: row.shortDescription,
-    description: row.description,
+    title: decodeHtmlEntities(row.title),
+    shortDescription: decodeHtmlEntities(row.shortDescription),
+    description: decodeHtmlEntities(row.description),
     campaignType: row.campaignType,
     startDate: row.startDate,
     endDate: row.endDate,
@@ -122,7 +123,7 @@ function mapScrapedToHome(row: ScrapedPromotionRow): HomePromotion | null {
     retailerWebsiteUrl: getRetailerWebsiteUrl(displaySlug, sourceUrl),
     href: `/retailers/${displaySlug}`,
     discountPercent: row.discountPercent,
-    scope: row.scope,
+    scope: row.scope ? decodeHtmlEntities(row.scope) : row.scope,
     bannerImageUrl: row.bannerImageUrl,
   };
 }
@@ -248,9 +249,12 @@ export function formatPromotionExpiryUrgency(
 export function pickExpiringSoonPromotion(
   promotions: HomePromotion[]
 ): HomePromotion | null {
-  if (!promotions.length) return null;
+  const visible = promotions.filter(
+    (promo) => !isHiddenFromHomePromotionsSection(promo)
+  );
+  if (!visible.length) return null;
 
-  return [...promotions].sort((a, b) => {
+  return [...visible].sort((a, b) => {
     const byEnd = a.endDate.localeCompare(b.endDate);
     if (byEnd !== 0) return byEnd;
     return a.startDate.localeCompare(b.startDate);

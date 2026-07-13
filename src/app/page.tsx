@@ -16,7 +16,6 @@ import {
 import { HOME_FEATURED_SHOPPING_CENTER_SLUGS } from "@/lib/data/home-featured-shopping-center";
 import { HOME_POPULAR_RETAILER_SLUGS } from "@/lib/data/home-popular-retailers";
 import { pickExpiringSoonPromotion } from "@/lib/data/promotions";
-import { getPromotionBannerImages } from "@/lib/unsplash/promotion-banners";
 
 export const revalidate = 3600;
 
@@ -39,41 +38,27 @@ export default async function HomePage() {
     latestNews,
     homePromotions,
     homeStats,
-    promotionBanners,
     popularRetailers,
     expiringSoonPromotion,
-    expiringSoonBanner,
     featuredShoppingCenters,
   ] = await Promise.all([
     getFeaturedBrands(),
     getLatestNews(3),
     homePromotionsPromise,
     getHomeStats(),
-    homePromotionsPromise.then((promotions) =>
-      getPromotionBannerImages(promotions)
-    ),
     popularRetailersPromise,
     expiringSoonPromise,
-    expiringSoonPromise.then((promotion) =>
-      promotion ? getPromotionBannerImages([promotion]).then((b) => b[0]) : null
-    ),
     featuredShoppingCentersPromise,
   ]);
 
   return (
     <>
       <HeroSection stats={homeStats} />
-      <HeroPromotions
-        promotions={homePromotions}
-        bannerImages={promotionBanners}
-      />
+      <HeroPromotions promotions={homePromotions} />
       <FeaturedBrandsSection brands={featuredBrands} embedded />
       <NewsSection articles={latestNews} />
       {expiringSoonPromotion ? (
-        <ExpiringSoonPromotionBanner
-          promotion={expiringSoonPromotion}
-          bannerImage={expiringSoonBanner ?? undefined}
-        />
+        <ExpiringSoonPromotionBanner promotion={expiringSoonPromotion} />
       ) : null}
       <PopularRetailersSection retailers={popularRetailers} />
       <FeaturedShoppingCenterBanner centers={featuredShoppingCenters} />

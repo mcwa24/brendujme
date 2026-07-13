@@ -13,18 +13,22 @@ export function NewsCover({
   title,
   imageLabel,
   imageUrl,
-  className = "flex aspect-[16/9] items-center justify-center bg-accent/90",
+  className,
   sizes = "(max-width: 768px) 100vw, 50vw",
   priority = false,
 }: NewsCoverProps) {
+  const placeholderClassName =
+    className ??
+    "flex aspect-[16/9] items-center justify-center bg-accent/90";
+
   if (imageUrl) {
     return (
-      <div className={`relative overflow-hidden ${className}`}>
+      <div className="relative aspect-[16/9] overflow-hidden bg-secondary">
         <Image
           src={imageUrl}
           alt={title}
           fill
-          className="object-cover"
+          className="news-cover-img rounded-none object-cover"
           sizes={sizes}
           priority={priority}
         />
@@ -33,7 +37,7 @@ export function NewsCover({
   }
 
   return (
-    <div className={className}>
+    <div className={placeholderClassName}>
       <span className="font-display px-4 text-center text-lg text-white/90 md:text-2xl">
         {imageLabel}
       </span>

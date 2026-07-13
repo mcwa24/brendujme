@@ -1,15 +1,19 @@
-"use client";
-
-import Image from "next/image";
-import Link from "next/link";
-import { Calendar } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { FadeIn } from "@/components/motion/fade-in";
+import { RetailerLogo } from "@/components/retailers/retailer-logo";
+import { PremiumCard } from "@/components/ui/premium-card";
 import { HOME_SECTION_PY, HOME_SECTION_TITLE } from "@/components/home/section-spacing";
-import { getPromotionExternalUrl } from "@/lib/data/retailer-serbia-urls";
+import {
+  promotionCampaignLabel,
+  promotionDisplayTitle,
+  promotionOfferLine,
+} from "@/lib/data/promotion-display";
 import { isHiddenFromHomePromotionsSection } from "@/lib/data/promotions";
-import type { PromotionBannerImage } from "@/lib/unsplash/promotion-banners";
-import type { HomePromotion, PromotionCampaignType } from "@/types";
+import { getPromotionExternalUrl } from "@/lib/data/retailer-serbia-urls";
+import type { HomePromotion } from "@/types";
+
+const HOME_PROMOTIONS_LIMIT = 6;
 
 function formatDateRange(start: string, end: string) {
   const fmt = (iso: string) =>
@@ -20,45 +24,26 @@ function formatDateRange(start: string, end: string) {
   return `${fmt(start)} – ${fmt(end)}`;
 }
 
-const CAMPAIGN_LABELS: Record<PromotionCampaignType, string> = {
-  sale: "Akcija",
-  seasonal: "Sezonska akcija",
-  black_friday: "Black Friday",
-  clearance: "Rasprodaja",
-  new_collection: "Nova kolekcija",
-  collaboration: "Kolaboracija",
-  other: "Ponuda",
-};
+function promotionMetaLine(promo: HomePromotion): string {
+  const dates = formatDateRange(promo.startDate, promo.endDate);
+  const hasDiscount =
+    promo.discountPercent != null && promo.discountPercent > 0;
 
-function isMostlyDateRange(text: string): boolean {
-  const trimmed = text.trim();
-  if (!trimmed) return true;
-  return /^[\d.\s–\-/]+$/u.test(trimmed) || /^\d{1,2}\.\s*\d{1,2}/.test(trimmed);
-}
-
-function promotionOfferLine(promo: HomePromotion): string {
-  if (promo.scope?.trim()) return promo.scope.trim();
-  if (
-    promo.shortDescription?.trim() &&
-    !isMostlyDateRange(promo.shortDescription)
-  ) {
-    return promo.shortDescription.trim();
+  if (hasDiscount) {
+    return `−${promo.discountPercent}% · ${dates}`;
   }
-  return CAMPAIGN_LABELS[promo.campaignType];
+
+  return `${promotionCampaignLabel(promo.campaignType)} · ${dates}`;
 }
 
 interface HeroPromotionsProps {
   promotions: HomePromotion[];
-  bannerImages?: PromotionBannerImage[];
 }
 
-export function HeroPromotions({
-  promotions,
-  bannerImages = [],
-}: HeroPromotionsProps) {
+export function HeroPromotions({ promotions }: HeroPromotionsProps) {
   const items = promotions
-    .map((promo, index) => ({ promo, banner: bannerImages[index] }))
-    .filter(({ promo }) => !isHiddenFromHomePromotionsSection(promo));
+    .filter((promo) => !isHiddenFromHomePromotionsSection(promo))
+    .slice(0, HOME_PROMOTIONS_LIMIT);
 
   if (!items.length) return null;
 
@@ -66,84 +51,53 @@ export function HeroPromotions({
     <section className={HOME_SECTION_PY}>
       <Container narrow>
         <FadeIn>
-          <h2 className={HOME_SECTION_TITLE}>
-            Aktuelne akcije
-          </h2>
+          <h2 className={HOME_SECTION_TITLE}>Aktuelne akcije</h2>
         </FadeIn>
-        <FadeIn delay={0.08} className="mt-6">
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {items.map(({ promo, banner }, index) => {
-              const offerLine = promotionOfferLine(promo);
-              const hasDiscount =
-                promo.discountPercent != null && promo.discountPercent > 0;
 
-              return (
-                <article
-                  key={promo.slug}
-                  className="group relative flex min-h-[280px] flex-col justify-end overflow-hidden rounded-[var(--radius)] shadow-[0_1px_2px_rgb(0_0_0/0.08),0_4px_16px_rgb(0_0_0/0.1)] transition-shadow duration-200 hover:shadow-[0_2px_6px_rgb(0_0_0/0.1),0_8px_24px_rgb(0_0_0/0.14)]"
-                >
-                  <a
-                    href={getPromotionExternalUrl(promo)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="absolute inset-0 z-[1] cursor-pointer rounded-[var(--radius)]"
-                    aria-label={`${promo.title} — ${promo.retailerName}, otvori akciju na sajtu prodavca`}
-                  />
-
-                  {banner ? (
-                    <Image
-                      src={banner.imageUrl}
-                      alt=""
-                      fill
-                      className="object-cover object-center transition-transform duration-300 group-hover:scale-[1.02]"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      priority={index === 0}
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {items.map((promo, i) => (
+            <FadeIn key={promo.slug} delay={i * 0.06}>
+              <a
+                href={getPromotionExternalUrl(promo)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block h-full"
+                aria-label={`${promotionDisplayTitle(promo)} — ${promo.retailerName}, otvori akciju na sajtu prodavca`}
+              >
+                <PremiumCard className="flex h-full flex-col p-6 md:p-8">
+                  <div className="flex items-start justify-between gap-3">
+                    <RetailerLogo
+                      slug={promo.retailerSlug}
+                      name={promo.retailerName}
+                      logoUrl={promo.retailerLogoUrl}
+                      size="xl"
+                      variant="bare"
                     />
-                  ) : null}
-
-                  <div
-                    className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-[70%] bg-gradient-to-t from-black/90 via-black/50 to-transparent"
-                    aria-hidden
-                  />
-
-                  <div className="pointer-events-none relative z-[3] p-4">
-                    <div className="[text-shadow:0_1px_2px_rgb(0_0_0/0.95),0_2px_12px_rgb(0_0_0/0.65)]">
-                      <Link
-                        href={promo.href}
-                        className="pointer-events-auto text-[11px] font-bold uppercase tracking-[0.14em] text-white underline-offset-2 transition-opacity hover:underline hover:opacity-90"
-                      >
-                        {promo.retailerName}
-                      </Link>
-
-                      {hasDiscount ? (
-                        <p className="font-display mt-1 text-3xl font-black leading-none tracking-tight text-white drop-shadow-[0_2px_4px_rgb(0_0_0/0.8)]">
-                          −{promo.discountPercent}%
-                        </p>
-                      ) : (
-                        <p className="font-display mt-1 text-sm font-bold uppercase tracking-wide text-white">
-                          {CAMPAIGN_LABELS[promo.campaignType]}
-                        </p>
-                      )}
-
-                      <p className="font-display mt-2 text-xl font-bold leading-snug tracking-tight text-white sm:text-2xl">
-                        {promo.title}
-                      </p>
-
-                      <p className="mt-1.5 line-clamp-2 text-sm font-semibold leading-snug text-white">
-                        {offerLine}
-                      </p>
-
-                      <p className="mt-2.5 flex items-center gap-1.5 text-xs font-bold text-white/95">
-                        <Calendar className="h-3.5 w-3.5 shrink-0 drop-shadow-sm" />
-                        {formatDateRange(promo.startDate, promo.endDate)}
-                      </p>
-                    </div>
+                    <ArrowUpRight className="h-5 w-5 shrink-0 text-muted opacity-0 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-accent group-hover:opacity-100" />
                   </div>
-                </article>
-              );
-            })}
-          </div>
-        </FadeIn>
+
+                  <h3 className="mt-6 font-display text-xl font-semibold tracking-tight transition-colors group-hover:text-accent">
+                    {promo.retailerName}
+                  </h3>
+
+                  <p className="mt-2 text-sm text-muted">{promotionMetaLine(promo)}</p>
+
+                  <p className="mt-4 line-clamp-3 flex-1 text-sm leading-relaxed text-muted">
+                    <span className="font-medium text-foreground">
+                      {promotionDisplayTitle(promo)}
+                    </span>
+                    {promotionOfferLine(promo) ? (
+                      <>
+                        {" "}
+                        — {promotionOfferLine(promo)}
+                      </>
+                    ) : null}
+                  </p>
+                </PremiumCard>
+              </a>
+            </FadeIn>
+          ))}
+        </div>
       </Container>
     </section>
   );

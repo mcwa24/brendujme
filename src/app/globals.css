@@ -149,10 +149,10 @@ body {
   }
 }
 
-img,
+img:not(.news-cover-img):not(.shopping-center-banner-img):not(.brand-logo-img),
 video,
 picture,
-[class*="rounded"] img {
+[class*="rounded"] img:not(.news-cover-img):not(.shopping-center-banner-img) {
   border-radius: var(--image-radius);
 }
 
@@ -1670,6 +1670,11 @@ html.has-cookie-banner body {
 }
 
 /* Brend logoi — sam img transparentan; slot na karticama ima svetlu podlogu */
+.shopping-center-banner-img,
+.news-cover-img {
+  border-radius: 0 !important;
+}
+
 .brand-logo-img {
   background: transparent !important;
   background-color: transparent !important;
