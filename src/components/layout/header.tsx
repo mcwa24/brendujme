@@ -9,6 +9,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import {
   HeaderBurgerButton,
+  HeaderCloseButton,
   HeaderSearchButton,
 } from "@/components/layout/header-icon-button";
 import { useSearch } from "@/components/search/search-provider";
@@ -83,7 +84,11 @@ export function Header() {
   }, [mobileOpen]);
 
   const closeMenu = () => setMobileOpen(false);
-  const toggleMenu = () => setMobileOpen((open) => !open);
+  const openMenu = () => {
+    if (!mobileOpen) {
+      setMobileOpen(true);
+    }
+  };
   const openSearch = () => {
     closeMenu();
     setOpen(true);
@@ -101,13 +106,16 @@ export function Header() {
           className={cn("s-nav", mobileOpen && "s-nav-open")}
           aria-hidden={isDesktopNav || mobileOpen ? "false" : "true"}
         >
-          <div className="s-menu-panel">
-            <NavMenu onNavigate={closeMenu} />
-            <div className="s-utils-account s-utils-account--menu">
+          <NavMenu onNavigate={closeMenu} />
+          <div className="s-utils">
+            <div className="s-utils-account">
               <Link href={BILBORD_CONTACT_URL} className="s-btn" onClick={closeMenu}>
                 <span>Prijavi brend</span>
               </Link>
             </div>
+            {!isDesktopNav ? (
+              <HeaderCloseButton className="s-utils-close" onClick={closeMenu} />
+            ) : null}
           </div>
         </nav>
 
@@ -116,8 +124,8 @@ export function Header() {
           {!isDesktopNav ? (
             <HeaderBurgerButton
               className="s-utils-burger"
-              open={mobileOpen}
-              onClick={toggleMenu}
+              aria-expanded={mobileOpen}
+              onClick={openMenu}
             />
           ) : null}
           <div className="s-utils-account">

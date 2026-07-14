@@ -378,45 +378,26 @@ picture,
   font-weight: calc(var(--heading-font-weight) - 100);
 }
 
-@media (max-width: 1023px) {
-  .s-header .s-menu-panel {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    background-color: var(--color-card-bg);
-    border-radius: var(--corner-radius);
-    padding: 12px 24px;
-  }
+.s-header .s-nav > .s-utils {
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  margin-top: 24px;
+  margin-left: 0;
+  gap: 24px;
+}
 
-  .s-header .s-menu-panel .s-menu {
-    padding: 0;
-    background-color: transparent;
-    border-radius: 0;
-  }
+.s-header .s-nav > .s-utils .s-utils-account {
+  width: 100%;
+}
 
-  .s-header .s-menu-panel .s-utils-account--menu {
-    display: flex;
-    width: 100%;
-    margin-top: 12px;
-    padding-top: 0;
-  }
-
-  .s-header .s-menu-panel .s-utils-account--menu > .s-btn {
-    display: flex;
-    box-sizing: border-box;
-    width: 100%;
-    max-width: none;
-    min-width: 100%;
-    justify-content: center;
-  }
+.s-header .s-nav > .s-utils .s-utils-account .s-btn {
+  max-width: none;
+  min-width: 100%;
+  justify-content: center;
 }
 
 @media (min-width: 1024px) {
-  .s-header .s-menu-panel {
-    display: contents;
-  }
-
-  .s-header .s-menu-panel .s-utils-account--menu {
+  .s-header .s-nav > .s-utils {
     display: none;
   }
 }
@@ -525,31 +506,21 @@ body.s-nav-open .s-header .s-menu {
 }
 
 .s-header .s-utils-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
   width: 40px;
   height: 40px;
 }
 
 @media (min-width: 1024px) {
-  .s-header .s-nav > .s-utils-close {
+  .s-header .s-nav .s-utils-close {
     display: none;
   }
 }
 
 .s-header .s-utils-burger svg {
   width: 20px;
-}
-
-.s-header .s-utils-burger svg:last-child {
-  display: none;
-  width: 19px;
-}
-
-.s-header .s-utils-burger.is-open svg:first-child {
-  display: none;
-}
-
-.s-header .s-utils-burger.is-open svg:last-child {
-  display: block;
 }
 
 @media (min-width: 1024px) {
@@ -571,12 +542,6 @@ body.s-nav-open .s-header .s-menu {
     width: 40px;
     height: 40px;
     flex-shrink: 0;
-  }
-
-  body.s-nav-open .s-header > .s-container > .s-logo,
-  body.s-nav-open .s-header > .s-container > .s-utils {
-    position: relative;
-    z-index: 10002;
   }
 
   body.s-nav-open #gh-main,
